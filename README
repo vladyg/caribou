@@ -1,0 +1,6 @@
+Running Caribou
+===============
+
+
+cd src
+python ./caribou.py
