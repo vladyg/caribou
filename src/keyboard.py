@@ -1,6 +1,5 @@
 # -*- coding: UTF-8 -*-
 
-import candidatepanel
 import gtk
 import gobject
 import gtk.gdk as gdk
