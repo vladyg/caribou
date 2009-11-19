@@ -28,7 +28,7 @@ class CaribouKeyboard(gtk.Frame):
                     if isinstance(key, str):
                         button = gtk.Button(key)
                         char = ord(key.decode('utf-8'))
-                        button.connect("clicked", lambda w, d: self.__send_unicode(d), char)
+                        button.connect("clicked", self.__send_unicode, char)
                     elif isinstance(key, tuple):
                         button = gtk.Button(key[0])
                         # check if this key is a layout switch key or not
@@ -37,7 +37,7 @@ class CaribouKeyboard(gtk.Frame):
                             button.connect("clicked", self.__change_layout, key[1])
                         else:
                             # regular key
-                            button.connect("clicked", lambda w, d: self.__send_keysym(d), key[1])
+                            button.connect("clicked", self.__send_keysym, key[1])
                     else:
                         pass #TODO throw error here
 
@@ -50,13 +50,13 @@ class CaribouKeyboard(gtk.Frame):
         self.add(self._layouts[0])
         self.show_all()
 
-    def __send_unicode(self, char):
-        self._vk.press_unicode(char)
-        self._vk.release_unicode(char)
+    def __send_unicode(self, widget, data):
+        self._vk.press_unicode(data)
+        self._vk.release_unicode(data)
 
-    def __send_keysym(self, keysym):
-        self._vk.press_keysym(keysym)
-        self._vk.release_keysym(keysym)
+    def __send_data(self, widget, data):
+        self._vk.press_data(data)
+        self._vk.release_data(data)
 
     def __change_layout(self, widget, data):
         label = widget.get_label()
