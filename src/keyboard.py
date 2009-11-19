@@ -54,7 +54,7 @@ class CaribouKeyboard(gtk.Frame):
         self._vk.press_unicode(data)
         self._vk.release_unicode(data)
 
-    def __send_data(self, widget, data):
+    def __send_keysym(self, widget, data):
         self._vk.press_data(data)
         self._vk.release_data(data)
 
