@@ -34,7 +34,7 @@ class CaribouKeyboard(gtk.Frame):
                         # check if this key is a layout switch key or not
                         if isinstance(key[1], str):
                             # switch layout key
-                            button.connect("clicked", lambda w, d: self.__switch_layout(d), key[0])
+                            button.connect("clicked", self.__change_layout, key[1])
                         else:
                             # regular key
                             button.connect("clicked", lambda w, d: self.__send_keysym(d), key[1])
@@ -58,12 +58,13 @@ class CaribouKeyboard(gtk.Frame):
         self._vk.press_keysym(keysym)
         self._vk.release_keysym(keysym)
 
-    def __switch_layout(self, data):
-        if data == "⇧":
+    def __change_layout(self, widget, data):
+        label = widget.get_label()
+        if label == "⇧":
             self.remove(self._layouts[0])
             self.add(self._layouts[1])
             self.show_all()
-        elif data == "⇩":
+        elif label == "⇩":
             self.remove(self._layouts[1])
             self.add(self._layouts[0])
             self.show_all()
