@@ -10,17 +10,22 @@ import qwerty
 class CaribouPredicitionArea(gtk.HBox):
     pass
 
+# TODO validate keyboard by creating this object and catching exception
 class CaribouKeyboard(gtk.Frame):
 
-    def __init__(self):
+    def __init__(self, keyboard):
         gtk.Frame.__init__(self)
         self.set_shadow_type(gtk.SHADOW_NONE)
 
+        # FIXME use references instead of this??
         self._layouts = []
         self._vk = virtkey.virtkey()
 
-        for layout in qwerty.keyboard:
+        switch_buttons = []
+        for layout in keyboard.layouts:
             layoutvbox = gtk.VBox(homogeneous=True)
+            layoutvbox.set_name(layout)
+            layout = getattr(keyboard, layout)
             for row in layout:
                 rowhbox = gtk.HBox(homogeneous=True)
                 for key in row:
@@ -34,7 +39,9 @@ class CaribouKeyboard(gtk.Frame):
                         # check if this key is a layout switch key or not
                         if isinstance(key[1], str):
                             # switch layout key
-                            button.connect("clicked", self.__change_layout, key[1])
+                            # set layer name on button and save to process later
+                            button.set_name(key[1])
+                            switch_buttons.append(button)
                         else:
                             # regular key
                             button.connect("clicked", self.__send_keysym, key[1])
@@ -44,7 +51,20 @@ class CaribouKeyboard(gtk.Frame):
                     rowhbox.pack_start(button, expand=False, fill=True)
 
                 layoutvbox.pack_start(rowhbox, expand=False, fill=False)
+
             self._layouts.append(layoutvbox)
+
+        for button in switch_buttons:
+            print
+            for layout in self._layouts:
+                print "button", button.get_name()
+                print "layer", layout.get_name()
+                if button.get_name() == layout.get_name():
+                    button.connect("clicked", self.__change_layout, layout)
+                    button.set_name("")
+                    break
+            else:
+                print "ERROR" # TODO throw exception
 
         # add the first layer and make it visible
         self.add(self._layouts[0])
@@ -59,15 +79,9 @@ class CaribouKeyboard(gtk.Frame):
         self._vk.release_keysym(data)
 
     def __change_layout(self, widget, data):
-        label = widget.get_label()
-        if label == "⇧":
-            self.remove(self._layouts[0])
-            self.add(self._layouts[1])
-            self.show_all()
-        elif label == "⇩":
-            self.remove(self._layouts[1])
-            self.add(self._layouts[0])
-            self.show_all()
+        self.remove(self.get_child())
+        self.add(data)
+        self.show_all()
 
 gobject.type_register(CaribouKeyboard)
 
@@ -82,7 +96,7 @@ class CaribouWindow(gtk.VBox):
         self.__toplevel.add(self)
         self.__toplevel.connect("size-allocate", lambda w, a: self.__check_position())
         self.__cursor_location = (0, 0)
-        self.pack_start(CaribouKeyboard())
+        self.pack_start(CaribouKeyboard(qwerty))
 
     def set_cursor_location(self, x, y):
         #print "----> SET CURSOR LOCATION"
