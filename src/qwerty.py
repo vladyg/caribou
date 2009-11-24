@@ -12,7 +12,18 @@ import keyboardcommon
 # key format ("label", keysym) 
 bs = ("⌫", keyboardcommon.keysyms["backspace"])
 # return
-rt = ("rtn", keyboardcommon.keysyms["return"])
+rt = ("↲", keyboardcommon.keysyms["return"])
+# space
+sp = ("␣", keyboardcommon.keysyms["space"])
+# up
+up = ("↑", keyboardcommon.keysyms["up"])
+# down
+dn = ("↓", keyboardcommon.keysyms["down"])
+# left
+le = ("←", keyboardcommon.keysyms["left"])
+# right
+ri = ("→", keyboardcommon.keysyms["right"])
+
 
 # define keys to switch layers here
 # shift up
@@ -24,18 +35,19 @@ np = (".?12", "num_punct")
 # letters
 lt = ("abc", "lowercase")
 
+
 # keyboard layouts - put a single utf-8 character or a tuple defined above
 lowercase = ( ("?", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p"),
               ( np, "a", "s", "d", "f", "g", "h", "j", "k", "l",  bs),
-              ( su, "z", "x", "c", "v", "b", "n", "m", ".", " ",  rt) )
+              ( su, "z", "x", "c", "v", "b", "n", "m", ".",  sp,  rt) )
 
 uppercase = ( ("?", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"),
               ( np, "A", "S", "D", "F", "G", "H", "J", "K", "L",  bs),
-              ( sd, "Z", "X", "C", "V", "B", "N", "M", ".", " ",  rt) )
+              ( sd, "Z", "X", "C", "V", "B", "N", "M", ".",  sp,  rt) )
 
-num_punct = ( ("!", "1", "2", "3", "4", "5", "6", "7",  "8", "9", "0"),
-              ( lt, "@", "$", "/", "+", "-", " ", "\"", ",", ".",  bs),
-              ("'", "(", ")", ";", ":", " ", " ", " ",  " ", " ",  rt) )
+num_punct = ( ("!", "1", "2", "3", "4", "5", "6",  "7",  "8", "9", "0"),
+              ( lt, "@", "$", "/", "+", "-",  up, "\"",  ",", "#",  bs),
+              ("'", "(", ")", ";", ":",  le,  dn,   ri,  ".",  sp,  rt) )
 
 # the layout that appears in position 0 will be visible
 # when the keyboard is first created

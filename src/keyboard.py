@@ -57,8 +57,6 @@ class CaribouKeyboard(gtk.Frame):
         for button in switch_buttons:
             print
             for layout in self._layouts:
-                print "button", button.get_name()
-                print "layer", layout.get_name()
                 if button.get_name() == layout.get_name():
                     button.connect("clicked", self.__change_layout, layout)
                     button.set_name("")
