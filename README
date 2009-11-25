@@ -1,6 +1,13 @@
 Running Caribou
 ===============
 
+python src/caribou.py
 
-cd src
-python ./caribou.py
+or 
+
+python src/caribou.py --debug
+
+When an editable text widget has focus, a keyboard should pop up. There are
+still some problems with the text focus detection and keyboard placement.
+
+Use the right control key (Control_R) to quit caribou. 

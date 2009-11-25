@@ -73,7 +73,6 @@ class CaribouKeyboard(gtk.Frame):
             self._layouts.append(layoutvbox)
 
         for button in switch_buttons:
-            print
             for layout in self._layouts:
                 if button.get_name() == layout.get_name():
                     button.connect("clicked", self.__change_layout, layout)

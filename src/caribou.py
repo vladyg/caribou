@@ -98,9 +98,9 @@ class Test:
     def on_key_down(self, event):
         # key binding for controling the row column scanning
         # TODO: needs implementing
-        if event.event_string == "Control_R":
+        if event.event_string == "Shift_R":
             pass 
-        elif event.event_string == "Shift_R":
+        elif event.event_string == "Control_R":
             if debug == True:
                 print "quitting ..."
             # TODO: use for loop here? see below
