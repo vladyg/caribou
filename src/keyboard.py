@@ -113,9 +113,9 @@ class CaribouWindow(gtk.VBox):
         self.__cursor_location = (0, 0)
         self.pack_start(CaribouKeyboard(qwerty))
 
-    def set_cursor_location(self, x, y):
         #print "----> SET CURSOR LOCATION"
-        self.__cursor_location = (x, y)
+    def set_cursor_location(self, x, y, width, height):
+        self.__cursor_location = (x, y, width, height)
         self.__check_position()
 
     def do_size_request(self, requisition):
@@ -137,9 +137,9 @@ class CaribouWindow(gtk.VBox):
             x = self.__cursor_location[0]
 
         if by > sy:
-            y = sy - self.__toplevel.allocation.height
+            y = self.__cursor_location[1] - self.__toplevel.allocation.height
         else:
-            y = self.__cursor_location[1]
+            y = self.__cursor_location[1] + self.__cursor_location[3]
 
         self.move(x, y)
 

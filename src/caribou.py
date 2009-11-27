@@ -41,7 +41,7 @@ class Test:
     def __set_text_location(self, acc):
         text = acc.queryText() 
         [x, y, width, height] = text.getCharacterExtents(text.caretOffset, pyatspi.DESKTOP_COORDS)
-        cp.set_cursor_location(x, y + height)
+        cp.set_cursor_location(x, y, width, height)
         cp.show_all()
        
     def __set_entry_location(self, acc):
@@ -50,9 +50,9 @@ class Test:
         if x == 0 and y == 0 and width == 0 and height == 0:
             component = acc.queryComponent()
             bb = component.getExtents(pyatspi.DESKTOP_COORDS)
-            cp.set_cursor_location(bb.x, bb.y + bb.height)
+            cp.set_cursor_location(bb.x, bb.y, bb.width, bb.height)
         else:
-            cp.set_cursor_location(x, y + height)
+            cp.set_cursor_location(x, y, width, height)
         cp.show_all()
        
     def on_state_changed_focused(self, event):
