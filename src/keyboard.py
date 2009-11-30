@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 #
-# Carbou - On-screen Keyboard and UI navigation application
+# Carbou - Text entry and UI navigation application
 #
 # Copyright (C) 2009 Adaptive Technology Resource Centre
 #
