@@ -27,7 +27,12 @@ import keysyms
 # TODO ensure keyboard doesn't change size when changing layers
 # TODO finish numbers and punctuation layout
 
-# key format ("label", keysym) 
+###############################################################################
+# keys with keysyms - use known keysyms from keysyms.py or used hex code
+# format: ("label", keysym)
+###############################################################################
+
+# backspace
 bs = ("⌫", keysyms.backspace)
 # enter 
 en = ("↲", keysyms.enter)
@@ -43,7 +48,11 @@ le = ("←", keysyms.left)
 ri = ("→", keysyms.right)
 
 
-# define keys to switch layers here
+###############################################################################
+# keys to switch layers
+# format: ("label", "name of layer to switch to")
+###############################################################################
+
 # shift up
 su = ("⇧", "uppercase")
 # shift down
@@ -53,8 +62,10 @@ np = (".?12", "num_punct")
 # letters
 lt = ("abc", "lowercase")
 
-
+###############################################################################
 # keyboard layouts - put a single utf-8 character or a tuple defined above
+###############################################################################
+
 lowercase = ( ("?", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p"),
               ( np, "a", "s", "d", "f", "g", "h", "j", "k", "l",  bs),
               ( su, "z", "x", "c", "v", "b", "n", "m", sp,  ".",  en) )
@@ -67,6 +78,9 @@ num_punct = ( ("!", "1", "2", "3", "4", "5", "6",  "7",  "8", "9", "0"),
               ( lt, "@", "$", "/", "+", "-",  up, "\"",  ",", "#",  bs),
               ("'", "(", ")", ";", ":",  le,  dn,   ri,   sp, ".",  en) )
 
-# the layout that appears in position 0 will be visible
-# when the keyboard is first created
+###############################################################################
+# list of keyboard layouts - the layout in position 0 will be active when the
+#                            keyboard is first created
+###############################################################################
+
 layouts = ( "lowercase", "uppercase", "num_punct" )
