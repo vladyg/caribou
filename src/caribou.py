@@ -132,11 +132,12 @@ def usage():
     print _("Help Options:")
     print "  -d, --debug                      " + _("Print debug messages on stdout")
     print "  -h, --help                       " + _("Show this help message")
+    print "  -v, --version                    " + _("Display version")
 
 if __name__ == "__main__":
 
     try:
-        options, xargs = getopt.getopt(sys.argv[1:], "dh", ["debug", "help"])
+        options, xargs = getopt.getopt(sys.argv[1:], "dhv", ["debug", "help", "version"])
     except getopt.GetoptError, e:
         print "Error: " + e.__str__() + "\n"
         usage()
@@ -148,6 +149,10 @@ if __name__ == "__main__":
 
         if opt in ("-h", "--help"):
             usage()
+            sys.exit(0)
+
+        if opt in ("-v", "--version"):
+            print "caribou @VERSION@"
             sys.exit(0)
 
     test = Test()
