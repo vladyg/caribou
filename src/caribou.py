@@ -127,28 +127,28 @@ class Test:
 def usage():
     """Prints out usage information."""
     print _("Usage:")
-    print "  " + sys.arg[0] + _(" [OPTION...]")
+    print "  " + sys.argv[0] + _(" [OPTION...]")
     print
     print _("Help Options:")
-    print "  -h, --help                       " + _("Show this help message")
     print "  -d, --debug                      " + _("Print debug messages on stdout")
+    print "  -h, --help                       " + _("Show this help message")
 
 if __name__ == "__main__":
 
     try:
-        options, xargs = getopt.getopt(sys.argv[1:], "d", ["debug"])
+        options, xargs = getopt.getopt(sys.argv[1:], "dh", ["debug", "help"])
     except getopt.GetoptError, e:
         print "Error: " + e.__str__() + "\n"
         usage()
         sys.exit(1)
  
     for opt, val in options:
+        if opt in ("-d", "--debug"):
+            debug = True
+
         if opt in ("-h", "--help"):
             usage()
             sys.exit(0)
-
-        if opt in ("-d", "--debug"):
-            debug = True
 
     test = Test()
     # TODO: make a for loop
