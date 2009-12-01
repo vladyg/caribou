@@ -110,62 +110,92 @@ class CaribouWindow(gtk.Window):
         self._vbox = gtk.VBox()
         self.add(self._vbox)
 
-        self.connect("size-allocate", lambda w, a: self._update_position())
-
         self._vbox.pack_start(CaribouKeyboard(qwerty))
 
 class CaribouHoverWindow(CaribouWindow):
     __gtype_name__ = "CaribouHoverWindow"
-    def __init__(self):
-        super(CaribouHoverWindow, self).__init__()
-        self._cursor_location = gtk.gdk.Rectangle()
 
-    def _set_cursor_location(self, val):
-        self._cursor_location = val
+    def __init__(self, default_placement=None):
+        super(CaribouHoverWindow, self).__init__()
+
+        self.connect("size-allocate", lambda w, a: self._update_position())
+
+        self._cursor_location = gtk.gdk.Rectangle()
+        self._entry_location = gtk.gdk.Rectangle()
+        self._default_placement = default_placement or \
+            CaribouKeyboardPlacement()
+    
+
+    def set_cursor_location(self, cursor_location):
+        self._cursor_location = cursor_location
         self._update_position()
 
-    def _get_cursor_location(self):
-        return self._cursor_location
+    def set_entry_location(self, entry_location):
+        self._entry_location = entry_location
+        self._update_position()
 
-    cursor_location = gobject.property(type=object, 
-                                       setter=_set_cursor_location,
-                                       getter=_get_cursor_location)
+    def set_default_placement(self, default_placement):
+        self._default_placement = default_placement
+        self._update_position()
 
-    def _update_position(self):
-        #print "---->>> CHECK POSITION"
-        bx = self.cursor_location.x + self.allocation.width
-        by = self.cursor_location.y + self.allocation.height
-
+    def _get_root_bbox(self):
         root_window = gdk.get_default_root_window()
-        sx, sy = root_window.get_size()
+        args = root_window.get_position() + root_window.get_size()
+        return gdk.Rectangle(*args)
+            
+    def _update_position(self, placement=None):
+        placement = placement or self._default_placement
+        root_bbox = self._get_root_bbox()
+        bbox = root_bbox
 
-        if bx > sx:
-            x = sx - self.allocation.width
-        else:
-            x = self.cursor_location.x
+        if placement.stickto == placement.CURSOR:
+            bbox = self._cursor_location
+        elif placement.stickto == placement.ENTRY:
+            bbox = self._entry_location
 
-        if by > sy:
-            y = self.cursor_location.y - self.allocation.height
-        else:
-            y = self.cursor_location.y + self.cursor_location.height
+        x = bbox.x
+        y = bbox.y
+
+        if placement.halign == placement.LEFT:
+            x += bbox.width
+        elif placement.halign == placement.CENTER:
+            x += bbox.width/2
+
+        if placement.valign == placement.BOTTOM:
+            y += bbox.height
+        elif placement.halign == placement.CENTER:
+            y += bbox.height/2
 
         self.move(x, y)
 
-class CaribouKeyboardPlacement:
-    LEFT = 0
-    RIGHT = 1
-    TOP = 0
-    BOTTOM = 1
-    CENTER = 2
-
-    SCREEN = 0
-    ENTRY = 1
-    CURSOR = 2
-
-    INSIDE = 0
-    OUTSIDE = 1
-
+class CaribouKeyboardPlacement(object):
+    LEFT = 'left'
+    RIGHT = 'right'
+    TOP = 'top'
+    BOTTOM = 'bottom'
+    CENTER = 'center'
     
+    SCREEN = 'screen'
+    ENTRY = 'entry'
+    CURSOR = 'cursor'
+    
+    INSIDE = 'inside'
+    OUTSIDE = 'outside'
+    
+    def __init__(self, halign=None, valign=None, stickto=None, 
+                 hgravitate=None, vgravitate=None):
+        self.halign = halign or self.LEFT
+        self.valign = valign or self.BOTTOM
+        self.stickto = stickto or self.CURSOR
+        self.hgravitate = hgravitate or self.OUTSIDE
+        self.vgravitate = vgravitate or self.OUTSIDE
+
+    def copy(self, halign=None, valign=None, stickto=None, gravitate=None):
+        return self.__class__(halign or self.halign, 
+                              valign or self.valign, 
+                              stickto or self.stickto, 
+                              hgravitate or self.hgravitate,
+                              vgravitate or self.vgravitate)
 
 if __name__ == "__main__":
     ckbd = CaribouHoverWindow()
