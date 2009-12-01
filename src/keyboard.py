@@ -145,34 +145,33 @@ class CaribouHoverWindow(CaribouWindow):
             
     def _update_position(self, placement=None):
         placement = placement or self._default_placement
-        root_bbox = self._get_root_bbox()
-        bbox = root_bbox
 
-        if placement.stickto == placement.CURSOR:
-            bbox = self._cursor_location
-        elif placement.stickto == placement.ENTRY:
-            bbox = self._entry_location
-
-        x = bbox.x
-        y = bbox.y
-
-        if placement.halign == placement.LEFT:
-            x += bbox.width
-        elif placement.halign == placement.CENTER:
-            x += bbox.width/2
-
-        if placement.valign == placement.BOTTOM:
-            y += bbox.height
-        elif placement.halign == placement.CENTER:
-            y += bbox.height/2
+        x = self._calculate_axis(placement.x)
+        y = self._calculate_axis(placement.y)
 
         self.move(x, y)
 
+    def _calculate_axis(self, axis_placement):
+        root_bbox = self._get_root_bbox()
+        bbox = root_bbox
+
+        if axis_placement.stickto == CaribouKeyboardPlacement.CURSOR:
+            bbox = self._cursor_location
+        elif axis_placement.stickto == CaribouKeyboardPlacement.ENTRY:
+            bbox = self._entry_location
+
+        offset = axis_placement.get_offset(bbox)
+
+        if axis_placement.align == CaribouKeyboardPlacement.END:
+            offset += axis_placement.get_length(bbox)
+        elif axis_placement.halign == CaribouKeyboardPlacement.CENTER:
+            offset += axis_placement.get_length(bbox)/2
+
+        return offset
+
 class CaribouKeyboardPlacement(object):
-    LEFT = 'left'
-    RIGHT = 'right'
-    TOP = 'top'
-    BOTTOM = 'bottom'
+    START = 'start'
+    END = 'end'
     CENTER = 'center'
     
     SCREEN = 'screen'
@@ -182,20 +181,28 @@ class CaribouKeyboardPlacement(object):
     INSIDE = 'inside'
     OUTSIDE = 'outside'
     
-    def __init__(self, halign=None, valign=None, stickto=None, 
-                 hgravitate=None, vgravitate=None):
-        self.halign = halign or self.LEFT
-        self.valign = valign or self.BOTTOM
-        self.stickto = stickto or self.CURSOR
-        self.hgravitate = hgravitate or self.OUTSIDE
-        self.vgravitate = vgravitate or self.OUTSIDE
+    class _AxisPlacement(object):
+        def __init__(self, axis, align=None, stickto=None, gravitate=None):
+            self.axis = axis
+            self.align = align or CaribouKeyboardPlacement.END
+            self.stickto = stickto or CaribouKeyboardPlacement.CURSOR
+            self.gravitate = gravitate or CaribouKeyboardPlacement.OUTSIDE
 
-    def copy(self, halign=None, valign=None, stickto=None, gravitate=None):
-        return self.__class__(halign or self.halign, 
-                              valign or self.valign, 
-                              stickto or self.stickto, 
-                              hgravitate or self.hgravitate,
-                              vgravitate or self.vgravitate)
+        def copy(self, align=None, stickto=None, gravitate=None):
+            return self.__class__(self.axis,
+                                  align or self.align, 
+                                  stickto or self.stickto, 
+                                  gravitate or self.gravitate)
+
+        def get_offset(self, bbox):
+            return bbox.x if self.axis == 'x' else bbox.y
+        
+        def get_length(self, bbox):
+            return bbox.width if self.axis == 'x' else bbox.height
+
+    def __init__(self, x=None, y=None):
+        self.x = x or self._AxisPlacement('x')
+        self.y = y or self._AxisPlacement('y')
 
 if __name__ == "__main__":
     ckbd = CaribouHoverWindow()
