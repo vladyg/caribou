@@ -54,7 +54,7 @@ class CaribouKeyboard(gtk.Frame):
                         if key == "cf":
                             # configuration key
                             # FIXME scale based on size of other buttons
-                            scaleFactor = 0.5 
+                            scaleFactor = 0.5
                             # FIXME catch "RuntimeError: unknown librsvg error" for file not found
                             # FIXME use broken image when file not found
                             svg = rsvg.Handle("config.svg")
@@ -66,12 +66,12 @@ class CaribouKeyboard(gtk.Frame):
                             svg.render_cairo(cr)
                             cfg = gtk.Image()
                             data = surface.get_data()
-	                    pixbuf = gtk.gdk.pixbuf_new_from_data(data, 
-                                                                  gtk.gdk.COLORSPACE_RGB, 
-                                                                  True, 
-                                                                  8, 
-                                                                  int(round(svg.props.width * scaleFactor)), 
-                                                                  int(round(svg.props.height * scaleFactor)), 
+	                    pixbuf = gtk.gdk.pixbuf_new_from_data(data,
+                                                                  gtk.gdk.COLORSPACE_RGB,
+                                                                  True,
+                                                                  8,
+                                                                  int(round(svg.props.width * scaleFactor)),
+                                                                  int(round(svg.props.height * scaleFactor)),
                                                                   int(round(svg.props.width * scaleFactor * 4)))
                             cfg.set_from_pixbuf(pixbuf)
                             button = gtk.Button()
@@ -102,7 +102,7 @@ class CaribouKeyboard(gtk.Frame):
                 layoutvbox.pack_start(rowhbox, expand=False, fill=True)
 
             self._layouts.append(layoutvbox)
-        
+
         # add configuration window to layouts
         # TODO use gtkBuilder
         confhbox = gtk.HBox(homogeneous=True)
@@ -125,7 +125,7 @@ class CaribouKeyboard(gtk.Frame):
                     break
             else:
                 print "ERROR" # TODO throw exception
-	
+
         # add the first layout and make it visible
         self.add(self._layouts[0])
         self.show_all()

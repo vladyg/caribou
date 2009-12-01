@@ -63,11 +63,11 @@ np = (".?12", "num_punct")
 lt = ("abc", "lowercase")
 
 ###############################################################################
-# keyboard layouts 
+# keyboard layouts
 # rules:
 #  * key can be a single utf-8 character or a tuple defined above
 #  * at least one layout must contain the reserved label "cf" for configuration
-#  * layouts must be the same dimensions 
+#  * layouts must be the same dimensions
 ###############################################################################
 
 lowercase = ( ("cf", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p"),
