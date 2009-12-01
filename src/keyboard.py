@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 #
 # Carbou - On-screen Keyboard and UI navigation application
 #
@@ -100,62 +100,75 @@ class CaribouKeyboard(gtk.Frame):
 
 gobject.type_register(CaribouKeyboard)
 
-class CaribouWindow(gtk.VBox):
+class CaribouWindow(gtk.Window):
     __gtype_name__ = "CaribouWindow"
 
     def __init__(self):
-        super(CaribouWindow, self).__init__()
+        super(CaribouWindow, self).__init__(gtk.WINDOW_POPUP)
         self.set_name("CaribouWindow")
 
-        self.__toplevel = gtk.Window(gtk.WINDOW_POPUP)
-        self.__toplevel.add(self)
-        self.__toplevel.connect("size-allocate", lambda w, a: self.__check_position())
-        self.__cursor_location = (0, 0)
-        self.pack_start(CaribouKeyboard(qwerty))
+        self._vbox = gtk.VBox()
+        self.add(self._vbox)
 
-        #print "----> SET CURSOR LOCATION"
-    def set_cursor_location(self, x, y, width, height):
-        self.__cursor_location = (x, y, width, height)
-        self.__check_position()
+        self.connect("size-allocate", lambda w, a: self._update_position())
 
-    def do_size_request(self, requisition):
-        #print "---->> DO SIZE REQUEST"
-        gtk.VBox.do_size_request(self, requisition)
-        self.__toplevel.resize(1, 1)
+        self._vbox.pack_start(CaribouKeyboard(qwerty))
 
-    def __check_position(self):
+class CaribouHoverWindow(CaribouWindow):
+    __gtype_name__ = "CaribouHoverWindow"
+    def __init__(self):
+        super(CaribouHoverWindow, self).__init__()
+        self._cursor_location = gtk.gdk.Rectangle()
+
+    def _set_cursor_location(self, val):
+        self._cursor_location = val
+        self._update_position()
+
+    def _get_cursor_location(self):
+        return self._cursor_location
+
+    cursor_location = gobject.property(type=object, 
+                                       setter=_set_cursor_location,
+                                       getter=_get_cursor_location)
+
+    def _update_position(self):
         #print "---->>> CHECK POSITION"
-        bx = self.__cursor_location[0] + self.__toplevel.allocation.width
-        by = self.__cursor_location[1] + self.__toplevel.allocation.height
+        bx = self.cursor_location.x + self.allocation.width
+        by = self.cursor_location.y + self.allocation.height
 
         root_window = gdk.get_default_root_window()
         sx, sy = root_window.get_size()
 
         if bx > sx:
-            x = sx - self.__toplevel.allocation.width
+            x = sx - self.allocation.width
         else:
-            x = self.__cursor_location[0]
+            x = self.cursor_location.x
 
         if by > sy:
-            y = self.__cursor_location[1] - self.__toplevel.allocation.height
+            y = self.cursor_location.y - self.allocation.height
         else:
-            y = self.__cursor_location[1] + self.__cursor_location[3]
+            y = self.cursor_location.y + self.cursor_location.height
 
         self.move(x, y)
 
-    def show_all(self):
-        gtk.VBox.show_all(self)
-        self.__toplevel.show_all()
+class CaribouKeyboardPlacement:
+    LEFT = 0
+    RIGHT = 1
+    TOP = 0
+    BOTTOM = 1
+    CENTER = 2
 
-    def hide_all(self):
-        gtk.VBox.hide_all(self)
-        self.__toplevel.hide_all()
+    SCREEN = 0
+    ENTRY = 1
+    CURSOR = 2
 
-    def move(self, x, y):
-        self.__toplevel.move(x, y)
+    INSIDE = 0
+    OUTSIDE = 1
+
+    
 
 if __name__ == "__main__":
-    ckbd = CaribouWindow()
+    ckbd = CaribouHoverWindow()
     ckbd.show_all()
     gtk.main()
 

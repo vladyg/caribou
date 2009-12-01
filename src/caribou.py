@@ -41,7 +41,7 @@ class Test:
     def __set_text_location(self, acc):
         text = acc.queryText() 
         [x, y, width, height] = text.getCharacterExtents(text.caretOffset, pyatspi.DESKTOP_COORDS)
-        cp.set_cursor_location(x, y, width, height)
+        cp.cursor_location = gtk.gdk.Rectangle(x, y, width, height)
         cp.show_all()
        
     def __set_entry_location(self, acc):
@@ -50,9 +50,9 @@ class Test:
         if x == 0 and y == 0 and width == 0 and height == 0:
             component = acc.queryComponent()
             bb = component.getExtents(pyatspi.DESKTOP_COORDS)
-            cp.set_cursor_location(bb.x, bb.y, bb.width, bb.height)
+            cp.cursor_location = gtk.gdk.Rectangle(bb.x, bb.y, bb.width, bb.height)
         else:
-            cp.set_cursor_location(x, y, width, height)
+            cp.cursor_location = gtk.gdk.Rectangle(x, y, width, height)
         cp.show_all()
        
     def on_state_changed_focused(self, event):
@@ -160,7 +160,7 @@ if __name__ == "__main__":
     pyatspi.Registry.registerKeystrokeListener(test.on_key_down, mask = None, kind = (pyatspi.KEY_PRESSED_EVENT,))
 
     # TODO: move text entry detection to its own file
-    cp = keyboard.CaribouWindow()
+    cp = keyboard.CaribouHoverWindow()
     cp.hide_all()
  
     gtk.main()
