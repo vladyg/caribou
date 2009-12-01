@@ -144,15 +144,21 @@ class CaribouHoverWindow(CaribouWindow):
         return gdk.Rectangle(*args)
             
     def _update_position(self, placement=None):
+        root_bbox = self._get_root_bbox()
         placement = placement or self._default_placement
 
-        x = self._calculate_axis(placement.x)
-        y = self._calculate_axis(placement.y)
+        x = self._calculate_axis(placement.x, root_bbox)
+        y = self._calculate_axis(placement.y, root_bbox)
+
+        proposed_position = \
+            gdk.Rectangle(x, y, self.allocation.width, self.allocation.height)
+
+        x += placement.x.adjust_to_bounds(root_bbox, proposed_position)
+        y += placement.y.adjust_to_bounds(root_bbox, proposed_position)
 
         self.move(x, y)
 
-    def _calculate_axis(self, axis_placement):
-        root_bbox = self._get_root_bbox()
+    def _calculate_axis(self, axis_placement, root_bbox):
         bbox = root_bbox
 
         if axis_placement.stickto == CaribouKeyboardPlacement.CURSOR:
@@ -164,7 +170,12 @@ class CaribouHoverWindow(CaribouWindow):
 
         if axis_placement.align == CaribouKeyboardPlacement.END:
             offset += axis_placement.get_length(bbox)
-        elif axis_placement.halign == CaribouKeyboardPlacement.CENTER:
+            if axis_placement.gravitate == CaribouKeyboardPlacement.INSIDE:
+                offset -= axis_placement.get_length(self.allocation)
+        elif axis_placement.align == CaribouKeyboardPlacement.START:
+            if axis_placement.gravitate == CaribouKeyboardPlacement.OUTSIDE:
+                offset -= axis_placement.get_length(self.allocation)
+        elif axis_placement.align == CaribouKeyboardPlacement.CENTER:
             offset += axis_placement.get_length(bbox)/2
 
         return offset
@@ -182,11 +193,11 @@ class CaribouKeyboardPlacement(object):
     OUTSIDE = 'outside'
     
     class _AxisPlacement(object):
-        def __init__(self, axis, align=None, stickto=None, gravitate=None):
+        def __init__(self, axis, align, stickto, gravitate):
             self.axis = axis
-            self.align = align or CaribouKeyboardPlacement.END
-            self.stickto = stickto or CaribouKeyboardPlacement.CURSOR
-            self.gravitate = gravitate or CaribouKeyboardPlacement.OUTSIDE
+            self.align = align
+            self.stickto = stickto
+            self.gravitate = gravitate
 
         def copy(self, align=None, stickto=None, gravitate=None):
             return self.__class__(self.axis,
@@ -200,9 +211,32 @@ class CaribouKeyboardPlacement(object):
         def get_length(self, bbox):
             return bbox.width if self.axis == 'x' else bbox.height
 
-    def __init__(self, x=None, y=None):
-        self.x = x or self._AxisPlacement('x')
-        self.y = y or self._AxisPlacement('y')
+        def adjust_to_bounds(self, root_bbox, child_bbox):
+            child_vector_start = self.get_offset(child_bbox)
+            child_vector_end = self.get_length(child_bbox) + child_vector_start
+            root_vector_start = self.get_offset(root_bbox)
+            root_vector_end = self.get_length(root_bbox) + root_vector_start
+
+            if root_vector_end < child_vector_end:
+                return root_vector_end - child_vector_end
+
+            if root_vector_start > child_vector_start:
+                return root_vector_start - child_vector_start
+
+            return 0
+            
+
+    def __init__(self, 
+                 xalign=None, xstickto=None, xgravitate=None,
+                 yalign=None, ystickto=None, ygravitate=None):
+        self.x = self._AxisPlacement('x',
+                                     xalign or self.END,
+                                     xstickto or self.CURSOR,
+                                     xgravitate or self.OUTSIDE)
+        self.y = self._AxisPlacement('y',
+                                     yalign or self.END,
+                                     ystickto or self.CURSOR,
+                                     ygravitate or self.OUTSIDE)
 
 if __name__ == "__main__":
     ckbd = CaribouHoverWindow()

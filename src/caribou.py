@@ -42,17 +42,27 @@ class Test:
         text = acc.queryText() 
         [x, y, width, height] = text.getCharacterExtents(text.caretOffset, pyatspi.DESKTOP_COORDS)
         cp.set_cursor_location(gtk.gdk.Rectangle(x, y, width, height))
+        
+        component = acc.queryComponent()
+        entry_bb = component.getExtents(pyatspi.DESKTOP_COORDS)
+        cp.set_entry_location(entry_bb)
         cp.show_all()
        
     def __set_entry_location(self, acc):
         text = acc.queryText()
-        [x, y, width, height] = text.getCharacterExtents(text.caretOffset, pyatspi.DESKTOP_COORDS)
-        if x == 0 and y == 0 and width == 0 and height == 0:
-            component = acc.queryComponent()
-            bb = component.getExtents(pyatspi.DESKTOP_COORDS)
-            cp.set_cursor_location(gtk.gdk.Rectangle(bb.x, bb.y, bb.width, bb.height))
-        else:
-            cp.set_cursor_location(gtk.gdk.Rectangle(x, y, width, height))
+        cursor_bb = gdk.Rectangle(
+            *text.getCharacterExtents(text.caretOffset, 
+                                      pyatspi.DESKTOP_COORDS))
+
+        component = acc.queryComponent()
+        entry_bb = component.getExtents(pyatspi.DESKTOP_COORDS)
+
+        if cursor_bb == gdk.Rectangle(0, 0, 0, 0):
+            cursor_bb = entry_bb
+
+        cp.set_cursor_location(cursor_bb)
+        cp.set_entry_location(entry_bb)
+
         cp.show_all()
        
     def on_state_changed_focused(self, event):
@@ -160,7 +170,13 @@ if __name__ == "__main__":
     pyatspi.Registry.registerKeystrokeListener(test.on_key_down, mask = None, kind = (pyatspi.KEY_PRESSED_EVENT,))
 
     # TODO: move text entry detection to its own file
-    cp = keyboard.CaribouHoverWindow()
+    placement = keyboard.CaribouKeyboardPlacement(
+        xalign=keyboard.CaribouKeyboardPlacement.START,
+        xstickto=keyboard.CaribouKeyboardPlacement.ENTRY,
+        ystickto=keyboard.CaribouKeyboardPlacement.ENTRY,
+        xgravitate=keyboard.CaribouKeyboardPlacement.INSIDE,
+        ygravitate=keyboard.CaribouKeyboardPlacement.INSIDE)
+    cp = keyboard.CaribouHoverWindow(placement)
     cp.hide_all()
  
     gtk.main()
