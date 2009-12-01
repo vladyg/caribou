@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 #
-# Carbou - Text entry and UI navigation application
+# Carbou - text entry and UI navigation application
 #
 # Copyright (C) 2009 Adaptive Technology Resource Centre
 #
@@ -24,6 +24,8 @@ import gtk.gdk as gdk
 import pango
 import virtkey
 import qwerty
+import rsvg
+import cairo
 
 class CaribouPredicitionArea(gtk.HBox):
     pass
@@ -49,9 +51,38 @@ class CaribouKeyboard(gtk.Frame):
                 for key in row:
                     # check if the key is a simple str or a key defined by a tuple
                     if isinstance(key, str):
-                        button = gtk.Button(key)
-                        char = ord(key.decode('utf-8'))
-                        button.connect("clicked", self.__send_unicode, char)
+                        if key == "cf":
+                            # configuration key
+                            # FIXME scale based on size of other buttons
+                            scaleFactor = 0.5 
+                            # FIXME catch "RuntimeError: unknown librsvg error" for file not found
+                            # FIXME use broken image when file not found
+                            svg = rsvg.Handle("config.svg")
+                            surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
+                                                         int(round(svg.props.width * scaleFactor)),
+                                                         int(round(svg.props.height * scaleFactor)))
+                            cr = cairo.Context(surface)
+                            cr.scale(scaleFactor, scaleFactor)
+                            svg.render_cairo(cr)
+                            cfg = gtk.Image()
+                            data = surface.get_data()
+	                    pixbuf = gtk.gdk.pixbuf_new_from_data(data, 
+                                                                  gtk.gdk.COLORSPACE_RGB, 
+                                                                  True, 
+                                                                  8, 
+                                                                  int(round(svg.props.width * scaleFactor)), 
+                                                                  int(round(svg.props.height * scaleFactor)), 
+                                                                  int(round(svg.props.width * scaleFactor * 4)))
+                            cfg.set_from_pixbuf(pixbuf)
+                            button = gtk.Button()
+                            button.set_image(cfg)
+                            button.set_name("configuration")
+                            switch_buttons.append(button)
+                        else:
+                            # single utf-8 character key
+                            button = gtk.Button(key)
+                            char = ord(key.decode('utf-8'))
+                            button.connect("clicked", self.__send_unicode, char)
                     elif isinstance(key, tuple):
                         button = gtk.Button(key[0])
                         # check if this key is a layout switch key or not
@@ -68,10 +99,24 @@ class CaribouKeyboard(gtk.Frame):
 
                     rowhbox.pack_start(button, expand=False, fill=True)
 
-                layoutvbox.pack_start(rowhbox, expand=False, fill=False)
+                layoutvbox.pack_start(rowhbox, expand=False, fill=True)
 
             self._layouts.append(layoutvbox)
+        
+        # add configuration window to layouts
+        # TODO use gtkBuilder
+        confhbox = gtk.HBox(homogeneous=True)
+        # return to first keyboard layout from configuration window
+        button = gtk.Button("abc") # FIXME use keyboard image
+        button.set_name(self._layouts[0].get_name())
+        switch_buttons.append(button)
+        confhbox.pack_start(button)
 
+        confhbox.pack_start(gtk.Label("configuration coming soon"))
+        confhbox.set_name("configuration")
+        self._layouts.append(confhbox)
+
+        # connect the change layout buttons
         for button in switch_buttons:
             for layout in self._layouts:
                 if button.get_name() == layout.get_name():
@@ -80,8 +125,8 @@ class CaribouKeyboard(gtk.Frame):
                     break
             else:
                 print "ERROR" # TODO throw exception
-
-        # add the first layer and make it visible
+	
+        # add the first layout and make it visible
         self.add(self._layouts[0])
         self.show_all()
 

@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 #
-# Carbou - Text entry and UI navigation application
+# Carbou - text entry and UI navigation application
 #
 # Copyright (C) 2009 Adaptive Technology Resource Centre
 #
@@ -63,19 +63,23 @@ np = (".?12", "num_punct")
 lt = ("abc", "lowercase")
 
 ###############################################################################
-# keyboard layouts - put a single utf-8 character or a tuple defined above
+# keyboard layouts 
+# rules:
+#  * key can be a single utf-8 character or a tuple defined above
+#  * at least one layout must contain the reserved label "cf" for configuration
+#  * layouts must be the same dimensions 
 ###############################################################################
 
-lowercase = ( ("?", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p"),
-              ( np, "a", "s", "d", "f", "g", "h", "j", "k", "l",  bs),
-              ( su, "z", "x", "c", "v", "b", "n", "m", sp,  ".",  en) )
+lowercase = ( ("cf", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p"),
+              (  np, "a", "s", "d", "f", "g", "h", "j", "k", "l",  bs),
+              (  su, "z", "x", "c", "v", "b", "n", "m", sp,  ".",  en) )
 
-uppercase = ( ("?", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"),
-              ( np, "A", "S", "D", "F", "G", "H", "J", "K", "L",  bs),
-              ( sd, "Z", "X", "C", "V", "B", "N", "M",  sp, ".",  en) )
+uppercase = ( ("cf", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"),
+              (  np, "A", "S", "D", "F", "G", "H", "J", "K", "L",  bs),
+              (  sd, "Z", "X", "C", "V", "B", "N", "M",  sp, ".",  en) )
 
 num_punct = ( ("!", "1", "2", "3", "4", "5", "6",  "7",  "8", "9", "0"),
-              ( lt, "@", "$", "/", "+", "-",  up, "\"",  ",", "#",  bs),
+              ( lt, "@", "$", "/", "+", "-",  up, "\"",  ",", "?",  bs),
               ("'", "(", ")", ";", ":",  le,  dn,   ri,   sp, ".",  en) )
 
 ###############################################################################
