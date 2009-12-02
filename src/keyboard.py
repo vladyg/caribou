@@ -23,7 +23,7 @@ import gobject
 import gtk.gdk as gdk
 import pango
 import virtkey
-import qwerty
+from keyboards import qwerty
 import rsvg
 import cairo
 
