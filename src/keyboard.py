@@ -53,30 +53,12 @@ class CaribouKeyboard(gtk.Frame):
                     if isinstance(key, str):
                         if key == "cf":
                             # configuration key
-                            # FIXME scale based on size of other buttons
-                            scaleFactor = 0.5
-                            # FIXME catch "RuntimeError: unknown librsvg error" for file not found
-                            # FIXME use broken image when file not found
-                            svg = rsvg.Handle("config.svg")
-                            surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
-                                                         int(round(svg.props.width * scaleFactor)),
-                                                         int(round(svg.props.height * scaleFactor)))
-                            cr = cairo.Context(surface)
-                            cr.scale(scaleFactor, scaleFactor)
-                            svg.render_cairo(cr)
-                            cfg = gtk.Image()
-                            data = surface.get_data()
-	                    pixbuf = gtk.gdk.pixbuf_new_from_data(data,
-                                                                  gtk.gdk.COLORSPACE_RGB,
-                                                                  True,
-                                                                  8,
-                                                                  int(round(svg.props.width * scaleFactor)),
-                                                                  int(round(svg.props.height * scaleFactor)),
-                                                                  int(round(svg.props.width * scaleFactor * 4)))
-                            cfg.set_from_pixbuf(pixbuf)
                             button = gtk.Button()
-                            button.set_image(cfg)
-                            button.set_name("configuration")
+                            image = gtk.image_new_from_pixbuf(
+                                button.render_icon(gtk.STOCK_PREFERENCES,
+                                                   gtk.ICON_SIZE_BUTTON))
+                            button.set_image(image)
+                            button.set_name ("configuration")
                             switch_buttons.append(button)
                         else:
                             # single utf-8 character key
