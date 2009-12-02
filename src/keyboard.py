@@ -83,18 +83,24 @@ class CaribouKeyboard(gtk.Frame):
 
             layouts.append(layoutvbox)
 
-        # add configuration window to layouts
-        # TODO use gtkBuilder
-        confhbox = gtk.HBox(homogeneous=True)
-        # return to first keyboard layout from configuration window
-        button = gtk.Button("abc") # FIXME use keyboard image
+        # add preferences layout
+        image = gtk.Image()
+        image.set_from_icon_name("gnome-dev-keyboard", gtk.ICON_SIZE_BUTTON)
+        button = gtk.Button()
+        button.set_image(image)
         button.set_name(layouts[0].get_name())
         switch_buttons.append(button)
-        confhbox.pack_start(button)
 
+        confhbox = gtk.HBox()
+        confhbox.pack_start(button)
         confhbox.pack_start(gtk.Label("configuration coming soon"))
-        confhbox.set_name("configuration")
-        layouts.append(confhbox)
+
+        confvbox = gtk.VBox(homogeneous=True)
+        confvbox.pack_start(confhbox)
+        confvbox.pack_start(gtk.HBox())
+        confvbox.pack_start(gtk.HBox())
+        confvbox.set_name("configuration")
+        layouts.append(confvbox)
 
         # connect the change layout buttons
         for button in switch_buttons:
