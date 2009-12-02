@@ -143,7 +143,7 @@ class CaribouHoverWindow(CaribouWindow):
         args = root_window.get_position() + root_window.get_size()
         return gdk.Rectangle(*args)
             
-    def _update_position(self, placement=None):
+    def _calculate_position(self, placement=None):
         root_bbox = self._get_root_bbox()
         placement = placement or self._default_placement
 
@@ -156,7 +156,10 @@ class CaribouHoverWindow(CaribouWindow):
         x += placement.x.adjust_to_bounds(root_bbox, proposed_position)
         y += placement.y.adjust_to_bounds(root_bbox, proposed_position)
 
-        self.move(x, y)
+        return x, y
+
+    def _update_position(self):
+        self.move(*self._calculate_position())
 
     def _calculate_axis(self, axis_placement, root_bbox):
         bbox = root_bbox
