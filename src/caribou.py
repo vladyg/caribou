@@ -1,5 +1,5 @@
 #
-# Carbou - On-screen Keyboard and UI navigation application
+# Carbou - text entry and UI navigation application
 #
 # Copyright (C) 2009 Adaptive Technology Resource Centre
 #
@@ -137,28 +137,33 @@ class Test:
 def usage():
     """Prints out usage information."""
     print _("Usage:")
-    print "  " + sys.arg[0] + _(" [OPTION...]")
+    print "  " + sys.argv[0] + _(" [OPTION...]")
     print
     print _("Help Options:")
-    print "  -h, --help                       " + _("Show this help message")
     print "  -d, --debug                      " + _("Print debug messages on stdout")
+    print "  -h, --help                       " + _("Show this help message")
+    print "  -v, --version                    " + _("Display version")
 
 if __name__ == "__main__":
 
     try:
-        options, xargs = getopt.getopt(sys.argv[1:], "d", ["debug"])
+        options, xargs = getopt.getopt(sys.argv[1:], "dhv", ["debug", "help", "version"])
     except getopt.GetoptError, e:
         print "Error: " + e.__str__() + "\n"
         usage()
         sys.exit(1)
  
     for opt, val in options:
+        if opt in ("-d", "--debug"):
+            debug = True
+
         if opt in ("-h", "--help"):
             usage()
             sys.exit(0)
 
-        if opt in ("-d", "--debug"):
-            debug = True
+        if opt in ("-v", "--version"):
+            print "caribou @VERSION@"
+            sys.exit(0)
 
     test = Test()
     # TODO: make a for loop

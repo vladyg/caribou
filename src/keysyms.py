@@ -1,5 +1,5 @@
 #
-# Carbou - On-screen Keyboard and UI navigation application
+# Carbou - text entry and UI navigation application
 #
 # Copyright (C) 2009 Adaptive Technology Resource Centre
 #
