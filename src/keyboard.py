@@ -37,11 +37,9 @@ class CaribouKeyboard(gtk.Frame):
         gtk.Frame.__init__(self)
         self.set_shadow_type(gtk.SHADOW_NONE)
 
-        # FIXME use references instead of this??
-        self._layouts = []
         self._vk = virtkey.virtkey()
 
-        switch_buttons = []
+        layouts, switch_buttons = [], []
         for layout in keyboard.layouts:
             layoutvbox = gtk.VBox(homogeneous=True)
             layoutvbox.set_name(layout)
@@ -83,24 +81,24 @@ class CaribouKeyboard(gtk.Frame):
 
                 layoutvbox.pack_start(rowhbox, expand=False, fill=True)
 
-            self._layouts.append(layoutvbox)
+            layouts.append(layoutvbox)
 
         # add configuration window to layouts
         # TODO use gtkBuilder
         confhbox = gtk.HBox(homogeneous=True)
         # return to first keyboard layout from configuration window
         button = gtk.Button("abc") # FIXME use keyboard image
-        button.set_name(self._layouts[0].get_name())
+        button.set_name(layouts[0].get_name())
         switch_buttons.append(button)
         confhbox.pack_start(button)
 
         confhbox.pack_start(gtk.Label("configuration coming soon"))
         confhbox.set_name("configuration")
-        self._layouts.append(confhbox)
+        layouts.append(confhbox)
 
         # connect the change layout buttons
         for button in switch_buttons:
-            for layout in self._layouts:
+            for layout in layouts:
                 if button.get_name() == layout.get_name():
                     button.connect("clicked", self.__change_layout, layout)
                     button.set_name("")
@@ -109,7 +107,9 @@ class CaribouKeyboard(gtk.Frame):
                 print "ERROR" # TODO throw exception
 
         # add the first layout and make it visible
-        self.add(self._layouts[0])
+        self.add(layouts[0])
+        del layouts
+        del switch_buttons
         self.show_all()
 
     def __send_unicode(self, widget, data):
