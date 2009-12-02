@@ -18,7 +18,7 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-import keysyms 
+import keysyms
 
 # TODO add horizontal keysize - will be able to specify a mulitplier
 # TODO add key colour
@@ -34,7 +34,7 @@ import keysyms
 
 # backspace
 bs = ("⌫", keysyms.backspace)
-# enter 
+# enter
 en = ("↲", keysyms.enter)
 # space
 sp = ("␣", keysyms.space)
@@ -58,7 +58,7 @@ su = ("⇧", "uppercase")
 # shift down
 sd = ("⇩", "lowercase")
 # number and punctuation
-np = (".?12", "num_punct") 
+np = (".?12", "num_punct")
 # letters
 lt = ("abc", "lowercase")
 
