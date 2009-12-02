@@ -1,0 +1,20 @@
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">caribou</name>
+  <shortdesc xml:lang="en">text entry and UI navigation application</shortdesc>
+  <homepage rdf:resource="http://live.gnome.org/Caribou" />
+  <mailing-list rdf:resource="http://mail.gnome.org/mailman/listinfo/gok-list" />
+  <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Ben Konrath</foaf:name>
+      <foaf:mbox rdf:resource="mailto:ben@bagu.org" />
+      <gnome:userid>bkonrath</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+</Project>
