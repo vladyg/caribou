@@ -175,13 +175,8 @@ if __name__ == "__main__":
     pyatspi.Registry.registerKeystrokeListener(test.on_key_down, mask = None, kind = (pyatspi.KEY_PRESSED_EVENT,))
 
     # TODO: move text entry detection to its own file
-    placement = keyboard.CaribouKeyboardPlacement(
-        xalign=keyboard.CaribouKeyboardPlacement.START,
-        xstickto=keyboard.CaribouKeyboardPlacement.ENTRY,
-        ystickto=keyboard.CaribouKeyboardPlacement.ENTRY,
-        xgravitate=keyboard.CaribouKeyboardPlacement.INSIDE,
-        ygravitate=keyboard.CaribouKeyboardPlacement.INSIDE)
-    cp = keyboard.CaribouHoverWindow(placement)
+
+    cp = keyboard.CaribouWindowEntry()
     cp.hide_all()
  
     gtk.main()

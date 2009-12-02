@@ -130,20 +130,14 @@ gobject.type_register(CaribouKeyboard)
 class CaribouWindow(gtk.Window):
     __gtype_name__ = "CaribouWindow"
 
-    def __init__(self):
+    def __init__(self, default_placement=None):
         super(CaribouWindow, self).__init__(gtk.WINDOW_POPUP)
         self.set_name("CaribouWindow")
 
         self._vbox = gtk.VBox()
         self.add(self._vbox)
 
-        self._vbox.pack_start(CaribouKeyboard(qwerty))
-
-class CaribouHoverWindow(CaribouWindow):
-    __gtype_name__ = "CaribouHoverWindow"
-
-    def __init__(self, default_placement=None):
-        super(CaribouHoverWindow, self).__init__()
+        self._vbox.pack_start(CaribouKeyboard(qwerty))    
 
         self.connect("size-allocate", lambda w, a: self._update_position())
 
@@ -151,7 +145,6 @@ class CaribouHoverWindow(CaribouWindow):
         self._entry_location = gtk.gdk.Rectangle()
         self._default_placement = default_placement or \
             CaribouKeyboardPlacement()
-    
 
     def set_cursor_location(self, cursor_location):
         self._cursor_location = cursor_location
@@ -177,16 +170,18 @@ class CaribouHoverWindow(CaribouWindow):
         x = self._calculate_axis(placement.x, root_bbox)
         y = self._calculate_axis(placement.y, root_bbox)
 
-        proposed_position = \
-            gdk.Rectangle(x, y, self.allocation.width, self.allocation.height)
-
-        x += placement.x.adjust_to_bounds(root_bbox, proposed_position)
-        y += placement.y.adjust_to_bounds(root_bbox, proposed_position)
-
+        
         return x, y
 
     def _update_position(self):
-        self.move(*self._calculate_position())
+        x, y = self._calculate_position()
+        root_bbox = self._get_root_bbox()
+        proposed_position = \
+            gdk.Rectangle(x, y, self.allocation.width, self.allocation.height)
+
+        x += self._default_placement.x.adjust_to_bounds(root_bbox, proposed_position)
+        y += self._default_placement.y.adjust_to_bounds(root_bbox, proposed_position)
+        self.move(x, y)
 
     def _calculate_axis(self, axis_placement, root_bbox):
         bbox = root_bbox
@@ -207,6 +202,29 @@ class CaribouHoverWindow(CaribouWindow):
                 offset -= axis_placement.get_length(self.allocation)
         elif axis_placement.align == CaribouKeyboardPlacement.CENTER:
             offset += axis_placement.get_length(bbox)/2
+
+        return offset
+
+class CaribouWindowEntry(CaribouWindow):
+    __gtype_name__ = "CaribouWindowEntry"
+
+    def __init__(self):
+        placement = CaribouKeyboardPlacement(
+            xalign=CaribouKeyboardPlacement.START,
+            xstickto=CaribouKeyboardPlacement.ENTRY,
+            ystickto=CaribouKeyboardPlacement.ENTRY,
+            xgravitate=CaribouKeyboardPlacement.INSIDE,
+            ygravitate=CaribouKeyboardPlacement.OUTSIDE)
+
+        CaribouWindow.__init__(self, placement)
+
+    def _calculate_axis(self, axis_placement, root_bbox):
+        offset = CaribouWindow._calculate_axis(self, axis_placement, root_bbox)
+
+        if axis_placement.axis == 'y':
+            if offset + self.allocation.height > root_bbox.height + root_bbox.y:
+                new_axis_placement = axis_placement.copy(align=CaribouKeyboardPlacement.START)
+                offset = CaribouWindow._calculate_axis(self, new_axis_placement, root_bbox)
 
         return offset
 
@@ -269,7 +287,7 @@ class CaribouKeyboardPlacement(object):
                                      ygravitate or self.OUTSIDE)
 
 if __name__ == "__main__":
-    ckbd = CaribouHoverWindow()
+    ckbd = CaribouWindow()
     ckbd.show_all()
     gtk.main()
 
