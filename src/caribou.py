@@ -20,7 +20,8 @@
 
 import pyatspi
 import gtk
-import keyboard
+import gtk.gdk as gdk
+import window
 import gettext
 import getopt
 import sys
@@ -29,7 +30,7 @@ _ = gettext.gettext
 
 debug = False
 
-class Test:
+class Caribou:
     def __init__(self):
         self.__current_acc = None 
 
@@ -37,34 +38,35 @@ class Test:
         if self.__current_acc == event.source:
             self.__set_location(event.source)
             if debug == True:
-                print "object:text-caret-moved in", event.host_application.name, event.detail1, event.source.description
+                print "object:text-caret-moved in", event.host_application.name,
+                print event.detail1, event.source.description
     
     def __set_text_location(self, acc):
         text = acc.queryText() 
         [x, y, width, height] = text.getCharacterExtents(text.caretOffset, pyatspi.DESKTOP_COORDS)
-        cp.set_cursor_location(gtk.gdk.Rectangle(x, y, width, height))
+        caribouwindow.set_cursor_location(gdk.Rectangle(x, y, width, height))
         
         component = acc.queryComponent()
         entry_bb = component.getExtents(pyatspi.DESKTOP_COORDS)
-        cp.set_entry_location(entry_bb)
-        cp.show_all()
+        caribouwindow.set_entry_location(entry_bb)
+        caribouwindow.show_all()
        
     def __set_entry_location(self, acc):
         text = acc.queryText()
-        cursor_bb = gtk.gdk.Rectangle(
-            *text.getCharacterExtents(text.caretOffset, 
+        cursor_bb = gdk.Rectangle(
+            *text.getCharacterExtents(text.caretOffset,
                                       pyatspi.DESKTOP_COORDS))
 
         component = acc.queryComponent()
         entry_bb = component.getExtents(pyatspi.DESKTOP_COORDS)
 
-        if cursor_bb == gtk.gdk.Rectangle(0, 0, 0, 0):
+        if cursor_bb == gdk.Rectangle(0, 0, 0, 0):
             cursor_bb = entry_bb
 
-        cp.set_cursor_location(cursor_bb)
-        cp.set_entry_location(entry_bb)
+        caribouwindow.set_cursor_location(cursor_bb)
+        caribouwindow.set_entry_location(entry_bb)
 
-        cp.show_all()
+        caribouwindow.show_all()
        
     def on_state_changed_focused(self, event):
         acc = event.source
@@ -77,7 +79,7 @@ class Test:
                     if debug == True:
                         print "enter text widget in", event.host_application.name
                 elif event.detail1 == 0:
-                    cp.hide_all()
+                    caribouwindow.hide_all()
                     self.__current_acc = None 
                     self.__set_location = None
                     if debug == True:
@@ -91,7 +93,7 @@ class Test:
                     if debug == True:
                         print "enter entry widget in", event.host_application.name
                 elif event.detail1 == 0:
-                    cp.hide_all()
+                    caribouwindow.hide_all()
                     self.__current_acc = None 
                     self.__set_location = None
                     if debug == True:
@@ -103,18 +105,17 @@ class Test:
         # This could be a way to get the entry widget leave events.
         #else:
         #    if event.detail1 == 1:
-        #        cp.hide_all()
+        #        caribouwindow.hide_all()
         #        print "--> LEAVE EDITABLE TEXT <--"
 
     def on_key_down(self, event):
         # key binding for controling the row column scanning
-        # TODO: needs implementing
         if event.event_string == "Shift_R":
+            # TODO: implement keyboard scanning
             pass 
         elif event.event_string == "Control_R":
             if debug == True:
                 print "quitting ..."
-            # TODO: use for loop here? see below
             result = pyatspi.Registry.deregisterEventListener(self.on_text_caret_moved, "object:text-caret-moved")
             if debug == True:
                 print "deregisterEventListener - object:text-caret-moved ...",
@@ -129,7 +130,7 @@ class Test:
                     print "OK"
                 else:
                     print "FAIL"
-            result = pyatspi.Registry.deregisterKeystrokeListener(self.on_key_down, mask = None, kind = (pyatspi.KEY_PRESSED_EVENT,))
+            result = pyatspi.Registry.deregisterKeystrokeListener(self.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
             if debug == True:
                 print "deregisterKeystrokeListener"
             gtk.main_quit()
@@ -148,7 +149,8 @@ def usage():
 if __name__ == "__main__":
 
     try:
-        options, xargs = getopt.getopt(sys.argv[1:], "dhv", ["debug", "help", "version"])
+        options, xargs = getopt.getopt(sys.argv[1:], "dhv",
+            ["debug", "help", "version"])
     except getopt.GetoptError, e:
         print "Error: " + e.__str__() + "\n"
         usage()
@@ -166,18 +168,14 @@ if __name__ == "__main__":
             print "caribou @VERSION@"
             sys.exit(0)
 
-    test = Test()
-    # TODO: make a for loop
-    #EVENTS = ["object:state-changed:focused", "object:text-caret-moved"]
-    #for f in dir(test):
-    #    print f, isinstance(f, str)
-    pyatspi.Registry.registerEventListener(test.on_state_changed_focused, "object:state-changed:focused")
-    pyatspi.Registry.registerEventListener(test.on_text_caret_moved, "object:text-caret-moved")
-    pyatspi.Registry.registerKeystrokeListener(test.on_key_down, mask = None, kind = (pyatspi.KEY_PRESSED_EVENT,))
+    caribou = Caribou()
+    pyatspi.Registry.registerEventListener(caribou.on_state_changed_focused, "object:state-changed:focused")
+    pyatspi.Registry.registerEventListener(caribou.on_text_caret_moved, "object:text-caret-moved")
+    pyatspi.Registry.registerKeystrokeListener(caribou.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
 
     # TODO: move text entry detection to its own file
 
-    cp = keyboard.CaribouWindowEntry()
-    cp.hide_all()
+    caribouwindow = window.CaribouWindowEntry()
+    caribouwindow.hide_all()
  
     gtk.main()
