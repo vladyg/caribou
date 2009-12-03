@@ -32,6 +32,7 @@ class CaribouPredicitionArea(gtk.HBox):
 
 # TODO validate keyboard by creating this object and catching exception
 class CaribouKeyboard(gtk.Frame):
+    __gtype_name__ = "CaribouKeyboard"
 
     def __init__(self, keyboard):
         gtk.Frame.__init__(self)
@@ -130,8 +131,6 @@ class CaribouKeyboard(gtk.Frame):
         self.remove(self.get_child())
         self.add(data)
         self.show_all()
-
-gobject.type_register(CaribouKeyboard)
 
 class CaribouWindow(gtk.Window):
     __gtype_name__ = "CaribouWindow"
