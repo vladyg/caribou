@@ -50,14 +50,14 @@ class Test:
        
     def __set_entry_location(self, acc):
         text = acc.queryText()
-        cursor_bb = gdk.Rectangle(
+        cursor_bb = gtk.gdk.Rectangle(
             *text.getCharacterExtents(text.caretOffset, 
                                       pyatspi.DESKTOP_COORDS))
 
         component = acc.queryComponent()
         entry_bb = component.getExtents(pyatspi.DESKTOP_COORDS)
 
-        if cursor_bb == gdk.Rectangle(0, 0, 0, 0):
+        if cursor_bb == gtk.gdk.Rectangle(0, 0, 0, 0):
             cursor_bb = entry_bb
 
         cp.set_cursor_location(cursor_bb)
