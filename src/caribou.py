@@ -21,7 +21,7 @@
 import pyatspi
 import gtk
 import gtk.gdk as gdk
-import window
+import caribou.window as window
 import gettext
 import getopt
 import sys
