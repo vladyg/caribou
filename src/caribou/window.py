@@ -20,6 +20,8 @@
 
 import gtk
 import gtk.gdk as gdk
+import glib
+from math import sqrt
 import keyboard
 from keyboards import qwerty
 
@@ -100,7 +102,75 @@ class CaribouWindow(gtk.Window):
 
         return offset
 
-class CaribouWindowEntry(CaribouWindow):
+class CaribouWindowTransparent(CaribouWindow):
+    __gtype_name__ = "CaribouWindowTransparent"
+
+    def __init__(self, placement=None, max_distance=100, min_alpha=0, max_alpha=1):
+        CaribouWindow.__init__(self, placement)
+        self.connect('map-event', self._onmapped)
+        self._position = (0, 0)
+        self.max_distance = max_distance
+        self.min_alpha = min_alpha
+        self.max_alpha = max_alpha
+
+    def move(self, x, y):
+        self._position = (x, y)
+        CaribouWindow.move(self, x, y)
+
+    def _onmapped(self, obj, event):
+        if self.is_composited():
+            # Don't waste CPU if we are not composited.
+            glib.timeout_add(80, self._proximity_check)
+            self.set_opacity(self.max_alpha)
+
+    def _proximity_check(self):
+        x, y = self.get_pointer()
+        x += self._position[0]
+        y += self._position[1]
+        distance =  self._get_distance_to_bbox(
+            x, y, gtk.gdk.Rectangle(self._position[0], self._position[1],
+                                    self.allocation.width, self.allocation.height))
+
+        if CaribouWindowPlacement.SCREEN != self._default_placement.x.stickto or \
+                CaribouWindowPlacement.SCREEN != self._default_placement.y.stickto:
+            if self._entry_location != gtk.gdk.Rectangle(0, 0, 0, 0):
+                distance2 = self._get_distance_to_bbox(x, y, self._entry_location)
+                distance = min(distance, distance2)
+
+        opacity = (self.max_alpha - self.min_alpha) * \
+            (1 - min(distance, self.max_distance)/self.max_distance)
+        opacity += self.min_alpha
+
+        self.set_opacity(opacity)
+        return self.props.visible
+
+    def _get_distance_to_bbox(self, x, y, bbox):
+        if x < bbox.x:
+            x_distance = bbox.x - x
+        elif x > bbox.width + bbox.x:
+            x_distance = bbox.width + bbox.x - x
+        else:
+            x_distance = 0
+
+        if y < bbox.y:
+            y_distance = bbox.y - y
+        elif y > bbox.height + bbox.y:
+            y_distance = bbox.height + bbox.y - y
+        else:
+            y_distance = 0
+
+        if y_distance == 0 and x_distance == 0:
+            return 0.0
+        elif y_distance != 0 and x_distance == 0:
+            return abs(float(y_distance))
+        elif y_distance == 0 and x_distance != 0:
+            return abs(float(x_distance))
+        else:
+            x2 = bbox.x if x_distance > 0 else bbox.x + bbox.width
+            y2 = bbox.y if y_distance > 0 else bbox.y + bbox.height
+            return sqrt((x - x2)**2 + (y - y2)**2)
+
+class CaribouWindowEntry(CaribouWindowTransparent):
     __gtype_name__ = "CaribouWindowEntry"
 
     def __init__(self):
@@ -111,7 +181,8 @@ class CaribouWindowEntry(CaribouWindow):
             xgravitate=CaribouWindowPlacement.INSIDE,
             ygravitate=CaribouWindowPlacement.OUTSIDE)
 
-        CaribouWindow.__init__(self, placement)
+        CaribouWindowTransparent.__init__(
+            self, placement, min_alpha=0.075, max_alpha=0.8)
 
     def _calculate_axis(self, axis_placement, root_bbox):
         offset = CaribouWindow._calculate_axis(self, axis_placement, root_bbox)
