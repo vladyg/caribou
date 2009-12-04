@@ -110,6 +110,8 @@ class CaribouWindowTransparent(CaribouWindow):
         self.connect('map-event', self._onmapped)
         self._position = (0, 0)
         self.max_distance = max_distance
+        if max_alpha < min_alpha:
+            raise ValueError, "min_alpha can't be larger than max_alpha"
         self.min_alpha = min_alpha
         self.max_alpha = max_alpha
 
@@ -119,9 +121,10 @@ class CaribouWindowTransparent(CaribouWindow):
 
     def _onmapped(self, obj, event):
         if self.is_composited():
-            # Don't waste CPU if we are not composited.
-            glib.timeout_add(80, self._proximity_check)
             self.set_opacity(self.max_alpha)
+            if self.max_alpha != self.min_alpha:
+                # Don't waste CPU if the max and min are equal.
+                glib.timeout_add(80, self._proximity_check)
 
     def _proximity_check(self):
         x, y = self.get_pointer()
