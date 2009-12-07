@@ -28,7 +28,8 @@ from keyboards import qwerty
 class CaribouWindow(gtk.Window):
     __gtype_name__ = "CaribouWindow"
 
-    def __init__(self, default_placement=None):
+    def __init__(self, default_placement=None, 
+                 min_alpha=1.0, max_alpha=1.0, max_distance=100):
         super(CaribouWindow, self).__init__(gtk.WINDOW_POPUP)
         self.set_name("CaribouWindow")
 
@@ -43,6 +44,14 @@ class CaribouWindow(gtk.Window):
         self._entry_location = gdk.Rectangle()
         self._default_placement = default_placement or \
             CaribouWindowPlacement()
+        
+        # Alpha and proximity stuff
+        self.connect('map-event', self._onmapped)
+        self.max_distance = max_distance
+        if max_alpha < min_alpha:
+            raise ValueError, "min_alpha can't be larger than max_alpha"
+        self.min_alpha = min_alpha
+        self.max_alpha = max_alpha
 
     def set_cursor_location(self, cursor_location):
         self._cursor_location = cursor_location
@@ -102,23 +111,6 @@ class CaribouWindow(gtk.Window):
 
         return offset
 
-class CaribouWindowTransparent(CaribouWindow):
-    __gtype_name__ = "CaribouWindowTransparent"
-
-    def __init__(self, placement=None, max_distance=100, min_alpha=0, max_alpha=1):
-        CaribouWindow.__init__(self, placement)
-        self.connect('map-event', self._onmapped)
-        self._position = (0, 0)
-        self.max_distance = max_distance
-        if max_alpha < min_alpha:
-            raise ValueError, "min_alpha can't be larger than max_alpha"
-        self.min_alpha = min_alpha
-        self.max_alpha = max_alpha
-
-    def move(self, x, y):
-        self._position = (x, y)
-        CaribouWindow.move(self, x, y)
-
     def _onmapped(self, obj, event):
         if self.is_composited():
             self.set_opacity(self.max_alpha)
@@ -128,11 +120,14 @@ class CaribouWindowTransparent(CaribouWindow):
 
     def _proximity_check(self):
         x, y = self.get_pointer()
-        x += self._position[0]
-        y += self._position[1]
+        abs_x, abs_y = self.get_position()
+        x += abs_x
+        y += abs_y
+        
         distance =  self._get_distance_to_bbox(
-            x, y, gtk.gdk.Rectangle(self._position[0], self._position[1],
-                                    self.allocation.width, self.allocation.height))
+            x, y, gtk.gdk.Rectangle(abs_x, abs_y,
+                                    self.allocation.width, 
+                                    self.allocation.height))
 
         if CaribouWindowPlacement.SCREEN != self._default_placement.x.stickto or \
                 CaribouWindowPlacement.SCREEN != self._default_placement.y.stickto:
@@ -173,7 +168,7 @@ class CaribouWindowTransparent(CaribouWindow):
             y2 = bbox.y if y_distance > 0 else bbox.y + bbox.height
             return sqrt((x - x2)**2 + (y - y2)**2)
 
-class CaribouWindowEntry(CaribouWindowTransparent):
+class CaribouWindowEntry(CaribouWindow):
     __gtype_name__ = "CaribouWindowEntry"
 
     def __init__(self):
@@ -184,7 +179,7 @@ class CaribouWindowEntry(CaribouWindowTransparent):
             xgravitate=CaribouWindowPlacement.INSIDE,
             ygravitate=CaribouWindowPlacement.OUTSIDE)
 
-        CaribouWindowTransparent.__init__(
+        CaribouWindow.__init__(
             self, placement, min_alpha=0.075, max_alpha=0.8)
 
     def _calculate_axis(self, axis_placement, root_bbox):
