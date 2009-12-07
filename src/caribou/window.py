@@ -129,10 +129,13 @@ class CaribouWindow(gtk.Window):
                                     self.allocation.width, 
                                     self.allocation.height))
 
-        if CaribouWindowPlacement.SCREEN != self._default_placement.x.stickto or \
-                CaribouWindowPlacement.SCREEN != self._default_placement.y.stickto:
+        if CaribouWindowPlacement.SCREEN != \
+                self._default_placement.x.stickto or \
+                CaribouWindowPlacement.SCREEN != \
+                self._default_placement.y.stickto:
             if self._entry_location != gtk.gdk.Rectangle(0, 0, 0, 0):
-                distance2 = self._get_distance_to_bbox(x, y, self._entry_location)
+                distance2 = self._get_distance_to_bbox(x, y, 
+                                                       self._entry_location)
                 distance = min(distance, distance2)
 
         opacity = (self.max_alpha - self.min_alpha) * \
