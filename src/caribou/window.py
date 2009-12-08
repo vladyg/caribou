@@ -21,11 +21,11 @@
 import gtk
 import gtk.gdk as gdk
 import glib
-from math import sqrt
 import keyboard
 from keyboards import qwerty
 import gconf
 import animation
+import opacity
 
 class CaribouWindow(gtk.Window):
     __gtype_name__ = "CaribouWindow"
@@ -47,14 +47,6 @@ class CaribouWindow(gtk.Window):
         self._default_placement = default_placement or \
             CaribouWindowPlacement()
         
-        # Alpha and proximity stuff
-        self.connect('map-event', self._onmapped)
-        self.max_distance = max_distance
-        if max_alpha < min_alpha:
-            raise ValueError, "min_alpha can't be larger than max_alpha"
-        self.min_alpha = min_alpha
-        self.max_alpha = max_alpha
-
     def set_cursor_location(self, cursor_location):
         self._cursor_location = cursor_location
         self._update_position()
@@ -70,7 +62,28 @@ class CaribouWindow(gtk.Window):
     def _get_root_bbox(self):
         root_window = gdk.get_default_root_window()
         args = root_window.get_position() + root_window.get_size()
-        return gdk.Rectangle(*args)
+
+        root_bbox = gdk.Rectangle(*args)
+
+        current_screen = gtk.gdk.screen_get_default().get_number()
+        for panel in self._gconf_client.all_dirs('/apps/panel/toplevels'):
+            orientation = self._gconf_client.get_string(panel+'/orientation')
+            size = self._gconf_client.get_int(panel+'/size')
+            screen = self._gconf_client.get_int(panel+'/screen')
+            if screen != current_screen:
+                continue
+            if orientation == 'top':
+                root_bbox.y += size
+                root_bbox.height -= size
+            elif orientation == 'bottom':
+                root_bbox.height -= size
+            elif orientation == 'right':
+                root_bbox.x += size
+                root_bbox.width -= size
+            elif orientation == 'left':
+                root_bbox.x -= size
+        
+        return root_bbox
 
     def _calculate_position(self, placement=None):
         root_bbox = self._get_root_bbox()
@@ -113,67 +126,10 @@ class CaribouWindow(gtk.Window):
 
         return offset
 
-    def _onmapped(self, obj, event):
-        if self.is_composited():
-            self.set_opacity(self.max_alpha)
-            if self.max_alpha != self.min_alpha:
-                # Don't waste CPU if the max and min are equal.
-                glib.timeout_add(80, self._proximity_check)
 
-    def _proximity_check(self):
-        x, y = self.get_pointer()
-        abs_x, abs_y = self.get_position()
-        x += abs_x
-        y += abs_y
-        
-        distance =  self._get_distance_to_bbox(
-            x, y, gtk.gdk.Rectangle(abs_x, abs_y,
-                                    self.allocation.width, 
-                                    self.allocation.height))
-
-        if CaribouWindowPlacement.SCREEN != \
-                self._default_placement.x.stickto or \
-                CaribouWindowPlacement.SCREEN != \
-                self._default_placement.y.stickto:
-            if self._entry_location != gtk.gdk.Rectangle(0, 0, 0, 0):
-                distance2 = self._get_distance_to_bbox(x, y, 
-                                                       self._entry_location)
-                distance = min(distance, distance2)
-
-        opacity = (self.max_alpha - self.min_alpha) * \
-            (1 - min(distance, self.max_distance)/self.max_distance)
-        opacity += self.min_alpha
-
-        self.set_opacity(opacity)
-        return self.props.visible
-
-    def _get_distance_to_bbox(self, x, y, bbox):
-        if x < bbox.x:
-            x_distance = bbox.x - x
-        elif x > bbox.width + bbox.x:
-            x_distance = bbox.width + bbox.x - x
-        else:
-            x_distance = 0
-
-        if y < bbox.y:
-            y_distance = bbox.y - y
-        elif y > bbox.height + bbox.y:
-            y_distance = bbox.height + bbox.y - y
-        else:
-            y_distance = 0
-
-        if y_distance == 0 and x_distance == 0:
-            return 0.0
-        elif y_distance != 0 and x_distance == 0:
-            return abs(float(y_distance))
-        elif y_distance == 0 and x_distance != 0:
-            return abs(float(x_distance))
-        else:
-            x2 = bbox.x if x_distance > 0 else bbox.x + bbox.width
-            y2 = bbox.y if y_distance > 0 else bbox.y + bbox.height
-            return sqrt((x - x2)**2 + (y - y2)**2)
-
-class CaribouWindowDocked(CaribouWindow, animation.AnimatedWindowBase):
+class CaribouWindowDocked(CaribouWindow, 
+                          animation.AnimatedWindowBase,
+                          opacity.ProximityWindowBase):
     __gtype_name__ = "CaribouWindowDocked"
     
     def __init__(self):
@@ -184,36 +140,15 @@ class CaribouWindowDocked(CaribouWindow, animation.AnimatedWindowBase):
             ystickto=CaribouWindowPlacement.SCREEN,
             xgravitate=CaribouWindowPlacement.INSIDE)
 
-        CaribouWindow.__init__(
-            self, placement, min_alpha=0.8, max_alpha=0.8)
-
+        CaribouWindow.__init__(self, placement)
         animation.AnimatedWindowBase.__init__(self)
+        opacity.ProximityWindowBase.__init__(
+            self, min_alpha=0.5, max_alpha=0.8)
+
         self._gconf_client = gconf.client_get_default()
+        self.connect('map-event', self.__onmapped)
 
-    def _get_root_bbox(self):
-        root_bbox = CaribouWindow._get_root_bbox(self)
-        current_screen = gtk.gdk.screen_get_default().get_number()
-        for panel in self._gconf_client.all_dirs('/apps/panel/toplevels'):
-            orientation = self._gconf_client.get_string(panel+'/orientation')
-            size = self._gconf_client.get_int(panel+'/size')
-            screen = self._gconf_client.get_int(panel+'/screen')
-            if screen != current_screen:
-                continue
-            if orientation == 'top':
-                root_bbox.y += size
-                root_bbox.height -= size
-            elif orientation == 'bottom':
-                root_bbox.height -= size
-            elif orientation == 'right':
-                root_bbox.x += size
-                root_bbox.width -= size
-            elif orientation == 'left':
-                root_bbox.x -= size
-        
-        return root_bbox
-
-    def _onmapped(self, obj, event):
-        CaribouWindow._onmapped(self, obj, event)
+    def __onmapped(self, obj, event):
         self._roll_in()
 
     def _roll_in(self):

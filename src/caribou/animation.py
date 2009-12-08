@@ -1,7 +1,12 @@
-import clutter, gtk
+import clutter
 
 class AnimatedWindowBase(object):
     def __init__(self, ease=clutter.EASE_IN_QUAD):
+        if self.__class__ == AnimatedWindowBase:
+            raise TypeError, \
+                "AnimatedWindowBase is an abstract class, " \
+                "must be subclassed with a gtk.Window"
+
         self._actor = clutter.Rectangle()
         self.ease = ease
 
@@ -21,6 +26,7 @@ class AnimatedWindowBase(object):
         return animation
         
 if __name__ == "__main__":
+    import gtk
     class AnimatedWindow(gtk.Window, AnimatedWindowBase):
         def __init__(self):
             gtk.Window.__init__(self)
