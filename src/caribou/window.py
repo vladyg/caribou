@@ -41,6 +41,7 @@ class CaribouWindow(gtk.Window):
         self._vbox.pack_start(keyboard.CaribouKeyboard(qwerty))
 
         self.connect("size-allocate", lambda w, a: self._update_position())
+        self._gconf_client = gconf.client_get_default()
 
         self._cursor_location = gdk.Rectangle()
         self._entry_location = gdk.Rectangle()
@@ -145,7 +146,6 @@ class CaribouWindowDocked(CaribouWindow,
         opacity.ProximityWindowBase.__init__(
             self, min_alpha=0.5, max_alpha=0.8)
 
-        self._gconf_client = gconf.client_get_default()
         self.connect('map-event', self.__onmapped)
 
     def __onmapped(self, obj, event):
