@@ -24,6 +24,8 @@ import glib
 from math import sqrt
 import keyboard
 from keyboards import qwerty
+import gconf
+import animation
 
 class CaribouWindow(gtk.Window):
     __gtype_name__ = "CaribouWindow"
@@ -170,6 +172,66 @@ class CaribouWindow(gtk.Window):
             x2 = bbox.x if x_distance > 0 else bbox.x + bbox.width
             y2 = bbox.y if y_distance > 0 else bbox.y + bbox.height
             return sqrt((x - x2)**2 + (y - y2)**2)
+
+class CaribouWindowDocked(CaribouWindow, animation.AnimatedWindowBase):
+    __gtype_name__ = "CaribouWindowDocked"
+    
+    def __init__(self):
+        placement = CaribouWindowPlacement(
+            xalign=CaribouWindowPlacement.END,
+            yalign=CaribouWindowPlacement.START,
+            xstickto=CaribouWindowPlacement.SCREEN,
+            ystickto=CaribouWindowPlacement.SCREEN,
+            xgravitate=CaribouWindowPlacement.INSIDE)
+
+        CaribouWindow.__init__(
+            self, placement, min_alpha=0.8, max_alpha=0.8)
+
+        animation.AnimatedWindowBase.__init__(self)
+        self._gconf_client = gconf.client_get_default()
+
+    def _get_root_bbox(self):
+        root_bbox = CaribouWindow._get_root_bbox(self)
+        current_screen = gtk.gdk.screen_get_default().get_number()
+        for panel in self._gconf_client.all_dirs('/apps/panel/toplevels'):
+            orientation = self._gconf_client.get_string(panel+'/orientation')
+            size = self._gconf_client.get_int(panel+'/size')
+            screen = self._gconf_client.get_int(panel+'/screen')
+            if screen != current_screen:
+                continue
+            if orientation == 'top':
+                root_bbox.y += size
+                root_bbox.height -= size
+            elif orientation == 'bottom':
+                root_bbox.height -= size
+            elif orientation == 'right':
+                root_bbox.x += size
+                root_bbox.width -= size
+            elif orientation == 'left':
+                root_bbox.x -= size
+        
+        return root_bbox
+
+    def _onmapped(self, obj, event):
+        CaribouWindow._onmapped(self, obj, event)
+        self._roll_in()
+
+    def _roll_in(self):
+        x, y = self.get_position()
+        self.move(x + self.allocation.width, y)
+        return self.animated_move(x, y)
+
+    def _roll_out(self):
+        x, y = self.get_position()
+        return self.animated_move(x + self.allocation.width, y)
+
+    def hide_all(self):
+        animation = self._roll_out()
+        animation.connect('completed', lambda x: CaribouWindow.hide_all(self)) 
+
+    def hide(self):
+        animation = self._roll_out()
+        animation.connect('completed', lambda x: CaribouWindow.hide(self)) 
 
 class CaribouWindowEntry(CaribouWindow):
     __gtype_name__ = "CaribouWindowEntry"
