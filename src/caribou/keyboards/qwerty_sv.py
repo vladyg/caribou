@@ -3,6 +3,7 @@
 # Carbou - text entry and UI navigation application
 #
 # Copyright (C) 2009 Adaptive Technology Resource Centre
+#  * Contributor: Ben Konrath <ben@bagu.org>
 # Copyright (C) 2009 Mats Lundälv <mats.lundalv@vgregion.se>
 #
 # This program is free software; you can redistribute it and/or modify it
