@@ -4,6 +4,8 @@
 # Copyright (C) 2009 Adaptive Technology Resource Centre
 #  * Contributor: Ben Konrath <ben@bagu.org>
 # Copyright (C) 2009 Eitan Isaacson <eitan@monotonous.org>
+# Copyright (C) 2009 Sun Microsystems, Inc.
+#  * Contributor: Willie Walker <william.walker@sun.com>
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU Lesser General Public License as published by the
@@ -69,11 +71,13 @@ class Caribou:
 
         caribouwindow.show_all()
        
-    def on_state_changed_focused(self, event):
+    def on_focus(self, event):
         acc = event.source
-        if pyatspi.STATE_EDITABLE in acc.getState().getStates():
-            if event.source_role == pyatspi.ROLE_TEXT:
-                if event.detail1 == 1:
+        if pyatspi.STATE_EDITABLE in acc.getState().getStates() or event.source_role == pyatspi.ROLE_TERMINAL:
+            if event.source_role in (pyatspi.ROLE_TEXT,
+                                     pyatspi.ROLE_PARAGRAPH,
+                                     pyatspi.ROLE_TERMINAL):
+                if event.type.startswith("focus") or event.detail1 == 1:
                     self.__set_text_location(acc)
                     self.__current_acc = event.source
                     self.__set_location = self.__set_text_location
@@ -87,7 +91,7 @@ class Caribou:
                         print "leave text widget in", event.host_application.name
 
             elif event.source_role == pyatspi.ROLE_ENTRY:
-                if event.detail1 == 1:
+                if event.type.startswith("focus") or event.detail1 == 1:
                     self.__set_entry_location(acc)
                     self.__current_acc = event.source
                     self.__set_location = self.__set_entry_location
@@ -124,9 +128,16 @@ class Caribou:
                     print "OK"
                 else:
                     print "FAIL"
-            result = pyatspi.Registry.deregisterEventListener(self.on_state_changed_focused, "object:state-changed:focused")
+            result = pyatspi.Registry.deregisterEventListener(self.on_focus, "object:state-changed:focused")
             if debug == True:
                 print "deregisterEventListener - object:state-changed:focused ...",
+                if result == False:
+                    print "OK"
+                else:
+                    print "FAIL"
+            result = pyatspi.Registry.deregisterEventListener(self.on_focus, "focus")
+            if debug == True:
+                print "deregisterEventListener - focus ...",
                 if result == False:
                     print "OK"
                 else:
@@ -170,7 +181,8 @@ if __name__ == "__main__":
             sys.exit(0)
 
     caribou = Caribou()
-    pyatspi.Registry.registerEventListener(caribou.on_state_changed_focused, "object:state-changed:focused")
+    pyatspi.Registry.registerEventListener(caribou.on_focus, "object:state-changed:focused")
+    pyatspi.Registry.registerEventListener(caribou.on_focus, "focus")
     pyatspi.Registry.registerEventListener(caribou.on_text_caret_moved, "object:text-caret-moved")
     pyatspi.Registry.registerKeystrokeListener(caribou.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
 
