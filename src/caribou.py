@@ -1,5 +1,5 @@
 #
-# Carbou - text entry and UI navigation application
+# Caribou - text entry and UI navigation application
 #
 # Copyright (C) 2009 Adaptive Technology Resource Centre
 #  * Contributor: Ben Konrath <ben@bagu.org>
@@ -115,7 +115,7 @@ class Caribou:
         #        print "--> LEAVE EDITABLE TEXT <--"
 
     def on_key_down(self, event):
-        # key binding for controling the row column scanning
+        # key binding for controlling the row column scanning
         if event.event_string == "Shift_R":
             # TODO: implement keyboard scanning
             pass 

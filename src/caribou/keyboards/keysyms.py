@@ -1,5 +1,5 @@
 #
-# Carbou - text entry and UI navigation application
+# Caribou - text entry and UI navigation application
 #
 # Copyright (C) 2009 Adaptive Technology Resource Centre
 #  * Contributor: Ben Konrath <ben@bagu.org>

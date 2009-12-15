@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Carbou - text entry and UI navigation application
+# Caribou - text entry and UI navigation application
 #
 # Copyright (C) 2009 Eitan Isaacson <eitan@monotonous.org>
 #
