@@ -76,6 +76,7 @@ class Caribou:
         if pyatspi.STATE_EDITABLE in acc.getState().getStates() or event.source_role == pyatspi.ROLE_TERMINAL:
             if event.source_role in (pyatspi.ROLE_TEXT,
                                      pyatspi.ROLE_PARAGRAPH,
+                                     pyatspi.ROLE_PASSWORD_TEXT,
                                      pyatspi.ROLE_TERMINAL):
                 if event.type.startswith("focus") or event.detail1 == 1:
                     self.__set_text_location(acc)
