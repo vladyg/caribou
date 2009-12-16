@@ -22,13 +22,6 @@
 
 import keysyms
 
-# TODO add horizontal keysize - will be able to specify a mulitplier
-# TODO add key colour
-# TODO add noop keysym
-# TODO add ability switch back to previous layer after x keystrokes
-# TODO ensure keyboard doesn't change size when changing layers
-# TODO finish numbers and punctuation layout
-
 ###############################################################################
 # keys with keysyms - use known keysyms from keysyms.py or used hex code
 # format: ("label", keysym)
