@@ -22,7 +22,6 @@
 
 import gtk
 import virtkey
-from keyboards import qwerty
 
 class CaribouPredicitionArea(gtk.HBox):
     pass
@@ -131,7 +130,14 @@ class CaribouKeyboard(gtk.Frame):
 
 
 if __name__ == "__main__":
-    ckbd = CaribouKeyboard(qwerty)
+    # dynamically import keyboard file
+    import keyboards, sys
+    name = "keyboards." + keyboards.kbds[0]
+    __import__(name)
+    kbddef = sys.modules[name]
+
+    # create test window with keyboard
+    ckbd = CaribouKeyboard(kbddef)
     window = gtk.Window(gtk.WINDOW_POPUP)
     window.add(ckbd)
     window.show_all()

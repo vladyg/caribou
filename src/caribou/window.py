@@ -22,10 +22,11 @@ import gtk
 import gtk.gdk as gdk
 import glib
 import keyboard
-from keyboards import qwerty
+import keyboards
 import gconf
 import animation
 import opacity
+import sys
 
 class CaribouWindow(gtk.Window):
     __gtype_name__ = "CaribouWindow"
@@ -38,7 +39,10 @@ class CaribouWindow(gtk.Window):
         self._vbox = gtk.VBox()
         self.add(self._vbox)
 
-        self._vbox.pack_start(keyboard.CaribouKeyboard(qwerty))
+        name = "caribou.keyboards.qwerty"
+        __import__(name)
+        kbddef = sys.modules[name]
+        self._vbox.pack_start(keyboard.CaribouKeyboard(kbddef))
 
         self.connect("size-allocate", lambda w, a: self._update_position())
         self._gconf_client = gconf.client_get_default()
