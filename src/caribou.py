@@ -1,3 +1,4 @@
+#!/usr/bin/python
 #
 # Caribou - text entry and UI navigation application
 #
