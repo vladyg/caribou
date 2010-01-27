@@ -18,15 +18,12 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
+import animation
+import gconf
 import gtk
 import gtk.gdk as gdk
-import glib
 import keyboard
-import keyboards
-import gconf
-import animation
 import opacity
-import sys
 
 class CaribouWindow(gtk.Window):
     __gtype_name__ = "CaribouWindow"
@@ -39,10 +36,8 @@ class CaribouWindow(gtk.Window):
         self._vbox = gtk.VBox()
         self.add(self._vbox)
 
-        name = "caribou.keyboards.qwerty"
-        __import__(name)
-        kbddef = sys.modules[name]
-        self._vbox.pack_start(keyboard.CaribouKeyboard(kbddef))
+        # we only have a keyboard widget right now
+        self._vbox.pack_start(keyboard.CaribouKeyboard())
 
         self.connect("size-allocate", lambda w, a: self._update_position())
         self._gconf_client = gconf.client_get_default()
