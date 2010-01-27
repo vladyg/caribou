@@ -67,15 +67,15 @@ lt = ("abc", "lowercase")
 # keyboard layouts
 # rules:
 #  * key can be a single utf-8 character or a tuple defined above
-#  * at least one layout must contain the reserved label "cf" for configuration
+#  * at least one layout must contain the reserved label "pf" for preferences
 #  * layouts must be the same dimensions
 ###############################################################################
 
-lowercase = ( ("cf", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p"),
+lowercase = ( ("pf", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p"),
               (  np, "a", "s", "d", "f", "g", "h", "j", "k", "l",  bs),
               (  su, "z", "x", "c", "v", "b", "n", "m", sp,  ".",  en) )
 
-uppercase = ( ("cf", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"),
+uppercase = ( ("pf", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"),
               (  np, "A", "S", "D", "F", "G", "H", "J", "K", "L",  bs),
               (  sd, "Z", "X", "C", "V", "B", "N", "M",  sp, ".",  en) )
 

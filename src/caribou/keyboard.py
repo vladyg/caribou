@@ -20,41 +20,89 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
+import gobject
 import gtk
+import keyboards
+import sys
 import virtkey
 
-class CaribouPredicitionArea(gtk.HBox):
-    pass
+class KeyboardPreferences:
+    __gtype_name__ = "KeyboardPreferences"
 
-# TODO validate keyboard by creating this object and catching exception
+    def __init__(self):
+        builder = gtk.Builder()
+        builder.add_from_file("caribou/caribou-prefs.ui")
+
+        self.window = builder.get_object("dialog_prefs")
+        self.window.connect("destroy", self.destroy)
+        self.window.connect("delete_event", self.destroy)
+
+        close = builder.get_object("button_close")
+        close.connect("clicked", self.destroy)
+
+        layout_combo = builder.get_object("combobox_layout")
+        # we can't use gtk.combo_box_new_text() with glade
+        # we have to manually set up simple combobox
+        liststore = gtk.ListStore(gobject.TYPE_STRING)
+        layout_combo.set_model(liststore)
+        cell = gtk.CellRendererText()
+        layout_combo.pack_start(cell, True)
+        layout_combo.add_attribute(cell, 'text', 0)
+
+        for kbddef in keyboards.kbds:
+            layout_combo.append_text(kbddef)
+        layout_combo.set_active(1)
+
+        # grey out the key size and key spacing
+        keysize_label = builder.get_object("label_keysize")
+        keysize_label.set_sensitive(False)
+        keysize_combo = builder.get_object("combobox_keysize")
+        keysize_combo.set_sensitive(False)
+        keyspacing_label = builder.get_object("label_keyspacing")
+        keyspacing_label.set_sensitive(False)
+        keyspacing_combo = builder.get_object("combobox_keyspacing")
+        keyspacing_combo.set_sensitive(False)
+
+        self.window.show_all()
+
+    def destroy(self, widget, data = None):
+        self.window.destroy()
+
 class CaribouKeyboard(gtk.Frame):
     __gtype_name__ = "CaribouKeyboard"
 
-    def __init__(self, keyboard):
+    def __init__(self):
         gtk.Frame.__init__(self)
         self.set_shadow_type(gtk.SHADOW_NONE)
 
         self._vk = virtkey.virtkey()
 
+        # FIXME: load from stored value, default to locale appropriate
+        name = "caribou.keyboards.qwerty"
+        #name = "keyboards.qwerty"
+        __import__(name)
+        kbddef = sys.modules[name]
+        # end FIXME
+
         layouts, switch_buttons = [], []
-        for layout in keyboard.layouts:
-            layoutvbox = gtk.VBox(homogeneous=True)
+        for layout in kbddef.layouts:
+            layoutvbox = gtk.VBox(homogeneous = True)
             layoutvbox.set_name(layout)
-            layout = getattr(keyboard, layout)
+            # get the layout tuple from the string
+            layout = getattr(kbddef, layout)
             for row in layout:
-                rowhbox = gtk.HBox(homogeneous=True)
+                rowhbox = gtk.HBox(homogeneous = True)
                 for key in row:
-                    # check if the key is a simple str or a key defined by a tuple
+                    # check if the key is defined by a string or a tuple
                     if isinstance(key, str):
-                        if key == "cf":
-                            # configuration key
+                        if key == "pf":
+                            # preferences key
                             button = gtk.Button()
                             image = gtk.image_new_from_pixbuf(
                                 button.render_icon(gtk.STOCK_PREFERENCES,
                                                    gtk.ICON_SIZE_BUTTON))
                             button.set_image(image)
-                            button.set_name ("configuration")
-                            switch_buttons.append(button)
+                            button.connect("clicked", self.__open_prefs)
                         else:
                             # single utf-8 character key
                             button = gtk.Button(key)
@@ -74,30 +122,11 @@ class CaribouKeyboard(gtk.Frame):
                     else:
                         pass #TODO throw error here
 
-                    rowhbox.pack_start(button, expand=False, fill=True)
+                    rowhbox.pack_start(button, expand = False, fill = True)
 
-                layoutvbox.pack_start(rowhbox, expand=False, fill=True)
+                layoutvbox.pack_start(rowhbox, expand = False, fill = True)
 
             layouts.append(layoutvbox)
-
-        # add preferences layout
-        image = gtk.Image()
-        image.set_from_icon_name("gnome-dev-keyboard", gtk.ICON_SIZE_BUTTON)
-        button = gtk.Button()
-        button.set_image(image)
-        button.set_name(layouts[0].get_name())
-        switch_buttons.append(button)
-
-        confhbox = gtk.HBox()
-        confhbox.pack_start(button)
-        confhbox.pack_start(gtk.Label("configuration coming soon"))
-
-        confvbox = gtk.VBox(homogeneous=True)
-        confvbox.pack_start(confhbox)
-        confvbox.pack_start(gtk.HBox())
-        confvbox.pack_start(gtk.HBox())
-        confvbox.set_name("configuration")
-        layouts.append(confvbox)
 
         # connect the change layout buttons
         for button in switch_buttons:
@@ -128,16 +157,17 @@ class CaribouKeyboard(gtk.Frame):
         self.add(data)
         self.show_all()
 
+    def __open_prefs(self, widget):
+        prefs = KeyboardPreferences()
 
 if __name__ == "__main__":
     # dynamically import keyboard file
-    import keyboards, sys
-    name = "keyboards." + keyboards.kbds[0]
-    __import__(name)
-    kbddef = sys.modules[name]
+    #name = "keyboards." + keyboards.kbds[0]
+    #__import__(name)
+    #kbddef = sys.modules[name]
 
     # create test window with keyboard
-    ckbd = CaribouKeyboard(kbddef)
+    ckbd = CaribouKeyboard()
     window = gtk.Window(gtk.WINDOW_POPUP)
     window.add(ckbd)
     window.show_all()

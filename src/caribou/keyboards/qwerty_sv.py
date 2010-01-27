@@ -69,19 +69,19 @@ lt = ("abc", "lowercase")
 # keyboard layouts
 # rules:
 #  * key can be a single utf-8 character or a tuple defined above
-#  * at least one layout must contain the reserved label "cf" for configuration
+#  * at least one layout must contain the reserved label "pf" for preferences
 #  * layouts must be the same dimensions
 ###############################################################################
 
 lowercase = ( ( "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",  bs),
               ( "a", "s", "d", "f", "g", "h", "j", "k", "l", "å",  pu),
               ( "z", "x", "c", "v", "b", "n", "m", ".", "ö", "ä",  en),
-              (  su,  np,"cf",  sp,  le,  up,  ri,  dn,  om,  nd,  pd) )
+              (  su,  np,"pf",  sp,  le,  up,  ri,  dn,  om,  nd,  pd) )
 
 uppercase = ( ( "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P",  bs),
               ( "A", "S", "D", "F", "G", "H", "J", "K", "L", "Å",  pu),
               ( "Z", "X", "C", "V", "B", "N", "M", ".", "Ö", "Ä",  en),
-              (  sd,  np,"cf",  sp,  le,  ri,  up,  dn,  om,  nd,  pd) )
+              (  sd,  np,"pf",  sp,  le,  ri,  up,  dn,  om,  nd,  pd) )
 
 num_punct = ( ( "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",  bs),
               ( "!", "@", "€", "£", "$", "/", "+", "-", "=", "?", "*"),
