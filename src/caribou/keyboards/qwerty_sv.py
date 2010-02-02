@@ -66,11 +66,11 @@ np = (".?12", "num_punct")
 lt = ("abc", "lowercase")
 
 ###############################################################################
-# keyboard layouts
+# keyboard layers
 # rules:
 #  * key can be a single utf-8 character or a tuple defined above
-#  * at least one layout must contain the reserved label "pf" for preferences
-#  * layouts must be the same dimensions
+#  * at least one layer must contain the reserved label "pf" for preferences
+#  * layers must be the same dimensions
 ###############################################################################
 
 lowercase = ( ( "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",  bs),
@@ -90,8 +90,8 @@ num_punct = ( ( "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",  bs),
 
 
 ###############################################################################
-# list of keyboard layouts - the layout in position 0 will be active when the
-#                            keyboard is first created
+# list of keyboard layers - the layer in position 0 will be active when the
+#                           keyboard is first created
 ###############################################################################
 
-layouts = ( "lowercase", "uppercase", "num_punct" )
+layers = ( "lowercase", "uppercase", "num_punct" )
