@@ -179,7 +179,7 @@ if __name__ == "__main__":
             sys.exit(0)
 
         if opt in ("-v", "--version"):
-            print "caribou @VERSION@"
+            print "caribou 0.0.2" 
             sys.exit(0)
 
     caribou = Caribou()
