@@ -47,13 +47,6 @@ class KeyboardPreferences:
 
         layout_combo = builder.get_object("combobox_layout")
         layout_combo.connect("changed", self._on_layout_changed, client)
-        # we can't use gtk.combo_box_new_text() with glade
-        # we have to manually set up a simple combobox
-        liststore = gtk.ListStore(gobject.TYPE_STRING)
-        layout_combo.set_model(liststore)
-        cell = gtk.CellRendererText()
-        layout_combo.pack_start(cell, True)
-        layout_combo.add_attribute(cell, 'text', 0)
 
         for kbddef in keyboards.kbds:
             layout_combo.append_text(kbddef)
@@ -190,7 +183,7 @@ class CaribouKeyboard(gtk.Frame):
         self.show_all()
 
     def get_layout(self):
-        return self._kbd_name()
+        return self._kbd_name
 
 
 

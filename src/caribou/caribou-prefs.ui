@@ -36,9 +36,16 @@
                     <child>
                       <object class="GtkComboBox" id="combobox_layout">
                         <property name="visible">True</property>
+                        <property name="model">liststore1</property>
                         <accessibility>
                           <relation type="labelled-by" target="label_layout"/>
                         </accessibility>
+                        <child>
+                          <object class="GtkCellRendererCombo" id="cellrenderertext1"/>
+                          <attributes>
+                            <attribute name="text">0</attribute>
+                          </attributes>
+                        </child>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -219,5 +226,11 @@
     <action-widgets>
       <action-widget response="0">button_close</action-widget>
     </action-widgets>
+  </object>
+  <object class="GtkListStore" id="liststore1">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
   </object>
 </interface>
