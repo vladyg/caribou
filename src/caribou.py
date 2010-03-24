@@ -87,7 +87,7 @@ class Caribou:
                     self.__set_location = self.__set_text_location
                     if debug == True:
                         print "enter text widget in", event.host_application.name
-                elif event.detail1 == 0:
+                elif event.detail1 == 0 and acc == self.__current_acc:
                     caribouwindow.hide_all()
                     self.__current_acc = None 
                     self.__set_location = None
