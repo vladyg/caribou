@@ -22,13 +22,15 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-import pyatspi
+import getopt
+import gettext
 import gtk
 import gtk.gdk as gdk
-import caribou.window as window
-import gettext
-import getopt
+import pyatspi
 import sys
+
+import caribou.window as window
+import caribou.keyboard as keyboard
 
 _ = gettext.gettext
 
@@ -188,9 +190,8 @@ if __name__ == "__main__":
     pyatspi.Registry.registerEventListener(caribou.on_text_caret_moved, "object:text-caret-moved")
     pyatspi.Registry.registerKeystrokeListener(caribou.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
 
-    # TODO: move text entry detection to its own file
-
-    caribouwindow = window.CaribouWindowEntry()
+    osk = keyboard.CaribouKeyboard()
+    caribouwindow = window.CaribouWindowEntry(osk)
     caribouwindow.hide_all()
  
     gtk.main()

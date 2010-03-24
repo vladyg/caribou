@@ -22,22 +22,19 @@ import animation
 import gconf
 import gtk
 import gtk.gdk as gdk
-import keyboard
 import opacity
 
 class CaribouWindow(gtk.Window):
     __gtype_name__ = "CaribouWindow"
 
-    def __init__(self, default_placement=None, 
+    def __init__(self, text_entry_mech, default_placement=None,
                  min_alpha=1.0, max_alpha=1.0, max_distance=100):
         super(CaribouWindow, self).__init__(gtk.WINDOW_POPUP)
         self.set_name("CaribouWindow")
 
         self._vbox = gtk.VBox()
         self.add(self._vbox)
-
-        # we only have a keyboard widget right now
-        self._vbox.pack_start(keyboard.CaribouKeyboard())
+        self._vbox.pack_start(text_entry_mech)
 
         self.connect("size-allocate", lambda w, a: self._update_position())
         self._gconf_client = gconf.client_get_default()
@@ -132,7 +129,7 @@ class CaribouWindowDocked(CaribouWindow,
                           opacity.ProximityWindowBase):
     __gtype_name__ = "CaribouWindowDocked"
     
-    def __init__(self):
+    def __init__(self, text_entry_mech):
         placement = CaribouWindowPlacement(
             xalign=CaribouWindowPlacement.END,
             yalign=CaribouWindowPlacement.START,
@@ -140,7 +137,7 @@ class CaribouWindowDocked(CaribouWindow,
             ystickto=CaribouWindowPlacement.SCREEN,
             xgravitate=CaribouWindowPlacement.INSIDE)
 
-        CaribouWindow.__init__(self, placement)
+        CaribouWindow.__init__(self, text_entry_mech, placement)
         animation.AnimatedWindowBase.__init__(self)
         opacity.ProximityWindowBase.__init__(
             self, min_alpha=0.5, max_alpha=0.8)
@@ -170,7 +167,7 @@ class CaribouWindowDocked(CaribouWindow,
 class CaribouWindowEntry(CaribouWindow):
     __gtype_name__ = "CaribouWindowEntry"
 
-    def __init__(self):
+    def __init__(self, text_entry_mech):
         placement = CaribouWindowPlacement(
             xalign=CaribouWindowPlacement.START,
             xstickto=CaribouWindowPlacement.ENTRY,
@@ -178,8 +175,8 @@ class CaribouWindowEntry(CaribouWindow):
             xgravitate=CaribouWindowPlacement.INSIDE,
             ygravitate=CaribouWindowPlacement.OUTSIDE)
 
-        CaribouWindow.__init__(
-            self, placement, min_alpha=0.075, max_alpha=0.8)
+        CaribouWindow.__init__(self, text_entry_mech, placement, min_alpha=0.075,
+                               max_alpha=0.8)
 
     def _calculate_axis(self, axis_placement, root_bbox):
         offset = CaribouWindow._calculate_axis(self, axis_placement, root_bbox)
