@@ -118,7 +118,10 @@ class CaribouKeyboard(gtk.Frame):
                                 button = gtk.Button(key)
                                 button.set_use_underline(False)
                                 char = ord(key.decode('utf-8'))
-                                button.connect("clicked", self._send_unicode, char)
+                                button.connect("pressed", self._press_cb,
+                                               char)
+                                button.connect("released", self._release_cb,
+                                               char)
                         elif isinstance(key, tuple):
                             button = gtk.Button(key[0])
                             button.set_use_underline(False)
@@ -130,7 +133,10 @@ class CaribouKeyboard(gtk.Frame):
                                 self.switch_layer_buttons.append(button)
                             else:
                                 # regular key
-                                button.connect("clicked", self._send_keysym, key[1])
+                                button.connect("pressed",
+                                               self._keysym_press_cb, key[1])
+                                button.connect("released",
+                                               self._keysym_release_cb, key[1])
                         else:
                             pass # TODO: throw error here
 
@@ -141,12 +147,16 @@ class CaribouKeyboard(gtk.Frame):
         def _open_prefs(self, widget):
             KeyboardPreferences()
 
-        def _send_unicode(self, widget, char):
+        def _press_cb(self, widget, char):
             self.vk.press_unicode(char)
+
+        def _release_cb(self, widget, char):
             self.vk.release_unicode(char)
 
-        def _send_keysym(self, widget, char):
+        def _keysym_press_cb(self, widget, char):
             self.vk.press_keysym(char)
+
+        def _keysym_release_cb(self, widget, char):
             self.vk.release_keysym(char)
 
     def __init__(self):
