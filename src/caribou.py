@@ -7,6 +7,8 @@
 # Copyright (C) 2009 Eitan Isaacson <eitan@monotonous.org>
 # Copyright (C) 2009 Sun Microsystems, Inc.
 #  * Contributor: Willie Walker <william.walker@sun.com>
+# Copyright (C) 2009 Flavio Percoco <flaper87@flaper87.org>
+#  * Contributor: Flavio Percoco <flaper87@flaper87.org>
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU Lesser General Public License as published by the
@@ -28,6 +30,7 @@ import gtk
 import gtk.gdk as gdk
 import pyatspi
 import sys
+import gconf
 
 import caribou.window as window
 import caribou.keyboard as keyboard
@@ -164,6 +167,18 @@ def usage():
 
 if __name__ == "__main__":
 
+    try:
+        gconfClient = gconf.client_get_default()
+        isAccessibilityEnabled = gconfClient.get_bool("/desktop/gnome/interface/accessibility") \
+            or gconfClient.get_bool("/desktop/gnome/interface/accessibility2")
+    except:
+        gconfClient = None
+        isAccessibilityEnabled = False
+        
+    if not isAccessibilityEnabled:
+        print "Error: GNOME a11y has to be enabled in order to work correctly"
+        sys.exit(1)
+        
     try:
         options, xargs = getopt.getopt(sys.argv[1:], "dhv",
             ["debug", "help", "version"])
