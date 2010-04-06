@@ -20,8 +20,7 @@
 
 import os
 
-# TODO: will need to be changed when build / install logic is sorted out
-files = os.listdir('caribou/keyboards')
+files = os.listdir(os.path.dirname(__file__))
 
 kbds = []
 for f in files:
