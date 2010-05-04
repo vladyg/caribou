@@ -26,8 +26,26 @@
 
 from optparse import OptionParser
 import gettext
-import gtk
 import sys
+import gtk
+import os
+
+# We can't rely on prefix if we're installed by relocated RPM. Instead, we 
+# use __file__ and for now hope that lib is relative to bin.
+sys.prefix = os.path.normpath(os.path.join(os.path.dirname(__file__), '..'))
+libs = os.path.join(sys.prefix, 'lib',
+                    'python@PYTHON_VERSION@', 'site-packages')
+# point to the proper site-packages path
+sys.path.insert(1, libs)
+
+# This might be run from the build dir.
+_dirname = os.path.dirname(__file__)
+if os.path.dirname(__file__) != "@prefix@/bin":
+    srcdir = os.path.normpath(os.path.join(_dirname, '..'))
+    sys.path.insert(1, srcdir)
+    import caribou
+else:
+    import caribou
 
 import caribou.window as window
 import caribou.keyboard as keyboard
@@ -36,7 +54,8 @@ import caribou.main as main
 _ = gettext.gettext
 
 if __name__ == "__main__":
-    parser = OptionParser(usage="usage: %prog [options]", version="%prog 0.0.2")
+    parser = OptionParser(usage="usage: %prog [options]",
+                          version="%prog @VERSION@")
     parser.add_option("-d", "--debug",
                       action="store_true", dest="debug", default=False,
                       help="print debug messages on stdout")
