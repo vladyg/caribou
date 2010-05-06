@@ -1,3 +1,5 @@
+SUBDIRS = keyboards
+
 cariboudir = $(pkgpythondir)/
 
 caribou_PYTHON = \

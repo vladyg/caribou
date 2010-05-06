@@ -41,6 +41,7 @@ dnl == generate makefiles ==
 AC_OUTPUT([
 Makefile
 caribou/Makefile
+caribou/keyboards/Makefile
 bin/Makefile
 bin/caribou
 ])
