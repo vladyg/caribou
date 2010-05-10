@@ -46,6 +46,7 @@ if os.path.dirname(__file__) != "@prefix@/bin":
     import caribou
 else:
     import caribou
+    caribou.data_path = os.path.join("@prefix@", "share", "caribou")
 
 import caribou.window as window
 import caribou.keyboard as keyboard

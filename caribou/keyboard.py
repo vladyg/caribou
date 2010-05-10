@@ -25,15 +25,17 @@ import gobject
 import gtk
 import sys
 import virtkey
+import os
 
 import keyboards
+from . import data_path
 
 class KeyboardPreferences:
     __gtype_name__ = "KeyboardPreferences"
 
     def __init__(self):
         builder = gtk.Builder()
-        builder.add_from_file("caribou/caribou-prefs.ui")
+        builder.add_from_file(os.path.join(data_path, "caribou-prefs.ui"))
 
         self.window = builder.get_object("dialog_prefs")
         self.window.connect("destroy", self.destroy)

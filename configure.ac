@@ -44,4 +44,5 @@ caribou/Makefile
 caribou/keyboards/Makefile
 bin/Makefile
 bin/caribou
+data/Makefile
 ])
