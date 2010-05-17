@@ -8,7 +8,10 @@ caribou_PYTHON = \
 	keyboard.py \
 	main.py \
 	opacity.py \
-	window.py
+	window.py \
+	i18n.py
+
+DISTCLEANFILES = i18n.py
 
 clean-local:
 	rm -rf *.pyc *.pyo

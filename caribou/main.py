@@ -3,6 +3,7 @@ import pyatspi
 import gconf
 from window import CaribouWindowEntry
 from keyboard import CaribouKeyboard
+from i18n import _
 
 debug = False
 

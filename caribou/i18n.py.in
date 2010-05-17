@@ -1,0 +1,21 @@
+import gettext
+from gettext import gettext as _
+import os
+
+print 'initialized i18n'
+
+def C_(ctx, s):
+    """Provide qualified translatable strings via context.
+    (copied from Orca)"""
+    translated = gettext.gettext('%s\x04%s' % (ctx, s))
+    if '\x04' in translated:
+        # no translation found, return input string
+        return s
+    return translated
+
+gettext.bindtextdomain ("@GETTEXT_PACKAGE@",
+                        os.path.join ("@prefix@", "@DATADIRNAME@", "locale"))
+
+gettext.textdomain("@GETTEXT_PACKAGE@")
+
+

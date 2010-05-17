@@ -26,13 +26,13 @@ AC_SUBST(CARIBOU_CFLAGS)
 AC_SUBST(CARIBOU_LIBS)
 
 dnl == i18n ==
-#GETTEXT_PACKAGE=caribou
-#AC_SUBST(GETTEXT_PACKAGE)
-#AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [The gettext package])
-#AM_GLIB_GNU_GETTEXT
+GETTEXT_PACKAGE=caribou
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [The gettext package])
+AM_GLIB_GNU_GETTEXT
 
 dnl == intltool check ==
-#IT_PROG_INTLTOOL([0.35.0])
+IT_PROG_INTLTOOL([0.35.0])
 
 dnl == Documentation ==
 GNOME_DOC_INIT
@@ -40,8 +40,10 @@ GNOME_DOC_INIT
 dnl == generate makefiles ==
 AC_OUTPUT([
 Makefile
+po/Makefile.in
 caribou/Makefile
 caribou/keyboards/Makefile
+caribou/i18n.py
 bin/Makefile
 bin/caribou
 data/Makefile
