@@ -1,0 +1,45 @@
+# Slovenian translation of caribou.
+# Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the caribou package.
+#
+# Andrej Žnidaršič <andrej.znidarsic@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&component=default\n"
+"POT-Creation-Date: 2010-05-18 11:35+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
+"Language-Team: Slovenian GNOME translation team <gnome-si@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-Country: SLOVENIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../caribou/main.py:103
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "OPOZORILO - Caribou: neobdelan uredljiv gradnik:"
+
+#: ../data/caribou-prefs.ui.h:1
+msgid "Caribou Preferences"
+msgstr "Možnosti Caribou"
+
+#: ../data/caribou-prefs.ui.h:2
+msgid "Key _size:"
+msgstr "_Velikost tipk: "
+
+#: ../data/caribou-prefs.ui.h:3
+msgid "Key s_pacing:"
+msgstr "R_azmik med tipkami:"
+
+#: ../data/caribou-prefs.ui.h:4
+msgid "Keyboard _layout:"
+msgstr "_Razporeditev tipkovnice:"
+
+#: ../data/caribou-prefs.ui.h:5
+msgid "_Test settings here:"
+msgstr "Tukaj _preizkusite nastavitve:"
