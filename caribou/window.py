@@ -23,6 +23,10 @@ import gconf
 import gtk
 import gtk.gdk as gdk
 import opacity
+import os
+
+CARIBOU_GCONF_LAYOUT_KEY = '/apps/caribou/osk/layout'
+CARIBOU_LAYOUT_DIR = 'caribou/keyboards'
 
 class CaribouWindow(gtk.Window):
     __gtype_name__ = "CaribouWindow"
@@ -43,7 +47,11 @@ class CaribouWindow(gtk.Window):
         self._entry_location = gdk.Rectangle()
         self._default_placement = default_placement or \
             CaribouWindowPlacement()
-        
+
+        conf_file_path = self._get_keyboard_conf()
+        if conf_file_path:
+            text_entry_mech.load_kb(conf_file_path)
+
     def set_cursor_location(self, cursor_location):
         self._cursor_location = cursor_location
         self._update_position()
@@ -123,6 +131,14 @@ class CaribouWindow(gtk.Window):
 
         return offset
 
+    def _get_keyboard_conf(self):
+        layout = self._gconf_client.get_string(CARIBOU_GCONF_LAYOUT_KEY)
+        conf_file_path = os.path.join(os.curdir,
+                                      CARIBOU_LAYOUT_DIR,
+                                      layout)
+        print conf_file_path
+        if os.path.exists(conf_file_path):
+            return conf_file_path
 
 class CaribouWindowDocked(CaribouWindow, 
                           animation.AnimatedWindowBase,
