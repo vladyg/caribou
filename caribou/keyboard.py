@@ -26,6 +26,14 @@ import gtk
 import sys
 import virtkey
 import os
+try:
+    import json
+except ImportError:
+    HAS_JSON = False
+else:
+    HAS_JSON = True
+import xml.etree.ElementTree as ET
+from xml.dom import minidom
 
 import keyboards
 from . import data_path
@@ -178,6 +186,103 @@ class KeyboardLayout(gtk.Alignment):
         alignment.add(hbox)
         self.vbox.pack_start(alignment)
 
+class KbLayoutDeserializer(object):
+
+    def __init__(self):
+        pass
+
+    def deserialize(self, kb_layout_file):
+        kb_file = os.path.abspath(kb_layout_file)
+        if not os.path.isfile(kb_file):
+            return []
+        kb_file_obj = open(kb_file)
+        contents = kb_file_obj.read()
+        kb_file_obj.close()
+        basename, ext = os.path.splitext(kb_file)
+        try:
+            kb_layouts = self._deserialize_from_format(ext, contents)
+        except:
+            pass
+        else:
+            return kb_layouts
+        return []
+
+    def _deserialize_from_format(self, format, contents):
+        if format == '.xml':
+            return self._deserialize_from_xml(contents)
+        if HAS_JSON and format == '.json':
+            return self._deserialize_from_json(contents)
+        return []
+
+    def _deserialize_from_json(self, contents):
+        contents_dict = json.loads(contents)
+        layouts = self._create_kb_layout_from_dict(contents_dict)
+        return layouts
+
+    def _convert_xml_to_dict(self, element):
+        if element.text and element.text.strip():
+            return element.text
+        attributes = element.attrib
+        for child in element.getchildren():
+            if attributes.get(child.tag):
+                attributes[child.tag] += [self._convert_xml_to_dict(child)]
+            else:
+                attributes[child.tag] = [self._convert_xml_to_dict(child)]
+        for key, value in attributes.items():
+            if isinstance(value, list) and len(value) == 1:
+                attributes[key] = value[0]
+        return attributes
+
+    def _deserialize_from_xml(self, xml_string):
+        element = ET.fromstring(xml_string)
+        layout_dict = self._convert_xml_to_dict(element)
+        return self._create_kb_layout_from_dict(layout_dict)
+
+    def _create_kb_layout_from_dict(self, dictionary):
+        if not isinstance(dictionary, dict):
+            return None
+        layouts = self._get_dict_value_as_list(dictionary, 'layout')
+        layouts_encoded = []
+        for layout in layouts:
+            name = layout.get('name')
+            if not name:
+                continue
+            kb_layout = KeyboardLayout(name)
+            rows_list = self._get_dict_value_as_list(layout, 'rows')
+            for rows in rows_list:
+                for row_encoded in self._get_rows_from_dict(rows):
+                    kb_layout.add_row(row_encoded)
+                layouts_encoded.append(kb_layout)
+        return layouts_encoded
+
+    def _get_rows_from_dict(self, rows):
+        rows_encoded = []
+        row_list = self._get_dict_value_as_list(rows, 'row')
+        for row in row_list:
+            keys = self._get_dict_value_as_list(row, 'key')
+            if keys:
+                rows_encoded.append(self._get_keys_from_list(keys))
+        return rows_encoded
+
+    def _get_keys_from_list(self, keys_list):
+        keys = []
+        for key_vars in keys_list:
+            vars = {}
+            for key, value in key_vars.items():
+                vars[str(key)] = value
+            key = Key(**vars)
+            keys.append(key)
+        return keys
+
+    def _get_dict_value_as_list(self, dictionary, key):
+        if isinstance(dictionary, list):
+            return dictionary
+        value = dictionary.get(key)
+        if not value:
+            return None
+        if isinstance(value, list):
+            return value
+        return [value]
 
 
 if __name__ == "__main__":
