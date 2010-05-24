@@ -1,10 +1,18 @@
-Running Caribou
-===============
+Caribou 0.1.2
 
-cd src
-python ./caribou.py --debug
+Description
+===========
 
-When an editable text widget has focus, a keyboard should pop up. There are
-still some problems with the text focus detection and keyboard placement.
+Caribou is an input assistive technology intended for swithc and
+pointer users.
 
-Use the right control key (Control_R) to quit caribou. 
+Features
+========
+A configurable on screen keyboard with scanning mode.
+
+Requirements
+============
+
+- pygtk >= 2.16
+- pyclutter >= 1.0
+- python-virtkey >= 0.50
