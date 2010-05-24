@@ -30,6 +30,27 @@ import os
 import keyboards
 from . import data_path
 
+NORMAL_KEY_TYPE = 'normal'
+LAYOUT_SWITCHER_KEY_TYPE = 'layout_switcher'
+PREFERENCES_KEY_TYPE = 'preferences'
+DUMMY_KEY_TYPE = 'dummy'
+MASK_KEY_TYPE = 'mask'
+
+KEY_MASKS = {'shift': gtk.gdk.SHIFT_MASK,
+             'lock': gtk.gdk.LOCK_MASK,
+             'control': gtk.gdk.CONTROL_MASK,
+             'mod1': gtk.gdk.MOD1_MASK,
+             'mod2': gtk.gdk.MOD2_MASK,
+             'mod3': gtk.gdk.MOD3_MASK,
+             'mod4': gtk.gdk.MOD4_MASK,
+             'mod5': gtk.gdk.MOD5_MASK,
+             'button1': gtk.gdk.BUTTON1_MASK,
+             'button2': gtk.gdk.BUTTON2_MASK,
+             'button3': gtk.gdk.BUTTON3_MASK,
+             'button4': gtk.gdk.BUTTON4_MASK,
+             'button5': gtk.gdk.BUTTON5_MASK}
+
+
 class KeyboardPreferences:
     __gtype_name__ = "KeyboardPreferences"
 
