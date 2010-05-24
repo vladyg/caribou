@@ -284,14 +284,68 @@ class KbLayoutDeserializer(object):
             return value
         return [value]
 
+class CaribouKeyboard(gtk.Notebook):
+    __gtype_name__ = "CaribouKeyboard"
 
-if __name__ == "__main__":
-    # create test window with keyboard
-    # run with: python caribou/keyboard.py
-    kbdloc = "keyboards.qwerty"
-    __import__(kbdloc)
-    ckbd = KeyboardLayout(sys.modules[kbdloc])
-    window = gtk.Window(gtk.WINDOW_POPUP)
-    window.add(ckbd)
-    window.show_all()
-    gtk.main()
+    def __init__(self):
+        gtk.Notebook.__init__(self)
+        self.set_show_tabs(False)
+        self.vk = virtkey.virtkey()
+        self.key_size = 30
+        self.current_mask = 0
+
+    def load_kb(self, kb_location):
+        kb_deserializer = KbLayoutDeserializer()
+        layouts = kb_deserializer.deserialize(kb_location)
+        self._set_layouts(layouts)
+
+    def _set_layouts(self, layout_list):
+        self._clear()
+        for layout in layout_list:
+            self.append_page(layout)
+            for row in layout.rows:
+                for key in row:
+                    if key.key_type == LAYOUT_SWITCHER_KEY_TYPE:
+                        key.connect('clicked',
+                                    self._pressed_layout_switcher_key)
+                    elif key.key_type == MASK_KEY_TYPE:
+                        key.connect('clicked',
+                                    self._pressed_mask_key)
+                    elif key.key_type == PREFERENCES_KEY_TYPE:
+                        key.connect('clicked',
+                                    self._pressed_preferences_key)
+                    else:
+                        key.connect('clicked',
+                                    self._pressed_normal_key)
+                    key.set_relative_size(self.key_size)
+
+    def _clear(self):
+        n_pages = self.get_n_pages()
+        for i in range(n_pages):
+            self.remove_page(i)
+
+    def _pressed_normal_key(self, key):
+        self.vk.press_keysym(key.value)
+        self.vk.release_keysym(key.value)
+        self.current_mask = 0
+
+    def _pressed_layout_switcher_key(self, key):
+        self._switch_to_layout(key.value)
+
+    def _pressed_mask_key(self, key):
+        if self.current_mask & key.value != 0:
+            self.vk.unlatch_mod(key.value)
+            self.current_mask &= ~key.value
+        else:
+            self.current_mask |= key.value
+            self.vk.latch_mod(self.current_mask)
+
+    def _pressed_preferences_key(self, key):
+        KeyboardPreferences()
+
+    def _switch_to_layout(self, name):
+        n_pages = self.get_n_pages()
+        for i in range(n_pages):
+            if self.get_nth_page(i).layout_name == name:
+                self.set_current_page(i)
+                break
