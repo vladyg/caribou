@@ -160,41 +160,23 @@ class Key(gtk.Button):
 
     value = property(_get_value, _set_value)
 
-    def __init__(self):
-        gtk.Frame.__init__(self)
-        self.set_shadow_type(gtk.SHADOW_NONE)
+class KeyboardLayout(gtk.Alignment):
 
-        # FIXME: load from stored value, default to locale appropriate
-        kbdloc = "caribou.keyboards.qwerty"
-        __import__(kbdloc)
-        kbdlayout = self._KeyboardLayout(sys.modules[kbdloc])
-        self._set_kbd_layout(kbdlayout)
-        # end FIXME
+    def __init__(self, name):
+        super(KeyboardLayout, self).__init__(0, 0, 0, 0)
+        self.layout_name = name
+        self.rows = []
+        self.vbox = gtk.VBox()
+        self.add(self.vbox)
 
-    def _change_layer(self, widget, data):
-        self.remove(self.get_child())
-        self.add(data)
-        self.show_all()
-
-    def _set_kbd_layout(self, layout):
-        # FIXME: set kbd name properly
-        self._kbd_name = "qwerty"
-        # connect the change layer buttons
-        for button in layout.switch_layer_buttons:
-            for layer in layout.layers:
-                if button.get_name() == layer.get_name():
-                    button.connect("clicked", self._change_layer, layer)
-                    button.set_name("")
-                    break
-            else:
-                print "ERROR" # TODO: throw exception
-
-        # add the first layer and make it visible
-        self.add(layout.layers[0])
-        self.show_all()
-
-    def get_layout(self):
-        return self._kbd_name
+    def add_row(self, row):
+        self.rows.append(row)
+        alignment = gtk.Alignment(0.5, 0.5, 0, 0)
+        hbox = gtk.HBox()
+        for key in row:
+            hbox.pack_start(key, expand = True, fill = key.fill)
+        alignment.add(hbox)
+        self.vbox.pack_start(alignment)
 
 
 
