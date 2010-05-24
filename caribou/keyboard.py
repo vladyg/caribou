@@ -108,79 +108,57 @@ class KeyboardPreferences:
         if kbdname:
             client.set_string("/apps/caribou/osk/layout", kbdname)
 
-class CaribouKeyboard(gtk.Frame):
-    __gtype_name__ = "CaribouKeyboard"
+class Key(gtk.Button):
 
-    class _KeyboardLayout:
-        vk = virtkey.virtkey()
+    def __init__(self, label = '', value = '', key_type = 'normal',
+                 width = 1, fill = False):
+        super(Key, self).__init__()
+        self.key_type = key_type
+        self.value = value
+        self.width = float(width)
+        self.fill = False
+        self.label = label or value
+        if self.key_type == DUMMY_KEY_TYPE:
+            self.set_relief(gtk.RELIEF_NONE)
+            self.set_sensitive(False)
+        elif self.key_type == PREFERENCES_KEY_TYPE:
+            image = gtk.Image()
+            image.set_from_stock(gtk.STOCK_PREFERENCES,
+                                 gtk.ICON_SIZE_BUTTON)
+            self.set_image(image)
+        else:
+            if label:
+                label_markup = gtk.Label()
+                label_markup.set_markup(self.label)
+                self.add(label_markup)
+            else:
+                self.set_label(self.label)
 
-        def __init__(self, kdbdef):
-            self.layers, self.switch_layer_buttons = [], []
-            for layer in kdbdef.layers:
-                layervbox = gtk.VBox(homogeneous = True)
-                self.layers.append(layervbox)
-                layervbox.set_name(layer)
-                # get the layer tuple from the string
-                layer = getattr(kdbdef, layer)
-                for row in layer:
-                    rowhbox = gtk.HBox(homogeneous = True)
-                    for key in row:
-                        # check if the key is defined by a string or a tuple
-                        if isinstance(key, str):
-                            if key == "pf":
-                                # preferences key
-                                button = gtk.Button()
-                                button.set_use_underline(False)
-                                image = gtk.image_new_from_pixbuf(
-                                    button.render_icon(gtk.STOCK_PREFERENCES,
-                                                       gtk.ICON_SIZE_BUTTON))
-                                button.set_image(image)
-                                button.connect("clicked", self._open_prefs)
-                            else:
-                                # single utf-8 character key
-                                button = gtk.Button(key)
-                                button.set_use_underline(False)
-                                char = ord(key.decode('utf-8'))
-                                button.connect("pressed", self._press_cb,
-                                               char)
-                                button.connect("released", self._release_cb,
-                                               char)
-                        elif isinstance(key, tuple):
-                            button = gtk.Button(key[0])
-                            button.set_use_underline(False)
-                            # check if this key is a layer switch key or not
-                            if isinstance(key[1], str):
-                                # switch layer key
-                                # set layer name on button and save to process later
-                                button.set_name(key[1])
-                                self.switch_layer_buttons.append(button)
-                            else:
-                                # regular key
-                                button.connect("pressed",
-                                               self._keysym_press_cb, key[1])
-                                button.connect("released",
-                                               self._keysym_release_cb, key[1])
-                        else:
-                            pass # TODO: throw error here
+    def set_relative_size(self, size):
+        self.set_size_request(int(size * self.width), int(size))
 
-                        rowhbox.pack_start(button, expand = False, fill = True)
+    def _get_value(self):
+        return self._value
 
-                    layervbox.pack_start(rowhbox, expand = False, fill = True)
+    def _set_value(self, value):
+        if self.key_type == NORMAL_KEY_TYPE:
+            if type(value) == str or type(value) == unicode:
+                value = value.decode('utf-8')
+                if len(value) == 1:
+                    self._value = ord(value)
+                else:
+                    key_value = gtk.gdk.keyval_from_name(value)
+                    if key_value:
+                        self._value = key_value
+        elif self.key_type == MASK_KEY_TYPE:
+            if type(value) == str or type(value) == unicode:
+                for key, mask in KEY_MASKS.items():
+                    if value == key:
+                        self._value = mask
+        else:
+            self._value = value
 
-        def _open_prefs(self, widget):
-            KeyboardPreferences()
-
-        def _press_cb(self, widget, char):
-            self.vk.press_unicode(char)
-
-        def _release_cb(self, widget, char):
-            self.vk.release_unicode(char)
-
-        def _keysym_press_cb(self, widget, char):
-            self.vk.press_keysym(char)
-
-        def _keysym_release_cb(self, widget, char):
-            self.vk.release_keysym(char)
+    value = property(_get_value, _set_value)
 
     def __init__(self):
         gtk.Frame.__init__(self)
