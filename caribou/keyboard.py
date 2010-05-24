@@ -5,6 +5,8 @@
 # Copyright (C) 2009 Adaptive Technology Resource Centre
 #  * Contributor: Ben Konrath <ben@bagu.org>
 # Copyright (C) 2009 Eitan Isaacson <eitan@monotonous.org>
+# Copyright (C) 2010 Igalia S.L.
+#  * Contributor: Joaquim Rocha <jrocha@igalia.com>
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU Lesser General Public License as published by the
