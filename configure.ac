@@ -46,4 +46,5 @@ caribou/i18n.py
 bin/Makefile
 bin/caribou
 data/Makefile
+data/keyboards/Makefile
 ])
