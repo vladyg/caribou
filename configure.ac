@@ -42,7 +42,6 @@ AC_OUTPUT([
 Makefile
 po/Makefile.in
 caribou/Makefile
-caribou/keyboards/Makefile
 caribou/i18n.py
 bin/Makefile
 bin/caribou

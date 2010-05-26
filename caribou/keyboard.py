@@ -37,7 +37,6 @@ else:
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
-import keyboards
 from . import data_path
 
 NORMAL_KEY_TYPE = 'normal'
@@ -81,17 +80,18 @@ class KeyboardPreferences:
         layout_combo = builder.get_object("combobox_layout")
         layout_combo.connect("changed", self._on_layout_changed, client)
 
-        for kbddef in keyboards.kbds:
-            layout_combo.append_text(kbddef)
+        #TODO: List the layouts in the data dir
+        #for kbddef in keyboards.kbds:
+        #    layout_combo.append_text(kbddef)
 
-        defaultkbd = client.get_string("/apps/caribou/osk/layout")
-        try:
-            index = keyboards.kbds.index(defaultkbd)
-        except ValueError:
-            print "FIXME: pick a suitable keyboard layout: " + (defaultkbd or "None")
-            layout_combo.set_active(0)
-        else:
-            layout_combo.set_active(index)
+        #defaultkbd = client.get_string("/apps/caribou/osk/layout")
+        #try:
+        #    index = keyboards.kbds.index(defaultkbd)
+        #except ValueError:
+        #    print "FIXME: pick a suitable keyboard layout: " + (defaultkbd or "None")
+        #    layout_combo.set_active(0)
+        #else:
+        #    layout_combo.set_active(index)
 
         # grey out the key size, key spacing and test area
         # TODO: implement key size, key spacing and test area
