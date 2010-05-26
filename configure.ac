@@ -15,6 +15,10 @@ AM_SILENT_RULES([yes])
 dnl == check for python ==
 AM_PATH_PYTHON(2.4)
 
+dnl == check for GConf ==
+AC_PATH_PROG(GCONFTOOL, gconftool-2)
+AM_GCONF_SOURCE_2
+
 dnl == Library dependencies ==
 PYGTK_REQUIRED=2.16
 PYCLUTTER_REQUIRED=1.0
