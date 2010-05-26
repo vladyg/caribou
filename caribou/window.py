@@ -19,14 +19,16 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 import animation
+from . import data_path
 import gconf
 import gtk
 import gtk.gdk as gdk
 import opacity
 import os
+import sys
 
 CARIBOU_GCONF_LAYOUT_KEY = '/apps/caribou/osk/layout'
-CARIBOU_LAYOUT_DIR = 'caribou/keyboards'
+CARIBOU_LAYOUT_DIR = 'keyboards'
 
 class CaribouWindow(gtk.Window):
     __gtype_name__ = "CaribouWindow"
@@ -133,10 +135,9 @@ class CaribouWindow(gtk.Window):
 
     def _get_keyboard_conf(self):
         layout = self._gconf_client.get_string(CARIBOU_GCONF_LAYOUT_KEY)
-        conf_file_path = os.path.join(os.curdir,
-                                      CARIBOU_LAYOUT_DIR,
-                                      layout)
-        print conf_file_path
+        if not layout:
+            return None
+        conf_file_path = os.path.join(data_path, CARIBOU_LAYOUT_DIR, layout)
         if os.path.exists(conf_file_path):
             return conf_file_path
 
