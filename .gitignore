@@ -21,4 +21,5 @@ po/POTFILES
 po/stamp-it
 *.gmo
 m4/intltool.m4
+*.tar.gz
 
