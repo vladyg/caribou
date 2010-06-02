@@ -1,0 +1,45 @@
+# Indonesian translation of caribou
+# Copyright (C) 2010 THE caribou'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the caribou package.
+# Andika Triwidada <andika@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&component=default\n"
+"POT-Creation-Date: 2010-05-24 18:14+0000\n"
+"PO-Revision-Date: 2010-06-03 02:06+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"Language-Team: GNOME Indonesian Translation Team <gnome@i15n.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Indonesian\n"
+"X-Poedit-Country: Indonesia\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: ../caribou/main.py:103
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "PERINGATAN - Caribou: widget dapat disunting yang tak tertangani:"
+
+#: ../data/caribou-prefs.ui.h:1
+msgid "Caribou Preferences"
+msgstr "Preferensi Caribou"
+
+#: ../data/caribou-prefs.ui.h:2
+msgid "Key _size:"
+msgstr "_Ukuran tombol:"
+
+#: ../data/caribou-prefs.ui.h:3
+msgid "Key s_pacing:"
+msgstr "_Jarak antar tombol:"
+
+#: ../data/caribou-prefs.ui.h:4
+msgid "Keyboard _layout:"
+msgstr "Tata _letak papan tik:"
+
+#: ../data/caribou-prefs.ui.h:5
+msgid "_Test settings here:"
+msgstr "Uji _tatanan disini:"
