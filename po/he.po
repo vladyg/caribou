@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-03 13:13+0300\n"
+"PO-Revision-Date: 2010-06-03 13:16+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Gezer <sh.yaron@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2;plural=(n!=1);\n"
+"X-Poedit-Language: Hebrew\n"
+"X-Poedit-Country: ISRAEL\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: ../caribou/main.py:103
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "WARNING - Caribou: unhandled editable widget:"
+
+#: ../data/caribou-prefs.ui.h:1
+msgid "Caribou Preferences"
+msgstr "העדפות Cairbou"
+
+#: ../data/caribou-prefs.ui.h:2
+msgid "Key _size:"
+msgstr "_גודל המקשים:"
+
+#: ../data/caribou-prefs.ui.h:3
+msgid "Key s_pacing:"
+msgstr "_ריווח המקשים:"
+
+#: ../data/caribou-prefs.ui.h:4
+msgid "Keyboard _layout:"
+msgstr "_פריסת המקלדת:"
+
+#: ../data/caribou-prefs.ui.h:5
+msgid "_Test settings here:"
+msgstr "_בדיקת ההגדרות להלן:"
