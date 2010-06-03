@@ -1,0 +1,41 @@
+# Swedish translation for caribou.
+# Copyright (C) 2010 Free Software Foundation, Inc.
+# This file is distributed under the same license as the caribou package.
+# Daniel Nylander <po@danielnylander.se>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-03 22:06+0200\n"
+"PO-Revision-Date: 2010-06-03 22:08+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../caribou/main.py:103
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "VARNING - Caribou: ohanterad redigerbar widget:"
+
+#: ../data/caribou-prefs.ui.h:1
+msgid "Caribou Preferences"
+msgstr "Inställningar för Caribou"
+
+#: ../data/caribou-prefs.ui.h:2
+msgid "Key _size:"
+msgstr "Tangent_storlek:"
+
+#: ../data/caribou-prefs.ui.h:3
+msgid "Key s_pacing:"
+msgstr "Tangent_mellanrum:"
+
+#: ../data/caribou-prefs.ui.h:4
+msgid "Keyboard _layout:"
+msgstr "Tangentbords_layout:"
+
+#: ../data/caribou-prefs.ui.h:5
+msgid "_Test settings here:"
+msgstr "_Testa inställningarna här:"
+
