@@ -5,6 +5,8 @@
 # Copyright (C) 2009 Adaptive Technology Resource Centre
 #  * Contributor: Ben Konrath <ben@bagu.org>
 # Copyright (C) 2009 Eitan Isaacson <eitan@monotonous.org>
+# Copyright (C) 2010 Igalia S.L.
+#  * Contributor: Joaquim Rocha <jrocha@igalia.com>
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU Lesser General Public License as published by the
@@ -26,9 +28,37 @@ import gtk
 import sys
 import virtkey
 import os
+try:
+    import json
+except ImportError:
+    HAS_JSON = False
+else:
+    HAS_JSON = True
+import xml.etree.ElementTree as ET
+from xml.dom import minidom
 
-import keyboards
 from . import data_path
+
+NORMAL_KEY_TYPE = 'normal'
+LAYOUT_SWITCHER_KEY_TYPE = 'layout_switcher'
+PREFERENCES_KEY_TYPE = 'preferences'
+DUMMY_KEY_TYPE = 'dummy'
+MASK_KEY_TYPE = 'mask'
+
+KEY_MASKS = {'shift': gtk.gdk.SHIFT_MASK,
+             'lock': gtk.gdk.LOCK_MASK,
+             'control': gtk.gdk.CONTROL_MASK,
+             'mod1': gtk.gdk.MOD1_MASK,
+             'mod2': gtk.gdk.MOD2_MASK,
+             'mod3': gtk.gdk.MOD3_MASK,
+             'mod4': gtk.gdk.MOD4_MASK,
+             'mod5': gtk.gdk.MOD5_MASK,
+             'button1': gtk.gdk.BUTTON1_MASK,
+             'button2': gtk.gdk.BUTTON2_MASK,
+             'button3': gtk.gdk.BUTTON3_MASK,
+             'button4': gtk.gdk.BUTTON4_MASK,
+             'button5': gtk.gdk.BUTTON5_MASK}
+
 
 class KeyboardPreferences:
     __gtype_name__ = "KeyboardPreferences"
@@ -50,17 +80,18 @@ class KeyboardPreferences:
         layout_combo = builder.get_object("combobox_layout")
         layout_combo.connect("changed", self._on_layout_changed, client)
 
-        for kbddef in keyboards.kbds:
-            layout_combo.append_text(kbddef)
+        #TODO: List the layouts in the data dir
+        #for kbddef in keyboards.kbds:
+        #    layout_combo.append_text(kbddef)
 
-        defaultkbd = client.get_string("/apps/caribou/osk/layout")
-        try:
-            index = keyboards.kbds.index(defaultkbd)
-        except ValueError:
-            print "FIXME: pick a suitable keyboard layout: " + (defaultkbd or "None")
-            layout_combo.set_active(0)
-        else:
-            layout_combo.set_active(index)
+        #defaultkbd = client.get_string("/apps/caribou/osk/layout")
+        #try:
+        #    index = keyboards.kbds.index(defaultkbd)
+        #except ValueError:
+        #    print "FIXME: pick a suitable keyboard layout: " + (defaultkbd or "None")
+        #    layout_combo.set_active(0)
+        #else:
+        #    layout_combo.set_active(index)
 
         # grey out the key size, key spacing and test area
         # TODO: implement key size, key spacing and test area
@@ -87,125 +118,236 @@ class KeyboardPreferences:
         if kbdname:
             client.set_string("/apps/caribou/osk/layout", kbdname)
 
-class CaribouKeyboard(gtk.Frame):
-    __gtype_name__ = "CaribouKeyboard"
+class Key(gtk.Button):
 
-    class _KeyboardLayout:
-        vk = virtkey.virtkey()
+    def __init__(self, label = '', value = '', key_type = 'normal',
+                 width = 1, fill = False):
+        super(Key, self).__init__()
+        self.key_type = key_type
+        self.value = value
+        self.width = float(width)
+        self.fill = False
+        self.label = label or value
+        if self.key_type == DUMMY_KEY_TYPE:
+            self.set_relief(gtk.RELIEF_NONE)
+            self.set_sensitive(False)
+        elif self.key_type == PREFERENCES_KEY_TYPE:
+            image = gtk.Image()
+            image.set_from_stock(gtk.STOCK_PREFERENCES,
+                                 gtk.ICON_SIZE_BUTTON)
+            self.set_image(image)
+        else:
+            if label:
+                label_markup = gtk.Label()
+                label_markup.set_markup(self.label)
+                self.add(label_markup)
+            else:
+                self.set_label(self.label)
 
-        def __init__(self, kdbdef):
-            self.layers, self.switch_layer_buttons = [], []
-            for layer in kdbdef.layers:
-                layervbox = gtk.VBox(homogeneous = True)
-                self.layers.append(layervbox)
-                layervbox.set_name(layer)
-                # get the layer tuple from the string
-                layer = getattr(kdbdef, layer)
-                for row in layer:
-                    rowhbox = gtk.HBox(homogeneous = True)
-                    for key in row:
-                        # check if the key is defined by a string or a tuple
-                        if isinstance(key, str):
-                            if key == "pf":
-                                # preferences key
-                                button = gtk.Button()
-                                button.set_use_underline(False)
-                                image = gtk.image_new_from_pixbuf(
-                                    button.render_icon(gtk.STOCK_PREFERENCES,
-                                                       gtk.ICON_SIZE_BUTTON))
-                                button.set_image(image)
-                                button.connect("clicked", self._open_prefs)
-                            else:
-                                # single utf-8 character key
-                                button = gtk.Button(key)
-                                button.set_use_underline(False)
-                                char = ord(key.decode('utf-8'))
-                                button.connect("pressed", self._press_cb,
-                                               char)
-                                button.connect("released", self._release_cb,
-                                               char)
-                        elif isinstance(key, tuple):
-                            button = gtk.Button(key[0])
-                            button.set_use_underline(False)
-                            # check if this key is a layer switch key or not
-                            if isinstance(key[1], str):
-                                # switch layer key
-                                # set layer name on button and save to process later
-                                button.set_name(key[1])
-                                self.switch_layer_buttons.append(button)
-                            else:
-                                # regular key
-                                button.connect("pressed",
-                                               self._keysym_press_cb, key[1])
-                                button.connect("released",
-                                               self._keysym_release_cb, key[1])
-                        else:
-                            pass # TODO: throw error here
+    def set_relative_size(self, size):
+        self.set_size_request(int(size * self.width), int(size))
 
-                        rowhbox.pack_start(button, expand = False, fill = True)
+    def _get_value(self):
+        return self._value
 
-                    layervbox.pack_start(rowhbox, expand = False, fill = True)
+    def _set_value(self, value):
+        if self.key_type == NORMAL_KEY_TYPE:
+            if type(value) == str or type(value) == unicode:
+                value = value.decode('utf-8')
+                if len(value) == 1:
+                    self._value = ord(value)
+                else:
+                    key_value = gtk.gdk.keyval_from_name(value)
+                    if key_value:
+                        self._value = key_value
+        elif self.key_type == MASK_KEY_TYPE:
+            if type(value) == str or type(value) == unicode:
+                for key, mask in KEY_MASKS.items():
+                    if value == key:
+                        self._value = mask
+        else:
+            self._value = value
 
-        def _open_prefs(self, widget):
-            KeyboardPreferences()
+    value = property(_get_value, _set_value)
 
-        def _press_cb(self, widget, char):
-            self.vk.press_unicode(char)
+class KeyboardLayout(gtk.Alignment):
 
-        def _release_cb(self, widget, char):
-            self.vk.release_unicode(char)
+    def __init__(self, name):
+        super(KeyboardLayout, self).__init__(0, 0, 0, 0)
+        self.layout_name = name
+        self.rows = []
+        self.vbox = gtk.VBox()
+        self.add(self.vbox)
 
-        def _keysym_press_cb(self, widget, char):
-            self.vk.press_keysym(char)
+    def add_row(self, row):
+        self.rows.append(row)
+        alignment = gtk.Alignment(0.5, 0.5, 0, 0)
+        hbox = gtk.HBox()
+        for key in row:
+            hbox.pack_start(key, expand = True, fill = key.fill)
+        alignment.add(hbox)
+        self.vbox.pack_start(alignment)
 
-        def _keysym_release_cb(self, widget, char):
-            self.vk.release_keysym(char)
+class KbLayoutDeserializer(object):
 
     def __init__(self):
-        gtk.Frame.__init__(self)
-        self.set_shadow_type(gtk.SHADOW_NONE)
+        pass
 
-        # FIXME: load from stored value, default to locale appropriate
-        kbdloc = "caribou.keyboards.qwerty"
-        __import__(kbdloc)
-        kbdlayout = self._KeyboardLayout(sys.modules[kbdloc])
-        self._set_kbd_layout(kbdlayout)
-        # end FIXME
+    def deserialize(self, kb_layout_file):
+        kb_file = os.path.abspath(kb_layout_file)
+        if not os.path.isfile(kb_file):
+            return []
+        kb_file_obj = open(kb_file)
+        contents = kb_file_obj.read()
+        kb_file_obj.close()
+        basename, ext = os.path.splitext(kb_file)
+        try:
+            kb_layouts = self._deserialize_from_format(ext, contents)
+        except:
+            pass
+        else:
+            return kb_layouts
+        return []
 
-    def _change_layer(self, widget, data):
-        self.remove(self.get_child())
-        self.add(data)
-        self.show_all()
+    def _deserialize_from_format(self, format, contents):
+        if format == '.xml':
+            return self._deserialize_from_xml(contents)
+        if HAS_JSON and format == '.json':
+            return self._deserialize_from_json(contents)
+        return []
 
-    def _set_kbd_layout(self, layout):
-        # FIXME: set kbd name properly
-        self._kbd_name = "qwerty"
-        # connect the change layer buttons
-        for button in layout.switch_layer_buttons:
-            for layer in layout.layers:
-                if button.get_name() == layer.get_name():
-                    button.connect("clicked", self._change_layer, layer)
-                    button.set_name("")
-                    break
+    def _deserialize_from_json(self, contents):
+        contents_dict = json.loads(contents)
+        layouts = self._create_kb_layout_from_dict(contents_dict)
+        return layouts
+
+    def _convert_xml_to_dict(self, element):
+        if element.text and element.text.strip():
+            return element.text
+        attributes = element.attrib
+        for child in element.getchildren():
+            if attributes.get(child.tag):
+                attributes[child.tag] += [self._convert_xml_to_dict(child)]
             else:
-                print "ERROR" # TODO: throw exception
+                attributes[child.tag] = [self._convert_xml_to_dict(child)]
+        for key, value in attributes.items():
+            if isinstance(value, list) and len(value) == 1:
+                attributes[key] = value[0]
+        return attributes
 
-        # add the first layer and make it visible
-        self.add(layout.layers[0])
-        self.show_all()
+    def _deserialize_from_xml(self, xml_string):
+        element = ET.fromstring(xml_string)
+        layout_dict = self._convert_xml_to_dict(element)
+        return self._create_kb_layout_from_dict(layout_dict)
 
-    def get_layout(self):
-        return self._kbd_name
+    def _create_kb_layout_from_dict(self, dictionary):
+        if not isinstance(dictionary, dict):
+            return None
+        layouts = self._get_dict_value_as_list(dictionary, 'layout')
+        layouts_encoded = []
+        for layout in layouts:
+            name = layout.get('name')
+            if not name:
+                continue
+            kb_layout = KeyboardLayout(name)
+            rows_list = self._get_dict_value_as_list(layout, 'rows')
+            for rows in rows_list:
+                for row_encoded in self._get_rows_from_dict(rows):
+                    kb_layout.add_row(row_encoded)
+                layouts_encoded.append(kb_layout)
+        return layouts_encoded
 
+    def _get_rows_from_dict(self, rows):
+        rows_encoded = []
+        row_list = self._get_dict_value_as_list(rows, 'row')
+        for row in row_list:
+            keys = self._get_dict_value_as_list(row, 'key')
+            if keys:
+                rows_encoded.append(self._get_keys_from_list(keys))
+        return rows_encoded
 
+    def _get_keys_from_list(self, keys_list):
+        keys = []
+        for key_vars in keys_list:
+            vars = {}
+            for key, value in key_vars.items():
+                vars[str(key)] = value
+            key = Key(**vars)
+            keys.append(key)
+        return keys
 
-if __name__ == "__main__":
-    # create test window with keyboard
-    # run with: python caribou/keyboard.py
-    kbdloc = "keyboards.qwerty"
-    __import__(kbdloc)
-    ckbd = KeyboardLayout(sys.modules[kbdloc])
-    window = gtk.Window(gtk.WINDOW_POPUP)
-    window.add(ckbd)
-    window.show_all()
-    gtk.main()
+    def _get_dict_value_as_list(self, dictionary, key):
+        if isinstance(dictionary, list):
+            return dictionary
+        value = dictionary.get(key)
+        if not value:
+            return None
+        if isinstance(value, list):
+            return value
+        return [value]
+
+class CaribouKeyboard(gtk.Notebook):
+    __gtype_name__ = "CaribouKeyboard"
+
+    def __init__(self):
+        gtk.Notebook.__init__(self)
+        self.set_show_tabs(False)
+        self.vk = virtkey.virtkey()
+        self.key_size = 30
+        self.current_mask = 0
+
+    def load_kb(self, kb_location):
+        kb_deserializer = KbLayoutDeserializer()
+        layouts = kb_deserializer.deserialize(kb_location)
+        self._set_layouts(layouts)
+
+    def _set_layouts(self, layout_list):
+        self._clear()
+        for layout in layout_list:
+            self.append_page(layout)
+            for row in layout.rows:
+                for key in row:
+                    if key.key_type == LAYOUT_SWITCHER_KEY_TYPE:
+                        key.connect('clicked',
+                                    self._pressed_layout_switcher_key)
+                    elif key.key_type == MASK_KEY_TYPE:
+                        key.connect('clicked',
+                                    self._pressed_mask_key)
+                    elif key.key_type == PREFERENCES_KEY_TYPE:
+                        key.connect('clicked',
+                                    self._pressed_preferences_key)
+                    else:
+                        key.connect('clicked',
+                                    self._pressed_normal_key)
+                    key.set_relative_size(self.key_size)
+
+    def _clear(self):
+        n_pages = self.get_n_pages()
+        for i in range(n_pages):
+            self.remove_page(i)
+
+    def _pressed_normal_key(self, key):
+        self.vk.press_keysym(key.value)
+        self.vk.release_keysym(key.value)
+        self.current_mask = 0
+
+    def _pressed_layout_switcher_key(self, key):
+        self._switch_to_layout(key.value)
+
+    def _pressed_mask_key(self, key):
+        if self.current_mask & key.value != 0:
+            self.vk.unlatch_mod(key.value)
+            self.current_mask &= ~key.value
+        else:
+            self.current_mask |= key.value
+            self.vk.latch_mod(self.current_mask)
+
+    def _pressed_preferences_key(self, key):
+        KeyboardPreferences()
+
+    def _switch_to_layout(self, name):
+        n_pages = self.get_n_pages()
+        for i in range(n_pages):
+            if self.get_nth_page(i).layout_name == name:
+                self.set_current_page(i)
+                break

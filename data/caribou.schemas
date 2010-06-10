@@ -1,0 +1,15 @@
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/apps/caribou/osk/layout</key>
+      <applyto>/apps/caribou/osk/layout</applyto>
+      <owner>caribou</owner>
+      <type>string</type>
+      <default>qwerty.xml</default>
+      <locale name="C">
+        <short>The layout Caribou should use.</short>
+        <long>The layout should be in the data directory of Caribou (usually /usr/share/caribou/keyboards) and should be a .xml or .json file.</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

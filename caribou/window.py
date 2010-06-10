@@ -19,10 +19,16 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 import animation
+from . import data_path
 import gconf
 import gtk
 import gtk.gdk as gdk
 import opacity
+import os
+import sys
+
+CARIBOU_GCONF_LAYOUT_KEY = '/apps/caribou/osk/layout'
+CARIBOU_LAYOUT_DIR = 'keyboards'
 
 class CaribouWindow(gtk.Window):
     __gtype_name__ = "CaribouWindow"
@@ -43,7 +49,11 @@ class CaribouWindow(gtk.Window):
         self._entry_location = gdk.Rectangle()
         self._default_placement = default_placement or \
             CaribouWindowPlacement()
-        
+
+        conf_file_path = self._get_keyboard_conf()
+        if conf_file_path:
+            text_entry_mech.load_kb(conf_file_path)
+
     def set_cursor_location(self, cursor_location):
         self._cursor_location = cursor_location
         self._update_position()
@@ -123,6 +133,20 @@ class CaribouWindow(gtk.Window):
 
         return offset
 
+    def _get_keyboard_conf(self):
+        layout = self._gconf_client.get_string(CARIBOU_GCONF_LAYOUT_KEY) \
+            or "qwerty"
+        conf_file_path = os.path.join(data_path, CARIBOU_LAYOUT_DIR, layout)
+
+        json_path = '%s.json' % conf_file_path
+
+        if os.path.exists(json_path):
+            return json_path
+
+        xml_path = '%s.xml' % conf_file_path
+
+        if os.path.exists(xml_path):
+            return xml_path
 
 class CaribouWindowDocked(CaribouWindow, 
                           animation.AnimatedWindowBase,

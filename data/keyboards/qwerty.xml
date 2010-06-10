@@ -1,0 +1,274 @@
+<keyboard>
+  <layout>
+    <name>lowercase</name>
+    <rows>
+      <row>
+	<key key_type="preferences"/>
+	<key value="q"/>
+	<key value="w"/>
+	<key value="e"/>
+	<key value="r"/>
+	<key value="t"/>
+	<key value="y"/>
+	<key value="u"/>
+	<key value="i"/>
+	<key value="o"/>
+	<key value="p"/>
+	<key>
+	  <value>BackSpace</value>
+	  <label>&lt;big&gt;⌫&lt;/big&gt;</label>
+	  <width>1.5</width>
+	</key>
+      </row>
+      <row>
+	<key>
+	  <label>&lt;b&gt;&lt;sup&gt;←&lt;/sup&gt;&lt;sub&gt;→&lt;/sub&gt;&lt;/b&gt;"</label>
+	  <value>Tab</value>
+	</key>
+	<key key_type="dummy" width="0.25"/>
+	<key value="a"/>
+	<key value="s"/>
+	<key value="d"/>
+	<key value="f"/>
+	<key value="g"/>
+	<key value="h"/>
+	<key value="j"/>
+	<key value="k"/>
+	<key value="l"/>
+	<key key_type="dummy" width="0.25"/>
+	<key>
+	  <value>Return</value>
+	  <label>&lt;b&gt;↲&lt;/b&gt;</label>
+	  <width>2</width>
+	</key>
+      </row>
+      <row>
+	<key>
+	  <label>&lt;b&gt;↑&lt;/b&gt;</label>
+	  <key_type>layout_switcher</key_type>
+	  <value>uppercase</value>
+	  <width>1.5</width>
+	</key>
+	<key key_type="dummy" width="0.5"/>
+	<key value="z"/>
+	<key value="x"/>
+	<key value="c"/>
+	<key value="v"/>
+	<key value="b"/>
+	<key value="n"/>
+	<key value="m"/>
+	<key key_type="dummy" width="0.5"/>
+	<key value=","/>
+	<key value="."/>
+	<key value=";"/>
+      </row>
+      <row>
+	<key>
+	  <label>&lt;small&gt;&lt;i&gt;1%+&lt;/i&gt;&lt;/small&gt;</label>
+	  <key_type>layout_switcher</key_type>
+	  <value>special</value>
+	  <width>1.5</width>
+	</key>
+	<key>
+	  <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
+	  <value>control</value>
+	  <key_type>mask</key_type>
+	  <width>1.5</width>
+	</key>
+	<key>
+	  <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
+	  <value>mod1</value>
+	  <key_type>mask</key_type>
+	  <width>1.5</width>
+	</key>
+	<key key_type="dummy" width="0.5"/>
+	<key label="______" value=" " width="3"/>
+	<key key_type="dummy" width="0.5"/>
+	<key value="'"/>
+	<key value="&quot;"/>
+	<key value="!"/>
+	<key value="?"/>
+      </row>
+    </rows>
+  </layout>
+
+  <layout>
+    <name>uppercase</name>
+    <rows>
+      <row>
+	<key key_type="preferences"/>
+	<key value="Q"/>
+	<key value="W"/>
+	<key value="E"/>
+	<key value="R"/>
+	<key value="T"/>
+	<key value="Y"/>
+	<key value="U"/>
+	<key value="I"/>
+	<key value="O"/>
+	<key value="P"/>
+	<key>
+	  <value>BackSpace</value>
+	  <label>&lt;big&gt;⌫&lt;/big&gt;</label>
+	  <width>1.5</width>
+	</key>
+      </row>
+      <row>
+	<key>
+	  <label>&lt;b&gt;&lt;sup&gt;←&lt;/sup&gt;&lt;sub&gt;→&lt;/sub&gt;&lt;/b&gt;"</label>
+	  <value>Tab</value>
+	</key>
+	<key key_type="dummy" width="0.25"/>
+	<key value="A"/>
+	<key value="S"/>
+	<key value="D"/>
+	<key value="F"/>
+	<key value="G"/>
+	<key value="H"/>
+	<key value="J"/>
+	<key value="K"/>
+	<key value="L"/>
+	<key key_type="dummy" width="0.25"/>
+	<key>
+	  <value>Return</value>
+	  <label>&lt;b&gt;↲&lt;/b&gt;</label>
+	  <width>2</width>
+	</key>
+      </row>
+      <row>
+	<key>
+	  <label>&lt;b&gt;↓&lt;/b&gt;</label>
+	  <key_type>layout_switcher</key_type>
+	  <value>lowercase</value>
+	  <width>1.5</width>
+	</key>
+	<key key_type="dummy" width="0.5"/>
+	<key value="Z"/>
+	<key value="X"/>
+	<key value="C"/>
+	<key value="V"/>
+	<key value="B"/>
+	<key value="N"/>
+	<key value="M"/>
+	<key key_type="dummy" width="0.5"/>
+	<key value=","/>
+	<key value="."/>
+	<key value=";"/>
+      </row>
+      <row>
+	<key>
+	  <label>&lt;small&gt;&lt;i&gt;1%+&lt;/i&gt;&lt;/small&gt;</label>
+	  <key_type>layout_switcher</key_type>
+	  <value>special</value>
+	  <width>1.5</width>
+	</key>
+	<key>
+	  <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
+	  <value>control</value>
+	  <key_type>mask</key_type>
+	  <width>1.5</width>
+	</key>
+	<key>
+	  <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
+	  <value>mod1</value>
+	  <key_type>mask</key_type>
+	  <width>1.5</width>
+	</key>
+	<key key_type="dummy" width="0.5"/>
+	<key label="______" value=" " width="3"/>
+	<key key_type="dummy" width="0.5"/>
+	<key value="'"/>
+	<key value="&quot;"/>
+	<key value="!"/>
+	<key value="?"/>
+      </row>
+    </rows>
+  </layout>
+
+  <layout>
+    <name>special</name>
+    <rows>
+      <row>
+	<key key_type="preferences"/>
+	<key value="1"/>
+	<key value="2"/>
+	<key value="3"/>
+	<key value="4"/>
+	<key value="5"/>
+	<key value="6"/>
+	<key value="7"/>
+	<key value="8"/>
+	<key value="9"/>
+	<key value="0"/>
+	<key>
+	  <value>BackSpace</value>
+	  <label>&lt;big&gt;⌫&lt;/big&gt;</label>
+	  <width>1.5</width>
+	</key>
+      </row>
+      <row>
+	<key key_type="dummy" width="0.25"/>
+	<key key_type="dummy" width="0.25"/>
+	<key value="@"/>
+	<key value="#"/>
+	<key value="$"/>
+	<key value="%"/>
+	<key value="&amp;"/>
+	<key value="*"/>
+	<key value="("/>
+	<key value=")"/>
+	<key value="-"/>
+	<key value="+"/>
+	<key key_type="dummy" width="0.25"/>
+	<key>
+	  <value>Return</value>
+	  <label>&lt;b&gt;↲&lt;/b&gt;</label>
+	  <width>2</width>
+	</key>
+      </row>
+      <row>
+	<key key_type="dummy" width="0.25"/>
+	<key value="&lt;"/>
+	<key value="&gt;"/>
+	<key value="€"/>
+	<key value="£"/>
+	<key value="{"/>
+	<key value="}"/>
+	<key value="["/>
+	<key value="]"/>
+	<key value="_" label="&lt;small&gt;_&lt;/small&gt;"/>
+	<key value="="/>
+	<key key_type="dummy" width="0.25"/>
+	<key value="Up" label="&lt;b&gt;↑&lt;/b&gt;"/>
+	<key value="\"/>
+      </row>
+      <row>
+	<key>
+	  <label>&lt;small&gt;&lt;i&gt;abc&lt;/i&gt;&lt;/small&gt;</label>
+	  <key_type>layout_switcher</key_type>
+	  <value>lowercase</value>
+	  <width>1.5</width>
+	</key>
+	<key>
+	  <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
+	  <value>control</value>
+	  <key_type>mask</key_type>
+	  <width>1.5</width>
+	</key>
+	<key>
+	  <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
+	  <value>mod1</value>
+	  <key_type>mask</key_type>
+	  <width>1.5</width>
+	</key>
+	<key key_type="dummy" width="0.5"/>
+	<key label="______" value=" " width="3"/>
+	<key key_type="dummy" width="0.5"/>
+	<key value="|"/>
+	<key value="Left" label="&lt;b&gt;←&lt;/b&gt;"/>
+	<key value="Down" label="&lt;b&gt;↓&lt;/b&gt;"/>
+	<key value="Right" label="&lt;b&gt;→&lt;/b&gt;"/>
+      </row>
+    </rows>
+  </layout>
+</keyboard>
