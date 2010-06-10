@@ -134,12 +134,19 @@ class CaribouWindow(gtk.Window):
         return offset
 
     def _get_keyboard_conf(self):
-        layout = self._gconf_client.get_string(CARIBOU_GCONF_LAYOUT_KEY)
-        if not layout:
-            return None
+        layout = self._gconf_client.get_string(CARIBOU_GCONF_LAYOUT_KEY) \
+            or "qwerty"
         conf_file_path = os.path.join(data_path, CARIBOU_LAYOUT_DIR, layout)
-        if os.path.exists(conf_file_path):
-            return conf_file_path
+
+        json_path = '%s.json' % conf_file_path
+
+        if os.path.exists(json_path):
+            return json_path
+
+        xml_path = '%s.xml' % conf_file_path
+
+        if os.path.exists(xml_path):
+            return xml_path
 
 class CaribouWindowDocked(CaribouWindow, 
                           animation.AnimatedWindowBase,
