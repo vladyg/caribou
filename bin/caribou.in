@@ -43,14 +43,16 @@ _dirname = os.path.dirname(__file__)
 if os.path.dirname(__file__) != "@prefix@/bin":
     srcdir = os.path.normpath(os.path.join(_dirname, '..'))
     sys.path.insert(1, srcdir)
-    import caribou
+    import caribou.common
+    import caribou.ui
 else:
-    import caribou
+    import caribou.common
+    import caribou.ui
     caribou.data_path = os.path.join("@prefix@", "share", "caribou")
 
-import caribou.window as window
-import caribou.keyboard as keyboard
-import caribou.main as main
+import caribou.ui.window as window
+import caribou.ui.keyboard as keyboard
+import caribou.ui.main as main
 
 _ = gettext.gettext
 

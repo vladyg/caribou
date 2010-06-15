@@ -1,15 +1,11 @@
 cariboudir = $(pkgpythondir)/
 
 caribou_PYTHON = \
-	animation.py \
-	__init__.py \
-	keyboard.py \
-	main.py \
-	opacity.py \
-	window.py \
-	i18n.py
+	__init__.py 
 
-DISTCLEANFILES = i18n.py
+SUBDIRS = \
+        common/ \
+        ui/
 
 clean-local:
 	rm -rf *.pyc *.pyo

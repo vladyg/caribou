@@ -19,7 +19,7 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 import animation
-from . import data_path
+from caribou import data_path
 import gconf
 import gtk
 import gtk.gdk as gdk

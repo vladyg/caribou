@@ -22,6 +22,7 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
+import caribou.common.const as const
 import gconf
 import gobject
 import gtk
@@ -37,28 +38,7 @@ else:
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
-from . import data_path
-
-NORMAL_KEY_TYPE = 'normal'
-LAYOUT_SWITCHER_KEY_TYPE = 'layout_switcher'
-PREFERENCES_KEY_TYPE = 'preferences'
-DUMMY_KEY_TYPE = 'dummy'
-MASK_KEY_TYPE = 'mask'
-
-KEY_MASKS = {'shift': gtk.gdk.SHIFT_MASK,
-             'lock': gtk.gdk.LOCK_MASK,
-             'control': gtk.gdk.CONTROL_MASK,
-             'mod1': gtk.gdk.MOD1_MASK,
-             'mod2': gtk.gdk.MOD2_MASK,
-             'mod3': gtk.gdk.MOD3_MASK,
-             'mod4': gtk.gdk.MOD4_MASK,
-             'mod5': gtk.gdk.MOD5_MASK,
-             'button1': gtk.gdk.BUTTON1_MASK,
-             'button2': gtk.gdk.BUTTON2_MASK,
-             'button3': gtk.gdk.BUTTON3_MASK,
-             'button4': gtk.gdk.BUTTON4_MASK,
-             'button5': gtk.gdk.BUTTON5_MASK}
-
+from caribou import data_path
 
 class KeyboardPreferences:
     __gtype_name__ = "KeyboardPreferences"
@@ -128,10 +108,10 @@ class Key(gtk.Button):
         self.width = float(width)
         self.fill = False
         self.label = label or value
-        if self.key_type == DUMMY_KEY_TYPE:
+        if self.key_type == const.DUMMY_KEY_TYPE:
             self.set_relief(gtk.RELIEF_NONE)
             self.set_sensitive(False)
-        elif self.key_type == PREFERENCES_KEY_TYPE:
+        elif self.key_type == const.PREFERENCES_KEY_TYPE:
             image = gtk.Image()
             image.set_from_stock(gtk.STOCK_PREFERENCES,
                                  gtk.ICON_SIZE_BUTTON)
@@ -151,7 +131,7 @@ class Key(gtk.Button):
         return self._value
 
     def _set_value(self, value):
-        if self.key_type == NORMAL_KEY_TYPE:
+        if self.key_type == const.NORMAL_KEY_TYPE:
             if type(value) == str or type(value) == unicode:
                 value = value.decode('utf-8')
                 if len(value) == 1:
@@ -160,9 +140,9 @@ class Key(gtk.Button):
                     key_value = gtk.gdk.keyval_from_name(value)
                     if key_value:
                         self._value = key_value
-        elif self.key_type == MASK_KEY_TYPE:
+        elif self.key_type == const.MASK_KEY_TYPE:
             if type(value) == str or type(value) == unicode:
-                for key, mask in KEY_MASKS.items():
+                for key, mask in const.KEY_MASKS.items():
                     if value == key:
                         self._value = mask
         else:
@@ -307,13 +287,13 @@ class CaribouKeyboard(gtk.Notebook):
             self.append_page(layout)
             for row in layout.rows:
                 for key in row:
-                    if key.key_type == LAYOUT_SWITCHER_KEY_TYPE:
+                    if key.key_type == const.LAYOUT_SWITCHER_KEY_TYPE:
                         key.connect('clicked',
                                     self._pressed_layout_switcher_key)
-                    elif key.key_type == MASK_KEY_TYPE:
+                    elif key.key_type == const.MASK_KEY_TYPE:
                         key.connect('clicked',
                                     self._pressed_mask_key)
-                    elif key.key_type == PREFERENCES_KEY_TYPE:
+                    elif key.key_type == const.PREFERENCES_KEY_TYPE:
                         key.connect('clicked',
                                     self._pressed_preferences_key)
                     else:

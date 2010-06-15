@@ -22,13 +22,15 @@
 from os.path import join
 from os.path import dirname
 
+import gtk
+
 # Application name
 APP_NAME = 'Caribou'
 APP_SLUG_NAME = 'caribou'
 
-# paths
-DATA_DIR = join('/usr', 'share', '%s' APP_SLUG_NAME)
-RESOURES_DIR = join(DATA_DIR, 'resources')
+# Paths
+DATA_DIR = join('/usr', 'share', '%s' % APP_SLUG_NAME)
+RESOURCES_DIR = join(DATA_DIR, 'resources')
 KEYBOARDS_DIR = join(RESOURCES_DIR, 'keyboards')
 CONFIG_DIR = join(RESOURCES_DIR, 'config')
 DATABASES_DIR = join(RESOURCES_DIR, 'databases')
