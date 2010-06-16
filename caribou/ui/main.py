@@ -2,6 +2,8 @@ import gtk.gdk as gdk
 import pyatspi
 import gconf
 import gtk
+import signal
+
 from window import CaribouWindowEntry
 from keyboard import CaribouKeyboard
 from caribou.ui.i18n import _
@@ -23,6 +25,7 @@ class Caribou:
             self.on_text_caret_moved, "object:text-caret-moved")
         pyatspi.Registry.registerKeystrokeListener(
             self.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
+        signal.signal(signal.SIGINT, self.signal_handler)
 
     def _get_a11y_enabled(self):
         try:
@@ -116,30 +119,37 @@ class Caribou:
             # TODO: implement keyboard scanning
             pass 
         elif event.event_string == "Control_R":
-            if debug == True:
-                print "quitting ..."
-            result = pyatspi.Registry.deregisterEventListener(self.on_text_caret_moved, "object:text-caret-moved")
-            if debug == True:
-                print "deregisterEventListener - object:text-caret-moved ...",
-                if result == False:
-                    print "OK"
-                else:
-                    print "FAIL"
-            result = pyatspi.Registry.deregisterEventListener(self.on_focus, "object:state-changed:focused")
-            if debug == True:
-                print "deregisterEventListener - object:state-changed:focused ...",
-                if result == False:
-                    print "OK"
-                else:
-                    print "FAIL"
-            result = pyatspi.Registry.deregisterEventListener(self.on_focus, "focus")
-            if debug == True:
-                print "deregisterEventListener - focus ...",
-                if result == False:
-                    print "OK"
-                else:
-                    print "FAIL"
-            result = pyatspi.Registry.deregisterKeystrokeListener(self.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
-            if debug == True:
-                print "deregisterKeystrokeListener"
-            gtk.main_quit()
+            self.clean_exit()
+
+    def signal_handler(self,signal,frame):
+        # Clean exit pressing Control + C
+        self.clean_exit()
+
+    def clean_exit(self):
+        if debug == True:
+            print "quitting ..."
+        result = pyatspi.Registry.deregisterEventListener(self.on_text_caret_moved, "object:text-caret-moved")
+        if debug == True:
+            print "deregisterEventListener - object:text-caret-moved ...",
+            if result == False:
+                print "OK"
+            else:
+                print "FAIL"
+        result = pyatspi.Registry.deregisterEventListener(self.on_focus, "object:state-changed:focused")
+        if debug == True:
+            print "deregisterEventListener - object:state-changed:focused ...",
+            if result == False:
+                print "OK"
+            else:
+                print "FAIL"
+        result = pyatspi.Registry.deregisterEventListener(self.on_focus, "focus")
+        if debug == True:
+            print "deregisterEventListener - focus ...",
+            if result == False:
+                print "OK"
+            else:
+                print "FAIL"
+        result = pyatspi.Registry.deregisterKeystrokeListener(self.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
+        if debug == True:
+            print "deregisterKeystrokeListener"
+        gtk.main_quit()
