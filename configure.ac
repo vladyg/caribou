@@ -46,7 +46,9 @@ AC_OUTPUT([
 Makefile
 po/Makefile.in
 caribou/Makefile
-caribou/i18n.py
+caribou/common/Makefile
+caribou/ui/i18n.py
+caribou/ui/Makefile
 bin/Makefile
 bin/caribou
 data/Makefile
