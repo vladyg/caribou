@@ -40,6 +40,7 @@ class CaribouWindow(gtk.Window):
 
         self._vbox = gtk.VBox()
         self.add(self._vbox)
+        self.keyboard = text_entry_mech
         self._vbox.pack_start(text_entry_mech)
 
         self.connect("size-allocate", lambda w, a: self._update_position())
@@ -147,6 +148,15 @@ class CaribouWindow(gtk.Window):
 
         if os.path.exists(xml_path):
             return xml_path
+
+
+    def show_all(self):
+        gtk.Window.show_all(self)
+        self.keyboard.show_all()
+
+    def hide_all(self):
+        self.keyboard.hide_all()
+        gtk.Window.hide_all(self)
 
 class CaribouWindowDocked(CaribouWindow, 
                           animation.AnimatedWindowBase,

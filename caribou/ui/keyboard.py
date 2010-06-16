@@ -275,6 +275,7 @@ class CaribouKeyboard(gtk.Notebook):
         self.vk = virtkey.virtkey()
         self.key_size = 30
         self.current_mask = 0
+        self.current_page = 0
 
     def load_kb(self, kb_location):
         kb_deserializer = KbLayoutDeserializer()
@@ -322,6 +323,10 @@ class CaribouKeyboard(gtk.Notebook):
             self.current_mask |= key.value
             self.vk.latch_mod(self.current_mask)
 
+    def show_all(self):
+        self.set_current_page(self.current_page)
+        gtk.Notebook.show_all(self)
+
     def _pressed_preferences_key(self, key):
         KeyboardPreferences()
 
@@ -330,4 +335,5 @@ class CaribouKeyboard(gtk.Notebook):
         for i in range(n_pages):
             if self.get_nth_page(i).layout_name == name:
                 self.set_current_page(i)
+                self.current_page = i
                 break
