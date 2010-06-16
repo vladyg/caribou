@@ -1,6 +1,7 @@
 import gtk.gdk as gdk
 import pyatspi
 import gconf
+import gtk
 from window import CaribouWindowEntry
 from keyboard import CaribouKeyboard
 from caribou.ui.i18n import _
