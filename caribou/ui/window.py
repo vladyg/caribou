@@ -3,6 +3,8 @@
 # Caribou - text entry and UI navigation application
 #
 # Copyright (C) 2009 Eitan Isaacson <eitan@monotonous.org>
+# Copyright (C) 2010 Warp Networks S.L.
+#  * Contributor: Daniel Baeyens <dbaeyens@warp.es>
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU Lesser General Public License as published by the
@@ -139,15 +141,18 @@ class CaribouWindow(gtk.Window):
             or "qwerty"
         conf_file_path = os.path.join(data_path, CARIBOU_LAYOUT_DIR, layout)
 
-        json_path = '%s.json' % conf_file_path
+        if os.path.exists(conf_file_path):
+            return conf_file_path
+        else:
+            json_path = '%s.json' % conf_file_path
 
-        if os.path.exists(json_path):
-            return json_path
+            if os.path.exists(json_path):
+                return json_path
 
-        xml_path = '%s.xml' % conf_file_path
+            xml_path = '%s.xml' % conf_file_path
 
-        if os.path.exists(xml_path):
-            return xml_path
+            if os.path.exists(xml_path):
+                return xml_path
 
 
     def show_all(self):
