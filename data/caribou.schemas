@@ -11,5 +11,27 @@
         <long>The layout should be in the data directory of Caribou (usually /usr/share/caribou/keyboards) and should be a .xml or .json file.</long>
       </locale>
     </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/normal_color</key>
+      <applyto>/apps/caribou/osk/normal_color</applyto>
+      <owner>caribou</owner>
+      <type>string</type>
+      <default>grey80</default>
+      <locale name="C">
+        <short>Color of the keys when there is no event on them</short>
+        <long></long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/mouse_over_color</key>
+      <applyto>/apps/caribou/osk/mouse_over_color</applyto>
+      <owner>caribou</owner>
+      <type>string</type>
+      <default>yellow</default>
+      <locale name="C">
+        <short>Color of the keys when the mouse goes over the key</short>
+        <long></long>
+      </locale>
+    </schema>
   </schemalist>
 </gconfschemafile>
