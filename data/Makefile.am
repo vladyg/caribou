@@ -2,10 +2,18 @@ SUBDIRS = keyboards
 
 gtkbuilderdir = $(datadir)/caribou
 gtkbuilder_DATA = caribou-prefs.ui
+
 schemadir = $(GCONF_SCHEMA_FILE_DIR)
 schema_DATA = caribou.schemas
 
-EXTRA_DIST = $(gtkbuilder_DATA) $(schema_DATA)
+desktopdir = $(datadir)/applications
+desktop_in_files = caribou.desktop.in
+desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+@INTLTOOL_DESKTOP_RULE@
+
+EXTRA_DIST = $(gtkbuilder_DATA) \
+             $(schema_DATA) \
+             $(desktop_in_files)
 
 # installation of schemas
 if GCONF_SCHEMAS_INSTALL
