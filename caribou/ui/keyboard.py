@@ -60,15 +60,23 @@ class KeyboardPreferences:
         layout_combo = builder.get_object("combobox_layout")
         layout_combo.connect("changed", self._on_layout_changed, client)
 
-        normal_state_color_button = builder.get_object("normal_state_color_button")
-        normal_color = gtk.gdk.Color(client.get_string(const.CARIBOU_GCONF + "/normal_color"))
+        normal_color_button = builder.get_object("normal_state_color_button")
+        normal_color_string = client.get_string(const.CARIBOU_GCONF +
+                                                "/normal_color") or "grey80"
+        normal_color = gtk.gdk.Color(normal_color_string)
         normal_state_color_button.set_color(normal_color)
-        normal_state_color_button.connect("color-set", self._on_normal_state_color_set, client)
+        normal_state_color_button.connect("color-set",
+                                          self._on_normal_state_color_set,
+                                          client)
 
         mouse_over_color_button = builder.get_object("mouse_over_color_button")
-        mouse_over_color = gtk.gdk.Color(client.get_string(const.CARIBOU_GCONF + "/mouse_over_color"))
+        mouse_over_color_string = client.get_string(const.CARIBOU_GCONF +
+                                                    "/mouse_over") or "yellow"
+        mouse_over_color = gtk.gdk.Color(mouse_over_color_string)
         mouse_over_color_button.set_color(mouse_over_color)
-        mouse_over_color_button.connect("color-set", self._on_mouse_over_color_set, client)
+        mouse_over_color_button.connect("color-set",
+                                        self._on_mouse_over_color_set, 
+                                        client)
 
         #TODO: List the layouts in the data dir
         #for kbddef in keyboards.kbds:
@@ -301,8 +309,10 @@ class CaribouKeyboard(gtk.Notebook):
         self.current_page = 0
         self.client = gconf.client_get_default()
 
-        self.client.notify_add(const.CARIBOU_GCONF + "/normal_color", self._colors_changed)
-        self.client.notify_add(const.CARIBOU_GCONF + "/mouse_over_color", self._colors_changed)
+        self.client.notify_add(const.CARIBOU_GCONF + "/normal_color",
+                               self._colors_changed)
+        self.client.notify_add(const.CARIBOU_GCONF + "/mouse_over_color",
+                               self._colors_changed)
 
     def load_kb(self, kb_location):
         kb_deserializer = KbLayoutDeserializer()
@@ -334,8 +344,11 @@ class CaribouKeyboard(gtk.Notebook):
         self._update_colors()
 
     def _update_colors(self):
-        normal_color = self.client.get_string(const.CARIBOU_GCONF + "/normal_color")
-        mouse_over_color = self.client.get_string(const.CARIBOU_GCONF + "/mouse_over_color")
+        normal_color = self.client.get_string(const.CARIBOU_GCONF +
+                                              "/normal_color") or "grey80"
+        mouse_over_color = self.client.get_string(const.CARIBOU_GCONF +
+                                                  "/mouse_over_color") or
+                                                  "yellow"
         n_pages = self.get_n_pages()
         for i in range(n_pages):
             layout = self.get_nth_page(i)
