@@ -20,4 +20,8 @@ if GCONF_SCHEMAS_INSTALL
 install-data-hook:
 	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
 		$(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
+
+uninstall-hook:
+	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
+		$(GCONFTOOL) --makefile-uninstall-rule $(srcdir)/$(schema_DATA)
 endif
