@@ -14,7 +14,7 @@
   <maintainer>
     <foaf:Person>
       <foaf:name>Eitan Isaacson</foaf:name>
-      <foaf:mbox rdf:resource="mailto:eitan@monotonous.org" />
+      <foaf:mbox rdf:resource="mailto:eitan@ascender.com" />
       <gnome:userid>eitani</gnome:userid>
     </foaf:Person>
   </maintainer>
