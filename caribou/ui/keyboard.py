@@ -55,10 +55,28 @@ class KeyboardPreferences:
         close.connect("clicked", self.destroy)
 
         client = gconf.client_get_default()
-        client.add_dir("/apps/caribou/osk", gconf.CLIENT_PRELOAD_NONE)
+        client.add_dir(const.CARIBOU_GCONF, gconf.CLIENT_PRELOAD_NONE)
 
         layout_combo = builder.get_object("combobox_layout")
         layout_combo.connect("changed", self._on_layout_changed, client)
+
+        normal_color_button = builder.get_object("normal_state_color_button")
+        normal_color_string = client.get_string(const.CARIBOU_GCONF +
+                                                "/normal_color") or "grey80"
+        normal_color = gtk.gdk.Color(normal_color_string)
+        normal_color_button.set_color(normal_color)
+        normal_color_button.connect("color-set",
+                                    self._on_normal_state_color_set,
+                                    client)
+
+        mouse_over_color_button = builder.get_object("mouse_over_color_button")
+        mouse_over_color_string = client.get_string(const.CARIBOU_GCONF +
+                                                    "/mouse_over") or "yellow"
+        mouse_over_color = gtk.gdk.Color(mouse_over_color_string)
+        mouse_over_color_button.set_color(mouse_over_color)
+        mouse_over_color_button.connect("color-set",
+                                        self._on_mouse_over_color_set, 
+                                        client)
 
         #TODO: List the layouts in the data dir
         #for kbddef in keyboards.kbds:
@@ -98,6 +116,15 @@ class KeyboardPreferences:
         if kbdname:
             client.set_string("/apps/caribou/osk/layout", kbdname)
 
+    def _on_normal_state_color_set(self, colorbutton, client):
+        color = colorbutton.get_color().to_string()
+        client.set_string(const.CARIBOU_GCONF + "/normal_color", color)
+
+    def _on_mouse_over_color_set(self, colorbutton, client):
+        color = colorbutton.get_color().to_string()
+        client.set_string(const.CARIBOU_GCONF + "/mouse_over_color", color)
+
+
 class Key(gtk.Button):
 
     def __init__(self, label = '', value = '', key_type = 'normal',
@@ -126,6 +153,10 @@ class Key(gtk.Button):
 
     def set_relative_size(self, size):
         self.set_size_request(int(size * self.width), int(size))
+
+    def set_color(self, normal_color, mouse_over_color):
+        self.modify_bg(gtk.STATE_NORMAL, gtk.gdk.Color(normal_color))
+        self.modify_bg(gtk.STATE_PRELIGHT, gtk.gdk.Color(mouse_over_color))
 
     def _get_value(self):
         return self._value
@@ -276,11 +307,18 @@ class CaribouKeyboard(gtk.Notebook):
         self.key_size = 30
         self.current_mask = 0
         self.current_page = 0
+        self.client = gconf.client_get_default()
+
+        self.client.notify_add(const.CARIBOU_GCONF + "/normal_color",
+                               self._colors_changed)
+        self.client.notify_add(const.CARIBOU_GCONF + "/mouse_over_color",
+                               self._colors_changed)
 
     def load_kb(self, kb_location):
         kb_deserializer = KbLayoutDeserializer()
         layouts = kb_deserializer.deserialize(kb_location)
         self._set_layouts(layouts)
+        self._update_colors()
 
     def _set_layouts(self, layout_list):
         self._clear()
@@ -301,6 +339,23 @@ class CaribouKeyboard(gtk.Notebook):
                         key.connect('clicked',
                                     self._pressed_normal_key)
                     key.set_relative_size(self.key_size)
+
+    def _colors_changed(self, client, connection_id, entry, args):
+        self._update_colors()
+
+    def _update_colors(self):
+        normal_color = self.client.get_string(const.CARIBOU_GCONF +
+                                              "/normal_color") or "grey80"
+        mouse_over_color = self.client.get_string(const.CARIBOU_GCONF +
+                                                  "/mouse_over_color") or \
+                                                  "yellow"
+        n_pages = self.get_n_pages()
+        for i in range(n_pages):
+            layout = self.get_nth_page(i)
+            for row in layout.rows:
+                for button in row:
+                    button.set_color(normal_color,
+                                     mouse_over_color)
 
     def _clear(self):
         n_pages = self.get_n_pages()
