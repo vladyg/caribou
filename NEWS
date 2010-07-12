@@ -1,4 +1,31 @@
 =============
+Version 0.1.5
+=============
+
+What's New
+==========
+- Added configurable key and highlight colors (bug #622246).
+- Added a desktop file (bug #618292).
+- Fix layout retrieval (bug #622221).
+- Don't change layout when switching focus (bug #621654).
+- Unpress modifier when Caribou quites (bug #621596).
+- Source files reshuffling.
+- Added JSON/XML configurable layouts (bug #613229).
+
+New And Updated Translations
+============================
+- Marek Černocký (cs)
+- Yaron Shahrabani (he)
+- Andika Triwidada (id)
+- Kjartan Maraas (nb)
+- Torstein Adolf Winterseth (nn)
+- A S Alam (pa)
+- Lucian Adrian Grijincu (ro)
+- Daniel Nylander (sv)
+- Anonymous (ta)
+- YunQiang Su (zh_CN)
+
+=============
 Version 0.1.2
 =============
 
