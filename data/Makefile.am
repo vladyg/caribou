@@ -15,6 +15,7 @@ EXTRA_DIST = $(gtkbuilder_DATA) \
              $(schema_DATA) \
              $(desktop_in_files)
 
+CLEANFILES = $(desktop_DATA)
 # installation of schemas
 if GCONF_SCHEMAS_INSTALL
 install-data-hook:
