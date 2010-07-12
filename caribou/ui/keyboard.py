@@ -64,10 +64,10 @@ class KeyboardPreferences:
         normal_color_string = client.get_string(const.CARIBOU_GCONF +
                                                 "/normal_color") or "grey80"
         normal_color = gtk.gdk.Color(normal_color_string)
-        normal_state_color_button.set_color(normal_color)
-        normal_state_color_button.connect("color-set",
-                                          self._on_normal_state_color_set,
-                                          client)
+        normal_color_button.set_color(normal_color)
+        normal_color_button.connect("color-set",
+                                    self._on_normal_state_color_set,
+                                    client)
 
         mouse_over_color_button = builder.get_object("mouse_over_color_button")
         mouse_over_color_string = client.get_string(const.CARIBOU_GCONF +
@@ -347,7 +347,7 @@ class CaribouKeyboard(gtk.Notebook):
         normal_color = self.client.get_string(const.CARIBOU_GCONF +
                                               "/normal_color") or "grey80"
         mouse_over_color = self.client.get_string(const.CARIBOU_GCONF +
-                                                  "/mouse_over_color") or
+                                                  "/mouse_over_color") or \
                                                   "yellow"
         n_pages = self.get_n_pages()
         for i in range(n_pages):
