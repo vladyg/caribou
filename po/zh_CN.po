@@ -2,15 +2,16 @@
 # Copyright (C) 2010 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
 # YunQiang Su <wzssyqa@gmail.com>, 2010.
+# Dark Raven <drdarkraven@gmail.com>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&component=default\n"
-"POT-Creation-Date: 2010-06-16 16:17+0000\n"
-"PO-Revision-Date: 2010-06-06 12:46+0800\n"
-"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
+"POT-Creation-Date: 2010-07-13 10:25+0000\n"
+"PO-Revision-Date: 2010-07-13 19:49+0800\n"
+"Last-Translator: Dark Raven <drdarkraven@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,24 +19,44 @@ msgstr ""
 
 #: ../caribou/ui/main.py:107
 msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "警告 - Caribou：未处理的可编辑构件："
+msgstr "警告 - Caribou：未处理的可编辑控件："
 
 #: ../data/caribou-prefs.ui.h:1
 msgid "Caribou Preferences"
 msgstr "Caribou 首选项"
 
 #: ../data/caribou-prefs.ui.h:2
-msgid "Key _size:"
-msgstr "键尺寸(_S)："
+msgid "Colors"
+msgstr "颜色"
 
 #: ../data/caribou-prefs.ui.h:3
-msgid "Key s_pacing:"
-msgstr "键空间(_P)："
+msgid "General"
+msgstr "常规"
 
 #: ../data/caribou-prefs.ui.h:4
+msgid "Key _size:"
+msgstr "按键大小(_S)："
+
+#: ../data/caribou-prefs.ui.h:5
+msgid "Key s_pacing:"
+msgstr "按键间距(_P)："
+
+#: ../data/caribou-prefs.ui.h:6
 msgid "Keyboard _layout:"
 msgstr "键盘布局(_L)："
 
-#: ../data/caribou-prefs.ui.h:5
+#: ../data/caribou-prefs.ui.h:7
+msgid "Keys"
+msgstr "按键"
+
+#: ../data/caribou-prefs.ui.h:8
+msgid "Mouse over:"
+msgstr "当鼠标移过时："
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Normal state:"
+msgstr "普通状态："
+
+#: ../data/caribou-prefs.ui.h:10
 msgid "_Test settings here:"
-msgstr "在此测试设置(_T)："
+msgstr "在这里测试设置(_T)："
