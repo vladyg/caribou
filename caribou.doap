@@ -19,11 +19,4 @@
     </foaf:Person>
   </maintainer>
 
-  <maintainer>
-    <foaf:Person>
-      <foaf:name>Ben Konrath</foaf:name>
-      <foaf:mbox rdf:resource="mailto:ben@bagu.org" />
-      <gnome:userid>bkonrath</gnome:userid>
-    </foaf:Person>
-  </maintainer>
 </Project>
