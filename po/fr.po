@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&component=default\n"
-"POT-Creation-Date: 2010-05-17 09:13+0000\n"
-"PO-Revision-Date: 2010-05-17 09:13+0000\n"
+"POT-Creation-Date: 2010-07-12 18:02+0000\n"
+"PO-Revision-Date: 2010-07-17 15:28+0200\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../caribou/main.py:103
+#: ../caribou/ui/main.py:107
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "ATTENTION - Caribou : composant graphique éditable non géré :"
 
@@ -26,17 +26,37 @@ msgid "Caribou Preferences"
 msgstr "Préférences de Caribou"
 
 #: ../data/caribou-prefs.ui.h:2
+msgid "Colors"
+msgstr "Couleurs"
+
+#: ../data/caribou-prefs.ui.h:3
+msgid "General"
+msgstr "Général"
+
+#: ../data/caribou-prefs.ui.h:4
 msgid "Key _size:"
 msgstr "_Taille des touches :"
 
-#: ../data/caribou-prefs.ui.h:3
+#: ../data/caribou-prefs.ui.h:5
 msgid "Key s_pacing:"
 msgstr "_Espacement des touches :"
 
-#: ../data/caribou-prefs.ui.h:4
+#: ../data/caribou-prefs.ui.h:6
 msgid "Keyboard _layout:"
 msgstr "_Agencement de clavier :"
 
-#: ../data/caribou-prefs.ui.h:5
+#: ../data/caribou-prefs.ui.h:7
+msgid "Keys"
+msgstr "Touches"
+
+#: ../data/caribou-prefs.ui.h:8
+msgid "Mouse over:"
+msgstr "Survol de la souris :"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Normal state:"
+msgstr "État normal :"
+
+#: ../data/caribou-prefs.ui.h:10
 msgid "_Test settings here:"
 msgstr "Tester les _paramètres ici :"
