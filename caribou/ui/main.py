@@ -7,6 +7,7 @@ import signal
 from window import CaribouWindowEntry
 from keyboard import CaribouKeyboard
 from caribou.ui.i18n import _
+import caribou.common.const as const
 
 debug = False
 
@@ -18,6 +19,10 @@ class Caribou:
             raise Exception, "AT-SPI 1 or 2 needs to be enabled."
         self.__current_acc = None
         self.window = window_factory(kb_factory())
+        self._register_events()
+        signal.signal(signal.SIGINT, self.signal_handler)
+
+    def _register_events(self):
         pyatspi.Registry.registerEventListener(
             self.on_focus, "object:state-changed:focused")
         pyatspi.Registry.registerEventListener(self.on_focus, "focus")
@@ -25,7 +30,15 @@ class Caribou:
             self.on_text_caret_moved, "object:text-caret-moved")
         pyatspi.Registry.registerKeystrokeListener(
             self.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
-        signal.signal(signal.SIGINT, self.signal_handler)
+
+    def _deregister_events(self):
+        pyatspi.Registry.deregisterEventListener(
+            self.on_focus, "object:state-changed:focused")
+        pyatspi.Registry.deregisterEventListener(self.on_focus, "focus")
+        pyatspi.Registry.deregisterEventListener(
+            self.on_text_caret_moved, "object:text-caret-moved")
+        pyatspi.Registry.deregisterKeystrokeListener(
+            self.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
 
     def _get_a11y_enabled(self):
         try:
