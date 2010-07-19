@@ -5,17 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gok\n"
+"Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-13 23:19+0200\n"
-"PO-Revision-Date: 2010-06-13 23:21+0200\n"
+"POT-Creation-Date: 2010-07-19 21:38+0200\n"
+"PO-Revision-Date: 2010-07-19 21:38+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@broadpark.no>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../caribou/main.py:103
+#: ../caribou/ui/main.py:107
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "ADVARSEL - Caribou: redigerbar komponent som ikke er håndtert:"
 
@@ -24,17 +25,37 @@ msgid "Caribou Preferences"
 msgstr "Brukervalg for Caribou"
 
 #: ../data/caribou-prefs.ui.h:2
+msgid "Colors"
+msgstr "Farger"
+
+#: ../data/caribou-prefs.ui.h:3
+msgid "General"
+msgstr "Generelt"
+
+#: ../data/caribou-prefs.ui.h:4
 msgid "Key _size:"
 msgstr "_Størrelse på tast:"
 
-#: ../data/caribou-prefs.ui.h:3
+#: ../data/caribou-prefs.ui.h:5
 msgid "Key s_pacing:"
 msgstr "_Mellomrom mellom taster:"
 
-#: ../data/caribou-prefs.ui.h:4
+#: ../data/caribou-prefs.ui.h:6
 msgid "Keyboard _layout:"
 msgstr "Tastatur_utforming:"
 
-#: ../data/caribou-prefs.ui.h:5
+#: ../data/caribou-prefs.ui.h:7
+msgid "Keys"
+msgstr "Taster"
+
+#: ../data/caribou-prefs.ui.h:8
+msgid "Mouse over:"
+msgstr ""
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Normal state:"
+msgstr "Normal tilstand:"
+
+#: ../data/caribou-prefs.ui.h:10
 msgid "_Test settings here:"
 msgstr "_Test innstillingene her:"
