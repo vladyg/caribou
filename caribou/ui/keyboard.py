@@ -174,7 +174,7 @@ class Key(gtk.Button):
             if type(value) == str or type(value) == unicode:
                 value = value.decode('utf-8')
                 if len(value) == 1:
-                    self._value = ord(value)
+                    self._value = gtk.gdk.unicode_to_keyval(ord(value))
                 else:
                     key_value = gtk.gdk.keyval_from_name(value)
                     if key_value:
