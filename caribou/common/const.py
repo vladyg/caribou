@@ -23,18 +23,15 @@ from os.path import join
 from os.path import dirname
 
 import gtk
+from caribou import data_path
 
 # Application name
 APP_NAME = 'Caribou'
 APP_SLUG_NAME = 'caribou'
 
 # Paths
-DATA_DIR = join('/usr', 'share', '%s' % APP_SLUG_NAME)
-RESOURCES_DIR = join(DATA_DIR, 'resources')
-KEYBOARDS_DIR = join(RESOURCES_DIR, 'keyboards')
-CONFIG_DIR = join(RESOURCES_DIR, 'config')
-DATABASES_DIR = join(RESOURCES_DIR, 'databases')
-GLADE_UIS_DIR = join(RESOURCES_DIR, 'uis')
+DATA_DIR = data_path
+KEYBOARDS_DIR = join(DATA_DIR, 'keyboards')
 
 # Preferences
 CARIBOU_GCONF = join('/apps', 'caribou', 'osk')
