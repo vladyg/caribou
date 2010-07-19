@@ -38,14 +38,13 @@ else:
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
-from caribou import data_path
 
 class KeyboardPreferences:
     __gtype_name__ = "KeyboardPreferences"
 
     def __init__(self):
         builder = gtk.Builder()
-        builder.add_from_file(os.path.join(data_path, "caribou-prefs.ui"))
+        builder.add_from_file(os.path.join(const.DATA_DIR, "caribou-prefs.ui"))
 
         self.window = builder.get_object("dialog_prefs")
         self.window.connect("destroy", self.destroy)
@@ -77,19 +76,18 @@ class KeyboardPreferences:
         mouse_over_color_button.connect("color-set",
                                         self._on_mouse_over_color_set, 
                                         client)
+        
+        kbds = self._fetch_keyboards()
+        for kbddef in kbds:
+            layout_combo.append_text(kbddef)
 
-        #TODO: List the layouts in the data dir
-        #for kbddef in keyboards.kbds:
-        #    layout_combo.append_text(kbddef)
-
-        #defaultkbd = client.get_string("/apps/caribou/osk/layout")
-        #try:
-        #    index = keyboards.kbds.index(defaultkbd)
-        #except ValueError:
-        #    print "FIXME: pick a suitable keyboard layout: " + (defaultkbd or "None")
-        #    layout_combo.set_active(0)
-        #else:
-        #    layout_combo.set_active(index)
+        defaultkbd = client.get_string(const.CARIBOU_GCONF + "/layout")
+        try:
+            index = kbds.index(defaultkbd)
+        except ValueError:
+            layout_combo.set_active(0)
+        else:
+            layout_combo.set_active(index)
 
         # grey out the key size, key spacing and test area
         # TODO: implement key size, key spacing and test area
@@ -110,6 +108,16 @@ class KeyboardPreferences:
 
     def destroy(self, widget, data = None):
         self.window.destroy()
+
+    def _fetch_keyboards(self):
+        files = os.listdir(const.KEYBOARDS_DIR)
+        kbds = []
+        for f in files:
+            if (HAS_JSON and f.endswith('.json')) or f.endswith('.xml'):
+                module = f.rsplit('.', 1)[0]
+                # TODO: verify keyboard before adding it to the list
+                kbds.append(module)
+        return kbds
 
     def _on_layout_changed(self, combobox, client):
         kbdname = combobox.get_active_text()
