@@ -18,11 +18,16 @@ class Caribou:
         if not self._get_a11y_enabled():
             raise Exception, "AT-SPI 1 or 2 needs to be enabled."
         self.__current_acc = None
+        self.window_factory = window_factory
+        self.kb_factory = kb_factory
         self.window = window_factory(kb_factory())
-        self._register_events()
+        self.client = gconf.client_get_default()
+        self._register_event_listeners()
+        self.client.notify_add(const.CARIBOU_GCONF + "/layout", 
+                                self._on_layout_changed)
         signal.signal(signal.SIGINT, self.signal_handler)
 
-    def _register_events(self):
+    def _register_event_listeners(self):
         pyatspi.Registry.registerEventListener(
             self.on_focus, "object:state-changed:focused")
         pyatspi.Registry.registerEventListener(self.on_focus, "focus")
@@ -31,7 +36,7 @@ class Caribou:
         pyatspi.Registry.registerKeystrokeListener(
             self.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
 
-    def _deregister_events(self):
+    def _deregister_event_listeners(self):
         pyatspi.Registry.deregisterEventListener(
             self.on_focus, "object:state-changed:focused")
         pyatspi.Registry.deregisterEventListener(self.on_focus, "focus")
@@ -39,6 +44,15 @@ class Caribou:
             self.on_text_caret_moved, "object:text-caret-moved")
         pyatspi.Registry.deregisterKeystrokeListener(
             self.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
+
+    def _on_layout_changed(self, client, connection_id, entry, args):
+        self._deregister_event_listeners()
+        self.window.destroy()
+        self._update_window()
+        self._register_event_listeners()
+
+    def _update_window(self):
+        self.window = self.window_factory(self.kb_factory())
 
     def _get_a11y_enabled(self):
         try:
