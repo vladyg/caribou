@@ -23,3 +23,5 @@ po/stamp-it
 m4/intltool.m4
 *.tar.gz
 data/caribou.desktop
+po/.intltool-merge-cache
+
