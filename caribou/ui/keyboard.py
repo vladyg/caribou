@@ -29,6 +29,7 @@ import gtk
 import sys
 import virtkey
 import os
+import traceback
 try:
     import json
 except ImportError:
@@ -222,8 +223,8 @@ class KbLayoutDeserializer(object):
         basename, ext = os.path.splitext(kb_file)
         try:
             kb_layouts = self._deserialize_from_format(ext, contents)
-        except:
-            pass
+        except Exception, e:
+            traceback.print_exc()
         else:
             return kb_layouts
         return []
