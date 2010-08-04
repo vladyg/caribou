@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-19 21:38+0200\n"
-"PO-Revision-Date: 2010-07-19 21:38+0200\n"
+"POT-Creation-Date: 2010-08-04 13:24+0200\n"
+"PO-Revision-Date: 2010-08-04 13:24+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@broadpark.no>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../caribou/ui/main.py:107
+#: ../caribou/ui/main.py:134
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "ADVARSEL - Caribou: redigerbar komponent som ikke er håndtert:"
 
@@ -50,7 +50,7 @@ msgstr "Taster"
 
 #: ../data/caribou-prefs.ui.h:8
 msgid "Mouse over:"
-msgstr ""
+msgstr "Mus over:"
 
 #: ../data/caribou-prefs.ui.h:9
 msgid "Normal state:"
