@@ -1,0 +1,62 @@
+# Greek translation of Caribou.master
+# Copyright (C) 2010 Gnome Project
+# This file is distributed under the same license as the Caribou package.
+# Pierros Papadeas <ppapadeas@gmail.com>, 2010
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-13 18:04+0300\n"
+"PO-Revision-Date: 2010-08-13 18:04+0200\n"
+"Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
+"Language-Team: el Greek <team@gnome.gr>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../caribou/ui/main.py:134
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "ΠΡΟΣΟΧΗ - Caribou: μη διαχειρίσιμο, επεξεργάσιμο στοιχείο ελέγχου:"
+
+#: ../data/caribou-prefs.ui.h:1
+msgid "Caribou Preferences"
+msgstr "Επιλογές Caribou"
+
+#: ../data/caribou-prefs.ui.h:2
+msgid "Colors"
+msgstr "Χρώματα"
+
+#: ../data/caribou-prefs.ui.h:3
+msgid "General"
+msgstr "Γενικά"
+
+#: ../data/caribou-prefs.ui.h:4
+msgid "Key _size:"
+msgstr "_Μέγεθος πλήκτρων:"
+
+#: ../data/caribou-prefs.ui.h:5
+msgid "Key s_pacing:"
+msgstr "_Απόσταση πλήκτρων"
+
+#: ../data/caribou-prefs.ui.h:6
+msgid "Keyboard _layout:"
+msgstr "_Διάταξη πληκτρολόγιου:"
+
+#: ../data/caribou-prefs.ui.h:7
+msgid "Keys"
+msgstr "Πλήκτρα"
+
+#: ../data/caribou-prefs.ui.h:8
+msgid "Mouse over:"
+msgstr "Αιώρηση ποντικιού:"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Normal state:"
+msgstr "Φυσιολογική κατάσταση"
+
+#: ../data/caribou-prefs.ui.h:10
+msgid "_Test settings here:"
+msgstr "Δο_κιμή ρυθμίσεων εδώ:"
+
