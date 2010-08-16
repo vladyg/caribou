@@ -57,6 +57,8 @@ class CaribouWindow(gtk.Window):
         if conf_file_path:
             text_entry_mech.load_kb(conf_file_path)
 
+        self.connect('show', self._on_window_show)
+
     def set_cursor_location(self, cursor_location):
         self._cursor_location = cursor_location
         self._update_position()
@@ -162,6 +164,12 @@ class CaribouWindow(gtk.Window):
     def hide_all(self):
         self.keyboard.hide_all()
         gtk.Window.hide_all(self)
+
+    def _on_window_show(self, window):
+        child = self.get_child()
+        border = self.get_border_width()
+        w, h = child.size_request()
+        self.resize(w + border, h + border)
 
 class CaribouWindowDocked(CaribouWindow, 
                           animation.AnimatedWindowBase,

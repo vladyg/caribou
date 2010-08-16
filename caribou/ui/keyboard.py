@@ -26,6 +26,7 @@ import caribou.common.const as const
 import gconf
 import gobject
 import gtk
+import pango
 import sys
 import virtkey
 import os
@@ -95,7 +96,27 @@ class KeyboardPreferences:
                                         mouse_over_color_button)
 
 
+        key_font_button = builder.get_object("key_font_button")
+        key_font_string = client.get_string(
+            const.CARIBOU_GCONF + "/key_font") or "Sans 12"
+        key_font_button.set_font_name(key_font_string)
+        key_font_button.connect('font-set', self._on_key_font_set, client)
+
+        default_font_checkbox = builder.get_object("default_font_checkbox")
         
+        use_defaults = client.get_bool(const.CARIBOU_GCONF + '/default_font')
+        if use_defaults is None:
+            use_defaults = True
+
+        default_font_checkbox.set_active(use_defaults)
+
+        self._on_default_font_toggled(default_font_checkbox,
+                                      client, key_font_button)
+
+        default_font_checkbox.connect('toggled',
+                                      self._on_default_font_toggled,
+                                      client, key_font_button)
+
         kbds = self._fetch_keyboards()
         for kbddef in kbds:
             layout_combo.append_text(kbddef)
@@ -108,22 +129,15 @@ class KeyboardPreferences:
         else:
             layout_combo.set_active(index)
 
-        # grey out the key size, key spacing and test area
-        # TODO: implement key size, key spacing and test area
-        keysize_label = builder.get_object("label_keysize")
-        keysize_label.set_sensitive(False)
-        keysize_combo = builder.get_object("combobox_keysize")
-        keysize_combo.set_sensitive(False)
-        keyspacing_label = builder.get_object("label_keyspacing")
-        keyspacing_label.set_sensitive(False)
-        keyspacing_combo = builder.get_object("combobox_keyspacing")
-        keyspacing_combo.set_sensitive(False)
-        test_label = builder.get_object("label_test")
-        test_label.set_sensitive(False)
-        entry_test = builder.get_object("entry_test")
-        entry_test.set_sensitive(False)
-
         self.window.show_all()
+
+    def _on_default_font_toggled(self, default_colors_checkbox, gconf_client,
+                                   key_font_button):
+
+        use_defaults = default_colors_checkbox.get_active()
+        gconf_client.set_bool(const.CARIBOU_GCONF + '/default_font',
+                              use_defaults)
+        key_font_button.set_sensitive(not use_defaults)
 
     def _on_default_colors_toggled(self, default_colors_checkbox, gconf_client,
                                    normal_color_button,
@@ -160,6 +174,9 @@ class KeyboardPreferences:
         color = colorbutton.get_color().to_string()
         client.set_string(const.CARIBOU_GCONF + "/mouse_over_color", color)
 
+    def _on_key_font_set(self, fontbutton, client):
+        font = fontbutton.get_font_name()
+        client.set_string(const.CARIBOU_GCONF + "/key_font", font)
 
 class Key(gtk.Button):
 
@@ -187,8 +204,29 @@ class Key(gtk.Button):
             else:
                 self.set_label(self.label)
 
-    def set_relative_size(self, size):
-        self.set_size_request(int(size * self.width), int(size))
+        self.connect('size-allocate', self._on_size_allocate)
+
+    def _on_size_allocate(self, widget, allocation):
+        widget.set_property('width-request', allocation.height * self.width)
+
+    def set_font(self, font):
+        label = self.get_child()
+        if not isinstance(label, gtk.Label):
+            return
+        rcstyle = label.get_modifier_style()
+        rcstyle.font_desc = pango.FontDescription(font)
+
+        label.modify_style(rcstyle)
+        label.queue_resize()
+
+    def reset_font(self):
+        label = self.get_child()
+        if not isinstance(label, gtk.Label):
+            return
+        rcstyle = label.get_modifier_style()
+        rcstyle.font_desc = None
+        label.modify_style(rcstyle)
+        label.queue_resize()
 
     def set_color(self, normal_color, mouse_over_color):
         rcstyle = self.get_modifier_style()
@@ -234,11 +272,12 @@ class KeyboardLayout(gtk.Alignment):
         self.layout_name = name
         self.rows = []
         self.vbox = gtk.VBox()
+        self.vbox.set_homogeneous(True)
         self.add(self.vbox)
 
     def add_row(self, row):
         self.rows.append(row)
-        alignment = gtk.Alignment(0.5, 0.5, 0, 0)
+        alignment = gtk.Alignment(0.5, 0.5, 1, 1)
         hbox = gtk.HBox()
         for key in row:
             hbox.pack_start(key, expand = True, fill = key.fill)
@@ -361,7 +400,36 @@ class CaribouKeyboard(gtk.Notebook):
                                self._colors_changed)
         self.client.notify_add(const.CARIBOU_GCONF + "/default_colors",
                                self._colors_changed)
+        self.client.notify_add(const.CARIBOU_GCONF + "/default_font",
+                               self._key_font_changed)
+        self.client.notify_add(const.CARIBOU_GCONF + "/key_font",
+                               self._key_font_changed)
 
+        self.connect('size-allocate', self._on_size_allocate)
+
+        self.row_height = -1
+
+    def reset_row_height(self):
+        for i in xrange(self.get_n_pages()):
+            layout = self.get_nth_page(i)
+            for row in layout.vbox.get_children():
+                row.set_property('height-request', -1)
+        self.row_height = -1
+
+    def _on_size_allocate(self, notebook, allocation):
+        if self.row_height > 0:
+            return
+
+        for i in xrange(self.get_n_pages()):
+            layout = self.get_nth_page(i)
+            rows = layout.vbox.get_children()
+            height = rows[0].allocation.height
+            self.row_height = max(self.row_height, height)
+        for i in xrange(self.get_n_pages()):
+            layout = self.get_nth_page(i)
+            for row in layout.vbox.get_children():
+                row.set_property('height-request', self.row_height)
+        
 
     def load_kb(self, kb_location):
         kb_deserializer = KbLayoutDeserializer()
@@ -387,9 +455,12 @@ class CaribouKeyboard(gtk.Notebook):
                     else:
                         key.connect('clicked',
                                     self._pressed_normal_key)
-                    key.set_relative_size(self.key_size)
 
     def _colors_changed(self, client, connection_id, entry, args):
+        self._update_key_style()
+
+    def _key_font_changed(self, client, connection_id, entry, args):
+        self.reset_row_height()
         self._update_key_style()
 
     def _update_key_style(self):
@@ -398,8 +469,11 @@ class CaribouKeyboard(gtk.Notebook):
         normal_color = self.client.get_string(const.CARIBOU_GCONF +
                                               "/normal_color")
         mouse_over_color = self.client.get_string(const.CARIBOU_GCONF +
-                                                  "/mouse_over_color") or \
-                                                  "yellow"
+                                                  "/mouse_over_color")
+        default_font = self.client.get_bool(const.CARIBOU_GCONF +
+                                              "/default_font")
+        key_font = self.client.get_string(const.CARIBOU_GCONF +
+                                          "/key_font")
         n_pages = self.get_n_pages()
         for i in range(n_pages):
             layout = self.get_nth_page(i)
@@ -410,6 +484,10 @@ class CaribouKeyboard(gtk.Notebook):
                     else:
                         button.set_color(normal_color,
                                          mouse_over_color)
+                    if default_font:
+                        button.reset_font()
+                    else:
+                        button.set_font(key_font)
 
     def _clear(self):
         n_pages = self.get_n_pages()
