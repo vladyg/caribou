@@ -71,12 +71,30 @@ class KeyboardPreferences:
 
         mouse_over_color_button = builder.get_object("mouse_over_color_button")
         mouse_over_color_string = client.get_string(const.CARIBOU_GCONF +
-                                                    "/mouse_over") or "yellow"
+                                                    "/mouse_over_color") or "yellow"
         mouse_over_color = gtk.gdk.Color(mouse_over_color_string)
         mouse_over_color_button.set_color(mouse_over_color)
         mouse_over_color_button.connect("color-set",
-                                        self._on_mouse_over_color_set, 
+                                        self._on_mouse_over_color_set,
                                         client)
+
+        default_colors_checkbox = builder.get_object("default_colors_checkbox")
+        use_defaults = client.get_bool(const.CARIBOU_GCONF + '/default_colors')
+        if use_defaults is None:
+            use_defaults = True
+
+        default_colors_checkbox.set_active(use_defaults)
+
+        self._on_default_colors_toggled(default_colors_checkbox,
+                                        client, normal_color_button,
+                                        mouse_over_color_button)
+
+        default_colors_checkbox.connect('toggled',
+                                        self._on_default_colors_toggled,
+                                        client, normal_color_button,
+                                        mouse_over_color_button)
+
+
         
         kbds = self._fetch_keyboards()
         for kbddef in kbds:
@@ -106,6 +124,15 @@ class KeyboardPreferences:
         entry_test.set_sensitive(False)
 
         self.window.show_all()
+
+    def _on_default_colors_toggled(self, default_colors_checkbox, gconf_client,
+                                   normal_color_button,
+                                   mouse_over_color_button):
+        use_defaults = default_colors_checkbox.get_active()
+        gconf_client.set_bool(const.CARIBOU_GCONF + '/default_colors',
+                              use_defaults)
+        normal_color_button.set_sensitive(not use_defaults)
+        mouse_over_color_button.set_sensitive(not use_defaults)
 
     def destroy(self, widget, data = None):
         self.window.destroy()
@@ -164,8 +191,18 @@ class Key(gtk.Button):
         self.set_size_request(int(size * self.width), int(size))
 
     def set_color(self, normal_color, mouse_over_color):
-        self.modify_bg(gtk.STATE_NORMAL, gtk.gdk.Color(normal_color))
-        self.modify_bg(gtk.STATE_PRELIGHT, gtk.gdk.Color(mouse_over_color))
+        rcstyle = self.get_modifier_style()
+
+        rcstyle.bg[gtk.STATE_NORMAL] = gtk.gdk.Color(normal_color)
+        rcstyle.bg[gtk.STATE_PRELIGHT] = gtk.gdk.Color(mouse_over_color)
+
+        self.modify_style(rcstyle)
+
+    def reset_color(self):
+        rcstyle = self.get_modifier_style()
+        rcstyle.bg[gtk.STATE_NORMAL] = None
+        rcstyle.bg[gtk.STATE_PRELIGHT] = None
+        self.modify_style(rcstyle)
 
     def _get_value(self):
         return self._value
@@ -322,12 +359,15 @@ class CaribouKeyboard(gtk.Notebook):
                                self._colors_changed)
         self.client.notify_add(const.CARIBOU_GCONF + "/mouse_over_color",
                                self._colors_changed)
+        self.client.notify_add(const.CARIBOU_GCONF + "/default_colors",
+                               self._colors_changed)
+
 
     def load_kb(self, kb_location):
         kb_deserializer = KbLayoutDeserializer()
         layouts = kb_deserializer.deserialize(kb_location)
         self._set_layouts(layouts)
-        self._update_colors()
+        self._update_key_style()
 
     def _set_layouts(self, layout_list):
         self._clear()
@@ -350,11 +390,13 @@ class CaribouKeyboard(gtk.Notebook):
                     key.set_relative_size(self.key_size)
 
     def _colors_changed(self, client, connection_id, entry, args):
-        self._update_colors()
+        self._update_key_style()
 
-    def _update_colors(self):
+    def _update_key_style(self):
+        default_colors = self.client.get_bool(const.CARIBOU_GCONF +
+                                              '/default_colors')
         normal_color = self.client.get_string(const.CARIBOU_GCONF +
-                                              "/normal_color") or "grey80"
+                                              "/normal_color")
         mouse_over_color = self.client.get_string(const.CARIBOU_GCONF +
                                                   "/mouse_over_color") or \
                                                   "yellow"
@@ -363,8 +405,11 @@ class CaribouKeyboard(gtk.Notebook):
             layout = self.get_nth_page(i)
             for row in layout.rows:
                 for button in row:
-                    button.set_color(normal_color,
-                                     mouse_over_color)
+                    if default_colors:
+                        button.reset_color()
+                    else:
+                        button.set_color(normal_color,
+                                         mouse_over_color)
 
     def _clear(self):
         n_pages = self.get_n_pages()

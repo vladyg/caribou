@@ -33,5 +33,16 @@
         <long></long>
       </locale>
     </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/default_colors</key>
+      <applyto>/apps/caribou/osk/default_colors</applyto>
+      <owner>caribou</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Use the default theme colors</short>
+        <long></long>
+      </locale>
+    </schema>
   </schemalist>
 </gconfschemafile>
