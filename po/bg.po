@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-25 18:43+0300\n"
-"PO-Revision-Date: 2010-07-25 18:43+0300\n"
+"POT-Creation-Date: 2010-08-21 10:30+0300\n"
+"PO-Revision-Date: 2010-07-28 00:22+0300\n"
 "Last-Translator: Ivaylo Valkov <ivaylo@e-valkov.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -50,7 +50,7 @@ msgstr "Клавиши"
 
 #: ../data/caribou-prefs.ui.h:8
 msgid "Mouse over:"
-msgstr "При позициониране на курса на мишката върху клавиша:"
+msgstr "При позициониране на показалеца на мишката върху клавиша:"
 
 #: ../data/caribou-prefs.ui.h:9
 msgid "Normal state:"
