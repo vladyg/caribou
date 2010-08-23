@@ -1,0 +1,61 @@
+# Danish translation for caribou.
+# Copyright (C) 2010 caribou's COPYRIGHT HOLDER
+# This file is distributed under the same license as the caribou package.
+# Kris Thomsen <lakristho@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-23 22:46+0200\n"
+"PO-Revision-Date: 2010-08-21 22:23+0100\n"
+"Last-Translator: Kris Thomsen <lakristho@gmail.com>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../caribou/ui/main.py:134
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "ADVARSEL - Caribou: ikke-håndteret redigérbar kontrol:"
+
+#: ../data/caribou-prefs.ui.h:1
+msgid "Caribou Preferences"
+msgstr "Indstillinger for Caribou"
+
+#: ../data/caribou-prefs.ui.h:2
+msgid "Colors"
+msgstr "Farver"
+
+#: ../data/caribou-prefs.ui.h:3
+msgid "General"
+msgstr "Generelt"
+
+#: ../data/caribou-prefs.ui.h:4
+msgid "Key _size:"
+msgstr "Taste_størrelse:"
+
+#: ../data/caribou-prefs.ui.h:5
+msgid "Key s_pacing:"
+msgstr "Taste_afstand:"
+
+#: ../data/caribou-prefs.ui.h:6
+msgid "Keyboard _layout:"
+msgstr "Tastatur_layout:"
+
+#: ../data/caribou-prefs.ui.h:7
+msgid "Keys"
+msgstr "Taster"
+
+#: ../data/caribou-prefs.ui.h:8
+msgid "Mouse over:"
+msgstr "Mus over:"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Normal state:"
+msgstr "Normal status:"
+
+#: ../data/caribou-prefs.ui.h:10
+msgid "_Test settings here:"
+msgstr "_Test indstillinger her:"
