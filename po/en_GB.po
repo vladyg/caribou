@@ -1,0 +1,62 @@
+# Caribou British English translation
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Caribou package.
+# Philip Withnall <philip@tecnocode.co.uk>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-27 09:47+0100\n"
+"PO-Revision-Date: 2010-08-27 09:47+0100\n"
+"Last-Translator: Philip Withnall <philip@tecnocode.co.uk>\n"
+"Language-Team: British English <en@li.org>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../caribou/ui/main.py:134
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "WARNING — Caribou: unhandled editable widget:"
+
+#: ../data/caribou-prefs.ui.h:1
+msgid "Caribou Preferences"
+msgstr "Caribou Preferences"
+
+#: ../data/caribou-prefs.ui.h:2
+msgid "Colors"
+msgstr "Colours"
+
+#: ../data/caribou-prefs.ui.h:3
+msgid "General"
+msgstr "General"
+
+#: ../data/caribou-prefs.ui.h:4
+msgid "Key _size:"
+msgstr "Key _size:"
+
+#: ../data/caribou-prefs.ui.h:5
+msgid "Key s_pacing:"
+msgstr "Key s_pacing:"
+
+#: ../data/caribou-prefs.ui.h:6
+msgid "Keyboard _layout:"
+msgstr "Keyboard _layout:"
+
+#: ../data/caribou-prefs.ui.h:7
+msgid "Keys"
+msgstr "Keys"
+
+#: ../data/caribou-prefs.ui.h:8
+msgid "Mouse over:"
+msgstr "Mouse over:"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Normal state:"
+msgstr "Normal state:"
+
+#: ../data/caribou-prefs.ui.h:10
+msgid "_Test settings here:"
+msgstr "_Test settings here:"
