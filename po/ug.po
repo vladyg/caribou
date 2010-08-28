@@ -1,0 +1,61 @@
+# Uighur translation for caribou.
+# Copyright (C) 2010 caribou's COPYRIGHT HOLDER
+# This file is distributed under the same license as the caribou package.
+# Gheyret Kenji <gheyret@yahoo.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&component=default\n"
+"POT-Creation-Date: 2010-08-10 21:57+0000\n"
+"PO-Revision-Date: 2010-08-10 21:57+0000\n"
+"Last-Translator: Gheyret Kenji <gheyret@yahoo.com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../caribou/ui/main.py:134
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "ئاگاھلاندۇرۇش - Caribou : باشقۇرۇلمىغان تەھرىرلىگىلى بولىدىغان widget:"
+
+#: ../data/caribou-prefs.ui.h:1
+msgid "Caribou Preferences"
+msgstr "Caribou مايىللىقى"
+
+#: ../data/caribou-prefs.ui.h:2
+msgid "Colors"
+msgstr "رەڭلەر"
+
+#: ../data/caribou-prefs.ui.h:3
+msgid "General"
+msgstr "ئادەتتىكى"
+
+#: ../data/caribou-prefs.ui.h:4
+msgid "Key _size:"
+msgstr "كۇنۇپكا چوڭلۇقى(_S):"
+
+#: ../data/caribou-prefs.ui.h:5
+msgid "Key s_pacing:"
+msgstr "كۇنۇپكا بوشلۇقى(_P):"
+
+#: ../data/caribou-prefs.ui.h:6
+msgid "Keyboard _layout:"
+msgstr "كۇنۇپكا جايلاشتۇرۇلۇشى(_L):"
+
+#: ../data/caribou-prefs.ui.h:7
+msgid "Keys"
+msgstr "كۇنۇپكىلار"
+
+#: ../data/caribou-prefs.ui.h:8
+msgid "Mouse over:"
+msgstr "چاشقىنەك ئۈستىگە كەلگەندە:"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Normal state:"
+msgstr "نورمال ھالەتتە:"
+
+#: ../data/caribou-prefs.ui.h:10
+msgid "_Test settings here:"
+msgstr "تەڭشەكلەرنى سىناڭ(T):"
