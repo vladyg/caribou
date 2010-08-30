@@ -1,0 +1,61 @@
+# Japanese translation of message catalog of Caribou
+# Copyright (C) 2009-2010 th Caribou's copyright holder
+# This file is distributed under the same license as the Caribou package.
+# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&component=default\n"
+"POT-Creation-Date: 2010-08-29 13:11+0000\n"
+"PO-Revision-Date: 2010-08-30 20:28+0900\n"
+"Last-Translator: Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../caribou/ui/main.py:134
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "警告 - Caribou: 管理外の編集可能なウィジェット:"
+
+#: ../data/caribou-prefs.ui.h:1
+msgid "Caribou Preferences"
+msgstr "Caribou の設定"
+
+#: ../data/caribou-prefs.ui.h:2
+msgid "Colors"
+msgstr "色"
+
+#: ../data/caribou-prefs.ui.h:3
+msgid "General"
+msgstr "一般"
+
+#: ../data/caribou-prefs.ui.h:4
+msgid "Key _size:"
+msgstr "キーの大きさ(_S):"
+
+#: ../data/caribou-prefs.ui.h:5
+msgid "Key s_pacing:"
+msgstr "キーの間隔(_P):"
+
+#: ../data/caribou-prefs.ui.h:6
+msgid "Keyboard _layout:"
+msgstr "キーボードのレイアウト(_L):"
+
+#: ../data/caribou-prefs.ui.h:7
+msgid "Keys"
+msgstr "キー"
+
+#: ../data/caribou-prefs.ui.h:8
+msgid "Mouse over:"
+msgstr "マウスオーバー:"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Normal state:"
+msgstr "通常の状態:"
+
+#: ../data/caribou-prefs.ui.h:10
+msgid "_Test settings here:"
+msgstr "設定のテストはここで(_T):"
