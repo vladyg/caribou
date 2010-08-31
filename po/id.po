@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the caribou package.
 #
 # Andika Triwidada <andika@gmail.com>, 2010.
+# Dirgita <dirgitadevina@yahoo.co.id>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
-"cgi?product=caribou&component=default\n"
-"POT-Creation-Date: 2010-07-12 18:02+0000\n"
-"PO-Revision-Date: 2010-08-05 09:12+0700\n"
-"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
-"Language-Team: GNOME Indonesian Translation Team <gnome@i15n.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&component=default\n"
+"POT-Creation-Date: 2010-08-30 11:30+0000\n"
+"PO-Revision-Date: 2010-08-30 18:21+0700\n"
+"Last-Translator: Dirgita <dirgitadevina@yahoo.co.id>\n"
+"Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,11 +20,11 @@ msgstr ""
 "X-Poedit-Language: Indonesian\n"
 "X-Poedit-Country: Indonesia\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.1\n"
 
-#: ../caribou/ui/main.py:107
+#: ../caribou/ui/main.py:134
 msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "PERINGATAN - Caribou: widget dapat disunting yang tak tertangani:"
+msgstr "PERINGATAN - Caribou: widget-dapat-disunting yang tidak tertangani:"
 
 #: ../data/caribou-prefs.ui.h:1
 msgid "Caribou Preferences"
@@ -43,25 +44,24 @@ msgstr "_Ukuran tombol:"
 
 #: ../data/caribou-prefs.ui.h:5
 msgid "Key s_pacing:"
-msgstr "_Jarak antar tombol:"
+msgstr "_Jarak tombol:"
 
 #: ../data/caribou-prefs.ui.h:6
 msgid "Keyboard _layout:"
-msgstr "Tata _letak papan tik:"
+msgstr "Tata _letak papan ketik:"
 
 #: ../data/caribou-prefs.ui.h:7
 msgid "Keys"
-msgstr "Kunci"
+msgstr "Tombol"
 
 #: ../data/caribou-prefs.ui.h:8
 msgid "Mouse over:"
-msgstr "Tetikus lewat:"
+msgstr "Dilintasi tetikus:"
 
 #: ../data/caribou-prefs.ui.h:9
 msgid "Normal state:"
-msgstr "Keadaan normal:"
+msgstr "Kondisi normal:"
 
 #: ../data/caribou-prefs.ui.h:10
 msgid "_Test settings here:"
-msgstr "Uji _tatanan disini:"
-
+msgstr "Coba penga_turannya di sini:"
