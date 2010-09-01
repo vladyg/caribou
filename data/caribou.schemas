@@ -33,5 +33,38 @@
         <long></long>
       </locale>
     </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/default_colors</key>
+      <applyto>/apps/caribou/osk/default_colors</applyto>
+      <owner>caribou</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Use the default theme colors</short>
+        <long></long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/key_font</key>
+      <applyto>/apps/caribou/osk/keyboard_font</applyto>
+      <owner>caribou</owner>
+      <type>string</type>
+      <default>Sans 12</default>
+      <locale name="C">
+        <short>Custom font for keyboard/short>
+        <long></long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/default_font</key>
+      <applyto>/apps/caribou/osk/default_font</applyto>
+      <owner>caribou</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Use the default system font for keyboard</short>
+        <long></long>
+      </locale>
+    </schema>
   </schemalist>
 </gconfschemafile>
