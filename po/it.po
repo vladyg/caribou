@@ -1,0 +1,60 @@
+# caribou Italian translation
+# Copyright (C) 2010 the caribou's copyright holder
+# This file is distributed under the same license as the caribou package.
+# Silvia Bindelli <silvia.bindelli@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou 2.33\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-01 18:51+0200\n"
+"PO-Revision-Date: 2010-09-01 18:50+0200\n"
+"Last-Translator: Silvia Bindelli <silvia.bindelli@gmail.com>\n"
+"Language-Team: Italian <tp@lists.linux.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../caribou/ui/main.py:134
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "ATTENZIONE - Caribou: widget modificabile non gestito:"
+
+#: ../data/caribou-prefs.ui.h:1
+msgid "Caribou Preferences"
+msgstr "Preferenze di Caribou"
+
+#: ../data/caribou-prefs.ui.h:2
+msgid "Colors"
+msgstr "Colori"
+
+#: ../data/caribou-prefs.ui.h:3
+msgid "General"
+msgstr "Generale"
+
+#: ../data/caribou-prefs.ui.h:4
+msgid "Key _size:"
+msgstr "Dimen_sione dei tasti:"
+
+#: ../data/caribou-prefs.ui.h:5
+msgid "Key s_pacing:"
+msgstr "S_pazio tra i tasti:"
+
+#: ../data/caribou-prefs.ui.h:6
+msgid "Keyboard _layout:"
+msgstr "_Disposizione della tastiera:"
+
+#: ../data/caribou-prefs.ui.h:7
+msgid "Keys"
+msgstr "Tasti"
+
+#: ../data/caribou-prefs.ui.h:8
+msgid "Mouse over:"
+msgstr "Passaggio del mouse:"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Normal state:"
+msgstr "Stato normale:"
+
+#: ../data/caribou-prefs.ui.h:10
+msgid "_Test settings here:"
+msgstr "_Provare le impostazioni qui:"
