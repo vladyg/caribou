@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&component=default\n"
-"POT-Creation-Date: 2010-07-25 15:58+0000\n"
+"POT-Creation-Date: 2010-09-05 21:20+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME translation team <gnome-si@googlegroups.com>\n"
@@ -37,30 +37,35 @@ msgid "General"
 msgstr "Splošno"
 
 #: ../data/caribou-prefs.ui.h:4
-msgid "Key _size:"
-msgstr "_Velikost tipk: "
+msgid "Key font:"
+msgstr "Pisava tipke:"
 
 #: ../data/caribou-prefs.ui.h:5
-msgid "Key s_pacing:"
-msgstr "R_azmik med tipkami:"
-
-#: ../data/caribou-prefs.ui.h:6
 msgid "Keyboard _layout:"
 msgstr "_Razporeditev tipkovnice:"
 
-#: ../data/caribou-prefs.ui.h:7
+#: ../data/caribou-prefs.ui.h:6
 msgid "Keys"
 msgstr "Tipke"
 
-#: ../data/caribou-prefs.ui.h:8
+#: ../data/caribou-prefs.ui.h:7
 msgid "Mouse over:"
 msgstr "Prehod miške:"
 
-#: ../data/caribou-prefs.ui.h:9
+#: ../data/caribou-prefs.ui.h:8
 msgid "Normal state:"
 msgstr "Običajno stanje:"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Use Defaults"
+msgstr "Uporabi privzeto"
 
 #: ../data/caribou-prefs.ui.h:10
 msgid "_Test settings here:"
 msgstr "Tukaj _preizkusite nastavitve:"
+
+#~ msgid "Key _size:"
+#~ msgstr "_Velikost tipk: "
+#~ msgid "Key s_pacing:"
+#~ msgstr "R_azmik med tipkami:"
 
