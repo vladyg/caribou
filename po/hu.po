@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-28 11:52+0200\n"
-"PO-Revision-Date: 2010-08-28 11:56+0200\n"
+"POT-Creation-Date: 2010-09-14 14:03+0200\n"
+"PO-Revision-Date: 2010-09-14 13:55+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at fsf dot hu>\n"
 "MIME-Version: 1.0\n"
@@ -34,30 +34,29 @@ msgid "General"
 msgstr "Általános"
 
 #: ../data/caribou-prefs.ui.h:4
-msgid "Key _size:"
-msgstr "Bille_ntyűméret:"
+msgid "Key font:"
+msgstr "Billentyűzet betűkészlete:"
 
 #: ../data/caribou-prefs.ui.h:5
-msgid "Key s_pacing:"
-msgstr "Billentyű _térköz:"
-
-#: ../data/caribou-prefs.ui.h:6
 msgid "Keyboard _layout:"
 msgstr "Billentyűki_osztás:"
 
-#: ../data/caribou-prefs.ui.h:7
+#: ../data/caribou-prefs.ui.h:6
 msgid "Keys"
 msgstr "Billentyűk"
 
-#: ../data/caribou-prefs.ui.h:8
+#: ../data/caribou-prefs.ui.h:7
 msgid "Mouse over:"
 msgstr "Rámutatás:"
 
-#: ../data/caribou-prefs.ui.h:9
+#: ../data/caribou-prefs.ui.h:8
 msgid "Normal state:"
 msgstr "Normál állapot:"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Use Defaults"
+msgstr "Alapértelmezések használata"
 
 #: ../data/caribou-prefs.ui.h:10
 msgid "_Test settings here:"
 msgstr "_Tesztelje itt a beállításokat:"
-
