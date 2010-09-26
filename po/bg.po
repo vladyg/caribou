@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-21 10:30+0300\n"
-"PO-Revision-Date: 2010-07-28 00:22+0300\n"
+"POT-Creation-Date: 2010-09-26 16:20+0300\n"
+"PO-Revision-Date: 2010-09-07 10:01+0300\n"
 "Last-Translator: Ivaylo Valkov <ivaylo@e-valkov.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -33,28 +33,28 @@ msgid "General"
 msgstr "Общи"
 
 #: ../data/caribou-prefs.ui.h:4
-msgid "Key _size:"
-msgstr "_Размер на клавиша:"
+msgid "Key font:"
+msgstr "Шрифт за клавишите:"
 
 #: ../data/caribou-prefs.ui.h:5
-msgid "Key s_pacing:"
-msgstr "Р_азстояние между клавишите:"
-
-#: ../data/caribou-prefs.ui.h:6
 msgid "Keyboard _layout:"
 msgstr "_Подредба на клавиатурата:"
 
-#: ../data/caribou-prefs.ui.h:7
+#: ../data/caribou-prefs.ui.h:6
 msgid "Keys"
 msgstr "Клавиши"
 
-#: ../data/caribou-prefs.ui.h:8
+#: ../data/caribou-prefs.ui.h:7
 msgid "Mouse over:"
 msgstr "При позициониране на показалеца на мишката върху клавиша:"
 
-#: ../data/caribou-prefs.ui.h:9
+#: ../data/caribou-prefs.ui.h:8
 msgid "Normal state:"
 msgstr "Нормално състояние:"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Use Defaults"
+msgstr "Използване на стандартните настройки"
 
 #: ../data/caribou-prefs.ui.h:10
 msgid "_Test settings here:"
