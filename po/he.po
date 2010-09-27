@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-13 13:23+0300\n"
-"PO-Revision-Date: 2010-07-13 13:24+0200\n"
+"POT-Creation-Date: 2010-09-27 08:43+0200\n"
+"PO-Revision-Date: 2010-09-27 08:44+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Gezer <sh.yaron@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Poedit-Country: ISRAEL\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: ../caribou/ui/main.py:107
+#: ../caribou/ui/main.py:134
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "WARNING - Caribou: unhandled editable widget:"
 
@@ -36,29 +36,35 @@ msgid "General"
 msgstr "כללי"
 
 #: ../data/caribou-prefs.ui.h:4
-msgid "Key _size:"
-msgstr "_גודל המקשים:"
+msgid "Key font:"
+msgstr "גופן המקש:"
 
 #: ../data/caribou-prefs.ui.h:5
-msgid "Key s_pacing:"
-msgstr "_ריווח המקשים:"
-
-#: ../data/caribou-prefs.ui.h:6
 msgid "Keyboard _layout:"
 msgstr "_פריסת המקלדת:"
 
-#: ../data/caribou-prefs.ui.h:7
+#: ../data/caribou-prefs.ui.h:6
 msgid "Keys"
 msgstr "מקשים"
 
-#: ../data/caribou-prefs.ui.h:8
+#: ../data/caribou-prefs.ui.h:7
 msgid "Mouse over:"
 msgstr "מעבר העכבר:"
 
-#: ../data/caribou-prefs.ui.h:9
+#: ../data/caribou-prefs.ui.h:8
 msgid "Normal state:"
 msgstr "מצב רגיל:"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Use Defaults"
+msgstr "שימוש בבררות המחדל"
 
 #: ../data/caribou-prefs.ui.h:10
 msgid "_Test settings here:"
 msgstr "_בדיקת ההגדרות להלן:"
+
+#~ msgid "Key _size:"
+#~ msgstr "_גודל המקשים:"
+
+#~ msgid "Key s_pacing:"
+#~ msgstr "_ריווח המקשים:"
