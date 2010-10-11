@@ -1,0 +1,65 @@
+# translation of ml.po to Malayalam
+# translation of caribou.master.po to
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# FIRST AUTHOR <maheshmohan.mu@gmail.com>, 2010.
+# REVIEWED <apeter@redhat.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: ml\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&component=default\n"
+"POT-Creation-Date: 2010-08-08 19:20+0000\n"
+"PO-Revision-Date: 2010-10-11 12:35+0530\n"
+"Last-Translator: Ani Peter <maheshmohan.mu@gmail.com>\n"
+"Language-Team: Malayalam <smc-discuss@googlegorups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: ../caribou/ui/main.py:134
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "മുന്നറിയിപ്പ് - കരിബൌ : കൈകാര്യം ചെയ്തിട്ടില്ലാത്ത മാറ്റം വരുത്തുവാന്‍ സാധിക്കുന്ന വിഡ്ജറ്റ് :"
+
+#: ../data/caribou-prefs.ui.h:1
+msgid "Caribou Preferences"
+msgstr "കരിബൌ മുന്‍ഗണനകള്‍"
+
+#: ../data/caribou-prefs.ui.h:2
+msgid "Colors"
+msgstr "നിറങ്ങള്‍ "
+
+#: ../data/caribou-prefs.ui.h:3
+msgid "General"
+msgstr "പൊതുവായ"
+
+#: ../data/caribou-prefs.ui.h:4
+msgid "Key _size:"
+msgstr "കീ _വലിപ്പം:"
+
+#: ../data/caribou-prefs.ui.h:5
+msgid "Key s_pacing:"
+msgstr "കീ _അകലം:"
+
+#: ../data/caribou-prefs.ui.h:6
+msgid "Keyboard _layout:"
+msgstr "കീബോര്‍ഡ് _വിന്യാസം:"
+
+#: ../data/caribou-prefs.ui.h:7
+msgid "Keys"
+msgstr "കീകള്‍"
+
+#: ../data/caribou-prefs.ui.h:8
+msgid "Mouse over:"
+msgstr "മൌസ് കൊണ്ട് വയ്ക്കുക: "
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Normal state:"
+msgstr "സാധാരണ അവസ്ഥ:"
+
+#: ../data/caribou-prefs.ui.h:10
+msgid "_Test settings here:"
+msgstr "സജ്ജീകരണങ്ങള്‍ _ഇവിടെ പരീക്ഷിയ്ക്കുക:"
+
