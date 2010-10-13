@@ -51,7 +51,7 @@
       <type>string</type>
       <default>Sans 12</default>
       <locale name="C">
-        <short>Custom font for keyboard/short>
+        <short>Custom font for keyboard</short>
         <long></long>
       </locale>
     </schema>
