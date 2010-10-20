@@ -6,17 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-18 21:15-0300\n"
-"PO-Revision-Date: 2010-07-18 21:15-0300\n"
-"Last-Translator: Rodrigo L. M. Flores <rlmflores@gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&component=default\n"
+"POT-Creation-Date: 2010-09-27 06:48+0000\n"
+"PO-Revision-Date: 2010-10-08 07:38-0300\n"
+"Last-Translator: Mateus Zenaide <mateus.gnome@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../caribou/ui/main.py:107
+#: ../caribou/ui/main.py:134
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "Aviso – Caribou: widget editável não-manipulado:"
 
@@ -33,28 +34,28 @@ msgid "General"
 msgstr "Geral"
 
 #: ../data/caribou-prefs.ui.h:4
-msgid "Key _size:"
-msgstr "Tamanho da _chave:"
+msgid "Key font:"
+msgstr "Fonte da tecla:"
 
 #: ../data/caribou-prefs.ui.h:5
-msgid "Key s_pacing:"
-msgstr "Tecla de es_paço:"
+msgid "Keyboard _layout:"
+msgstr "_Layout do teclado:"
 
 #: ../data/caribou-prefs.ui.h:6
-msgid "Keyboard _layout:"
-msgstr "_Layout do Teclado:"
-
-#: ../data/caribou-prefs.ui.h:7
 msgid "Keys"
 msgstr "Teclas"
 
-#: ../data/caribou-prefs.ui.h:8
+#: ../data/caribou-prefs.ui.h:7
 msgid "Mouse over:"
 msgstr "Mouse sobre:"
 
-#: ../data/caribou-prefs.ui.h:9
+#: ../data/caribou-prefs.ui.h:8
 msgid "Normal state:"
 msgstr "Estado normal:"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Use Defaults"
+msgstr "Usar padrões"
 
 #: ../data/caribou-prefs.ui.h:10
 msgid "_Test settings here:"
