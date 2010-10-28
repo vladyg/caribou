@@ -2,14 +2,15 @@
 # Copyright (C) 2010 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
 # David Planella <david.planella@softcatala.org>, 2010.
+# Jordi Estrada <jordi.estrada@gmail.com>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-21 10:52+0200\n"
-"PO-Revision-Date: 2010-08-21 10:52+0200\n"
-"Last-Translator: David Planella <david.planella@softcatala.org>\n"
+"POT-Creation-Date: 2010-10-28 17:39+0100\n"
+"PO-Revision-Date: 2010-10-28 15:17+0200\n"
+"Last-Translator: Jordi Estrada <jordi.estrada@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@llistes.softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -33,29 +34,35 @@ msgid "General"
 msgstr "General"
 
 #: ../data/caribou-prefs.ui.h:4
-msgid "Key _size:"
-msgstr "Mida de la _tecla:"
+msgid "Key font:"
+msgstr "Tipus de lletra de la tecla:"
 
 #: ../data/caribou-prefs.ui.h:5
-msgid "Key s_pacing:"
-msgstr "Es_paiat de les tecles:"
-
-#: ../data/caribou-prefs.ui.h:6
 msgid "Keyboard _layout:"
 msgstr "_Disposició del teclat:"
 
-#: ../data/caribou-prefs.ui.h:7
+#: ../data/caribou-prefs.ui.h:6
 msgid "Keys"
 msgstr "Tecles"
 
-#: ../data/caribou-prefs.ui.h:8
+#: ../data/caribou-prefs.ui.h:7
 msgid "Mouse over:"
 msgstr "En haver-hi el ratolí al damunt:"
 
-#: ../data/caribou-prefs.ui.h:9
+#: ../data/caribou-prefs.ui.h:8
 msgid "Normal state:"
 msgstr "Estat normal:"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Use Defaults"
+msgstr "Utilitza els valors predeterminats"
 
 #: ../data/caribou-prefs.ui.h:10
 msgid "_Test settings here:"
 msgstr "Comp_roveu els paràmetres aquí:"
+
+#~ msgid "Key _size:"
+#~ msgstr "Mida de la _tecla:"
+
+#~ msgid "Key s_pacing:"
+#~ msgstr "Es_paiat de les tecles:"
