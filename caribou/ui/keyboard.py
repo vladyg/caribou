@@ -39,13 +39,15 @@ else:
     HAS_JSON = True
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
-
+import gettext
+import i18n
 
 class KeyboardPreferences:
     __gtype_name__ = "KeyboardPreferences"
 
     def __init__(self):
         builder = gtk.Builder()
+        builder.set_translation_domain(gettext.textdomain())
         builder.add_from_file(os.path.join(const.DATA_DIR, "caribou-prefs.ui"))
 
         self.window = builder.get_object("dialog_prefs")
