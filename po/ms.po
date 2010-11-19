@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&component=default\n"
-"POT-Creation-Date: 2010-08-04 11:24+0000\n"
-"PO-Revision-Date: 2010-08-04 21:01+0800\n"
+"POT-Creation-Date: 2010-10-30 15:09+0000\n"
+"PO-Revision-Date: 2010-11-13 12:30+0800\n"
 "Last-Translator: Ahmed Noor Kader Mustajir Md Eusoff <sir.ade@gmail.com>\n"
-"Language-Team: Malay <ms@li.org>\n"
+"Language-Team: Malay <gnome-ms@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,29 +35,35 @@ msgid "General"
 msgstr "Umum"
 
 #: ../data/caribou-prefs.ui.h:4
-msgid "Key _size:"
-msgstr "Saiz _kunci:"
+msgid "Key font:"
+msgstr "Fon Utama:"
 
 #: ../data/caribou-prefs.ui.h:5
-msgid "Key s_pacing:"
-msgstr "Jarak k_unci:"
-
-#: ../data/caribou-prefs.ui.h:6
 msgid "Keyboard _layout:"
 msgstr "Susunan _papan kekunci:"
 
-#: ../data/caribou-prefs.ui.h:7
+#: ../data/caribou-prefs.ui.h:6
 msgid "Keys"
 msgstr "Kunci"
 
-#: ../data/caribou-prefs.ui.h:8
+#: ../data/caribou-prefs.ui.h:7
 msgid "Mouse over:"
 msgstr "Melintasi tetikus:"
 
-#: ../data/caribou-prefs.ui.h:9
+#: ../data/caribou-prefs.ui.h:8
 msgid "Normal state:"
 msgstr "Keadaan normal:"
+
+#: ../data/caribou-prefs.ui.h:9
+msgid "Use Defaults"
+msgstr "Guna Lalai"
 
 #: ../data/caribou-prefs.ui.h:10
 msgid "_Test settings here:"
 msgstr "_Percubaan tatacara disini:"
+
+#~ msgid "Key _size:"
+#~ msgstr "Saiz _kunci:"
+
+#~ msgid "Key s_pacing:"
+#~ msgstr "Jarak k_unci:"
