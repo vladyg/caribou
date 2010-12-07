@@ -66,5 +66,126 @@
         <long></long>
       </locale>
     </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/row_scanning_color</key>
+      <applyto>/apps/caribou/osk/row_scanning_color</applyto>
+      <owner>caribou</owner>
+      <type>string</type>
+      <default>green</default>
+      <locale name="C">
+        <short>Color of row scanning of Caribou</short>
+        <long>Color of row scanning of Caribou</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/button_scanning_color</key>
+      <applyto>/apps/caribou/osk/button_scanning_color</applyto>
+      <owner>caribou</owner>
+      <type>string</type>
+      <default>cyan</default>
+      <locale name="C">
+        <short>Color of the button scanning of Caribou</short>
+        <long>Color of the button scanning of Caribou</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/block_scanning_color</key>
+      <applyto>/apps/caribou/osk/block_scanning_color</applyto>
+      <owner>caribou</owner>
+      <type>string</type>
+      <default>gray70</default>
+      <locale name="C">
+        <short>Color of the block scanning of Caribou</short>
+        <long>Color of the block scanning of Caribou</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/cancel_scanning_color</key>
+      <applyto>/apps/caribou/osk/cancel_scanning_color</applyto>
+      <owner>caribou</owner>
+      <type>string</type>
+      <default>red</default>
+      <locale name="C">
+        <short>Color of cancelling scanning on Caribou</short>
+        <long>Color of cancelling scanning on Caribou</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/switch_type</key>
+      <applyto>/apps/caribou/osk/switch_type</applyto>
+      <owner>caribou</owner>
+      <type>string</type>
+      <default>keyboard</default>
+      <locale name="C">
+        <short>Switch type, keyboard or mouse</short>
+        <long>Switch type, keyboard or mouse</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/keyboard_key</key>
+      <applyto>/apps/caribou/osk/keyboard_key</applyto>
+      <owner>caribou</owner>
+      <type>string</type>
+      <default>Shift_R</default>
+      <locale name="C">
+        <short>Key to use with the scanning mode</short>
+        <long>Key to use with the scanning mode</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/mouse_button</key>
+      <applyto>/apps/caribou/osk/mouse_button</applyto>
+      <owner>caribou</owner>
+      <type>string</type>
+      <default>keyboard</default>
+      <locale name="C">
+        <short>Mouse button to use in the scanning mode</short>
+        <long>Mouse button to use in the scanning mode</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/reverse_scanning</key>
+      <applyto>/apps/caribou/osk/reverse_scanning</applyto>
+      <owner>caribou</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Enable the reverse scanning</short>
+        <long>Enable the reverse scanning, the keyboard is scanned when the user press the switch button</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/scan_enabled</key>
+      <applyto>/apps/caribou/osk/scan_enabled</applyto>
+      <owner>caribou</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Enable the keyboard scanning</short>
+        <long>Enable the keyboard scanning</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/scanning_type</key>
+      <applyto>/apps/caribou/osk/scanning_type</applyto>
+      <owner>caribou</owner>
+      <type>string</type>
+      <default>0</default>
+      <locale name="C">
+        <short>Scanning type</short>
+        <long>Scanning type, 0 for block and 1 for row</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/caribou/osk/step_time</key>
+      <applyto>/apps/caribou/osk/step_time</applyto>
+      <owner>caribou</owner>
+      <type>int</type>
+      <default>1000</default>
+      <locale name="C">
+        <short>Step time</short>
+        <long>Time between key transitions</long>
+      </locale>
+    </schema>
   </schemalist>
 </gconfschemafile>
