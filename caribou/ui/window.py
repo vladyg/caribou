@@ -59,6 +59,11 @@ class CaribouWindow(gtk.Window):
 
         self.connect('show', self._on_window_show)
 
+    def destroy(self):
+        self.keyboard.destroy()
+        super(gtk.Window, self).destroy()
+
+
     def set_cursor_location(self, cursor_location):
         self._cursor_location = cursor_location
         self._update_position()
@@ -224,6 +229,7 @@ class CaribouWindowEntry(CaribouWindow):
 
         CaribouWindow.__init__(self, text_entry_mech, placement, min_alpha=0.075,
                                max_alpha=0.8)
+
 
     def _calculate_axis(self, axis_placement, root_bbox):
         offset = CaribouWindow._calculate_axis(self, axis_placement, root_bbox)

@@ -5,6 +5,7 @@ caribou_ui_PYTHON = \
 	animation.py \
         i18n.py \
 	keyboard.py \
+	scan.py     \
 	main.py \
 	opacity.py \
 	window.py 

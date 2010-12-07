@@ -131,9 +131,10 @@ class Caribou:
                     if debug == True:
                         print "leave entry widget in", event.host_application.name
             else:
-                print _("WARNING - Caribou: unhandled editable widget:"), event.source         
+                if debug == True:
+                    print _("WARNING - Caribou: unhandled editable widget:"), event.source         
 
-        # Firefox does report leave entry widget events.
+        # Firefox does not report leave entry widget events.
         # This could be a way to get the entry widget leave events.
         #else:
         #    if event.detail1 == 1:
@@ -180,3 +181,5 @@ class Caribou:
         if debug == True:
             print "deregisterKeystrokeListener"
         gtk.main_quit()
+        
+        
