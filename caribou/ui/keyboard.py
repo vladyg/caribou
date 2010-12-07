@@ -415,18 +415,24 @@ class CaribouKeyboard(gtk.Notebook):
         self.key_size = 30
         self.current_mask = 0
         self.current_page = 0
+        self._gconf_connections = []
         self.client = gconf.client_get_default()
 
-        self.client.notify_add(const.CARIBOU_GCONF + "/normal_color",
-                               self._colors_changed)
-        self.client.notify_add(const.CARIBOU_GCONF + "/mouse_over_color",
-                               self._colors_changed)
-        self.client.notify_add(const.CARIBOU_GCONF + "/default_colors",
-                               self._colors_changed)
-        self.client.notify_add(const.CARIBOU_GCONF + "/default_font",
-                               self._key_font_changed)
-        self.client.notify_add(const.CARIBOU_GCONF + "/key_font",
-                               self._key_font_changed)
+        self._gconf_connections.append(self.client.notify_add(
+                            const.CARIBOU_GCONF + "/normal_color",
+                            self._colors_changed))
+        self._gconf_connections.append(self.client.notify_add(
+                            const.CARIBOU_GCONF + "/mouse_over_color",
+                            self._colors_changed))
+        self._gconf_connections.append(self.client.notify_add(
+                            const.CARIBOU_GCONF + "/default_colors",
+                            self._colors_changed))
+        self._gconf_connections.append(self.client.notify_add(
+                            const.CARIBOU_GCONF + "/default_font",
+                            self._key_font_changed))
+        self._gconf_connections.append(self.client.notify_add(
+                            const.CARIBOU_GCONF + "/key_font",
+                            self._key_font_changed))
 
         self.connect('size-allocate', self._on_size_allocate)
 
@@ -547,6 +553,11 @@ class CaribouKeyboard(gtk.Notebook):
 
     def _pressed_preferences_key(self, key):
         self.keyboard_preferences.window.show_all()
+
+    def destroy(self):
+        for id in self._gconf_connections:
+            self.client.notify_remove(id)
+        super(gtk.Notebook, self).destroy()
 
     def _switch_to_layout(self, name):
         n_pages = self.get_n_pages()
