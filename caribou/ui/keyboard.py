@@ -178,11 +178,14 @@ class KeyboardPreferences:
         font = fontbutton.get_font_name()
         client.set_string(const.CARIBOU_GCONF + "/key_font", font)
 
-class Key(gtk.Button):
+class BaseKey(object):
+    '''An abstract class the represents a key on the keyboard.
+    Inheriting classes also need to inherit from gtk.Button or any
+    of it's subclasses.'''
 
     def __init__(self, label = '', value = '', key_type = 'normal',
                  width = 1, fill = False):
-        super(Key, self).__init__()
+
         self.key_type = key_type
         self.value = value
         self.width = float(width)
@@ -264,6 +267,19 @@ class Key(gtk.Button):
             self._value = value
 
     value = property(_get_value, _set_value)
+
+
+class Key(gtk.Button, BaseKey):
+    def __init__(self, label = '', value = '', key_type = 'normal',
+                 width = 1, fill = False):
+        gtk.Button.__init__(self)
+        BaseKey.__init__(self, label, value, key_type, width, fill)
+
+class ModifierKey(gtk.ToggleButton, BaseKey):
+    def __init__(self, label = '', value = '', key_type = 'normal',
+                 width = 1, fill = False):
+        gtk.ToggleButton.__init__(self)
+        BaseKey.__init__(self, label, value, key_type, width, fill)
 
 class KeyboardLayout(gtk.Alignment):
 
@@ -368,7 +384,10 @@ class KbLayoutDeserializer(object):
             vars = {}
             for key, value in key_vars.items():
                 vars[str(key)] = value
-            key = Key(**vars)
+            if vars.get('key_type', '') == const.MASK_KEY_TYPE:
+                key = ModifierKey(**vars)
+            else:
+                key = Key(**vars)
             keys.append(key)
         return keys
 
@@ -447,8 +466,8 @@ class CaribouKeyboard(gtk.Notebook):
                         key.connect('clicked',
                                     self._pressed_layout_switcher_key)
                     elif key.key_type == const.MASK_KEY_TYPE:
-                        key.connect('clicked',
-                                    self._pressed_mask_key)
+                        key.connect('toggled',
+                                    self._toggled_mask_key)
                     elif key.key_type == const.PREFERENCES_KEY_TYPE:
                         key.connect('clicked',
                                     self._pressed_preferences_key)
@@ -502,8 +521,8 @@ class CaribouKeyboard(gtk.Notebook):
     def _pressed_layout_switcher_key(self, key):
         self._switch_to_layout(key.value)
 
-    def _pressed_mask_key(self, key):
-        if self.current_mask & key.value != 0:
+    def _toggled_mask_key(self, key):
+        if not key.get_active():
             self.vk.unlatch_mod(key.value)
             self.current_mask &= ~key.value
         else:
