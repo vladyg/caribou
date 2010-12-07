@@ -51,11 +51,11 @@ class KeyboardPreferences:
         builder.add_from_file(os.path.join(const.DATA_DIR, "caribou-prefs.ui"))
 
         self.window = builder.get_object("dialog_prefs")
-        self.window.connect("destroy", self.destroy)
-        self.window.connect("delete_event", self.destroy)
+        self.window.connect("destroy", self.hide)
+        self.window.connect("delete_event", self.hide)
 
         close = builder.get_object("button_close")
-        close.connect("clicked", self.destroy)
+        close.connect("clicked", self.hide)
 
         client = gconf.client_get_default()
         client.add_dir(const.CARIBOU_GCONF, gconf.CLIENT_PRELOAD_NONE)
@@ -131,7 +131,6 @@ class KeyboardPreferences:
         else:
             layout_combo.set_active(index)
 
-        self.window.show_all()
 
     def _on_default_font_toggled(self, default_colors_checkbox, gconf_client,
                                    key_font_button):
@@ -152,6 +151,9 @@ class KeyboardPreferences:
 
     def destroy(self, widget, data = None):
         self.window.destroy()
+
+    def hide(self, widget, data = None):
+        self.window.hide()
 
     def _fetch_keyboards(self):
         files = os.listdir(const.KEYBOARDS_DIR)
@@ -429,6 +431,7 @@ class CaribouKeyboard(gtk.Notebook):
         self.connect('size-allocate', self._on_size_allocate)
 
         self.row_height = -1
+        self.keyboard_preferences = KeyboardPreferences()
 
     def reset_row_height(self):
         for i in xrange(self.get_n_pages()):
@@ -535,8 +538,15 @@ class CaribouKeyboard(gtk.Notebook):
         self.set_current_page(self.current_page)
         gtk.Notebook.show_all(self)
 
+    def is_preferences_open(self):
+        if self.keyboard_preferences.window.window and \
+            self.keyboard_preferences.window.window.is_visible():
+            return True
+        else:
+            return False
+
     def _pressed_preferences_key(self, key):
-        KeyboardPreferences()
+        self.keyboard_preferences.window.show_all()
 
     def _switch_to_layout(self, name):
         n_pages = self.get_n_pages()
