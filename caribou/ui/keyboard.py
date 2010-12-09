@@ -23,7 +23,9 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 import caribou.common.const as const
-import caribou.ui.scan as scan
+from caribou.common.settings_manager import SettingsManager
+import scan
+from preferences_window import PreferencesWindow
 import gconf
 import gobject
 import gtk
@@ -33,6 +35,8 @@ import virtkey
 import os
 import traceback
 from caribou.ui.i18n import _
+from setting_types import *
+
 try:
     import json
 except ImportError:
@@ -44,352 +48,19 @@ from xml.dom import minidom
 import gettext
 import i18n
 
-class KeyboardPreferences:
-    __gtype_name__ = "KeyboardPreferences"
-
-    def __init__(self):
-        builder = gtk.Builder()
-        builder.set_translation_domain(gettext.textdomain())
-        builder.add_from_file(os.path.join(const.DATA_DIR, "caribou-prefs.ui"))
-
-        self.window = builder.get_object("dialog_prefs")
-        self.window.connect("destroy", self.hide)
-        self.window.connect("delete_event", self.hide)
-
-        close = builder.get_object("button_close")
-        close.connect("clicked", self.hide)
-
-        client = gconf.client_get_default()
-        client.add_dir(const.CARIBOU_GCONF, gconf.CLIENT_PRELOAD_NONE)
-
-        layout_combo = builder.get_object("combobox_layout")
-        layout_combo.connect("changed", self._on_layout_changed, client)
-
-        normal_color_button = builder.get_object("normal_state_color_button")
-        normal_color_string = client.get_string(const.CARIBOU_GCONF +
-                                                "/normal_color") or "grey80"
-        normal_color = gtk.gdk.Color(normal_color_string)
-        normal_color_button.set_color(normal_color)
-        normal_color_button.connect("color-set",
-                                    self._on_normal_state_color_set,
-                                    client)
-
-        mouse_over_color_button = builder.get_object("mouse_over_color_button")
-        mouse_over_color_string = client.get_string(const.CARIBOU_GCONF +
-                                                    "/mouse_over_color") or "yellow"
-        mouse_over_color = gtk.gdk.Color(mouse_over_color_string)
-        mouse_over_color_button.set_color(mouse_over_color)
-        mouse_over_color_button.connect("color-set",
-                                        self._on_mouse_over_color_set,
-                                        client)
-
-        default_colors_checkbox = builder.get_object("default_colors_checkbox")
-        use_defaults = client.get_bool(const.CARIBOU_GCONF + '/default_colors')
-        if use_defaults is None:
-            use_defaults = True
-
-        default_colors_checkbox.set_active(use_defaults)
-
-        self._on_default_colors_toggled(default_colors_checkbox,
-                                        client, normal_color_button,
-                                        mouse_over_color_button)
-
-        default_colors_checkbox.connect('toggled',
-                                        self._on_default_colors_toggled,
-                                        client, normal_color_button,
-                                        mouse_over_color_button)
-
-
-        key_font_button = builder.get_object("key_font_button")
-        key_font_string = client.get_string(
-            const.CARIBOU_GCONF + "/key_font") or "Sans 12"
-        key_font_button.set_font_name(key_font_string)
-        key_font_button.connect('font-set', self._on_key_font_set, client)
-
-        default_font_checkbox = builder.get_object("default_font_checkbox")
-        
-        use_defaults = client.get_bool(const.CARIBOU_GCONF + '/default_font')
-        if use_defaults is None:
-            use_defaults = True
-
-        default_font_checkbox.set_active(use_defaults)
-
-        self._on_default_font_toggled(default_font_checkbox,
-                                      client, key_font_button)
-
-        default_font_checkbox.connect('toggled',
-                                      self._on_default_font_toggled,
-                                      client, key_font_button)
-
-        reverse_scanning_checkbox = builder.get_object(
-                                    "reverse_scanning_checkbox")
-
-        reverse_scanning = client.get_bool(const.CARIBOU_GCONF + 
-                                            "/reverse_scanning")
-        if reverse_scanning is None:
-            reverse_scanning is False
-        reverse_scanning_checkbox.set_active(reverse_scanning)
-        reverse_scanning_checkbox.connect('toggled', 
-                                        self._on_reverse_scanning_toggled,
-                                        client)
-
-        block_scanning_color_button = builder.get_object("block_scanning_color_button")
-        block_scanning_color_string = client.get_string(const.CARIBOU_GCONF +
-                                                "/block_scanning_color") or "purple"
-        block_scanning_color = gtk.gdk.Color(block_scanning_color_string)
-        block_scanning_color_button.set_color(block_scanning_color)
-        block_scanning_color_button.connect("color-set",
-                                    self._on_block_scanning_color_set,
-                                    client)
-
-        row_scanning_color_button = builder.get_object("row_scanning_color_button")
-        row_scanning_color_string = client.get_string(const.CARIBOU_GCONF +
-                                                "/row_scanning_color") or "blue"
-        row_scanning_color = gtk.gdk.Color(row_scanning_color_string)
-        row_scanning_color_button.set_color(row_scanning_color)
-        row_scanning_color_button.connect("color-set",
-                                    self._on_row_scanning_color_set,
-                                    client)
-
-        button_scanning_color_button = builder.get_object("button_scanning_color_button")
-        button_scanning_color_string = client.get_string(const.CARIBOU_GCONF +
-                                                "/button_scanning_color") or "green"
-        button_scanning_color = gtk.gdk.Color(button_scanning_color_string)
-        button_scanning_color_button.set_color(button_scanning_color)
-        button_scanning_color_button.connect("color-set",
-                                    self._on_button_scanning_color_set,
-                                    client)
-
-        cancel_scanning_color_button = builder.get_object(
-                                        "cancel_scanning_color_button")
-        cancel_scanning_color_string = client.get_string(const.CARIBOU_GCONF +
-                                            "/cancel_scanning_color") or "red"
-        cancel_scanning_color = gtk.gdk.Color(cancel_scanning_color_string)
-        cancel_scanning_color_button.set_color(cancel_scanning_color)
-        cancel_scanning_color_button.connect("color-set",
-                                    self._on_cancel_scanning_color_set,
-                                    client)
-        scanning_type_combo = builder.get_object("scanning_type_combo")
-        scanning_type_combo.connect("changed", 
-                                    self._on_scanning_type_combo_changed, 
-                                    client)
-        types = [_("block"), _("row")]
-        for type in types:
-            scanning_type_combo.append_text(type)
-        type = client.get_string(const.CARIBOU_GCONF + "/scanning_type")
-        try:
-            scanning_type_combo.set_active(int(type))
-        except:
-            scanning_type_combo.set_active(0)
-
-
-        mouse_button_combo = builder.get_object("mouse_button_combo")
-        mouse_button_combo.connect("changed", 
-                                   self._on_mouse_button_combo_changed,
-                                   client)
-        mouse_buttons = [_("Left"), _("Center"), _("Right")]
-        for button in mouse_buttons:
-            mouse_button_combo.append_text(button)
-        button = client.get_string(const.CARIBOU_GCONF + "/mouse_button")
-        try:
-            mouse_button_combo.set_active(int(button)-1)
-        except:
-            mouse_button_combo.set_active(0)
-        
-
-        keyboard_key_combo = builder.get_object("keyboard_key_combo")
-        keyboard_keys = const.KEYBOARD_KEY_LIST.keys()
-        keyboard_values = const.KEYBOARD_KEY_LIST.values()
-        for key in keyboard_keys:
-            keyboard_key_combo.append_text(key)
-        key = client.get_string(const.CARIBOU_GCONF + "/keyboard_key")
-        try:
-            keyboard_key_combo.set_active(keyboard_values.index(key))
-        except:
-            keyboard_key_combo.set_active(0)
-
-        keyboard_key_combo.connect("changed", 
-                                   self._on_keyboard_key_combo_changed,
-                                   client)
-
-        mouse_switch_radio = builder.get_object("mouse_switch_radio")
-        keyboard_switch_radio = builder.get_object("keyboard_switch_radio")
-        mouse_switch_radio.connect("toggled", self._on_switch_radio_toggled, 
-                                    client, mouse_button_combo,
-                                    keyboard_key_combo)
-        
-        switch_type = client.get_string(const.CARIBOU_GCONF + "/switch_type")
-        if switch_type == const.KEYBOARD_SWITCH_TYPE:
-            keyboard_switch_radio.set_active(True)
-        else:
-            mouse_switch_radio.set_active(True)
-
-        step_time_spin = builder.get_object("step_time_spin")
-        step_time_spin.set_value(client.get_int(const.CARIBOU_GCONF + 
-                                 "/step_time"))
-        step_time_spin.connect("value_changed", 
-                               self._on_step_time_spin_changed, client)
-
-        scan_enabled_checkbox = builder.get_object("scan_enabled_checkbox")
-        scan_enabled = client.get_bool(const.CARIBOU_GCONF + "/scan_enabled")
-        if scan_enabled is None:
-            scan_enabled is False
-
-        scan_enabled_checkbox.set_active(scan_enabled)
-
-        self._on_scan_enabled_toggled(scan_enabled_checkbox, 
-                                      client, reverse_scanning_checkbox, 
-                                      row_scanning_color_button,
-                                      button_scanning_color_button,
-                                      block_scanning_color_button,
-                                      cancel_scanning_color_button,
-                                      mouse_switch_radio,
-                                      keyboard_switch_radio,
-                                      mouse_button_combo,
-                                      keyboard_key_combo,
-                                      scanning_type_combo,
-                                      step_time_spin)
-                                      
-        scan_enabled_checkbox.connect('toggled', 
-                                    self._on_scan_enabled_toggled, client, 
-                                    reverse_scanning_checkbox,
-                                    row_scanning_color_button,
-                                    block_scanning_color_button,
-                                    button_scanning_color_button,
-                                    cancel_scanning_color_button,
-                                    mouse_switch_radio,
-                                    keyboard_switch_radio,
-                                    mouse_button_combo,
-                                    keyboard_key_combo,
-                                    scanning_type_combo,
-                                    step_time_spin)
-
-
-        kbds = self._fetch_keyboards()
-        for kbddef in kbds:
-            layout_combo.append_text(kbddef)
-
-        defaultkbd = client.get_string(const.CARIBOU_GCONF + "/layout")
-        try:
-            index = kbds.index(defaultkbd)
-        except ValueError:
-            layout_combo.set_active(0)
-        else:
-            layout_combo.set_active(index)
-
-
-    def _on_default_font_toggled(self, default_colors_checkbox, gconf_client,
-                                   key_font_button):
-
-        use_defaults = default_colors_checkbox.get_active()
-        gconf_client.set_bool(const.CARIBOU_GCONF + '/default_font',
-                              use_defaults)
-        key_font_button.set_sensitive(not use_defaults)
-
-    def _on_default_colors_toggled(self, default_colors_checkbox, gconf_client,
-                                   normal_color_button,
-                                   mouse_over_color_button):
-        use_defaults = default_colors_checkbox.get_active()
-        gconf_client.set_bool(const.CARIBOU_GCONF + '/default_colors',
-                              use_defaults)
-        normal_color_button.set_sensitive(not use_defaults)
-        mouse_over_color_button.set_sensitive(not use_defaults)
-
-    def _on_scan_enabled_toggled(self, scan_enabled_checkbox, 
-                                 gconf_client, *args):
-        scan_enabled = scan_enabled_checkbox.get_active()
-        gconf_client.set_bool(const.CARIBOU_GCONF + "/scan_enabled", scan_enabled)
-        for arg in args:
-            arg.set_sensitive(scan_enabled)
-
-    def _on_reverse_scanning_toggled(self, reverse_scanning_checkbox,
-                                     gconf_client):
-        reverse_scanning = reverse_scanning_checkbox.get_active()
-        gconf_client.set_bool(const.CARIBOU_GCONF + "/reverse_scanning", 
-                              reverse_scanning)
-    def _on_switch_radio_toggled(self, mouse_switch_radio, 
-                                       gconf_client, mouse_button_combo, 
-                                       keyboard_key_combo):
-        mouse_switch = mouse_switch_radio.get_active()
-        if mouse_switch:
-            gconf_client.set_string(const.CARIBOU_GCONF + "/switch_type", 
-                                  const.MOUSE_SWITCH_TYPE)
-        else:
-            gconf_client.set_string(const.CARIBOU_GCONF + "/switch_type", 
-                                  const.KEYBOARD_SWITCH_TYPE)
-        mouse_button_combo.set_sensitive(mouse_switch)
-        keyboard_key_combo.set_sensitive(not mouse_switch)
-
-    def _on_step_time_spin_changed(self, step_time_spin, gconf_client):
-        gconf_client.set_int(const.CARIBOU_GCONF + "/step_time", 
-                             step_time_spin.get_value_as_int())
-
-
-    def destroy(self, widget, data = None):
-        self.window.destroy()
-
-    def hide(self, widget, data = None):
-        self.window.hide()
-
-    def _fetch_keyboards(self):
-        files = os.listdir(const.KEYBOARDS_DIR)
-        kbds = []
-        for f in files:
-            if (HAS_JSON and f.endswith('.json')) or f.endswith('.xml'):
-                module = f.rsplit('.', 1)[0]
-                # TODO: verify keyboard before adding it to the list
-                kbds.append(module)
-        return kbds
-
-    def _on_layout_changed(self, combobox, client):
-        kbdname = combobox.get_active_text()
-        actual_layout = client.get_string("/apps/caribou/osk/layout")
-        if kbdname and kbdname != actual_layout:
-            client.set_string("/apps/caribou/osk/layout", kbdname)
-
-    def _on_scanning_type_combo_changed(self, scanning_type_combo, gconf_client):
-        value = str(scanning_type_combo.get_active())
-        if value:
-            gconf_client.set_string(const.CARIBOU_GCONF + "/scanning_type", value)
-
-    def _on_mouse_button_combo_changed(self, mouse_button_combo, client):
-        value = mouse_button_combo.get_active() + 1
-        if value:
-            client.set_string(const.CARIBOU_GCONF + "/mouse_button", str(value))
-
-    def _on_keyboard_key_combo_changed(self, keyboard_key_combo, client):
-        value = keyboard_key_combo.get_active_text()
-        if value:
-            client.set_string(const.CARIBOU_GCONF + "/keyboard_key", 
-                              const.KEYBOARD_KEY_LIST[value])
-
-    def _on_normal_state_color_set(self, colorbutton, client):
-        color = colorbutton.get_color().to_string()
-        client.set_string(const.CARIBOU_GCONF + "/normal_color", color)
-
-    def _on_block_scanning_color_set(self, colorbutton, client):
-        color = colorbutton.get_color().to_string()
-        client.set_string(const.CARIBOU_GCONF + "/block_scanning_color", color)
-
-    def _on_row_scanning_color_set(self, colorbutton, client):
-        color = colorbutton.get_color().to_string()
-        client.set_string(const.CARIBOU_GCONF + "/row_scanning_color", color)
-
-    def _on_button_scanning_color_set(self, colorbutton, client):
-        color = colorbutton.get_color().to_string()
-        client.set_string(const.CARIBOU_GCONF + "/button_scanning_color", color)
-
-    def _on_cancel_scanning_color_set(self, colorbutton, client):
-        color = colorbutton.get_color().to_string()
-        client.set_string(const.CARIBOU_GCONF + "/cancel_scanning_color", color)
-
-    def _on_mouse_over_color_set(self, colorbutton, client):
-        color = colorbutton.get_color().to_string()
-        client.set_string(const.CARIBOU_GCONF + "/mouse_over_color", color)
-
-    def _on_key_font_set(self, fontbutton, client):
-        font = fontbutton.get_font_name()
-        client.set_string(const.CARIBOU_GCONF + "/key_font", font)
+KEY_MASKS = {'shift': gtk.gdk.SHIFT_MASK,
+             'lock': gtk.gdk.LOCK_MASK,
+             'control': gtk.gdk.CONTROL_MASK,
+             'mod1': gtk.gdk.MOD1_MASK,
+             'mod2': gtk.gdk.MOD2_MASK,
+             'mod3': gtk.gdk.MOD3_MASK,
+             'mod4': gtk.gdk.MOD4_MASK,
+             'mod5': gtk.gdk.MOD5_MASK,
+             'button1': gtk.gdk.BUTTON1_MASK,
+             'button2': gtk.gdk.BUTTON2_MASK,
+             'button3': gtk.gdk.BUTTON3_MASK,
+             'button4': gtk.gdk.BUTTON4_MASK,
+             'button5': gtk.gdk.BUTTON5_MASK}
 
 class BaseKey(object):
     '''An abstract class the represents a key on the keyboard.
@@ -398,7 +69,6 @@ class BaseKey(object):
 
     def __init__(self, label = '', value = '', key_type = 'normal',
                  width = 1, fill = False):
-
         self.key_type = key_type
         self.value = value
         self.width = float(width)
@@ -473,14 +143,13 @@ class BaseKey(object):
                         self._value = key_value
         elif self.key_type == const.MASK_KEY_TYPE:
             if type(value) == str or type(value) == unicode:
-                for key, mask in const.KEY_MASKS.items():
+                for key, mask in KEY_MASKS.items():
                     if value == key:
                         self._value = mask
         else:
             self._value = value
 
     value = property(_get_value, _set_value)
-
 
 class Key(gtk.Button, BaseKey):
     def __init__(self, label = '', value = '', key_type = 'normal',
@@ -495,7 +164,6 @@ class ModifierKey(gtk.ToggleButton, BaseKey):
         BaseKey.__init__(self, label, value, key_type, width, fill)
 
 class KeyboardLayout(gtk.Alignment):
-
     def __init__(self, name):
         super(KeyboardLayout, self).__init__(0, 0, 0, 0)
         self.layout_name = name
@@ -624,33 +292,26 @@ class CaribouKeyboard(gtk.Notebook):
         self.key_size = 30
         self.current_mask = 0
         self.current_page = 0
-        self._gconf_connections = []
-        self.client = gconf.client_get_default()
 
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/normal_color",
-                            self._colors_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/mouse_over_color",
-                            self._colors_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/default_colors",
-                            self._colors_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/default_font",
-                            self._key_font_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/key_font",
-                            self._key_font_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/scan_enabled", 
-                            self._scan_enabled))
+        # Settings we care about.
+        for name in ["normal_color", "mouse_over_color", "default_colors"]:
+            getattr(SettingsManager, name).connect("value-changed",
+                                                   self._colors_changed)
+
+        for name in ["default_font", "key_font"]:
+            getattr(SettingsManager, name).connect("value-changed",
+                                         self._key_font_changed)
+
+        self.scan_enabled = SettingsManager.scan_enabled
+        
+        self.scan_enabled.connect("value-changed",
+                                  self._scan_enabled)
+
+        self.scan_service = None
 
         self.connect('size-allocate', self._on_size_allocate)
 
         self.row_height = -1
-        self.scan_enabled = False
-        self.keyboard_preferences = KeyboardPreferences()
 
     def reset_row_height(self):
         for i in xrange(self.get_n_pages()):
@@ -700,27 +361,23 @@ class CaribouKeyboard(gtk.Notebook):
                         key.connect('clicked',
                                     self._pressed_normal_key)
 
-    def _scan_enabled(self, client, connection_id, entry, args):
+    def _scan_enabled(self, setting, val):
         self._enable_scanning()
 
-    def _colors_changed(self, client, connection_id, entry, args):
+    def _colors_changed(self, setting, val):
         self._update_key_style()
 
-    def _key_font_changed(self, client, connection_id, entry, args):
+    def _key_font_changed(self, setting, val):
         self.reset_row_height()
         self._update_key_style()
 
     def _update_key_style(self):
-        default_colors = self.client.get_bool(const.CARIBOU_GCONF +
-                                              '/default_colors')
-        normal_color = self.client.get_string(const.CARIBOU_GCONF +
-                                              "/normal_color")
-        mouse_over_color = self.client.get_string(const.CARIBOU_GCONF +
-                                                  "/mouse_over_color")
-        default_font = self.client.get_bool(const.CARIBOU_GCONF +
-                                              "/default_font")
-        key_font = self.client.get_string(const.CARIBOU_GCONF +
-                                          "/key_font")
+        default_colors = SettingsManager.default_colors.value
+        normal_color = SettingsManager.normal_color.value
+        mouse_over_color = SettingsManager.mouse_over_color.value
+        default_font = SettingsManager.default_font.value
+        key_font = SettingsManager.key_font.value
+
         n_pages = self.get_n_pages()
         for i in range(n_pages):
             layout = self.get_nth_page(i)
@@ -760,36 +417,24 @@ class CaribouKeyboard(gtk.Notebook):
     def show_all(self):
         self.set_current_page(self.current_page)
         gtk.Notebook.show_all(self)
-        if self.scan_enabled:
-            self.scan_service.start()
-
-    def is_preferences_open(self):
-        if self.keyboard_preferences.window.window and \
-            self.keyboard_preferences.window.window.is_visible():
-            return True
-        else:
-            return False
+        #if self.scan_enabled.value:
+        #    self.scan_service.start()
 
     def _pressed_preferences_key(self, key):
-        self.keyboard_preferences.window.show_all()
+        p = PreferencesWindow()
+        p.show_all()
+        p.run()
+        p.destroy()
 
     def _enable_scanning(self):
-        enable = self.client.get_bool(const.CARIBOU_GCONF + '/scan_enabled')
-        if enable:
+        if self.scan_enabled.value and self.scan_service is None:
             current_layout = self.get_nth_page(self.current_page)
-            if current_layout and not self.scan_enabled:
-                self.scan_service = scan.Scan_service(current_layout.rows, 
-                                    self.get_parent().get_parent())
-                self.scan_enabled = True
-        elif self.scan_enabled:
-            self.scan_service.destroy()
-            self.scan_service = None
-            self.scan_enabled = False
-        else: 
-            self.scan_enabled = False
+            self.scan_service = scan.ScanService(
+                current_layout.rows, 
+                self.get_parent().get_parent())
 
     def destroy(self):
-        if self.scan_enabled:
+        if self.scan_enabled.value:
             self.scan_service.destroy()
         for id in self._gconf_connections:
             self.client.notify_remove(id)
@@ -801,7 +446,7 @@ class CaribouKeyboard(gtk.Notebook):
             if self.get_nth_page(i).layout_name == name:
                 self.set_current_page(i)
                 self.current_page = i
-                if self.scan_enabled:
+                if self.scan_enabled.value:
                     self.scan_service.change_keyboard(
                             self.get_nth_page(i).rows)
                 break

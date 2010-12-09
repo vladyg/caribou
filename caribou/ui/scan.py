@@ -2,9 +2,31 @@ import gobject
 import pyatspi
 import gtk
 import caribou.common.const as const
-import gconf
+from caribou.common.settings_manager import SettingsManager
 
-class Scan_service():
+# Scan constans
+BUTTON = 'button'
+ROW = 'row'
+BLOCK = 'block'
+CANCEL = 'cancel'
+REVERSE = 'reverse'
+MOUSE_SWITCH_TYPE = 'mouse'
+KEYBOARD_SWITCH_TYPE = 'keyboard'
+KEYBOARD_KEY_LIST = {"Shift R" : "Shift_R",
+                     "Shift L" : "Shift_L", 
+                     "Alt Gr"  : "ISO_Level3_Shift",
+                     "Num Lock": "Num_Lock"}
+DEFAULT_KEYBOARD_KEY = 'Shift R'
+DEFAULT_MOUSE_BUTTON = '1'
+MIN_STEP_TIME = 50
+MAX_STEP_TIME = 5000
+TIME_SINGLE_INCREMENT = 1
+TIME_MULTI_INCREMENT = 10
+DEFAULT_STEP_TIME = 1000
+DEFAULT_SCANNING_TYPE = ROW
+DEFAULT_SWITCH_TYPE = KEYBOARD_SWITCH_TYPE
+
+class ScanService():
     def __init__(self, keyboard, root_window):
         self.keyboard = keyboard
         self.root_window = root_window
@@ -18,48 +40,25 @@ class Scan_service():
         self.timerid = None
         self.reverse = False
         self.selected_block = []
-        self.client = gconf.client_get_default()
-        self._gconf_connections = []
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/scanning_type", 
-                            self._on_scanning_type_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/step_time", 
-                            self._on_scanning_type_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/reverse_scanning", 
-                            self._on_scanning_type_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/switch_type",
-                            self._on_switch_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/mouse_button",
-                            self._on_switch_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/keyboard_key", 
-                            self._on_switch_changed))
 
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/default_colors",
-                            self._on_color_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/normal_color", 
-                            self._on_color_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/mouse_over_color", 
-                            self._on_color_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/row_scanning_color", 
-                            self._on_color_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/button_scanning_color", 
-                            self._on_color_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/cancel_scanning_color", 
-                            self._on_color_changed))
-        self._gconf_connections.append(self.client.notify_add(
-                            const.CARIBOU_GCONF + "/block_scanning_color", 
-                            self._on_color_changed))
+        # Settings we are interested in.
+        for name in ["step_time", "reverse_scanning", "scanning_type"]:
+            getattr(SettingsManager, name).connect("value-changed",
+                                                   self._on_switch_changed)
+
+        for name in ["switch_type", "mouse_button", "keyboard_key"]:
+            getattr(SettingsManager, name).connect("value-changed",
+                                                   self._on_switch_changed)
+        
+        for name in ["default_colors", "normal_color", "mouse_over_color",
+                     "row_scanning_color", "button_scanning_color",
+                     "cancel_scanning_color", "block_scanning_color"]:
+            getattr(SettingsManager, name).connect("value-changed",
+                                                   self._on_color_changed)
+
+        SettingsManager.scan_enabled.connect("value-changed",
+                                             self._on_scan_toggled)
+
         self._configure_scanning()
         self._set_colors()
         self._configure_switch()
@@ -68,20 +67,15 @@ class Scan_service():
         self.stop()
         self.clean()
         self._deregister_events()
-        for id in self._gconf_connections:
-            self.client.notify_remove(id)
-
 
 
     def _configure_switch(self):
-        self.switch_type = self.client.get_string(const.CARIBOU_GCONF + 
-                                                  "/switch_type") or "mouse"
-        if self.switch_type == const.MOUSE_SWITCH_TYPE:
-            self.switch_key = self.client.get_string(const.CARIBOU_GCONF + 
-                                                     "/mouse_button") or "2"
-        elif self.switch_type == const.KEYBOARD_SWITCH_TYPE:
-            self.switch_key = self.client.get_string(const.CARIBOU_GCONF +
-                                                     "/keyboard_key") or "Shift_L"
+        self.switch_type = SettingsManager.switch_type.value
+        if self.switch_type == MOUSE_SWITCH_TYPE:
+            self.switch_key = SettingsManager.mouse_button.value
+        elif self.switch_type == KEYBOARD_SWITCH_TYPE:
+            self.switch_key = SettingsManager.keyboard_key
+
         try:
             pyatspi.Registry.registerKeystrokeListener(self._on_key_pressed, 
                                 mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
@@ -93,69 +87,59 @@ class Scan_service():
     def _deregister_events(self):
         try:
             pyatspi.Registry.deregisterKeystrokeListener(self._on_key_pressed, 
-                                mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
+                                mask=None, kind=pyatspi.KEY_PRESSED_EVENT)
             pyatspi.Registry.deregisterKeystrokeListener(
                                 self._on_key_released, 
-                                mask=None, kind=(pyatspi.KEY_RELEASED_EVENT,))
+                                mask=None, kind=pyatspi.KEY_RELEASED_EVENT)
         except:
             print "Error while deregistering keyboard events in scan.py"
 
-    def _on_switch_changed(self, client, connection_id, entry, args):
+    def _on_switch_changed(self, settings, val):
         self._deregister_events()
         self._configure_switch()
 
-    def _on_color_changed(self, client, connection_id, entry, args):
+    def _on_scan_toggled(self, settings, val):
+        if val:
+            self.start()
+        else:
+            self.stop()
+
+    def _on_color_changed(self, settings, val):
         self._set_colors()
 
-    def _on_scanning_type_changed(self, client, connection_id, entry, args):
+    def _on_scanning_type_changed(self, settings, val):
         self._configure_scanning()
 
     def _configure_scanning(self):
         if not self.is_stop:
             self._stop()
-        self.scanning_type = self.client.get_string(const.CARIBOU_GCONF +
-                                                    "/scanning_type") or "0"
-        self.reverse = self.client.get_bool(const.CARIBOU_GCONF +
-                                                    "/reverse_scanning") or False
-        self.step_time = self.client.get_int(const.CARIBOU_GCONF + 
-                                                    "/step_time") or 1000
-        if self.scanning_type == const.BLOCK:
+        self.scanning_type = SettingsManager.scanning_type.value
+        self.reverse = SettingsManager.reverse_scanning.value
+        self.step_time = SettingsManager.step_time.value
+
+        if self.scanning_type == BLOCK:
             self.selected_block = []
         else:
             self.selected_block = self.keyboard
         self.scanning = self.scanning_type
 
     def _set_colors(self):
-        self.default_colors = self.client.get_bool(
-                                const.CARIBOU_GCONF + "/default_colors") \
-                                or True
-        self.normal_color = self.client.get_string(
-                                const.CARIBOU_GCONF + "/normal_color") \
-                                or "gray80"
-        self.mouse_over_color = self.client.get_string(
-                                const.CARIBOU_GCONF + "/mouse_over_color") \
-                                or "yellow"
-
-        self.row_scanning_color = self.client.get_string(
-                                const.CARIBOU_GCONF + "/row_scanning_color") \
-                                or "green"
-        self.button_scanning_color = self.client.get_string(
-                            const.CARIBOU_GCONF + "/button_scanning_color") \
-                            or "cyan"
-        self.cancel_scanning_color = self.client.get_string(
-                            const.CARIBOU_GCONF + "/cancel_scanning_color") \
-                            or "red"
-        self.block_scanning_color = self.client.get_string(
-                            const.CARIBOU_GCONF + "/block_scanning_color") \
-                            or "purple" 
-
+        self.default_colors = SettingsManager.default_colors.value
+        self.normal_color = SettingsManager.normal_color.value
+        self.mouse_over_color = SettingsManager.mouse_over_color.value
+        self.row_scanning_color = SettingsManager.row_scanning_color.value
+        self.button_scanning_color = \
+            SettingsManager.button_scanning_color.value
+        self.cancel_scanning_color = \
+            SettingsManager.cancel_scanning_color.value
+        self.block_scanning_color = SettingsManager.block_scanning_color.value
 
     # public start
     def start(self, scanning=None):
         self.scanning = scanning or self.scanning_type
         self.clean()
         if self.root_window and \
-            self.switch_type == const.MOUSE_SWITCH_TYPE:
+            self.switch_type == MOUSE_SWITCH_TYPE:
             self._grab_mouse_events()
 
         if not self.reverse:
@@ -163,30 +147,33 @@ class Scan_service():
 
     # public stop
     def stop(self):
-        if self.switch_type == const.MOUSE_SWITCH_TYPE:
+        if self.switch_type == MOUSE_SWITCH_TYPE:
             self._ungrab_mouse_events()
         self.clean()
         self._stop()
 
     #private start
-    def _start(self, scanning=const.ROW):
+    def _start(self, scanning=ROW):
         if self.is_stop == True and self.timerid == None:
             self.is_stop = False
             self.button_index = -1
             self.row_index = -1
-            if scanning == const.ROW:
+            if scanning == ROW:
                 self.selected_row = []
-                self.timerid = gobject.timeout_add(self.step_time, self._scan_row)
-            elif scanning == const.BUTTON:
+                self.timerid = gobject.timeout_add(
+                    int(1000*self.step_time), self._scan_row)
+            elif scanning == BUTTON:
                 self.selected_button = None
-                self.timerid = gobject.timeout_add(self.step_time, self._scan_button)
-            elif scanning == const.BLOCK:
+                self.timerid = gobject.timeout_add(
+                    int(1000*self.step_time), self._scan_button)
+            elif scanning == BLOCK:
                 self.selected_block = []
                 self.selected_row = []
                 self.clean()
                 self.index_i = 2
                 self.index_j = 1
-                self.timerid = gobject.timeout_add(self.step_time, self._scan_block)
+                self.timerid = gobject.timeout_add(
+                    int(1000*self.step_time), self._scan_block)
 
     # private stop
     def _stop(self):
@@ -195,7 +182,7 @@ class Scan_service():
             gobject.source_remove(self.timerid)
             self.timerid = None
 
-    def reset(self, scanning=const.ROW):
+    def reset(self, scanning=ROW):
         self._stop()
         self._start(scanning)
 
@@ -211,7 +198,7 @@ class Scan_service():
         self.keyboard = keyboard
         self.scanning = self.scanning_type
         self.start(self.scanning_type)
-        if self.scanning == const.ROW:
+        if self.scanning == ROW:
             self.selected_block = keyboard
 
 
@@ -224,10 +211,10 @@ class Scan_service():
     def _mouse_handler(self, event):
         if self.root_window.window.is_visible():
             if event.type == gtk.gdk.BUTTON_PRESS and \
-                str(event.button) == self.switch_key:
+                str(event.button) == self.switch_key.value:
                 self._handle_press()
             elif event.type == gtk.gdk.BUTTON_RELEASE and \
-                str(event.button) == self.switch_key:
+                str(event.button) == self.switch_key.value:
                 self._handle_release()
             elif not event.type == gtk.gdk.ENTER_NOTIFY:
                 gtk.main_do_event(event)
@@ -305,7 +292,7 @@ class Scan_service():
 
         else:
             self.select_row(self.selected_row, 
-                            self.scanning_type == const.BLOCK, 
+                            self.scanning_type == BLOCK, 
                             self.block_scanning_color)
             self.row_index += 1
             if self.row_index >= len(self.selected_block):
@@ -315,8 +302,8 @@ class Scan_service():
             return True
 
     def _scan_button(self):
-        if self.scanning == const.CANCEL:
-            self.scanning = const.BUTTON
+        if self.scanning == CANCEL:
+            self.scanning = BUTTON
             self.selected_button = None
             self.select_row(self.selected_row, True, self.row_scanning_color)
             return True
@@ -331,7 +318,7 @@ class Scan_service():
             if self.button_index >= len(self.selected_row):
                 self.select_row(self.selected_row, True, self.cancel_scanning_color)
                 self.button_index = -1
-                self.scanning = const.CANCEL
+                self.scanning = CANCEL
                 return True
 
             self.selected_button = self.selected_row[self.button_index]
@@ -340,7 +327,7 @@ class Scan_service():
                 if self.button_index >= len(self.selected_row):
                     self.select_row(self.selected_row, True, self.cancel_scanning_color)
                     self.button_index = -1
-                    self.scanning = const.CANCEL
+                    self.scanning = CANCEL
                     return True
 
                 self.selected_button = self.selected_row[self.button_index]
@@ -361,23 +348,23 @@ class Scan_service():
         elif self.default_colors:
             button.reset_color()
         else:
-            button.set_color(self.normal_color, self.mouse_over_color)
-
+            button.set_color(self.normal_color,
+                             self.mouse_over_color)
 
     def _on_key_pressed(self, event):
         if event.event_string == "Escape":
-            self.stop()
-        elif self.switch_type == const.KEYBOARD_SWITCH_TYPE and \
-             self.switch_key == event.event_string:
+            SettingsManager.scan_enabled.value = False
+        elif self.switch_type == KEYBOARD_SWITCH_TYPE and \
+             self.switch_key.value == event.event_string:
             self._handle_press()
 
     def _on_key_released(self, event):
-            if self.switch_type == const.KEYBOARD_SWITCH_TYPE and \
-                 self.switch_key == event.event_string:
-                self._handle_release()
-            elif event.event_string != "Escape": 
-                self._stop()
-                self.start()
+        if self.switch_type == KEYBOARD_SWITCH_TYPE and \
+                self.switch_key.value == event.event_string:
+            self._handle_release()
+        elif event.event_string != "Escape": 
+            self._stop()
+            self.start()
 
     def _handle_press(self):
         if self.reverse:
@@ -386,13 +373,13 @@ class Scan_service():
     def _handle_release(self):
         if self.reverse:
             if not self.is_stop:
-                if self.scanning == const.ROW and \
+                if self.scanning == ROW and \
                         len(self.selected_row) > 0:
-                    self.scanning = const.BUTTON
-                elif self.scanning == const.BLOCK and \
+                    self.scanning = BUTTON
+                elif self.scanning == BLOCK and \
                         len(self.selected_block) > 0:
-                    self.scanning = const.ROW
-                elif self.scanning == const.BUTTON and \
+                    self.scanning = ROW
+                elif self.scanning == BUTTON and \
                         self.selected_button:
                     self.clean()
                     if self.selected_button.key_type == const.PREFERENCES_KEY_TYPE:
@@ -402,26 +389,26 @@ class Scan_service():
                     self.scanning = self.scanning_type
                     self.reset()
 
-                elif self.scanning == const.CANCEL:
+                elif self.scanning == CANCEL:
                     self.clean()
                     self.scanning = self.scanning_type
                 self._stop()
 
         else:
             if not self.is_stop:
-                if self.scanning == const.ROW and \
+                if self.scanning == ROW and \
                         len(self.selected_row) > 0:
-                    self.scanning = const.BUTTON
-                    self.reset(const.BUTTON)
+                    self.scanning = BUTTON
+                    self.reset(BUTTON)
 
-                elif self.scanning == const.BLOCK and \
+                elif self.scanning == BLOCK and \
                         len(self.selected_block) > 0:
-                    self.scanning = const.ROW
-                    self.reset(const.ROW)
-                elif self.scanning == const.BUTTON and \
+                    self.scanning = ROW
+                    self.reset(ROW)
+                elif self.scanning == BUTTON and \
                         self.selected_button:
                     self.selected_button.clicked()
-                    self.scanning = const.ROW
+                    self.scanning = ROW
                     if self.selected_button.key_type \
                             == const.PREFERENCES_KEY_TYPE:
                         self.selected_button = None
@@ -430,7 +417,7 @@ class Scan_service():
                         self.selected_button = None
                         self.scanning = self.scanning_type
 
-                elif self.scanning == const.CANCEL:
+                elif self.scanning == CANCEL:
                     self.scanning = self.scanning_type
                     self.clean()
                     self.reset(self.scanning_type)

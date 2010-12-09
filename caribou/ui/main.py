@@ -43,7 +43,7 @@ class Caribou:
         pyatspi.Registry.deregisterEventListener(
             self.on_text_caret_moved, "object:text-caret-moved")
         pyatspi.Registry.deregisterKeystrokeListener(
-            self.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
+            self.on_key_down, mask=None, kind=pyatspi.KEY_PRESSED_EVENT)
 
     def _on_layout_changed(self, client, connection_id, entry, args):
         self._deregister_event_listeners()
@@ -177,7 +177,7 @@ class Caribou:
                 print "OK"
             else:
                 print "FAIL"
-        result = pyatspi.Registry.deregisterKeystrokeListener(self.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
+        result = pyatspi.Registry.deregisterKeystrokeListener(self.on_key_down, mask=None, kind=pyatspi.KEY_PRESSED_EVENT)
         if debug == True:
             print "deregisterKeystrokeListener"
         gtk.main_quit()
