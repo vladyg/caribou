@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&component=default\n"
-"POT-Creation-Date: 2010-09-05 21:20+0000\n"
+"POT-Creation-Date: 2010-12-09 07:56+0000\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME translation team <gnome-si@googlegroups.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,47 +21,91 @@ msgstr ""
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../caribou/ui/main.py:134
+#: ../caribou/ui/main.py:135
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "OPOZORILO - Caribou: neobdelan uredljiv gradnik:"
 
 #: ../data/caribou-prefs.ui.h:1
+msgid "B_lock color: "
+msgstr "Barva b_loka:"
+
+#: ../data/caribou-prefs.ui.h:2
 msgid "Caribou Preferences"
 msgstr "Možnosti Caribou"
 
-#: ../data/caribou-prefs.ui.h:2
+#: ../data/caribou-prefs.ui.h:3
 msgid "Colors"
 msgstr "Barve"
 
-#: ../data/caribou-prefs.ui.h:3
+#: ../data/caribou-prefs.ui.h:4
 msgid "General"
 msgstr "Splošno"
 
-#: ../data/caribou-prefs.ui.h:4
-msgid "Key font:"
-msgstr "Pisava tipke:"
-
 #: ../data/caribou-prefs.ui.h:5
+msgid "Key font:"
+msgstr "Pisava ključa"
+
+#: ../data/caribou-prefs.ui.h:6
 msgid "Keyboard _layout:"
 msgstr "_Razporeditev tipkovnice:"
 
-#: ../data/caribou-prefs.ui.h:6
+#: ../data/caribou-prefs.ui.h:7
 msgid "Keys"
 msgstr "Tipke"
 
-#: ../data/caribou-prefs.ui.h:7
+#: ../data/caribou-prefs.ui.h:8
 msgid "Mouse over:"
 msgstr "Prehod miške:"
 
-#: ../data/caribou-prefs.ui.h:8
+#: ../data/caribou-prefs.ui.h:9
 msgid "Normal state:"
 msgstr "Običajno stanje:"
 
-#: ../data/caribou-prefs.ui.h:9
-msgid "Use Defaults"
-msgstr "Uporabi privzeto"
-
 #: ../data/caribou-prefs.ui.h:10
+msgid "Re_verse scanning"
+msgstr "O_brnjeno preiskovanje"
+
+#: ../data/caribou-prefs.ui.h:11
+msgid "Scanning"
+msgstr "Preiskovanje"
+
+#: ../data/caribou-prefs.ui.h:12
+msgid "Scanning _type: "
+msgstr "_Vrsta preiskovanja"
+
+#: ../data/caribou-prefs.ui.h:13
+msgid "Ste_p time:"
+msgstr "Čas ko_raka:"
+
+#: ../data/caribou-prefs.ui.h:14
+msgid "Use Defaults"
+msgstr "Uporabi privzete vrednosti"
+
+#: ../data/caribou-prefs.ui.h:15
+msgid "_Button color: "
+msgstr "_Barva gumba"
+
+#: ../data/caribou-prefs.ui.h:16
+msgid "_Cancel color: "
+msgstr "Barva _preklica:"
+
+#: ../data/caribou-prefs.ui.h:17
+msgid "_Keyboard switch"
+msgstr "Zamenjaj _tipkovnico"
+
+#: ../data/caribou-prefs.ui.h:18
+msgid "_Mouse switch"
+msgstr "Zamenjaj _miško"
+
+#: ../data/caribou-prefs.ui.h:19
+msgid "_Row color: "
+msgstr "Barva _vrstice:"
+
+#: ../data/caribou-prefs.ui.h:20
+msgid "_Scan enabled"
+msgstr "Omogočeno _preiskovanje"
+
+#: ../data/caribou-prefs.ui.h:21
 msgid "_Test settings here:"
 msgstr "Tukaj _preizkusite nastavitve:"
 
