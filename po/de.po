@@ -10,9 +10,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&component=default\n"
-"POT-Creation-Date: 2010-09-01 18:01+0000\n"
-"PO-Revision-Date: 2010-09-19 13:22+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&component=default\n"
+"POT-Creation-Date: 2010-12-09 07:56+0000\n"
+"PO-Revision-Date: 2010-12-13 20:17+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,52 +21,96 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../caribou/ui/main.py:134
+#: ../caribou/ui/main.py:135
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "WARNUNG - Caribou: nicht bewältigtes bearbeitbares Widget:"
 
 #: ../data/caribou-prefs.ui.h:1
+msgid "B_lock color: "
+msgstr "B_lockfarbe: "
+
+#: ../data/caribou-prefs.ui.h:2
 msgid "Caribou Preferences"
 msgstr "Einstellungen für Caribou"
 
-#: ../data/caribou-prefs.ui.h:2
+#: ../data/caribou-prefs.ui.h:3
 msgid "Colors"
 msgstr "Farben"
 
-#: ../data/caribou-prefs.ui.h:3
+#: ../data/caribou-prefs.ui.h:4
 msgid "General"
 msgstr "Allgemein"
 
-#: ../data/caribou-prefs.ui.h:4
+#: ../data/caribou-prefs.ui.h:5
 msgid "Key font:"
 msgstr "Tastenschrift:"
 
-#: ../data/caribou-prefs.ui.h:5
+#: ../data/caribou-prefs.ui.h:6
 msgid "Keyboard _layout:"
 msgstr "_Tastaturbelegung:"
 
-#: ../data/caribou-prefs.ui.h:6
+#: ../data/caribou-prefs.ui.h:7
 msgid "Keys"
 msgstr "Tasten"
 
-#: ../data/caribou-prefs.ui.h:7
+#: ../data/caribou-prefs.ui.h:8
 msgid "Mouse over:"
 msgstr "Maus über:"
 
-#: ../data/caribou-prefs.ui.h:8
+#: ../data/caribou-prefs.ui.h:9
 msgid "Normal state:"
 msgstr "Normaler Status:"
 
-#: ../data/caribou-prefs.ui.h:9
+#: ../data/caribou-prefs.ui.h:10
+msgid "Re_verse scanning"
+msgstr "_Umgekehrtes Einlesen"
+
+#: ../data/caribou-prefs.ui.h:11
+msgid "Scanning"
+msgstr "Einlesen"
+
+#: ../data/caribou-prefs.ui.h:12
+msgid "Scanning _type: "
+msgstr "Einlese_typ: "
+
+#: ../data/caribou-prefs.ui.h:13
+msgid "Ste_p time:"
+msgstr "Sch_rittzeit:"
+
+#: ../data/caribou-prefs.ui.h:14
 msgid "Use Defaults"
 msgstr "Vorgaben verwenden"
 
-#: ../data/caribou-prefs.ui.h:10
+#: ../data/caribou-prefs.ui.h:15
+msgid "_Button color: "
+msgstr "_Knopffarbe:"
+
+#: ../data/caribou-prefs.ui.h:16
+msgid "_Cancel color: "
+msgstr "Abbre_chen-Farbe:"
+
+#: ../data/caribou-prefs.ui.h:17
+msgid "_Keyboard switch"
+msgstr "_Tastaturumschaltung"
+
+#: ../data/caribou-prefs.ui.h:18
+msgid "_Mouse switch"
+msgstr "_Mausumschaltung"
+
+#: ../data/caribou-prefs.ui.h:19
+msgid "_Row color: "
+msgstr "_Zeilenfarbe:"
+
+#: ../data/caribou-prefs.ui.h:20
+msgid "_Scan enabled"
+msgstr "Einle_sen aktiviert"
+
+#: ../data/caribou-prefs.ui.h:21
 msgid "_Test settings here:"
 msgstr "Einstellungen hier _testen:"
 
 #~ msgid "Key _size:"
 #~ msgstr "Tasten_größe:"
+
 #~ msgid "Key s_pacing:"
 #~ msgstr "Tasten_abstand:"
-
