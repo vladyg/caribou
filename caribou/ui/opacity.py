@@ -18,7 +18,7 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-import gtk, glib
+import glib
 from math import sqrt
 
 class ProximityWindowBase(object):
@@ -26,7 +26,7 @@ class ProximityWindowBase(object):
         if self.__class__ == ProximityWindowBase:
             raise TypeError, \
                 "ProximityWindowBase is an abstract class, " \
-                "must be subclassed with a gtk.Window"
+                "must be subclassed with a Gtk.Window"
         self.connect('map-event', self.__onmapped)
         self.max_distance = max_distance
         if max_alpha < min_alpha:

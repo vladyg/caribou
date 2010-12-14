@@ -27,7 +27,7 @@
 from optparse import OptionParser
 import gettext
 import sys
-import gtk
+from gi.repository import Gtk
 import os
 
 # We can't rely on prefix if we're installed by relocated RPM. Instead, we 
@@ -67,6 +67,6 @@ if __name__ == "__main__":
     main.debug = options.debug
 
     caribou = main.Caribou()
-    caribou.window.hide_all()
+    caribou.window.hide()
  
-    gtk.main()
+    Gtk.main()

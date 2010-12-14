@@ -1,10 +1,10 @@
-import gtk.gdk as gdk
 import pyatspi
-import gconf
-import gtk
+from gi.repository import GConf
+from gi.repository import Gtk
+from gi.repository import Gdk
 import signal
 
-from window import CaribouWindowEntry
+from window import CaribouWindowEntry, Rectangle
 from keyboard import CaribouKeyboard
 from caribou.ui.i18n import _
 import caribou.common.const as const
@@ -21,10 +21,10 @@ class Caribou:
         self.window_factory = window_factory
         self.kb_factory = kb_factory
         self.window = window_factory(kb_factory())
-        self.client = gconf.client_get_default()
+        self.client = GConf.Client.get_default()
         self._register_event_listeners()
-        self.client.notify_add(const.CARIBOU_GCONF + "/layout", 
-                                self._on_layout_changed)
+        #self.client.notify_add(const.CARIBOU_GCONF + "/layout", 
+        #                        self._on_layout_changed)
         signal.signal(signal.SIGINT, self.signal_handler)
 
     def _register_event_listeners(self):
@@ -34,7 +34,7 @@ class Caribou:
         pyatspi.Registry.registerEventListener(
             self.on_text_caret_moved, "object:text-caret-moved")
         pyatspi.Registry.registerKeystrokeListener(
-            self.on_key_down, mask=None, kind=(pyatspi.KEY_PRESSED_EVENT,))
+            self.on_key_down, mask=0, kind=(pyatspi.KEY_PRESSED_EVENT,))
 
     def _deregister_event_listeners(self):
         pyatspi.Registry.deregisterEventListener(
@@ -43,7 +43,7 @@ class Caribou:
         pyatspi.Registry.deregisterEventListener(
             self.on_text_caret_moved, "object:text-caret-moved")
         pyatspi.Registry.deregisterKeystrokeListener(
-            self.on_key_down, mask=None, kind=pyatspi.KEY_PRESSED_EVENT)
+            self.on_key_down, mask=0, kind=pyatspi.KEY_PRESSED_EVENT)
 
     def _on_layout_changed(self, client, connection_id, entry, args):
         self._deregister_event_listeners()
@@ -56,7 +56,7 @@ class Caribou:
 
     def _get_a11y_enabled(self):
         try:
-            gconfc = gconf.client_get_default()
+            gconfc = GConf.Client.get_default()
             atspi1 = gconfc.get_bool("/desktop/gnome/interface/accessibility")
             atspi2 = gconfc.get_bool("/desktop/gnome/interface/accessibility2")
             return atspi1 or atspi2
@@ -73,7 +73,7 @@ class Caribou:
     def __set_text_location(self, acc):
         text = acc.queryText() 
         [x, y, width, height] = text.getCharacterExtents(text.caretOffset, pyatspi.DESKTOP_COORDS)
-        self.window.set_cursor_location(gdk.Rectangle(x, y, width, height))
+        self.window.set_cursor_location(Rectangle(x, y, width, height))
         
         component = acc.queryComponent()
         entry_bb = component.getExtents(pyatspi.DESKTOP_COORDS)
@@ -82,14 +82,14 @@ class Caribou:
        
     def __set_entry_location(self, acc):
         text = acc.queryText()
-        cursor_bb = gdk.Rectangle(
+        cursor_bb = Rectangle(
             *text.getCharacterExtents(text.caretOffset,
                                       pyatspi.DESKTOP_COORDS))
 
         component = acc.queryComponent()
         entry_bb = component.getExtents(pyatspi.DESKTOP_COORDS)
 
-        if cursor_bb == gdk.Rectangle(0, 0, 0, 0):
+        if cursor_bb == Rectangle(0, 0, 0, 0):
             cursor_bb = entry_bb
 
         self.window.set_cursor_location(cursor_bb)
@@ -99,11 +99,13 @@ class Caribou:
        
     def on_focus(self, event):
         acc = event.source
-        if pyatspi.STATE_EDITABLE in acc.getState().getStates() or event.source_role == pyatspi.ROLE_TERMINAL:
-            if event.source_role in (pyatspi.ROLE_TEXT,
-                                     pyatspi.ROLE_PARAGRAPH,
-                                     pyatspi.ROLE_PASSWORD_TEXT,
-                                     pyatspi.ROLE_TERMINAL):
+        source_role = acc.getRole()
+        if pyatspi.STATE_EDITABLE in acc.getState().getStates() or \
+                source_role == pyatspi.ROLE_TERMINAL:
+            if source_role in (pyatspi.ROLE_TEXT,
+                               pyatspi.ROLE_PARAGRAPH,
+                               pyatspi.ROLE_PASSWORD_TEXT,
+                               pyatspi.ROLE_TERMINAL):
                 if event.type.startswith("focus") or event.detail1 == 1:
                     self.__set_text_location(acc)
                     self.__current_acc = event.source
@@ -111,13 +113,13 @@ class Caribou:
                     if debug == True:
                         print "enter text widget in", event.host_application.name
                 elif event.detail1 == 0 and acc == self.__current_acc:
-                    self.window.hide_all()
+                    self.window.hide()
                     self.__current_acc = None 
                     self.__set_location = None
                     if debug == True:
                         print "leave text widget in", event.host_application.name
 
-            elif event.source_role == pyatspi.ROLE_ENTRY:
+            elif source_role == pyatspi.ROLE_ENTRY:
                 if event.type.startswith("focus") or event.detail1 == 1:
                     self.__set_entry_location(acc)
                     self.__current_acc = event.source
@@ -125,7 +127,7 @@ class Caribou:
                     if debug == True:
                         print "enter entry widget in", event.host_application.name
                 elif event.detail1 == 0:
-                    self.window.hide_all()
+                    self.window.hide()
                     self.__current_acc = None 
                     self.__set_location = None
                     if debug == True:
@@ -138,7 +140,7 @@ class Caribou:
         # This could be a way to get the entry widget leave events.
         #else:
         #    if event.detail1 == 1:
-        #        self.window.hide_all()
+        #        self.window.hide()
         #        print "--> LEAVE EDITABLE TEXT <--"
 
     def on_key_down(self, event):
@@ -180,6 +182,6 @@ class Caribou:
         result = pyatspi.Registry.deregisterKeystrokeListener(self.on_key_down, mask=None, kind=pyatspi.KEY_PRESSED_EVENT)
         if debug == True:
             print "deregisterKeystrokeListener"
-        gtk.main_quit()
+        Gtk.main_quit()
         
         

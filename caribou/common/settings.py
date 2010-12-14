@@ -166,7 +166,7 @@ if __name__ == "__main__":
                     doc, schema, [('key', '/schemas' + setting.gconf_key),
                                   ('applyto', setting.gconf_key),
                                   ('owner', 'caribou'),
-                                  ('type', setting.gconf_type),
+                                  ('type', setting.gconf_type.value_nick),
                                   ('default', setting.gconf_default)])
                 locale = doc.createElement('locale')
                 locale.setAttribute('name', 'C')

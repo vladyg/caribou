@@ -20,12 +20,13 @@
 
 import caribou.common.const as const
 from caribou.common.setting_types import *
+from caribou.common.settings_manager import SettingsManager
 
-import scan
-import gconf
+from gi.repository import GConf
 import gobject
-import gtk
-import pango
+from gi.repository import Gdk
+from gi.repository import Gtk
+from gi.repository import Pango
 import sys
 import virtkey
 import os
@@ -41,25 +42,26 @@ import xml.etree.ElementTree as ET
 from xml.dom import minidom
 import gettext
 import i18n
-from caribou.common.settings_manager import SettingsManager
 
-class PreferencesWindow(gtk.Dialog):
+class PreferencesWindow(Gtk.Dialog):
     __gtype_name__ = "PreferencesWindow"
 
     def __init__(self):
-        gtk.Dialog.__init__(self, _("Caribou Preferences"),
-                            buttons=(gtk.STOCK_CLOSE, gtk.RESPONSE_CLOSE))
+        gobject.GObject.__init__(self)
+        self.set_title(_("Caribou Preferences"))
+        self.add_button(Gtk.STOCK_CLOSE, Gtk.ResponseType.CLOSE)
         self.set_border_width(6)
 
-        notebook = gtk.Notebook()
-        self.vbox.add(notebook)
+        notebook = Gtk.Notebook()
+        vbox = self.get_content_area()
+        vbox.add(notebook)
         self._populate_settings(notebook, SettingsManager.groups)
 
     def _populate_settings(self, parent, setting, level=0):
         if level == 0:
             for s in setting:
-                vbox = gtk.VBox()
-                parent.append_page(vbox, gtk.Label(s.label))
+                vbox = Gtk.VBox()
+                parent.append_page(vbox, Gtk.Label(label=s.label))
                 self._populate_settings(vbox, s, 1)
         else:
             parent.set_border_width(6)
@@ -68,7 +70,7 @@ class PreferencesWindow(gtk.Dialog):
             for s in setting:
                 if not isinstance(s, SettingsGroup):
                     if table is None:
-                        table = gtk.Table(1, 2)
+                        table = Gtk.Table.new(1, 2, False)
                         table.set_row_spacings(3)
                         table.set_col_spacings(3)
                         parent.pack_start(table, False, False, 0)
@@ -76,12 +78,12 @@ class PreferencesWindow(gtk.Dialog):
                     row += 1
                 else:
                     table = None
-                    frame = gtk.Frame()
-                    frame.set_shadow_type(gtk.SHADOW_NONE)
-                    label = gtk.Label()
+                    frame = Gtk.Frame()
+                    frame.set_shadow_type(Gtk.ShadowType.NONE)
+                    label = Gtk.Label()
                     label.set_markup('<b>%s</b>' % s.label)
                     frame.set_label_widget(label)
-                    vbox = gtk.VBox()
+                    vbox = Gtk.VBox()
                     frame.add(vbox)
                     parent.pack_start(frame, False, False, 0)
                     self._sensitivity_changed_cb(s, s.sensitive, frame, None)
@@ -91,36 +93,35 @@ class PreferencesWindow(gtk.Dialog):
                     self._populate_settings(vbox, s, level + 1)
 
     def _create_widget(self, table, row, setting, xpadding=0):
-        print 'create', setting.name
         control = None
         label = None
         value_changed_cb = None
         control_changed_cb = None
         control_changed_signal = None
         if isinstance(setting, BooleanSetting):
-            control = gtk.CheckButton(setting.label)
+            control = Gtk.CheckButton.new_with_label(setting.label)
             control.set_active(setting.value)
             value_changed_cb = lambda s, v, w: w.set_active(v)
             control_changed_cb = self._checkbutton_toggled_cb
             control_changed_signal = 'toggled'
         else:
-            label = gtk.Label("%s:" % setting.label)
+            label = Gtk.Label(label="%s:" % setting.label)
             label.set_alignment(0.0, 0.5)
 
             if setting.entry_type == ENTRY_COLOR:
-                control = gtk.ColorButton(
-                    gtk.gdk.color_parse(setting.value))
+                control = Gtk.ColorButton.new_with_color(
+                    Gdk.color_parse(setting.value)[1])
                 value_changed_cb = \
-                    lambda s, v, w: w.set_color(gtk.gdk.color_parse(v))
+                    lambda s, v, w: w.set_color(Gdk.color_parse(v))
                 control_changed_cb = self._colorbutton_changed_cb
                 control_changed_signal = 'color-set'
             elif setting.entry_type == ENTRY_FONT:
-                control = gtk.FontButton(setting.value)
+                control = Gtk.FontButton.new_with_font(setting.value)
                 value_changed_cb = lambda s, v, w: w.set_font_name(v)
                 control_changed_cb = self._fontbutton_changed_cb
                 control_changed_signal = 'font-set'
             elif setting.entry_type == ENTRY_SPIN:
-                control = gtk.SpinButton()
+                control = Gtk.SpinButton()
                 if isinstance(setting.value, float):
                     control.set_digits(2)
                     control.set_increments(0.01, 0.1)
@@ -136,15 +137,16 @@ class PreferencesWindow(gtk.Dialog):
                         "If a radio entry has children, they must be equal " \
                         "in quantity to the allowed values."
                 label = None
-                control = gtk.Table(
-                    len(setting.allowed) + len(setting.children), 2)
+                control = Gtk.Table.new(
+                    len(setting.allowed) + len(setting.children), 2, False)
                 control.set_row_spacings(3)
                 control.set_col_spacings(3)
                 radios = []
                 for string, localized in setting.allowed:
-                    radios.append(gtk.RadioButton(None, localized))
+                    radios.append(Gtk.RadioButton.new_with_label(
+                            [], localized))
                 for radio in radios[1:]:
-                    radio.set_group(radios[0])
+                    radio.join_group(radios[0])
 
                 hid = setting.connect(
                     'value-changed',
@@ -157,7 +159,11 @@ class PreferencesWindow(gtk.Dialog):
                 for i, radio in enumerate(radios):
                     radio.connect('toggled', self._radio_changed_cb, setting,
                                   radios, hid)
-                    control.attach(radio, 0, 2, r, r + 1)
+                    control.attach(
+                        radio, 0, 2, r, r + 1,
+                        Gtk.AttachOptions.EXPAND | Gtk.AttachOptions.FILL,
+                        Gtk.AttachOptions.EXPAND | Gtk.AttachOptions.FILL,
+                        0, 0)
                     r += 1
                     if setting.children:
                         self._create_widget(control, r,
@@ -165,27 +171,34 @@ class PreferencesWindow(gtk.Dialog):
                         r += 1
 
             elif setting.entry_type == ENTRY_COMBO or setting.allowed:
-                control = gtk.combo_box_new_text()
+                control = Gtk.ComboBoxText.new()
                 for option in setting.allowed:
-                    control.append_text(option[1])
-                control.set_active(
-                    [a for a, b in setting.allowed].index(setting.value))
-                value_changed_cb = lambda s, v, w: w.set_active(
-                    [a for a, b in s.allowed].index(v))
+                    control.append(option[0], option[1])
+                control.set_active_id(setting.value)
+                value_changed_cb = lambda s, v, w: w.set_active_id(v)
                 control_changed_cb = self._combo_changed_cb
                 control_changed_signal = 'changed'
             else:
-                control = gtk.Entry()
+                control = Gtk.Entry()
                 control.set_text(setting.value)
                 value_changed_cb = lambda s, v, w: w.set_text(v)
                 control_changed_cb = self._string_changed_cb
                 control_changed_signal = 'insert-at-cursor'
             
         if label is not None:
-            table.attach(label, 0, 1, row, row + 1, xpadding=xpadding)
-            table.attach(control, 1, 2, row, row + 1)
+            table.attach(label, 0, 1, row, row + 1, 
+                         Gtk.AttachOptions.EXPAND | Gtk.AttachOptions.FILL,
+                         Gtk.AttachOptions.EXPAND | Gtk.AttachOptions.FILL,
+                         xpadding, 0)
+            table.attach(control, 1, 2, row, row + 1,
+                         Gtk.AttachOptions.EXPAND | Gtk.AttachOptions.FILL,
+                         Gtk.AttachOptions.EXPAND | Gtk.AttachOptions.FILL,
+                         0, 0)
         else:
-            table.attach(control, 0, 2, row, row + 1, xpadding=xpadding)
+            table.attach(control, 0, 2, row, row + 1, 
+                         Gtk.AttachOptions.EXPAND | Gtk.AttachOptions.FILL,
+                         Gtk.AttachOptions.EXPAND | Gtk.AttachOptions.FILL,
+                         xpadding, 0)
 
         self._sensitivity_changed_cb(setting, setting.sensitive, control,
                                      label)
@@ -232,15 +245,15 @@ class PreferencesWindow(gtk.Dialog):
         self._update_setting(setting, entry.get_text(), handler_id)
 
     def _combo_changed_cb(self, combo, setting, handler_id):
-        self._update_setting(setting, setting.allowed[combo.get_active()][0],
+        self._update_setting(setting, combo.get_active_id(),
                              handler_id)
 
 if __name__ == "__main__":
     import signal
     signal.signal(signal.SIGINT, signal.SIG_DFL)
-    w = PreferencesWindow_()
+    w = PreferencesWindow()
     w.show_all()
     try:
         w.run()
     except KeyboardInterrupt:
-        gtk.main_quit()
+        Gtk.main_quit()

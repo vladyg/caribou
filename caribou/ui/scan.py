@@ -1,6 +1,7 @@
 import gobject
 import pyatspi
-import gtk
+from gi.repository import Gdk
+from gi.repository import Gtk
 import caribou.common.const as const
 from caribou.common.settings_manager import SettingsManager
 
@@ -203,23 +204,23 @@ class ScanService():
 
 
     def _grab_mouse_events(self):
-        gtk.gdk.event_handler_set(self._mouse_handler)
+        Gdk.event_handler_set(self._mouse_handler)
 
     def _ungrab_mouse_events(self):
-        gtk.gdk.event_handler_set(gtk.main_do_event)
+        Gdk.event_handler_set(Gtk.main_do_event)
 
     def _mouse_handler(self, event):
         if self.root_window.window.is_visible():
-            if event.type == gtk.gdk.BUTTON_PRESS and \
+            if event.type == Gdk.EventType.BUTTON_PRESS and \
                 str(event.button) == self.switch_key.value:
                 self._handle_press()
-            elif event.type == gtk.gdk.BUTTON_RELEASE and \
+            elif event.type == Gdk.BUTTON_RELEASE and \
                 str(event.button) == self.switch_key.value:
                 self._handle_release()
-            elif not event.type == gtk.gdk.ENTER_NOTIFY:
-                gtk.main_do_event(event)
+            elif not event.type == Gdk.ENTER_NOTIFY:
+                Gtk.main_do_event(event)
         else:
-            gtk.main_do_event(event)
+            Gtk.main_do_event(event)
 
     def _scan_block(self):
         if self.is_stop:
@@ -237,18 +238,18 @@ class ScanService():
             self.index_i = 0
 
         self.selected_block = []
-        width = self.root_window.size_request()[0]
-        height = self.root_window.size_request()[1]
+        #width = self.root_window.size_request()[0]
+        #height = self.root_window.size_request()[1]
         root_x = self.root_window.get_position()[0]
         root_y = self.root_window.get_position()[1]
         offset_w = self.index_j*(width/3)
         offset_h = self.index_i*(height/2)
 
-        block_window = gtk.gdk.Rectangle(root_x + offset_w, 
+        block_window = (root_x + offset_w, 
                                          root_y + offset_h, 
                                          width/3, 
                                          height/2)
-        empty_r = gtk.gdk.Rectangle()
+        empty_r = ()
         try:
             for row in self.keyboard:
                 line = []
@@ -257,7 +258,7 @@ class ScanService():
                               button.window.get_position()[0]
                     abs_b_y = button.get_allocation()[1] + \
                               button.window.get_position()[1]
-                    abs_b_r = gtk.gdk.Rectangle(abs_b_x, 
+                    abs_b_r = (abs_b_x, 
                                                abs_b_y,
                                                button.size_request()[0],
                                                button.size_request()[1])

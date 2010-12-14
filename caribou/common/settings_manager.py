@@ -1,5 +1,5 @@
 import os
-import gconf
+from gi.repository import GConf
 from setting_types import *
 from settings import settings
 import const
@@ -7,9 +7,9 @@ import const
 class _SettingsManager(object):
     def __init__(self, settings):
         self.groups = settings
-        self.gconf_client = gconf.client_get_default()
+        self.gconf_client = GConf.Client.get_default()
         self.gconf_client.add_dir(const.CARIBOU_GCONF,
-                                  gconf.CLIENT_PRELOAD_NONE)
+                                  GConf.ClientPreloadType.PRELOAD_NONE)
         self._settings_map = {}
         self._map_settings(self.groups)
 
@@ -35,18 +35,20 @@ class _SettingsManager(object):
             if isinstance(setting, SettingsGroup):
                 continue
             try:
-                setting.value = self.gconf_client.get_value(setting.gconf_key)
+                setting.value = self.gconf_client.get(setting.gconf_key)
             except ValueError:
-                self.gconf_client.set_value(setting.gconf_key, setting.value)
+                val = GConf.Value.new(setting.gconf_type)
+                setting.set_gconf_value(val)
+                self.gconf_client.set(setting.gconf_key, val)
 
             self._change_dependant_sensitivity(setting)
 
             handler_id = setting.connect('value-changed',
                                          self._on_value_changed)
 
-            self.gconf_client.notify_add(setting.gconf_key,
-                                         self._gconf_setting_changed_cb,
-                                         (setting, handler_id))
+            #self.gconf_client.notify_add(setting.gconf_key,
+            #                             self._gconf_setting_changed_cb,
+            #                             (setting, handler_id))
 
     def _change_dependant_sensitivity(self, setting):
         for name in setting.insensitive_when_false:
@@ -59,8 +61,11 @@ class _SettingsManager(object):
                 child.sensitive = i == index
 
     def _on_value_changed(self, setting, value):
-        if value != self.gconf_client.get_value(setting.gconf_key):
-            self.gconf_client.set_value(setting.gconf_key, value)
+        if value != self.gconf_client.get(setting.gconf_key):
+            print setting.gconf_type
+            val = GConf.Value.new(setting.gconf_type)
+            setting.set_gconf_value(val)
+            self.gconf_client.set(setting.gconf_key, val)
             self._change_dependant_sensitivity(setting)
 
     def _gconf_setting_changed_cb(self, client, connection_id, entry, data):
