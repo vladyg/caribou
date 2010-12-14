@@ -1,3 +1,5 @@
 [encoding: UTF-8]
 caribou/ui/main.py
-[type: gettext/glade]data/caribou-prefs.ui
+caribou/ui/keyboard.py
+caribou/common/settings.py
+caribou/ui/preferences_window.py
