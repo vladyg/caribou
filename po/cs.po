@@ -1,7 +1,6 @@
 # Czech translation for caribou.
 # Copyright (C) 2010 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
-#
 # Marek Černocký <marek@manet.cz>, 2010.
 #
 msgid ""
@@ -9,8 +8,8 @@ msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&component=default\n"
-"POT-Creation-Date: 2010-09-04 07:54+0000\n"
-"PO-Revision-Date: 2010-09-05 18:45+0200\n"
+"POT-Creation-Date: 2010-12-14 22:24+0000\n"
+"PO-Revision-Date: 2010-12-16 11:14+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,47 +20,203 @@ msgstr ""
 "X-Poedit-Language: Czech\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../caribou/ui/main.py:134
+#: ../caribou/ui/main.py:135
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "VAROVÁNÍ - Caribou: neobsluhovaný upravitelný widget:"
 
-#: ../data/caribou-prefs.ui.h:1
-msgid "Caribou Preferences"
-msgstr "Předvolby Caribou"
+#: ../caribou/common/settings.py:32 ../caribou/common/settings.py:89
+msgid "Keyboard"
+msgstr "Klávesnice"
 
-#: ../data/caribou-prefs.ui.h:2
-msgid "Colors"
-msgstr "Barvy"
-
-#: ../data/caribou-prefs.ui.h:3
+#: ../caribou/common/settings.py:33
 msgid "General"
 msgstr "Obecné"
 
-#: ../data/caribou-prefs.ui.h:4
-msgid "Key font:"
-msgstr "Písmo kláves:"
+#: ../caribou/common/settings.py:35
+msgid "Keyboard layout"
+msgstr "Rozložení klávesnice"
 
-#: ../data/caribou-prefs.ui.h:5
-msgid "Keyboard _layout:"
-msgstr "Roz_ložení klávesnice:"
+#: ../caribou/common/settings.py:36
+msgid "The layout Caribou should use."
+msgstr "Rozložení, který by měla aplikace Caribou použít."
 
-#: ../data/caribou-prefs.ui.h:6
-msgid "Keys"
-msgstr "Klávesy"
+#: ../caribou/common/settings.py:37
+msgid ""
+"The layout should be in the data directory of Caribou (usually /usr/share/"
+"caribou/keyboards) and should be a .xml or .json file."
+msgstr ""
+"Rozložení by mělo být v datové složce aplikace Caribou (obvykle /usr/share/"
+"caribou/keyboards) a mělo by se jednat o soubor .xml nebo .json."
 
-#: ../data/caribou-prefs.ui.h:7
-msgid "Mouse over:"
-msgstr "Po najetí myši:"
+#: ../caribou/common/settings.py:41
+msgid "Color"
+msgstr "Barva"
 
-#: ../data/caribou-prefs.ui.h:8
-msgid "Normal state:"
-msgstr "Normální stav:"
+#: ../caribou/common/settings.py:43
+msgid "Use system theme"
+msgstr "Použít systémový motiv"
 
-#: ../data/caribou-prefs.ui.h:9
-msgid "Use Defaults"
-msgstr "Použít výchozí"
+#: ../caribou/common/settings.py:44
+msgid "Use the default theme colors"
+msgstr "Použít výchozí motiv barev"
 
-#: ../data/caribou-prefs.ui.h:10
-msgid "_Test settings here:"
-msgstr "Zde si o_testujte nastavení:"
+#: ../caribou/common/settings.py:48
+msgid "Normal state"
+msgstr "Normální stav"
+
+#: ../caribou/common/settings.py:49
+msgid "Color of the keys when there is no event on them"
+msgstr "Barva kláves, pokud není žádná událost"
+
+#: ../caribou/common/settings.py:52
+msgid "Mouse over"
+msgstr "Po najetí myši"
+
+#: ../caribou/common/settings.py:53
+msgid "Color of the keys when the mouse goes over the key"
+msgstr "Barva kláves, když se myší najede nad klávesu"
+
+#: ../caribou/common/settings.py:55
+msgid "Font and size"
+msgstr "Písmo a velikost"
+
+#: ../caribou/common/settings.py:57
+msgid "Use system fonts"
+msgstr "Použít systémové písmo"
+
+#: ../caribou/common/settings.py:58
+msgid "Use the default system font for keyboard"
+msgstr "Použít pro klávesnici"
+
+#: ../caribou/common/settings.py:60
+msgid "Key font"
+msgstr "Písmo kláves"
+
+#: ../caribou/common/settings.py:61
+msgid "Custom font for keyboard"
+msgstr "Vlastní písmo pro klávesnici"
+
+#: ../caribou/common/settings.py:66
+msgid "Enable scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:67
+msgid "Enable switch scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:72
+msgid "Scanning mode"
+msgstr ""
+
+#: ../caribou/common/settings.py:74
+msgid "Scanning type, block or row"
+msgstr ""
+
+#: ../caribou/common/settings.py:75
+msgid "Block"
+msgstr "Blok"
+
+#: ../caribou/common/settings.py:76
+msgid "Row"
+msgstr "Řádek"
+
+#: ../caribou/common/settings.py:77
+msgid "Step time"
+msgstr "Čas kroku"
+
+#: ../caribou/common/settings.py:78
+msgid "Time between key transitions"
+msgstr "Čas mezi změnami kláves"
+
+#: ../caribou/common/settings.py:81
+msgid "Reverse scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:82
+msgid "Scan in reverse order"
+msgstr ""
+
+#: ../caribou/common/settings.py:85
+msgid "Switch device"
+msgstr "Přepínací zařízení"
+
+#: ../caribou/common/settings.py:87
+msgid "Switch device, keyboard or mouse"
+msgstr "Přepínací zařízení, klávesnici nebo myš"
+
+#: ../caribou/common/settings.py:90
+msgid "Mouse"
+msgstr "Myš"
+
+#: ../caribou/common/settings.py:95
+msgid "Key to use with scanning mode"
+msgstr ""
+
+#: ../caribou/common/settings.py:97
+msgid "Right shift"
+msgstr "Pravý shift"
+
+#: ../caribou/common/settings.py:98
+msgid "Left shift"
+msgstr "Levý shift"
+
+#: ../caribou/common/settings.py:99
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+#: ../caribou/common/settings.py:100
+msgid "Num lock"
+msgstr "Num lock"
+
+#: ../caribou/common/settings.py:104
+msgid "Mouse button to use in the scanning mode"
+msgstr ""
+
+#: ../caribou/common/settings.py:106
+msgid "Button 1"
+msgstr "Tlačítko 1"
+
+#: ../caribou/common/settings.py:107
+msgid "Button 2"
+msgstr "Tlačítko 2"
+
+#: ../caribou/common/settings.py:108
+msgid "Button 3"
+msgstr "Tlačítko 3"
+
+#: ../caribou/common/settings.py:112
+msgid "Block color"
+msgstr "Barva bloku"
+
+#: ../caribou/common/settings.py:113
+msgid "Color of block scans"
+msgstr ""
+
+#: ../caribou/common/settings.py:114
+msgid "Row color"
+msgstr "Barva řádku"
+
+#: ../caribou/common/settings.py:115
+msgid "Color of row scans"
+msgstr ""
+
+#: ../caribou/common/settings.py:116
+msgid "Key color"
+msgstr "Barva klávesy"
+
+#: ../caribou/common/settings.py:117
+msgid "Color of key scans"
+msgstr ""
+
+#: ../caribou/common/settings.py:119
+msgid "Cancel color"
+msgstr "Barva zrušení"
+
+#: ../caribou/common/settings.py:120
+msgid "Color of cancel scan"
+msgstr ""
+
+#: ../caribou/ui/preferences_window.py:50
+msgid "Caribou Preferences"
+msgstr "Předvolby Caribou"
 
