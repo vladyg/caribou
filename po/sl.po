@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&component=default\n"
-"POT-Creation-Date: 2010-12-09 07:56+0000\n"
+"POT-Creation-Date: 2010-12-16 14:41+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME translation team <gnome-si@googlegroups.com>\n"
@@ -25,90 +25,209 @@ msgstr ""
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "OPOZORILO - Caribou: neobdelan uredljiv gradnik:"
 
-#: ../data/caribou-prefs.ui.h:1
-msgid "B_lock color: "
-msgstr "Barva b_loka:"
+#: ../caribou/common/settings.py:32
+#: ../caribou/common/settings.py:89
+msgid "Keyboard"
+msgstr "Tipkovnica"
 
-#: ../data/caribou-prefs.ui.h:2
-msgid "Caribou Preferences"
-msgstr "Možnosti Caribou"
-
-#: ../data/caribou-prefs.ui.h:3
-msgid "Colors"
-msgstr "Barve"
-
-#: ../data/caribou-prefs.ui.h:4
+#: ../caribou/common/settings.py:33
 msgid "General"
 msgstr "Splošno"
 
-#: ../data/caribou-prefs.ui.h:5
-msgid "Key font:"
-msgstr "Pisava ključa"
+#: ../caribou/common/settings.py:35
+msgid "Keyboard layout"
+msgstr "Razpored tipkovnice"
 
-#: ../data/caribou-prefs.ui.h:6
-msgid "Keyboard _layout:"
-msgstr "_Razporeditev tipkovnice:"
+#: ../caribou/common/settings.py:36
+msgid "The layout Caribou should use."
+msgstr "Razporeditev, ki naj jo uporablja Caribou."
 
-#: ../data/caribou-prefs.ui.h:7
-msgid "Keys"
-msgstr "Tipke"
+#: ../caribou/common/settings.py:37
+msgid "The layout should be in the data directory of Caribou (usually /usr/share/caribou/keyboards) and should be a .xml or .json file."
+msgstr "Razporeditev bi morala biti v podatkovni mapi Caribou (običajno /usr/share/caribou/keyboards) in bi morala biti datoteka .xml ali .json."
 
-#: ../data/caribou-prefs.ui.h:8
-msgid "Mouse over:"
-msgstr "Prehod miške:"
+#: ../caribou/common/settings.py:41
+msgid "Color"
+msgstr "Barva"
 
-#: ../data/caribou-prefs.ui.h:9
-msgid "Normal state:"
-msgstr "Običajno stanje:"
+#: ../caribou/common/settings.py:43
+msgid "Use system theme"
+msgstr "Uporabi sistemsko temo"
 
-#: ../data/caribou-prefs.ui.h:10
-msgid "Re_verse scanning"
-msgstr "O_brnjeno preiskovanje"
+#: ../caribou/common/settings.py:44
+msgid "Use the default theme colors"
+msgstr "Uporabi privzete barve teme"
 
-#: ../data/caribou-prefs.ui.h:11
-msgid "Scanning"
-msgstr "Preiskovanje"
+#: ../caribou/common/settings.py:48
+msgid "Normal state"
+msgstr "Običajno stanje"
 
-#: ../data/caribou-prefs.ui.h:12
-msgid "Scanning _type: "
-msgstr "_Vrsta preiskovanja"
+#: ../caribou/common/settings.py:49
+msgid "Color of the keys when there is no event on them"
+msgstr "Barva tipk, ko na njih ni dogodka"
 
-#: ../data/caribou-prefs.ui.h:13
-msgid "Ste_p time:"
-msgstr "Čas ko_raka:"
+#: ../caribou/common/settings.py:52
+msgid "Mouse over"
+msgstr "Prehod miške"
 
-#: ../data/caribou-prefs.ui.h:14
-msgid "Use Defaults"
-msgstr "Uporabi privzete vrednosti"
+#: ../caribou/common/settings.py:53
+msgid "Color of the keys when the mouse goes over the key"
+msgstr "Barva tipk ob prehodu miške"
 
-#: ../data/caribou-prefs.ui.h:15
-msgid "_Button color: "
-msgstr "_Barva gumba"
+#: ../caribou/common/settings.py:55
+msgid "Font and size"
+msgstr "Pisava in velikost"
 
-#: ../data/caribou-prefs.ui.h:16
-msgid "_Cancel color: "
-msgstr "Barva _preklica:"
+#: ../caribou/common/settings.py:57
+msgid "Use system fonts"
+msgstr "Uporabi sistemske pisave"
 
-#: ../data/caribou-prefs.ui.h:17
-msgid "_Keyboard switch"
-msgstr "Zamenjaj _tipkovnico"
+#: ../caribou/common/settings.py:58
+msgid "Use the default system font for keyboard"
+msgstr "Uporabi privzeto sistemsko pisavo za tipkovnico."
 
-#: ../data/caribou-prefs.ui.h:18
-msgid "_Mouse switch"
-msgstr "Zamenjaj _miško"
+#: ../caribou/common/settings.py:60
+msgid "Key font"
+msgstr "Pisava tipk"
 
-#: ../data/caribou-prefs.ui.h:19
-msgid "_Row color: "
-msgstr "Barva _vrstice:"
+#: ../caribou/common/settings.py:61
+msgid "Custom font for keyboard"
+msgstr "Pisava po meri za tipkovnico"
 
-#: ../data/caribou-prefs.ui.h:20
-msgid "_Scan enabled"
-msgstr "Omogočeno _preiskovanje"
+#: ../caribou/common/settings.py:66
+msgid "Enable scanning"
+msgstr "Omogoči preiskovanje"
 
-#: ../data/caribou-prefs.ui.h:21
-msgid "_Test settings here:"
-msgstr "Tukaj _preizkusite nastavitve:"
+#: ../caribou/common/settings.py:67
+msgid "Enable switch scanning"
+msgstr "Omogoči preiskovanje preklopa"
 
+#: ../caribou/common/settings.py:72
+msgid "Scanning mode"
+msgstr "Način preiskovanja"
+
+#: ../caribou/common/settings.py:74
+msgid "Scanning type, block or row"
+msgstr "Vrsta preiskovanja, blok ali vrstica"
+
+#: ../caribou/common/settings.py:75
+msgid "Block"
+msgstr "Blok"
+
+#: ../caribou/common/settings.py:76
+msgid "Row"
+msgstr "Vrstica"
+
+#: ../caribou/common/settings.py:77
+msgid "Step time"
+msgstr "Korak časa"
+
+#: ../caribou/common/settings.py:78
+msgid "Time between key transitions"
+msgstr "Čas med prehodi tipk"
+
+#: ../caribou/common/settings.py:81
+msgid "Reverse scanning"
+msgstr "Obratno preiskovanje"
+
+#: ../caribou/common/settings.py:82
+msgid "Scan in reverse order"
+msgstr "Preiskuj v obratnem vrstnem redu"
+
+#: ../caribou/common/settings.py:85
+msgid "Switch device"
+msgstr "Preklopi napravo"
+
+#: ../caribou/common/settings.py:87
+msgid "Switch device, keyboard or mouse"
+msgstr "Preklopi napravo, tipkovnico ali mško"
+
+#: ../caribou/common/settings.py:90
+msgid "Mouse"
+msgstr "Miška"
+
+#: ../caribou/common/settings.py:95
+msgid "Key to use with scanning mode"
+msgstr "Tipka za uporabo v načinu preiskovanja"
+
+#: ../caribou/common/settings.py:97
+msgid "Right shift"
+msgstr "Desna dvigalka"
+
+#: ../caribou/common/settings.py:98
+msgid "Left shift"
+msgstr "Leva dvigalka"
+
+#: ../caribou/common/settings.py:99
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+#: ../caribou/common/settings.py:100
+msgid "Num lock"
+msgstr "Num lock"
+
+#: ../caribou/common/settings.py:104
+msgid "Mouse button to use in the scanning mode"
+msgstr "Miškin gumb za uporabo v načinu preiskovanja"
+
+#: ../caribou/common/settings.py:106
+msgid "Button 1"
+msgstr "Gumb 1"
+
+#: ../caribou/common/settings.py:107
+msgid "Button 2"
+msgstr "Gumb 2"
+
+#: ../caribou/common/settings.py:108
+msgid "Button 3"
+msgstr "Gumb 3"
+
+#: ../caribou/common/settings.py:112
+msgid "Block color"
+msgstr "Barva bloka"
+
+#: ../caribou/common/settings.py:113
+msgid "Color of block scans"
+msgstr "Barva preiskovanj blokov"
+
+#: ../caribou/common/settings.py:114
+msgid "Row color"
+msgstr "Barva vrstice"
+
+#: ../caribou/common/settings.py:115
+msgid "Color of row scans"
+msgstr "Barva preiskovanj vrstice"
+
+#: ../caribou/common/settings.py:116
+msgid "Key color"
+msgstr "Barva tipke"
+
+#: ../caribou/common/settings.py:117
+msgid "Color of key scans"
+msgstr "Barva preiskovanj tipk"
+
+#: ../caribou/common/settings.py:119
+msgid "Cancel color"
+msgstr "Prekliči barvo"
+
+#: ../caribou/common/settings.py:120
+msgid "Color of cancel scan"
+msgstr "Barva preiskovanja preklica"
+
+#: ../caribou/ui/preferences_window.py:50
+msgid "Caribou Preferences"
+msgstr "Možnosti Caribou"
+
+#~ msgid "Keys"
+#~ msgstr "Tipke"
+#~ msgid "Use Defaults"
+#~ msgstr "Uporabi privzete vrednosti"
+#~ msgid "_Mouse switch"
+#~ msgstr "Zamenjaj _miško"
+#~ msgid "_Scan enabled"
+#~ msgstr "Omogočeno _preiskovanje"
+#~ msgid "_Test settings here:"
+#~ msgstr "Tukaj _preizkusite nastavitve:"
 #~ msgid "Key _size:"
 #~ msgstr "_Velikost tipk: "
 #~ msgid "Key s_pacing:"
