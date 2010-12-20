@@ -1,4 +1,53 @@
 =============
+Version 0.1.6
+=============
+
+What's New
+==========
+- Added basic scanning support (thanks warp.es!)
+- Added proper key highlight colors.
+- Cleaned up configuration and preferences and made it more MVC like.
+- Created cleaner preferences window.
+
+New And Updated Translations
+============================
+- Khaled Hosny (ar)
+- Xandru Armesto (ast)
+- Ivaylo Valkov (bg)
+- Jordi Estrada (ca)
+- David Planella (ca@valencia)
+- Marek Černocký (cs)
+- Kris Thomsen (da)
+- Mario Blättermann (de)
+- Kostas Papadimas (el)
+- Philip Withnall (en_GB)
+- Jorge González (es)
+- Claude Paroz (fr)
+- Fran Dieguez (gl)
+- Yaron Shahrabani (he)
+- Gabor Kelemen (hu)
+- Dirgita (id)
+- Silvia Bindelli (it)
+- Jiro MATSUZAWA (ja)
+- Ani Peter (ml)
+- Ahmed Noor Kader Mustajir Md Eusoff (ms)
+- Kjartan Maraas (nb)
+- Sense Hofstede (nl)
+- Tomasz Dominikowski (pl)
+- Mateus Zenaide (pt_BR)
+- Lucian Adrian Grijincu (ro)
+- Victor Vislobokov (ru)
+- Andrej Žnidaršič (sl)
+- Милош Поповић (sr)
+- Miloš Popović (sr@latin)
+- Daniel Nylander (sv)
+- Dr.T.Vasudevan (ta)
+- Gheyret Kenji (ug)
+- Dark Raven (zh_CN)
+- Chao-Hsiung Liao (zh_HK)
+- Chao-Hsiung Liao (zh_TW)
+
+=============
 Version 0.1.5
 =============
 
