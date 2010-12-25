@@ -35,7 +35,7 @@ import virtkey
 import os
 import traceback
 from caribou.ui.i18n import _
-from setting_types import *
+from caribou.common.setting_types import *
 
 try:
     import json
