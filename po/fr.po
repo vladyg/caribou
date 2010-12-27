@@ -6,10 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=caribou&component=default\n"
-"POT-Creation-Date: 2010-07-12 18:02+0000\n"
-"PO-Revision-Date: 2010-07-17 15:28+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-27 22:15+0100\n"
+"PO-Revision-Date: 2010-12-19 20:05+0100\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,46 +16,203 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../caribou/ui/main.py:107
+#: ../caribou/ui/main.py:135
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "ATTENTION - Caribou : composant graphique éditable non géré :"
 
-#: ../data/caribou-prefs.ui.h:1
-msgid "Caribou Preferences"
-msgstr "Préférences de Caribou"
+#: ../caribou/common/settings.py:32 ../caribou/common/settings.py:89
+msgid "Keyboard"
+msgstr "Clavier"
 
-#: ../data/caribou-prefs.ui.h:2
-msgid "Colors"
-msgstr "Couleurs"
-
-#: ../data/caribou-prefs.ui.h:3
+#: ../caribou/common/settings.py:33
 msgid "General"
 msgstr "Général"
 
-#: ../data/caribou-prefs.ui.h:4
-msgid "Key _size:"
-msgstr "_Taille des touches :"
+#: ../caribou/common/settings.py:35
+msgid "Keyboard layout"
+msgstr "Agencement de clavier"
 
-#: ../data/caribou-prefs.ui.h:5
-msgid "Key s_pacing:"
-msgstr "_Espacement des touches :"
+#: ../caribou/common/settings.py:36
+msgid "The layout Caribou should use."
+msgstr "L'agencement que Caribou doit utiliser."
 
-#: ../data/caribou-prefs.ui.h:6
-msgid "Keyboard _layout:"
-msgstr "_Agencement de clavier :"
+#: ../caribou/common/settings.py:37
+msgid ""
+"The layout should be in the data directory of Caribou (usually /usr/share/"
+"caribou/keyboards) and should be a .xml or .json file."
+msgstr ""
+"L'agencement doit se trouver dans le répertoire de données de Caribou "
+"(généralement /usr/share/caribou/keyboards) et doit être au format .xml ou ."
+"json."
 
-#: ../data/caribou-prefs.ui.h:7
-msgid "Keys"
-msgstr "Touches"
+#: ../caribou/common/settings.py:41
+msgid "Color"
+msgstr "Couleur"
 
-#: ../data/caribou-prefs.ui.h:8
-msgid "Mouse over:"
-msgstr "Survol de la souris :"
+#: ../caribou/common/settings.py:43
+msgid "Use system theme"
+msgstr "Utiliser le thème système"
 
-#: ../data/caribou-prefs.ui.h:9
-msgid "Normal state:"
-msgstr "État normal :"
+#: ../caribou/common/settings.py:44
+msgid "Use the default theme colors"
+msgstr "Utiliser les couleurs du thème par défaut"
 
-#: ../data/caribou-prefs.ui.h:10
-msgid "_Test settings here:"
-msgstr "Tester les _paramètres ici :"
+#: ../caribou/common/settings.py:48
+msgid "Normal state"
+msgstr "État normal"
+
+#: ../caribou/common/settings.py:49
+msgid "Color of the keys when there is no event on them"
+msgstr "Couleur des touches quand elles ne sont la cible d'aucun événement"
+
+#: ../caribou/common/settings.py:52
+msgid "Mouse over"
+msgstr "Survol de la souris"
+
+#: ../caribou/common/settings.py:53
+msgid "Color of the keys when the mouse goes over the key"
+msgstr "Couleur des touches quand la souris passe sur elles"
+
+#: ../caribou/common/settings.py:55
+msgid "Font and size"
+msgstr "Police et taille"
+
+#: ../caribou/common/settings.py:57
+msgid "Use system fonts"
+msgstr "Utiliser les polices du système"
+
+#: ../caribou/common/settings.py:58
+msgid "Use the default system font for keyboard"
+msgstr "Utiliser la police par défaut du système pour le clavier"
+
+#: ../caribou/common/settings.py:60
+msgid "Key font"
+msgstr "Police des touches"
+
+#: ../caribou/common/settings.py:61
+msgid "Custom font for keyboard"
+msgstr "Police personalisée pour le clavier"
+
+#: ../caribou/common/settings.py:66
+msgid "Enable scanning"
+msgstr "Activer le balayage"
+
+#: ../caribou/common/settings.py:67
+msgid "Enable switch scanning"
+msgstr "Activer la sélection par balayage"
+
+#: ../caribou/common/settings.py:72
+msgid "Scanning mode"
+msgstr "Mode de balayage"
+
+#: ../caribou/common/settings.py:74
+msgid "Scanning type, block or row"
+msgstr "Type de balayage, par bloc ou par ligne"
+
+#: ../caribou/common/settings.py:75
+msgid "Block"
+msgstr "Bloc"
+
+#: ../caribou/common/settings.py:76
+msgid "Row"
+msgstr "Ligne"
+
+#: ../caribou/common/settings.py:77
+msgid "Step time"
+msgstr "Durée des séquences"
+
+#: ../caribou/common/settings.py:78
+msgid "Time between key transitions"
+msgstr "Délai entre le changement de touche"
+
+#: ../caribou/common/settings.py:81
+msgid "Reverse scanning"
+msgstr "Balayage inverse"
+
+#: ../caribou/common/settings.py:82
+msgid "Scan in reverse order"
+msgstr "Effectuer le balayage dans l'ordre inverse"
+
+#: ../caribou/common/settings.py:85
+msgid "Switch device"
+msgstr "Périphérique sélecteur"
+
+#: ../caribou/common/settings.py:87
+msgid "Switch device, keyboard or mouse"
+msgstr "Périphérique de sélection, clavier ou souris"
+
+#: ../caribou/common/settings.py:90
+msgid "Mouse"
+msgstr "Souris"
+
+#: ../caribou/common/settings.py:95
+msgid "Key to use with scanning mode"
+msgstr "Touche à utiliser en mode balayage"
+
+#: ../caribou/common/settings.py:97
+msgid "Right shift"
+msgstr "Maj. de droite"
+
+#: ../caribou/common/settings.py:98
+msgid "Left shift"
+msgstr "Maj. de gauche"
+
+#: ../caribou/common/settings.py:99
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+#: ../caribou/common/settings.py:100
+msgid "Num lock"
+msgstr "Verr. Num."
+
+#: ../caribou/common/settings.py:104
+msgid "Mouse button to use in the scanning mode"
+msgstr "Bouton de souris à utiliser en mode balayage"
+
+#: ../caribou/common/settings.py:106
+msgid "Button 1"
+msgstr "Bouton 1"
+
+#: ../caribou/common/settings.py:107
+msgid "Button 2"
+msgstr "Bouton 2"
+
+#: ../caribou/common/settings.py:108
+msgid "Button 3"
+msgstr "Bouton 3"
+
+#: ../caribou/common/settings.py:112
+msgid "Block color"
+msgstr "Couleur de bloc"
+
+#: ../caribou/common/settings.py:113
+msgid "Color of block scans"
+msgstr "Couleur des balayages par bloc"
+
+#: ../caribou/common/settings.py:114
+msgid "Row color"
+msgstr "Couleur de ligne"
+
+#: ../caribou/common/settings.py:115
+msgid "Color of row scans"
+msgstr "Couleur des balayages par ligne"
+
+#: ../caribou/common/settings.py:116
+msgid "Key color"
+msgstr "Couleur de touche"
+
+#: ../caribou/common/settings.py:117
+msgid "Color of key scans"
+msgstr "Couleur des balayages par touche"
+
+#: ../caribou/common/settings.py:119
+msgid "Cancel color"
+msgstr "Couleur d'annulation"
+
+#: ../caribou/common/settings.py:120
+msgid "Color of cancel scan"
+msgstr "Couleur des balayages d'annulation"
+
+#: ../caribou/ui/preferences_window.py:50
+msgid "Caribou Preferences"
+msgstr "Préférences de Caribou"
