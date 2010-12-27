@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-27 19:10+0100\n"
-"PO-Revision-Date: 2010-12-27 19:14+0100\n"
+"PO-Revision-Date: 2010-12-27 23:33+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -59,16 +59,15 @@ msgstr "Normalt tillstånd"
 
 #: ../caribou/common/settings.py:49
 msgid "Color of the keys when there is no event on them"
-msgstr ""
+msgstr "Färg för tangenterna när det inte finns någon händelse på dem"
 
 #: ../caribou/common/settings.py:52
-#, fuzzy
 msgid "Mouse over"
-msgstr "Muspekare över:"
+msgstr "Muspekare över"
 
 #: ../caribou/common/settings.py:53
 msgid "Color of the keys when the mouse goes over the key"
-msgstr ""
+msgstr "Färg för tangenterna när muspekaren dras över tangenten"
 
 #: ../caribou/common/settings.py:55
 msgid "Font and size"
@@ -80,7 +79,7 @@ msgstr "Använd systemtypsnitt"
 
 #: ../caribou/common/settings.py:58
 msgid "Use the default system font for keyboard"
-msgstr ""
+msgstr "Använd systemets standardtypsnitt för tangentbordet"
 
 #: ../caribou/common/settings.py:60
 msgid "Key font"
@@ -88,55 +87,55 @@ msgstr "Tangenttypsnitt"
 
 #: ../caribou/common/settings.py:61
 msgid "Custom font for keyboard"
-msgstr ""
+msgstr "Anpassat typsnitt för tangentbordet"
 
 #: ../caribou/common/settings.py:66
 msgid "Enable scanning"
-msgstr ""
+msgstr "Aktivera avsökning"
 
 #: ../caribou/common/settings.py:67
 msgid "Enable switch scanning"
-msgstr ""
+msgstr "Aktivera brytaravsökning"
 
 #: ../caribou/common/settings.py:72
 msgid "Scanning mode"
-msgstr ""
+msgstr "Avsökningsläge"
 
 #: ../caribou/common/settings.py:74
 msgid "Scanning type, block or row"
-msgstr ""
+msgstr "Avsökningsläge, block eller rad"
 
 #: ../caribou/common/settings.py:75
 msgid "Block"
-msgstr ""
+msgstr "Block"
 
 #: ../caribou/common/settings.py:76
 msgid "Row"
-msgstr ""
+msgstr "Rad"
 
 #: ../caribou/common/settings.py:77
 msgid "Step time"
-msgstr ""
+msgstr "Stegtid"
 
 #: ../caribou/common/settings.py:78
 msgid "Time between key transitions"
-msgstr ""
+msgstr "Tid mellan tangentövergångar"
 
 #: ../caribou/common/settings.py:81
 msgid "Reverse scanning"
-msgstr ""
+msgstr "Omvänd avsökning"
 
 #: ../caribou/common/settings.py:82
 msgid "Scan in reverse order"
-msgstr ""
+msgstr "Sök av i omvänd ordning"
 
 #: ../caribou/common/settings.py:85
 msgid "Switch device"
-msgstr ""
+msgstr "Brytarenhet"
 
 #: ../caribou/common/settings.py:87
 msgid "Switch device, keyboard or mouse"
-msgstr ""
+msgstr "Brytarenhet, tangentbord eller mus"
 
 #: ../caribou/common/settings.py:90
 msgid "Mouse"
@@ -144,7 +143,7 @@ msgstr "Mus"
 
 #: ../caribou/common/settings.py:95
 msgid "Key to use with scanning mode"
-msgstr ""
+msgstr "Tangent att använda med avsökningsläget"
 
 #: ../caribou/common/settings.py:97
 msgid "Right shift"
@@ -164,7 +163,7 @@ msgstr "Num lock"
 
 #: ../caribou/common/settings.py:104
 msgid "Mouse button to use in the scanning mode"
-msgstr ""
+msgstr "Musknapp att använda i avsökningsläget"
 
 #: ../caribou/common/settings.py:106
 msgid "Button 1"
@@ -180,35 +179,35 @@ msgstr "Knapp 3"
 
 #: ../caribou/common/settings.py:112
 msgid "Block color"
-msgstr ""
+msgstr "Blockfärg"
 
 #: ../caribou/common/settings.py:113
 msgid "Color of block scans"
-msgstr ""
+msgstr "Färg för blockavsökningar"
 
 #: ../caribou/common/settings.py:114
 msgid "Row color"
-msgstr ""
+msgstr "Radfärg"
 
 #: ../caribou/common/settings.py:115
 msgid "Color of row scans"
-msgstr ""
+msgstr "Färg för radavsökningar"
 
 #: ../caribou/common/settings.py:116
 msgid "Key color"
-msgstr ""
+msgstr "Tangentfärg"
 
 #: ../caribou/common/settings.py:117
 msgid "Color of key scans"
-msgstr ""
+msgstr "Färg för tangentavsökningar"
 
 #: ../caribou/common/settings.py:119
 msgid "Cancel color"
-msgstr ""
+msgstr "Avbrytsfärg"
 
 #: ../caribou/common/settings.py:120
 msgid "Color of cancel scan"
-msgstr ""
+msgstr "Färg för avbryt avsökning"
 
 #: ../caribou/ui/preferences_window.py:50
 msgid "Caribou Preferences"
