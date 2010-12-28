@@ -2,6 +2,7 @@ import os
 from setting_types import *
 from gettext import gettext as _
 import caribou.common.const as const
+import caribou.ui.i18n
 import xml.dom.minidom
 
 try:
