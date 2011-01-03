@@ -62,14 +62,14 @@ settings = SettingsGroup("_top", "", [
                                     _("Custom font for keyboard"))
                         ])
                 ]),
-        SettingsGroup("scanning", "Scanning", [
+        SettingsGroup("scanning", _("Scanning"), [
                 BooleanSetting(
                     "scan_enabled", _("Enable scanning"), False,
                     _("Enable switch scanning"),
                     insensitive_when_false=["scanning_general",
                                             "scanning_input",
                                             "scanning_color"]),
-                SettingsGroup("scanning_general", "General", [
+                SettingsGroup("scanning_general", _("General"), [
                         StringSetting("scanning_type", _("Scanning mode"),
                                       "block",
                                       _("Scanning type, block or row"),
@@ -82,7 +82,7 @@ settings = SettingsGroup("_top", "", [
                                        _("Reverse scanning"), False,
                                        _("Scan in reverse order"))
                         ]),
-                SettingsGroup("scanning_input", "Input", [
+                SettingsGroup("scanning_input", _("Input"), [
                         StringSetting("switch_type", _("Switch device"),
                                       "keyboard",
                                       _("Switch device, keyboard or mouse"),
@@ -90,7 +90,7 @@ settings = SettingsGroup("_top", "", [
                                       allowed=[("keyboard", _("Keyboard")),
                                                ("mouse", _("Mouse"))],
                                       children=[
-                                StringSetting("keyboard_key", "Switch key",
+                                StringSetting("keyboard_key", _("Switch key"),
                                               "Shift_R",
                                               _(
                                         "Key to use with scanning mode"),
@@ -99,7 +99,7 @@ settings = SettingsGroup("_top", "", [
                                         ("Shift_L", _("Left shift")),
                                         ("ISO_Level3_Shift", _("Alt Gr")),
                                         ("Num_Lock", _("Num lock"))]),
-                                StringSetting("mouse_button", "Switch button",
+                                StringSetting("mouse_button", _("Switch button"),
                                               "2",
                                               _(
                                         "Mouse button to use in the scanning "
@@ -109,7 +109,7 @@ settings = SettingsGroup("_top", "", [
                                                        ("3", _("Button 3"))])
                                 ]),
                         ]),
-                SettingsGroup("scanning_color", "Color", [
+                SettingsGroup("scanning_color", _("Color"), [
                         ColorSetting("block_scanning_color", _("Block color"),
                                      "purple", _("Color of block scans")),
                         ColorSetting("row_scanning_color", _("Row color"),
