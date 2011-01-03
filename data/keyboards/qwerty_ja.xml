@@ -1,0 +1,782 @@
+<keyboard>
+  <layout>
+    <name>lowercase</name>
+    <rows>
+      <row>
+        <key>
+          <value>Escape</value>
+          <label>&lt;small&gt;Esc&lt;/small&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key key_type="dummy" width="0.4"/>
+        <key value="F1" width="1.2"/>
+        <key value="F2" width="1.2"/>
+        <key value="F3" width="1.2"/>
+        <key value="F4" width="1.2"/>
+        <key key_type="dummy" width="0.2"/>
+        <key value="F5" width="1.2"/>
+        <key value="F6" width="1.2"/>
+        <key value="F7" width="1.2"/>
+        <key value="F8" width="1.2"/>
+        <key key_type="dummy" width="0.2"/>
+        <key value="F9" width="1.2"/>
+        <key value="F10" width="1.2"/>
+        <key value="F11" width="1.2"/>
+        <key value="F12" width="1.2"/>
+        <key key_type="dummy" width="0.4"/>
+        <key key_type="preferences" width="1.2"/>
+        <key key_type="dummy" width="0.2" />
+        <key value="Print" label="&lt;small&gt;PSc&lt;/small&gt;" width="1.2" />
+        <key value="Scroll_Lock" label="&lt;small&gt;SLk&lt;/small&gt;" width="1.2" />
+        <key value="Pause" label="&lt;small&gt;Pus&lt;/small&gt;" width="1.2" />
+      </row>
+      <row>
+        <key value="Zenkaku_Hankaku" label="&lt;small&gt;半/全&lt;/small&gt;" width="1.2"/>
+        <key>
+          <value>1</value>
+          <label>&lt;sup&gt;1&lt;/sup&gt; &lt;sub&gt;ぬ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>2</value>
+          <label>&lt;sup&gt;2&lt;/sup&gt; &lt;sub&gt;ふ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>3</value>
+          <label>&lt;sup&gt;3&lt;/sup&gt; &lt;sub&gt;あ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>4</value>
+          <label>&lt;sup&gt;4&lt;/sup&gt; &lt;sub&gt;う&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>5</value>
+          <label>&lt;sup&gt;5&lt;/sup&gt; &lt;sub&gt;え&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>6</value>
+          <label>&lt;sup&gt;6&lt;/sup&gt; &lt;sub&gt;お&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>7</value>
+          <label>&lt;sup&gt;7&lt;/sup&gt; &lt;sub&gt;や&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>8</value>
+          <label>&lt;sup&gt;8&lt;/sup&gt; &lt;sub&gt;ゆ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>9</value>
+          <label>&lt;sup&gt;9&lt;/sup&gt; &lt;sub&gt;よ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>0</value>
+          <label>&lt;sup&gt;0&lt;/sup&gt; &lt;sub&gt;わ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>-</value>
+          <label>&lt;sup&gt;-&lt;/sup&gt; &lt;sub&gt;ほ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>^</value>
+          <label>&lt;sup&gt;^&lt;/sup&gt; &lt;sub&gt;へ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>\</value>
+          <label>&lt;sup&gt;\&lt;/sup&gt; &lt;sub&gt;ー&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>BackSpace</value>
+          <label>&lt;big&gt;⌫&lt;/big&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key key_type="dummy" width="0.2" />
+        <key value="Insert" label="&lt;small&gt;Ins&lt;/small&gt;" width="1.2" />
+        <key value="Home" label="&lt;small&gt;Hom&lt;/small&gt;" width="1.2" />
+        <key value="Prior" label="&lt;small&gt;PUp&lt;/small&gt;" width="1.2" />
+      </row>
+      <row>
+        <key>
+          <value>Tab</value>
+          <label>&lt;b&gt;&lt;sup&gt;←&lt;/sup&gt;&lt;sub&gt;→&lt;/sub&gt;&lt;/b&gt;</label>
+          <width>1.8</width>
+        </key>
+        <key>
+          <value>q</value>
+          <label>&lt;sup&gt;q&lt;/sup&gt; &lt;sub&gt;た&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>w</value>
+          <label>&lt;sup&gt;w&lt;/sup&gt; &lt;sub&gt;て&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>e</value>
+          <label>&lt;sup&gt;e&lt;/sup&gt; &lt;sub&gt;い&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>r</value>
+          <label>&lt;sup&gt;r&lt;/sup&gt; &lt;sub&gt;す&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>t</value>
+          <label>&lt;sup&gt;t&lt;/sup&gt; &lt;sub&gt;か&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>y</value>
+          <label>&lt;sup&gt;y&lt;/sup&gt; &lt;sub&gt;ん&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>u</value>
+          <label>&lt;sup&gt;u&lt;/sup&gt; &lt;sub&gt;な&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>i</value>
+          <label>&lt;sup&gt;i&lt;/sup&gt; &lt;sub&gt;に&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>o</value>
+          <label>&lt;sup&gt;o&lt;/sup&gt; &lt;sub&gt;ら&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>p</value>
+          <label>&lt;sup&gt;p&lt;/sup&gt; &lt;sub&gt;せ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>@</value>
+          <label>&lt;sup&gt;@&lt;/sup&gt; &lt;sub&gt;゛&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>[</value>
+          <label>&lt;sup&gt;[&lt;/sup&gt;  &lt;sub&gt;゜&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>Return</value>
+          <label>&lt;b&gt;↲&lt;/b&gt;</label>
+          <width>1.8</width>
+        </key>
+        <key key_type="dummy" width="0.2" />
+        <key value="Delete" label="&lt;small&gt;Del&lt;/small&gt;" width="1.2" />
+        <key value="End" label="&lt;small&gt;End&lt;/small&gt;" width="1.2" />
+        <key value="Next" label="&lt;small&gt;PDn&lt;/small&gt;" width="1.2" />
+      </row>
+      <row>
+        <key>
+          <value>lock</value>
+          <label>&lt;small&gt;&lt;b&gt;Caps&lt;/b&gt;&lt;/small&gt;</label>
+          <key_type>mask</key_type>
+          <width>2.1</width>
+        </key>
+        <key>
+          <value>a</value>
+          <label>&lt;sup&gt;a&lt;/sup&gt; &lt;sub&gt;ち&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>s</value>
+          <label>&lt;sup&gt;s&lt;/sup&gt; &lt;sub&gt;と&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>d</value>
+          <label>&lt;sup&gt;d&lt;/sup&gt; &lt;sub&gt;し&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>f</value>
+          <label>&lt;sup&gt;f&lt;/sup&gt; &lt;sub&gt;は&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>g</value>
+          <label>&lt;sup&gt;g&lt;/sup&gt; &lt;sub&gt;き&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>h</value>
+          <label>&lt;sup&gt;h&lt;/sup&gt; &lt;sub&gt;く&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>j</value>
+          <label>&lt;sup&gt;j&lt;/sup&gt; &lt;sub&gt;ま&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>k</value>
+          <label>&lt;sup&gt;k&lt;/sup&gt; &lt;sub&gt;の&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>l</value>
+          <label>&lt;sup&gt;l&lt;/sup&gt; &lt;sub&gt;り&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>;</value>
+          <label>&lt;sup&gt;;&lt;/sup&gt; &lt;sub&gt;れ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>:</value>
+          <label>&lt;sup&gt;:&lt;/sup&gt; &lt;sub&gt;け&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>]</value>
+          <label>&lt;sup&gt;]&lt;/sup&gt; &lt;sub&gt;む&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key key_type="dummy" width="1.5"/>
+        <key key_type="dummy" width="3.8" />
+      </row>
+      <row>
+        <key>
+          <value>uppercase</value>
+          <key_type>layout_switcher</key_type>
+          <label>&lt;b&gt;↑&lt;/b&gt;Shift</label>
+          <width>2.7</width>
+        </key>
+        <key>
+          <value>z</value>
+          <label>&lt;sup&gt;z&lt;/sup&gt; &lt;sub&gt;つ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>x</value>
+          <label>&lt;sup&gt;x&lt;/sup&gt; &lt;sub&gt;さ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>c</value>
+          <label>&lt;sup&gt;c&lt;/sup&gt; &lt;sub&gt;そ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>v</value>
+          <label>&lt;sup&gt;v&lt;/sup&gt; &lt;sub&gt;ひ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>b</value>
+          <label>&lt;sup&gt;b&lt;/sup&gt; &lt;sub&gt;こ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>n</value>
+          <label>&lt;sup&gt;n&lt;/sup&gt; &lt;sub&gt;み&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>m</value>
+          <label>&lt;sup&gt;m&lt;/sup&gt; &lt;sub&gt;も&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>,</value>
+          <label>&lt;sup&gt;,&lt;/sup&gt; &lt;sub&gt;ね&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>.</value>
+          <label>&lt;sup&gt;.&lt;/sup&gt; &lt;sub&gt;る&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>/</value>
+          <label>&lt;sup&gt;/&lt;/sup&gt; &lt;sub&gt;め&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>\</value>
+          <label>&lt;sup&gt;\&lt;/sup&gt; &lt;sub&gt;ろ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>uppercase</value>
+          <key_type>layout_switcher</key_type>
+          <label>&lt;b&gt;↑&lt;/b&gt;Shift</label>
+          <width>2.1</width>
+        </key>
+        <key key_type="dummy" width="0.2" />
+        <key key_type="dummy" width="1.2"/>
+        <key value="Up" label="&lt;b&gt;↑&lt;/b&gt;" width="1.2" />
+        <key key_type="dummy" width="1.2"/>
+      </row>
+      <row>
+        <key>
+          <value>control</value>
+          <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
+          <key_type>mask</key_type>
+          <width>1.8</width>
+        </key>
+        <key>
+          <value>Super_L</value>
+          <label>&lt;small&gt;&lt;b&gt;Win&lt;/b&gt;&lt;/small&gt;</label>
+          <width>1.5</width>
+        </key>
+        <key>
+          <value>mod1</value>
+          <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
+          <key_type>mask</key_type>
+          <width>1.5</width>
+        </key>
+        <key>
+          <value>Muhenkan</value>
+          <label>&lt;small&gt;無変換&lt;/small&gt;</label>
+          <width>1.8</width>
+        </key>
+        <key value=" " label="______" width="3.0"/>
+        <key>
+          <value>Henkan_Mode</value>
+          <label>&lt;small&gt;変換&lt;/small&gt;</label>
+          <width>1.8</width>
+        </key>
+        <key>
+          <value>Hiragana_Katakana</value>
+          <label>&lt;small&gt;かな&lt;/small&gt;</label>
+          <width>1.5</width>
+        </key>
+        <key>
+          <value>mod1</value>
+          <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
+          <key_type>mask</key_type>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>Super_R</value>
+          <label>&lt;small&gt;&lt;b&gt;Win&lt;/b&gt;&lt;/small&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>Menu</value>
+          <label>&lt;small&gt;Menu&lt;/small&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>control</value>
+          <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
+          <key_type>mask</key_type>
+          <width>1.5</width>
+        </key>
+        <key key_type="dummy" width="0.2" />
+        <key value="Left" label="&lt;b&gt;←&lt;/b&gt;" width="1.2" />
+        <key value="Down" label="&lt;b&gt;↓&lt;/b&gt;" width="1.2" />
+        <key value="Right" label="&lt;b&gt;→&lt;/b&gt;" width="1.2" />
+      </row>
+    </rows>
+  </layout>
+  <layout>
+    <name>uppercase</name>
+    <rows>
+      <row>
+        <key>
+          <value>Escape</value>
+          <label>&lt;small&gt;Esc&lt;/small&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key key_type="dummy" width="0.4"/>
+        <key value="F1" width="1.2"/>
+        <key value="F2" width="1.2"/>
+        <key value="F3" width="1.2"/>
+        <key value="F4" width="1.2"/>
+        <key key_type="dummy" width="0.2"/>
+        <key value="F5" width="1.2"/>
+        <key value="F6" width="1.2"/>
+        <key value="F7" width="1.2"/>
+        <key value="F8" width="1.2"/>
+        <key key_type="dummy" width="0.2"/>
+        <key value="F9" width="1.2"/>
+        <key value="F10" width="1.2"/>
+        <key value="F11" width="1.2"/>
+        <key value="F12" width="1.2"/>
+        <key key_type="dummy" width="0.4"/>
+        <key key_type="preferences" width="1.2"/>
+        <key key_type="dummy" width="0.2" />
+        <key value="Print" label="&lt;small&gt;PSc&lt;/small&gt;" width="1.2" />
+        <key value="Scroll_Lock" label="&lt;small&gt;SLk&lt;/small&gt;" width="1.2" />
+        <key value="Pause" label="&lt;small&gt;Pus&lt;/small&gt;" width="1.2" />
+      </row>
+      <row>
+        <key value="Zenkaku_Hankaku" label="&lt;small&gt;半/全&lt;/small&gt;" width="1.2"/>
+        <key>
+          <value>!</value>
+          <label>&lt;sup&gt;!&lt;/sup&gt; &lt;sub&gt;ぬ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>"</value>
+          <label>&lt;sup&gt;"&lt;/sup&gt; &lt;sub&gt;ふ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>#</value>
+          <label>&lt;sup&gt;#&lt;/sup&gt; &lt;sub&gt;ぁ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>$</value>
+          <label>&lt;sup&gt;$&lt;/sup&gt; &lt;sub&gt;ぅ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>%</value>
+          <label>&lt;sup&gt;%&lt;/sup&gt; &lt;sub&gt;ぇ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>&amp;</value>
+          <label>&lt;sup&gt;&amp;amp;&lt;/sup&gt; &lt;sub&gt;ぉ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>'</value>
+          <label>&lt;sup&gt;'&lt;/sup&gt; &lt;sub&gt;ゃ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>(</value>
+          <label>&lt;sup&gt;(&lt;/sup&gt; &lt;sub&gt;ゅ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>)</value>
+          <label>&lt;sup&gt;)&lt;/sup&gt; &lt;sub&gt;ょ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>~</value>
+          <label>&lt;sup&gt; &lt;/sup&gt; &lt;sub&gt;を&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>=</value>
+          <label>&lt;sup&gt;=&lt;/sup&gt; &lt;sub&gt;ほ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>~</value>
+          <label>&lt;sup&gt;~&lt;/sup&gt; &lt;sub&gt; &lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>|</value>
+          <label>&lt;sup&gt;|&lt;/sup&gt; &lt;sub&gt; &lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>BackSpace</value>
+          <label>&lt;big&gt;⌫&lt;/big&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key key_type="dummy" width="0.2" />
+        <key value="Insert" label="&lt;small&gt;Ins&lt;/small&gt;" width="1.2" />
+        <key value="Home" label="&lt;small&gt;Hom&lt;/small&gt;" width="1.2" />
+        <key value="Prior" label="&lt;small&gt;PUp&lt;/small&gt;" width="1.2" />
+      </row>
+      <row>
+        <key>
+          <value>Tab</value>
+          <label>&lt;b&gt;&lt;sup&gt;←&lt;/sup&gt;&lt;sub&gt;→&lt;/sub&gt;&lt;/b&gt;</label>
+          <width>1.8</width>
+        </key>
+        <key>
+          <value>Q</value>
+          <label>&lt;sup&gt;Q&lt;/sup&gt; &lt;sub&gt;た&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>W</value>
+          <label>&lt;sup&gt;W&lt;/sup&gt; &lt;sub&gt;て&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>E</value>
+          <label>&lt;sup&gt;E&lt;/sup&gt; &lt;sub&gt;ぃ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>R</value>
+          <label>&lt;sup&gt;R&lt;/sup&gt; &lt;sub&gt;す&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>T</value>
+          <label>&lt;sup&gt;T&lt;/sup&gt; &lt;sub&gt;か&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>Y</value>
+          <label>&lt;sup&gt;Y&lt;/sup&gt; &lt;sub&gt;ん&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>U</value>
+          <label>&lt;sup&gt;U&lt;/sup&gt; &lt;sub&gt;な&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>I</value>
+          <label>&lt;sup&gt;I&lt;/sup&gt; &lt;sub&gt;に&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>O</value>
+          <label>&lt;sup&gt;O&lt;/sup&gt; &lt;sub&gt;ら&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>P</value>
+          <label>&lt;sup&gt;P&lt;/sup&gt; &lt;sub&gt;せ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>`</value>
+          <label>&lt;sup&gt;`&lt;/sup&gt; &lt;sub&gt;゛&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>{</value>
+          <label>&lt;sup&gt;{&lt;/sup&gt; &lt;sub&gt;「&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>Return</value>
+          <label>&lt;b&gt;↲&lt;/b&gt;</label>
+          <width>1.8</width>
+        </key>
+        <key key_type="dummy" width="0.2" />
+        <key value="Delete" label="&lt;small&gt;Del&lt;/small&gt;" width="1.2" />
+        <key value="End" label="&lt;small&gt;End&lt;/small&gt;" width="1.2" />
+        <key value="Next" label="&lt;small&gt;PDn&lt;/small&gt;" width="1.2" />
+      </row>
+      <row>
+        <key>
+          <value>lock</value>
+          <label>&lt;small&gt;&lt;b&gt;Caps&lt;/b&gt;&lt;/small&gt;</label>
+          <key_type>mask</key_type>
+          <width>2.1</width>
+        </key>
+        <key>
+          <value>A</value>
+          <label>&lt;sup&gt;A&lt;/sup&gt; &lt;sub&gt;ち&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>S</value>
+          <label>&lt;sup&gt;S&lt;/sup&gt; &lt;sub&gt;と&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>D</value>
+          <label>&lt;sup&gt;D&lt;/sup&gt; &lt;sub&gt;し&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>F</value>
+          <label>&lt;sup&gt;F&lt;/sup&gt; &lt;sub&gt;は&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>G</value>
+          <label>&lt;sup&gt;G&lt;/sup&gt; &lt;sub&gt;き&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>H</value>
+          <label>&lt;sup&gt;H&lt;/sup&gt; &lt;sub&gt;く&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>J</value>
+          <label>&lt;sup&gt;J&lt;/sup&gt; &lt;sub&gt;ま&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>K</value>
+          <label>&lt;sup&gt;K&lt;/sup&gt; &lt;sub&gt;の&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>L</value>
+          <label>&lt;sup&gt;L&lt;/sup&gt; &lt;sub&gt;り&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>+</value>
+          <label>&lt;sup&gt;+&lt;/sup&gt; &lt;sub&gt;れ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>*</value>
+          <label>&lt;sup&gt;*&lt;/sup&gt; &lt;sub&gt; &lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>}</value>
+          <label>&lt;sup&gt;}&lt;/sup&gt; &lt;sub&gt;」&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key key_type="dummy" width="1.5"/>
+        <key key_type="dummy" width="3.8" />
+      </row>
+      <row>
+        <key>
+          <value>lowercase</value>
+          <label>&lt;b&gt;↓&lt;/b&gt;Shift</label>
+          <key_type>layout_switcher</key_type>
+          <width>2.7</width>
+        </key>
+        <key>
+          <value>Z</value>
+          <label>&lt;sup&gt;Z&lt;/sup&gt; &lt;sub&gt;っ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>X</value>
+          <label>&lt;sup&gt;X&lt;/sup&gt; &lt;sub&gt;さ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>C</value>
+          <label>&lt;sup&gt;C&lt;/sup&gt; &lt;sub&gt;そ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>V</value>
+          <label>&lt;sup&gt;V&lt;/sup&gt; &lt;sub&gt;ひ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>B</value>
+          <label>&lt;sup&gt;B&lt;/sup&gt; &lt;sub&gt;こ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>N</value>
+          <label>&lt;sup&gt;N&lt;/sup&gt; &lt;sub&gt;み&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>M</value>
+          <label>&lt;sup&gt;M&lt;/sup&gt; &lt;sub&gt;も&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>&lt;</value>
+          <label>&lt;sup&gt;&amp;lt;&lt;/sup&gt; &lt;sub&gt;、&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>&gt;</value>
+          <label>&lt;sup&gt;&amp;gt;&lt;/sup&gt; &lt;sub&gt;。&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>?</value>
+          <label>&lt;sup&gt;?&lt;/sup&gt; &lt;sub&gt;・&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>_</value>
+          <label>&lt;sup&gt;_&lt;/sup&gt; &lt;sub&gt;ろ&lt;/sub&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>lowercase</value>
+          <label>&lt;b&gt;↓&lt;/b&gt;Shift</label>
+          <key_type>layout_switcher</key_type>
+          <width>2.1</width>
+        </key>
+        <key key_type="dummy" width="0.2" />
+        <key key_type="dummy" width="1.2"/>
+        <key value="Up" label="&lt;b&gt;↑&lt;/b&gt;" width="1.2" />
+        <key key_type="dummy" width="1.2"/>
+      </row>
+      <row>
+        <key>
+          <value>control</value>
+          <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
+          <key_type>mask</key_type>
+          <width>1.8</width>
+        </key>
+        <key>
+          <value>Super_L</value>
+          <label>&lt;small&gt;&lt;b&gt;Win&lt;/b&gt;&lt;/small&gt;</label>
+          <width>1.5</width>
+        </key>
+        <key>
+          <value>mod1</value>
+          <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
+          <key_type>mask</key_type>
+          <width>1.5</width>
+        </key>
+        <key>
+          <value>Muhenkan</value>
+          <label>&lt;small&gt;無変換&lt;/small&gt;</label>
+          <width>1.8</width>
+        </key>
+        <key value=" " label="______" width="3"/>
+        <key>
+          <value>Henkan_Mode</value>
+          <label>&lt;small&gt;変換&lt;/small&gt;</label>
+          <width>1.8</width>
+        </key>
+        <key>
+          <value>Hiragana_Katakana</value>
+          <label>&lt;small&gt;かな&lt;/small&gt;</label>
+          <width>1.5</width>
+        </key>
+        <key>
+          <value>mod1</value>
+          <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
+          <key_type>mask</key_type>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>Super_R</value>
+          <label>&lt;small&gt;&lt;b&gt;Win&lt;/b&gt;&lt;/small&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>Menu</value>
+          <label>&lt;small&gt;Menu&lt;/small&gt;</label>
+          <width>1.2</width>
+        </key>
+        <key>
+          <value>control</value>
+          <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
+          <key_type>mask</key_type>
+          <width>1.5</width>
+        </key>
+        <key key_type="dummy" width="0.2" />
+        <key value="Left" label="&lt;b&gt;←&lt;/b&gt;" width="1.2" />
+        <key value="Down" label="&lt;b&gt;↓&lt;/b&gt;" width="1.2" />
+        <key value="Right" label="&lt;b&gt;→&lt;/b&gt;" width="1.2" />
+      </row>
+    </rows>
+  </layout>
+</keyboard>
