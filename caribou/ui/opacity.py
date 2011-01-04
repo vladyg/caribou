@@ -42,9 +42,12 @@ class ProximityWindowBase(object):
                 glib.timeout_add(80, self._proximity_check)
 
     def _proximity_check(self):
-        x, y = self.get_pointer()
-        
-        distance =  self._get_distance_to_bbox(x, y, self.allocation)
+        px, py = self.get_pointer()
+
+        ww = self.get_allocated_width()
+        wh = self.get_allocated_height()
+
+        distance =  self._get_distance_to_bbox(px, py, ww, wh)
 
         opacity = (self.max_alpha - self.min_alpha) * \
             (1 - min(distance, self.max_distance)/self.max_distance)
@@ -53,28 +56,28 @@ class ProximityWindowBase(object):
         self.set_opacity(opacity)
         return self.props.visible
 
-    def _get_distance_to_bbox(self, x, y, bbox):
-        if x < bbox.x:
-            x_distance = bbox.x - x
-        elif x > bbox.width + bbox.x:
-            x_distance = bbox.width + bbox.x - x
+    def _get_distance_to_bbox(self, px, py, bw, bh):
+        if px < 0:
+            x_distance = float(abs(px))
+        elif px > bw:
+            x_distance = float(px - bw)
         else:
-            x_distance = 0
+            x_distance = 0.0
 
-        if y < bbox.y:
-            y_distance = bbox.y - y
-        elif y > bbox.height + bbox.y:
-            y_distance = bbox.height + bbox.y - y
+        if py < 0:
+            y_distance = float(abs(px))
+        elif py > bh:
+            y_distance = float(py - bh)
         else:
-            y_distance = 0
+            y_distance = 0.0
 
         if y_distance == 0 and x_distance == 0:
             return 0.0
         elif y_distance != 0 and x_distance == 0:
-            return abs(float(y_distance))
+            return y_distance
         elif y_distance == 0 and x_distance != 0:
-            return abs(float(x_distance))
+            return x_distance
         else:
-            x2 = bbox.x if x_distance > 0 else bbox.x + bbox.width
-            y2 = bbox.y if y_distance > 0 else bbox.y + bbox.height
-            return sqrt((x - x2)**2 + (y - y2)**2)
+            x2 = 0 if x_distance > 0 else bw
+            y2 = 0 if y_distance > 0 else bh
+            return sqrt((px - x2)**2 + (py - y2)**2)
