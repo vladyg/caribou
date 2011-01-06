@@ -20,11 +20,11 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-import animation
 from caribou import data_path
 from gi.repository import GConf
 from gi.repository import Gtk
 from gi.repository import Gdk
+from gi.repository import Clutter
 import opacity
 import os
 import sys
@@ -33,10 +33,19 @@ import gobject
 CARIBOU_GCONF_LAYOUT_KEY = '/apps/caribou/osk/layout'
 CARIBOU_LAYOUT_DIR = 'keyboards'
 
-class CaribouWindow(Gtk.Window):
+Clutter.init("caribou")
+
+class CaribouWindow(Gtk.Window, Clutter.Animatable):
     __gtype_name__ = "CaribouWindow"
+    __gproperties__ = { 
+        'animated-window-position' : (gobject.TYPE_PYOBJECT, 'Window position',
+                                      'Window position in X, Y coordinates',
+                                      gobject.PARAM_READWRITE)        
+        }
+
     def __init__(self, text_entry_mech, default_placement=None,
-                 min_alpha=1.0, max_alpha=1.0, max_distance=100):
+                 min_alpha=1.0, max_alpha=1.0, max_distance=100,
+                 animation_mode=Clutter.AnimationMode.EASE_IN_QUAD):
         gobject.GObject.__init__(self, type=Gtk.WindowType.POPUP)
 
         self.set_name("CaribouWindow")
@@ -59,6 +68,48 @@ class CaribouWindow(Gtk.Window):
             text_entry_mech.load_kb(conf_file_path)
 
         self.connect('show', self._on_window_show)
+
+        # animation
+        self.animation_mode = animation_mode
+        self._stage = Clutter.Stage.get_default()
+        self._animation = None
+
+    def do_get_property(self, property):
+        if property.name == "animated-window-position":
+            return self.get_position()
+        else:
+            raise AttributeError, 'unknown property %s' % property.name
+
+    def do_set_property(self, property, value):
+        if property.name == "animated-window-position":
+            if value is not None:
+                x, y = value
+                self.move(x, y)
+        else:
+            raise AttributeError, 'unknown property %s' % property.name
+
+    def do_animate_property(self, animation, prop_name, initial_value,
+                            final_value, progress, gvalue):
+        if prop_name != "animated-window-position": return False
+        
+        ix, iy = initial_value
+        fx, fy = final_value
+        dx = int((fx - ix) * progress)
+        dy = int((fy - iy) * progress)
+        new_value = (ix + dx, iy + dy)
+        self.move(*new_value)
+        return True
+
+    def animated_move(self, x, y):
+        self._animation = Clutter.Animation(object=self,
+                                            mode=self.animation_mode,
+                                            duration=250)
+        self._animation.bind("animated-window-position", (x, y))
+
+        timeline = self._animation.get_timeline()
+        timeline.start()
+
+        return self._animation
 
     def destroy(self):
         self.keyboard.destroy()
@@ -182,7 +233,6 @@ class CaribouWindow(Gtk.Window):
         self.resize(req.width + border, req.height + border)
 
 class CaribouWindowDocked(CaribouWindow, 
-                          animation.AnimatedWindowBase,
                           opacity.ProximityWindowBase):
     __gtype_name__ = "CaribouWindowDocked"
     
@@ -195,7 +245,6 @@ class CaribouWindowDocked(CaribouWindow,
             xgravitate=CaribouWindowPlacement.INSIDE)
 
         CaribouWindow.__init__(self, text_entry_mech, placement)
-        animation.AnimatedWindowBase.__init__(self)
         opacity.ProximityWindowBase.__init__(
             self, min_alpha=0.5, max_alpha=0.8)
 
@@ -206,12 +255,12 @@ class CaribouWindowDocked(CaribouWindow,
 
     def _roll_in(self):
         x, y = self.get_position()
-        self.move(x + self.allocation.width, y)
-        #return self.animated_move(x, y)
+        self.move(x + self.get_allocated_width(), y)
+        return self.animated_move(x, y)
 
     def _roll_out(self):
         x, y = self.get_position()
-        #return self.animated_move(x + self.allocation.width, y)
+        return self.animated_move(x + self.get_allocated_width(), y)
 
     def hide(self):
         animation = self._roll_out()
@@ -315,7 +364,7 @@ if __name__ == "__main__":
     import signal
     signal.signal(signal.SIGINT, signal.SIG_DFL)
 
-    w = CaribouWindowDocked(keyboard.CaribouKeyboard)
+    w = CaribouWindowDocked(keyboard.CaribouKeyboard())
     w.show_all()
 
     try:

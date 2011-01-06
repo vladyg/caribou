@@ -2,7 +2,6 @@ caribou_uidir = $(pkgpythondir)/ui/
 
 caribou_ui_PYTHON = \
 	__init__.py \
-	animation.py \
 	i18n.py \
 	keyboard.py \
 	scan.py \
