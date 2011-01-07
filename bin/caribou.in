@@ -27,7 +27,7 @@
 from optparse import OptionParser
 import gettext
 import sys
-from gi.repository import Gtk
+import pyatspi
 import os
 
 # We can't rely on prefix if we're installed by relocated RPM. Instead, we 
@@ -55,8 +55,12 @@ import caribou.ui.keyboard as keyboard
 import caribou.ui.main as main
 
 _ = gettext.gettext
-
+    
 if __name__ == "__main__":
+    import signal
+
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
+
     parser = OptionParser(usage="usage: %prog [options]",
                           version="%prog @VERSION@")
     parser.add_option("-d", "--debug",
@@ -69,4 +73,9 @@ if __name__ == "__main__":
     caribou = main.Caribou()
     caribou.window.hide()
  
-    Gtk.main()
+    try:
+        pyatspi.Registry.start()
+    except KeyboardInterrupt:
+        caribou.clean_exit()
+        pyatspi.Registry.stop()
+

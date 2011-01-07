@@ -21,11 +21,13 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 from caribou import data_path
+from opacity import ProximityWindowBase
+from caribou.common.settings_manager import SettingsManager
+
 from gi.repository import GConf
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import Clutter
-from opacity import ProximityWindowBase
 import os
 import sys
 import gobject
@@ -204,8 +206,7 @@ class CaribouWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
         return offset
 
     def _get_keyboard_conf(self):
-        layout = self._gconf_client.get_string(CARIBOU_GCONF_LAYOUT_KEY) \
-            or "qwerty"
+        layout = SettingsManager.layout.value
         conf_file_path = os.path.join(data_path, CARIBOU_LAYOUT_DIR, layout)
 
         if os.path.exists(conf_file_path):

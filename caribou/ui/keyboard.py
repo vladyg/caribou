@@ -145,10 +145,11 @@ class Key(Gtk.Button, BaseKey):
             return
         label.modify_font(None)
 
-    def set_color(self, normal_color, mouse_over_color):
+    def set_color(self, normal_color, mouse_over_color=None):
         self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse(normal_color)[1])
-        self.modify_bg(Gtk.StateType.PRELIGHT,
-                       Gdk.color_parse(mouse_over_color)[1])
+        if mouse_over_color:
+            self.modify_bg(Gtk.StateType.PRELIGHT,
+                           Gdk.color_parse(mouse_over_color)[1])
 
     def reset_color(self):
         self.modify_bg(Gtk.StateType.NORMAL, None)
@@ -177,6 +178,39 @@ class KeyboardLayout(Gtk.Table):
                         Gtk.AttachOptions.EXPAND | Gtk.AttachOptions.FILL,
                         0, 0)
             last_col = next_col
+    
+    def get_scan_rows(self):
+        return [filter(lambda x: x.is_sensitive(), row) for row in self.rows]
+
+    def get_scan_blocks(self, optimal_block_size=8):
+        # TODO: smarter division using optimal block size.
+        scan_rows = self.get_scan_rows()
+        col_num = max([len(row) for row in scan_rows])
+        blocks = []
+        
+        for row_index in xrange(len(scan_rows)):
+            for col_index in xrange(max([len(row) for row in scan_rows])):
+                try:
+                    key = scan_rows[row_index][col_index]
+                except IndexError:
+                    continue
+
+                try:
+                    group = blocks[row_index/2]
+                except IndexError:
+                    group = []
+                    blocks.append(group)
+                
+                try:
+                    group[col_index/3].append(key)
+                except IndexError:
+                    block = []
+                    block.append(key)
+                    group.append(block)
+
+        return reduce(lambda a, b: a + b, blocks)
+        
+                                    
 
 class KbLayoutDeserializer(object):
     def __init__(self):
@@ -307,7 +341,7 @@ class CaribouKeyboard(Gtk.Notebook):
         self._update_key_style()
 
     def _set_layouts(self, layout_list):
-        self._clear()
+        self._clear()            
         for layout in layout_list:
             self.append_page(layout, None)
             for row in layout.rows:
@@ -374,7 +408,7 @@ class CaribouKeyboard(Gtk.Notebook):
             self.current_mask |= key.value
             self.vk.latch_mod(self.current_mask)
 
-    def show_all(self):
+    def show_all_(self):
         self.set_current_page(self.current_page)
         Gtk.Notebook.show_all(self)
 
@@ -384,11 +418,6 @@ class CaribouKeyboard(Gtk.Notebook):
         p.run()
         p.destroy()
 
-    def destroy(self):
-        for id in self._gconf_connections:
-            self.client.notify_remove(id)
-        super(Gtk.Notebook, self).destroy()
-
     def _switch_to_layout(self, name):
         n_pages = self.get_n_pages()
         for i in range(n_pages):
@@ -396,6 +425,13 @@ class CaribouKeyboard(Gtk.Notebook):
                 self.set_current_page(i)
                 self.current_page = i
                 break
+
+    def get_current_layout(self):
+        i = self.get_current_page()
+        return self.get_nth_page(i)
+
+    def get_layouts(self):
+        return [self.get_nth_page(i) for i in xrange(self.get_n_pages())]
 
 if __name__ == "__main__":
     import signal
