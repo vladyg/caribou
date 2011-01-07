@@ -154,7 +154,7 @@ class ScanMaster():
         if self._scan_path is None: return True
 
         if self._last_block is not None:
-            self._multi_map(lambda x: x.reset_color(),
+            self._multi_map(lambda x: x.scan_highlight(None),
                                        self._last_block)
 
         if SettingsManager.reverse_scanning.value:
@@ -172,7 +172,7 @@ class ScanMaster():
             else:
                 color = SettingsManager.block_scanning_color.value
 
-        self._multi_map(lambda x: x.set_color(color, None), next_block)
+        self._multi_map(lambda x: x.scan_highlight(color), next_block)
         self._last_block = next_block
         return True
 

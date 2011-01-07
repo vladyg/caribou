@@ -89,7 +89,63 @@ class BaseKey(object):
                 self.add(label_markup)
             else:
                 self.set_label(self.label)
-    
+
+        for name in ["normal_color", "mouse_over_color", "default_colors"]:
+            getattr(SettingsManager, name).connect("value-changed",
+                                                   self._colors_changed)
+
+        for name in ["default_font", "key_font"]:
+            getattr(SettingsManager, name).connect("value-changed",
+                                         self._key_font_changed)
+
+        if not SettingsManager.default_font.value:
+            self._key_font_changed(None, None)
+
+        if not SettingsManager.default_colors.value:
+            self._colors_changed(None, None)
+
+    def _colors_changed(self, setting, value):
+        if SettingsManager.default_colors.value:
+            self._normal_color = None
+            self._mouse_over_color = None
+            self.reset_color()
+        else:
+            self._normal_color = SettingsManager.normal_color.value
+            self._mouse_over_color = SettingsManager.mouse_over_color.value
+            self.set_color(self._normal_color, self._mouse_over_color)
+
+    def _key_font_changed(self, setting, value):
+        if SettingsManager.default_font.value:
+            self.reset_font()
+        else:
+            self.set_font(SettingsManager.key_font.value)
+
+    def scan_highlight(self, color):
+        if color is None:
+            self._colors_changed(None, None)
+        else:
+            self.set_color(color)
+
+    def _on_image_key_mapped(self, key):
+        print
+        key_width = key.get_allocated_height()
+        icon_size = Gtk.IconSize.MENU
+        image = Gtk.Image()
+        for size in [Gtk.IconSize.MENU,
+                     Gtk.IconSize.SMALL_TOOLBAR,
+                     Gtk.IconSize.LARGE_TOOLBAR,
+                     Gtk.IconSize.BUTTON,
+                     Gtk.IconSize.DND,
+                     Gtk.IconSize.DIALOG]:
+            pixbuf = image.render_icon_pixbuf(Gtk.STOCK_PREFERENCES, size)
+            pixel_size = pixbuf.get_width()
+            print size, pixel_size, key_width
+            if pixel_size > key_width:
+                break
+            icon_size = size
+        image.set_from_stock(Gtk.STOCK_PREFERENCES, icon_size)
+        self.set_image(image)
+
     def set_font(self, font):
         raise NotImplemented
 
@@ -323,22 +379,12 @@ class CaribouKeyboard(Gtk.Notebook):
         self.current_mask = 0
         self.current_page = 0
 
-        # Settings we care about.
-        for name in ["normal_color", "mouse_over_color", "default_colors"]:
-            getattr(SettingsManager, name).connect("value-changed",
-                                                   self._colors_changed)
-
-        for name in ["default_font", "key_font"]:
-            getattr(SettingsManager, name).connect("value-changed",
-                                         self._key_font_changed)
-
         self.row_height = -1
 
     def load_kb(self, kb_location):
         kb_deserializer = KbLayoutDeserializer()
         layouts = kb_deserializer.deserialize(kb_location)
         self._set_layouts(layouts)
-        self._update_key_style()
 
     def _set_layouts(self, layout_list):
         self._clear()            
@@ -358,34 +404,6 @@ class CaribouKeyboard(Gtk.Notebook):
                     else:
                         key.connect('clicked',
                                     self._pressed_normal_key)
-
-    def _colors_changed(self, setting, val):
-        self._update_key_style()
-
-    def _key_font_changed(self, setting, val):
-        self._update_key_style()
-
-    def _update_key_style(self):
-        default_colors = SettingsManager.default_colors.value
-        normal_color = SettingsManager.normal_color.value
-        mouse_over_color = SettingsManager.mouse_over_color.value
-        default_font = SettingsManager.default_font.value
-        key_font = SettingsManager.key_font.value
-
-        n_pages = self.get_n_pages()
-        for i in range(n_pages):
-            layout = self.get_nth_page(i)
-            for row in layout.rows:
-                for button in row:
-                    if default_colors:
-                        button.reset_color()
-                    else:
-                        button.set_color(normal_color,
-                                         mouse_over_color)
-                    if default_font:
-                        button.reset_font()
-                    else:
-                        button.set_font(key_font)
 
     def _clear(self):
         n_pages = self.get_n_pages()
