@@ -85,7 +85,10 @@ class ScanMaster():
             self._blocks = layout.get_scan_rows()
         else:
             self._blocks = layout.get_scan_blocks()
-        self._scan_path = [-1]
+        if SettingsManager.reverse_scanning.value:
+            self._scan_path = [0]
+        else:
+            self._scan_path = [-1]
 
     def set_keyboard(self, keyboard):
         self._last_block = None
@@ -104,6 +107,30 @@ class ScanMaster():
         for index in path:
             element = element[index]
         return element
+
+    def _get_next_reverse_block(self):
+        cancel = False
+
+        if self._scan_path[-1] > 0:
+            self._scan_path = self._scan_path[:-1] + [0]
+            
+        self._scan_path += [self._scan_path.pop() - 1]
+
+        try:
+            block = self._get_element_at_path(self._blocks,
+                                              self._scan_path)
+        except IndexError:
+            if len(self._scan_path) == 1:
+                block = self._blocks[-1]
+                self._scan_path = [-1]
+            else:
+                block = self._get_element_at_path(
+                    self._blocks, self._scan_path[:-1])
+                self._scan_path = self._scan_path[:-1] + [0]
+                cancel = True
+
+        return cancel, block
+                
 
     def _get_next_block(self):
         cancel = False
@@ -130,7 +157,10 @@ class ScanMaster():
             self._multi_map(lambda x: x.reset_color(),
                                        self._last_block)
 
-        self._cancel, next_block = self._get_next_block()
+        if SettingsManager.reverse_scanning.value:
+            self._cancel, next_block = self._get_next_reverse_block()
+        else:
+            self._cancel, next_block = self._get_next_block()
 
         color = SettingsManager.button_scanning_color.value
 
@@ -152,7 +182,10 @@ class ScanMaster():
             self._scan_path.pop()
         elif isinstance(self._last_block, list):
             assert(len(self._last_block) > 0)
-            self._scan_path.append(-1)
+            if SettingsManager.reverse_scanning.value:
+                self._scan_path.append(0)
+            else:
+                self._scan_path.append(-1)
         else:
             self._last_block.clicked()
 
