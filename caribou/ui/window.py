@@ -20,36 +20,52 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-import animation
 from caribou import data_path
-import gconf
-import gtk
-import gtk.gdk as gdk
-import opacity
+from opacity import ProximityWindowBase
+from caribou.common.settings_manager import SettingsManager
+
+from gi.repository import GConf
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import Clutter
 import os
 import sys
+import gobject
 
 CARIBOU_GCONF_LAYOUT_KEY = '/apps/caribou/osk/layout'
 CARIBOU_LAYOUT_DIR = 'keyboards'
 
-class CaribouWindow(gtk.Window):
+Clutter.init("caribou")
+
+class CaribouWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
     __gtype_name__ = "CaribouWindow"
+    __gproperties__ = { 
+        'animated-window-position' : (gobject.TYPE_PYOBJECT, 'Window position',
+                                      'Window position in X, Y coordinates',
+                                      gobject.PARAM_READWRITE)        
+        }
 
     def __init__(self, text_entry_mech, default_placement=None,
-                 min_alpha=1.0, max_alpha=1.0, max_distance=100):
-        super(CaribouWindow, self).__init__(gtk.WINDOW_POPUP)
+                 min_alpha=1.0, max_alpha=1.0, max_distance=100,
+                 animation_mode=Clutter.AnimationMode.EASE_IN_QUAD):
+        gobject.GObject.__init__(self, type=Gtk.WindowType.POPUP)
+        ProximityWindowBase.__init__(self,
+                                     min_alpha=min_alpha,
+                                     max_alpha=max_alpha,
+                                     max_distance=max_distance)
+
         self.set_name("CaribouWindow")
 
-        self._vbox = gtk.VBox()
+        self._vbox = Gtk.VBox()
         self.add(self._vbox)
         self.keyboard = text_entry_mech
-        self._vbox.pack_start(text_entry_mech)
+        self._vbox.pack_start(text_entry_mech, True, True, 0)
 
         self.connect("size-allocate", lambda w, a: self._update_position())
-        self._gconf_client = gconf.client_get_default()
+        self._gconf_client = GConf.Client.get_default()
 
-        self._cursor_location = gdk.Rectangle()
-        self._entry_location = gdk.Rectangle()
+        self._cursor_location = Rectangle()
+        self._entry_location = Rectangle()
         self._default_placement = default_placement or \
             CaribouWindowPlacement()
 
@@ -59,9 +75,51 @@ class CaribouWindow(gtk.Window):
 
         self.connect('show', self._on_window_show)
 
+        # animation
+        self.animation_mode = animation_mode
+        self._stage = Clutter.Stage.get_default()
+        self._animation = None
+
+    def do_get_property(self, property):
+        if property.name == "animated-window-position":
+            return self.get_position()
+        else:
+            raise AttributeError, 'unknown property %s' % property.name
+
+    def do_set_property(self, property, value):
+        if property.name == "animated-window-position":
+            if value is not None:
+                x, y = value
+                self.move(x, y)
+        else:
+            raise AttributeError, 'unknown property %s' % property.name
+
+    def do_animate_property(self, animation, prop_name, initial_value,
+                            final_value, progress, gvalue):
+        if prop_name != "animated-window-position": return False
+        
+        ix, iy = initial_value
+        fx, fy = final_value
+        dx = int((fx - ix) * progress)
+        dy = int((fy - iy) * progress)
+        new_value = (ix + dx, iy + dy)
+        self.move(*new_value)
+        return True
+
+    def animated_move(self, x, y):
+        self._animation = Clutter.Animation(object=self,
+                                            mode=self.animation_mode,
+                                            duration=250)
+        self._animation.bind("animated-window-position", (x, y))
+
+        timeline = self._animation.get_timeline()
+        timeline.start()
+
+        return self._animation
+
     def destroy(self):
         self.keyboard.destroy()
-        super(gtk.Window, self).destroy()
+        super(Gtk.Window, self).destroy()
 
 
     def set_cursor_location(self, cursor_location):
@@ -77,12 +135,12 @@ class CaribouWindow(gtk.Window):
         self._update_position()
 
     def _get_root_bbox(self):
-        root_window = gdk.get_default_root_window()
-        args = root_window.get_position() + root_window.get_size()
+        root_window = Gdk.get_default_root_window()
+        args = root_window.get_geometry()
 
-        root_bbox = gdk.Rectangle(*args)
+        root_bbox = Rectangle(*args)
 
-        current_screen = gtk.gdk.screen_get_default().get_number()
+        current_screen = Gdk.Screen.get_default().get_number()
         for panel in self._gconf_client.all_dirs('/apps/panel/toplevels'):
             orientation = self._gconf_client.get_string(panel+'/orientation')
             size = self._gconf_client.get_int(panel+'/size')
@@ -114,9 +172,9 @@ class CaribouWindow(gtk.Window):
     def _update_position(self):
         x, y = self._calculate_position()
         root_bbox = self._get_root_bbox()
-        proposed_position = \
-            gdk.Rectangle(x, y, self.allocation.width, self.allocation.height)
-
+        proposed_position = Rectangle(x, y, self.get_allocated_width(),
+                                      self.get_allocated_height())
+        
         x += self._default_placement.x.adjust_to_bounds(root_bbox, proposed_position)
         y += self._default_placement.y.adjust_to_bounds(root_bbox, proposed_position)
         self.move(x, y)
@@ -129,23 +187,26 @@ class CaribouWindow(gtk.Window):
         elif axis_placement.stickto == CaribouWindowPlacement.ENTRY:
             bbox = self._entry_location
 
-        offset = axis_placement.get_offset(bbox)
+        offset = axis_placement.get_offset(bbox.x, bbox.y)
 
         if axis_placement.align == CaribouWindowPlacement.END:
-            offset += axis_placement.get_length(bbox)
+            offset += axis_placement.get_length(bbox.width, bbox.height)
             if axis_placement.gravitate == CaribouWindowPlacement.INSIDE:
-                offset -= axis_placement.get_length(self.allocation)
+                offset -= axis_placement.get_length(
+                    self.get_allocated_width(),
+                    self.get_allocated_height())
         elif axis_placement.align == CaribouWindowPlacement.START:
             if axis_placement.gravitate == CaribouWindowPlacement.OUTSIDE:
-                offset -= axis_placement.get_length(self.allocation)
+                offset -= axis_placement.get_length(
+                    self.get_allocated_width(),
+                    self.get_allocated_height())
         elif axis_placement.align == CaribouWindowPlacement.CENTER:
-            offset += axis_placement.get_length(bbox)/2
+            offset += axis_placement.get_length(bbox.width, bbox.height)/2
 
         return offset
 
     def _get_keyboard_conf(self):
-        layout = self._gconf_client.get_string(CARIBOU_GCONF_LAYOUT_KEY) \
-            or "qwerty"
+        layout = SettingsManager.layout.value
         conf_file_path = os.path.join(data_path, CARIBOU_LAYOUT_DIR, layout)
 
         if os.path.exists(conf_file_path):
@@ -163,22 +224,20 @@ class CaribouWindow(gtk.Window):
 
 
     def show_all(self):
-        gtk.Window.show_all(self)
+        Gtk.Window.show_all(self)
         self.keyboard.show_all()
 
-    def hide_all(self):
-        self.keyboard.hide_all()
-        gtk.Window.hide_all(self)
+    def hide(self):
+        self.keyboard.hide()
+        Gtk.Window.hide(self)
 
     def _on_window_show(self, window):
         child = self.get_child()
         border = self.get_border_width()
-        w, h = child.size_request()
-        self.resize(w + border, h + border)
+        req = child.size_request()
+        self.resize(req.width + border, req.height + border)
 
-class CaribouWindowDocked(CaribouWindow, 
-                          animation.AnimatedWindowBase,
-                          opacity.ProximityWindowBase):
+class CaribouWindowDocked(CaribouWindow):
     __gtype_name__ = "CaribouWindowDocked"
     
     def __init__(self, text_entry_mech):
@@ -190,9 +249,6 @@ class CaribouWindowDocked(CaribouWindow,
             xgravitate=CaribouWindowPlacement.INSIDE)
 
         CaribouWindow.__init__(self, text_entry_mech, placement)
-        animation.AnimatedWindowBase.__init__(self)
-        opacity.ProximityWindowBase.__init__(
-            self, min_alpha=0.5, max_alpha=0.8)
 
         self.connect('map-event', self.__onmapped)
 
@@ -201,16 +257,12 @@ class CaribouWindowDocked(CaribouWindow,
 
     def _roll_in(self):
         x, y = self.get_position()
-        self.move(x + self.allocation.width, y)
+        self.move(x + self.get_allocated_width(), y)
         return self.animated_move(x, y)
 
     def _roll_out(self):
         x, y = self.get_position()
-        return self.animated_move(x + self.allocation.width, y)
-
-    def hide_all(self):
-        animation = self._roll_out()
-        animation.connect('completed', lambda x: CaribouWindow.hide_all(self)) 
+        return self.animated_move(x + self.get_allocated_width(), y)
 
     def hide(self):
         animation = self._roll_out()
@@ -227,15 +279,13 @@ class CaribouWindowEntry(CaribouWindow):
             xgravitate=CaribouWindowPlacement.INSIDE,
             ygravitate=CaribouWindowPlacement.OUTSIDE)
 
-        CaribouWindow.__init__(self, text_entry_mech, placement, min_alpha=0.075,
-                               max_alpha=0.8)
+        CaribouWindow.__init__(self, text_entry_mech, placement)
 
 
     def _calculate_axis(self, axis_placement, root_bbox):
         offset = CaribouWindow._calculate_axis(self, axis_placement, root_bbox)
-
         if axis_placement.axis == 'y':
-            if offset + self.allocation.height > root_bbox.height + root_bbox.y:
+            if offset + self.get_allocated_height() > root_bbox.height + root_bbox.y:
                 new_axis_placement = axis_placement.copy(align=CaribouWindowPlacement.START)
                 offset = CaribouWindow._calculate_axis(self, new_axis_placement, root_bbox)
 
@@ -266,17 +316,20 @@ class CaribouWindowPlacement(object):
                                   stickto or self.stickto,
                                   gravitate or self.gravitate)
 
-        def get_offset(self, bbox):
-            return bbox.x if self.axis == 'x' else bbox.y
+        def get_offset(self, x, y):
+            return x if self.axis == 'x' else y
 
-        def get_length(self, bbox):
-            return bbox.width if self.axis == 'x' else bbox.height
+        def get_length(self, width, height):
+            return width if self.axis == 'x' else height
 
         def adjust_to_bounds(self, root_bbox, child_bbox):
-            child_vector_start = self.get_offset(child_bbox)
-            child_vector_end = self.get_length(child_bbox) + child_vector_start
-            root_vector_start = self.get_offset(root_bbox)
-            root_vector_end = self.get_length(root_bbox) + root_vector_start
+            child_vector_start = self.get_offset(child_bbox.x, child_bbox.y)
+            child_vector_end = \
+                self.get_length(child_bbox.width, child_bbox.height) + \
+                child_vector_start
+            root_vector_start = self.get_offset(root_bbox.x, root_bbox.y)
+            root_vector_end = self.get_length(
+                root_bbox.width, root_bbox.height) + root_vector_start
 
             if root_vector_end < child_vector_end:
                 return root_vector_end - child_vector_end
@@ -299,3 +352,23 @@ class CaribouWindowPlacement(object):
                                      ystickto or self.CURSOR,
                                      ygravitate or self.OUTSIDE)
 
+
+class Rectangle(object):
+    def __init__(self, x=0, y=0, width=0, height=0):
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+
+if __name__ == "__main__":
+    import keyboard
+    import signal
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
+
+    w = CaribouWindowDocked(keyboard.CaribouKeyboard())
+    w.show_all()
+
+    try:
+        Gtk.main()
+    except KeyboardInterrupt:
+        Gtk.main_quit()

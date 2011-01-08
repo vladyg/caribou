@@ -1,4 +1,5 @@
 import gobject
+from gi.repository import GConf
 
 GCONF_DIR="/apps/caribou/osk/"
 
@@ -36,7 +37,6 @@ class Setting(gobject.GObject):
         self._sensitive = sensitive
         self.emit('sensitivity-changed', sensitive)
 
-
     def __len__(self):
         return len(self.children)
 
@@ -56,7 +56,7 @@ class SettingsGroup(Setting):
     pass
 
 class ValueSetting(Setting):
-    gconf_type = ''
+    gconf_type = GConf.ValueType.INVALID
     entry_type=ENTRY_DEFAULT
     def __init__(self, name, label, default, short_desc="", long_desc="",
                  allowed=[], entry_type=ENTRY_DEFAULT, sensitive=None,
@@ -80,7 +80,7 @@ class ValueSetting(Setting):
 
     @value.setter
     def value(self, val):
-        _val = self.convert_value(val)
+        _val = self.convert_value(self._from_gconf_value(val))
         if self.allowed and _val not in [a for a, b in self.allowed]:
             raise ValueError, "'%s' not a valid value" % _val
         self._value = _val
@@ -98,8 +98,32 @@ class ValueSetting(Setting):
     def gconf_default(self):
         return self.default
 
+    def set_gconf_value(self, val):
+        if val.type == GConf.ValueType.BOOL:
+            return val.set_bool(self.value)
+        if val.type == GConf.ValueType.FLOAT:
+            return val.set_float(self.value)
+        if val.type == GConf.ValueType.INT:
+            return val.set_int(self.value)
+        if val.type == GConf.ValueType.STRING:
+            return val.set_string(self.value)
+
+    def _from_gconf_value(self, val):
+        if not isinstance(val, GConf.Value):
+            return val
+        if val.type == GConf.ValueType.BOOL:
+            return val.get_bool()
+        if val.type == GConf.ValueType.FLOAT:
+            return val.get_float()
+        if val.type == GConf.ValueType.INT:
+            return val.get_int()
+        if val.type == GConf.ValueType.STRING:
+            return val.get_string()
+
+        return val.to_string()
+
 class BooleanSetting(ValueSetting):
-    gconf_type = 'boolean'
+    gconf_type = GConf.ValueType.BOOL
     entry_type = ENTRY_CHECKBOX
     def convert_value(self, val):
         # Almost anything could be a boolean.
@@ -110,7 +134,7 @@ class BooleanSetting(ValueSetting):
         str(self.default).lower()
 
 class IntegerSetting(ValueSetting):
-    gconf_type = 'int'
+    gconf_type = GConf.ValueType.INT
     entry_type = ENTRY_SPIN
     def __init__(self, *args, **kwargs):
         self.min = kwargs.pop('min', gobject.G_MININT)
@@ -121,7 +145,7 @@ class IntegerSetting(ValueSetting):
         return int(val)
 
 class FloatSetting(ValueSetting):
-    gconf_type = 'float'
+    gconf_type = GConf.ValueType.FLOAT
     entry_type = ENTRY_SPIN
     def __init__(self, *args, **kwargs):
         self.min = kwargs.pop('min', gobject.G_MINFLOAT)
@@ -132,7 +156,7 @@ class FloatSetting(ValueSetting):
         return float(val)
 
 class StringSetting(ValueSetting):
-    gconf_type = 'string'
+    gconf_type = GConf.ValueType.STRING
     def convert_value(self, val):
         return str(val)
 
