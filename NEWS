@@ -1,4 +1,28 @@
 =============
+Version 0.1.7
+=============
+
+What's New
+==========
+- Ported to GTK3 and PyGI. Yikes!
+- New Japanese keyboard. Thanks Jiro Matsuzawa!
+- Many bugs fixed during the porting process that involved a lot of
+  rewriting code.
+- Many bugs introduced during the porting process that involved a lot of
+  rewriting code.
+
+New And Updated Translations
+============================
+- Christian Kirbach (de)
+- Daniel Mustieles (es)
+- Claude Paroz (fr)
+- Gabor Kelemen (hu)
+- Hugo Vaz Sampaio (pt_BR)
+- Andrej Žnidaršič (sl)
+- Daniel Nylander (sv)
+- lainme (zh_CN)
+
+=============
 Version 0.1.6
 =============
 

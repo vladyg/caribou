@@ -1,4 +1,4 @@
-Caribou 0.1.5
+Caribou 0.1.7
 
 Description
 ===========
@@ -9,10 +9,3 @@ pointer users.
 Features
 ========
 A configurable on screen keyboard with scanning mode.
-
-Requirements
-============
-
-- pygtk >= 2.16
-- pyclutter >= 1.0
-- python-virtkey >= 0.50
