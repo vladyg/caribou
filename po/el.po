@@ -2,13 +2,14 @@
 # Copyright (C) 2010 Gnome Project
 # This file is distributed under the same license as the Caribou package.
 # Pierros Papadeas <ppapadeas@gmail.com>, 2010
+# Kostas Papadimas <pkst@gnome.org>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-13 18:04+0300\n"
-"PO-Revision-Date: 2010-08-13 18:04+0200\n"
+"POT-Creation-Date: 2011-01-13 21:11+0200\n"
+"PO-Revision-Date: 2010-12-02 22:24+0200\n"
 "Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
 "Language-Team: el Greek <team@gnome.gr>\n"
 "Language: \n"
@@ -16,47 +17,238 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../caribou/ui/main.py:134
+#: ../caribou/ui/main.py:149
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "ΠΡΟΣΟΧΗ - Caribou: μη διαχειρίσιμο, επεξεργάσιμο στοιχείο ελέγχου:"
 
-#: ../data/caribou-prefs.ui.h:1
-msgid "Caribou Preferences"
-msgstr "Επιλογές Caribou"
+#: ../caribou/common/settings.py:33 ../caribou/common/settings.py:90
+#, fuzzy
+msgid "Keyboard"
+msgstr "_Διάταξη πληκτρολόγιου:"
 
-#: ../data/caribou-prefs.ui.h:2
-msgid "Colors"
-msgstr "Χρώματα"
-
-#: ../data/caribou-prefs.ui.h:3
+#: ../caribou/common/settings.py:34 ../caribou/common/settings.py:72
 msgid "General"
 msgstr "Γενικά"
 
-#: ../data/caribou-prefs.ui.h:4
-msgid "Key _size:"
-msgstr "_Μέγεθος πλήκτρων:"
-
-#: ../data/caribou-prefs.ui.h:5
-msgid "Key s_pacing:"
-msgstr "_Απόσταση πλήκτρων"
-
-#: ../data/caribou-prefs.ui.h:6
-msgid "Keyboard _layout:"
+#: ../caribou/common/settings.py:36
+#, fuzzy
+msgid "Keyboard layout"
 msgstr "_Διάταξη πληκτρολόγιου:"
 
-#: ../data/caribou-prefs.ui.h:7
-msgid "Keys"
-msgstr "Πλήκτρα"
+#: ../caribou/common/settings.py:37
+msgid "The layout Caribou should use."
+msgstr ""
 
-#: ../data/caribou-prefs.ui.h:8
-msgid "Mouse over:"
-msgstr "Αιώρηση ποντικιού:"
+#: ../caribou/common/settings.py:38
+msgid ""
+"The layout should be in the data directory of Caribou (usually /usr/share/"
+"caribou/keyboards) and should be a .xml or .json file."
+msgstr ""
 
-#: ../data/caribou-prefs.ui.h:9
-msgid "Normal state:"
+#: ../caribou/common/settings.py:42 ../caribou/common/settings.py:112
+#, fuzzy
+msgid "Color"
+msgstr "Χρώματα"
+
+#: ../caribou/common/settings.py:44
+msgid "Use system theme"
+msgstr ""
+
+#: ../caribou/common/settings.py:45
+msgid "Use the default theme colors"
+msgstr ""
+
+#: ../caribou/common/settings.py:49
+#, fuzzy
+msgid "Normal state"
 msgstr "Φυσιολογική κατάσταση"
 
-#: ../data/caribou-prefs.ui.h:10
-msgid "_Test settings here:"
-msgstr "Δο_κιμή ρυθμίσεων εδώ:"
+#: ../caribou/common/settings.py:50
+msgid "Color of the keys when there is no event on them"
+msgstr ""
 
+#: ../caribou/common/settings.py:53
+#, fuzzy
+msgid "Mouse over"
+msgstr "Αιώρηση ποντικιού:"
+
+#: ../caribou/common/settings.py:54
+msgid "Color of the keys when the mouse goes over the key"
+msgstr ""
+
+#: ../caribou/common/settings.py:56
+msgid "Font and size"
+msgstr ""
+
+#: ../caribou/common/settings.py:58
+msgid "Use system fonts"
+msgstr ""
+
+#: ../caribou/common/settings.py:59
+msgid "Use the default system font for keyboard"
+msgstr ""
+
+#: ../caribou/common/settings.py:61
+#, fuzzy
+msgid "Key font"
+msgstr "Γραμματοσειρά πλήκτρων:"
+
+#: ../caribou/common/settings.py:62
+msgid "Custom font for keyboard"
+msgstr ""
+
+#: ../caribou/common/settings.py:65
+msgid "Scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:67
+msgid "Enable scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:68
+msgid "Enable switch scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:73
+msgid "Scanning mode"
+msgstr ""
+
+#: ../caribou/common/settings.py:75
+msgid "Scanning type, block or row"
+msgstr ""
+
+#: ../caribou/common/settings.py:76
+msgid "Block"
+msgstr ""
+
+#: ../caribou/common/settings.py:77
+msgid "Row"
+msgstr ""
+
+#: ../caribou/common/settings.py:78
+msgid "Step time"
+msgstr ""
+
+#: ../caribou/common/settings.py:79
+msgid "Time between key transitions"
+msgstr ""
+
+#: ../caribou/common/settings.py:82
+msgid "Reverse scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:83
+msgid "Scan in reverse order"
+msgstr ""
+
+#: ../caribou/common/settings.py:85
+msgid "Input"
+msgstr ""
+
+#: ../caribou/common/settings.py:86
+msgid "Switch device"
+msgstr ""
+
+#: ../caribou/common/settings.py:88
+msgid "Switch device, keyboard or mouse"
+msgstr ""
+
+#: ../caribou/common/settings.py:91
+#, fuzzy
+msgid "Mouse"
+msgstr "Αιώρηση ποντικιού:"
+
+#: ../caribou/common/settings.py:93
+msgid "Switch key"
+msgstr ""
+
+#: ../caribou/common/settings.py:96
+msgid "Key to use with scanning mode"
+msgstr ""
+
+#: ../caribou/common/settings.py:98
+msgid "Right shift"
+msgstr ""
+
+#: ../caribou/common/settings.py:99
+msgid "Left shift"
+msgstr ""
+
+#: ../caribou/common/settings.py:100
+msgid "Alt Gr"
+msgstr ""
+
+#: ../caribou/common/settings.py:101
+msgid "Num lock"
+msgstr ""
+
+#: ../caribou/common/settings.py:102
+msgid "Switch button"
+msgstr ""
+
+#: ../caribou/common/settings.py:105
+msgid "Mouse button to use in the scanning mode"
+msgstr ""
+
+#: ../caribou/common/settings.py:107
+msgid "Button 1"
+msgstr ""
+
+#: ../caribou/common/settings.py:108
+msgid "Button 2"
+msgstr ""
+
+#: ../caribou/common/settings.py:109
+msgid "Button 3"
+msgstr ""
+
+#: ../caribou/common/settings.py:113
+msgid "Block color"
+msgstr ""
+
+#: ../caribou/common/settings.py:114
+msgid "Color of block scans"
+msgstr ""
+
+#: ../caribou/common/settings.py:115
+msgid "Row color"
+msgstr ""
+
+#: ../caribou/common/settings.py:116
+msgid "Color of row scans"
+msgstr ""
+
+#: ../caribou/common/settings.py:117
+msgid "Key color"
+msgstr ""
+
+#: ../caribou/common/settings.py:118
+msgid "Color of key scans"
+msgstr ""
+
+#: ../caribou/common/settings.py:120
+msgid "Cancel color"
+msgstr ""
+
+#: ../caribou/common/settings.py:121
+msgid "Color of cancel scan"
+msgstr ""
+
+#: ../caribou/ui/preferences_window.py:51
+msgid "Caribou Preferences"
+msgstr "Επιλογές Caribou"
+
+#~ msgid "Keys"
+#~ msgstr "Πλήκτρα"
+
+#~ msgid "Use Defaults"
+#~ msgstr "Χρήση προ επιλογών"
+
+#~ msgid "_Test settings here:"
+#~ msgstr "Δο_κιμή ρυθμίσεων εδώ:"
+
+#~ msgid "Key _size:"
+#~ msgstr "_Μέγεθος πλήκτρων:"
+
+#~ msgid "Key s_pacing:"
+#~ msgstr "_Απόσταση πλήκτρων"
