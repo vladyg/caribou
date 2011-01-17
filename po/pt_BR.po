@@ -9,36 +9,36 @@ msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&component=default\n"
-"POT-Creation-Date: 2010-12-20 01:29+0000\n"
-"PO-Revision-Date: 2010-12-25 10:41-0200\n"
-"Last-Translator: Hugo Vaz Sampaio <hvazsampaio@gmail.com>\n"
+"POT-Creation-Date: 2011-01-10 00:20+0000\n"
+"PO-Revision-Date: 2011-01-12 13:44-0300\n"
+"Last-Translator: Mateus Zenaide <matzenh@gmail.com>\n"
 "Language-Team: Português <gnome-pt_br-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
-#: ../caribou/ui/main.py:135
+#: ../caribou/ui/main.py:149
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "Aviso – Caribou: widget editável não-manipulado:"
 
-#: ../caribou/common/settings.py:32 ../caribou/common/settings.py:89
+#: ../caribou/common/settings.py:33 ../caribou/common/settings.py:90
 msgid "Keyboard"
 msgstr "Teclado"
 
-#: ../caribou/common/settings.py:33
+#: ../caribou/common/settings.py:34 ../caribou/common/settings.py:72
 msgid "General"
 msgstr "Geral"
 
-#: ../caribou/common/settings.py:35
+#: ../caribou/common/settings.py:36
 msgid "Keyboard layout"
 msgstr "Layout do teclado"
 
-#: ../caribou/common/settings.py:36
+#: ../caribou/common/settings.py:37
 msgid "The layout Caribou should use."
 msgstr "O layout que o Caribou deve usar."
 
-#: ../caribou/common/settings.py:37
+#: ../caribou/common/settings.py:38
 msgid ""
 "The layout should be in the data directory of Caribou (usually /usr/share/"
 "caribou/keyboards) and should be a .xml or .json file."
@@ -46,183 +46,191 @@ msgstr ""
 "O layout deve estar no diretório de dados do Caribou (geralmente /usr/share/"
 "caribou/keyboards) e deve ser um arquivo .xml ou .json."
 
-#: ../caribou/common/settings.py:41
+#: ../caribou/common/settings.py:42 ../caribou/common/settings.py:112
 msgid "Color"
 msgstr "Cor"
 
-#: ../caribou/common/settings.py:43
+#: ../caribou/common/settings.py:44
 msgid "Use system theme"
 msgstr "Usar tema do sistema"
 
-#: ../caribou/common/settings.py:44
+#: ../caribou/common/settings.py:45
 msgid "Use the default theme colors"
 msgstr "Usar o tema de cores padrão"
 
-#: ../caribou/common/settings.py:48
+#: ../caribou/common/settings.py:49
 msgid "Normal state"
 msgstr "Estado normal"
 
-#: ../caribou/common/settings.py:49
+#: ../caribou/common/settings.py:50
 msgid "Color of the keys when there is no event on them"
 msgstr "Cores das teclas quando não existe evento nelas"
 
-#: ../caribou/common/settings.py:52
+#: ../caribou/common/settings.py:53
 msgid "Mouse over"
 msgstr "Mouse sobre"
 
-#: ../caribou/common/settings.py:53
+#: ../caribou/common/settings.py:54
 msgid "Color of the keys when the mouse goes over the key"
 msgstr "Cor das teclas quando o mouse estiver sobre a tecla"
 
-#: ../caribou/common/settings.py:55
+#: ../caribou/common/settings.py:56
 msgid "Font and size"
 msgstr "Fonte e tamanho"
 
-#: ../caribou/common/settings.py:57
+#: ../caribou/common/settings.py:58
 msgid "Use system fonts"
 msgstr "Usar fontes do sistema"
 
-#: ../caribou/common/settings.py:58
+#: ../caribou/common/settings.py:59
 msgid "Use the default system font for keyboard"
 msgstr "Usar a fonte padrão do sistema para o teclado"
 
-#: ../caribou/common/settings.py:60
+#: ../caribou/common/settings.py:61
 msgid "Key font"
 msgstr "Fonte da tecla"
 
-#: ../caribou/common/settings.py:61
+#: ../caribou/common/settings.py:62
 msgid "Custom font for keyboard"
 msgstr "Fonte personalizada para teclado"
 
-#: ../caribou/common/settings.py:66
-msgid "Enable scanning"
-msgstr "Habilitar digitalização"
+#: ../caribou/common/settings.py:65
+msgid "Scanning"
+msgstr "Detectando"
 
 #: ../caribou/common/settings.py:67
+msgid "Enable scanning"
+msgstr "Habilitar detecção"
+
+#: ../caribou/common/settings.py:68
 msgid "Enable switch scanning"
-msgstr "Habilitar opção de digitalização"
+msgstr "Habilitar opção de detecção"
 
-#: ../caribou/common/settings.py:72
+#: ../caribou/common/settings.py:73
 msgid "Scanning mode"
-msgstr "Modo digitalização"
-
-#: ../caribou/common/settings.py:74
-msgid "Scanning type, block or row"
-msgstr "Digitalizar tipo, bloco ou fila"
+msgstr "Modo de detecção"
 
 #: ../caribou/common/settings.py:75
+msgid "Scanning type, block or row"
+msgstr "Detectar tipo, bloco ou fila"
+
+#: ../caribou/common/settings.py:76
 msgid "Block"
 msgstr "Bloquear"
 
-#: ../caribou/common/settings.py:76
+#: ../caribou/common/settings.py:77
 msgid "Row"
 msgstr "Fila"
 
-#: ../caribou/common/settings.py:77
+#: ../caribou/common/settings.py:78
 msgid "Step time"
 msgstr "Tempo da etapa"
 
-#: ../caribou/common/settings.py:78
+#: ../caribou/common/settings.py:79
 msgid "Time between key transitions"
 msgstr "Tempo entre teclas de transição"
 
-#: ../caribou/common/settings.py:81
+#: ../caribou/common/settings.py:82
 msgid "Reverse scanning"
 msgstr "digitalização reversa"
 
-#: ../caribou/common/settings.py:82
+#: ../caribou/common/settings.py:83
 msgid "Scan in reverse order"
 msgstr "Digitalizar na ordem reversa"
 
 #: ../caribou/common/settings.py:85
+msgid "Input"
+msgstr "Entrada"
+
+#: ../caribou/common/settings.py:86
 msgid "Switch device"
 msgstr "Trocar dispositivo"
 
-#: ../caribou/common/settings.py:87
+#: ../caribou/common/settings.py:88
 msgid "Switch device, keyboard or mouse"
 msgstr "Trocar dispositivo, teclado ou mouse"
 
-#: ../caribou/common/settings.py:90
+#: ../caribou/common/settings.py:91
 msgid "Mouse"
 msgstr "Mouse"
 
-#: ../caribou/common/settings.py:95
+#: ../caribou/common/settings.py:93
+msgid "Switch key"
+msgstr "Alternar tecla"
+
+#: ../caribou/common/settings.py:96
 msgid "Key to use with scanning mode"
 msgstr "Tecla para usar com modo de digitalização"
 
-#: ../caribou/common/settings.py:97
+#: ../caribou/common/settings.py:98
 msgid "Right shift"
 msgstr "Shift direito"
 
-#: ../caribou/common/settings.py:98
+#: ../caribou/common/settings.py:99
 msgid "Left shift"
 msgstr "Shift esquerdo"
 
-#: ../caribou/common/settings.py:99
+#: ../caribou/common/settings.py:100
 msgid "Alt Gr"
 msgstr "Alt Gr"
 
-#: ../caribou/common/settings.py:100
+#: ../caribou/common/settings.py:101
 msgid "Num lock"
 msgstr "Num lock"
 
-#: ../caribou/common/settings.py:104
+#: ../caribou/common/settings.py:102
+msgid "Switch button"
+msgstr "Alternar botão"
+
+#: ../caribou/common/settings.py:105
 msgid "Mouse button to use in the scanning mode"
 msgstr "Botão do mouse para usar no modo digitalização"
 
-#: ../caribou/common/settings.py:106
+#: ../caribou/common/settings.py:107
 msgid "Button 1"
 msgstr "Botão 1"
 
-#: ../caribou/common/settings.py:107
+#: ../caribou/common/settings.py:108
 msgid "Button 2"
 msgstr "Botão 2"
 
-#: ../caribou/common/settings.py:108
+#: ../caribou/common/settings.py:109
 msgid "Button 3"
 msgstr "Botão 3"
 
-#: ../caribou/common/settings.py:112
+#: ../caribou/common/settings.py:113
 msgid "Block color"
 msgstr "Cor do bloco"
 
-#: ../caribou/common/settings.py:113
+#: ../caribou/common/settings.py:114
 msgid "Color of block scans"
 msgstr "Cor do bloco verificador"
 
-#: ../caribou/common/settings.py:114
+#: ../caribou/common/settings.py:115
 msgid "Row color"
 msgstr "Cor da fila"
 
-#: ../caribou/common/settings.py:115
+#: ../caribou/common/settings.py:116
 msgid "Color of row scans"
 msgstr "Cor da fila verificadora"
 
-#: ../caribou/common/settings.py:116
+#: ../caribou/common/settings.py:117
 msgid "Key color"
 msgstr "Cor da tecla"
 
-#: ../caribou/common/settings.py:117
+#: ../caribou/common/settings.py:118
 msgid "Color of key scans"
 msgstr "Cor da tecla verificadora"
 
-#: ../caribou/common/settings.py:119
+#: ../caribou/common/settings.py:120
 msgid "Cancel color"
 msgstr "Cancelar cor"
 
-#: ../caribou/common/settings.py:120
+#: ../caribou/common/settings.py:121
 msgid "Color of cancel scan"
 msgstr "Cor do cancelamento da digitalização"
 
-#: ../caribou/ui/preferences_window.py:50
+#: ../caribou/ui/preferences_window.py:51
 msgid "Caribou Preferences"
 msgstr "Preferências do Caribou"
 
-#~ msgid "Keys"
-#~ msgstr "Teclas"
-
-#~ msgid "Use Defaults"
-#~ msgstr "Usar padrões"
-
-#~ msgid "_Test settings here:"
-#~ msgstr "_Teste suas configurações aqui:"
