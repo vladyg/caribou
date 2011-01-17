@@ -222,6 +222,8 @@ class CaribouWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
             if os.path.exists(xml_path):
                 return xml_path
 
+	raise Exception("Could not load keyboard %s" % conf_file_path)
+
 
     def show_all(self):
         Gtk.Window.show_all(self)
