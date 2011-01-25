@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-27 08:43+0200\n"
-"PO-Revision-Date: 2010-09-27 08:44+0200\n"
+"POT-Creation-Date: 2011-01-26 00:05+0200\n"
+"PO-Revision-Date: 2011-01-26 00:12+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Gezer <sh.yaron@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -19,49 +19,230 @@ msgstr ""
 "X-Poedit-Country: ISRAEL\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: ../caribou/ui/main.py:134
+#: ../caribou/ui/main.py:149
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "WARNING - Caribou: unhandled editable widget:"
 
-#: ../data/caribou-prefs.ui.h:1
-msgid "Caribou Preferences"
-msgstr "העדפות Cairbou"
+#: ../caribou/common/settings.py:33 ../caribou/common/settings.py:90
+msgid "Keyboard"
+msgstr "מקלדת"
 
-#: ../data/caribou-prefs.ui.h:2
-msgid "Colors"
-msgstr "צבעים"
-
-#: ../data/caribou-prefs.ui.h:3
+#: ../caribou/common/settings.py:34 ../caribou/common/settings.py:72
 msgid "General"
 msgstr "כללי"
 
-#: ../data/caribou-prefs.ui.h:4
-msgid "Key font:"
-msgstr "גופן המקש:"
+#: ../caribou/common/settings.py:36
+msgid "Keyboard layout"
+msgstr "פריסת המקלדת"
 
-#: ../data/caribou-prefs.ui.h:5
-msgid "Keyboard _layout:"
-msgstr "_פריסת המקלדת:"
+#: ../caribou/common/settings.py:37
+msgid "The layout Caribou should use."
+msgstr "הפריסה בה Caribou תעשה שימוש."
 
-#: ../data/caribou-prefs.ui.h:6
-msgid "Keys"
-msgstr "מקשים"
+#: ../caribou/common/settings.py:38
+msgid ""
+"The layout should be in the data directory of Caribou (usually /usr/share/"
+"caribou/keyboards) and should be a .xml or .json file."
+msgstr ""
+"פריסה זו אמורה להיות בתיקיית הנתונים של Caribou (על פי רוב תחת ‎/usr/share/"
+"caribou/keyboards) ועליה להיות קובץ ‎.xml או ‎.json."
 
-#: ../data/caribou-prefs.ui.h:7
-msgid "Mouse over:"
-msgstr "מעבר העכבר:"
+#: ../caribou/common/settings.py:42 ../caribou/common/settings.py:112
+msgid "Color"
+msgstr "צבע"
 
-#: ../data/caribou-prefs.ui.h:8
-msgid "Normal state:"
-msgstr "מצב רגיל:"
+#: ../caribou/common/settings.py:44
+msgid "Use system theme"
+msgstr "שימוש בעיצוב המערכת"
 
-#: ../data/caribou-prefs.ui.h:9
-msgid "Use Defaults"
-msgstr "שימוש בבררות המחדל"
+#: ../caribou/common/settings.py:45
+msgid "Use the default theme colors"
+msgstr "שימוש בצבעי ערכת בררת המחדל"
 
-#: ../data/caribou-prefs.ui.h:10
-msgid "_Test settings here:"
-msgstr "_בדיקת ההגדרות להלן:"
+#: ../caribou/common/settings.py:49
+msgid "Normal state"
+msgstr "מצב רגיל"
+
+#: ../caribou/common/settings.py:50
+msgid "Color of the keys when there is no event on them"
+msgstr "צבע המקשים כאשר אינם חלק מאירוע"
+
+#: ../caribou/common/settings.py:53
+msgid "Mouse over"
+msgstr "מעבר העכבר"
+
+#: ../caribou/common/settings.py:54
+msgid "Color of the keys when the mouse goes over the key"
+msgstr "צבע המקשים כאשר העכבר עובר מעליהם"
+
+#: ../caribou/common/settings.py:56
+msgid "Font and size"
+msgstr "גופן וגודל"
+
+#: ../caribou/common/settings.py:58
+msgid "Use system fonts"
+msgstr "שימוש בגופנים המערכת"
+
+#: ../caribou/common/settings.py:59
+msgid "Use the default system font for keyboard"
+msgstr "שימוש בגופן בררת המחדל למקלדת"
+
+#: ../caribou/common/settings.py:61
+msgid "Key font"
+msgstr "גופן המקשים"
+
+#: ../caribou/common/settings.py:62
+msgid "Custom font for keyboard"
+msgstr "גופן מותאם אישית למקלדת"
+
+#: ../caribou/common/settings.py:65
+msgid "Scanning"
+msgstr "סריקה"
+
+#: ../caribou/common/settings.py:67
+msgid "Enable scanning"
+msgstr "הפעלת סריקה"
+
+#: ../caribou/common/settings.py:68
+msgid "Enable switch scanning"
+msgstr "הפעלת החלפת סריקה"
+
+#: ../caribou/common/settings.py:73
+msgid "Scanning mode"
+msgstr "מצב סריקה"
+
+#: ../caribou/common/settings.py:75
+msgid "Scanning type, block or row"
+msgstr "סוג הסריקה, אזורית או שורה"
+
+#: ../caribou/common/settings.py:76
+msgid "Block"
+msgstr "אזורית"
+
+#: ../caribou/common/settings.py:77
+msgid "Row"
+msgstr "שורה"
+
+#: ../caribou/common/settings.py:78
+msgid "Step time"
+msgstr "זמן הצעד"
+
+#: ../caribou/common/settings.py:79
+msgid "Time between key transitions"
+msgstr "הזמן בין מעברוני המקשים"
+
+#: ../caribou/common/settings.py:82
+msgid "Reverse scanning"
+msgstr "סריקה הפוכה"
+
+#: ../caribou/common/settings.py:83
+msgid "Scan in reverse order"
+msgstr "סריקה בסדר הפוך"
+
+#: ../caribou/common/settings.py:85
+msgid "Input"
+msgstr "קלט"
+
+#: ../caribou/common/settings.py:86
+msgid "Switch device"
+msgstr "התקן החלפה"
+
+#: ../caribou/common/settings.py:88
+msgid "Switch device, keyboard or mouse"
+msgstr "התקן החלפה, מקלדת או עכבר"
+
+#: ../caribou/common/settings.py:91
+msgid "Mouse"
+msgstr "עכבר"
+
+#: ../caribou/common/settings.py:93
+msgid "Switch key"
+msgstr "מקש החלפה"
+
+#: ../caribou/common/settings.py:96
+msgid "Key to use with scanning mode"
+msgstr "מקש לשימוש עם מצב סריקה"
+
+#: ../caribou/common/settings.py:98
+msgid "Right shift"
+msgstr "Shift ימני"
+
+#: ../caribou/common/settings.py:99
+msgid "Left shift"
+msgstr "Shift שמאלי"
+
+#: ../caribou/common/settings.py:100
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+#: ../caribou/common/settings.py:101
+msgid "Num lock"
+msgstr "Num lock"
+
+#: ../caribou/common/settings.py:102
+msgid "Switch button"
+msgstr "לחצן החלפה"
+
+#: ../caribou/common/settings.py:105
+msgid "Mouse button to use in the scanning mode"
+msgstr "לחצן החלפה לשימוש במצב סריקה"
+
+#: ../caribou/common/settings.py:107
+msgid "Button 1"
+msgstr "לחצן 1"
+
+#: ../caribou/common/settings.py:108
+msgid "Button 2"
+msgstr "לחצן 2"
+
+#: ../caribou/common/settings.py:109
+msgid "Button 3"
+msgstr "לחצן 3"
+
+#: ../caribou/common/settings.py:113
+msgid "Block color"
+msgstr "צבע האזור"
+
+#: ../caribou/common/settings.py:114
+msgid "Color of block scans"
+msgstr "צבע סריקות אזוריות"
+
+#: ../caribou/common/settings.py:115
+msgid "Row color"
+msgstr "צבע השורות"
+
+#: ../caribou/common/settings.py:116
+msgid "Color of row scans"
+msgstr "צבע סריקות שורות"
+
+#: ../caribou/common/settings.py:117
+msgid "Key color"
+msgstr "צבע מקשים"
+
+#: ../caribou/common/settings.py:118
+msgid "Color of key scans"
+msgstr "צבע סריקות מקשים"
+
+#: ../caribou/common/settings.py:120
+msgid "Cancel color"
+msgstr "צבע ביטול"
+
+#: ../caribou/common/settings.py:121
+msgid "Color of cancel scan"
+msgstr "צבע ביטול סריקה"
+
+#: ../caribou/ui/preferences_window.py:51
+msgid "Caribou Preferences"
+msgstr "העדפות Cairbou"
+
+#~ msgid "Keys"
+#~ msgstr "מקשים"
+
+#~ msgid "Use Defaults"
+#~ msgstr "שימוש בבררות המחדל"
+
+#~ msgid "_Test settings here:"
+#~ msgstr "_בדיקת ההגדרות להלן:"
 
 #~ msgid "Key _size:"
 #~ msgstr "_גודל המקשים:"
