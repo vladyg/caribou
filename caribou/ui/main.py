@@ -112,7 +112,7 @@ class Caribou:
     def on_focus(self, event):
         acc = event.source
         source_role = acc.getRole()
-        if pyatspi.STATE_EDITABLE in acc.getState().getStates() or \
+        if acc.getState().contains(pyatspi.STATE_EDITABLE) or \
                 source_role == pyatspi.ROLE_TERMINAL:
             if source_role in (pyatspi.ROLE_TEXT,
                                pyatspi.ROLE_PARAGRAPH,
