@@ -1,7 +1,7 @@
 import pyatspi
-from gi.repository import GConf
 from gi.repository import Gtk
 from gi.repository import Gdk
+from gi.repository import Gio
 
 from window import CaribouWindowEntry, Rectangle
 from keyboard import CaribouKeyboard
@@ -23,7 +23,6 @@ class Caribou:
         self.kb_factory = kb_factory
         kb = kb_factory()
         self.window = window_factory(kb)
-        self.client = GConf.Client.get_default()
         self._register_event_listeners()
         SettingsManager.layout.connect("value-changed",
                                        self._on_layout_changed)
@@ -68,10 +67,18 @@ class Caribou:
 
     def _get_a11y_enabled(self):
         try:
-            gconfc = GConf.Client.get_default()
-            atspi1 = gconfc.get_bool("/desktop/gnome/interface/accessibility")
-            atspi2 = gconfc.get_bool("/desktop/gnome/interface/accessibility2")
-            return atspi1 or atspi2
+            try:
+                settings = Gio.Settings('org.gnome.desktop.interface')
+                atspi = settings.get_boolean("toolkit-accessibility")
+                return atspi
+            except:
+                from gi.repository import GConf
+                gconfc = GConf.Client.get_default()
+                atspi1 = gconfc.get_bool(
+                    "/desktop/gnome/interface/accessibility")
+                atspi2 = gconfc.get_bool(
+                    "/desktop/gnome/interface/accessibility2")
+                return atspi1 or atspi2
         except:
             return False
 
