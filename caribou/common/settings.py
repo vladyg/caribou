@@ -124,15 +124,19 @@ settings = SettingsGroup("_top", "", [
         ])
 
 if __name__ == "__main__":
+    from gi.repository import GLib
+
     class SchemasMaker:
         def create_schemas(self):
             doc = xml.dom.minidom.Document()
-            gconfschemafile =  doc.createElement('gconfschemafile')
-            schemalist = doc.createElement('schemalist')
-            gconfschemafile.appendChild(schemalist)
-            self._create_schema(settings, doc, schemalist)
+            schemafile =  doc.createElement('schemalist')
+            schema = doc.createElement('schema')
+            schema.setAttribute("id", "org.gnome.caribou")
+            schema.setAttribute("path", "/apps/caribou/osk/")
+            schemafile.appendChild(schema)
+            self._create_schema(settings, doc, schema)
 
-            self._pretty_xml(gconfschemafile)
+            self._pretty_xml(schemafile)
 
         def _attribs(self, e):
             if not e.attributes.items():
@@ -159,21 +163,16 @@ if __name__ == "__main__":
                 element.appendChild(el)
 
         def _create_schema(self, setting, doc, schemalist):
-            if hasattr(setting, 'gconf_key'):
-                schema = doc.createElement('schema')
-                schemalist.appendChild(schema)
+            if hasattr(setting, 'gsettings_key'):
+                key = doc.createElement('key')
+                key.setAttribute('name', setting.gsettings_key)
+                key.setAttribute('type', setting.variant_type)
+                schemalist.appendChild(key)
                 self._append_children_element_value_pairs(
-                    doc, schema, [('key', '/schemas' + setting.gconf_key),
-                                  ('applyto', setting.gconf_key),
-                                  ('owner', 'caribou'),
-                                  ('type', setting.gconf_type.value_nick),
-                                  ('default', setting.gconf_default)])
-                locale = doc.createElement('locale')
-                locale.setAttribute('name', 'C')
-                schema.appendChild(locale)
-                self._append_children_element_value_pairs(
-                    doc, locale, [('short', setting.short_desc),
-                                  ('long', setting.long_desc)])
+                    doc, key, [('default',
+                                getattr(setting.gvariant, "print")(False)),
+                               ('_summary', setting.short_desc),
+                               ('_description', setting.long_desc)])
 
             for s in setting:
                 self._create_schema(s, doc, schemalist)

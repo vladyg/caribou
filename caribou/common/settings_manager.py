@@ -62,7 +62,6 @@ class _SettingsManager(object):
 
     def _on_value_changed(self, setting, value):
         if value != self.gconf_client.get(setting.gconf_key):
-            print setting.gconf_type
             val = GConf.Value.new(setting.gconf_type)
             setting.set_gconf_value(val)
             self.gconf_client.set(setting.gconf_key, val)

@@ -24,3 +24,4 @@ data/caribou.desktop
 po/.intltool-merge-cache
 data/caribou.schemas
 data/caribou.schemas.in
+data/org.gnome.caribou.gschema.*
