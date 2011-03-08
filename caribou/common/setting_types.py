@@ -71,6 +71,7 @@ class ValueSetting(Setting):
         self.default = default
         self.insensitive_when_false = insensitive_when_false
         self.insensitive_when_true = insensitive_when_true
+        self.hush = False
 
     @property
     def value(self):
@@ -78,11 +79,12 @@ class ValueSetting(Setting):
 
     @value.setter
     def value(self, val):
-        _val = self.convert_value(val.unpack())
+        _val = self.convert_value(val)
         if self.allowed and _val not in [a for a, b in self.allowed]:
             raise ValueError, "'%s' not a valid value" % _val
         self._value = _val
-        self.emit('value-changed', _val)
+        if not self.hush:
+            self.emit('value-changed', _val)
 
     @property
     def gsettings_key(self):

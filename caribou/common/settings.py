@@ -5,6 +5,8 @@ import caribou.common.const as const
 import caribou.ui.i18n
 import xml.dom.minidom
 
+GSETTINGS_SCHEMA = "org.gnome.caribou"
+
 try:
     import json
 except ImportError:
@@ -127,7 +129,7 @@ if __name__ == "__main__":
             doc = xml.dom.minidom.Document()
             schemafile =  doc.createElement('schemalist')
             schema = doc.createElement('schema')
-            schema.setAttribute("id", "org.gnome.caribou")
+            schema.setAttribute("id", GSETTINGS_SCHEMA)
             schema.setAttribute("path", "/apps/caribou/osk/")
             schemafile.appendChild(schema)
             self._create_schema(settings, doc, schema)
