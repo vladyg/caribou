@@ -13,10 +13,6 @@ else:
     HAS_JSON = True
 
 def fetch_keyboards():
-    if True:
-        const.KEYBOARDS_DIR = os.path.abspath(
-            os.path.join(os.path.dirname(__file__), '../../data/keyboards'))
-
     try:
         files = os.listdir(const.KEYBOARDS_DIR)
     except:

@@ -45,6 +45,9 @@ if os.path.dirname(__file__) != "@prefix@/bin":
     sys.path.insert(1, srcdir)
     import caribou.common
     import caribou.ui
+    caribou.data_path = os.path.abspath(os.path.join(os.path.dirname(__file__),
+                                                     "@top_srcdir@",
+                                                     "data"))
 else:
     import caribou.common
     import caribou.ui
