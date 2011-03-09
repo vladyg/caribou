@@ -59,7 +59,7 @@ class ScanMaster():
         self._ungrab_mouse_events()
 
         if self._last_block is not None:
-            self._multi_map(lambda x: x.reset_color(), self._last_block)
+            self._multi_map(lambda x: x.scan_highlight_clear(), self._last_block)
 
         if self._timer != 0:
             gobject.source_remove(self._timer)
@@ -154,25 +154,23 @@ class ScanMaster():
         if self._scan_path is None: return True
 
         if self._last_block is not None:
-            self._multi_map(lambda x: x.scan_highlight(None),
-                                       self._last_block)
+            self._multi_map(lambda x: x.scan_highlight_clear(), self._last_block)
 
         if SettingsManager.reverse_scanning.value:
             self._cancel, next_block = self._get_next_reverse_block()
         else:
             self._cancel, next_block = self._get_next_block()
 
-        color = SettingsManager.button_scanning_color.value
-
         if self._cancel:
-            color = SettingsManager.cancel_scanning_color.value
+            self._multi_map(lambda x: x.scan_highlight_cancel(), next_block)
         elif isinstance(next_block, list):
             if SettingsManager.scanning_type.value == ROW:
-                color = SettingsManager.row_scanning_color.value
+                self._multi_map(lambda x: x.scan_highlight_row(), next_block)
             else:
-                color = SettingsManager.block_scanning_color.value
+                self._multi_map(lambda x: x.scan_highlight_block(), next_block)
+        else:            
+            self._multi_map(lambda x: x.scan_highlight_key(), next_block)
 
-        self._multi_map(lambda x: x.scan_highlight(color), next_block)
         self._last_block = next_block
         return True
 
