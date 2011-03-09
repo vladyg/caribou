@@ -24,7 +24,6 @@ from caribou import data_path
 from opacity import ProximityWindowBase
 from caribou.common.settings_manager import SettingsManager
 
-from gi.repository import GConf
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import Clutter
@@ -32,7 +31,6 @@ import os
 import sys
 import gobject
 
-CARIBOU_GCONF_LAYOUT_KEY = '/apps/caribou/osk/layout'
 CARIBOU_LAYOUT_DIR = 'keyboards'
 
 Clutter.init("caribou")
@@ -62,7 +60,6 @@ class CaribouWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
         self._vbox.pack_start(text_entry_mech, True, True, 0)
 
         self.connect("size-allocate", lambda w, a: self._update_position())
-        self._gconf_client = GConf.Client.get_default()
 
         self._cursor_location = Rectangle()
         self._entry_location = Rectangle()
@@ -140,23 +137,26 @@ class CaribouWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
 
         root_bbox = Rectangle(*args)
 
-        current_screen = Gdk.Screen.get_default().get_number()
-        for panel in self._gconf_client.all_dirs('/apps/panel/toplevels'):
-            orientation = self._gconf_client.get_string(panel+'/orientation')
-            size = self._gconf_client.get_int(panel+'/size')
-            screen = self._gconf_client.get_int(panel+'/screen')
-            if screen != current_screen:
-                continue
-            if orientation == 'top':
-                root_bbox.y += size
-                root_bbox.height -= size
-            elif orientation == 'bottom':
-                root_bbox.height -= size
-            elif orientation == 'right':
-                root_bbox.x += size
-                root_bbox.width -= size
-            elif orientation == 'left':
-                root_bbox.x -= size
+        # TODO: Do whatever we need to do to place the keyboard correctly
+        # in GNOME Shell and Unity.
+        #
+        #current_screen = Gdk.Screen.get_default().get_number()
+        #for panel in self._gconf_client.all_dirs('/apps/panel/toplevels'):
+        #    orientation = self._gconf_client.get_string(panel+'/orientation')
+        #    size = self._gconf_client.get_int(panel+'/size')
+        #    screen = self._gconf_client.get_int(panel+'/screen')
+        #    if screen != current_screen:
+        #        continue
+        #    if orientation == 'top':
+        #        root_bbox.y += size
+        #        root_bbox.height -= size
+        #    elif orientation == 'bottom':
+        #        root_bbox.height -= size
+        #    elif orientation == 'right':
+        #        root_bbox.x += size
+        #        root_bbox.width -= size
+        #    elif orientation == 'left':
+        #        root_bbox.x -= size
         
         return root_bbox
 
