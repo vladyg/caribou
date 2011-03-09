@@ -90,9 +90,8 @@ class BaseKey(object):
             else:
                 self.set_label(self.label)
 
-        for name in ["normal_color", "mouse_over_color", "default_colors"]:
-            getattr(SettingsManager, name).connect("value-changed",
-                                                   self._colors_changed)
+        ctx = self.get_style_context()
+        ctx.add_class("caribou-keyboard-button")
 
         for name in ["default_font", "key_font"]:
             getattr(SettingsManager, name).connect("value-changed",
@@ -101,30 +100,26 @@ class BaseKey(object):
         if not SettingsManager.default_font.value:
             self._key_font_changed(None, None)
 
-        if not SettingsManager.default_colors.value:
-            self._colors_changed(None, None)
-
-    def _colors_changed(self, setting, value):
-        if SettingsManager.default_colors.value:
-            self._normal_color = None
-            self._mouse_over_color = None
-            self.reset_color()
-        else:
-            self._normal_color = SettingsManager.normal_color.value
-            self._mouse_over_color = SettingsManager.mouse_over_color.value
-            self.set_color(self._normal_color, self._mouse_over_color)
-
     def _key_font_changed(self, setting, value):
         if SettingsManager.default_font.value:
             self.reset_font()
         else:
             self.set_font(SettingsManager.key_font.value)
 
-    def scan_highlight(self, color):
-        if color is None:
-            self._colors_changed(None, None)
-        else:
-            self.set_color(color)
+    def scan_highlight_key(self):
+        raise NotImplemented
+
+    def scan_highlight_row(self):
+        raise NotImplemented
+
+    def scan_highlight_block(self):
+        raise NotImplemented
+
+    def scan_highlight_cancel(self):
+        raise NotImplemented
+
+    def scan_highlight_clear(self):
+        raise NotImplemented
 
     def _on_image_key_mapped(self, key):
         print
@@ -150,12 +145,6 @@ class BaseKey(object):
         raise NotImplemented
 
     def reset_font(self):
-        raise NotImplemented
-
-    def set_color(self, normal_color, mouse_over_color):
-        raise NotImplemented
-
-    def reset_color(self):
         raise NotImplemented
 
     def _get_value(self):
@@ -201,15 +190,29 @@ class Key(Gtk.Button, BaseKey):
             return
         label.modify_font(None)
 
-    def set_color(self, normal_color, mouse_over_color=None):
-        self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse(normal_color)[1])
-        if mouse_over_color:
-            self.modify_bg(Gtk.StateType.PRELIGHT,
-                           Gdk.color_parse(mouse_over_color)[1])
+    def _replace_scan_class_style(self, scan_class=None):
+        ctx = self.get_style_context()
+        for cls in ctx.list_classes():
+            if cls.startswith('caribou-scan'):
+                ctx.remove_class(cls)
+        if scan_class:
+            ctx.add_class(scan_class)
+        self.queue_draw()
 
-    def reset_color(self):
-        self.modify_bg(Gtk.StateType.NORMAL, None)
-        self.modify_bg(Gtk.StateType.PRELIGHT, None)
+    def scan_highlight_key(self):
+        self._replace_scan_class_style("caribou-scan-key")
+
+    def scan_highlight_row(self):
+        self._replace_scan_class_style("caribou-scan-row")
+
+    def scan_highlight_block(self):
+        self._replace_scan_class_style("caribou-scan-block")
+
+    def scan_highlight_cancel(self):
+        self._replace_scan_class_style("caribou-scan-cancel")
+
+    def scan_highlight_clear(self):
+        self._replace_scan_class_style()
 
 class ModifierKey(Gtk.ToggleButton, Key):
     pass
