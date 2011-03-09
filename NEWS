@@ -1,3 +1,24 @@
+==============
+Version 0.1.91
+==============
+
+What's New
+==========
+- Raise an error when no keyboard is loaded.
+- Make caribou startup automatically (Thanks Bastien Nocera!)
+- Use GTK3 CSS theming for custom colors.
+- Look if a11y is enabled in GSettings.
+- Port app preferences and schema to GSettings.
+
+New And Updated Translations
+============================
+- Khaled Hosny (ar)
+- Kostas Papadimas (el)
+- Claude Paroz (fr)
+- marcoslans (gl)
+- Yaron Shahrabani (he)
+- Mateus Zenaide (pt_BR)
+
 =============
 Version 0.1.7
 =============
