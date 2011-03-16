@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: caribou.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&component=default\n"
-"POT-Creation-Date: 2011-01-03 19:14+0000\n"
-"PO-Revision-Date: 2011-01-05 12:47+0100\n"
+"POT-Creation-Date: 2011-01-06 10:35+0000\n"
+"PO-Revision-Date: 2011-03-15 09:47+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -97,7 +97,6 @@ msgid "Custom font for keyboard"
 msgstr "Tipografía personalizada para el teclado"
 
 #: ../caribou/common/settings.py:65
-#| msgid "Scanning mode"
 msgid "Scanning"
 msgstr "Escaneando"
 
@@ -158,10 +157,9 @@ msgid "Mouse"
 msgstr "Ratón"
 
 #: ../caribou/common/settings.py:93
-#, fuzzy
 #| msgid "Switch device"
 msgid "Switch key"
-msgstr "Cambiar tecla"
+msgstr "Tecla de cambio"
 
 #: ../caribou/common/settings.py:96
 msgid "Key to use with scanning mode"
@@ -184,9 +182,8 @@ msgid "Num lock"
 msgstr "Bloq Num"
 
 #: ../caribou/common/settings.py:102
-#, fuzzy
 msgid "Switch button"
-msgstr "Cambiar botón"
+msgstr "Botón de cambio"
 
 #: ../caribou/common/settings.py:105
 msgid "Mouse button to use in the scanning mode"
