@@ -8,7 +8,6 @@ Terminal=false
 Type=Application
 StartupNotify=true
 Categories=GNOME;GTK;Utility;Accessibility;
-AutostartCondition=GSettings org.gnome.desktop.a11y.applications screen-keyboard-enabled
 X-GNOME-Bugzilla-Bugzilla=GNOME
 X-GNOME-Bugzilla-Product=caribou
 X-GNOME-Bugzilla-Component=default
