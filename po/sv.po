@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-24 16:52+0100\n"
+"POT-Creation-Date: 2011-03-24 16:56+0100\n"
 "PO-Revision-Date: 2011-03-24 16:53+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -20,13 +20,11 @@ msgstr ""
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "VARNING - Caribou: ohanterad redigerbar widget:"
 
-#: ../caribou/common/settings.py:31
-#: ../caribou/common/settings.py:88
+#: ../caribou/common/settings.py:31 ../caribou/common/settings.py:88
 msgid "Keyboard"
 msgstr "Tangentbord"
 
-#: ../caribou/common/settings.py:32
-#: ../caribou/common/settings.py:70
+#: ../caribou/common/settings.py:32 ../caribou/common/settings.py:70
 msgid "General"
 msgstr "Allmänt"
 
@@ -39,11 +37,14 @@ msgid "The layout Caribou should use."
 msgstr "Layouten som Caribou ska använda."
 
 #: ../caribou/common/settings.py:36
-msgid "The layout should be in the data directory of Caribou (usually /usr/share/caribou/keyboards) and should be a .xml or .json file."
-msgstr "Layouten ska finnas i Caribous datakatalog (oftast /usr/share/caribou/keyboards) och ska vara av typen .xml eller .json."
+msgid ""
+"The layout should be in the data directory of Caribou (usually /usr/share/"
+"caribou/keyboards) and should be a .xml or .json file."
+msgstr ""
+"Layouten ska finnas i Caribous datakatalog (oftast /usr/share/caribou/"
+"keyboards) och ska vara av typen .xml eller .json."
 
-#: ../caribou/common/settings.py:40
-#: ../caribou/common/settings.py:110
+#: ../caribou/common/settings.py:40 ../caribou/common/settings.py:110
 msgid "Color"
 msgstr "Färg"
 
@@ -233,10 +234,12 @@ msgstr "Inställningar för Caribou"
 
 #~ msgid "Keys"
 #~ msgstr "Tangenter"
+
 #~ msgid "_Test settings here:"
 #~ msgstr "_Testa inställningarna här:"
+
 #~ msgid "Key _size:"
 #~ msgstr "Tangent_storlek:"
+
 #~ msgid "Key s_pacing:"
 #~ msgstr "Tangent_mellanrum:"
-
