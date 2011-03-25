@@ -33,7 +33,7 @@ DATA_DIR = data_path
 KEYBOARDS_DIR = join(DATA_DIR, 'keyboards')
 
 # Preferences
-CARIBOU_GCONF = '/apps/caribou/osk'
+CARIBOU_GCONF = '/org/gnome/caribou/osk'
 
 # Key types
 NORMAL_KEY_TYPE = 'normal'

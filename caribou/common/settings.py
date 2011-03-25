@@ -130,7 +130,7 @@ if __name__ == "__main__":
             schemafile =  doc.createElement('schemalist')
             schema = doc.createElement('schema')
             schema.setAttribute("id", GSETTINGS_SCHEMA)
-            schema.setAttribute("path", "/apps/caribou/osk/")
+            schema.setAttribute("path", "/org/gnome/caribou/osk/")
             schemafile.appendChild(schema)
             self._create_schema(settings, doc, schema)
 
