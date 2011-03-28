@@ -52,7 +52,19 @@ class Caribou:
                  kb_factory=CaribouKeyboard,
                  window_factory=CaribouWindowEntry):
         if not self._get_a11y_enabled():
-            raise Exception, "AT-SPI 1 or 2 needs to be enabled."
+            msgdialog = Gtk.MessageDialog(None,
+                                          Gtk.DialogFlags.MODAL,
+                                          Gtk.MessageType.QUESTION,
+                                          Gtk.ButtonsType.YES_NO,
+                                          _("Accessibility needs to be enabled. Do you want to enable it and run %s?") % const.APP_NAME)
+            resp = msgdialog.run()
+            if resp == Gtk.ResponseType.NO:
+                msgdialog.destroy()
+                quit()
+            if resp == Gtk.ResponseType.YES:
+                settings = Gio.Settings('org.gnome.desktop.interface')
+                atspi = settings.set_boolean("toolkit-accessibility", True)
+                msgdialog.destroy()
         self.__current_acc = None
         self.window_factory = window_factory
         self.kb_factory = kb_factory
