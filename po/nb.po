@@ -1,14 +1,14 @@
 # Norwegian translation of Caribou.
 # Copyright (C) 2003-2004 Free Software Foundation, Inc.
 # Sigurd Gartmann <sigurd-translate@brogar.org>, 2003-2004.
-# Kjartan Maraas <kmaraas@gnome.org>, 2003-2010.
+# Kjartan Maraas <kmaraas@gnome.org>, 2003-2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-16 21:29+0200\n"
-"PO-Revision-Date: 2010-10-16 21:30+0200\n"
+"POT-Creation-Date: 2011-03-29 20:22+0200\n"
+"PO-Revision-Date: 2011-03-29 20:25+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -16,46 +16,216 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../caribou/ui/main.py:134
+#: ../caribou/ui/main.py:238
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "ADVARSEL - Caribou: redigerbar komponent som ikke er håndtert:"
 
-#: ../data/caribou-prefs.ui.h:1
-msgid "Caribou Preferences"
-msgstr "Brukervalg for Caribou"
+#: ../caribou/common/settings.py:31 ../caribou/common/settings.py:88
+msgid "Keyboard"
+msgstr "Tastatur"
 
-#: ../data/caribou-prefs.ui.h:2
-msgid "Colors"
-msgstr "Farger"
-
-#: ../data/caribou-prefs.ui.h:3
+#: ../caribou/common/settings.py:32 ../caribou/common/settings.py:70
 msgid "General"
 msgstr "Generelt"
 
-#: ../data/caribou-prefs.ui.h:4
-msgid "Key font:"
-msgstr "Skrift for taster:"
+#: ../caribou/common/settings.py:34
+msgid "Keyboard layout"
+msgstr "Tastaturutforming"
 
-#: ../data/caribou-prefs.ui.h:5
-msgid "Keyboard _layout:"
-msgstr "Tastatur_utforming:"
+#: ../caribou/common/settings.py:35
+msgid "The layout Caribou should use."
+msgstr "Utforming som Caribou skal bruke."
 
-#: ../data/caribou-prefs.ui.h:6
-msgid "Keys"
-msgstr "Taster"
+#: ../caribou/common/settings.py:36
+msgid ""
+"The layout should be in the data directory of Caribou (usually /usr/share/"
+"caribou/keyboards) and should be a .xml or .json file."
+msgstr ""
 
-#: ../data/caribou-prefs.ui.h:7
-msgid "Mouse over:"
-msgstr "Mus over:"
+#: ../caribou/common/settings.py:40 ../caribou/common/settings.py:110
+msgid "Color"
+msgstr "Farge"
 
-#: ../data/caribou-prefs.ui.h:8
-msgid "Normal state:"
-msgstr "Normal tilstand:"
+#: ../caribou/common/settings.py:42
+msgid "Use system theme"
+msgstr "Bruk systemets tema"
 
-#: ../data/caribou-prefs.ui.h:9
-msgid "Use Defaults"
-msgstr "Bruk forvalg"
+#: ../caribou/common/settings.py:43
+msgid "Use the default theme colors"
+msgstr "Bruk forvalgte farger fra tema"
 
-#: ../data/caribou-prefs.ui.h:10
-msgid "_Test settings here:"
-msgstr "_Test innstillingene her:"
+#: ../caribou/common/settings.py:47
+msgid "Normal state"
+msgstr "Normal tilstand"
+
+#: ../caribou/common/settings.py:48
+msgid "Color of the keys when there is no event on them"
+msgstr "Farge på tastene når de ikke er en hendelse på dem"
+
+#: ../caribou/common/settings.py:51
+msgid "Mouse over"
+msgstr "Mus over"
+
+#: ../caribou/common/settings.py:52
+msgid "Color of the keys when the mouse goes over the key"
+msgstr ""
+
+#: ../caribou/common/settings.py:54
+msgid "Font and size"
+msgstr "Skrift og størrelse"
+
+#: ../caribou/common/settings.py:56
+msgid "Use system fonts"
+msgstr "Bruk systemets skrifter"
+
+#: ../caribou/common/settings.py:57
+msgid "Use the default system font for keyboard"
+msgstr ""
+
+#: ../caribou/common/settings.py:59
+msgid "Key font"
+msgstr "Skrift for taster"
+
+#: ../caribou/common/settings.py:60
+msgid "Custom font for keyboard"
+msgstr ""
+
+#: ../caribou/common/settings.py:63
+msgid "Scanning"
+msgstr "Søker"
+
+#: ../caribou/common/settings.py:65
+msgid "Enable scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:66
+msgid "Enable switch scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:71
+msgid "Scanning mode"
+msgstr ""
+
+#: ../caribou/common/settings.py:73
+msgid "Scanning type, block or row"
+msgstr ""
+
+#: ../caribou/common/settings.py:74
+msgid "Block"
+msgstr "Blokk"
+
+#: ../caribou/common/settings.py:75
+msgid "Row"
+msgstr "Rad"
+
+#: ../caribou/common/settings.py:76
+msgid "Step time"
+msgstr ""
+
+#: ../caribou/common/settings.py:77
+msgid "Time between key transitions"
+msgstr ""
+
+#: ../caribou/common/settings.py:80
+msgid "Reverse scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:81
+msgid "Scan in reverse order"
+msgstr ""
+
+#: ../caribou/common/settings.py:83
+msgid "Input"
+msgstr "Inndata"
+
+#: ../caribou/common/settings.py:84
+msgid "Switch device"
+msgstr ""
+
+#: ../caribou/common/settings.py:86
+msgid "Switch device, keyboard or mouse"
+msgstr ""
+
+#: ../caribou/common/settings.py:89
+msgid "Mouse"
+msgstr "Mus"
+
+#: ../caribou/common/settings.py:91
+msgid "Switch key"
+msgstr ""
+
+#: ../caribou/common/settings.py:94
+msgid "Key to use with scanning mode"
+msgstr ""
+
+#: ../caribou/common/settings.py:96
+msgid "Right shift"
+msgstr ""
+
+#: ../caribou/common/settings.py:97
+msgid "Left shift"
+msgstr ""
+
+#: ../caribou/common/settings.py:98
+msgid "Alt Gr"
+msgstr ""
+
+#: ../caribou/common/settings.py:99
+msgid "Num lock"
+msgstr "Num lock"
+
+#: ../caribou/common/settings.py:100
+msgid "Switch button"
+msgstr ""
+
+#: ../caribou/common/settings.py:103
+msgid "Mouse button to use in the scanning mode"
+msgstr ""
+
+#: ../caribou/common/settings.py:105
+msgid "Button 1"
+msgstr "Knapp 1"
+
+#: ../caribou/common/settings.py:106
+msgid "Button 2"
+msgstr "Knapp 2"
+
+#: ../caribou/common/settings.py:107
+msgid "Button 3"
+msgstr "Knapp 3"
+
+#: ../caribou/common/settings.py:111
+msgid "Block color"
+msgstr ""
+
+#: ../caribou/common/settings.py:112
+msgid "Color of block scans"
+msgstr ""
+
+#: ../caribou/common/settings.py:113
+msgid "Row color"
+msgstr "Farge for rad"
+
+#: ../caribou/common/settings.py:114
+msgid "Color of row scans"
+msgstr ""
+
+#: ../caribou/common/settings.py:115
+msgid "Key color"
+msgstr ""
+
+#: ../caribou/common/settings.py:116
+msgid "Color of key scans"
+msgstr ""
+
+#: ../caribou/common/settings.py:118
+msgid "Cancel color"
+msgstr ""
+
+#: ../caribou/common/settings.py:119
+msgid "Color of cancel scan"
+msgstr ""
+
+#: ../caribou/ui/preferences_window.py:51
+msgid "Caribou Preferences"
+msgstr "Brukervalg for Caribou"
