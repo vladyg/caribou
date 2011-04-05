@@ -1,4 +1,18 @@
 ==============
+Version 0.2.00
+==============
+
+What's New
+==========
+- Use /org/gnome as starting path for schemas (Thanks Luca Ferretti!)
+
+New And Updated Translations
+============================
+- Silvia Bindelli (it)
+- Kjartan Maraas (nb)
+- Daniel Nylander (sv)
+
+==============
 Version 0.1.92
 ==============
 
