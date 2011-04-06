@@ -1,0 +1,255 @@
+# Persian translation for caribou.
+# Copyright (C) 2010 caribou's COPYRIGHT HOLDER
+# This file is distributed under the same license as the caribou package.
+# Mahyar Moghimi <mahyar.moqimi@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&component=default\n"
+"POT-Creation-Date: 2011-03-09 18:16+0000\n"
+"PO-Revision-Date: 2010-08-19 11:16+0330\n"
+"Last-Translator: Mahyar Moghimi <mahyar.moqimi@gmail.com>\n"
+"Language-Team: Persian <fa@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../caribou/ui/main.py:238
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "اخطار - کاریبو: عنصر قابل ویرایش گردانده نشده"
+
+#: ../caribou/common/settings.py:31 ../caribou/common/settings.py:88
+#, fuzzy
+#| msgid "Keyboard _layout:"
+msgid "Keyboard"
+msgstr "_چیدمان صفحه‌کلید"
+
+#: ../caribou/common/settings.py:32 ../caribou/common/settings.py:70
+msgid "General"
+msgstr "کلی"
+
+#: ../caribou/common/settings.py:34
+#, fuzzy
+#| msgid "Keyboard _layout:"
+msgid "Keyboard layout"
+msgstr "_چیدمان صفحه‌کلید"
+
+#: ../caribou/common/settings.py:35
+msgid "The layout Caribou should use."
+msgstr ""
+
+#: ../caribou/common/settings.py:36
+msgid ""
+"The layout should be in the data directory of Caribou (usually /usr/share/"
+"caribou/keyboards) and should be a .xml or .json file."
+msgstr ""
+
+#: ../caribou/common/settings.py:40 ../caribou/common/settings.py:110
+#, fuzzy
+#| msgid "Colors"
+msgid "Color"
+msgstr "رنگ‌ها"
+
+#: ../caribou/common/settings.py:42
+msgid "Use system theme"
+msgstr ""
+
+#: ../caribou/common/settings.py:43
+msgid "Use the default theme colors"
+msgstr ""
+
+#: ../caribou/common/settings.py:47
+#, fuzzy
+#| msgid "Normal state:"
+msgid "Normal state"
+msgstr "وضعیت عادی"
+
+#: ../caribou/common/settings.py:48
+msgid "Color of the keys when there is no event on them"
+msgstr ""
+
+#: ../caribou/common/settings.py:51
+#, fuzzy
+#| msgid "Mouse over:"
+msgid "Mouse over"
+msgstr "موشی روش رفت"
+
+#: ../caribou/common/settings.py:52
+msgid "Color of the keys when the mouse goes over the key"
+msgstr ""
+
+#: ../caribou/common/settings.py:54
+msgid "Font and size"
+msgstr ""
+
+#: ../caribou/common/settings.py:56
+msgid "Use system fonts"
+msgstr ""
+
+#: ../caribou/common/settings.py:57
+msgid "Use the default system font for keyboard"
+msgstr ""
+
+#: ../caribou/common/settings.py:59
+msgid "Key font"
+msgstr ""
+
+#: ../caribou/common/settings.py:60
+msgid "Custom font for keyboard"
+msgstr ""
+
+#: ../caribou/common/settings.py:63
+msgid "Scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:65
+msgid "Enable scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:66
+msgid "Enable switch scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:71
+msgid "Scanning mode"
+msgstr ""
+
+#: ../caribou/common/settings.py:73
+msgid "Scanning type, block or row"
+msgstr ""
+
+#: ../caribou/common/settings.py:74
+msgid "Block"
+msgstr ""
+
+#: ../caribou/common/settings.py:75
+msgid "Row"
+msgstr ""
+
+#: ../caribou/common/settings.py:76
+msgid "Step time"
+msgstr ""
+
+#: ../caribou/common/settings.py:77
+msgid "Time between key transitions"
+msgstr ""
+
+#: ../caribou/common/settings.py:80
+msgid "Reverse scanning"
+msgstr ""
+
+#: ../caribou/common/settings.py:81
+msgid "Scan in reverse order"
+msgstr ""
+
+#: ../caribou/common/settings.py:83
+msgid "Input"
+msgstr ""
+
+#: ../caribou/common/settings.py:84
+msgid "Switch device"
+msgstr ""
+
+#: ../caribou/common/settings.py:86
+msgid "Switch device, keyboard or mouse"
+msgstr ""
+
+#: ../caribou/common/settings.py:89
+#, fuzzy
+#| msgid "Mouse over:"
+msgid "Mouse"
+msgstr "موشی روش رفت"
+
+#: ../caribou/common/settings.py:91
+msgid "Switch key"
+msgstr ""
+
+#: ../caribou/common/settings.py:94
+msgid "Key to use with scanning mode"
+msgstr ""
+
+#: ../caribou/common/settings.py:96
+msgid "Right shift"
+msgstr ""
+
+#: ../caribou/common/settings.py:97
+msgid "Left shift"
+msgstr ""
+
+#: ../caribou/common/settings.py:98
+msgid "Alt Gr"
+msgstr ""
+
+#: ../caribou/common/settings.py:99
+msgid "Num lock"
+msgstr ""
+
+#: ../caribou/common/settings.py:100
+msgid "Switch button"
+msgstr ""
+
+#: ../caribou/common/settings.py:103
+msgid "Mouse button to use in the scanning mode"
+msgstr ""
+
+#: ../caribou/common/settings.py:105
+msgid "Button 1"
+msgstr ""
+
+#: ../caribou/common/settings.py:106
+msgid "Button 2"
+msgstr ""
+
+#: ../caribou/common/settings.py:107
+msgid "Button 3"
+msgstr ""
+
+#: ../caribou/common/settings.py:111
+msgid "Block color"
+msgstr ""
+
+#: ../caribou/common/settings.py:112
+msgid "Color of block scans"
+msgstr ""
+
+#: ../caribou/common/settings.py:113
+msgid "Row color"
+msgstr ""
+
+#: ../caribou/common/settings.py:114
+msgid "Color of row scans"
+msgstr ""
+
+#: ../caribou/common/settings.py:115
+msgid "Key color"
+msgstr ""
+
+#: ../caribou/common/settings.py:116
+msgid "Color of key scans"
+msgstr ""
+
+#: ../caribou/common/settings.py:118
+msgid "Cancel color"
+msgstr ""
+
+#: ../caribou/common/settings.py:119
+msgid "Color of cancel scan"
+msgstr ""
+
+#: ../caribou/ui/preferences_window.py:51
+msgid "Caribou Preferences"
+msgstr "اختیارات کاریبو"
+
+#~ msgid "Key _size:"
+#~ msgstr "ا_ندازه‌ی کلیدی:"
+
+#~ msgid "Key s_pacing:"
+#~ msgstr "_فاصله‌دهی کلیدی"
+
+#~ msgid "Keys"
+#~ msgstr "کلید‌ها"
+
+#~ msgid "_Test settings here:"
+#~ msgstr "حالات را اینجا آ_زمایش کنید:"
