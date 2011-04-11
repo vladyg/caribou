@@ -9,39 +9,35 @@ msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&component=default\n"
-"POT-Creation-Date: 2010-12-28 20:25+0000\n"
-"PO-Revision-Date: 2011-01-01 23:55+0800\n"
+"POT-Creation-Date: 2011-03-09 18:16+0000\n"
+"PO-Revision-Date: 2011-03-06 22:21+0800\n"
 "Last-Translator: lainme <lainme993@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../caribou/ui/main.py:135
+#: ../caribou/ui/main.py:238
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "警告 - Caribou：未处理的可编辑控件："
 
-#: ../caribou/common/settings.py:33 ../caribou/common/settings.py:90
-#, fuzzy
-#| msgid "Keyboard _layout:"
+#: ../caribou/common/settings.py:31 ../caribou/common/settings.py:88
 msgid "Keyboard"
-msgstr "键盘布局(_L)："
+msgstr "键盘"
 
-#: ../caribou/common/settings.py:34
+#: ../caribou/common/settings.py:32 ../caribou/common/settings.py:70
 msgid "General"
 msgstr "常规"
 
-#: ../caribou/common/settings.py:36
-#, fuzzy
-#| msgid "Keyboard _layout:"
+#: ../caribou/common/settings.py:34
 msgid "Keyboard layout"
-msgstr "键盘布局(_L)："
+msgstr "键盘布局"
 
-#: ../caribou/common/settings.py:37
+#: ../caribou/common/settings.py:35
 msgid "The layout Caribou should use."
 msgstr "Caribou 应使用的布局。"
 
-#: ../caribou/common/settings.py:38
+#: ../caribou/common/settings.py:36
 msgid ""
 "The layout should be in the data directory of Caribou (usually /usr/share/"
 "caribou/keyboards) and should be a .xml or .json file."
@@ -49,194 +45,203 @@ msgstr ""
 "布局应在 Caribou 的 data 目录下(通常是 /usr/share/caribou/keyboards)，并且应"
 "当是一个 .xml 或者 .json 文件。"
 
-#: ../caribou/common/settings.py:42
-#, fuzzy
-#| msgid "Colors"
+#: ../caribou/common/settings.py:40 ../caribou/common/settings.py:110
 msgid "Color"
 msgstr "颜色"
 
-#: ../caribou/common/settings.py:44
+#: ../caribou/common/settings.py:42
 msgid "Use system theme"
 msgstr "使用系统主题"
 
-#: ../caribou/common/settings.py:45
+#: ../caribou/common/settings.py:43
 msgid "Use the default theme colors"
 msgstr "使用默认主题颜色"
 
-#: ../caribou/common/settings.py:49
-#, fuzzy
-#| msgid "Normal state:"
+#: ../caribou/common/settings.py:47
 msgid "Normal state"
-msgstr "普通状态："
+msgstr "普通状态"
 
-#: ../caribou/common/settings.py:50
+#: ../caribou/common/settings.py:48
 msgid "Color of the keys when there is no event on them"
 msgstr "当键上没有事件时的颜色"
 
-#: ../caribou/common/settings.py:53
-#, fuzzy
-#| msgid "Mouse over:"
+#: ../caribou/common/settings.py:51
 msgid "Mouse over"
-msgstr "当鼠标移过时："
+msgstr "当鼠标移过时"
 
-#: ../caribou/common/settings.py:54
+#: ../caribou/common/settings.py:52
 msgid "Color of the keys when the mouse goes over the key"
 msgstr "当鼠标移过键时的颜色"
 
-#: ../caribou/common/settings.py:56
+#: ../caribou/common/settings.py:54
 msgid "Font and size"
 msgstr "字体和大小"
 
-#: ../caribou/common/settings.py:58
+#: ../caribou/common/settings.py:56
 msgid "Use system fonts"
 msgstr "使用系统字体"
 
-#: ../caribou/common/settings.py:59
+#: ../caribou/common/settings.py:57
 msgid "Use the default system font for keyboard"
 msgstr "为键盘使用默认系统字体"
 
-#: ../caribou/common/settings.py:61
+#: ../caribou/common/settings.py:59
 msgid "Key font"
 msgstr "键的字体"
 
-#: ../caribou/common/settings.py:62
+#: ../caribou/common/settings.py:60
 msgid "Custom font for keyboard"
 msgstr "用于键盘的自定义字体"
 
-#: ../caribou/common/settings.py:67
-#, fuzzy
+#: ../caribou/common/settings.py:63
+msgid "Scanning"
+msgstr "扫描"
+
+#: ../caribou/common/settings.py:65
 msgid "Enable scanning"
-msgstr "激活扫描"
+msgstr "启用扫描"
 
-#: ../caribou/common/settings.py:68
-msgid "Enable switch scanning"
-msgstr ""
-
-#: ../caribou/common/settings.py:73
+#: ../caribou/common/settings.py:66
 #, fuzzy
+msgid "Enable switch scanning"
+msgstr "允许切换扫描"
+
+#: ../caribou/common/settings.py:71
 msgid "Scanning mode"
 msgstr "扫描模式"
 
-#: ../caribou/common/settings.py:75
+#: ../caribou/common/settings.py:73
 #, fuzzy
 msgid "Scanning type, block or row"
 msgstr "扫描类型，区块或行"
 
-#: ../caribou/common/settings.py:76
+#: ../caribou/common/settings.py:74
 msgid "Block"
 msgstr "区块"
 
-#: ../caribou/common/settings.py:77
+#: ../caribou/common/settings.py:75
 msgid "Row"
 msgstr "行"
 
-#: ../caribou/common/settings.py:78
+#: ../caribou/common/settings.py:76
+#, fuzzy
 msgid "Step time"
-msgstr ""
+msgstr "步进时间"
 
-#: ../caribou/common/settings.py:79
+#: ../caribou/common/settings.py:77
 #, fuzzy
 msgid "Time between key transitions"
 msgstr "键转换之间的时间"
 
-#: ../caribou/common/settings.py:82
+#: ../caribou/common/settings.py:80
 #, fuzzy
 msgid "Reverse scanning"
-msgstr "反向扫描"
+msgstr "逆序扫描"
+
+#: ../caribou/common/settings.py:81
+#, fuzzy
+msgid "Scan in reverse order"
+msgstr "逆序扫描"
 
 #: ../caribou/common/settings.py:83
-msgid "Scan in reverse order"
-msgstr ""
+msgid "Input"
+msgstr "输入"
+
+#: ../caribou/common/settings.py:84
+msgid "Switch device"
+msgstr "切换设备"
 
 #: ../caribou/common/settings.py:86
-msgid "Switch device"
-msgstr ""
-
-#: ../caribou/common/settings.py:88
 msgid "Switch device, keyboard or mouse"
-msgstr ""
+msgstr "切换设备、键盘或鼠标"
+
+#: ../caribou/common/settings.py:89
+msgid "Mouse"
+msgstr "鼠标"
 
 #: ../caribou/common/settings.py:91
-#, fuzzy
-#| msgid "Mouse over:"
-msgid "Mouse"
-msgstr "当鼠标移过时："
+msgid "Switch key"
+msgstr "切换键"
 
-#: ../caribou/common/settings.py:96
+#: ../caribou/common/settings.py:94
 #, fuzzy
 msgid "Key to use with scanning mode"
 msgstr "用于扫描模式的键"
 
-#: ../caribou/common/settings.py:98
+#: ../caribou/common/settings.py:96
 msgid "Right shift"
 msgstr "右 shfit"
 
-#: ../caribou/common/settings.py:99
+#: ../caribou/common/settings.py:97
 msgid "Left shift"
 msgstr "左 shift"
 
-#: ../caribou/common/settings.py:100
+#: ../caribou/common/settings.py:98
 msgid "Alt Gr"
 msgstr "Alt Gr"
 
-#: ../caribou/common/settings.py:101
+#: ../caribou/common/settings.py:99
 msgid "Num lock"
 msgstr "Num Lock"
 
-#: ../caribou/common/settings.py:105
+#: ../caribou/common/settings.py:100
+msgid "Switch button"
+msgstr "切换按键"
+
+#: ../caribou/common/settings.py:103
 #, fuzzy
 msgid "Mouse button to use in the scanning mode"
 msgstr "用在扫描模式的鼠标键"
 
-#: ../caribou/common/settings.py:107
+#: ../caribou/common/settings.py:105
 msgid "Button 1"
 msgstr "按钮 1"
 
-#: ../caribou/common/settings.py:108
+#: ../caribou/common/settings.py:106
 msgid "Button 2"
 msgstr "按钮 2"
 
-#: ../caribou/common/settings.py:109
+#: ../caribou/common/settings.py:107
 msgid "Button 3"
 msgstr "按钮 3"
 
-#: ../caribou/common/settings.py:113
+#: ../caribou/common/settings.py:111
 msgid "Block color"
 msgstr "区块颜色"
 
-#: ../caribou/common/settings.py:114
+#: ../caribou/common/settings.py:112
 #, fuzzy
 msgid "Color of block scans"
 msgstr "区块扫描的颜色"
 
-#: ../caribou/common/settings.py:115
+#: ../caribou/common/settings.py:113
 msgid "Row color"
 msgstr "行颜色"
 
-#: ../caribou/common/settings.py:116
+#: ../caribou/common/settings.py:114
 #, fuzzy
 msgid "Color of row scans"
 msgstr "行扫描的颜色"
 
-#: ../caribou/common/settings.py:117
+#: ../caribou/common/settings.py:115
 msgid "Key color"
 msgstr "键颜色"
 
-#: ../caribou/common/settings.py:118
+#: ../caribou/common/settings.py:116
 #, fuzzy
 msgid "Color of key scans"
 msgstr "键扫描的颜色"
 
-#: ../caribou/common/settings.py:120
+#: ../caribou/common/settings.py:118
 msgid "Cancel color"
 msgstr "取消的颜色"
 
-#: ../caribou/common/settings.py:121
+#: ../caribou/common/settings.py:119
 #, fuzzy
 msgid "Color of cancel scan"
 msgstr "取消扫描的颜色"
 
-#: ../caribou/ui/preferences_window.py:50
+#: ../caribou/ui/preferences_window.py:51
 msgid "Caribou Preferences"
 msgstr "Caribou 首选项"
 
