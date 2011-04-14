@@ -56,7 +56,9 @@ class Caribou:
                                           Gtk.DialogFlags.MODAL,
                                           Gtk.MessageType.QUESTION,
                                           Gtk.ButtonsType.YES_NO,
-                                          _("Accessibility needs to be enabled. Do you want to enable it and run %s?") % const.APP_NAME)
+                                          _("In order to use %s, accessibility needs "
+                                            "to be enabled. Do you want to enable "
+                                            "it now?") % const.APP_NAME)
             resp = msgdialog.run()
             if resp == Gtk.ResponseType.NO:
                 msgdialog.destroy()
@@ -64,7 +66,17 @@ class Caribou:
             if resp == Gtk.ResponseType.YES:
                 settings = Gio.Settings('org.gnome.desktop.interface')
                 atspi = settings.set_boolean("toolkit-accessibility", True)
+                msgdialog2 = Gtk.MessageDialog(msgdialog,
+                                               Gtk.DialogFlags.MODAL,
+                                               Gtk.MessageType.INFO,
+                                               Gtk.ButtonsType.OK,
+                                               _("Accessibility has been enabled. "
+                                                 "Log out and back in again to use "
+                                                 "%s." % const.APP_NAME))
+                msgdialog2.run()
+                msgdialog2.destroy()
                 msgdialog.destroy()
+                quit()
         self.__current_acc = None
         self.window_factory = window_factory
         self.kb_factory = kb_factory
