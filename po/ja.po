@@ -1,65 +1,248 @@
 # Japanese translation of message catalog of Caribou
-# Copyright (C) 2009-2010 the Caribou's copyright holder
+# Copyright (C) 2009-2011 the Caribou's copyright holder
 # This file is distributed under the same license as the Caribou package.
 # Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2010.
-# Jiro MATSUZAWA <matsuzawa.jr@gmail.com>, 2010.
+# Jiro Matsuzawa <matsuzawa.jr@gmail.com>, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=caribou&component=default\n"
-"POT-Creation-Date: 2010-09-07 16:29+0000\n"
-"PO-Revision-Date: 2010-09-10 03:50+0900\n"
-"Last-Translator: Jiro MATSUZAWA <matsuzawa.jr@gmail.com>\n"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2011-04-11 05:38+0000\n"
+"PO-Revision-Date: 2011-03-25 18:35+0900\n"
+"Last-Translator: Jiro Matsuzawa <matsuzawa.jr@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../caribou/ui/main.py:134
+#: ../caribou/ui/main.py:238
 msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "警告 - Caribou: 管理外の編集可能なウィジェット:"
+msgstr "警告 - Caribou: 処理できない編集可能なウィジェット:"
 
-#: ../data/caribou-prefs.ui.h:1
-msgid "Caribou Preferences"
-msgstr "Caribou の設定"
+#: ../caribou/common/settings.py:31 ../caribou/common/settings.py:88
+msgid "Keyboard"
+msgstr "キーボード"
 
-#: ../data/caribou-prefs.ui.h:2
-msgid "Colors"
-msgstr "色"
-
-#: ../data/caribou-prefs.ui.h:3
+#: ../caribou/common/settings.py:32 ../caribou/common/settings.py:70
 msgid "General"
 msgstr "一般"
 
-#: ../data/caribou-prefs.ui.h:4
-msgid "Key font:"
-msgstr "キーのフォント:"
+#: ../caribou/common/settings.py:34
+msgid "Keyboard layout"
+msgstr "キーボード配列"
 
-#: ../data/caribou-prefs.ui.h:5
-msgid "Keyboard _layout:"
-msgstr "キーボードのレイアウト(_L):"
+#: ../caribou/common/settings.py:35
+msgid "The layout Caribou should use."
+msgstr "Caribou が使用するキーボード配列。"
 
-#: ../data/caribou-prefs.ui.h:6
-msgid "Keys"
-msgstr "キー"
+#: ../caribou/common/settings.py:36
+msgid ""
+"The layout should be in the data directory of Caribou (usually /usr/share/"
+"caribou/keyboards) and should be a .xml or .json file."
+msgstr ""
+"配列定義ファイルは、Caribou のデータ用ディレクトリ (通常は /usr/share/"
+"caribou/keyboards) に配置してください。またファイル形式は XML あるいは JSON "
+"としてください。"
 
-#: ../data/caribou-prefs.ui.h:7
-msgid "Mouse over:"
-msgstr "マウスオーバー時:"
+#: ../caribou/common/settings.py:40 ../caribou/common/settings.py:110
+msgid "Color"
+msgstr "色"
 
-#: ../data/caribou-prefs.ui.h:8
-msgid "Normal state:"
-msgstr "通常時:"
+#: ../caribou/common/settings.py:42
+msgid "Use system theme"
+msgstr "システムのテーマを使用する"
 
-#: ../data/caribou-prefs.ui.h:9
-msgid "Use Defaults"
-msgstr "デフォルトを使用する"
+#: ../caribou/common/settings.py:43
+msgid "Use the default theme colors"
+msgstr "デフォルトのテーマ色を使用する"
 
-#: ../data/caribou-prefs.ui.h:10
-msgid "_Test settings here:"
-msgstr "設定内容の確認(_T):"
+#: ../caribou/common/settings.py:47
+msgid "Normal state"
+msgstr "通常時"
+
+#: ../caribou/common/settings.py:48
+msgid "Color of the keys when there is no event on them"
+msgstr "イベントの発生していないキーの色"
+
+#: ../caribou/common/settings.py:51
+msgid "Mouse over"
+msgstr "マウスオーバー時"
+
+#: ../caribou/common/settings.py:52
+msgid "Color of the keys when the mouse goes over the key"
+msgstr "マウスオーバーしたキーの色"
+
+#: ../caribou/common/settings.py:54
+msgid "Font and size"
+msgstr "フォントとサイズ"
+
+#: ../caribou/common/settings.py:56
+msgid "Use system fonts"
+msgstr "システムフォントを使用"
+
+#: ../caribou/common/settings.py:57
+msgid "Use the default system font for keyboard"
+msgstr "キーボードのフォントにデフォルトのシステムフォントを使用する"
+
+#: ../caribou/common/settings.py:59
+msgid "Key font"
+msgstr "キーのフォント"
+
+#: ../caribou/common/settings.py:60
+msgid "Custom font for keyboard"
+msgstr "キーボードのカスタムフォント"
+
+#: ../caribou/common/settings.py:63
+msgid "Scanning"
+msgstr "スキャン"
+
+#: ../caribou/common/settings.py:65
+msgid "Enable scanning"
+msgstr "スキャン機能を有効にする"
+
+#: ../caribou/common/settings.py:66
+msgid "Enable switch scanning"
+msgstr "スイッチ・スキャンを有効にする"
+
+#: ../caribou/common/settings.py:71
+msgid "Scanning mode"
+msgstr "スキャンモード"
+
+#: ../caribou/common/settings.py:73
+msgid "Scanning type, block or row"
+msgstr "スキャン方法、ブロック単位または列単位"
+
+#: ../caribou/common/settings.py:74
+msgid "Block"
+msgstr "ブロック"
+
+#: ../caribou/common/settings.py:75
+msgid "Row"
+msgstr "列"
+
+#: ../caribou/common/settings.py:76
+msgid "Step time"
+msgstr "スキャン時間"
+
+#: ../caribou/common/settings.py:77
+msgid "Time between key transitions"
+msgstr "キーを移動するまでの時間"
+
+#: ../caribou/common/settings.py:80
+msgid "Reverse scanning"
+msgstr "逆方向スキャン"
+
+#: ../caribou/common/settings.py:81
+msgid "Scan in reverse order"
+msgstr "逆方向にスキャンする"
+
+#: ../caribou/common/settings.py:83
+msgid "Input"
+msgstr "入力"
+
+#: ../caribou/common/settings.py:84
+msgid "Switch device"
+msgstr "スイッチデバイス"
+
+#: ../caribou/common/settings.py:86
+msgid "Switch device, keyboard or mouse"
+msgstr "スイッチデバイス、キーボードまたはマウス"
+
+#: ../caribou/common/settings.py:89
+msgid "Mouse"
+msgstr "マウス"
+
+#: ../caribou/common/settings.py:91
+msgid "Switch key"
+msgstr "スイッチキー"
+
+#: ../caribou/common/settings.py:94
+msgid "Key to use with scanning mode"
+msgstr "スキャンモードで使用するキー"
+
+#: ../caribou/common/settings.py:96
+msgid "Right shift"
+msgstr "右 Shift"
+
+#: ../caribou/common/settings.py:97
+msgid "Left shift"
+msgstr "左 Shift"
+
+#: ../caribou/common/settings.py:98
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+#: ../caribou/common/settings.py:99
+msgid "Num lock"
+msgstr "Num lock"
+
+#: ../caribou/common/settings.py:100
+msgid "Switch button"
+msgstr "スイッチボタン"
+
+#: ../caribou/common/settings.py:103
+msgid "Mouse button to use in the scanning mode"
+msgstr "スキャンモードで使用するマウスボタン"
+
+#: ../caribou/common/settings.py:105
+msgid "Button 1"
+msgstr "第 1 ボタン"
+
+#: ../caribou/common/settings.py:106
+msgid "Button 2"
+msgstr "第 2 ボタン"
+
+#: ../caribou/common/settings.py:107
+msgid "Button 3"
+msgstr "第 3 ボタン"
+
+#: ../caribou/common/settings.py:111
+msgid "Block color"
+msgstr "ブロックの色"
+
+#: ../caribou/common/settings.py:112
+msgid "Color of block scans"
+msgstr "ブロック・スキャンの色"
+
+#: ../caribou/common/settings.py:113
+msgid "Row color"
+msgstr "列の色"
+
+#: ../caribou/common/settings.py:114
+msgid "Color of row scans"
+msgstr "列スキャンの色"
+
+#: ../caribou/common/settings.py:115
+msgid "Key color"
+msgstr "入力キーの色"
+
+#: ../caribou/common/settings.py:116
+msgid "Color of key scans"
+msgstr "キー・スキャンの色"
+
+#: ../caribou/common/settings.py:118
+msgid "Cancel color"
+msgstr "キャンセル時の色"
+
+#: ../caribou/common/settings.py:119
+msgid "Color of cancel scan"
+msgstr "スキャンをキャンセルするときの色"
+
+#: ../caribou/ui/preferences_window.py:51
+msgid "Caribou Preferences"
+msgstr "Caribou の設定"
+
+#~ msgid "Keys"
+#~ msgstr "キー"
+
+#~ msgid "Use Defaults"
+#~ msgstr "デフォルトを使用する"
+
+#~ msgid "_Test settings here:"
+#~ msgstr "設定内容の確認(_T):"
 
 #~ msgid "Key _size:"
 #~ msgstr "キーの大きさ(_S):"
