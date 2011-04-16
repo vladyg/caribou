@@ -25,3 +25,16 @@ po/.intltool-merge-cache
 data/caribou.schemas
 data/caribou.schemas.in
 data/org.gnome.caribou.gschema.*
+depcomp
+libcaribou/.deps/
+caribou-enum-types.[ch]
+caribou-marshal.[ch]
+libtool
+ltmain.sh
+m4
+libcaribou/.libs/
+libcaribou/Caribou-1.0.gir
+libcaribou/Caribou-1.0.typelib
+*.lo
+libcaribou/libcaribou.la
+
