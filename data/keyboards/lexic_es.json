@@ -161,7 +161,7 @@
                 {"value": "#", 
                 "width": 2},
                 {"key_type": "mask",
-                "value": "control", 
+                "value": "Control_L", 
                 "label": "<b>Ctrl I</b>",
                 "width": 2}
                ]
@@ -188,7 +188,7 @@
                 "width": 2},
                 {"key_type": "mask",
                 "label": "<b>Alt I</b>", 
-                "value": "mod1", 
+                "value": "Alt_L", 
                 "width": 2}
                 ]
 	}

@@ -30,8 +30,8 @@ import gobject
 from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import Pango
+from gi.repository import Caribou
 import sys
-import virtkey
 import os
 import traceback
 from caribou.ui.i18n import _
@@ -47,20 +47,6 @@ import xml.etree.ElementTree as ET
 from xml.dom import minidom
 import gettext
 import i18n
-
-KEY_MASKS = {'shift': Gdk.ModifierType.SHIFT_MASK,
-             'lock': Gdk.ModifierType.LOCK_MASK,
-             'control': Gdk.ModifierType.CONTROL_MASK,
-             'mod1': Gdk.ModifierType.MOD1_MASK,
-             'mod2': Gdk.ModifierType.MOD2_MASK,
-             'mod3': Gdk.ModifierType.MOD3_MASK,
-             'mod4': Gdk.ModifierType.MOD4_MASK,
-             'mod5': Gdk.ModifierType.MOD5_MASK,
-             'button1': Gdk.ModifierType.BUTTON1_MASK,
-             'button2': Gdk.ModifierType.BUTTON2_MASK,
-             'button3': Gdk.ModifierType.BUTTON3_MASK,
-             'button4': Gdk.ModifierType.BUTTON4_MASK,
-             'button5': Gdk.ModifierType.BUTTON5_MASK}
 
 class BaseKey(object):
     '''An abstract class the represents a key on the keyboard.
@@ -122,7 +108,6 @@ class BaseKey(object):
         raise NotImplemented
 
     def _on_image_key_mapped(self, key):
-        print
         key_width = key.get_allocated_height()
         icon_size = Gtk.IconSize.MENU
         image = Gtk.Image()
@@ -134,7 +119,6 @@ class BaseKey(object):
                      Gtk.IconSize.DIALOG]:
             pixbuf = image.render_icon_pixbuf(Gtk.STOCK_PREFERENCES, size)
             pixel_size = pixbuf.get_width()
-            print size, pixel_size, key_width
             if pixel_size > key_width:
                 break
             icon_size = size
@@ -151,7 +135,7 @@ class BaseKey(object):
         return self._value
 
     def _set_value(self, value):
-        if self.key_type == const.NORMAL_KEY_TYPE:
+        if self.key_type in (const.NORMAL_KEY_TYPE, const.MASK_KEY_TYPE):
             if type(value) == str:
                 value = value.decode('utf-8')
             if type(value) == unicode:
@@ -161,11 +145,6 @@ class BaseKey(object):
                     key_value = Gdk.keyval_from_name(value)
                     if key_value:
                         self._value = key_value
-        elif self.key_type == const.MASK_KEY_TYPE:
-            if type(value) == str or type(value) == unicode:
-                for key, mask in KEY_MASKS.items():
-                    if value == key:
-                        self._value = mask
         else:
             self._value = value
 
@@ -377,10 +356,10 @@ class CaribouKeyboard(Gtk.Notebook):
     def __init__(self):
         gobject.GObject.__init__(self)
         self.set_show_tabs(False)
-        self.vk = virtkey.virtkey()
+        self.vk = Caribou.VirtualKeyboard()
         self.key_size = 30
-        self.current_mask = 0
         self.current_page = 0
+        self.depressed_mods = []
 
         self.row_height = -1
 
@@ -405,8 +384,10 @@ class CaribouKeyboard(Gtk.Notebook):
                         key.connect('clicked',
                                     self._pressed_preferences_key)
                     else:
-                        key.connect('clicked',
+                        key.connect('pressed',
                                     self._pressed_normal_key)
+                        key.connect('released',
+                                    self._released_normal_key)
 
     def _clear(self):
         n_pages = self.get_n_pages()
@@ -414,20 +395,30 @@ class CaribouKeyboard(Gtk.Notebook):
             self.remove_page(i)
 
     def _pressed_normal_key(self, key):
-        self.vk.press_keysym(key.value)
-        self.vk.release_keysym(key.value)
-        self.current_mask = 0
+        self.vk.keyval_press(key.value)
+
+    def _released_normal_key(self, key):
+        self.vk.keyval_release(key.value)
+        while True:
+            try:
+                mod = self.depressed_mods.pop()
+            except IndexError:
+                break
+            mod.set_active (False)
 
     def _pressed_layout_switcher_key(self, key):
         self._switch_to_layout(key.value)
 
     def _toggled_mask_key(self, key):
-        if not key.get_active():
-            self.vk.unlatch_mod(key.value)
-            self.current_mask &= ~key.value
+        if key.get_active():
+            self.vk.keyval_press(key.value)
+            self.depressed_mods.append(key)
         else:
-            self.current_mask |= key.value
-            self.vk.latch_mod(self.current_mask)
+            self.vk.keyval_release(key.value)
+            try:
+                mod = self.depressed_mods.remove(key)
+            except ValueError:
+                pass
 
     def show_all_(self):
         self.set_current_page(self.current_page)

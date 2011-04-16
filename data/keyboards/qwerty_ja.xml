@@ -328,7 +328,7 @@
       </row>
       <row>
         <key>
-          <value>control</value>
+          <value>Control_L</value>
           <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
           <key_type>mask</key_type>
           <width>1.8</width>
@@ -339,7 +339,7 @@
           <width>1.5</width>
         </key>
         <key>
-          <value>mod1</value>
+          <value>Alt_L</value>
           <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
           <key_type>mask</key_type>
           <width>1.5</width>
@@ -361,7 +361,7 @@
           <width>1.5</width>
         </key>
         <key>
-          <value>mod1</value>
+          <value>Alt_L</value>
           <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
           <key_type>mask</key_type>
           <width>1.2</width>
@@ -377,7 +377,7 @@
           <width>1.2</width>
         </key>
         <key>
-          <value>control</value>
+          <value>Control_L</value>
           <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
           <key_type>mask</key_type>
           <width>1.5</width>
@@ -718,7 +718,7 @@
       </row>
       <row>
         <key>
-          <value>control</value>
+          <value>Control_L</value>
           <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
           <key_type>mask</key_type>
           <width>1.8</width>
@@ -729,7 +729,7 @@
           <width>1.5</width>
         </key>
         <key>
-          <value>mod1</value>
+          <value>Alt_L</value>
           <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
           <key_type>mask</key_type>
           <width>1.5</width>
@@ -751,7 +751,7 @@
           <width>1.5</width>
         </key>
         <key>
-          <value>mod1</value>
+          <value>Alt_L</value>
           <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
           <key_type>mask</key_type>
           <width>1.2</width>
@@ -767,7 +767,7 @@
           <width>1.2</width>
         </key>
         <key>
-          <value>control</value>
+          <value>Control_L</value>
           <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
           <key_type>mask</key_type>
           <width>1.5</width>

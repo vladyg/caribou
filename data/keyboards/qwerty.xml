@@ -71,13 +71,13 @@
 	</key>
 	<key>
 	  <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
-	  <value>control</value>
+	  <value>Control_L</value>
 	  <key_type>mask</key_type>
 	  <width>1.5</width>
 	</key>
 	<key>
 	  <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
-	  <value>mod1</value>
+	  <value>Alt_L</value>
 	  <key_type>mask</key_type>
 	  <width>1.5</width>
 	</key>
@@ -164,13 +164,13 @@
 	</key>
 	<key>
 	  <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
-	  <value>control</value>
+	  <value>Control_L</value>
 	  <key_type>mask</key_type>
 	  <width>1.5</width>
 	</key>
 	<key>
 	  <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
-	  <value>mod1</value>
+	  <value>Alt_L</value>
 	  <key_type>mask</key_type>
 	  <width>1.5</width>
 	</key>
@@ -251,13 +251,13 @@
 	</key>
 	<key>
 	  <label>&lt;small&gt;&lt;b&gt;Ctrl&lt;/b&gt;&lt;/small&gt;</label>
-	  <value>control</value>
+	  <value>Control_L</value>
 	  <key_type>mask</key_type>
 	  <width>1.5</width>
 	</key>
 	<key>
 	  <label>&lt;small&gt;&lt;b&gt;Alt&lt;/b&gt;&lt;/small&gt;</label>
-	  <value>mod1</value>
+	  <value>Alt_L</value>
 	  <key_type>mask</key_type>
 	  <width>1.5</width>
 	</key>
