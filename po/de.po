@@ -4,44 +4,60 @@
 #
 # Caribou is a text entry and UI navigation application being developed
 # as an alternative to the Gnome On-screen Keyboard.
-# Mario Blättermann <mariobl@gnome.org>, 2010.
+# Mario Blättermann <mariobl@freenet.de>, 2010.
 # Christian Kirbach <Christian.Kirbach@googlemail.com>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=caribou&component=default\n"
-"POT-Creation-Date: 2010-12-27 12:11+0000\n"
-"PO-Revision-Date: 2010-12-27 14:02+0100\n"
-"Last-Translator: Christian Kirbach <Christian.Kirbach@googlemail.com>\n"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2011-04-14 19:12+0000\n"
+"PO-Revision-Date: 2011-04-19 21:02+0100\n"
+"Last-Translator: Mario Blättermann <mariobl@freenet.de>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: ../caribou/ui/main.py:135
+#: ../caribou/ui/main.py:59
+#, python-format
+msgid ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
+msgstr ""
+"Um %s verwenden zu können, müssen Hilfstechnologien aktiviert sein. Wollen "
+"Sie diese jetzt aktivieren?"
+
+#: ../caribou/ui/main.py:73
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
+msgstr ""
+"Hilfstechnologien wurden aktiviert. Bitte melden Sie sich ab und wieder an, "
+"um %s zu verwenden."
+
+#: ../caribou/ui/main.py:262
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "WARNUNG - Caribou: nicht bewältigtes bearbeitbares Widget:"
 
-#: ../caribou/common/settings.py:32 ../caribou/common/settings.py:89
+#: ../caribou/common/settings.py:31 ../caribou/common/settings.py:88
 msgid "Keyboard"
 msgstr "Tastatur"
 
-#: ../caribou/common/settings.py:33
+#: ../caribou/common/settings.py:32 ../caribou/common/settings.py:70
 msgid "General"
 msgstr "Allgemein"
 
-#: ../caribou/common/settings.py:35
+#: ../caribou/common/settings.py:34
 msgid "Keyboard layout"
 msgstr "Tastaturbelegung"
 
-#: ../caribou/common/settings.py:36
+#: ../caribou/common/settings.py:35
 msgid "The layout Caribou should use."
 msgstr "Die von Caribou zu verwendende Belegung."
 
-#: ../caribou/common/settings.py:37
+#: ../caribou/common/settings.py:36
 msgid ""
 "The layout should be in the data directory of Caribou (usually /usr/share/"
 "caribou/keyboards) and should be a .xml or .json file."
@@ -49,195 +65,191 @@ msgstr ""
 "Die Belegung sollte im Datenordner von Caribou vorliegen (meist /usr/share/"
 "caribou/keyboards) und eine *.xml- oder *.json-Datei sein."
 
-#: ../caribou/common/settings.py:41
+#: ../caribou/common/settings.py:40 ../caribou/common/settings.py:110
 msgid "Color"
 msgstr "Farbe"
 
-#: ../caribou/common/settings.py:43
+#: ../caribou/common/settings.py:42
 msgid "Use system theme"
 msgstr "Systemthema verwenden"
 
-#: ../caribou/common/settings.py:44
+#: ../caribou/common/settings.py:43
 msgid "Use the default theme colors"
 msgstr "Farben des Systemthemas verwenden"
 
-#: ../caribou/common/settings.py:48
+#: ../caribou/common/settings.py:47
 msgid "Normal state"
 msgstr "Normaler Status"
 
-#: ../caribou/common/settings.py:49
+#: ../caribou/common/settings.py:48
 msgid "Color of the keys when there is no event on them"
 msgstr "Farbe der Tasten, wenn kein Ereignis stattfindet"
 
-#: ../caribou/common/settings.py:52
+#: ../caribou/common/settings.py:51
 msgid "Mouse over"
 msgstr "Maus über"
 
-#: ../caribou/common/settings.py:53
+#: ../caribou/common/settings.py:52
 msgid "Color of the keys when the mouse goes over the key"
 msgstr "Farbe der Tasten, wenn sich die Maus darüber befindet"
 
-#: ../caribou/common/settings.py:55
+#: ../caribou/common/settings.py:54
 msgid "Font and size"
 msgstr "Schrift und Größe"
 
-#: ../caribou/common/settings.py:57
+#: ../caribou/common/settings.py:56
 msgid "Use system fonts"
 msgstr "Systemschriften verwenden"
 
-#: ../caribou/common/settings.py:58
+#: ../caribou/common/settings.py:57
 msgid "Use the default system font for keyboard"
 msgstr "Vorgegebene Systemschriften für die Tastatur verwenden"
 
-#: ../caribou/common/settings.py:60
+#: ../caribou/common/settings.py:59
 msgid "Key font"
 msgstr "Tastenschrift"
 
-#: ../caribou/common/settings.py:61
+#: ../caribou/common/settings.py:60
 msgid "Custom font for keyboard"
 msgstr "Benutzerdefinierte Schrift für Tastatur"
 
-#: ../caribou/common/settings.py:66
+#: ../caribou/common/settings.py:63
+msgid "Scanning"
+msgstr "Einlesen"
+
+#: ../caribou/common/settings.py:65
 msgid "Enable scanning"
 msgstr "Einlesen aktivieren"
 
-#: ../caribou/common/settings.py:67
+#: ../caribou/common/settings.py:66
 msgid "Enable switch scanning"
 msgstr "Einlesen der Schalter aktivieren"
 
-#: ../caribou/common/settings.py:72
+#: ../caribou/common/settings.py:71
 msgid "Scanning mode"
 msgstr "Einlesemodus"
 
-#: ../caribou/common/settings.py:74
+#: ../caribou/common/settings.py:73
 msgid "Scanning type, block or row"
 msgstr "Einlesetyp, Block oder Zeile "
 
-#: ../caribou/common/settings.py:75
+#: ../caribou/common/settings.py:74
 msgid "Block"
 msgstr "Block"
 
-#: ../caribou/common/settings.py:76
+#: ../caribou/common/settings.py:75
 msgid "Row"
 msgstr "Zeile"
 
-#: ../caribou/common/settings.py:77
+#: ../caribou/common/settings.py:76
 msgid "Step time"
 msgstr "Schrittzeit"
 
-#: ../caribou/common/settings.py:78
+#: ../caribou/common/settings.py:77
 msgid "Time between key transitions"
 msgstr "Zeit zwischen Tastenübergängen"
 
-#: ../caribou/common/settings.py:81
+#: ../caribou/common/settings.py:80
 msgid "Reverse scanning"
 msgstr "Umgekehrtes Einlesen"
 
-#: ../caribou/common/settings.py:82
+#: ../caribou/common/settings.py:81
 msgid "Scan in reverse order"
 msgstr "Rückwärts einlesen"
 
-#: ../caribou/common/settings.py:85
+#: ../caribou/common/settings.py:83
+msgid "Input"
+msgstr "Eingabe"
+
+#: ../caribou/common/settings.py:84
 msgid "Switch device"
 msgstr "Gerät umschalten"
 
-#: ../caribou/common/settings.py:87
+#: ../caribou/common/settings.py:86
 msgid "Switch device, keyboard or mouse"
 msgstr "Gerät umschalten, Tastatur oder Maus"
 
-#: ../caribou/common/settings.py:90
+#: ../caribou/common/settings.py:89
 msgid "Mouse"
 msgstr "Maus"
 
-#: ../caribou/common/settings.py:95
+#: ../caribou/common/settings.py:91
+msgid "Switch key"
+msgstr "Taste zum Umschalten"
+
+#: ../caribou/common/settings.py:94
 msgid "Key to use with scanning mode"
 msgstr "Für Einlesemodus zu verwendende Taste"
 
-#: ../caribou/common/settings.py:97
+#: ../caribou/common/settings.py:96
 msgid "Right shift"
 msgstr "Rechte Umschalttaste"
 
-#: ../caribou/common/settings.py:98
+#: ../caribou/common/settings.py:97
 msgid "Left shift"
 msgstr "Linke Umschalttaste"
 
-#: ../caribou/common/settings.py:99
+#: ../caribou/common/settings.py:98
 msgid "Alt Gr"
 msgstr "AltGr"
 
-#: ../caribou/common/settings.py:100
+#: ../caribou/common/settings.py:99
 msgid "Num lock"
 msgstr "Num lock"
 
-#: ../caribou/common/settings.py:104
+#: ../caribou/common/settings.py:100
+msgid "Switch button"
+msgstr "Maustaste zum Umschalten"
+
+#: ../caribou/common/settings.py:103
 msgid "Mouse button to use in the scanning mode"
 msgstr "Im Einlesemodus zu verwendende Maustaste"
 
-#: ../caribou/common/settings.py:106
+#: ../caribou/common/settings.py:105
 msgid "Button 1"
 msgstr "Taste 1"
 
-#: ../caribou/common/settings.py:107
+#: ../caribou/common/settings.py:106
 msgid "Button 2"
 msgstr "Taste 2"
 
-#: ../caribou/common/settings.py:108
+#: ../caribou/common/settings.py:107
 msgid "Button 3"
 msgstr "Taste 3"
 
-#: ../caribou/common/settings.py:112
+#: ../caribou/common/settings.py:111
 msgid "Block color"
 msgstr "Blockfarbe"
 
-#: ../caribou/common/settings.py:113
+#: ../caribou/common/settings.py:112
 msgid "Color of block scans"
 msgstr "Farbe des Block-Einlesers"
 
-#: ../caribou/common/settings.py:114
+#: ../caribou/common/settings.py:113
 msgid "Row color"
 msgstr "Zeilenfarbe"
 
-#: ../caribou/common/settings.py:115
+#: ../caribou/common/settings.py:114
 msgid "Color of row scans"
 msgstr "Farbe beim Einlesen von Zeilen"
 
-#: ../caribou/common/settings.py:116
+#: ../caribou/common/settings.py:115
 msgid "Key color"
 msgstr "Tastenfarbe"
 
-#: ../caribou/common/settings.py:117
+#: ../caribou/common/settings.py:116
 msgid "Color of key scans"
 msgstr "Farbe beim Einlesen von Tasten"
 
-#: ../caribou/common/settings.py:119
+#: ../caribou/common/settings.py:118
 msgid "Cancel color"
 msgstr "Abbrechen-Farbe"
 
-#: ../caribou/common/settings.py:120
+#: ../caribou/common/settings.py:119
 msgid "Color of cancel scan"
 msgstr "Farbe beim Abbrechen des Einlesens"
 
-#: ../caribou/ui/preferences_window.py:50
+#: ../caribou/ui/preferences_window.py:51
 msgid "Caribou Preferences"
 msgstr "Einstellungen für Caribou"
 
-#~ msgid "Keys"
-#~ msgstr "Tasten"
-
-#~ msgid "Use Defaults"
-#~ msgstr "Vorgaben verwenden"
-
-#~ msgid "_Mouse switch"
-#~ msgstr "_Mausumschaltung"
-
-#~ msgid "_Scan enabled"
-#~ msgstr "Einle_sen aktiviert"
-
-#~ msgid "_Test settings here:"
-#~ msgstr "Einstellungen hier _testen:"
-
-#~ msgid "Key _size:"
-#~ msgstr "Tasten_größe:"
-
-#~ msgid "Key s_pacing:"
-#~ msgstr "Tasten_abstand:"
