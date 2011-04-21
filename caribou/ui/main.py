@@ -72,7 +72,7 @@ class Caribou:
                                                Gtk.ButtonsType.OK,
                                                _("Accessibility has been enabled. "
                                                  "Log out and back in again to use "
-                                                 "%s." % const.APP_NAME))
+                                                 "%s.") % const.APP_NAME)
                 msgdialog2.run()
                 msgdialog2.destroy()
                 msgdialog.destroy()
