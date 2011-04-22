@@ -74,6 +74,7 @@ caribou/ui/Makefile
 bin/Makefile
 bin/caribou
 data/Makefile
-data/keyboards/Makefile
+data/layouts/Makefile
+data/layouts/natural/Makefile
 libcaribou/Makefile
 ])

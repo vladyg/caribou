@@ -4,39 +4,21 @@ from gettext import gettext as _
 import caribou.common.const as const
 import caribou.ui.i18n
 import xml.dom.minidom
+import json
 
 GSETTINGS_SCHEMA = "org.gnome.caribou"
-
-try:
-    import json
-except ImportError:
-    HAS_JSON = False
-else:
-    HAS_JSON = True
-
-def fetch_keyboards():
-    try:
-        files = os.listdir(const.KEYBOARDS_DIR)
-    except:
-        files = []
-    kbds = []
-    for f in files:
-        if (HAS_JSON and f.endswith('.json')) or f.endswith('.xml'):
-            module = f.rsplit('.', 1)[0]
-            # TODO: verify keyboard before adding it to the list
-            kbds.append(module)
-    return kbds
 
 settings = SettingsGroup("_top", "", [
         SettingsGroup("keyboard", _("Keyboard"), [
                 SettingsGroup("general", _("General"), [
                         StringSetting(
-                            "layout", _("Keyboard layout"), "qwerty",
-                            _("The layout Caribou should use."),
-                            _("The layout should be in the data directory of "
-                              "Caribou (usually /usr/share/caribou/keyboards) "
-                              "and should be a .xml or .json file."),
-                            allowed=[(a,a) for a in fetch_keyboards()])]),
+                            "geometry", _("Keyboard geometry"), "natural",
+                            _("The keyboard geometery Caribou should use"),
+                            _("The keyboard geometery determines the shape "
+                              "and complexity of the keyboard, it could range from "
+                              "a 'natural' look and feel good for composing simple "
+                              "text, to a fullscale keyboard."),
+                            allowed=[(('natural'), _('Natural'))])]),
                 SettingsGroup("color", _("Color"), [
                         BooleanSetting(
                             "default_colors", _("Use system theme"), True,

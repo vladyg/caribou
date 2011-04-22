@@ -22,7 +22,6 @@
 
 from caribou import data_path
 from opacity import ProximityWindowBase
-from caribou.common.settings_manager import SettingsManager
 
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -30,8 +29,6 @@ from gi.repository import Clutter
 import os
 import sys
 import gobject
-
-CARIBOU_LAYOUT_DIR = 'keyboards'
 
 Clutter.init("caribou")
 
@@ -65,10 +62,6 @@ class CaribouWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
         self._entry_location = Rectangle()
         self._default_placement = default_placement or \
             CaribouWindowPlacement()
-
-        conf_file_path = self._get_keyboard_conf()
-        if conf_file_path:
-            text_entry_mech.load_kb(conf_file_path)
 
         self.connect('show', self._on_window_show)
 
@@ -117,7 +110,6 @@ class CaribouWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
     def destroy(self):
         self.keyboard.destroy()
         super(Gtk.Window, self).destroy()
-
 
     def set_cursor_location(self, cursor_location):
         self._cursor_location = cursor_location
@@ -204,26 +196,6 @@ class CaribouWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
             offset += axis_placement.get_length(bbox.width, bbox.height)/2
 
         return offset
-
-    def _get_keyboard_conf(self):
-        layout = SettingsManager.layout.value
-        conf_file_path = os.path.join(data_path, CARIBOU_LAYOUT_DIR, layout)
-
-        if os.path.exists(conf_file_path):
-            return conf_file_path
-        else:
-            json_path = '%s.json' % conf_file_path
-
-            if os.path.exists(json_path):
-                return json_path
-
-            xml_path = '%s.xml' % conf_file_path
-
-            if os.path.exists(xml_path):
-                return xml_path
-
-	raise Exception("Could not load keyboard %s" % conf_file_path)
-
 
     def show_all(self):
         Gtk.Window.show_all(self)

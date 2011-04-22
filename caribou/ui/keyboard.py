@@ -25,6 +25,7 @@
 import caribou.common.const as const
 from caribou.common.settings_manager import SettingsManager
 from preferences_window import PreferencesWindow
+from caribou import data_path
 from gi.repository import GConf
 import gobject
 from gi.repository import Gdk
@@ -48,33 +49,40 @@ from xml.dom import minidom
 import gettext
 import i18n
 
+PRETTY_LABELS = {
+    "BackSpace" : u'\u232b',
+    "space" : u' ',
+    "Return" : u'\u23ce',
+    'Caribou_Prefs' : u'\u2328',
+    'Caribou_ShiftUp' : u'\u2b06',
+    'Caribou_ShiftDown' : u'\u2b07',
+    'Caribou_Emoticons' : u'\u263a',
+    'Caribou_Symbols' : u'123',
+    'Caribou_Symbols_More' : u'{#*',
+    'Caribou_Alpha' : u'Abc'
+}
+
 class BaseKey(object):
     '''An abstract class the represents a key on the keyboard.
     Inheriting classes also need to inherit from Gtk.Button or any
     of it's subclasses.'''
 
-    def __init__(self, label = '', value = '', key_type = 'normal',
-                 width = 1, fill = False):
-        self.key_type = key_type
-        self.value = value
-        self.width = float(width)
-        self.fill = False
-        self.label = label or value
-        if self.key_type == const.DUMMY_KEY_TYPE:
-            self.set_relief(Gtk.ReliefStyle.NONE)
-            self.set_sensitive(False)
-        elif self.key_type == const.PREFERENCES_KEY_TYPE:
-            image = Gtk.Image()
-            image.set_from_stock(Gtk.STOCK_PREFERENCES,
-                                 Gtk.IconSize.BUTTON)
-            self.set_image(image)
+    def __init__(self, **kwargs):
+        if not kwargs.has_key("name"):
+            raise TypeError, "%r requires a 'name' parameter" % self.__class__
+        self.margin_left = 0
+        self.width = 1
+
+        for k, v in kwargs.items():
+            setattr(self, k, v)
+        if hasattr(self, "extended_names"):
+            self.extended_keys = \
+                [self.__class__(name=n) for n in self.extended_names]
         else:
-            if label:
-                label_markup = Gtk.Label()
-                label_markup.set_markup(self.label)
-                self.add(label_markup)
-            else:
-                self.set_label(self.label)
+            self.extended_keys = []
+
+        self.keyval, self.key_label = self._get_keyval_and_label(self.name)
+        self.set_label(self.key_label)
 
         ctx = self.get_style_context()
         ctx.add_class("caribou-keyboard-button")
@@ -85,6 +93,21 @@ class BaseKey(object):
 
         if not SettingsManager.default_font.value:
             self._key_font_changed(None, None)
+
+    def _get_keyval_and_label(self, name):
+        keyval = Gdk.keyval_from_name(name)
+        if PRETTY_LABELS.has_key(name):
+            label = PRETTY_LABELS[name]
+        elif name.startswith('Caribou_'):
+            label = name.replace('Caribou_', '')
+        else:
+            unichar = unichr(Gdk.keyval_to_unicode(keyval))
+            if unichar.isspace() or unichar == u'\x00':
+                label = name
+            else:
+                label = unichar
+
+        return keyval, label
 
     def _key_font_changed(self, setting, value):
         if SettingsManager.default_font.value:
@@ -107,54 +130,55 @@ class BaseKey(object):
     def scan_highlight_clear(self):
         raise NotImplemented
 
-    def _on_image_key_mapped(self, key):
-        key_width = key.get_allocated_height()
-        icon_size = Gtk.IconSize.MENU
-        image = Gtk.Image()
-        for size in [Gtk.IconSize.MENU,
-                     Gtk.IconSize.SMALL_TOOLBAR,
-                     Gtk.IconSize.LARGE_TOOLBAR,
-                     Gtk.IconSize.BUTTON,
-                     Gtk.IconSize.DND,
-                     Gtk.IconSize.DIALOG]:
-            pixbuf = image.render_icon_pixbuf(Gtk.STOCK_PREFERENCES, size)
-            pixel_size = pixbuf.get_width()
-            if pixel_size > key_width:
-                break
-            icon_size = size
-        image.set_from_stock(Gtk.STOCK_PREFERENCES, icon_size)
-        self.set_image(image)
-
     def set_font(self, font):
         raise NotImplemented
 
     def reset_font(self):
         raise NotImplemented
 
-    def _get_value(self):
-        return self._value
+class CaribouSubKeys(Gtk.Window):
+    def __init__(self, keys):
+        gobject.GObject.__init__(self, type=Gtk.WindowType.POPUP)
+        self.set_decorated(False)
+        self.set_resizable(False)
+        self.set_accept_focus(False)
+        self.set_position(Gtk.WindowPosition.MOUSE)
+        self.set_type_hint(Gdk.WindowTypeHint.DIALOG)
 
-    def _set_value(self, value):
-        if self.key_type in (const.NORMAL_KEY_TYPE, const.MASK_KEY_TYPE):
-            if type(value) == str:
-                value = value.decode('utf-8')
-            if type(value) == unicode:
-                if len(value) == 1:
-                    self._value = Gdk.unicode_to_keyval(ord(value))
-                else:
-                    key_value = Gdk.keyval_from_name(value)
-                    if key_value:
-                        self._value = key_value
-        else:
-            self._value = value
+        for key in keys:
+            key.connect("clicked", self._on_key_clicked)
 
-    value = property(_get_value, _set_value)
+        layout = KeyboardLayout("")
+        layout.add_row(keys)
+        self.add(layout)
+
+    def show_subkeys(self, parent):
+        self.set_transient_for(parent)
+        self._parent = parent
+        self._parent.set_sensitive(False)
+        self.show_all()
+
+    def _on_key_clicked(self, key):
+        self._parent.set_sensitive(True)
+        self.hide()
 
 class Key(Gtk.Button, BaseKey):
-    def __init__(self, label = '', value = '', key_type = 'normal',
-                 width = 1, fill = False):
+    def __init__(self, **kwargs):
         gobject.GObject.__init__(self)
-        BaseKey.__init__(self, label, value, key_type, width, fill)
+        BaseKey.__init__(self, **kwargs)
+        if self.extended_keys:
+            self.sub_keys = CaribouSubKeys(self.extended_keys)
+        else:
+            self.sub_keys = None
+
+        child = self.get_child()
+        child.set_padding(4, 4)
+
+    def do_get_preferred_width_for_height(self, w):
+        return (w, w)
+
+    def do_get_request_mode(self):
+        return Gtk.SizeRequestMode.HEIGHT_FOR_WIDTH
 
     def set_font(self, font):
         child = self.get_child()
@@ -196,27 +220,30 @@ class Key(Gtk.Button, BaseKey):
 class ModifierKey(Gtk.ToggleButton, Key):
     pass
 
-class KeyboardLayout(Gtk.Table):
+class KeyboardLayout(Gtk.Grid):
     KEY_SPAN = 4
+
     def __init__(self, name):
         gobject.GObject.__init__(self)
         self.layout_name = name
         self.rows = []
-        self.set_homogeneous(True)
+        self.set_column_homogeneous(True)
+        self.set_row_homogeneous(True)
+        self.set_row_spacing(4)
+        self.set_column_spacing(4)
 
     def add_row(self, row):
         row_num = len(self.rows)
         self.rows.append(row)
-        last_col = 0
+        col_num = 0
         for i, key in enumerate(row):
-            next_col = (last_col + (key.width * self.KEY_SPAN))
-            self.attach(key, last_col, next_col,
-                        row_num * self.KEY_SPAN, (row_num + 1) * self.KEY_SPAN,
-                        Gtk.AttachOptions.EXPAND | Gtk.AttachOptions.FILL, 
-                        Gtk.AttachOptions.EXPAND | Gtk.AttachOptions.FILL,
-                        0, 0)
-            last_col = next_col
-    
+            self.attach(key,
+                        col_num + int(key.margin_left * self.KEY_SPAN),
+                        row_num * self.KEY_SPAN,
+                        int(self.KEY_SPAN * key.width),
+                        self.KEY_SPAN)
+            col_num += int((key.width + key.margin_left ) * self.KEY_SPAN)
+
     def get_scan_rows(self):
         return [filter(lambda x: x.is_sensitive(), row) for row in self.rows]
 
@@ -247,16 +274,21 @@ class KeyboardLayout(Gtk.Table):
                     group.append(block)
 
         return reduce(lambda a, b: a + b, blocks)
-        
-                                    
 
 class KbLayoutDeserializer(object):
-    def __init__(self):
-        pass
+    def _get_layout_file(self, group, variant):
+        layout_path = os.path.join(data_path, "layouts",
+                                   SettingsManager.geometry.value)
+        for fn in ('%s_%s.json' % (group, variant),
+                   '%s.json' % group):
+            layout_file = os.path.join(layout_path, fn)
+            if os.path.exists(layout_file):
+                return layout_file
+        return None
 
-    def deserialize(self, kb_layout_file):
-        kb_file = os.path.abspath(kb_layout_file)
-        if not os.path.isfile(kb_file):
+    def deserialize(self, group, variant):
+        kb_file = self._get_layout_file(group, variant)
+        if not kb_file:
             return []
         kb_file_obj = open(kb_file)
         contents = kb_file_obj.read()
@@ -304,28 +336,15 @@ class KbLayoutDeserializer(object):
     def _create_kb_layout_from_dict(self, dictionary):
         if not isinstance(dictionary, dict):
             return None
-        layouts = self._get_dict_value_as_list(dictionary, 'layout')
         layouts_encoded = []
-        for layout in layouts:
-            name = layout.get('name')
-            if not name:
-                continue
+        for name, level in dictionary.items():
             kb_layout = KeyboardLayout(name)
-            rows_list = self._get_dict_value_as_list(layout, 'rows')
-            for rows in rows_list:
-                for row_encoded in self._get_rows_from_dict(rows):
-                    kb_layout.add_row(row_encoded)
-                layouts_encoded.append(kb_layout)
+            rows_list = self._get_dict_value_as_list(level, 'rows')
+            for row in rows_list:
+                keys = self._get_keys_from_list(row)
+                kb_layout.add_row(keys)
+            layouts_encoded.append(kb_layout)
         return layouts_encoded
-
-    def _get_rows_from_dict(self, rows):
-        rows_encoded = []
-        row_list = self._get_dict_value_as_list(rows, 'row')
-        for row in row_list:
-            keys = self._get_dict_value_as_list(row, 'key')
-            if keys:
-                rows_encoded.append(self._get_keys_from_list(keys))
-        return rows_encoded
 
     def _get_keys_from_list(self, keys_list):
         keys = []
@@ -333,8 +352,8 @@ class KbLayoutDeserializer(object):
             vars = {}
             for key, value in key_vars.items():
                 vars[str(key)] = value
-            if vars.get('key_type', '') == const.MASK_KEY_TYPE:
-                key = ModifierKey(**vars)
+            if vars.get('modifier', False) == const.MASK_KEY_TYPE:
+                key = ModifierKey(self.vk, **vars)
             else:
                 key = Key(**vars)
             keys.append(key)
@@ -360,45 +379,82 @@ class CaribouKeyboard(Gtk.Notebook):
         self.key_size = 30
         self.current_page = 0
         self.depressed_mods = []
+        self.layouts = {}
+        self._load_kb()
+        self.vk.connect('group-changed', self._on_group_changed)
+        grpid, group, variant = self.vk.get_current_group()
+        self._on_group_changed(self.vk, grpid, group, variant)
+        self._key_hold_tid = 0
 
-        self.row_height = -1
-
-    def load_kb(self, kb_location):
+    def _load_kb(self):
         kb_deserializer = KbLayoutDeserializer()
-        layouts = kb_deserializer.deserialize(kb_location)
-        self._set_layouts(layouts)
+        groups, variants = self.vk.get_groups()
+        for group, variant in zip(groups, variants):
+            levels = kb_deserializer.deserialize(group, variant)
+            self._add_levels('%s_%s' % (group, variant), levels)
 
-    def _set_layouts(self, layout_list):
-        self._clear()            
-        for layout in layout_list:
-            self.append_page(layout, None)
-            for row in layout.rows:
+    def _connect_key_signals(self, key):
+        if hasattr(key, "toggle"):
+            key.connect('clicked',
+                        self._pressed_layout_switcher_key)
+        elif key.name == "Caribou_Prefs":
+            key.connect('clicked', self._pressed_preferences_key)
+        elif key.keyval != 0:
+            if False: # We should enable this for hardware emulation
+                key.connect('pressed',
+                            self._pressed_normal_key)
+                key.connect('released',
+                            self._released_normal_key)
+            else:
+                key.connect('clicked',
+                            self._clicked_normal_key)
+                key.connect('pressed',
+                            self._key_hold_start)
+                key.connect('released',
+                            self._key_hold_end)
+        
+
+    def _add_levels(self, group, level_list):
+        self.layouts[group] = {}
+        for level in level_list:
+            level.show()
+            self.layouts[group][level.layout_name] = self.append_page(level, None)
+            for row in level.rows:
                 for key in row:
-                    if key.key_type == const.LAYOUT_SWITCHER_KEY_TYPE:
-                        key.connect('clicked',
-                                    self._pressed_layout_switcher_key)
-                    elif key.key_type == const.MASK_KEY_TYPE:
-                        key.connect('toggled',
-                                    self._toggled_mask_key)
-                    elif key.key_type == const.PREFERENCES_KEY_TYPE:
-                        key.connect('clicked',
-                                    self._pressed_preferences_key)
-                    else:
-                        key.connect('pressed',
-                                    self._pressed_normal_key)
-                        key.connect('released',
-                                    self._released_normal_key)
+                    self._connect_key_signals(key)
+                    for k in key.extended_keys:
+                        self._connect_key_signals(k)
 
     def _clear(self):
         n_pages = self.get_n_pages()
         for i in range(n_pages):
             self.remove_page(i)
 
+    def _key_hold_start(self, key):
+        self._key_hold_tid = gobject.timeout_add(1000, self._on_key_held, key)
+
+    def _key_hold_end(self, key):
+        if self._key_hold_tid != 0:
+            gobject.source_remove(self._key_hold_tid)
+            self._key_hold_tid = 0
+
+    def _on_key_held(self, key):
+        self._key_hold_tid = 0
+        if key.sub_keys:
+            key.sub_keys.show_subkeys(self.get_toplevel())
+        return False
+
+    def _clicked_normal_key(self, key):
+        if self._key_hold_tid == 0:
+            return
+        self._pressed_normal_key(key)
+        self._released_normal_key(key)
+
     def _pressed_normal_key(self, key):
-        self.vk.keyval_press(key.value)
+        self.vk.keyval_press(key.keyval)
 
     def _released_normal_key(self, key):
-        self.vk.keyval_release(key.value)
+        self.vk.keyval_release(key.keyval)
         while True:
             try:
                 mod = self.depressed_mods.pop()
@@ -407,7 +463,11 @@ class CaribouKeyboard(Gtk.Notebook):
             mod.set_active (False)
 
     def _pressed_layout_switcher_key(self, key):
-        self._switch_to_layout(key.value)
+        _, group, variant = self.vk.get_current_group()
+        self._switch_to_layout('%s_%s' % (group, variant), key.toggle)
+
+    def _on_group_changed(self, vk, groupid, group, variant):
+        self._switch_to_default('%s_%s' % (group, variant))
 
     def _toggled_mask_key(self, key):
         if key.get_active():
@@ -430,13 +490,19 @@ class CaribouKeyboard(Gtk.Notebook):
         p.run()
         p.destroy()
 
-    def _switch_to_layout(self, name):
-        n_pages = self.get_n_pages()
-        for i in range(n_pages):
-            if self.get_nth_page(i).layout_name == name:
-                self.set_current_page(i)
-                self.current_page = i
-                break
+    def _switch_to_default(self, group):
+        try:
+            i = min(self.layouts[group].values())
+        except KeyError:
+            i = 0
+        self.set_current_page(i)
+
+    def _switch_to_layout(self, group, level):
+        if self.layouts.has_key(group):
+            if self.layouts[group].has_key(level):
+                self.set_current_page(self.layouts[group][level])
+                return
+        self._switch_to_default(group)
 
     def get_current_layout(self):
         i = self.get_current_page()
@@ -450,10 +516,9 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal.SIG_DFL)
 
     w = Gtk.Window()
+    w.set_accept_focus(False)
 
     kb = CaribouKeyboard()
-    kb.load_kb('data/keyboards/qwerty.xml')
-
     w.add(kb)
 
     w.show_all()

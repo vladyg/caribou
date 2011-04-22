@@ -83,8 +83,8 @@ class Caribou:
         kb = kb_factory()
         self.window = window_factory(kb)
         self._register_event_listeners()
-        SettingsManager.layout.connect("value-changed",
-                                       self._on_layout_changed)
+        SettingsManager.geometry.connect("value-changed",
+                                         self._on_geometry_changed)
 
         # Scanning
         self.scan_master = ScanMaster(self.window, kb)
@@ -157,7 +157,7 @@ class Caribou:
         else:
             self.scan_master.stop()
 
-    def _on_layout_changed(self, setting, val):
+    def _on_geometry_changed(self, setting, val):
         self._deregister_event_listeners()
         self.window.destroy()
         self._update_window()

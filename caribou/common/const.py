@@ -30,7 +30,7 @@ APP_SLUG_NAME = 'caribou'
 
 # Paths
 DATA_DIR = data_path
-KEYBOARDS_DIR = join(DATA_DIR, 'keyboards')
+LAYOUTS_DIR = join(DATA_DIR, 'layouts')
 
 # Preferences
 CARIBOU_GCONF = '/org/gnome/caribou/osk'
