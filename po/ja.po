@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-04-11 05:38+0000\n"
-"PO-Revision-Date: 2011-03-25 18:35+0900\n"
+"POT-Creation-Date: 2011-04-21 10:24+0000\n"
+"PO-Revision-Date: 2011-04-20 11:54+0900\n"
 "Last-Translator: Jiro Matsuzawa <matsuzawa.jr@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -18,7 +18,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../caribou/ui/main.py:238
+#: ../caribou/ui/main.py:59
+#, python-format
+msgid ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
+msgstr ""
+"%s を使用するにはアクセシビリティ機能を有効にする必要があります。有効にします"
+"か?"
+
+#: ../caribou/ui/main.py:73
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
+msgstr ""
+"アクセシビリティ機能が有効になりました。%s を使用するにはログインしなおしてく"
+"ださい。"
+
+#: ../caribou/ui/main.py:262
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "警告 - Caribou: 処理できない編集可能なウィジェット:"
 
