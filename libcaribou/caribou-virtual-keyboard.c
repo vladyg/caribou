@@ -240,3 +240,66 @@ caribou_virtual_keyboard_keyval_release (CaribouVirtualKeyboard *self,
 
   gdk_display_sync (gdk_display_get_default ());
 }
+/**
+ * caribou_virtual_keyboard_get_current_group:
+ * @group_name: (out) (transfer full): Location to store name of current group,
+ *   or NULL.
+ * @variant_name: (out) (transfer full): Location to store name of current group's
+ *   variant or NULL.
+ *
+ * Retrieve the keyboard's currently active group.
+ *
+ * Returns: Current group index.
+ */
+guint
+caribou_virtual_keyboard_get_current_group (CaribouVirtualKeyboard  *self,
+                                            gchar                  **group_name,
+                                            gchar                  **variant_name)
+{
+  CaribouVirtualKeyboardPrivate *priv = self->priv;
+
+  if (group_name != NULL || variant_name != NULL) {
+    XklConfigRec *config_rec = xkl_config_rec_new ();
+    xkl_config_rec_get_from_server (config_rec, priv->xkl_engine);
+
+    if (group_name != NULL)
+      *group_name = g_strdup (config_rec->layouts[priv->group]);
+
+    if (variant_name != NULL)
+      *variant_name = g_strdup (config_rec->variants[priv->group]);
+
+    g_object_unref (config_rec);
+  }
+
+  return priv->group;
+}
+
+/**
+ * caribou_virtual_keyboard_get_groups:
+ * @group_names: (out) (transfer full) (array zero-terminated=1): Location to store
+ *   names of available groups or NULL.
+ * @variant_names: (out) (transfer full) (array zero-terminated=1): Location to store
+ *   variants of available groups or NULL.
+ *
+ * Retrieve the keyboard's available groups.
+ */
+void
+caribou_virtual_keyboard_get_groups (CaribouVirtualKeyboard   *self,
+                                     gchar                  ***group_names,
+                                     gchar                  ***variant_names)
+{
+  CaribouVirtualKeyboardPrivate *priv = self->priv;
+
+  if (group_names != NULL || variant_names != NULL) {
+    XklConfigRec *config_rec = xkl_config_rec_new ();
+    xkl_config_rec_get_from_server (config_rec, priv->xkl_engine);
+
+    if (group_names != NULL)
+      *group_names = g_strdupv (config_rec->layouts);
+
+    if (variant_names != NULL)
+      *variant_names = g_strdupv (config_rec->variants);
+
+    g_object_unref (config_rec);
+  }
+}

@@ -47,6 +47,13 @@ void caribou_virtual_keyboard_mod_latch (CaribouVirtualKeyboard *self,
 void caribou_virtual_keyboard_mod_unlatch (CaribouVirtualKeyboard *self,
                                            int                     mask);
 
+guint caribou_virtual_keyboard_get_current_group (CaribouVirtualKeyboard  *self,
+                                                  gchar                  **group_name,
+                                                  gchar                  **variant_name);
+
+void caribou_virtual_keyboard_get_groups (CaribouVirtualKeyboard   *self,
+                                          gchar                  ***group_names,
+                                          gchar                  ***variant_names);
 G_END_DECLS
 
 #endif /* CARIBOU_VIRTUAL_KEYBOARD_H */
