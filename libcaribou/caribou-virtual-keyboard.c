@@ -16,6 +16,8 @@
 struct _CaribouVirtualKeyboardPrivate {
   XkbDescPtr  xkbdesc;
   XklEngine  *xkl_engine;
+  KeyCode reserved_keycode;
+  KeySym reserved_keysym;
   gchar modifiers;
   gchar group;
 };
@@ -38,6 +40,77 @@ dispose (GObject *object)
   XkbFreeKeyboard (self->priv->xkbdesc, XkbGBN_AllComponentsMask, True);
 
   G_OBJECT_CLASS (caribou_virtual_keyboard_parent_class)->dispose (object);
+}
+
+/* A hack stolen from AT-SPI registry */
+static guint64
+_get_reserved_keycode (CaribouVirtualKeyboard *self)
+{
+  guint64 i;
+  XkbDescPtr xkbdesc = self->priv->xkbdesc;
+
+  for (i = xkbdesc->max_key_code; i >= xkbdesc->min_key_code; --i)
+    {
+	  if (xkbdesc->map->key_sym_map[i].kt_index[0] == XkbOneLevelIndex)
+        {
+	      if (XKeycodeToKeysym (XDISPLAY, i, 0) != 0)
+            {
+              /* don't use this one if there's a grab client! */
+              gdk_error_trap_push ();
+              XGrabKey (XDISPLAY, i, 0,
+                        gdk_x11_get_default_root_xwindow (),
+                        TRUE,
+                        GrabModeSync, GrabModeSync);
+              XSync (XDISPLAY, TRUE);
+              XUngrabKey (XDISPLAY, i, 0,
+                          gdk_x11_get_default_root_xwindow ());
+              if (!gdk_error_trap_pop ())
+                return i;
+            }
+        }
+    }
+
+  return XKeysymToKeycode (XDISPLAY, XK_numbersign);
+}
+
+static void _replace_keycode (CaribouVirtualKeyboard *self, KeySym keysym);
+
+static gboolean
+_reset_reserved (gpointer user_data)
+{
+  CaribouVirtualKeyboard *self = CARIBOU_VIRTUAL_KEYBOARD (user_data);
+
+  _replace_keycode (self, self->priv->reserved_keysym);
+
+  return FALSE;
+}
+
+static void
+_replace_keycode (CaribouVirtualKeyboard *self, KeySym keysym)
+{
+  CaribouVirtualKeyboardPrivate *priv = self->priv;
+  gint offset;
+  g_return_if_fail (priv->xkbdesc != NULL && priv->xkbdesc->map != NULL);
+
+  XFlush (XDISPLAY);
+  XSync (XDISPLAY, False);
+
+  offset = priv->xkbdesc->map->key_sym_map[priv->reserved_keycode].offset;
+
+  priv->xkbdesc->map->syms[offset] = keysym;
+
+  XkbSetMap (XDISPLAY, XkbAllMapComponentsMask, priv->xkbdesc);
+  /**
+   *  FIXME: the use of XkbChangeMap, and the reuse of the priv->xkb_desc structure,
+   * would be far preferable.
+   * HOWEVER it does not seem to work using XFree 4.3.
+   **/
+  /*	    XkbChangeMap (XDISPLAY, priv->xkb_desc, priv->changes); */
+  XFlush (XDISPLAY);
+  XSync (XDISPLAY, False);
+
+  if (keysym != priv->reserved_keysym)
+    g_timeout_add (500, _reset_reserved, self);
 }
 
 static GdkFilterReturn
@@ -91,6 +164,9 @@ caribou_virtual_keyboard_init (CaribouVirtualKeyboard *self)
 
   gdk_window_add_filter (NULL, (GdkFilterFunc) _filter_x_evt, self);
 
+  self->priv->reserved_keycode = _get_reserved_keycode (self);
+  self->priv->reserved_keysym = XKeycodeToKeysym (XDISPLAY,
+                                                  self->priv->reserved_keycode, 0);
 }
 
 static void
@@ -152,20 +228,31 @@ caribou_virtual_keyboard_new ()
 }
 
 static KeyCode
-keycode_for_keyval (guint                   keyval,
+keycode_for_keyval (CaribouVirtualKeyboard *self,
+                    guint                   keyval,
                     guint                  *modmask)
 {
   GdkKeymap *km = gdk_keymap_get_default ();
   GdkKeymapKey *kmk;
   gint len;
-  KeyCode keycode;
+  KeyCode keycode = 38; // Initializing to something legal
 
   g_return_val_if_fail (modmask != NULL, 0);
 
   if (gdk_keymap_get_entries_for_keyval (km, keyval, &kmk, &len)) {
-    keycode = kmk[0].keycode;
-    *modmask = (kmk[0].level == 1) ? GDK_SHIFT_MASK : 0;
+    gint i;
+    GdkKeymapKey best_match = kmk[0];
+
+    for (i=0; i<len; i++)
+      if (kmk[i].group == self->priv->group)
+        best_match = kmk[i];
+
+    keycode = best_match.keycode;
+    *modmask = (best_match.level == 1) ? GDK_SHIFT_MASK : 0;
     g_free (kmk);
+  } else {
+    _replace_keycode (self, keyval);
+    keycode = self->priv->reserved_keycode;
   }
 
   return keycode;
@@ -211,7 +298,7 @@ caribou_virtual_keyboard_keyval_press (CaribouVirtualKeyboard *self,
                                        guint                   keyval)
 {
   guint mask;
-  KeyCode keycode = keycode_for_keyval (keyval, &mask);
+  KeyCode keycode = keycode_for_keyval (self, keyval, &mask);
 
   if (mask != 0)
     caribou_virtual_keyboard_mod_latch (self, mask);
@@ -231,7 +318,7 @@ caribou_virtual_keyboard_keyval_release (CaribouVirtualKeyboard *self,
                                          guint                   keyval)
 {
   guint mask;
-  KeyCode keycode = keycode_for_keyval (keyval, &mask);
+  KeyCode keycode = keycode_for_keyval (self, keyval, &mask);
 
   XTestFakeKeyEvent(XDISPLAY, keycode, FALSE, CurrentTime);
 
