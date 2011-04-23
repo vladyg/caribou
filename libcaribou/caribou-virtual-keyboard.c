@@ -10,8 +10,9 @@
 #include <gdk/gdkx.h>
 #include <X11/XKBlib.h>
 
+#define XDISPLAY GDK_DISPLAY_XDISPLAY(gdk_display_get_default ())
+
 struct _CaribouVirtualKeyboardPrivate {
-  GdkDisplay *display;
 };
 
 G_DEFINE_TYPE (CaribouVirtualKeyboard, caribou_virtual_keyboard, G_TYPE_OBJECT)
@@ -37,7 +38,6 @@ caribou_virtual_keyboard_init (CaribouVirtualKeyboard *self)
   self->priv = G_TYPE_INSTANCE_GET_PRIVATE ((self), CARIBOU_TYPE_VIRTUAL_KEYBOARD,
                                             CaribouVirtualKeyboardPrivate);
 
-  self->priv->display = gdk_display_get_default ();
 }
 
 static void
@@ -74,14 +74,6 @@ caribou_virtual_keyboard_new ()
   return g_object_new (CARIBOU_TYPE_VIRTUAL_KEYBOARD, NULL);
 }
 
-static Display *
-_get_xdisplay (CaribouVirtualKeyboard *self)
-{
-  g_return_if_fail (self != NULL);
-
-  return GDK_DISPLAY_XDISPLAY (self->priv->display);
-}
-
 static KeyCode
 keycode_for_keyval (guint                   keyval,
                     guint                  *modmask)
@@ -112,10 +104,9 @@ void
 caribou_virtual_keyboard_mod_latch (CaribouVirtualKeyboard *self,
                                     int                     mask)
 {
-  Bool b;
-  b = XkbLatchModifiers(_get_xdisplay (self), XkbUseCoreKbd, mask, mask);
-  g_print ("latching %d %d\n", mask, b);
-  gdk_display_sync (self->priv->display);
+  XkbLatchModifiers(XDISPLAY, XkbUseCoreKbd, mask, mask);
+
+  gdk_display_sync (gdk_display_get_default ());
 }
 
 /**
@@ -128,9 +119,8 @@ void
 caribou_virtual_keyboard_mod_unlatch (CaribouVirtualKeyboard *self,
                                       int                     mask)
 {
-  g_print ("unlatching %d\n", mask);
-  XkbLatchModifiers(_get_xdisplay (self), XkbUseCoreKbd, mask, 0);
-  gdk_display_sync (self->priv->display);
+  XkbLatchModifiers(XDISPLAY, XkbUseCoreKbd, mask, 0);
+  gdk_display_sync (gdk_display_get_default ());
 }
 
 /**
@@ -145,12 +135,12 @@ caribou_virtual_keyboard_keyval_press (CaribouVirtualKeyboard *self,
 {
   guint mask;
   KeyCode keycode = keycode_for_keyval (keyval, &mask);
-  
+
   if (mask != 0)
     caribou_virtual_keyboard_mod_latch (self, mask);
 
-  XTestFakeKeyEvent(_get_xdisplay (self), keycode, TRUE, CurrentTime);
-  gdk_display_sync (self->priv->display);
+  XTestFakeKeyEvent(XDISPLAY, keycode, TRUE, CurrentTime);
+  gdk_display_sync (gdk_display_get_default ());
 }
 
 /**
@@ -166,10 +156,10 @@ caribou_virtual_keyboard_keyval_release (CaribouVirtualKeyboard *self,
   guint mask;
   KeyCode keycode = keycode_for_keyval (keyval, &mask);
 
-  XTestFakeKeyEvent(_get_xdisplay (self), keycode, FALSE, CurrentTime);
+  XTestFakeKeyEvent(XDISPLAY, keycode, FALSE, CurrentTime);
 
   if (mask != 0)
     caribou_virtual_keyboard_mod_unlatch (self, mask);
 
-  gdk_display_sync (self->priv->display);
+  gdk_display_sync (gdk_display_get_default ());
 }
