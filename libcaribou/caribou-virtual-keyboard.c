@@ -235,7 +235,7 @@ keycode_for_keyval (CaribouVirtualKeyboard *self,
   GdkKeymap *km = gdk_keymap_get_default ();
   GdkKeymapKey *kmk;
   gint len;
-  KeyCode keycode = 38; // Initializing to something legal
+  KeyCode keycode = 0;
 
   g_return_val_if_fail (modmask != NULL, 0);
 
