@@ -77,7 +77,7 @@ class BaseKey(object):
             setattr(self, k, v)
         if hasattr(self, "extended_names"):
             self.extended_keys = \
-                [self.__class__(name=n) for n in self.extended_names]
+                [self.__class__(name=n) for n in [self.name] + self.extended_names]
         else:
             self.extended_keys = []
 
