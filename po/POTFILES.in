@@ -1,5 +1,4 @@
 [encoding: UTF-8]
-caribou/ui/main.py
-caribou/ui/keyboard.py
-caribou/common/settings.py
-caribou/ui/preferences_window.py
+caribou/settings/caribou_settings.py
+caribou/__init__.py
+caribou/daemon/main.py

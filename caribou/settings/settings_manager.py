@@ -1,10 +1,9 @@
 import os
 from gi.repository import Gio
-from setting_types import *
-from settings import settings, GSETTINGS_SCHEMA
-import const
+from caribou.settings.setting_types import *
+from caribou.settings import GSETTINGS_SCHEMA
 
-class _SettingsManager(object):
+class SettingsManager(object):
     def __init__(self, settings):
         self.groups = settings
         self._gsettings = Gio.Settings(GSETTINGS_SCHEMA)
@@ -66,5 +65,3 @@ class _SettingsManager(object):
 
     def __call__(self):
         return self
-
-SettingsManager = _SettingsManager(settings)

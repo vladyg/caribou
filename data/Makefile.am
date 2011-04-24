@@ -17,8 +17,8 @@ autostart_DATA   = $(autostart_in_files:.desktop.in=.desktop)
 
 EXTRA_DIST = $(desktop_in_files) $(autostart_in_files)
 
-org.gnome.caribou.gschema.xml.in: $(top_srcdir)/caribou/common/settings.py
-	PYTHONPATH=${PYTHONPATH}:$(top_srcdir) $(PYTHON) $< > $@
+org.gnome.caribou.gschema.xml.in: $(top_srcdir)/tools/make_schema.py
+	$< org.gnome.caribou
 
 CLEANFILES = $(desktop_DATA) \
 	$(autostart_DATA) \

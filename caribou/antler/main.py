@@ -1,0 +1,30 @@
+from gi.repository import Caribou
+from window import AntlerWindowEntry
+from keyboard_view import AntlerKeyboardView
+import gobject
+
+class AntlerKeyboardService(Caribou.KeyboardService):
+    def __init__(self):
+        gobject.GObject.__init__(self)
+        self.register_keyboard("Antler")
+        self.window = AntlerWindowEntry(AntlerKeyboardView())
+
+    def run(self):
+        loop = gobject.MainLoop()
+        loop.run()
+
+    def do_show(self):
+        self.window.show_all()
+
+    def do_hide(self):
+        self.window.hide()
+
+    def do_set_cursor_location (self, x, y, w, h):
+        self.window.set_cursor_location(x, y, w, h)
+
+    def do_set_entry_location (self, x, y, w, h):
+        self.window.set_entry_location(x, y, w, h)
+
+if __name__ == "__main__":
+    antler_keyboard_service = AntlerKeyboardService()
+    antler_keyboard_service.run()

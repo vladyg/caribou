@@ -9,10 +9,11 @@ aclocal.m4
 autom4te.cache
 *.make
 bin/caribou
+bin/caribou-preferences
 install-sh
 missing
 py-compile
-caribou/ui/i18n.py
+caribou/i18n.py
 mkinstalldirs
 po/Makefile.in.in
 po/POTFILES

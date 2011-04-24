@@ -1,0 +1,32 @@
+#!/usr/bin/python
+
+import sys, os
+
+libs = os.path.join('@prefix@', 'lib', 'python@PYTHON_VERSION@', 'site-packages')
+
+# This might be run from the build dir.
+_dirname = os.path.dirname(__file__)
+if _dirname != "@prefix@/bin":
+    libs = os.path.normpath(os.path.join(_dirname, '..'))
+    
+sys.path.insert(1, libs)
+
+from gi.repository import Gtk
+from caribou.settings.settings_manager import SettingsManager
+from caribou.settings import CaribouSettings
+from caribou.settings.preferences_window import PreferencesWindow
+
+import signal
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+
+w = PreferencesWindow(CaribouSettings())
+
+w.connect("delete-event", lambda x, y: Gtk.main_quit())
+
+w.show_all()
+
+try:
+    Gtk.main()
+except KeyboardInterrupt:
+    Gtk.main_quit()
+

@@ -53,9 +53,7 @@ else:
     import caribou.ui
     caribou.data_path = os.path.join("@prefix@", "share", "caribou")
 
-import caribou.ui.window as window
-import caribou.ui.keyboard as keyboard
-import caribou.ui.main as main
+from caribou.daemon import CaribouDaemon
 
 _ = gettext.gettext
     
@@ -71,10 +69,9 @@ if __name__ == "__main__":
                       help="print debug messages on stdout")
     (options, args) = parser.parse_args()
 
-    main.debug = options.debug
+    #main.debug = options.debug
 
-    caribou = main.Caribou()
-    caribou.window.hide()
+    caribou = CaribouDaemon()
  
     try:
         pyatspi.Registry.start()

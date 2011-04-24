@@ -1,4 +1,4 @@
-bin_SCRIPTS = caribou
+bin_SCRIPTS = caribou caribou-preferences
 
 CLEANFILES = $(bin_SCRIPTS)
 

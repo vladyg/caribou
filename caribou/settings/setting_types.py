@@ -53,6 +53,16 @@ class Setting(gobject.GObject):
 class SettingsGroup(Setting):
     pass
 
+class SettingsTopGroup(SettingsGroup):
+    def __init__(self, label, path, schema_id, children=[]):
+        SettingsGroup.__init__(self, "_top", label, children)
+        self.path = path
+        self.schema_id = schema_id
+
+    def __call__(self):
+        from caribou.settings.settings_manager import SettingsManager
+        return SettingsManager(self)
+
 class ValueSetting(Setting):
     variant_type = ''
     entry_type=ENTRY_DEFAULT

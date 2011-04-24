@@ -18,47 +18,24 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-import caribou.common.const as const
-from caribou.common.setting_types import *
-from caribou.common.settings_manager import SettingsManager
+from caribou.settings.setting_types import *
 
-from gi.repository import GConf
 import gobject
 from gi.repository import Gdk
 from gi.repository import Gtk
-from gi.repository import Pango
-import sys
-import virtkey
-import os
-import traceback
-from i18n import _
-try:
-    import json
-except ImportError:
-    HAS_JSON = False
-else:
-    HAS_JSON = True
-import xml.etree.ElementTree as ET
-from xml.dom import minidom
-import gettext
-import i18n
 
-class PreferencesWindow(Gtk.Dialog):
-    __gtype_name__ = "PreferencesWindow"
-
-    def __init__(self):
-        gobject.GObject.__init__(self)
-        self.set_title(_("Caribou Preferences"))
-        self.add_button(Gtk.STOCK_CLOSE, Gtk.ResponseType.CLOSE)
-        self.set_border_width(6)
-
+class AbstractPreferencesUI:
+    def populate_settings(self, groups):
         notebook = Gtk.Notebook()
-        vbox = self.get_content_area()
-        vbox.add(notebook)
-        self._populate_settings(notebook, SettingsManager.groups)
+        self._populate_settings(notebook, groups)
+        if notebook.get_n_pages() == 1:
+            notebook.set_show_tabs(False)
+            
+        return notebook
 
     def _populate_settings(self, parent, setting, level=0):
         if level == 0:
+            self.set_title(setting.label)
             for s in setting:
                 vbox = Gtk.VBox()
                 parent.append_page(vbox, Gtk.Label(label=s.label))
@@ -248,11 +225,38 @@ class PreferencesWindow(Gtk.Dialog):
         self._update_setting(setting, combo.get_active_id(),
                              handler_id)
 
+class PreferencesDialog(Gtk.Dialog, AbstractPreferencesUI):
+    __gtype_name__ = "PreferencesDialog"
+
+    def __init__(self, settings_manager):
+        gobject.GObject.__init__(self)
+        self.add_button(Gtk.STOCK_CLOSE, Gtk.ResponseType.CLOSE)
+        self.set_border_width(6)
+
+        notebook = self.populate_settings(settings_manager.groups)
+        vbox = self.get_content_area()
+        vbox.add(notebook)
+
+class PreferencesWindow(Gtk.Window, AbstractPreferencesUI):
+    __gtype_name__ = "PreferencesWindow"
+
+    def __init__(self, settings_manager):
+        gobject.GObject.__init__(self)
+        self.set_border_width(6)
+
+        notebook = self.populate_settings(settings_manager.groups)
+        self.add(notebook)
+
 if __name__ == "__main__":
+    from caribou.settings.settings_manager import SettingsManager
+    from caribou.settings import CaribouSettings
+
     import signal
     signal.signal(signal.SIGINT, signal.SIG_DFL)
-    w = PreferencesWindow()
+
+    w = PreferencesDialog(CaribouSettings())
     w.show_all()
+
     try:
         w.run()
     except KeyboardInterrupt:
