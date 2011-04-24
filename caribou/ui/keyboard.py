@@ -148,7 +148,7 @@ class CaribouSubKeys(Gtk.Window):
         for key in keys:
             key.connect("clicked", self._on_key_clicked)
 
-        layout = KeyboardLayout("")
+        layout = KeyboardLayout(key.name, "subkeyboard")
         layout.add_row(keys)
         self.add(layout)
 
@@ -223,9 +223,10 @@ class ModifierKey(Gtk.ToggleButton, Key):
 class KeyboardLayout(Gtk.Grid):
     KEY_SPAN = 4
 
-    def __init__(self, name):
+    def __init__(self, name, mode):
         gobject.GObject.__init__(self)
         self.layout_name = name
+        self.mode = mode
         self.rows = []
         self.set_column_homogeneous(True)
         self.set_row_homogeneous(True)
@@ -338,7 +339,7 @@ class KbLayoutDeserializer(object):
             return None
         layouts_encoded = []
         for name, level in dictionary.items():
-            kb_layout = KeyboardLayout(name)
+            kb_layout = KeyboardLayout(name, level.get("mode", "locked"))
             rows_list = self._get_dict_value_as_list(level, 'rows')
             for row in rows_list:
                 keys = self._get_keys_from_list(row)
@@ -419,6 +420,9 @@ class CaribouKeyboard(Gtk.Notebook):
         for level in level_list:
             level.show()
             self.layouts[group][level.layout_name] = self.append_page(level, None)
+            if level.mode == "default":
+                self.layouts[group]["default"] = \
+                    self.layouts[group][level.layout_name]
             for row in level.rows:
                 for key in row:
                     self._connect_key_signals(key)
@@ -455,6 +459,9 @@ class CaribouKeyboard(Gtk.Notebook):
 
     def _released_normal_key(self, key):
         self.vk.keyval_release(key.keyval)
+        layout = self.get_nth_page(self.get_current_page())
+        if layout.mode == "latched":
+            self._switch_to_layout()
         while True:
             try:
                 mod = self.depressed_mods.pop()
@@ -463,11 +470,10 @@ class CaribouKeyboard(Gtk.Notebook):
             mod.set_active (False)
 
     def _pressed_layout_switcher_key(self, key):
-        _, group, variant = self.vk.get_current_group()
-        self._switch_to_layout('%s_%s' % (group, variant), key.toggle)
+        self._switch_to_layout(level=key.toggle)
 
     def _on_group_changed(self, vk, groupid, group, variant):
-        self._switch_to_default('%s_%s' % (group, variant))
+        self._switch_to_layout('%s_%s' % (group, variant))
 
     def _toggled_mask_key(self, key):
         if key.get_active():
@@ -490,19 +496,22 @@ class CaribouKeyboard(Gtk.Notebook):
         p.run()
         p.destroy()
 
-    def _switch_to_default(self, group):
+    def _switch_to_fallback(self, group):
         try:
             i = min(self.layouts[group].values())
         except KeyError:
             i = 0
         self.set_current_page(i)
 
-    def _switch_to_layout(self, group, level):
+    def _switch_to_layout(self, group=None, level="default"):
+        if group is None:
+            _, _group, _variant = self.vk.get_current_group()
+            group = '%s_%s' % (_group, _variant)
         if self.layouts.has_key(group):
             if self.layouts[group].has_key(level):
                 self.set_current_page(self.layouts[group][level])
                 return
-        self._switch_to_default(group)
+        self._switch_to_fallback(group)
 
     def get_current_layout(self):
         i = self.get_current_page()

@@ -1,5 +1,6 @@
 {
    "level1" : {
+      "mode" : "default",
       "rows" : [
          [{"name" : "period"},
           {"name" : "comma"},
@@ -39,6 +40,7 @@
       ]
    },
    "symbols1" : {
+      "mode" : "locked",
       "rows" : [
          [{"name" : "1"},
           {"name" : "2"},
@@ -71,13 +73,14 @@
           {"name" : "quotedbl"},
           {"name" : "bar"},
           {"name" : "numbersign"}],
-         [{"name" : "Caribou_Alpha", "width" : 2, "toggle" : "level1"},
+         [{"name" : "Caribou_Alpha", "width" : 2, "toggle" : "default"},
           {"name" : "Caribou_Emoticons"},
           {"name" : "space", "width" : 5},
           {"name" : "Caribou_Prefs", "margin_left" : 2}]
       ]
    },
    "symbols2" : {
+      "mode" : "locked",
       "rows" : [
          [{"name" : "percent"},
           {"name" : "bracketleft"},
@@ -110,7 +113,7 @@
           {"name" : "quotedbl"},
           {"name" : "bar"},
           {"name" : "numbersign"}],
-         [{"name" : "Caribou_Alpha", "width" : 2, "toggle" : "level1"},
+         [{"name" : "Caribou_Alpha", "width" : 2, "toggle" : "default"},
           {"name" : "Caribou_Emoticons"},
           {"name" : "space", "width" : 5},
           {"name" : "Caribou_Prefs", "margin_left" : 2}]
