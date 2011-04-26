@@ -36,5 +36,11 @@ libcaribou/.libs/
 libcaribou/Caribou-1.0.gir
 libcaribou/Caribou-1.0.typelib
 *.lo
+*.o
 libcaribou/libcaribou.la
+libcaribou/*.[ch]
+caribou-1.0.vapi
+caribou-internals-1.0.vapi
+caribou-internals.h
+*.stamp
 

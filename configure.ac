@@ -14,7 +14,6 @@ AM_MAINTAINER_MODE([enable])
 # to configure or passing V=1 to make
 AM_SILENT_RULES([yes])
 
-
 AM_PATH_GLIB_2_0(2.27.5,,,gobject)
 if test "$GLIB_LIBS" = ""; then
    AC_MSG_ERROR(GLIB 2.27.5 or later is required to build libcaribou)
@@ -36,6 +35,10 @@ PKG_CHECK_MODULES(CARIBOU, [
   ])
 AC_SUBST(CARIBOU_CFLAGS)
 AC_SUBST(CARIBOU_LIBS)
+
+AM_PROG_VALAC([0.9.3])
+AC_SUBST(VALAC)
+AC_SUBST(VALAFLAGS)
 
 PKG_CHECK_MODULES(LIBCARIBOU, [
   gdk-3.0 >= $GDK_REQUIRED,
