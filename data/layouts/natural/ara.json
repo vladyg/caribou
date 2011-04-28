@@ -32,11 +32,11 @@
           {"name" : "Arabic_waw"},
           {"name" : "Arabic_tehmarbuta"},
           {"name" : "Arabic_theh"},
-          {"name" : "Return", "width" : 2}],
-         [{"name" : "Caribou_Symbols", "width" : 2, "toggle" : "symbols1"},
+          {"name" : "Return", "width" : 2.0}],
+         [{"name" : "Caribou_Symbols", "width" : 2.0, "toggle" : "symbols1"},
           {"name" : "Arabic_fathatan"},
-          {"name" : "space", "width" : 5},
-          {"name" : "Caribou_Prefs", "margin_left" : 2}]
+          {"name" : "space", "width" : 5.0},
+          {"name" : "Caribou_Prefs", "margin_left" : 2.0}]
       ]
    },
    "symbols1" : {
@@ -63,7 +63,7 @@
           {"name" : "ampersand"},
           {"name" : "at"},
           {"name" : "Return", "width" : 1.5}],
-         [{"name" : "Caribou_Symbols_More", "width" : 2, "toggle" : "symbols2"},
+         [{"name" : "Caribou_Symbols_More", "width" : 2.0, "toggle" : "symbols2"},
           {"name" : "period"},
           {"name" : "Arabic_comma"},
           {"name" : "Arabic_question_mark"},
@@ -73,10 +73,10 @@
           {"name" : "quotedbl"},
           {"name" : "bar"},
           {"name" : "numbersign"}],
-         [{"name" : "Caribou_Alpha", "width" : 2, "toggle" : "default"},
+         [{"name" : "Caribou_Alpha", "width" : 2.0, "toggle" : "default"},
           {"name" : "Caribou_Emoticons"},
-          {"name" : "space", "width" : 5},
-          {"name" : "Caribou_Prefs", "margin_left" : 2}]
+          {"name" : "space", "width" : 5.0},
+          {"name" : "Caribou_Prefs", "margin_left" : 2.0}]
       ]
    },
    "symbols2" : {
@@ -103,7 +103,7 @@
           {"name" : "ampersand"},
           {"name" : "at"},
           {"name" : "Return", "width" : 1.5}],
-         [{"name" : "Caribou_Symbols", "width" : 2, "toggle" : "symbols1"},
+         [{"name" : "Caribou_Symbols", "width" : 2.0, "toggle" : "symbols1"},
           {"name" : "period"},
           {"name" : "comma"},
           {"name" : "question"},
@@ -113,10 +113,10 @@
           {"name" : "quotedbl"},
           {"name" : "bar"},
           {"name" : "numbersign"}],
-         [{"name" : "Caribou_Alpha", "width" : 2, "toggle" : "default"},
+         [{"name" : "Caribou_Alpha", "width" : 2.0, "toggle" : "default"},
           {"name" : "Caribou_Emoticons"},
-          {"name" : "space", "width" : 5},
-          {"name" : "Caribou_Prefs", "margin_left" : 2}]
+          {"name" : "space", "width" : 5.0},
+          {"name" : "Caribou_Prefs", "margin_left" : 2.0}]
       ]
    }
 }
