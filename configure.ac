@@ -44,7 +44,8 @@ PKG_CHECK_MODULES(LIBCARIBOU, [
   gdk-3.0 >= $GDK_REQUIRED,
   xtst,
   x11,
-  libxklavier
+  libxklavier,
+  json-glib-1.0
   ])
 AC_SUBST(LIBCARIBOU_CFLAGS)
 AC_SUBST(LIBCARIBOU_LIBS)
