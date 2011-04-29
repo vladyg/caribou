@@ -17,6 +17,7 @@ class CaribouDaemon:
             dbus_obj = bus.get_object("org.gnome.Caribou.%s" % keyboard_name,
                                       "/org/gnome/Caribou/%s" % keyboard_name)
         except dbus.DBusException:
+            raise
             print "%s is not running, and is not provided by any .service file" % \
                 keyboard_name
             return

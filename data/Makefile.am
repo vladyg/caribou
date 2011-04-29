@@ -13,6 +13,13 @@ autostartdir	 = $(sysconfdir)/xdg/autostart
 autostart_in_files = caribou-autostart.desktop.in
 autostart_DATA   = $(autostart_in_files:.desktop.in=.desktop)
 
+servicefiledir = $(datadir)/dbus-1/services
+servicefile_in_files = org.gnome.Caribou.Antler.service.in
+servicefile_DATA = $(servicefile_in_files:.service.in=.service)
+
+org.gnome.Caribou.Antler.service: org.gnome.Caribou.Antler.service.in
+	$(AM_V_GEN)sed -e "s|[@]libexecdir[@]|$(libexecdir)|" $< > $@
+
 @INTLTOOL_DESKTOP_RULE@
 
 EXTRA_DIST = $(desktop_in_files) $(autostart_in_files)

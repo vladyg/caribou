@@ -10,6 +10,7 @@ autom4te.cache
 *.make
 bin/caribou
 bin/caribou-preferences
+bin/antler-keyboard
 install-sh
 missing
 py-compile
@@ -44,4 +45,4 @@ caribou-1.0.vapi
 caribou-internals-1.0.vapi
 caribou-internals.h
 *.stamp
-
+data/org.gnome.Caribou.Antler.service

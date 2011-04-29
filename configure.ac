@@ -79,6 +79,7 @@ caribou/daemon/Makefile
 bin/Makefile
 bin/caribou
 bin/caribou-preferences
+bin/antler-keyboard
 data/Makefile
 data/layouts/Makefile
 data/layouts/touch/Makefile
