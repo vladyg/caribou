@@ -12,7 +12,7 @@ libcaribou_la_VALAFLAGS = \
 	--pkg x11 --pkg json-glib-1.0 --pkg gdk-3.0 --pkg gio-2.0 \
 	--pkg libxklavier --pkg external-libs  --pkg gdk-x11-3.0 \
 	--internal-vapi caribou-internals-1.0.vapi \
-	--library caribou-1.0 --gir Caribou-1.0.gir \
+	--library caribou-1.0 --gir _Caribou-1.0.gir \
 	$(VALAFLAGS)
 
 libcaribou_la_CPPFLAGS = \
@@ -55,6 +55,9 @@ gir_DATA = Caribou-1.0.gir
 typelibdir = $(libdir)/girepository-1.0
 typelib_DATA = Caribou-1.0.typelib
 
+Caribou-1.0.gir: _Caribou-1.0.gir
+	$(top_srcdir)/tools/fix_gir.py $< > $@
+
 Caribou-1.0.typelib: Caribou-1.0.gir
 	@INTROSPECTION_COMPILER@ --shared-library=libcaribou -o $@ $^
 endif
@@ -66,4 +69,5 @@ CLEANFILES = \
 	caribou-internals-1.0.vapi \
 	Caribou-1.0.typelib \
 	Caribou-1.0.gir \
+	_Caribou-1.0.gir \
 	*.[ch]

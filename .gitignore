@@ -33,8 +33,8 @@ libtool
 ltmain.sh
 m4
 libcaribou/.libs/
-libcaribou/Caribou-1.0.gir
-libcaribou/Caribou-1.0.typelib
+libcaribou/*.gir
+libcaribou/*.typelib
 *.lo
 *.o
 libcaribou/libcaribou.la
