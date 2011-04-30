@@ -16,14 +16,22 @@ class CaribouDaemon:
         try:
             dbus_obj = bus.get_object("org.gnome.Caribou.%s" % keyboard_name,
                                       "/org/gnome/Caribou/%s" % keyboard_name)
-        except dbus.DBusException:
-            raise
-            print "%s is not running, and is not provided by any .service file" % \
-                keyboard_name
-            return
+        except dbus.DBusException, e:
+            self._show_error_dialog(e.message)
         self.keyboard_proxy = dbus.Interface(dbus_obj, "org.gnome.Caribou.Keyboard")
         self._current_acc = None
         self._register_event_listeners()
+
+    def _show_error_dialog(self, message):
+        from gi.repository import Gtk
+        msgdialog = Gtk.MessageDialog(None,
+                                      Gtk.DialogFlags.MODAL,
+                                      Gtk.MessageType.ERROR,
+                                      Gtk.ButtonsType.CLOSE,
+                                      _("Error starting %s") % APP_NAME)
+        msgdialog.format_secondary_text(message)
+        msgdialog.run()
+        quit()
 
     def _show_no_a11y_dialogs(self):
         from gi.repository import Gtk
