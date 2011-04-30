@@ -149,3 +149,9 @@ class CaribouDaemon:
         self._deregister_event_listeners()
 
 
+    def run(self):
+        try:
+            pyatspi.Registry.start()
+        except KeyboardInterrupt:
+            self.clean_exit()
+            pyatspi.Registry.stop()
