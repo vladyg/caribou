@@ -146,8 +146,8 @@ class CaribouDaemon:
                         event.source
 
     def clean_exit(self):
+        self.keyboard_proxy.Hide()
         self._deregister_event_listeners()
-
 
     def run(self):
         try:
