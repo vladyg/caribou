@@ -1,27 +1,48 @@
-#!/usr/bin/python
+#!/bin/bash
+#
+# Antler - a Caribou keyboard implementation
+#
+# Copyright (C) 2011 Eitan Isaacson <eitan@monotonous.org>
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU Lesser General Public License as published by the
+# Free Software Foundation; either version 2.1 of the License, or (at your
+# option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License
+# for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with this program; if not, write to the Free Software Foundation,
+# Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-import sys, os
+script_dir="$(dirname "$(readlink -f ${BASH_SOURCE[0]})")"
 
-libs = os.path.join('@prefix@', 'lib', 'python@PYTHON_VERSION@', 'site-packages')
+if [ $script_dir == "@prefix@@libexecdir@" ]
+then
+  export PYTHONPATH="@prefix@/lib/python@PYTHON_VERSION@/site-packages:${PYTHONPATH}"
+  export GI_TYPELIB_PATH="@libdir@/girepository-1.0:${GI_TYPELIB_PATH}"
+  export LD_LIBRARY_PATH="@libdir@:${LD_LIBRARY_PATH}"
+  export XDG_DATA_DIRS="@prefix@@datadir@:${XDG_DATA_DIRS}"
+else
+  export PYTHONPATH="$(dirname $script_dir):${PYTHONPATH}"
+  export GI_TYPELIB_PATH="$(dirname $script_dir)/licaribou:${GI_TYPELIB_PATH}"
+  export LD_LIBRARY_PATH="$(dirname $script_dir)/licaribou/.lib:${LD_LIBRARY_PATH}"
+fi
 
-# This might be run from the build dir.
-_dirname = os.path.dirname(__file__)
-if _dirname != "@prefix@/bin":
-    libs = os.path.normpath(os.path.join(_dirname, '..'))
-    
-sys.path.insert(1, libs)
-
-from gi.repository import Gtk
-from caribou.settings.settings_manager import SettingsManager
-from caribou.settings import CaribouSettings
-from caribou.settings.preferences_window import PreferencesWindow
-
+@PYTHON@ -c "
 import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
+from caribou.settings.preferences_window import PreferencesWindow
+from caribou.settings import CaribouSettings
+from gi.repository import Gtk
+
 w = PreferencesWindow(CaribouSettings())
 
-w.connect("delete-event", lambda x, y: Gtk.main_quit())
+w.connect('delete-event', lambda x, y: Gtk.main_quit())
 
 w.show_all()
 
@@ -29,4 +50,4 @@ try:
     Gtk.main()
 except KeyboardInterrupt:
     Gtk.main_quit()
-
+"

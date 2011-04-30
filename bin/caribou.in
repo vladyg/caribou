@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/bin/bash
 #
 # Caribou - text entry and UI navigation application
 #
@@ -24,58 +24,15 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-from optparse import OptionParser
-import gettext
-import sys
-import pyatspi
-import os
+script_dir="$(dirname "$(readlink -f ${BASH_SOURCE[0]})")"
 
-# We can't rely on prefix if we're installed by relocated RPM. Instead, we 
-# use __file__ and for now hope that lib is relative to bin.
-_dirname = os.path.dirname(__file__)
-sys.prefix = os.path.normpath(os.path.join(_dirname, '..'))
-libs = os.path.join(sys.prefix, 'lib',
-                    'python@PYTHON_VERSION@', 'site-packages')
-# point to the proper site-packages path
-sys.path.insert(1, libs)
+if [ $script_dir == "@prefix@/bin" ]
+then
+  export PYTHONPATH="@prefix@/lib/python@PYTHON_VERSION@/site-packages:${PYTHONPATH}"
+  export GI_TYPELIB_PATH="@libdir@/girepository-1.0":${GI_TYPELIB_PATH}
+else
+  export PYTHONPATH="$(dirname $script_dir):${PYTHONPATH}"
+  export GI_TYPELIB_PATH="$(dirname $script_dir)/licaribou":${GI_TYPELIB_PATH}
+fi
 
-# This might be run from the build dir.
-if os.path.abspath(_dirname) != "@prefix@/bin":
-    srcdir = os.path.normpath(os.path.join(_dirname, '..'))
-    sys.path.insert(1, srcdir)
-    import caribou.common
-    import caribou.ui
-    caribou.data_path = os.path.abspath(os.path.join(_dirname,
-                                                     "@top_srcdir@",
-                                                     "data"))
-else:
-    import caribou.common
-    import caribou.ui
-    caribou.data_path = os.path.join("@prefix@", "share", "caribou")
-
-from caribou.daemon import CaribouDaemon
-
-_ = gettext.gettext
-    
-if __name__ == "__main__":
-    import signal
-
-    signal.signal(signal.SIGINT, signal.SIG_DFL)
-
-    parser = OptionParser(usage="usage: %prog [options]",
-                          version="%prog @VERSION@")
-    parser.add_option("-d", "--debug",
-                      action="store_true", dest="debug", default=False,
-                      help="print debug messages on stdout")
-    (options, args) = parser.parse_args()
-
-    #main.debug = options.debug
-
-    caribou = CaribouDaemon()
- 
-    try:
-        pyatspi.Registry.start()
-    except KeyboardInterrupt:
-        caribou.clean_exit()
-        pyatspi.Registry.stop()
-
+@PYTHON@ -c "from caribou.daemon.main import CaribouDaemon; CaribouDaemon().run()"
