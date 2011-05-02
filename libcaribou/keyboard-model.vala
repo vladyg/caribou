@@ -42,7 +42,7 @@ namespace Caribou {
         }
 
         private void on_group_changed (uint grpid, string group, string variant) {
-            active_group = group;
+            active_group = GroupModel.create_group_name (group, variant);
         }
 
     }

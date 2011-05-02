@@ -62,11 +62,11 @@ namespace Caribou {
             if (xev.any.xkb_type == Xkb.StateNotify) {
                 Xkb.StateNotifyEvent *sevent = &xev.state;
                 if ((sevent.changed & Xkb.GroupStateMask) != 0) {
-                    Xkl.ConfigRec config_rec = new Xkl.ConfigRec ();
-                    config_rec.get_from_server (this.xkl_engine);
-                    group_changed (sevent.group, config_rec.layouts[sevent.group],
-                        config_rec.variants[sevent.group]);
+                    string group_name;
+                    string variant_name;
                     this.group = (uchar) sevent.group;
+                    get_current_group (out group_name, out variant_name);
+                    group_changed (this.group, group_name, variant_name);
                 } else if ((sevent.changed & Xkb.ModifierStateMask) != 0) {
                     this.modifiers = (uchar) sevent.mods;
                 }
@@ -183,6 +183,8 @@ namespace Caribou {
             config_rec.get_from_server (this.xkl_engine);
             group_name = config_rec.layouts[this.group];
             variant_name = config_rec.variants[this.group];
+            if (variant_name == null)
+                variant_name = "";
 
             return this.group;
         }
@@ -194,15 +196,20 @@ namespace Caribou {
             config_rec.get_from_server (this.xkl_engine);
 
             for (i=0; i<4; i++)
-                if (config_rec.layouts[i] == null)
+                if (config_rec.layouts[i] == null) {
+                    i--;
                     break;
+                }
 
-            group_names = new string[i];
-            variant_names = new string[i];
+            group_names = new string[i+1];
+            variant_names = new string[i+1];
 
             for (; i>=0; i--) {
                 group_names[i] = config_rec.layouts[i];
-                variant_names[i] = config_rec.variants[i];
+                if (config_rec.variants[i] != null)
+                    variant_names[i] = config_rec.variants[i];
+                else
+                    variant_names[i] = "";
             }
         }
 
