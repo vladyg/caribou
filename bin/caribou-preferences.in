@@ -1,14 +1,8 @@
 #!/bin/bash
 #
-# Caribou - text entry and UI navigation application
+# Antler - a Caribou keyboard implementation
 #
-# Copyright (C) 2009 Adaptive Technology Resource Centre
-#  * Contributor: Ben Konrath <ben@bagu.org>
-# Copyright (C) 2009 Eitan Isaacson <eitan@monotonous.org>
-# Copyright (C) 2009 Sun Microsystems, Inc.
-#  * Contributor: Willie Walker <william.walker@sun.com>
-# Copyright (C) 2009 Flavio Percoco <flaper87@flaper87.org>
-#  * Contributor: Flavio Percoco <flaper87@flaper87.org>
+# Copyright (C) 2011 Eitan Isaacson <eitan@monotonous.org>
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU Lesser General Public License as published by the
@@ -26,13 +20,34 @@
 
 script_dir="$(dirname "$(readlink -f ${BASH_SOURCE[0]})")"
 
-if [ $script_dir == "@prefix@/bin" ]
+if [ $script_dir == "@prefix@@libexecdir@" ]
 then
   export PYTHONPATH="@prefix@/lib/python@PYTHON_VERSION@/site-packages:${PYTHONPATH}"
-  export GI_TYPELIB_PATH="@libdir@/girepository-1.0":${GI_TYPELIB_PATH}
+  export GI_TYPELIB_PATH="@libdir@/girepository-1.0:${GI_TYPELIB_PATH}"
+  export LD_LIBRARY_PATH="@libdir@:${LD_LIBRARY_PATH}"
+  export XDG_DATA_DIRS="@prefix@@datadir@:${XDG_DATA_DIRS}"
 else
   export PYTHONPATH="$(dirname $script_dir):${PYTHONPATH}"
-  export GI_TYPELIB_PATH="$(dirname $script_dir)/licaribou":${GI_TYPELIB_PATH}
+  export GI_TYPELIB_PATH="$(dirname $script_dir)/licaribou:${GI_TYPELIB_PATH}"
+  export LD_LIBRARY_PATH="$(dirname $script_dir)/licaribou/.lib:${LD_LIBRARY_PATH}"
 fi
 
-@PYTHON@ -c "from caribou.daemon.main import CaribouDaemon; CaribouDaemon().run()"
+@PYTHON@ -c "
+import signal
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+
+from caribou.settings.preferences_window import PreferencesWindow
+from caribou.settings import CaribouSettings
+from gi.repository import Gtk
+
+w = PreferencesWindow(CaribouSettings())
+
+w.connect('delete-event', lambda x, y: Gtk.main_quit())
+
+w.show_all()
+
+try:
+    Gtk.main()
+except KeyboardInterrupt:
+    Gtk.main_quit()
+"

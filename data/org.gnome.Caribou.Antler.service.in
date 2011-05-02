@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.gnome.Caribou.Antler
+Exec=@libexecdir@/antler-keyboard

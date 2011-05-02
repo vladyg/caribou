@@ -1,93 +1,73 @@
-INCLUDES =                              \
-        -DG_LOG_DOMAIN=\"libcaribou\"   \
-        -I$(top_srcdir)                 \
-        $(LIBCARIBOU_CFLAGS)
+lib_LTLIBRARIES = libcaribou.la
 
+INCLUDES = \
+	-DG_LOG_DOMAIN=\"caribou\" \
+	-I$(top_srcdir) \
+	$(LIBCARIBOU_CFLAGS)
 
-MARSHAL_GENERATED = caribou-marshal.c caribou-marshal.h
-MKENUMS_GENERATED = caribou-enum-types.c caribou-enum-types.h
+libcaribou_la_VALAFLAGS = \
+	-H caribou.h --vapi caribou-1.0.vapi \
+	-h caribou-internals.h \
+	--vapidir=. \
+	--pkg x11 --pkg json-glib-1.0 --pkg gdk-3.0 --pkg gio-2.0 \
+	--pkg libxklavier --pkg external-libs  --pkg gdk-x11-3.0 \
+	--internal-vapi caribou-internals-1.0.vapi \
+	--library caribou-1.0 --gir _Caribou-1.0.gir \
+	$(VALAFLAGS)
 
-caribou-marshal.h: caribou-marshal.list
-	$(AM_V_GEN) ( $(GLIB_GENMARSHAL) --prefix=caribou_marshal $(srcdir)/caribou-marshal.list --header > caribou-marshal.tmp \
-	&& mv caribou-marshal.tmp caribou-marshal.h ) \
-	|| ( rm -f caribou-marshal.tmp && exit 1 )
-
-caribou-marshal.c: caribou-marshal.h
-	$(AM_V_GEN) ( (echo '#include "caribou-marshal.h"'; $(GLIB_GENMARSHAL) --prefix=caribou_marshal $(srcdir)/caribou-marshal.list --body) > caribou-marshal.tmp \
-	&& mv caribou-marshal.tmp caribou-marshal.c ) \
-	|| ( rm -f caribou-marshal.tmp && exit 1 )
-
-caribou-enum-types.h: $(caribou_headers)
-	$(AM_V_GEN) ( cd $(srcdir) && $(GLIB_MKENUMS) --template caribou-enum-types.h.tmpl \
-		$(caribou_headers) ) > caribou-enum-types.h.tmp \
-	&& mv caribou-enum-types.h.tmp caribou-enum-types.h \
-	|| rm -f caribou-enum-type.h.tmp
-
-caribou-enum-types.c: $(libcaribouinclude_HEADERS)
-	$(AM_V_GEN) ( cd $(srcdir) && $(GLIB_MKENUMS) --template caribou-enum-types.c.tmpl \
-		$(caribou_headers) ) > caribou-enum-types.c.tmp \
-	&& mv caribou-enum-types.c.tmp caribou-enum-types.c \
-	|| rm -f caribou-enum-type.c.tmp
-
-BUILT_SOURCES = $(MARSHAL_GENERATED) $(MKENUMS_GENERATED)
-
-CLEANFILES = $(MARSHAL_GENERATED) $(MKENUMS_GENERATED)
+libcaribou_la_CPPFLAGS = \
+	$(INCLUDES)
 
 libcaribouincludedir = $(includedir)/libcaribou
 
-caribou_headers =		  \
-	caribou.h		      \
-	caribou-virtual-keyboard.h
+caribouinclude_headers = \
+	caribou.h
 
-libcaribouinclude_HEADERS =	\
-	$(caribou_headers)	 \
-	caribou-enum-types.h
-
-lib_LTLIBRARIES = libcaribou.la
+libcaribouinclude_HEADERS = \
+	$(caribou_headers)
 
 libcaribou_la_LIBADD = \
 	$(LIBCARIBOU_LIBS)
 
-libcaribou_la_SOURCES =		\
-	$(BUILT_SOURCES)	    \
-	caribou-virtual-keyboard.c
+libcaribou_la_SOURCES = \
+	xadapter.vala \
+	keyboard-model.vala \
+	keyboard-service.vala \
+	group-model.vala \
+	level-model.vala \
+	row-model.vala \
+	key-model.vala \
+	util.vala \
+	json-deserializer.vala
+
+EXTRA_DIST = \
+	external-libs.vapi \
+	libxklavier.vapi
 
 #
 # Introspection support
 #
-include $(INTROSPECTION_MAKEFILE)
-INTROSPECTION_GIRS =
-INTROSPECTION_SCANNER_ARGS = --add-include-path=.
-INTROSPECTION_COMPILER_ARGS = --includedir=.
 
 if HAVE_INTROSPECTION
-
-gi_caribou_files = \
-	$(filter-out caribou.h caribou-enum-types.% caribou-marshal.h,\
-	   $(caribou_headers) $(filter-out %.h, $(libcaribou_la_SOURCES)))
-# gi_built_caribou_files = caribou-enum-types.h
-
-Caribou-1.0.gir: libcaribou.la
-Caribou_1_0_gir_INCLUDES = Gdk-3.0
-Caribou_1_0_gir_CFLAGS = $(INCLUDES)
-Caribou_1_0_gir_LIBS = libcaribou.la
-Caribou_1_0_gir_EXPORT_PACKAGES = libcaribou
-Caribou_1_0_gir_SCANNERFLAGS = --c-include "libcaribou/caribou.h"
-Caribou_1_0_gir_FILES = \
-	$(addprefix $(srcdir)/, $(gi_caribou_files)) \
-	$(foreach f,$(gi_built_caribou_files), \
-	   $(if $(shell test -f $(addprefix $(srcdir)/,$(f)) && echo yes), \
-	      $(addprefix $(srcdir)/,$(f)), \
-	      $(f)))
-
-INTROSPECTION_GIRS += Caribou-1.0.gir
-
 girdir = $(datadir)/gir-1.0
-gir_DATA = $(INTROSPECTION_GIRS)
+gir_DATA = Caribou-1.0.gir
 
-typelibsdir = $(libdir)/girepository-1.0
-typelibs_DATA = $(INTROSPECTION_GIRS:.gir=.typelib)
+typelibdir = $(libdir)/girepository-1.0
+typelib_DATA = Caribou-1.0.typelib
 
-CLEANFILES += $(gir_DATA) $(typelibs_DATA)
+Caribou-1.0.gir: _Caribou-1.0.gir
+	$(top_srcdir)/tools/fix_gir.py $< > $@
 
+Caribou-1.0.typelib: Caribou-1.0.gir
+	@INTROSPECTION_COMPILER@ --shared-library=libcaribou -o $@ $^
 endif
+
+Caribou-1.0.gir caribou-internals-1.0.vapi caribou-1.0.vapi: libcaribou.la
+
+CLEANFILES = \
+	caribou-1.0.vapi \
+	caribou-internals-1.0.vapi \
+	Caribou-1.0.typelib \
+	Caribou-1.0.gir \
+	_Caribou-1.0.gir \
+	*.[ch]
