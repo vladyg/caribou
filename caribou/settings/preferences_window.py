@@ -120,10 +120,12 @@ class AbstractPreferencesUI:
                 control.set_col_spacings(3)
                 radios = []
                 for string, localized in setting.allowed:
-                    radios.append(Gtk.RadioButton.new_with_label(
-                            [], localized))
-                for radio in radios[1:]:
+                    rb = Gtk.RadioButton.new_with_label([], localized)
+                    radios.append(rb)
+                for radio, allowed in zip(radios[1:], setting.allowed[1:]):
                     radio.join_group(radios[0])
+                    if allowed[0] == setting.value:
+                        radio.set_active(True)
 
                 hid = setting.connect(
                     'value-changed',
