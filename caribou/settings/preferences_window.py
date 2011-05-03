@@ -25,17 +25,16 @@ from gi.repository import Gdk
 from gi.repository import Gtk
 
 class AbstractPreferencesUI:
-    def populate_settings(self, groups):
-        notebook = Gtk.Notebook()
-        self._populate_settings(notebook, groups)
-        if notebook.get_n_pages() == 1:
-            notebook.set_show_tabs(False)
-            
-        return notebook
+    def populate_settings(self, settings_manager):
+        if getattr(self, "notebook", None) is None:
+            self.notebook = Gtk.Notebook()
+        self._populate_settings(self.notebook, settings_manager.groups)
+        self.notebook.set_show_tabs(self.notebook.get_n_pages() != 1)
+
+        return self.notebook
 
     def _populate_settings(self, parent, setting, level=0):
         if level == 0:
-            self.set_title(setting.label)
             for s in setting:
                 vbox = Gtk.VBox()
                 parent.append_page(vbox, Gtk.Label(label=s.label))
@@ -234,8 +233,9 @@ class PreferencesDialog(Gtk.Dialog, AbstractPreferencesUI):
         gobject.GObject.__init__(self)
         self.add_button(Gtk.STOCK_CLOSE, Gtk.ResponseType.CLOSE)
         self.set_border_width(6)
+        self.set_title(settings_manager.groups.label)
 
-        notebook = self.populate_settings(settings_manager.groups)
+        notebook = self.populate_settings(settings_manager)
         vbox = self.get_content_area()
         vbox.add(notebook)
 
@@ -245,8 +245,9 @@ class PreferencesWindow(Gtk.Window, AbstractPreferencesUI):
     def __init__(self, settings_manager):
         gobject.GObject.__init__(self)
         self.set_border_width(6)
+        self.set_title(settings_manager.groups.label)
 
-        notebook = self.populate_settings(settings_manager.groups)
+        notebook = self.populate_settings(settings_manager)
         self.add(notebook)
 
 if __name__ == "__main__":
