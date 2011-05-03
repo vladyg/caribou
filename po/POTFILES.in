@@ -2,3 +2,4 @@
 caribou/settings/caribou_settings.py
 caribou/__init__.py
 caribou/daemon/main.py
+caribou/antler/antler_settings.py
