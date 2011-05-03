@@ -1,5 +1,6 @@
 from caribou.settings.preferences_window import PreferencesDialog
 from caribou.settings import CaribouSettings
+from antler_settings import AntlerSettings
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import Caribou
@@ -31,7 +32,8 @@ class AntlerKey(Gtk.Button):
             self._sublevel = AntlerSubLevel(self)
 
     def _on_prefs_clicked(self, key):
-        p = PreferencesDialog(CaribouSettings())
+        p = PreferencesDialog(AntlerSettings())
+        p.populate_settings(CaribouSettings())
         p.show_all()
         p.run()
         p.destroy()
