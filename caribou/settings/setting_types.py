@@ -58,10 +58,13 @@ class SettingsTopGroup(SettingsGroup):
         SettingsGroup.__init__(self, "_top", label, children)
         self.path = path
         self.schema_id = schema_id
+        self._manager = None
 
     def __call__(self):
-        from caribou.settings.settings_manager import SettingsManager
-        return SettingsManager(self)
+        if self._manager is None:
+            from caribou.settings.settings_manager import SettingsManager
+            self._manager =  SettingsManager(self)
+        return self._manager
 
 class ValueSetting(Setting):
     variant_type = ''
