@@ -1,12 +1,11 @@
 import os
 from gi.repository import Gio
 from caribou.settings.setting_types import *
-from caribou.settings import GSETTINGS_SCHEMA
 
 class SettingsManager(object):
     def __init__(self, settings):
         self.groups = settings
-        self._gsettings = Gio.Settings(GSETTINGS_SCHEMA)
+        self._gsettings = Gio.Settings(settings.schema_id)
         self._gsettings.connect("changed", self._gsettings_changed_cb)
         self._settings_map = {}
         self._map_settings(self.groups)

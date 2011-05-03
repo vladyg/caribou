@@ -2,7 +2,9 @@ SUBDIRS = layouts
 
 @GSETTINGS_RULES@
 @INTLTOOL_XML_NOMERGE_RULE@
-gsettings_schemas_in_files = org.gnome.caribou.gschema.xml.in
+gsettings_schemas_in_files = \
+	org.gnome.caribou.gschema.xml.in \
+	org.gnome.antler.gschema.xml.in
 gsettings_SCHEMAS = $(gsettings_schemas_in_files:.gschema.xml.in=.gschema.xml)
 
 desktopdir = $(datadir)/applications
@@ -24,8 +26,11 @@ org.gnome.Caribou.Antler.service: org.gnome.Caribou.Antler.service.in
 
 EXTRA_DIST = $(desktop_in_files) $(autostart_in_files)
 
-org.gnome.caribou.gschema.xml.in: $(top_srcdir)/tools/make_schema.py
-	$< org.gnome.caribou
+org.gnome.caribou.gschema.xml.in: $(top_srcdir)/caribou/settings/caribou_settings.py
+	$(top_srcdir)/tools/make_schema.py caribou.settings.CaribouSettings
+
+org.gnome.antler.gschema.xml.in: $(top_srcdir)/caribou/antler/antler_settings.py
+	$(top_srcdir)/tools/make_schema.py caribou.antler.AntlerSettings
 
 CLEANFILES = $(desktop_DATA) \
 	$(autostart_DATA) \

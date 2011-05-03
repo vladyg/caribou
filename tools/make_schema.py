@@ -72,13 +72,10 @@ if __name__ == "__main__":
         print "usage: %s <schema id>" % sys.argv[0]
         sys.exit(1)
 
-    avail_settings = dict([(s.schema_id, s) for s in AllSettings])
-    
-    try:
-        settings = avail_settings[sys.argv[-1]]
-    except KeyError:
-        print "Schema '%s' not available", sys.argv[-1]
-        sys.exit(1)
-    
+    modulename, settings_obj = sys.argv[-1].rsplit('.', 1)
+
+    module = __import__(modulename, locals(), globals(), [settings_obj])
+    settings = getattr(module, settings_obj)
+
     maker = SchemasMaker(settings)
     maker.create_schemas()

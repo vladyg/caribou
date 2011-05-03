@@ -24,9 +24,7 @@ m4/intltool.m4
 *.tar.gz
 data/*.desktop
 po/.intltool-merge-cache
-data/caribou.schemas
-data/caribou.schemas.in
-data/org.gnome.caribou.gschema.*
+data/*.gschema.*
 depcomp
 libcaribou/.deps/
 caribou-enum-types.[ch]
