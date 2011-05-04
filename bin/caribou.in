@@ -26,7 +26,10 @@
 
 script_dir="$(dirname "$(readlink -f ${BASH_SOURCE[0]})")"
 
-if [ $script_dir == "@prefix@/bin" ]
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+
+if [ $script_dir == "@bindir@" ]
 then
   export PYTHONPATH="@prefix@/lib/python@PYTHON_VERSION@/site-packages:${PYTHONPATH}"
   export GI_TYPELIB_PATH="@libdir@/girepository-1.0":${GI_TYPELIB_PATH}
