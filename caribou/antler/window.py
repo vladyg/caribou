@@ -54,6 +54,8 @@ class ProximityWindowBase(object):
         self.max_distance = value
 
     def _set_min_max_alpha(self, min_alpha, max_alpha):
+        if min_alpha > max_alpha:
+            min_alpha = max_alpha
         self.max_alpha = max_alpha
         self.min_alpha = min_alpha
         if self.max_alpha != self.min_alpha:
@@ -72,7 +74,7 @@ class ProximityWindowBase(object):
         self._set_min_max_alpha(value, max_alpha.value)
 
     def _on_max_alpha_changed(self, setting, value, min_alpha):
-        self._set_min_max_alpha(max_alpha.value, value)
+        self._set_min_max_alpha(min_alpha.value, value)
 
     def _proximity_check(self):
         px, py = self.get_pointer()
