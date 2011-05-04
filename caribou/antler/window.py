@@ -130,9 +130,9 @@ class AntlerWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
                                       gobject.PARAM_READWRITE)        
         }
 
-    def __init__(self, text_entry_mech, default_placement=None,
+    def __init__(self, text_entry_mech, placement=None,
                  min_alpha=1.0, max_alpha=1.0, max_distance=100,
-                 animation_mode=Clutter.AnimationMode.EASE_IN_QUAD):
+                 animation_mode=Clutter.AnimationMode.EASE_OUT_CUBIC):
         gobject.GObject.__init__(self, type=Gtk.WindowType.POPUP)
         ProximityWindowBase.__init__(self)
 
@@ -146,19 +146,20 @@ class AntlerWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
         self.keyboard = text_entry_mech
         self._vbox.pack_start(text_entry_mech, True, True, 0)
 
-        self.connect("size-allocate", lambda w, a: self._update_position())
+        self.connect("size-allocate", self.on_size_allocate)
 
         self._cursor_location = Rectangle()
         self._entry_location = Rectangle()
-        self._default_placement = default_placement or \
+        self.placement = placement or \
             AntlerWindowPlacement()
-
-        self.connect('show', self._on_window_show)
 
         # animation
         self.animation_mode = animation_mode
         self._stage = Clutter.Stage.get_default()
-        self._animation = None
+        self._move_animation = None
+
+    def on_size_allocate(self, widget, allocation):
+        self._update_position()
 
     def do_get_property(self, property):
         if property.name == "animated-window-position":
@@ -187,15 +188,15 @@ class AntlerWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
         return True
 
     def animated_move(self, x, y):
-        self._animation = Clutter.Animation(object=self,
+        self._move_animation = Clutter.Animation(object=self,
                                             mode=self.animation_mode,
                                             duration=250)
-        self._animation.bind("animated-window-position", (x, y))
+        self._move_animation.bind("animated-window-position", (x, y))
 
-        timeline = self._animation.get_timeline()
+        timeline = self._move_animation.get_timeline()
         timeline.start()
 
-        return self._animation
+        return self._move_animation
 
     def destroy(self):
         self.keyboard.destroy()
@@ -209,8 +210,8 @@ class AntlerWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
         self._entry_location = Rectangle(x, y, w, h)
         self._update_position()
 
-    def set_default_placement(self, default_placement):
-        self._default_placement = default_placement
+    def set_placement(self, placement):
+        self.placement = placement
         self._update_position()
 
     def _get_root_bbox(self):
@@ -244,22 +245,28 @@ class AntlerWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
 
     def _calculate_position(self, placement=None):
         root_bbox = self._get_root_bbox()
-        placement = placement or self._default_placement
+        placement = placement or self.placement
 
         x = self._calculate_axis(placement.x, root_bbox)
         y = self._calculate_axis(placement.y, root_bbox)
 
         return x, y
 
-    def _update_position(self):
+    def get_expected_position(self):
         x, y = self._calculate_position()
+        origx, origy = x, y
         root_bbox = self._get_root_bbox()
         proposed_position = Rectangle(x, y, self.get_allocated_width(),
                                       self.get_allocated_height())
         
-        x += self._default_placement.x.adjust_to_bounds(root_bbox, proposed_position)
-        y += self._default_placement.y.adjust_to_bounds(root_bbox, proposed_position)
-        self.move(x, y)
+        x += self.placement.x.adjust_to_bounds(root_bbox, proposed_position)
+        y += self.placement.y.adjust_to_bounds(root_bbox, proposed_position)
+        return origx != x or origy != y, x, y
+
+    def _update_position(self):
+        changed, x, y = self.get_expected_position()
+        if changed:
+            self.move(x, y)
 
     def _calculate_axis(self, axis_placement, root_bbox):
         bbox = root_bbox
@@ -287,44 +294,80 @@ class AntlerWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
 
         return offset
 
-    def show_all(self):
-        Gtk.Window.show_all(self)
-        self.keyboard.show_all()
-
-    def hide(self):
-        self.keyboard.hide()
-        Gtk.Window.hide(self)
-
-    def _on_window_show(self, window):
-        child = self.get_child()
-        border = self.get_border_width()
-        req = child.size_request()
-        self.resize(req.width + border, req.height + border)
-
 class AntlerWindowDocked(AntlerWindow):
     __gtype_name__ = "AntlerWindowDocked"
     
-    def __init__(self, text_entry_mech):
+    def __init__(self, text_entry_mech, horizontal_roll=False):
         placement = AntlerWindowPlacement(
-            xalign=AntlerWindowPlacement.END,
-            yalign=AntlerWindowPlacement.START,
+            xalign=AntlerWindowPlacement.START,
+            yalign=AntlerWindowPlacement.END,
             xstickto=AntlerWindowPlacement.SCREEN,
             ystickto=AntlerWindowPlacement.SCREEN,
             xgravitate=AntlerWindowPlacement.INSIDE)
 
         AntlerWindow.__init__(self, text_entry_mech, placement)
 
-        self.connect('map-event', self.__onmapped)
+        self.horizontal_roll = horizontal_roll
+        self._rolled_in = False
 
-    def __onmapped(self, obj, event):
+
+    def show_all(self):
+        super(AntlerWindow, self).show_all()
+
+    def on_size_allocate(self, widget, allocation):
         self._roll_in()
 
     def _roll_in(self):
-        x, y = self.get_position()
-        self.move(x + self.get_allocated_width(), y)
+        if self._rolled_in:
+            return
+        self._rolled_in = True
+
+        x, y = self._get_preroll_position()
+        self.move(x, y)
+
+        x, y = self._get_postroll_position()
         return self.animated_move(x, y)
 
+    def _get_preroll_position(self):
+        _, x, y = self.get_expected_position()
+
+        if self.horizontal_roll:
+            newy = y
+            if self.placement.x.align == AntlerWindowPlacement.END:
+                newx = x + self.get_allocated_width()
+            else:
+                newx = x - self.get_allocated_width()
+        else:
+            newx = x
+            if self.placement.y.align == AntlerWindowPlacement.END:
+                newy = y + self.get_allocated_height()
+            else:
+                newy = y - self.get_allocated_height()
+
+        return newx, newy
+
+    def _get_postroll_position(self):
+        x, y = self.get_position()
+
+        if self.horizontal_roll:
+            newy = y
+            if self.placement.x.align != AntlerWindowPlacement.END:
+                newx = x + self.get_allocated_width()
+            else:
+                newx = x - self.get_allocated_width()
+        else:
+            newx = x
+            if self.placement.y.align != AntlerWindowPlacement.END:
+                newy = y + self.get_allocated_height()
+            else:
+                newy = y - self.get_allocated_height()
+
+        return newx, newy
+
     def _roll_out(self):
+        if not self._rolled_in:
+            return
+        self._rolled_in = False;
         x, y = self.get_position()
         return self.animated_move(x + self.get_allocated_width(), y)
 

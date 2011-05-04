@@ -15,7 +15,7 @@ class Setting(gobject.GObject):
                     (gobject.SIGNAL_RUN_FIRST,
                      gobject.TYPE_NONE, 
                      (gobject.TYPE_PYOBJECT,)),
-                    'sensitivity-changed' : 
+                    'sensitivity-changed' :
                     (gobject.SIGNAL_RUN_FIRST,
                      gobject.TYPE_NONE, 
                      (gobject.TYPE_BOOLEAN,))}
