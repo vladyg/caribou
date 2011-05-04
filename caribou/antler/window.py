@@ -23,6 +23,8 @@
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import Clutter
+from antler_settings import AntlerSettings
+from math import sqrt
 import os
 import sys
 import gobject
@@ -30,24 +32,47 @@ import gobject
 Clutter.init("antler")
 
 class ProximityWindowBase(object):
-    def __init__(self, min_alpha=1.0, max_alpha=1.0, max_distance=100):
+    def __init__(self):
         if self.__class__ == ProximityWindowBase:
             raise TypeError, \
                 "ProximityWindowBase is an abstract class, " \
                 "must be subclassed with a Gtk.Window"
-        self.connect('map-event', self.__onmapped)
-        self.max_distance = max_distance
-        if max_alpha < min_alpha:
-            raise ValueError, "min_alpha can't be larger than max_alpha"
-        self.min_alpha = min_alpha
-        self.max_alpha = max_alpha
 
-    def __onmapped(self, obj, event):
+        self._poll_tid = 0
+        settings = AntlerSettings()
+        self.max_distance = settings.max_distance.value
+        settings.max_distance.connect("value-changed", self._on_max_dist_changed)
+        min_alpha = settings.min_alpha
+        max_alpha = settings.max_alpha
+        min_alpha.connect("value-changed",
+                                   self._on_min_alpha_changed, max_alpha)
+        max_alpha.connect("value-changed",
+                                   self._on_max_alpha_changed, min_alpha)
+        self.connect('map-event', self._onmapped, settings)
+
+    def _on_max_dist_changed(self, setting, value):
+        self.max_distance = value
+
+    def _set_min_max_alpha(self, min_alpha, max_alpha):
+        self.max_alpha = max_alpha
+        self.min_alpha = min_alpha
+        if self.max_alpha != self.min_alpha:
+            if self._poll_tid == 0:
+                self._poll_tid = gobject.timeout_add(80, self._proximity_check)
+        elif self._poll_tid != 0:
+            gobject.source_remove(self._poll_tid)
+
+    def _onmapped(self, obj, event, settings):
         if self.is_composited():
-            self.set_opacity(self.max_alpha)
-            if self.max_alpha != self.min_alpha:
-                # Don't waste CPU if the max and min are equal.
-                glib.timeout_add(80, self._proximity_check)
+            self._set_min_max_alpha(settings.min_alpha.value,
+                                    settings.max_alpha.value)
+            self._proximity_check()
+
+    def _on_min_alpha_changed(self, setting, value, max_alpha):
+        self._set_min_max_alpha(value, max_alpha.value)
+
+    def _on_max_alpha_changed(self, setting, value, min_alpha):
+        self._set_min_max_alpha(max_alpha.value, value)
 
     def _proximity_check(self):
         px, py = self.get_pointer()
@@ -62,7 +87,12 @@ class ProximityWindowBase(object):
         opacity += self.min_alpha
 
         self.set_opacity(opacity)
-        return self.props.visible
+
+        if not self.props.visible:
+            self._poll_tid = 0
+            return False
+
+        return True
 
     def _get_distance_to_bbox(self, px, py, bw, bh):
         if px < 0:
@@ -73,7 +103,7 @@ class ProximityWindowBase(object):
             x_distance = 0.0
 
         if py < 0:
-            y_distance = float(abs(px))
+            y_distance = float(abs(py))
         elif py > bh:
             y_distance = float(py - bh)
         else:
@@ -102,10 +132,7 @@ class AntlerWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
                  min_alpha=1.0, max_alpha=1.0, max_distance=100,
                  animation_mode=Clutter.AnimationMode.EASE_IN_QUAD):
         gobject.GObject.__init__(self, type=Gtk.WindowType.POPUP)
-        ProximityWindowBase.__init__(self,
-                                     min_alpha=min_alpha,
-                                     max_alpha=max_alpha,
-                                     max_distance=max_distance)
+        ProximityWindowBase.__init__(self)
 
         self.set_name("AntlerWindow")
 

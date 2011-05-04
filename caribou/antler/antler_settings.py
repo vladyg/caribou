@@ -6,7 +6,16 @@ AntlerSettings = SettingsTopGroup(
     [SettingsGroup("antler", _("Antler"), [
                 SettingsGroup("appearance", _("Appearance"), [
                         BooleanSetting("use_system", _("Use System Theme"),
-                                       True, _("Use System Theme"))
+                                       True, _("Use System Theme")),
+                        FloatSetting("min_alpha", _("Minimum Alpha"),
+                                     0.2, _("Minimal opacity of keyboard"),
+                                     min=0.0, max=1.0),
+                        FloatSetting("max_alpha", _("Maximum Alpha"),
+                                     1.0, _("Maximal opacity of keyboard"),
+                                     min=0.0, max=1.0),
+                        IntegerSetting("max_distance", _("Maximum Distance"),
+                                       100, _("Maximum distance when keyboard is hidden"),
+                                     min=0, max=1024)
                         ])
                 ])
      ])
