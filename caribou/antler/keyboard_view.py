@@ -5,6 +5,8 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import Caribou
 import gobject
+import glib
+import os
 
 PRETTY_LABELS = {
     "BackSpace" : u'\u232b',
@@ -140,7 +142,40 @@ class AntlerKeyboardView(Gtk.Notebook):
         self.set_show_tabs(False)
         self.keyboard_model = Caribou.KeyboardModel()
         self.keyboard_model.connect("notify::active-group", self._on_group_changed)
+
         self.layers = {}
+
+
+        settings = AntlerSettings()
+        use_system = settings.use_system
+        use_system.connect("value-changed", self._on_use_system_theme_changed)
+
+        self._app_css_provider = Gtk.CssProvider()
+        self._load_style(
+            self._app_css_provider, "style.css",
+            [glib.get_user_data_dir()] + list(glib.get_system_data_dirs()))
+
+        if not use_system.value:
+            Gtk.StyleContext.add_provider_for_screen(
+                Gdk.Screen.get_default(), self._app_css_provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+
+        self._scan_css_provider = Gtk.CssProvider()
+        self._load_style(
+            self._scan_css_provider, "scan-style.css",
+            [glib.get_user_data_dir()] + list(glib.get_system_data_dirs()))
+        Gtk.StyleContext.add_provider_for_screen(
+                Gdk.Screen.get_default(), self._scan_css_provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+        self._user_css_provider = Gtk.CssProvider()
+        self._load_style(self._user_css_provider, "user-style.css",
+                         [glib.get_user_data_dir()])
+        Gtk.StyleContext.add_provider_for_screen(
+                Gdk.Screen.get_default(), self._user_css_provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1)
+
         for gname in self.keyboard_model.get_groups():
             group = self.keyboard_model.get_group(gname)
             self.layers[gname] = {}
@@ -152,6 +187,26 @@ class AntlerKeyboardView(Gtk.Notebook):
                 self.layers[gname][lname] = self.append_page(layout, None)
 
         self._set_to_active_layer()
+
+    def _on_use_system_theme_changed(self, setting, value):
+        if value:
+            Gtk.StyleContext.remove_provider_for_screen(
+                Gdk.Screen.get_default(), self._app_css_provider)
+        else:
+            Gtk.StyleContext.add_provider_for_screen(
+                Gdk.Screen.get_default(), self._app_css_provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+    def _load_style(self, provider, filename, search_path):
+        spath = search_path[:]
+        if os.environ.has_key("ANTLER_THEME_PATH"):
+            spath.insert(0, os.environ["ANTLER_THEME_PATH"])
+
+        for directory in spath:
+            fn = os.path.join(directory, "antler", filename)
+            if os.path.exists(fn):
+                provider.load_from_path(fn)
+                break
 
     def _on_level_changed(self, group, prop):
         self._set_to_active_layer()
