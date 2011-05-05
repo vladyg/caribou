@@ -26,6 +26,11 @@ class AntlerKey(Gtk.Button):
         self.connect("pressed", self._on_pressed)
         self.connect("released", self._on_released)
         self.set_label(self._get_key_label())
+
+        label = self.get_child()
+        label.set_use_markup(True)
+        label.props.margin = 6
+
         if key.props.name == "Caribou_Prefs":
             key.connect("key-clicked", self._on_prefs_clicked)
         if key.get_extended_keys ():
@@ -49,7 +54,7 @@ class AntlerKey(Gtk.Button):
             if not unichar.isspace() and unichar != u'\x00':
                 label = unichar
 
-        return label
+        return "<b>%s</b>" % glib.markup_escape_text(label.encode('utf-8'))
 
     def _on_pressed(self, button):
         self.caribou_key.press()
@@ -61,7 +66,7 @@ class AntlerKey(Gtk.Button):
         return (w, w)
 
     def do_get_request_mode(self):
-        return Gtk.SizeRequestMode.HEIGHT_FOR_WIDTH
+        return Gtk.SizeRequestMode.WIDTH_FOR_HEIGHT
 
 class AntlerSubLevel(Gtk.Window):
     def __init__(self, key):
@@ -97,8 +102,8 @@ class AntlerLayout(Gtk.Grid):
         gobject.GObject.__init__(self)
         self.set_column_homogeneous(True)
         self.set_row_homogeneous(True)
-        self.set_row_spacing(4)
-        self.set_column_spacing(4)
+        self.set_row_spacing(6)
+        self.set_column_spacing(6)
         if level:
             self.load_rows(level.get_rows ())
 
