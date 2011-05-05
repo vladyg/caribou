@@ -109,6 +109,9 @@ class AntlerWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
 
         self.set_name("AntlerWindow")
 
+        ctx = self.get_style_context()
+        ctx.add_class("antler-keyboard-window")
+
         self._vbox = Gtk.VBox()
         self.add(self._vbox)
         self.keyboard = text_entry_mech

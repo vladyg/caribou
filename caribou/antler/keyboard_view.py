@@ -31,6 +31,9 @@ class AntlerKey(Gtk.Button):
         label.set_use_markup(True)
         label.props.margin = 6
 
+        ctx = self.get_style_context()
+        ctx.add_class("antler-keyboard-button")
+
         if key.props.name == "Caribou_Prefs":
             key.connect("key-clicked", self._on_prefs_clicked)
         if key.get_extended_keys ():
@@ -78,6 +81,9 @@ class AntlerSubLevel(Gtk.Window):
         self.set_position(Gtk.WindowPosition.MOUSE)
         self.set_type_hint(Gdk.WindowTypeHint.DIALOG)
 
+        ctx = self.get_style_context()
+        ctx.add_class("antler-keyboard-window")
+
         key.caribou_key.connect("notify::show-subkeys", self._on_show_subkeys)
         self._key = key
 
@@ -104,6 +110,10 @@ class AntlerLayout(Gtk.Grid):
         self.set_row_homogeneous(True)
         self.set_row_spacing(6)
         self.set_column_spacing(6)
+
+        ctx = self.get_style_context()
+        ctx.add_class("antler-keyboard-layout")
+
         if level:
             self.load_rows(level.get_rows ())
 
@@ -111,13 +121,14 @@ class AntlerLayout(Gtk.Grid):
         col_num = 0
         for i, key in enumerate(row):
             antler_key = AntlerKey(key)
+            ctx = antler_key.get_style_context()
+            ctx.add_class("antler-keyboard-row%d" % row_num)
             self.attach(antler_key,
                         col_num + int(key.props.margin_left * self.KEY_SPAN),
                         row_num * self.KEY_SPAN,
                         int(self.KEY_SPAN * key.props.width),
                         self.KEY_SPAN)
             col_num += int((key.props.width + key.props.margin_left ) * self.KEY_SPAN)
-
 
     def load_rows(self, rows):
         for row_num, row in enumerate(rows):
