@@ -31,13 +31,85 @@ import gobject
 
 Clutter.init("antler")
 
-class ProximityWindowBase(object):
-    def __init__(self):
-        if self.__class__ == ProximityWindowBase:
-            raise TypeError, \
-                "ProximityWindowBase is an abstract class, " \
-                "must be subclassed with a Gtk.Window"
 
+class AnimatedWindowBase(Gtk.Window, Clutter.Animatable):
+    __gproperties__ = {
+        'antler-window-position' : (gobject.TYPE_PYOBJECT, 'Window position',
+                                      'Window position in X, Y coordinates',
+                                      gobject.PARAM_READWRITE)
+        }
+    def __init__(self):
+        gobject.GObject.__init__(self, type=Gtk.WindowType.POPUP)
+        # animation
+        self._stage = Clutter.Stage.get_default()
+        self._move_animation = None
+        self._opacity_animation = None
+
+    def do_get_property(self, property):
+        if property.name == "antler-window-position":
+            return self.get_position()
+        else:
+            raise AttributeError, 'unknown property %s' % property.name
+
+    def do_set_property(self, property, value):
+        if property.name == "antler-window-position":
+            if value is not None:
+                x, y = value
+                self.move(x, y)
+        else:
+            raise AttributeError, 'unknown property %s' % property.name
+
+    def do_animate_property(self, animation, prop_name, initial_value,
+                            final_value, progress, gvalue):
+        if prop_name == "antler-window-position":
+            ix, iy = initial_value
+            fx, fy = final_value
+            dx = int((fx - ix) * progress)
+            dy = int((fy - iy) * progress)
+            new_value = (ix + dx, iy + dy)
+            self.move(*new_value)
+            return True
+        if prop_name == "opacity":
+            opacity = initial_value + ((final_value - initial_value) * progress)
+            gobject.idle_add(lambda: self.set_opacity(opacity))
+
+            return True
+        else:
+            return False
+
+    def animated_move(self, x, y, mode=Clutter.AnimationMode.EASE_OUT_CUBIC):
+        self._move_animation = Clutter.Animation(object=self,
+                                            mode=mode,
+                                            duration=250)
+        self._move_animation.bind("antler-window-position", (x, y))
+
+        timeline = self._move_animation.get_timeline()
+        timeline.start()
+
+        return self._move_animation
+
+    def animated_opacity(self, opacity, mode=Clutter.AnimationMode.EASE_OUT_CUBIC):
+        if opacity == self.get_opacity():
+            return None
+        if self._opacity_animation is not None:
+            if self._opacity_animation.has_property('opacity'):
+                timeline = self._opacity_animation.get_timeline()
+                timeline.pause()
+                self._opacity_animation.unbind_property('opacity')
+
+        self._opacity_animation = Clutter.Animation(object=self, mode=mode,
+                                                    duration=100)
+        self._opacity_animation.bind("opacity", opacity)
+
+        timeline = self._opacity_animation.get_timeline()
+        timeline.start()
+
+        return self._opacity_animation
+
+
+class ProximityWindowBase(AnimatedWindowBase):
+    def __init__(self):
+        AnimatedWindowBase.__init__(self)
         self._poll_tid = 0
         settings = AntlerSettings()
         self.max_distance = settings.max_distance.value
@@ -60,7 +132,7 @@ class ProximityWindowBase(object):
         self.min_alpha = min_alpha
         if self.max_alpha != self.min_alpha:
             if self._poll_tid == 0:
-                self._poll_tid = gobject.timeout_add(80, self._proximity_check)
+                self._poll_tid = gobject.timeout_add(100, self._proximity_check)
         elif self._poll_tid != 0:
             gobject.source_remove(self._poll_tid)
 
@@ -88,7 +160,7 @@ class ProximityWindowBase(object):
             (1 - min(distance, self.max_distance)/self.max_distance)
         opacity += self.min_alpha
 
-        self.set_opacity(opacity)
+        self.animated_opacity(opacity)
 
         if not self.props.visible:
             self._poll_tid = 0
@@ -122,18 +194,9 @@ class ProximityWindowBase(object):
             y2 = 0 if y_distance > 0 else bh
             return sqrt((px - x2)**2 + (py - y2)**2)
 
-class AntlerWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
-    __gtype_name__ = "AntlerWindow"
-    __gproperties__ = { 
-        'animated-window-position' : (gobject.TYPE_PYOBJECT, 'Window position',
-                                      'Window position in X, Y coordinates',
-                                      gobject.PARAM_READWRITE)        
-        }
-
+class AntlerWindow(ProximityWindowBase):
     def __init__(self, text_entry_mech, placement=None,
-                 min_alpha=1.0, max_alpha=1.0, max_distance=100,
-                 animation_mode=Clutter.AnimationMode.EASE_OUT_CUBIC):
-        gobject.GObject.__init__(self, type=Gtk.WindowType.POPUP)
+                 min_alpha=1.0, max_alpha=1.0, max_distance=100):
         ProximityWindowBase.__init__(self)
 
         self.set_name("AntlerWindow")
@@ -153,50 +216,8 @@ class AntlerWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
         self.placement = placement or \
             AntlerWindowPlacement()
 
-        # animation
-        self.animation_mode = animation_mode
-        self._stage = Clutter.Stage.get_default()
-        self._move_animation = None
-
     def on_size_allocate(self, widget, allocation):
         self._update_position()
-
-    def do_get_property(self, property):
-        if property.name == "animated-window-position":
-            return self.get_position()
-        else:
-            raise AttributeError, 'unknown property %s' % property.name
-
-    def do_set_property(self, property, value):
-        if property.name == "animated-window-position":
-            if value is not None:
-                x, y = value
-                self.move(x, y)
-        else:
-            raise AttributeError, 'unknown property %s' % property.name
-
-    def do_animate_property(self, animation, prop_name, initial_value,
-                            final_value, progress, gvalue):
-        if prop_name != "animated-window-position": return False
-        
-        ix, iy = initial_value
-        fx, fy = final_value
-        dx = int((fx - ix) * progress)
-        dy = int((fy - iy) * progress)
-        new_value = (ix + dx, iy + dy)
-        self.move(*new_value)
-        return True
-
-    def animated_move(self, x, y):
-        self._move_animation = Clutter.Animation(object=self,
-                                            mode=self.animation_mode,
-                                            duration=250)
-        self._move_animation.bind("animated-window-position", (x, y))
-
-        timeline = self._move_animation.get_timeline()
-        timeline.start()
-
-        return self._move_animation
 
     def destroy(self):
         self.keyboard.destroy()
@@ -223,24 +244,7 @@ class AntlerWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
         # TODO: Do whatever we need to do to place the keyboard correctly
         # in GNOME Shell and Unity.
         #
-        #current_screen = Gdk.Screen.get_default().get_number()
-        #for panel in self._gconf_client.all_dirs('/apps/panel/toplevels'):
-        #    orientation = self._gconf_client.get_string(panel+'/orientation')
-        #    size = self._gconf_client.get_int(panel+'/size')
-        #    screen = self._gconf_client.get_int(panel+'/screen')
-        #    if screen != current_screen:
-        #        continue
-        #    if orientation == 'top':
-        #        root_bbox.y += size
-        #        root_bbox.height -= size
-        #    elif orientation == 'bottom':
-        #        root_bbox.height -= size
-        #    elif orientation == 'right':
-        #        root_bbox.x += size
-        #        root_bbox.width -= size
-        #    elif orientation == 'left':
-        #        root_bbox.x -= size
-        
+
         return root_bbox
 
     def _calculate_position(self, placement=None):
@@ -258,7 +262,7 @@ class AntlerWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
         root_bbox = self._get_root_bbox()
         proposed_position = Rectangle(x, y, self.get_allocated_width(),
                                       self.get_allocated_height())
-        
+
         x += self.placement.x.adjust_to_bounds(root_bbox, proposed_position)
         y += self.placement.y.adjust_to_bounds(root_bbox, proposed_position)
         return origx != x or origy != y, x, y
@@ -295,8 +299,6 @@ class AntlerWindow(Gtk.Window, Clutter.Animatable, ProximityWindowBase):
         return offset
 
 class AntlerWindowDocked(AntlerWindow):
-    __gtype_name__ = "AntlerWindowDocked"
-    
     def __init__(self, text_entry_mech, horizontal_roll=False):
         placement = AntlerWindowPlacement(
             xalign=AntlerWindowPlacement.START,
@@ -373,11 +375,9 @@ class AntlerWindowDocked(AntlerWindow):
 
     def hide(self):
         animation = self._roll_out()
-        animation.connect('completed', lambda x: AntlerWindow.hide(self)) 
+        animation.connect('completed', lambda x: AntlerWindow.hide(self))
 
 class AntlerWindowEntry(AntlerWindow):
-    __gtype_name__ = "AntlerWindowEntry"
-
     def __init__(self, text_entry_mech):
         placement = AntlerWindowPlacement(
             xalign=AntlerWindowPlacement.START,
