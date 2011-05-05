@@ -1,0 +1,53 @@
+@define-color button_color1 #444c5b;
+@define-color button_color2 darker(@button_color1);
+@define-color keyboard_color1 #000e29;
+@define-color keyboard_color2 darker(#000e29);
+@define-color key_text_color #ffffff;
+@define-color insensitive_color #888888;
+
+.antler-keyboard-button {
+  border-width: 0;
+  border-radius: 2;
+  border-image: url("dark-key-border.svg") 2 2 2 2 repeat stretch;
+  font: Sans 14;
+  background-image: -gtk-gradient (linear,
+				     left top,
+				     left bottom,
+				     from (@button_color1),
+				     to (@button_color2));
+  color: @key_text_color;
+}
+
+.antler-keyboard-button:hover {
+  background-image: -gtk-gradient (linear,
+				     left top,
+				     left bottom,
+				     from (shade(@button_color1, 1.1)),
+				     to (shade(@button_color2, 1.1)));
+}
+
+.antler-keyboard-button:active, .antler-keyboard-button:hover:active {
+  background-image: -gtk-gradient (linear,
+				     left top,
+				     left bottom,
+				     from (shade(@button_color1, 1.4)),
+				     to (shade(@button_color2, 1.4)));
+}
+
+.antler-keyboard-button:insensitive { 
+  background-image: -gtk-gradient (linear,
+				     left top,
+				     left bottom,
+				     from (shade(@button_color1, 0.5)),
+				     to (shade(@button_color2, 0.5)));
+  color: #aaaaaa;
+}
+
+.antler-keyboard-window {
+background-image: -gtk-gradient (linear,
+  left top,
+  left bottom,
+  from (@keyboard_color1),
+  to (@keyboard_color2));
+}
+

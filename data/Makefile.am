@@ -1,4 +1,4 @@
-SUBDIRS = layouts
+SUBDIRS = layouts antler
 
 @GSETTINGS_RULES@
 @INTLTOOL_XML_NOMERGE_RULE@
