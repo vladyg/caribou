@@ -33,7 +33,7 @@ namespace Caribou {
         private void on_key_clicked (KeyModel key) {
             if (key.toggle != "")
                 level_toggled (key.toggle);
-            else
+            else if (mode == "latched")
                 level_toggled ("default");
         }
 
