@@ -265,7 +265,7 @@ class AntlerWindow(ProximityWindowBase):
 
         x += self.placement.x.adjust_to_bounds(root_bbox, proposed_position)
         y += self.placement.y.adjust_to_bounds(root_bbox, proposed_position)
-        return origx != x or origy != y, x, y
+        return self.get_position() != (x, y) != y, x, y
 
     def _update_position(self):
         changed, x, y = self.get_expected_position()
