@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: caribou.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-05-03 21:11+0000\n"
-"PO-Revision-Date: 2011-05-04 15:50+0200\n"
+"POT-Creation-Date: 2011-05-05 19:43+0000\n"
+"PO-Revision-Date: 2011-05-07 12:22+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -188,6 +188,49 @@ msgstr ""
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "ADVERTENCIA de Caribou: widget editable no manejado:"
 
+#: ../caribou/antler/antler_settings.py:5
+#| msgid "Caribou Preferences"
+msgid "Antler Preferences"
+msgstr "Preferencias de Antler"
+
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler"
+msgstr "Antler"
+
+#: ../caribou/antler/antler_settings.py:7
+msgid "Appearance"
+msgstr "Apariencia"
+
+#: ../caribou/antler/antler_settings.py:8
+#: ../caribou/antler/antler_settings.py:9
+#| msgid "Use system theme"
+msgid "Use System Theme"
+msgstr "Usar el tema del sistema"
+
+#: ../caribou/antler/antler_settings.py:10
+msgid "Minimum Alpha"
+msgstr "Alfa mínima"
+
+#: ../caribou/antler/antler_settings.py:11
+msgid "Minimal opacity of keyboard"
+msgstr "Opacidad del teclado mínima"
+
+#: ../caribou/antler/antler_settings.py:13
+msgid "Maximum Alpha"
+msgstr "Alfa máxima"
+
+#: ../caribou/antler/antler_settings.py:14
+msgid "Maximal opacity of keyboard"
+msgstr "Opacidad del teclado máxima"
+
+#: ../caribou/antler/antler_settings.py:16
+msgid "Maximum Distance"
+msgstr "Distancia máxima"
+
+#: ../caribou/antler/antler_settings.py:17
+msgid "Maximum distance when keyboard is hidden"
+msgstr "Distancia máxima cuando el teclado está oculto"
+
 #~ msgid "Keyboard layout"
 #~ msgstr "Distribución de teclado"
 
@@ -201,9 +244,6 @@ msgstr "ADVERTENCIA de Caribou: widget editable no manejado:"
 
 #~ msgid "Color"
 #~ msgstr "Color"
-
-#~ msgid "Use system theme"
-#~ msgstr "Usar el tema del sistema"
 
 #~ msgid "Use the default theme colors"
 #~ msgstr "Usar los colores predeterminados del tema"
