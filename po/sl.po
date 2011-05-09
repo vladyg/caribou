@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
 "POT-Creation-Date: 2011-05-07 10:38+0000\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME translation team <gnome-si@googlegroups.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -105,7 +105,7 @@ msgstr "Preklopi napravo"
 
 #: ../caribou/settings/caribou_settings.py:39
 msgid "Switch device, keyboard or mouse"
-msgstr "Preklopi napravo, tipkovnico ali mško"
+msgstr "Preklopi napravo, tipkovnico ali miško"
 
 #: ../caribou/settings/caribou_settings.py:42
 msgid "Mouse"
