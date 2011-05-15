@@ -14,7 +14,7 @@ def purge_white_space_and_fix_namespace(node, indent=0):
         purge_white_space_and_fix_namespace(child, indent+1)
 
 def find_ancestor(node, name):
-    if getattr(node, "tagName") == name:
+    if getattr(node, "tagName", None) == name:
         return node
     parent = getattr(node, "parentNode", None)
     if not parent:
@@ -30,8 +30,8 @@ def fix_vfuncs(dom):
         name = record.getAttribute("name")
         cname = record.getAttribute("c:type")
 
-        assert(name.endswith("Class"))
-        assert(cname.endswith("Class"))
+        assert(name.endswith("Class") or name.endswith("Iface"))
+        assert(cname.endswith("Class") or name.endswith("Iface"))
 
         params = (f.getElementsByTagName("parameters") or [None])[0]
 
