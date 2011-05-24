@@ -25,14 +25,14 @@ exec_prefix=@exec_prefix@
 
 if [ $script_dir == "@libexecdir@" ]
 then
-  export PYTHONPATH="${prefix}/lib/python@PYTHON_VERSION@/site-packages:${PYTHONPATH}"
-  export GI_TYPELIB_PATH="@libdir@/girepository-1.0:${GI_TYPELIB_PATH}"
-  export LD_LIBRARY_PATH="@libdir@:${LD_LIBRARY_PATH}"
-  export XDG_DATA_DIRS="@datadir@:${XDG_DATA_DIRS}"
+  export PYTHONPATH="${prefix}/lib/python@PYTHON_VERSION@/site-packages${PYTHONPATH:+:$PYTHONPATH}"
+  export GI_TYPELIB_PATH="@libdir@/girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}"
+  export LD_LIBRARY_PATH="@libdir@${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+  export XDG_DATA_DIRS="@datadir@${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}"
 else
-  export PYTHONPATH="$(dirname $script_dir):${PYTHONPATH}"
-  export GI_TYPELIB_PATH="$(dirname $script_dir)/licaribou:${GI_TYPELIB_PATH}"
-  export LD_LIBRARY_PATH="$(dirname $script_dir)/licaribou/.lib:${LD_LIBRARY_PATH}"
+  export PYTHONPATH="$(dirname $script_dir)${PYTHONPATH:+:$PYTHONPATH}"
+  export GI_TYPELIB_PATH="$(dirname $script_dir)/libcaribou${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}"
+  export LD_LIBRARY_PATH="$(dirname $script_dir)/libcaribou/.libs${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
   export ANTLER_THEME_PATH="$(dirname $script_dir)/data"
 fi
 
