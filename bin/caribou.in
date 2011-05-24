@@ -35,7 +35,7 @@ then
   export GI_TYPELIB_PATH="@libdir@/girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}"
 else
   export PYTHONPATH="$(dirname $script_dir)${PYTHONPATH:+:$PYTHONPATH}"
-  export GI_TYPELIB_PATH="$(dirname $script_dir)/libcaribou${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}
+  export GI_TYPELIB_PATH="$(dirname $script_dir)/libcaribou${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}"
 fi
 
 @PYTHON@ -c "from caribou.daemon.main import CaribouDaemon; CaribouDaemon().run()"
