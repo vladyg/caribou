@@ -90,7 +90,7 @@ class AntlerSubLevel(Gtk.Window):
         self._key = key
 
         layout = AntlerLayout()
-        layout.add_row(key.caribou_key.get_extended_keys())
+        layout.add_row([key.caribou_key.get_extended_keys()])
         self.add(layout)
 
     def _on_show_subkeys(self, key, prop):
@@ -103,15 +103,16 @@ class AntlerSubLevel(Gtk.Window):
             parent.set_sensitive(True)
             self.hide()
 
-class AntlerLayout(Gtk.Grid):
+class AntlerLayout(Gtk.HBox):
     KEY_SPAN = 4
 
     def __init__(self, level=None):
         gobject.GObject.__init__(self)
-        self.set_column_homogeneous(True)
-        self.set_row_homogeneous(True)
-        self.set_row_spacing(6)
-        self.set_column_spacing(6)
+        self.set_spacing(12)
+        self._columns = []
+        self._keys_map = {}
+        self._active_scan_group = []
+        self._dwelling_scan_group = []
 
         ctx = self.get_style_context()
         ctx.add_class("antler-keyboard-layout")
@@ -119,22 +120,40 @@ class AntlerLayout(Gtk.Grid):
         if level:
             self.load_rows(level.get_rows ())
 
+    def add_column (self):
+        col = Gtk.Grid()
+        col.set_column_homogeneous(True)
+        col.set_row_homogeneous(True)
+        col.set_row_spacing(6)
+        col.set_column_spacing(6)
+        self.add (col)
+        self._columns.append(col)
+        return col
+
+
     def add_row(self, row, row_num=0):
-        col_num = 0
-        for i, key in enumerate(row):
-            antler_key = AntlerKey(key)
-            ctx = antler_key.get_style_context()
-            ctx.add_class("antler-keyboard-row%d" % row_num)
-            self.attach(antler_key,
-                        col_num + int(key.props.margin_left * self.KEY_SPAN),
-                        row_num * self.KEY_SPAN,
-                        int(self.KEY_SPAN * key.props.width),
-                        self.KEY_SPAN)
-            col_num += int((key.props.width + key.props.margin_left ) * self.KEY_SPAN)
+        x = 0
+        for c, col in enumerate(row):
+            try:
+                column = self._columns[c]
+            except IndexError:
+                column = self.add_column()
+
+            for i, key in enumerate(col):
+                antler_key = AntlerKey(key)
+                self._keys_map[key] = antler_key
+                ctx = antler_key.get_style_context()
+                ctx.add_class("antler-keyboard-row%d" % row_num)
+                column.attach(antler_key,
+                              x + int(key.props.margin_left * self.KEY_SPAN),
+                              row_num * self.KEY_SPAN,
+                              int(self.KEY_SPAN * key.props.width),
+                              self.KEY_SPAN)
+                x += int((key.props.width + key.props.margin_left ) * self.KEY_SPAN)
 
     def load_rows(self, rows):
         for row_num, row in enumerate(rows):
-            self.add_row(row.get_keys(), row_num)
+            self.add_row([c.get_keys() for c in row.get_columns()], row_num)
 
 class AntlerKeyboardView(Gtk.Notebook):
     def __init__(self):
@@ -220,7 +239,6 @@ class AntlerKeyboardView(Gtk.Notebook):
         active_level_name = active_group.props.active_level
 
         self.set_current_page(self.layers[active_group_name][active_level_name])
-
 
 if __name__ == "__main__":
     import signal
