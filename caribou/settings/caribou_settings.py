@@ -12,7 +12,8 @@ CaribouSettings = SettingsTopGroup(
                               "and complexity of the keyboard, it could range from "
                               "a 'natural' look and feel good for composing simple "
                               "text, to a fullscale keyboard."),
-                            allowed=[(('touch'), _('Touch'))])]),
+                            allowed=[(('touch'), _('Touch')),
+                                     (('scan'), _('Scan'))])]),
                 ]),
         SettingsGroup("scanning", _("Scanning"), [
                 BooleanSetting(

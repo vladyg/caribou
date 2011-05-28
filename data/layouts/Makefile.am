@@ -1,1 +1,1 @@
-SUBDIRS = touch
+SUBDIRS = scan touch

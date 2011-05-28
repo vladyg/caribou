@@ -85,5 +85,6 @@ data/Makefile
 data/antler/Makefile
 data/layouts/Makefile
 data/layouts/touch/Makefile
+data/layouts/scan/Makefile
 libcaribou/Makefile
 ])
