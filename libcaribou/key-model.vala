@@ -1,7 +1,7 @@
 using GLib;
 
 namespace Caribou {
-    public class KeyModel : GLib.Object {
+    public class KeyModel : GLib.Object, IScannableItem {
         public double margin_left { get; set; default = 0.0; }
         public double width { get; set; default = 1.0; }
         public string toggle { get; set; default = ""; }
@@ -10,9 +10,25 @@ namespace Caribou {
         public string name { get; private set; }
         public uint keyval { get; private set; }
 
+        public bool scan_stepping { get; internal set; }
+        private bool _scan_selected;
+        public bool scan_selected {
+            get {
+                return _scan_selected;
+            }
+
+            internal set {
+                _scan_selected = value;
+                if (_scan_selected) {
+                    press ();
+                    GLib.Timeout.add(200, () => { release (); return false; });
+                }
+            }
+        }
+
         private uint hold_tid;
         private XAdapter xadapter;
-        private List<KeyModel> _extended_keys;
+        private Gee.ArrayList<KeyModel> extended_keys;
 
         public signal void key_pressed ();
         public signal void key_released ();
@@ -24,12 +40,13 @@ namespace Caribou {
             this.name = name;
             xadapter = XAdapter.get_default();
             keyval = Gdk.keyval_from_name (name);
+            extended_keys = new Gee.ArrayList<KeyModel> ();
         }
 
-        public void add_subkey (string name) {
+        internal void add_subkey (string name) {
             KeyModel key = new KeyModel (name);
             key.key_clicked.connect(on_subkey_clicked);
-            _extended_keys.append (key);
+            extended_keys.add (key);
         }
 
         private void on_subkey_clicked () {
@@ -58,14 +75,14 @@ namespace Caribou {
 
         private bool on_key_held () {
             hold_tid = 0;
-            if (_extended_keys.length () != 0)
+            if (extended_keys.size != 0)
                 show_subkeys = true;
             key_hold ();
             return false;
         }
 
-        public unowned List<KeyModel> get_extended_keys () {
-            return _extended_keys;
+        public KeyModel[] get_extended_keys () {
+            return (KeyModel[]) extended_keys.to_array ();
         }
     }
 }

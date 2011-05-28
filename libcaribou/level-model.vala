@@ -1,33 +1,38 @@
 using GLib;
 
 namespace Caribou {
-    public class LevelModel : GLib.Object {
+    public class LevelModel : ScannableGroup {
         public signal void level_toggled (string new_level);
-
         public string mode { get; private set; default = ""; }
-        public int n_rows {
-            get {
-                return _rows.length;
-            }
-        }
 
-        private RowModel[] _rows;
+        private Gee.ArrayList<RowModel> rows;
 
-        public LevelModel (string mode, uint nrows) {
-            uint i;
+        public LevelModel (string mode) {
             this.mode = mode;
-            _rows = new RowModel[nrows];
-            for (i=0;i<nrows;i++)
-                _rows[i] = new RowModel ();
+            rows = new Gee.ArrayList<RowModel> ();
         }
 
-        public void add_key (uint rownum, KeyModel key) {
+        internal void add_key (int rownum, int colnum, KeyModel key) {
+            int rowindex = rownum;
+            RowModel row = null;
+
+            if (rownum < 0)
+                rowindex = rows.size + rownum;
+
+            if (rownum >= rows.size) {
+                row = new RowModel ();
+                rows.add(row);
+            } else {
+                row = rows[rowindex];
+            }
+
+            row.add_key (colnum, key);
+
             key.key_clicked.connect (on_key_clicked);
-            _rows[rownum].add_key (key);
         }
 
         public RowModel[] get_rows () {
-            return _rows;
+            return (RowModel[]) rows.to_array ();
         }
 
         private void on_key_clicked (KeyModel key) {
@@ -37,5 +42,23 @@ namespace Caribou {
                 level_toggled ("default");
         }
 
+        public KeyModel[] get_keys () {
+            Gee.ArrayList<KeyModel> keys = new Gee.ArrayList<KeyModel> ();
+            foreach (RowModel row in rows) {
+                KeyModel[] row_keys = row.get_keys();
+                foreach (KeyModel key in row_keys) {
+                    keys.add(key);
+                }
+            }
+
+            return (KeyModel[]) keys.to_array ();
+        }
+
+        public override IScannableItem[] get_scan_children () {
+            if (scan_grouping == ScanGrouping.LINEAR)
+                return (IScannableItem[]) get_keys ();
+            else
+                return (IScannableItem[]) rows.to_array ();
+        }
     }
 }

@@ -46,7 +46,7 @@ namespace Caribou {
             throw new IOError.NOT_FOUND (
                 "Could not find layout file for %s %s", group, variant);                       }
 
-        public static void load_group (GroupModel group) {
+        public static bool load_group (GroupModel group) {
             Json.Parser parser = new Json.Parser ();
 
             try {
@@ -55,8 +55,10 @@ namespace Caribou {
                 create_levels_from_json (group, parser.get_root ());
             } catch (GLib.Error e) {
                 stdout.printf ("Failed to load JSON: %s\n", e.message);
-                return;
+                return false;
             }
+
+            return true;
         }
 
         public static void create_levels_from_json (GroupModel group,
@@ -74,26 +76,32 @@ namespace Caribou {
                     mode = json_level.get_string_member ("mode");
 
                 Json.Array json_rows = json_level.get_array_member ("rows");
-                LevelModel level = new LevelModel(mode, json_rows.get_length ());
+                LevelModel level = new LevelModel(mode);
+                load_rows (level, json_rows);
 
                 group.add_level(levelname, level);
-
-                load_rows (level, json_rows);
             }
         }
 
         public static void load_rows (LevelModel level, Json.Array json_rows) {
-            uint i,j;
-
-            for (i=0;i<level.n_rows;i++) {
-                Json.Array json_keys = json_rows.get_array_element (i);
-                uint nkeys = json_keys.get_length ();
-                for (j=0;j<nkeys;j++) {
-                    Json.Object json_key = json_keys.get_object_element (j);
-                    level.add_key (i, load_key (json_key));
+            for (int i=0;i<json_rows.get_length ();i++) {
+                Json.Array json_children = json_rows.get_array_element (i);
+                unowned Json.Node child = json_children.get_element(0);
+                if (child.get_node_type () == Json.NodeType.OBJECT) {
+                    for (int j=0;j<json_children.get_length ();j++) {
+                        Json.Object json_key = json_children.get_object_element (j);
+                        level.add_key (i, 0, load_key (json_key));
+                    }
+                } else if (child.get_node_type () == Json.NodeType.ARRAY) {
+                    for (int k=0;k<json_children.get_length ();k++) {
+                        Json.Array json_keys = json_children.get_array_element (k);
+                        for (int j=0;j<json_keys.get_length ();j++) {
+                            Json.Object json_key = json_keys.get_object_element (j);
+                            level.add_key (i, k, load_key (json_key));
+                        }
+                    }
                 }
             }
-
         }
 
         public static KeyModel load_key (Json.Object json_key) {

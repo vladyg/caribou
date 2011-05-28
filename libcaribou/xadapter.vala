@@ -12,8 +12,9 @@ namespace Caribou {
         public signal void group_changed (uint gid, string group, string variant);
 
         /* Private properties */
-        private static XAdapter instance;
+        static XAdapter instance;
         X.Display xdisplay;
+        X.ID xid;
         Xkb.Desc xkbdesc;
         Xkl.Engine xkl_engine;
         uint reserved_keysym;
@@ -21,10 +22,24 @@ namespace Caribou {
         uchar modifiers;
         uchar group;
 
+        public delegate void KeyButtonCallback (uint keybuttoncode, bool pressed);
+
+        private class KeyButtonHandler {
+            public KeyButtonCallback cb { get; private set; }
+            public KeyButtonHandler (KeyButtonCallback cb) {
+                this.cb = cb;
+            }
+        }
+
+        HashTable<uint, KeyButtonHandler> button_funcs;
+        HashTable<uint, KeyButtonHandler> key_funcs;
+
         construct {
             Xkb.State state;
 
-            this.xdisplay = new X.Display ();
+            Gdk.Window rootwin = Gdk.get_default_root_window();
+            this.xdisplay = Gdk.X11Display.get_xdisplay (rootwin.get_display ());
+            xid = Gdk.X11Window.get_xid (rootwin);
             this.xkbdesc = Xkb.get_keyboard (this.xdisplay,
                                              Xkb.GBN_AllComponentsMask,
                                              Xkb.UseCoreKbd);
@@ -36,6 +51,12 @@ namespace Caribou {
             this.modifiers = state.mods;
 
             this.reserved_keycode = 0;
+
+            button_funcs = new HashTable<uint, KeyButtonHandler> (direct_hash,
+                                                                  direct_equal);
+
+            key_funcs = new HashTable<uint, KeyButtonHandler> (direct_hash,
+                                                               direct_equal);
 
             Xkb.select_events (
                 this.xdisplay, Xkb.UseCoreKbd,
@@ -57,10 +78,26 @@ namespace Caribou {
 
         private Gdk.FilterReturn x_event_filter (Gdk.XEvent xevent, Gdk.Event event) {
             void* pointer = &xevent;
-            Xkb.Event *xev = (Xkb.Event *) pointer;
-                        
-            if (xev.any.xkb_type == Xkb.StateNotify) {
-                Xkb.StateNotifyEvent *sevent = &xev.state;
+            Xkb.Event *xkbev = (Xkb.Event *) pointer;
+            X.Event *xev = (X.Event *) pointer;
+
+            if (xev.type == X.EventType.ButtonPress ||
+                xev.type == X.EventType.ButtonRelease) {
+                KeyButtonHandler handler =
+                    (KeyButtonHandler) button_funcs.lookup (xev.xbutton.button);
+                if (handler != null)
+                    handler.cb (xev.xbutton.button,
+                                xev.type == X.EventType.ButtonPress);
+            } else if (xev.type == X.EventType.KeyPress ||
+                       xev.type == X.EventType.KeyRelease) {
+
+                KeyButtonHandler handler =
+                    (KeyButtonHandler) key_funcs.lookup (xev.xkey.keycode);
+                if (handler != null)
+                    handler.cb (xev.xkey.keycode,
+                                xev.type == X.EventType.KeyPress);
+            } else if (xkbev.any.xkb_type == Xkb.StateNotify) {
+                Xkb.StateNotifyEvent *sevent = &xkbev.state;
                 if ((sevent.changed & Xkb.GroupStateMask) != 0) {
                     string group_name;
                     string variant_name;
@@ -128,22 +165,34 @@ namespace Caribou {
             return false;
         }
 
-        private uchar keycode_for_keyval (uint keyval, out uint modmask) {
+        private bool best_keycode_keyval_match (uint keyval,
+                                                out uchar keycode,
+                                                out uint modmask) {
             Gdk.Keymap kmap= Gdk.Keymap.get_default ();
             Gdk.KeymapKey[] kmk;
+
+            if (!kmap.get_entries_for_keyval (keyval, out kmk))
+                return false;
+
+            Gdk.KeymapKey best_match = kmk[0];
+
+            foreach (KeymapKey km in kmk)
+               if (km.group == this.group)
+                   best_match = km;
+
+               keycode = (uchar) best_match.keycode;
+               modmask = (best_match.level == 1) ? Gdk.ModifierType.SHIFT_MASK : 0;
+
+               return true;
+        }
+
+        private uchar keycode_for_keyval (uint keyval, out uint modmask) {
             uchar keycode = 0;
 
-            if (kmap.get_entries_for_keyval (keyval, out kmk)) {
-                Gdk.KeymapKey best_match = kmk[0];
-                foreach (KeymapKey km in kmk)
-                    if (km.group == this.group)
-                        best_match = km;
-                
-                keycode = (uchar) best_match.keycode;
-                modmask = (best_match.level == 1) ? Gdk.ModifierType.SHIFT_MASK : 0;
-            } else {
+            if (!best_keycode_keyval_match (keyval, out keycode, out modmask)) {
                 replace_keycode (keyval);
                 keycode = this.reserved_keycode;
+                modmask = 0;
             }
 
             return keycode;
@@ -162,7 +211,7 @@ namespace Caribou {
 
         public void keyval_release (uint keyval) {
             uchar keycode = keycode_for_keyval (keyval, null);
-            
+
             XTest.fake_key_event (this.xdisplay, keycode, false, X.CURRENT_TIME);
             this.xdisplay.flush ();
         }
@@ -213,8 +262,41 @@ namespace Caribou {
             }
         }
 
-        public void me () {
-            stdout.printf("%p\n", this.xkl_engine);
+        public void register_key_func (uint keyval, KeyButtonCallback? func) {
+            uchar keycode;
+            uint modmask;
+
+            if (!best_keycode_keyval_match (keyval, out keycode, out modmask)) {
+                GLib.warning ("No good keycode for %d", (int) keyval);
+                return;
+            }
+
+            if (func != null) {
+                var handler = new KeyButtonHandler (func);
+                key_funcs.insert (keycode, handler);
+                xdisplay.grab_key ((int)keycode, 0, xid,
+                                   true, GrabMode.Async, GrabMode.Async);
+
+            } else {
+                key_funcs.remove (keycode);
+                xdisplay.ungrab_key ((int)keycode, 0, xid);
+            }
         }
+
+        public void register_button_func (uint button, KeyButtonCallback? func) {
+            if (func != null) {
+                var handler = new KeyButtonHandler (func);
+                button_funcs.insert (button, handler);
+                xdisplay.grab_button (button, 0, xid, true,
+                                      X.EventMask.ButtonPressMask |
+                                      X.EventMask.ButtonReleaseMask,
+                                      GrabMode.Async, GrabMode.Async, 0, 0);
+
+            } else {
+                button_funcs.remove (button);
+                xdisplay.ungrab_button (button, 0, xid);
+            }
+        }
+
     }
 }

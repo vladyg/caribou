@@ -18,7 +18,8 @@ PRETTY_LABELS = {
     'Caribou_Emoticons' : u'\u263a',
     'Caribou_Symbols' : u'123',
     'Caribou_Symbols_More' : u'{#*',
-    'Caribou_Alpha' : u'Abc'
+    'Caribou_Alpha' : u'Abc',
+    'Caribou_Repeat' : u'\u267b'
 }
 
 class AntlerKey(Gtk.Button):
@@ -41,6 +42,25 @@ class AntlerKey(Gtk.Button):
         if key.get_extended_keys ():
             self._sublevel = AntlerSubLevel(self)
 
+        self._key_pressed_handler = key.connect(
+            'key-pressed',
+            lambda x: self.set_state_flags(Gtk.StateFlags.ACTIVE, False))
+        self._key_released_handler = key.connect(
+            'key-released',
+            lambda x: self.unset_state_flags(Gtk.StateFlags.ACTIVE))
+
+    def set_dwell_scan(self, dwell):
+        if dwell:
+            self.set_state_flags(Gtk.StateFlags.SELECTED, False)
+        else:
+            self.unset_state_flags(Gtk.StateFlags.SELECTED)
+
+    def set_group_scan_active(self, active):
+        if active:
+            self.set_state_flags(Gtk.StateFlags.INCONSISTENT, False)
+        else:
+            self.unset_state_flags(Gtk.StateFlags.INCONSISTENT)
+
     def _on_prefs_clicked(self, key):
         p = PreferencesDialog(AntlerSettings())
         p.populate_settings(CaribouSettings())
@@ -62,10 +82,14 @@ class AntlerKey(Gtk.Button):
         return "<b>%s</b>" % glib.markup_escape_text(label.encode('utf-8'))
 
     def _on_pressed(self, button):
+        self.caribou_key.handler_block(self._key_pressed_handler)
         self.caribou_key.press()
+        self.caribou_key.handler_unblock(self._key_pressed_handler)
 
     def _on_released(self, button):
+        self.caribou_key.handler_block(self._key_released_handler)
         self.caribou_key.release()
+        self.caribou_key.handler_unblock(self._key_released_handler)
 
     def do_get_preferred_width_for_height(self, w):
         return (w, w)
@@ -90,7 +114,7 @@ class AntlerSubLevel(Gtk.Window):
         self._key = key
 
         layout = AntlerLayout()
-        layout.add_row(key.caribou_key.get_extended_keys())
+        layout.add_row([key.caribou_key.get_extended_keys()])
         self.add(layout)
 
     def _on_show_subkeys(self, key, prop):
@@ -103,44 +127,110 @@ class AntlerSubLevel(Gtk.Window):
             parent.set_sensitive(True)
             self.hide()
 
-class AntlerLayout(Gtk.Grid):
+class AntlerLayout(Gtk.HBox):
     KEY_SPAN = 4
 
     def __init__(self, level=None):
         gobject.GObject.__init__(self)
-        self.set_column_homogeneous(True)
-        self.set_row_homogeneous(True)
-        self.set_row_spacing(6)
-        self.set_column_spacing(6)
+        self.set_spacing(12)
+        self._columns = []
+        self._keys_map = {}
+        self._active_scan_group = []
+        self._dwelling_scan_group = []
 
         ctx = self.get_style_context()
         ctx.add_class("antler-keyboard-layout")
 
         if level:
             self.load_rows(level.get_rows ())
+            level.connect("selected-item-changed", self._on_active_group_changed)
+            level.connect("step-item-changed", self._on_dwelling_group_changed)
+            level.connect("scan-cleared", self._on_scan_cleared)
+
+    def add_column (self):
+        col = Gtk.Grid()
+        col.set_column_homogeneous(True)
+        col.set_row_homogeneous(True)
+        col.set_row_spacing(6)
+        col.set_column_spacing(6)
+        self.add (col)
+        self._columns.append(col)
+        return col
+
+    def _on_scan_cleared (self, level):
+        for key in self._active_scan_group:
+            self._keys_map[key].set_group_scan_active(False)
+
+        self._active_scan_group = []
+
+        for key in self._dwelling_scan_group:
+            self._keys_map[key].set_dwell_scan(False)
+
+        self._dwelling_scan_group = []
+
+    def _on_active_group_changed(self, level, active_item):
+        for key in self._active_scan_group:
+            self._keys_map[key].set_group_scan_active(False)
+
+        if isinstance(active_item, Caribou.KeyModel):
+            self._active_scan_group = [active_item]
+        else:
+            self._active_scan_group = active_item.get_keys()
+
+        for key in self._active_scan_group:
+            self._keys_map[key].set_group_scan_active(True)
+
+    def _on_dwelling_group_changed(self, level, dwell_item):
+        for key in self._dwelling_scan_group:
+            self._keys_map[key].set_dwell_scan(False)
+
+        if isinstance(dwell_item, Caribou.KeyModel):
+            self._dwelling_scan_group = [dwell_item]
+        else:
+            self._dwelling_scan_group = dwell_item.get_keys()
+
+        for key in self._dwelling_scan_group:
+            self._keys_map[key].set_dwell_scan(True)
 
     def add_row(self, row, row_num=0):
-        col_num = 0
-        for i, key in enumerate(row):
-            antler_key = AntlerKey(key)
-            ctx = antler_key.get_style_context()
-            ctx.add_class("antler-keyboard-row%d" % row_num)
-            self.attach(antler_key,
-                        col_num + int(key.props.margin_left * self.KEY_SPAN),
-                        row_num * self.KEY_SPAN,
-                        int(self.KEY_SPAN * key.props.width),
-                        self.KEY_SPAN)
-            col_num += int((key.props.width + key.props.margin_left ) * self.KEY_SPAN)
+        x = 0
+        for c, col in enumerate(row):
+            try:
+                column = self._columns[c]
+            except IndexError:
+                column = self.add_column()
 
+            for i, key in enumerate(col):
+                antler_key = AntlerKey(key)
+                self._keys_map[key] = antler_key
+                ctx = antler_key.get_style_context()
+                ctx.add_class("antler-keyboard-row%d" % row_num)
+                column.attach(antler_key,
+                              x + int(key.props.margin_left * self.KEY_SPAN),
+                              row_num * self.KEY_SPAN,
+                              int(self.KEY_SPAN * key.props.width),
+                              self.KEY_SPAN)
+                x += int((key.props.width + key.props.margin_left ) * self.KEY_SPAN)
+ 
     def load_rows(self, rows):
         for row_num, row in enumerate(rows):
-            self.add_row(row.get_keys(), row_num)
+            self.add_row([c.get_keys() for c in row.get_columns()], row_num)
+
+    def _on_scan_state_changed(self, row, prop, antler_keys):
+        if prop.name == "scan-dwelling":
+            for key in antler_keys:
+                key.set_dwell_scan(row.props.scan_dwelling)
+        elif prop.name == "scan-active":
+            for key in antler_keys:
+                key.set_group_scan_active(row.props.scan_active)
 
 class AntlerKeyboardView(Gtk.Notebook):
     def __init__(self):
         gobject.GObject.__init__(self)
         self.set_show_tabs(False)
         self.keyboard_model = Caribou.KeyboardModel()
+        self.scanner = Caribou.Scanner()
+        self.scanner.set_keyboard(self.keyboard_model)
         self.keyboard_model.connect("notify::active-group", self._on_group_changed)
 
         self.layers = {}
@@ -158,15 +248,6 @@ class AntlerKeyboardView(Gtk.Notebook):
         if not use_system.value:
             Gtk.StyleContext.add_provider_for_screen(
                 Gdk.Screen.get_default(), self._app_css_provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
-
-
-        self._scan_css_provider = Gtk.CssProvider()
-        self._load_style(
-            self._scan_css_provider, "scan-style.css",
-            [glib.get_user_data_dir()] + list(glib.get_system_data_dirs()))
-        Gtk.StyleContext.add_provider_for_screen(
-                Gdk.Screen.get_default(), self._scan_css_provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
         self._user_css_provider = Gtk.CssProvider()
@@ -220,7 +301,6 @@ class AntlerKeyboardView(Gtk.Notebook):
         active_level_name = active_group.props.active_level
 
         self.set_current_page(self.layers[active_group_name][active_level_name])
-
 
 if __name__ == "__main__":
     import signal

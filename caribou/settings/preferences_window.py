@@ -151,9 +151,9 @@ class AbstractPreferencesUI:
             elif setting.entry_type == ENTRY_COMBO or setting.allowed:
                 control = Gtk.ComboBoxText.new()
                 for option in setting.allowed:
-                    control.append(option[0], option[1])
-                control.set_active_id(setting.value)
-                value_changed_cb = lambda s, v, w: w.set_active_id(v)
+                    control.append(str(option[0]), option[1])
+                control.set_active_id(str(setting.value))
+                value_changed_cb = lambda s, v, w: w.set_active_id(str(v))
                 control_changed_cb = self._combo_changed_cb
                 control_changed_signal = 'changed'
             else:
