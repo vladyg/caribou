@@ -250,15 +250,6 @@ class AntlerKeyboardView(Gtk.Notebook):
                 Gdk.Screen.get_default(), self._app_css_provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
-
-        self._scan_css_provider = Gtk.CssProvider()
-        self._load_style(
-            self._scan_css_provider, "scan-style.css",
-            [glib.get_user_data_dir()] + list(glib.get_system_data_dirs()))
-        Gtk.StyleContext.add_provider_for_screen(
-                Gdk.Screen.get_default(), self._scan_css_provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
-
         self._user_css_provider = Gtk.CssProvider()
         self._load_style(self._user_css_provider, "user-style.css",
                          [glib.get_user_data_dir()])
