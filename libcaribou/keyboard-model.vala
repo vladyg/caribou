@@ -29,8 +29,8 @@ namespace Caribou {
 
         private void populate_group (string group, string variant) {
             GroupModel grp = new GroupModel (group, variant);
-            groups.insert (GroupModel.create_group_name (group, variant), grp);
-            JsonDeserializer.load_group (grp);
+            if (JsonDeserializer.load_group (grp))
+                groups.insert (GroupModel.create_group_name (group, variant), grp);
         }
 
         public string[] get_groups () {

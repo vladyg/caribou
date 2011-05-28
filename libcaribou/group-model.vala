@@ -23,7 +23,7 @@ namespace Caribou {
                 return group;
         }
 
-        public void add_level (string lname, LevelModel level) {
+        internal void add_level (string lname, LevelModel level) {
             levels.insert (lname, level);
             level.level_toggled.connect(on_level_toggled);
             if (level.mode == "default") {

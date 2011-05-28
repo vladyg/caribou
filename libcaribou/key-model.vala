@@ -12,7 +12,7 @@ namespace Caribou {
 
         private uint hold_tid;
         private XAdapter xadapter;
-        private List<KeyModel> _extended_keys;
+        private Gee.ArrayList<KeyModel> extended_keys;
 
         public signal void key_pressed ();
         public signal void key_released ();
@@ -24,12 +24,13 @@ namespace Caribou {
             this.name = name;
             xadapter = XAdapter.get_default();
             keyval = Gdk.keyval_from_name (name);
+            extended_keys = new Gee.ArrayList<KeyModel> ();
         }
 
-        public void add_subkey (string name) {
+        internal void add_subkey (string name) {
             KeyModel key = new KeyModel (name);
             key.key_clicked.connect(on_subkey_clicked);
-            _extended_keys.append (key);
+            extended_keys.add (key);
         }
 
         private void on_subkey_clicked () {
@@ -58,14 +59,14 @@ namespace Caribou {
 
         private bool on_key_held () {
             hold_tid = 0;
-            if (_extended_keys.length () != 0)
+            if (extended_keys.size != 0)
                 show_subkeys = true;
             key_hold ();
             return false;
         }
 
-        public unowned List<KeyModel> get_extended_keys () {
-            return _extended_keys;
+        public KeyModel[] get_extended_keys () {
+            return (KeyModel[]) extended_keys.to_array ();
         }
     }
 }
