@@ -38,6 +38,7 @@ libcaribou_la_SOURCES = \
 	row-model.vala \
 	key-model.vala \
 	column-model.vala \
+	scanner.vala \
 	util.vala \
 	json-deserializer.vala \
 	iscannable-item.vala \
