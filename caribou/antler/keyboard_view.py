@@ -18,7 +18,8 @@ PRETTY_LABELS = {
     'Caribou_Emoticons' : u'\u263a',
     'Caribou_Symbols' : u'123',
     'Caribou_Symbols_More' : u'{#*',
-    'Caribou_Alpha' : u'Abc'
+    'Caribou_Alpha' : u'Abc',
+    'Caribou_Repeat' : u'\u267b'
 }
 
 class AntlerKey(Gtk.Button):
