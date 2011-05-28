@@ -1,7 +1,7 @@
 using GLib;
 
 namespace Caribou {
-    public class LevelModel : GLib.Object {
+    public class LevelModel : ScannableGroup {
         public signal void level_toggled (string new_level);
         public string mode { get; private set; default = ""; }
 
@@ -52,6 +52,13 @@ namespace Caribou {
             }
 
             return (KeyModel[]) keys.to_array ();
+        }
+
+        public override IScannableItem[] get_scan_children () {
+            if (scan_grouping == ScanGrouping.LINEAR)
+                return (IScannableItem[]) get_keys ();
+            else
+                return (IScannableItem[]) rows.to_array ();
         }
     }
 }

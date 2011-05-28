@@ -1,5 +1,7 @@
 namespace Caribou {
-    public class RowModel : GLib.Object {
+    public class RowModel : ScannableGroup, IScannableItem {
+        public bool scan_stepping { get; set; }
+        public bool scan_selected { get; set; }
 
         Gee.ArrayList<ColumnModel> columns;
 
@@ -39,5 +41,11 @@ namespace Caribou {
             return (ColumnModel[]) columns.to_array ();
         }
 
+        public override IScannableItem[] get_scan_children () {
+            if (scan_grouping == ScanGrouping.ROWS)
+                return (IScannableItem[]) get_keys ();
+            else
+                return (IScannableItem[]) columns.to_array ();
+        }
     }
 }

@@ -41,7 +41,8 @@ libcaribou_la_SOURCES = \
 	util.vala \
 	json-deserializer.vala \
 	iscannable-item.vala \
-	iscannable-group.vala
+	iscannable-group.vala \
+	scannable-group.vala
 
 EXTRA_DIST = \
 	external-libs.vapi \

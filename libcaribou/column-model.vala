@@ -1,5 +1,8 @@
 namespace Caribou {
-    public class ColumnModel : Object {
+    public class ColumnModel : ScannableGroup, IScannableItem {
+        public bool scan_stepping { get; set; }
+        public bool scan_selected { get; set; }
+
         Gee.ArrayList<KeyModel> keys;
 
         public ColumnModel () {
@@ -20,6 +23,10 @@ namespace Caribou {
 
         public KeyModel first_key () {
             return keys.first();
+        }
+
+        public override IScannableItem[] get_scan_children () {
+            return (IScannableItem[]) get_keys ();
         }
    }
 }

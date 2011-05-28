@@ -1,7 +1,7 @@
 using GLib;
 
 namespace Caribou {
-    public class KeyModel : GLib.Object {
+    public class KeyModel : GLib.Object, IScannableItem {
         public double margin_left { get; set; default = 0.0; }
         public double width { get; set; default = 1.0; }
         public string toggle { get; set; default = ""; }
@@ -9,6 +9,22 @@ namespace Caribou {
         public bool show_subkeys { get; private set; default = false; }
         public string name { get; private set; }
         public uint keyval { get; private set; }
+
+        public bool scan_stepping { get; internal set; }
+        private bool _scan_selected;
+        public bool scan_selected {
+            get {
+                return _scan_selected;
+            }
+
+            internal set {
+                _scan_selected = value;
+                if (_scan_selected) {
+                    press ();
+                    GLib.Timeout.add(200, () => { release (); return false; });
+                }
+            }
+        }
 
         private uint hold_tid;
         private XAdapter xadapter;
