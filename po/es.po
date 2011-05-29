@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: caribou.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-05-05 19:43+0000\n"
+"POT-Creation-Date: 2011-05-28 20:17+0000\n"
 "PO-Revision-Date: 2011-05-07 12:22+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
@@ -24,12 +24,12 @@ msgid "Caribou Preferences"
 msgstr "Preferencias de Caribou"
 
 #: ../caribou/settings/caribou_settings.py:6
-#: ../caribou/settings/caribou_settings.py:41
+#: ../caribou/settings/caribou_settings.py:55
 msgid "Keyboard"
 msgstr "Teclado"
 
 #: ../caribou/settings/caribou_settings.py:7
-#: ../caribou/settings/caribou_settings.py:23
+#: ../caribou/settings/caribou_settings.py:24
 msgid "General"
 msgstr "General"
 
@@ -55,107 +55,155 @@ msgstr ""
 msgid "Touch"
 msgstr "Tocar"
 
-#: ../caribou/settings/caribou_settings.py:17
+#: ../caribou/settings/caribou_settings.py:16
+#| msgid "Scanning"
+msgid "Scan"
+msgstr "Escanear"
+
+#: ../caribou/settings/caribou_settings.py:18
 msgid "Scanning"
 msgstr "Escaneando"
 
-#: ../caribou/settings/caribou_settings.py:19
+#: ../caribou/settings/caribou_settings.py:20
 msgid "Enable scanning"
 msgstr "Activar análisis"
 
-#: ../caribou/settings/caribou_settings.py:20
+#: ../caribou/settings/caribou_settings.py:21
 msgid "Enable switch scanning"
 msgstr "Activar cambio de análisis"
 
-#: ../caribou/settings/caribou_settings.py:24
+#: ../caribou/settings/caribou_settings.py:25
 msgid "Scanning mode"
 msgstr "Modo de análisis"
 
-#: ../caribou/settings/caribou_settings.py:26
-msgid "Scanning type, block or row"
-msgstr "Tipo de análisis, bloque o fila"
-
 #: ../caribou/settings/caribou_settings.py:27
-msgid "Block"
-msgstr "Bloque"
+#| msgid "Scanning type, block or row"
+msgid "Scanning type, subgroups, rows or linear"
+msgstr "Tipo de análisis, subgrupos, filas o lineal"
 
 #: ../caribou/settings/caribou_settings.py:28
-msgid "Row"
-msgstr "Fila"
+msgid "Subgroups"
+msgstr "Subgrupos"
 
 #: ../caribou/settings/caribou_settings.py:29
+#| msgid "Row"
+msgid "Rows"
+msgstr "Filas"
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Linear"
+msgstr "Lineal"
+
+#: ../caribou/settings/caribou_settings.py:32
 msgid "Step time"
 msgstr "Tiempo del paso"
 
-#: ../caribou/settings/caribou_settings.py:30
+#: ../caribou/settings/caribou_settings.py:33
 msgid "Time between key transitions"
 msgstr "Tiempo entre transiciones de teclas"
 
-#: ../caribou/settings/caribou_settings.py:33
-msgid "Reverse scanning"
+#: ../caribou/settings/caribou_settings.py:36
+#| msgid "Reverse scanning"
+msgid "Inverse scanning"
 msgstr "Análisis inverso"
 
-#: ../caribou/settings/caribou_settings.py:34
-msgid "Scan in reverse order"
-msgstr "Analizar en modo inverso"
+#: ../caribou/settings/caribou_settings.py:37
+msgid "Step with the switch, activate by dwelling"
+msgstr ""
 
-#: ../caribou/settings/caribou_settings.py:36
+#: ../caribou/settings/caribou_settings.py:40
+msgid "Auto-restart scanning"
+msgstr "Autoreiniciar análisis"
+
+#: ../caribou/settings/caribou_settings.py:41
+msgid "Automatically restart scanning after item activation"
+msgstr "Autoreiniciar el análisis después de la activación de elementos"
+
+#: ../caribou/settings/caribou_settings.py:42
+msgid "Scan cycles"
+msgstr "Ciclos de análisis"
+
+#: ../caribou/settings/caribou_settings.py:43
+msgid "One"
+msgstr "Uno"
+
+#: ../caribou/settings/caribou_settings.py:44
+msgid "Two"
+msgstr "Dos"
+
+#: ../caribou/settings/caribou_settings.py:45
+msgid "Three"
+msgstr "Tres"
+
+#: ../caribou/settings/caribou_settings.py:46
+msgid "Four"
+msgstr "Cuatro"
+
+#: ../caribou/settings/caribou_settings.py:47
+msgid "Five"
+msgstr "Cinco"
+
+#: ../caribou/settings/caribou_settings.py:50
 msgid "Input"
 msgstr "Entrada"
 
-#: ../caribou/settings/caribou_settings.py:37
+#: ../caribou/settings/caribou_settings.py:51
 msgid "Switch device"
 msgstr "Cambiar dispositivo"
 
-#: ../caribou/settings/caribou_settings.py:39
+#: ../caribou/settings/caribou_settings.py:53
 msgid "Switch device, keyboard or mouse"
 msgstr "Cambiar dispositivo, teclado o ratón"
 
-#: ../caribou/settings/caribou_settings.py:42
+#: ../caribou/settings/caribou_settings.py:56
 msgid "Mouse"
 msgstr "Ratón"
 
-#: ../caribou/settings/caribou_settings.py:44
+#: ../caribou/settings/caribou_settings.py:58
 msgid "Switch key"
 msgstr "Tecla de cambio"
 
-#: ../caribou/settings/caribou_settings.py:47
+#: ../caribou/settings/caribou_settings.py:60
 msgid "Key to use with scanning mode"
 msgstr "Tecla que usar con el modo de análisis"
 
-#: ../caribou/settings/caribou_settings.py:49
+#: ../caribou/settings/caribou_settings.py:62
 msgid "Right shift"
 msgstr "Mayús derecho"
 
-#: ../caribou/settings/caribou_settings.py:50
+#: ../caribou/settings/caribou_settings.py:63
 msgid "Left shift"
 msgstr "Mayús izquierdo"
 
-#: ../caribou/settings/caribou_settings.py:51
+#: ../caribou/settings/caribou_settings.py:64
+msgid "Space"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:65
 msgid "Alt Gr"
 msgstr "Alt Gr"
 
-#: ../caribou/settings/caribou_settings.py:52
+#: ../caribou/settings/caribou_settings.py:66
 msgid "Num lock"
 msgstr "Bloq Num"
 
-#: ../caribou/settings/caribou_settings.py:53
+#: ../caribou/settings/caribou_settings.py:67
 msgid "Switch button"
 msgstr "Botón de cambio"
 
-#: ../caribou/settings/caribou_settings.py:56
+#: ../caribou/settings/caribou_settings.py:70
 msgid "Mouse button to use in the scanning mode"
 msgstr "Botón del ratón que usar en el modo de análisis"
 
-#: ../caribou/settings/caribou_settings.py:58
+#: ../caribou/settings/caribou_settings.py:72
 msgid "Button 1"
 msgstr "Botón 1"
 
-#: ../caribou/settings/caribou_settings.py:59
+#: ../caribou/settings/caribou_settings.py:73
 msgid "Button 2"
 msgstr "Botón 2"
 
-#: ../caribou/settings/caribou_settings.py:60
+#: ../caribou/settings/caribou_settings.py:74
 msgid "Button 3"
 msgstr "Botón 3"
 
@@ -189,7 +237,6 @@ msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "ADVERTENCIA de Caribou: widget editable no manejado:"
 
 #: ../caribou/antler/antler_settings.py:5
-#| msgid "Caribou Preferences"
 msgid "Antler Preferences"
 msgstr "Preferencias de Antler"
 
@@ -203,7 +250,6 @@ msgstr "Apariencia"
 
 #: ../caribou/antler/antler_settings.py:8
 #: ../caribou/antler/antler_settings.py:9
-#| msgid "Use system theme"
 msgid "Use System Theme"
 msgstr "Usar el tema del sistema"
 
@@ -230,6 +276,12 @@ msgstr "Distancia máxima"
 #: ../caribou/antler/antler_settings.py:17
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Distancia máxima cuando el teclado está oculto"
+
+#~ msgid "Block"
+#~ msgstr "Bloque"
+
+#~ msgid "Scan in reverse order"
+#~ msgstr "Analizar en modo inverso"
 
 #~ msgid "Keyboard layout"
 #~ msgstr "Distribución de teclado"
