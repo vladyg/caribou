@@ -7,12 +7,12 @@ namespace Caribou {
         public string group;
         public string variant;
         private string default_level;
-        private HashTable<string, LevelModel> levels;
+        private Gee.HashMap<string, LevelModel> levels;
 
         public GroupModel (string group, string variant) {
             this.group = group;
             this.variant = variant;
-            levels = new HashTable<string, LevelModel> (str_hash, str_equal);
+            levels = new Gee.HashMap<string, LevelModel> (str_hash, str_equal);
             active_level = default_level;
         }
 
@@ -24,7 +24,7 @@ namespace Caribou {
         }
 
         internal void add_level (string lname, LevelModel level) {
-            levels.insert (lname, level);
+            levels.set (lname, level);
             level.level_toggled.connect(on_level_toggled);
             if (level.mode == "default") {
                 default_level = lname;
@@ -33,11 +33,11 @@ namespace Caribou {
         }
 
         public string[] get_levels () {
-            return Util.list_to_array (levels.get_keys ());
+            return (string[]) levels.keys.to_array ();
         }
 
         public LevelModel get_level (string level_name) {
-            return levels.lookup(level_name);
+            return levels.get (level_name);
         }
 
         private void on_level_toggled (string new_level) {
@@ -48,14 +48,7 @@ namespace Caribou {
         }
 
         public IKeyboardObject[] get_children () {
-            IKeyboardObject[] children = new IKeyboardObject[levels.size ()];
-            uint i = 0;
-
-            foreach (LevelModel obj in levels.get_values ()) {
-                children[i++] = (IKeyboardObject) obj;
-            }
-
-            return children;
+            return (IKeyboardObject[]) levels.values.to_array ();
         }
 
     }
