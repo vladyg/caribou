@@ -5,8 +5,9 @@ namespace Caribou {
         public string active_group { get; private set; default = ""; }
         public string keyboard_type { get; construct; }
 
-        XAdapter xadapter;
-        Gee.HashMap<string, GroupModel> groups;
+        private XAdapter xadapter;
+        private Gee.HashMap<string, GroupModel> groups;
+        private KeyModel last_activated_key;
 
         construct {
             uint grpid;
@@ -40,6 +41,11 @@ namespace Caribou {
         }
 
         private void on_key_activated (KeyModel key) {
+            if (key.name == "Caribou_Repeat")
+                last_activated_key.activate ();
+            else
+                last_activated_key = key;
+
             key_activated (key);
         }
 

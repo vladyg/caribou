@@ -19,10 +19,8 @@ namespace Caribou {
 
             internal set {
                 _scan_selected = value;
-                if (_scan_selected) {
-                    press ();
-                    GLib.Timeout.add(200, () => { release (); return false; });
-                }
+                if (_scan_selected)
+                    activate ();
             }
         }
 
@@ -94,6 +92,11 @@ namespace Caribou {
 
         public IKeyboardObject[] get_children () {
             return (IKeyboardObject[]) extended_keys.to_array ();
+        }
+
+        public void activate () {
+            press ();
+            GLib.Timeout.add(100, () => { release (); return false; });
         }
     }
 }
