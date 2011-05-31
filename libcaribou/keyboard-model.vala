@@ -1,7 +1,7 @@
 using Bus;
 
 namespace Caribou {
-    public class KeyboardModel : Object {
+    public class KeyboardModel : Object, IKeyboardObject {
         public string active_group { get; private set; default = ""; }
         public string keyboard_type { get; construct; }
 
@@ -54,5 +54,15 @@ namespace Caribou {
             }
         }
 
+        public IKeyboardObject[] get_children () {
+            IKeyboardObject[] children = new IKeyboardObject[groups.size ()];
+            uint i = 0;
+
+            foreach (GroupModel obj in groups.get_values ()) {
+                children[i++] = (IKeyboardObject) obj;
+            }
+
+            return children;
+        }
     }
 }

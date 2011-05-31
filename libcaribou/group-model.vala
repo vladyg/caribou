@@ -1,7 +1,7 @@
 using GLib;
 
 namespace Caribou {
-    public class GroupModel : GLib.Object {
+    public class GroupModel : Object, IKeyboardObject {
         public string active_level { get; private set; }
 
         public string group;
@@ -46,5 +46,17 @@ namespace Caribou {
             else
                 active_level = new_level;
         }
+
+        public IKeyboardObject[] get_children () {
+            IKeyboardObject[] children = new IKeyboardObject[levels.size ()];
+            uint i = 0;
+
+            foreach (LevelModel obj in levels.get_values ()) {
+                children[i++] = (IKeyboardObject) obj;
+            }
+
+            return children;
+        }
+
     }
 }

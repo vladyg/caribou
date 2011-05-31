@@ -1,7 +1,7 @@
 using GLib;
 
 namespace Caribou {
-    public class LevelModel : ScannableGroup {
+    public class LevelModel : ScannableGroup, IKeyboardObject {
         public signal void level_toggled (string new_level);
         public string mode { get; private set; default = ""; }
 
@@ -60,5 +60,10 @@ namespace Caribou {
             else
                 return (IScannableItem[]) rows.to_array ();
         }
+
+        public IKeyboardObject[] get_children () {
+            return (IKeyboardObject[]) get_rows ();
+        }
+
     }
 }

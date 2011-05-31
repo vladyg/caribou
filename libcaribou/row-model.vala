@@ -1,5 +1,5 @@
 namespace Caribou {
-    public class RowModel : ScannableGroup, IScannableItem {
+    public class RowModel : ScannableGroup, IScannableItem, IKeyboardObject {
         public bool scan_stepping { get; set; }
         public bool scan_selected { get; set; }
 
@@ -46,6 +46,10 @@ namespace Caribou {
                 return (IScannableItem[]) get_keys ();
             else
                 return (IScannableItem[]) columns.to_array ();
+        }
+
+        public IKeyboardObject[] get_children () {
+            return (IKeyboardObject[]) get_columns ();
         }
     }
 }

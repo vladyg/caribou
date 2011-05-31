@@ -1,7 +1,7 @@
 using GLib;
 
 namespace Caribou {
-    public class KeyModel : GLib.Object, IScannableItem {
+    public class KeyModel : GLib.Object, IScannableItem, IKeyboardObject {
         public double margin_left { get; set; default = 0.0; }
         public double width { get; set; default = 1.0; }
         public string toggle { get; set; default = ""; }
@@ -83,6 +83,17 @@ namespace Caribou {
 
         public KeyModel[] get_extended_keys () {
             return (KeyModel[]) extended_keys.to_array ();
+        }
+
+        public KeyModel[] get_keys () {
+            Gee.ArrayList<KeyModel> all_keys = new Gee.ArrayList<KeyModel> ();
+            all_keys.add (this);
+            all_keys.add_all (extended_keys);
+            return (KeyModel[]) all_keys.to_array ();
+        }
+
+        public IKeyboardObject[] get_children () {
+            return (IKeyboardObject[]) extended_keys.to_array ();
         }
     }
 }

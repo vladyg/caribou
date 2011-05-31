@@ -158,39 +158,46 @@ class AntlerLayout(Gtk.HBox):
         return col
 
     def _on_scan_cleared (self, level):
-        for key in self._active_scan_group:
-            self._keys_map[key].set_group_scan_active(False)
+        self._foreach_key(self._active_scan_group,
+                          lambda x: x.set_group_scan_active (False))
 
         self._active_scan_group = []
 
-        for key in self._dwelling_scan_group:
-            self._keys_map[key].set_dwell_scan(False)
+        self._foreach_key(self._dwelling_scan_group,
+                          lambda x: x.set_dwell_scan (False))
 
         self._dwelling_scan_group = []
 
     def _on_active_group_changed(self, level, active_item):
-        for key in self._active_scan_group:
-            self._keys_map[key].set_group_scan_active(False)
+        self._foreach_key(self._active_scan_group,
+                          lambda x: x.set_group_scan_active (False))
 
         if isinstance(active_item, Caribou.KeyModel):
             self._active_scan_group = [active_item]
         else:
             self._active_scan_group = active_item.get_keys()
 
-        for key in self._active_scan_group:
-            self._keys_map[key].set_group_scan_active(True)
+        self._foreach_key(self._active_scan_group,
+                          lambda x: x.set_group_scan_active (True))
 
     def _on_dwelling_group_changed(self, level, dwell_item):
-        for key in self._dwelling_scan_group:
-            self._keys_map[key].set_dwell_scan(False)
+        self._foreach_key(self._dwelling_scan_group,
+                          lambda x: x.set_dwell_scan (False))
 
         if isinstance(dwell_item, Caribou.KeyModel):
             self._dwelling_scan_group = [dwell_item]
         else:
             self._dwelling_scan_group = dwell_item.get_keys()
 
-        for key in self._dwelling_scan_group:
-            self._keys_map[key].set_dwell_scan(True)
+        self._foreach_key(self._dwelling_scan_group,
+                          lambda x: x.set_dwell_scan (True))
+
+    def _foreach_key(self, keys, cb):
+        for key in keys:
+            try:
+                cb(self._keys_map[key])
+            except KeyError:
+                continue
 
     def add_row(self, row, row_num=0):
         x = 0
@@ -214,15 +221,7 @@ class AntlerLayout(Gtk.HBox):
  
     def load_rows(self, rows):
         for row_num, row in enumerate(rows):
-            self.add_row([c.get_keys() for c in row.get_columns()], row_num)
-
-    def _on_scan_state_changed(self, row, prop, antler_keys):
-        if prop.name == "scan-dwelling":
-            for key in antler_keys:
-                key.set_dwell_scan(row.props.scan_dwelling)
-        elif prop.name == "scan-active":
-            for key in antler_keys:
-                key.set_group_scan_active(row.props.scan_active)
+            self.add_row([c.get_children() for c in row.get_columns()], row_num)
 
 class AntlerKeyboardView(Gtk.Notebook):
     def __init__(self):
