@@ -18,23 +18,22 @@ namespace Caribou {
             return false;
         }
 
-        public static GLib.File get_layout_file (string group,
+        public static GLib.File get_layout_file (string keyboard_type, string group,
                                                  string variant) throws IOError {
-            Settings caribou_settings = new Settings ("org.gnome.caribou");
-            string kb_type = caribou_settings.get_string("keyboard-type");
 
             List<string> dirs = new List<string> ();
             string custom_dir = Environment.get_variable("CARIBOU_LAYOUTS_DIR");
 
             if (custom_dir != null)
-                dirs.append (Path.build_filename (custom_dir, "layouts", kb_type));
+                dirs.append (Path.build_filename (custom_dir, "layouts",
+                                                  keyboard_type));
 
             dirs.append (Path.build_filename (Environment.get_user_data_dir (),
-                                              "caribou", "layouts", kb_type));
+                                              "caribou", "layouts", keyboard_type));
 
             foreach (string data_dir in Environment.get_system_data_dirs ()) {
                 dirs.append (Path.build_filename (
-                                 data_dir, "caribou", "layouts", kb_type));
+                                 data_dir, "caribou", "layouts", keyboard_type));
             }
 
             foreach (string data_dir in dirs) {
@@ -46,19 +45,22 @@ namespace Caribou {
             throw new IOError.NOT_FOUND (
                 "Could not find layout file for %s %s", group, variant);                       }
 
-        public static bool load_group (GroupModel group) {
+        public static GroupModel? load_group (string keyboard_type,
+                                              string group, string variant) {
             Json.Parser parser = new Json.Parser ();
 
             try {
-                GLib.File f = get_layout_file (group.group, group.variant);
+                GLib.File f = get_layout_file (keyboard_type, group, variant);
                 parser.load_from_stream (f.read (), (Cancellable) null);
-                create_levels_from_json (group, parser.get_root ());
             } catch (GLib.Error e) {
                 stdout.printf ("Failed to load JSON: %s\n", e.message);
-                return false;
+                return null;
             }
 
-            return true;
+            GroupModel grp = new GroupModel (group, variant);
+            create_levels_from_json (grp, parser.get_root ());
+
+            return grp;
         }
 
         public static void create_levels_from_json (GroupModel group,

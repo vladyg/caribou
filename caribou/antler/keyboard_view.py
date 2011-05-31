@@ -227,16 +227,16 @@ class AntlerLayout(Gtk.HBox):
 class AntlerKeyboardView(Gtk.Notebook):
     def __init__(self):
         gobject.GObject.__init__(self)
+        settings = AntlerSettings()
         self.set_show_tabs(False)
-        self.keyboard_model = Caribou.KeyboardModel()
+        self.keyboard_model = Caribou.KeyboardModel(
+            keyboard_type=settings.keyboard_type.value)
         self.scanner = Caribou.Scanner()
         self.scanner.set_keyboard(self.keyboard_model)
         self.keyboard_model.connect("notify::active-group", self._on_group_changed)
 
         self.layers = {}
 
-
-        settings = AntlerSettings()
         use_system = settings.use_system
         use_system.connect("value-changed", self._on_use_system_theme_changed)
 

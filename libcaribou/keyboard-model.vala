@@ -3,6 +3,7 @@ using Bus;
 namespace Caribou {
     public class KeyboardModel : Object {
         public string active_group { get; private set; default = ""; }
+        public string keyboard_type { get; construct; }
 
         XAdapter xadapter;
         HashTable<string, GroupModel> groups;
@@ -13,12 +14,14 @@ namespace Caribou {
             string[] grps, variants;
             int i;
 
-            groups = new HashTable<string, GroupModel> (str_hash, str_equal);
+            assert (keyboard_type != null);
 
             xadapter = XAdapter.get_default ();
             xadapter.group_changed.connect (on_group_changed);
 
             xadapter.get_groups (out grps, out variants);
+
+            groups = new HashTable<string, GroupModel> (str_hash, str_equal);
 
             for (i=0;i<grps.length;i++)
                 populate_group (grps[i], variants[i]);
@@ -28,8 +31,9 @@ namespace Caribou {
         }
 
         private void populate_group (string group, string variant) {
-            GroupModel grp = new GroupModel (group, variant);
-            if (JsonDeserializer.load_group (grp))
+            GroupModel grp = JsonDeserializer.load_group (keyboard_type,
+                                                          group, variant);
+            if (grp != null)
                 groups.insert (GroupModel.create_group_name (group, variant), grp);
         }
 

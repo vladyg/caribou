@@ -3,19 +3,7 @@ from caribou.i18n import _
 
 CaribouSettings = SettingsTopGroup(
     _("Caribou Preferences"), "/org/gnome/caribou/", "org.gnome.caribou",
-    [SettingsGroup("keyboard", _("Keyboard"), [
-                SettingsGroup("general", _("General"), [
-                        StringSetting(
-                            "keyboard_type", _("Keyboard Type"), "touch",
-                            _("The keyboard geometery Caribou should use"),
-                            _("The keyboard geometery determines the shape "
-                              "and complexity of the keyboard, it could range from "
-                              "a 'natural' look and feel good for composing simple "
-                              "text, to a fullscale keyboard."),
-                            allowed=[(('touch'), _('Touch')),
-                                     (('scan'), _('Scan'))])]),
-                ]),
-        SettingsGroup("scanning", _("Scanning"), [
+    [SettingsGroup("scanning", _("Scanning"), [
                 BooleanSetting(
                     "scan_enabled", _("Enable scanning"), False,
                     _("Enable switch scanning"),

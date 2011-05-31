@@ -5,6 +5,15 @@ AntlerSettings = SettingsTopGroup(
     _("Antler Preferences"), "/org/gnome/antler/", "org.gnome.antler",
     [SettingsGroup("antler", _("Antler"), [
                 SettingsGroup("appearance", _("Appearance"), [
+                        StringSetting(
+                            "keyboard_type", _("Keyboard Type"), "touch",
+                            _("The keyboard geometery Caribou should use"),
+                            _("The keyboard geometery determines the shape "
+                              "and complexity of the keyboard, it could range from "
+                              "a 'natural' look and feel good for composing simple "
+                              "text, to a fullscale keyboard."),
+                            allowed=[(('touch'), _('Touch')),
+                                     (('scan'), _('Scan'))]),
                         BooleanSetting("use_system", _("Use System Theme"),
                                        True, _("Use System Theme")),
                         FloatSetting("min_alpha", _("Minimum Alpha"),
