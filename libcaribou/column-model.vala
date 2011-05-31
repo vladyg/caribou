@@ -23,7 +23,7 @@ namespace Caribou {
         }
 
         public override IScannableItem[] get_scan_children () {
-            return (IScannableItem[]) get_keys ();
+            return (IScannableItem[]) keys.to_array ();
         }
 
         public IKeyboardObject[] get_children () {

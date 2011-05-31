@@ -46,23 +46,44 @@ namespace Caribou {
             selected_item_changed (_selected_path.peek_tail ());
         }
 
-        private IScannableItem? get_steping_child () {
+        private IScannableItem? get_stepping_child () {
             if (scan_child_index < 0)
                 return null;
+
             return get_scan_children ()[scan_child_index];
         }
 
+        private IScannableItem? get_single_child (IScannableItem item) {
+            if (item is ScannableGroup) {
+                IScannableItem[] children =
+                    (item as ScannableGroup).get_scan_children();
+                if (children.length == 1) {
+                    return children[0];
+                }
+            }
+
+            return null;
+        }
+
         public virtual IScannableItem? child_select () {
-            IScannableItem step_child = get_steping_child ();
+            IScannableItem step_child = get_stepping_child ();
             IScannableItem selected_leaf = _selected_path.peek_tail ();
+
             if (selected_leaf != null) {
                 assert (selected_leaf is IScannableGroup);
                 add_to_selected_path (
                     ((IScannableGroup) selected_leaf).child_select ());
             } else if (step_child != null) {
-                step_child.scan_selected = true;;
+                step_child.scan_selected = true;
                 add_to_selected_path (step_child);
                 scan_child_index = -1;
+
+                for (IScannableItem child = get_single_child (step_child);
+                     child != null;
+                     child = get_single_child (child)) {
+                    child.scan_selected = true;
+                    add_to_selected_path (child);
+                }
             }
 
             return _selected_path.peek_tail ();
@@ -84,8 +105,9 @@ namespace Caribou {
         }
 
         public IScannableItem? child_step (int cycles) {
-            IScannableItem step_child = get_steping_child ();
+            IScannableItem step_child = get_stepping_child ();
             IScannableItem selected_leaf = _selected_path.peek_tail ();
+
             if (selected_leaf != null) {
                 assert (step_child == null);
                 if (selected_leaf is IScannableGroup)
