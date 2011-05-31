@@ -18,6 +18,7 @@ namespace Caribou {
 
             if (colnum >= columns.size) {
                 column = new ColumnModel ();
+                column.key_activated.connect ((k) => { key_activated (k); });
                 columns.add(column);
             } else {
                 column = columns[colindex];

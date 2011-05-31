@@ -25,7 +25,8 @@ namespace Caribou {
 
         internal void add_level (string lname, LevelModel level) {
             levels.set (lname, level);
-            level.level_toggled.connect(on_level_toggled);
+            level.level_toggled.connect (on_level_toggled);
+            level.key_activated.connect ((k) => { key_activated (k); });
             if (level.mode == "default") {
                 default_level = lname;
                 active_level = lname;

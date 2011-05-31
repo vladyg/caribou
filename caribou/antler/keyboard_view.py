@@ -37,8 +37,6 @@ class AntlerKey(Gtk.Button):
         ctx = self.get_style_context()
         ctx.add_class("antler-keyboard-button")
 
-        if key.props.name == "Caribou_Prefs":
-            key.connect("key-clicked", self._on_prefs_clicked)
         if key.get_extended_keys ():
             self._sublevel = AntlerSubLevel(self)
 
@@ -60,13 +58,6 @@ class AntlerKey(Gtk.Button):
             self.set_state_flags(Gtk.StateFlags.INCONSISTENT, False)
         else:
             self.unset_state_flags(Gtk.StateFlags.INCONSISTENT)
-
-    def _on_prefs_clicked(self, key):
-        p = PreferencesDialog(AntlerSettings())
-        p.populate_settings(CaribouSettings())
-        p.show_all()
-        p.run()
-        p.destroy()
 
     def _get_key_label(self):
         label = self.caribou_key.props.name
@@ -233,6 +224,7 @@ class AntlerKeyboardView(Gtk.Notebook):
         self.scanner = Caribou.Scanner()
         self.scanner.set_keyboard(self.keyboard_model)
         self.keyboard_model.connect("notify::active-group", self._on_group_changed)
+        self.keyboard_model.connect("key-activated", self._on_key_activated)
 
         self.layers = {}
 
@@ -267,6 +259,14 @@ class AntlerKeyboardView(Gtk.Notebook):
                 self.layers[gname][lname] = self.append_page(layout, None)
 
         self._set_to_active_layer()
+
+    def _on_key_activated(self, model, key):
+        if key.props.name == "Caribou_Prefs":
+            p = PreferencesDialog(AntlerSettings())
+            p.populate_settings(CaribouSettings())
+            p.show_all()
+            p.run()
+            p.destroy()
 
     def _on_use_system_theme_changed(self, setting, value):
         if value:

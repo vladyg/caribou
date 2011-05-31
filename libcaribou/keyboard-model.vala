@@ -33,8 +33,14 @@ namespace Caribou {
         private void populate_group (string group, string variant) {
             GroupModel grp = JsonDeserializer.load_group (keyboard_type,
                                                           group, variant);
-            if (grp != null)
+            if (grp != null) {
                 groups.set (GroupModel.create_group_name (group, variant), grp);
+                grp.key_activated.connect (on_key_activated);
+            }
+        }
+
+        private void on_key_activated (KeyModel key) {
+            key_activated (key);
         }
 
         public string[] get_groups () {

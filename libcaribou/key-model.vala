@@ -32,7 +32,6 @@ namespace Caribou {
 
         public signal void key_pressed ();
         public signal void key_released ();
-        public signal void key_clicked ();
         public signal void key_hold_end ();
         public signal void key_hold ();
 
@@ -45,11 +44,12 @@ namespace Caribou {
 
         internal void add_subkey (string name) {
             KeyModel key = new KeyModel (name);
-            key.key_clicked.connect(on_subkey_clicked);
+            key.key_activated.connect(on_subkey_activated);
             extended_keys.add (key);
         }
 
-        private void on_subkey_clicked () {
+        private void on_subkey_activated (KeyModel key) {
+            key_activated (key);
             show_subkeys = false;
         }
 
@@ -63,7 +63,7 @@ namespace Caribou {
             if (hold_tid != 0) {
                 GLib.Source.remove (hold_tid);
                 hold_tid = 0;
-                key_clicked();
+                key_activated (this);
                 if (keyval != 0) {
                     xadapter.keyval_press(keyval);
                     xadapter.keyval_release(keyval);

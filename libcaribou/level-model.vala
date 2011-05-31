@@ -21,25 +21,25 @@ namespace Caribou {
 
             if (rownum >= rows.size) {
                 row = new RowModel ();
+                row.key_activated.connect (on_key_activated);
                 rows.add(row);
             } else {
                 row = rows[rowindex];
             }
 
             row.add_key (colnum, key);
-
-            key.key_clicked.connect (on_key_clicked);
         }
 
         public RowModel[] get_rows () {
             return (RowModel[]) rows.to_array ();
         }
 
-        private void on_key_clicked (KeyModel key) {
+        private void on_key_activated (KeyModel key) {
             if (key.toggle != "")
                 level_toggled (key.toggle);
             else if (mode == "latched")
                 level_toggled ("default");
+            key_activated (key);
         }
 
         public KeyModel[] get_keys () {
