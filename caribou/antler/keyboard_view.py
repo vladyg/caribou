@@ -219,14 +219,6 @@ class AntlerKeyboardView(Gtk.Notebook):
         gobject.GObject.__init__(self)
         settings = AntlerSettings()
         self.set_show_tabs(False)
-        self.keyboard_model = Caribou.KeyboardModel(
-            keyboard_type=settings.keyboard_type.value)
-        self.scanner = Caribou.Scanner()
-        self.scanner.set_keyboard(self.keyboard_model)
-        self.keyboard_model.connect("notify::active-group", self._on_group_changed)
-        self.keyboard_model.connect("key-activated", self._on_key_activated)
-
-        self.layers = {}
 
         use_system = settings.use_system
         use_system.connect("value-changed", self._on_use_system_theme_changed)
@@ -248,6 +240,19 @@ class AntlerKeyboardView(Gtk.Notebook):
                 Gdk.Screen.get_default(), self._user_css_provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1)
 
+        self.set_keyboard_model(settings.keyboard_type.value)
+        settings.keyboard_type.connect('value-changed', self._on_kb_type_changed)
+        
+
+    def set_keyboard_model(self, keyboard_type):
+        self.keyboard_model = Caribou.KeyboardModel(keyboard_type=keyboard_type)
+        self.scanner = Caribou.Scanner()
+        self.scanner.set_keyboard(self.keyboard_model)
+        self.keyboard_model.connect("notify::active-group", self._on_group_changed)
+        self.keyboard_model.connect("key-activated", self._on_key_activated)
+
+        self.layers = {}
+
         for gname in self.keyboard_model.get_groups():
             group = self.keyboard_model.get_group(gname)
             self.layers[gname] = {}
@@ -259,6 +264,14 @@ class AntlerKeyboardView(Gtk.Notebook):
                 self.layers[gname][lname] = self.append_page(layout, None)
 
         self._set_to_active_layer()
+
+    def _on_kb_type_changed(self, setting, value):
+        is_visible = self.get_visible()
+        for l in [self.get_nth_page(i) for i in xrange(self.get_n_pages ())]:
+            self.remove(l)
+        self.set_keyboard_model(value)
+        if is_visible:
+            self.show_all ()
 
     def _on_key_activated(self, model, key):
         if key.props.name == "Caribou_Prefs":
