@@ -77,7 +77,6 @@ namespace Caribou {
         private uint scan_tid;
         private KeyboardModel keyboard;
         private IScannableGroup root_group;
-        private Settings caribou_settings;
         private bool started;
 
         construct {
@@ -91,7 +90,7 @@ namespace Caribou {
         }
 
         private void do_bind_settings () {
-            caribou_settings = new Settings ("org.gnome.caribou");
+            Settings caribou_settings = new Settings ("org.gnome.caribou");
             string[] settings = {"scan-grouping", "step-time", "scan-cycles",
                                  "autorestart", "inverse-scanning", "switch-device",
                                  "keyboard-key", "mouse-button", "scan-enabled"};

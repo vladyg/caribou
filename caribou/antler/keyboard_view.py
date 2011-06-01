@@ -25,7 +25,7 @@ PRETTY_LABELS = {
 class AntlerKey(Gtk.Button):
     def __init__(self, key):
         gobject.GObject.__init__(self)
-        self.caribou_key = key
+        self.caribou_key = key.weak_ref()
         self.connect("pressed", self._on_pressed)
         self.connect("released", self._on_released)
         self.set_label(self._get_key_label())
@@ -60,27 +60,43 @@ class AntlerKey(Gtk.Button):
             self.unset_state_flags(Gtk.StateFlags.INCONSISTENT)
 
     def _get_key_label(self):
-        label = self.caribou_key.props.name
-        if PRETTY_LABELS.has_key(self.caribou_key.props.name):
-            label = PRETTY_LABELS[self.caribou_key.props.name]
-        elif self.caribou_key.props.name.startswith('Caribou_'):
-            label = self.caribou_key.name.replace('Caribou_', '')
+        label = self.caribou_key().props.name
+        if PRETTY_LABELS.has_key(self.caribou_key().props.name):
+            label = PRETTY_LABELS[self.caribou_key().props.name]
+        elif self.caribou_key().props.name.startswith('Caribou_'):
+            label = self.caribou_key().name.replace('Caribou_', '')
         else:
-            unichar = unichr(Gdk.keyval_to_unicode(self.caribou_key.props.keyval))
+            unichar = unichr(Gdk.keyval_to_unicode(self.caribou_key().props.keyval))
             if not unichar.isspace() and unichar != u'\x00':
                 label = unichar
 
         return "<b>%s</b>" % glib.markup_escape_text(label.encode('utf-8'))
 
     def _on_pressed(self, button):
-        self.caribou_key.handler_block(self._key_pressed_handler)
-        self.caribou_key.press()
-        self.caribou_key.handler_unblock(self._key_pressed_handler)
+        self._block_key_signal(self._key_pressed_handler)
+        self._press_caribou_key()
+        self._unblock_key_signal(self._key_pressed_handler)
 
     def _on_released(self, button):
-        self.caribou_key.handler_block(self._key_released_handler)
-        self.caribou_key.release()
-        self.caribou_key.handler_unblock(self._key_released_handler)
+        self._block_key_signal(self._key_released_handler)
+        self._release_caribou_key()
+        self._unblock_key_signal(self._key_released_handler)
+
+    def _press_caribou_key(self):
+        if self.caribou_key():
+            self.caribou_key().press()
+
+    def _release_caribou_key(self):
+        if self.caribou_key():
+            self.caribou_key().release()
+
+    def _block_key_signal(self, handler):
+        if self.caribou_key():
+            self.caribou_key().handler_block(handler)
+
+    def _unblock_key_signal(self, handler):
+        if self.caribou_key():
+            self.caribou_key().handler_unblock(handler)
 
     def do_get_preferred_width_for_height(self, w):
         return (w, w)
@@ -101,11 +117,11 @@ class AntlerSubLevel(Gtk.Window):
         ctx = self.get_style_context()
         ctx.add_class("antler-keyboard-window")
 
-        key.caribou_key.connect("notify::show-subkeys", self._on_show_subkeys)
+        key.caribou_key().connect("notify::show-subkeys", self._on_show_subkeys)
         self._key = key
 
         layout = AntlerLayout()
-        layout.add_row([key.caribou_key.get_extended_keys()])
+        layout.add_row([key.caribou_key().get_extended_keys()])
         self.add(layout)
 
     def _on_show_subkeys(self, key, prop):
@@ -240,13 +256,13 @@ class AntlerKeyboardView(Gtk.Notebook):
                 Gdk.Screen.get_default(), self._user_css_provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1)
 
+        self.scanner = Caribou.Scanner()
         self.set_keyboard_model(settings.keyboard_type.value)
         settings.keyboard_type.connect('value-changed', self._on_kb_type_changed)
-        
 
     def set_keyboard_model(self, keyboard_type):
         self.keyboard_model = Caribou.KeyboardModel(keyboard_type=keyboard_type)
-        self.scanner = Caribou.Scanner()
+
         self.scanner.set_keyboard(self.keyboard_model)
         self.keyboard_model.connect("notify::active-group", self._on_group_changed)
         self.keyboard_model.connect("key-activated", self._on_key_activated)
