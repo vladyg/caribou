@@ -27,8 +27,8 @@ namespace Caribou {
             column.add_key (key);
         }
 
-        public ColumnModel[] get_columns () {
-            return (ColumnModel[]) columns.to_array ();
+        public List<ColumnModel> get_columns () {
+            return (List<ColumnModel>) get_children ();
         }
 
         public override IScannableItem[] get_scan_children () {
@@ -38,8 +38,8 @@ namespace Caribou {
                 return (IScannableItem[]) columns.to_array ();
         }
 
-        public IKeyboardObject[] get_children () {
-            return (IKeyboardObject[]) get_columns ();
+        public List<IKeyboardObject> get_children () {
+            return (List<IKeyboardObject>) collection_to_object_list (columns);
         }
     }
 }

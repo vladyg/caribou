@@ -30,8 +30,8 @@ namespace Caribou {
             row.add_key (colnum, key);
         }
 
-        public RowModel[] get_rows () {
-            return (RowModel[]) rows.to_array ();
+        public List<RowModel> get_rows () {
+            return (List<RowModel>) get_children ();
         }
 
         private void on_key_activated (KeyModel key) {
@@ -49,9 +49,8 @@ namespace Caribou {
                 return (IScannableItem[]) rows.to_array ();
         }
 
-        public IKeyboardObject[] get_children () {
-            return (IKeyboardObject[]) get_rows ();
+        public List<IKeyboardObject> get_children () {
+            return (List<IKeyboardObject>) collection_to_object_list (rows);
         }
-
     }
 }

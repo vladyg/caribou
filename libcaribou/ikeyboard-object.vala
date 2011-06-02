@@ -1,18 +1,32 @@
 namespace Caribou {
     public interface IKeyboardObject : Object {
-        public abstract IKeyboardObject[] get_children ();
+        public abstract List<IKeyboardObject> get_children ();
 
         public signal void key_activated (KeyModel key);
 
-        public virtual KeyModel[] get_keys () {
-            Gee.ArrayList<KeyModel> keys = new Gee.ArrayList<KeyModel> ();
+        public virtual List<KeyModel> get_keys () {
+            var keys = new List<KeyModel> ();
             foreach (IKeyboardObject obj in get_children ()) {
-                KeyModel[] obj_keys = obj.get_keys();
-                foreach (KeyModel key in obj_keys) {
-                    keys.add(key);
-                }
+                List<weak KeyModel> child_keys = obj.get_keys();
+                keys.concat (child_keys.copy());
             }
-            return (KeyModel[]) keys.to_array ();
+            return keys;
+        }
+
+        internal static List<Object> collection_to_object_list (Gee.Collection<Object> c) {
+            var l = new List<Object> ();
+            foreach (Object item in c) {
+                l.append (item);
+            }
+            return l;
+        }
+
+        internal static List<string> collection_to_string_list (Gee.Collection<string> c) {
+            List<string> l = new List<string> ();
+            foreach (string item in c) {
+                l.append (item);
+            }
+            return l;
         }
     }
 }

@@ -79,19 +79,21 @@ namespace Caribou {
             return false;
         }
 
-        public KeyModel[] get_extended_keys () {
-            return (KeyModel[]) extended_keys.to_array ();
+        public List<KeyModel> get_extended_keys () {
+            return (List<KeyModel>) collection_to_object_list(extended_keys);
         }
 
-        public KeyModel[] get_keys () {
-            Gee.ArrayList<KeyModel> all_keys = new Gee.ArrayList<KeyModel> ();
-            all_keys.add (this);
-            all_keys.add_all (extended_keys);
-            return (KeyModel[]) all_keys.to_array ();
+        public List<KeyModel> get_keys () {
+            List<KeyModel> all_keys = new List<KeyModel> ();
+            all_keys.append (this);
+            var ekeys = (List<weak KeyModel>) get_extended_keys ();
+            all_keys.concat (ekeys.copy());
+            return all_keys;
         }
 
-        public IKeyboardObject[] get_children () {
-            return (IKeyboardObject[]) extended_keys.to_array ();
+        public List<IKeyboardObject> get_children () {
+            return (List<IKeyboardObject>)
+                collection_to_object_list (extended_keys);
         }
 
         public void activate () {

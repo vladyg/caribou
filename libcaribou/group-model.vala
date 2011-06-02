@@ -33,8 +33,8 @@ namespace Caribou {
             }
         }
 
-        public string[] get_levels () {
-            return (string[]) levels.keys.to_array ();
+        public List<string> get_levels () {
+            return (List<string>) collection_to_string_list (levels.keys);
         }
 
         public LevelModel get_level (string level_name) {
@@ -48,9 +48,9 @@ namespace Caribou {
                 active_level = new_level;
         }
 
-        public IKeyboardObject[] get_children () {
-            return (IKeyboardObject[]) levels.values.to_array ();
+        public List<IKeyboardObject> get_children () {
+            return (List<IKeyboardObject>)
+                collection_to_object_list (levels.values);
         }
-
     }
 }
