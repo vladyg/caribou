@@ -48,7 +48,7 @@ namespace Xkb {
     [CCode (cname = "XkbStateNotifyEvent", free_function = "")]
     public struct StateNotifyEvent {
         uint changed;
-        int group;
+        int locked_group;
         uint mods;
     }
 

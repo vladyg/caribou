@@ -35,7 +35,8 @@ namespace Caribou {
         HashTable<uint, KeyButtonHandler> key_funcs;
 
         construct {
-            Xkb.State state;
+            Xkb.State xkb_state;
+            unowned Xkl.State xkl_state;
 
             Gdk.Window rootwin = Gdk.get_default_root_window();
             this.xdisplay = Gdk.X11Display.get_xdisplay (rootwin.get_display ());
@@ -44,11 +45,15 @@ namespace Caribou {
                                              Xkb.GBN_AllComponentsMask,
                                              Xkb.UseCoreKbd);
             this.xkl_engine = Xkl.Engine.get_instance (this.xdisplay);
+            xkl_engine.start_listen (Xkl.EngineListenModes.TRACK_KEYBOARD_STATE);
+            xkl_state = this.xkl_engine.get_current_state ();
+            this.group = (uchar) xkl_state.group;
+            Signal.connect_object (xkl_engine, "X-state-changed",
+                                   (Callback) xkl_state_changed,
+                                   this, ConnectFlags.AFTER);
 
-            Xkb.get_state (this.xdisplay, Xkb.UseCoreKbd, out state);
-
-            this.group = state.group;
-            this.modifiers = state.mods;
+            Xkb.get_state (this.xdisplay, Xkb.UseCoreKbd, out xkb_state);
+            this.modifiers = xkb_state.mods;
 
             this.reserved_keycode = 0;
 
@@ -78,8 +83,10 @@ namespace Caribou {
 
         private Gdk.FilterReturn x_event_filter (Gdk.XEvent xevent, Gdk.Event event) {
             void* pointer = &xevent;
-            Xkb.Event *xkbev = (Xkb.Event *) pointer;
-            X.Event *xev = (X.Event *) pointer;
+            Xkb.Event* xkbev = (Xkb.Event *) pointer;
+            X.Event* xev = (X.Event *) pointer;
+
+			this.xkl_engine.filter_events(xev);
 
             if (xev.type == X.EventType.ButtonPress ||
                 xev.type == X.EventType.ButtonRelease) {
@@ -98,19 +105,22 @@ namespace Caribou {
                                 xev.type == X.EventType.KeyPress);
             } else if (xkbev.any.xkb_type == Xkb.StateNotify) {
                 Xkb.StateNotifyEvent *sevent = &xkbev.state;
-                if ((sevent.changed & Xkb.GroupStateMask) != 0) {
-                    string group_name;
-                    string variant_name;
-                    this.group = (uchar) sevent.group;
-                    get_current_group (out group_name, out variant_name);
-                    group_changed (this.group, group_name, variant_name);
-                } else if ((sevent.changed & Xkb.ModifierStateMask) != 0) {
+				if ((sevent.changed & Xkb.ModifierStateMask) != 0) {
                     this.modifiers = (uchar) sevent.mods;
                 }
             }
 
             return Gdk.FilterReturn.CONTINUE;
         }
+
+		private static void xkl_state_changed (Xkl.Engine xklengine, int type, int group, bool restore, XAdapter self) {
+			string group_name;
+			string variant_name;
+
+			self.group = (uchar) group;
+			self.get_current_group (out group_name, out variant_name);
+			self.group_changed (self.group, group_name, variant_name);
+		}
 
         private uchar get_reserved_keycode () {
             uchar i;

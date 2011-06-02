@@ -65,7 +65,7 @@ namespace Xkl {
 		[NoWrapper]
 		public virtual void config_notify ();
 		public void delete_state (X.Window win);
-		public int filter_events (X.Event evt);
+		public int filter_events (X.Event* evt);
 		public unowned string get_backend_name ();
 		public unowned Xkl.State get_current_state ();
 		public X.Window get_current_window ();
