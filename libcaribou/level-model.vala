@@ -42,18 +42,6 @@ namespace Caribou {
             key_activated (key);
         }
 
-        public KeyModel[] get_keys () {
-            Gee.ArrayList<KeyModel> keys = new Gee.ArrayList<KeyModel> ();
-            foreach (RowModel row in rows) {
-                KeyModel[] row_keys = row.get_keys();
-                foreach (KeyModel key in row_keys) {
-                    keys.add(key);
-                }
-            }
-
-            return (KeyModel[]) keys.to_array ();
-        }
-
         public override IScannableItem[] get_scan_children () {
             if (scan_grouping == ScanGrouping.LINEAR)
                 return (IScannableItem[]) get_keys ();
