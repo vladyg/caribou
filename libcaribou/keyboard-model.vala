@@ -49,8 +49,8 @@ namespace Caribou {
             key_activated (key);
         }
 
-        public List<string> get_groups () {
-            return (List<string>) collection_to_string_list (groups.keys);
+        public string[] get_groups () {
+            return (string[]) groups.keys.to_array ();
         }
 
         public GroupModel get_group (string group_name) {
@@ -62,14 +62,12 @@ namespace Caribou {
             if (groups.get (group_name) != null) {
                 active_group = group_name;
             } else {
-                string[] keys = (string[]) groups.keys.to_array();
-                active_group = keys[0];
+                active_group = get_groups ()[0];
             }
         }
 
-        public List<IKeyboardObject> get_children () {
-            return (List<IKeyboardObject>)
-                collection_to_object_list (groups.values);
+        public IKeyboardObject[] get_children () {
+            return (IKeyboardObject[]) groups.values.to_array ();
         }
     }
 }

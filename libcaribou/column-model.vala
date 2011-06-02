@@ -26,8 +26,8 @@ namespace Caribou {
             return (IScannableItem[]) keys.to_array ();
         }
 
-        public List<IKeyboardObject> get_children () {
-            return (List<IKeyboardObject>) collection_to_object_list (keys);
+        public IKeyboardObject[] get_children () {
+            return (IKeyboardObject[]) keys.to_array ();
         }
     }
 }
