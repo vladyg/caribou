@@ -57,6 +57,32 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [The gettext package])
 AM_GLIB_GNU_GETTEXT
 
+dnl == IM modules ==
+AC_ARG_ENABLE(im_modules,
+    AS_HELP_STRING([--disable-im-modules],
+                   [Do not build im modules]),
+    [enable_im_modules=$enableval],
+    [enable_im_modules=yes]
+)
+AM_CONDITIONAL([ENABLE_IM_MODULES], [test x"$enable_im_modules" = x"yes"])
+
+if test x"$enable_im_modules" = x"yes"; then
+    PKG_CHECK_MODULES(GTK2, [
+        gtk+-2.0
+    ])
+    PKG_CHECK_MODULES(GTK3, [
+        gtk+-3.0
+    ])
+    gtk2_binary_version=`$PKG_CONFIG --variable=gtk_binary_version gtk+-2.0`
+    GTK2_IM_MODULEDIR="$libdir"/gtk-2.0/$gtk2_binary_version/immodules
+    AC_SUBST(GTK2_IM_MODULEDIR)
+
+    gtk3_binary_version=`$PKG_CONFIG --variable=gtk_binary_version gtk+-3.0`
+    GTK3_IM_MODULEDIR="$libdir"/gtk-3.0/$gtk3_binary_version/immodules
+    AC_SUBST(GTK3_IM_MODULEDIR)
+fi
+
+dnl == GSettings ==
 GLIB_GSETTINGS
 
 dnl == intltool check ==
@@ -87,4 +113,6 @@ data/layouts/Makefile
 data/layouts/touch/Makefile
 data/layouts/scan/Makefile
 libcaribou/Makefile
+im/Makefile
+im/gtk3/Makefile
 ])
