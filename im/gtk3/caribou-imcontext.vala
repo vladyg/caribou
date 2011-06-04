@@ -15,14 +15,17 @@ namespace Caribou {
         }
 
         public override void focus_in () {
-            int x, y;
+            int x, y, w, h;
             window.get_origin (out x, out y);
+#if GTK2
+            window.get_geometry (null, null, out w, out h, null);
+#else
+            window.get_geometry (null, null, out w, out h);
+#endif
             stdout.printf ("focus_in %d %d\n", x, y);
             try {
                 keyboard.show ();
-                keyboard.set_entry_location (x, y,
-                                             window.get_width (),
-                                             window.get_height ());
+                keyboard.set_entry_location (x, y, w, h);
             } catch (IOError e) {
                 stderr.printf ("%s\n", e.message);
             }

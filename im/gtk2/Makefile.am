@@ -1,4 +1,4 @@
-immoduledir = @GTK3_IM_MODULEDIR@
+immoduledir = @GTK2_IM_MODULEDIR@
 immodule_LTLIBRARIES = im-caribou.la
 
 im_caribou_la_SOURCES = \
@@ -8,16 +8,17 @@ im_caribou_la_SOURCES = \
 
 im_caribou_la_VALAFLAGS = \
 	-h caribou-imcontext.h \
-	--pkg gtk+-3.0 \
+	--pkg gtk+-2.0 \
+	-D GTK2 \
 	$(VALAGLAFS)
 
 im_caribou_la_CFLAGS = \
-        @GTK3_CFLAGS@ \
+        @GTK2_CFLAGS@ \
         -DG_LOG_DOMAIN=\"CARIBOU\" \
         $(NULL)
 
 im_caribou_la_LIBADD = \
-        @GTK3_LIBS@ \
+        @GTK2_LIBS@ \
         $(NULL)
 
 im_caribou_la_LDFLAGS = \

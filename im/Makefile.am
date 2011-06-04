@@ -1,1 +1,1 @@
-SUBDIRS = gtk3
+SUBDIRS = gtk3 gtk2
