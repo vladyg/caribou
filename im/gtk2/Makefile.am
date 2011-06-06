@@ -8,6 +8,8 @@ im_caribou_la_SOURCES = \
 
 im_caribou_la_VALAFLAGS = \
 	-h caribou-imcontext.h \
+    --vapidir=. \
+	--pkg vapi-fixes \
 	--pkg gtk+-2.0 \
 	-D GTK2 \
 	$(VALAGLAFS)
@@ -27,4 +29,5 @@ im_caribou_la_LDFLAGS = \
         $(NULL)
 
 EXTRA_DIST = \
-        $(NULL)
+	vapi-fixes.vapi \
+	$(NULL)
