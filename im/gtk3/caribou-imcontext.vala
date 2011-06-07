@@ -59,6 +59,10 @@ namespace Caribou {
                 return false;
             }
 
+            /* We don't want the keyboard on the paragraph in OOo */
+            if (child.get_role() == Atk.Role.PARAGRAPH)
+                child = child.get_parent();
+
             Atk.component_get_extents ((Atk.Component) child,
                                        out x, out y, out w, out h,
                                        Atk.CoordType.SCREEN);
