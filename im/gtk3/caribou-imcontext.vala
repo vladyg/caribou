@@ -125,8 +125,8 @@ namespace Caribou {
 
             try {
                 keyboard = Bus.get_proxy_sync (BusType.SESSION,
-                                               "org.gnome.Caribou.Antler",
-                                               "/org/gnome/Caribou/Antler");
+                                               "org.gnome.Caribou.Keyboard",
+                                               "/org/gnome/Caribou/Keyboard");
             } catch (Error e) {
                 stderr.printf ("%s\n", e.message);
             }
