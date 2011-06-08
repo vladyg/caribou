@@ -96,7 +96,7 @@ namespace Caribou {
 
         public void activate () {
             press ();
-            GLib.Timeout.add(100, () => { release (); return false; });
+            GLib.Timeout.add(200, () => { release (); return false; });
         }
     }
 }
