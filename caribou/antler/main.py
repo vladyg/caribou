@@ -2,6 +2,7 @@ from gi.repository import Caribou
 from window import AntlerWindowEntry
 from keyboard_view import AntlerKeyboardView
 import gobject
+import sys
 
 class AntlerKeyboardService(Caribou.KeyboardService):
     def __init__(self):
@@ -24,6 +25,10 @@ class AntlerKeyboardService(Caribou.KeyboardService):
 
     def do_set_entry_location (self, x, y, w, h):
         self.window.set_entry_location(x, y, w, h)
+
+    def do_name_lost (self, name):
+        sys.stderr.write("Another service acquired %s, quitting..\n")
+        sys.exit(0)
 
 if __name__ == "__main__":
     antler_keyboard_service = AntlerKeyboardService()

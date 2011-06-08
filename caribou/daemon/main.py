@@ -9,13 +9,13 @@ from caribou import APP_NAME
 debug = False
 
 class CaribouDaemon:
-    def __init__(self, keyboard_name="Antler"):
+    def __init__(self):
         if not self._get_a11y_enabled():
             self._show_no_a11y_dialogs()
         bus = dbus.SessionBus()
         try:
-            dbus_obj = bus.get_object("org.gnome.Caribou.%s" % keyboard_name,
-                                      "/org/gnome/Caribou/%s" % keyboard_name)
+            dbus_obj = bus.get_object("org.gnome.Caribou.Keyboard",
+                                      "/org/gnome/Caribou/Keyboard")
         except dbus.DBusException, e:
             self._show_error_dialog(e.message)
         self.keyboard_proxy = dbus.Interface(dbus_obj, "org.gnome.Caribou.Keyboard")
