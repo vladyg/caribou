@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-05-07 10:38+0000\n"
+"POT-Creation-Date: 2011-06-08 20:06+0000\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME translation team <gnome-si@googlegroups.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -26,132 +26,154 @@ msgid "Caribou Preferences"
 msgstr "Možnosti Caribou"
 
 #: ../caribou/settings/caribou_settings.py:6
-#: ../caribou/settings/caribou_settings.py:41
-msgid "Keyboard"
-msgstr "Tipkovnica"
-
-#: ../caribou/settings/caribou_settings.py:7
-#: ../caribou/settings/caribou_settings.py:23
-msgid "General"
-msgstr "Splošno"
-
-#: ../caribou/settings/caribou_settings.py:9
-msgid "Keyboard Type"
-msgstr "Vrsta tipkovnice"
-
-#: ../caribou/settings/caribou_settings.py:10
-msgid "The keyboard geometery Caribou should use"
-msgstr "Geometrija tipkovnice, ki naj jo uporablja Caribou"
-
-#: ../caribou/settings/caribou_settings.py:11
-msgid "The keyboard geometery determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
-msgstr "Geometrija tipkovnice določi obliko in zapletenost tipkovnice. Lahko je 'naravnega' videza za enostavno besedilo ali pa tipkovnica polne velikosti."
-
-#: ../caribou/settings/caribou_settings.py:15
-msgid "Touch"
-msgstr "Dotik"
-
-#: ../caribou/settings/caribou_settings.py:17
 msgid "Scanning"
 msgstr "Preiskovanje"
 
-#: ../caribou/settings/caribou_settings.py:19
+#: ../caribou/settings/caribou_settings.py:8
 msgid "Enable scanning"
 msgstr "Omogoči preiskovanje"
 
-#: ../caribou/settings/caribou_settings.py:20
+#: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
 msgstr "Omogoči preiskovanje preklopa"
 
-#: ../caribou/settings/caribou_settings.py:24
+#: ../caribou/settings/caribou_settings.py:12
+msgid "General"
+msgstr "Splošno"
+
+#: ../caribou/settings/caribou_settings.py:13
 msgid "Scanning mode"
 msgstr "Način preiskovanja"
 
-#: ../caribou/settings/caribou_settings.py:26
-msgid "Scanning type, block or row"
-msgstr "Vrsta preiskovanja, blok ali vrstica"
+#: ../caribou/settings/caribou_settings.py:15
+msgid "Scanning type, subgroups, rows or linear"
+msgstr "Vrsta preiskovanja, podskupine, vrstice ali linearni"
 
-#: ../caribou/settings/caribou_settings.py:27
-msgid "Block"
-msgstr "Blok"
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr "Podskupine"
 
-#: ../caribou/settings/caribou_settings.py:28
-msgid "Row"
-msgstr "Vrstica"
+#: ../caribou/settings/caribou_settings.py:17
+msgid "Rows"
+msgstr "Vrstice"
 
-#: ../caribou/settings/caribou_settings.py:29
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr "Linearno"
+
+#: ../caribou/settings/caribou_settings.py:20
 msgid "Step time"
 msgstr "Korak časa"
 
-#: ../caribou/settings/caribou_settings.py:30
+#: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
 msgstr "Čas med prehodi tipk"
 
+#: ../caribou/settings/caribou_settings.py:24
+msgid "Inverse scanning"
+msgstr "Obrnjeno preiskovanje"
+
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
+msgstr "Korak s stikalom, omogočite z zadržanjem"
+
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr "Samodejen ponoven začetek preiskovanja"
+
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr "Samodejno ponovno začne preiskovati po omogočitvi predmeta"
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr "Cikli preiskovanja"
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr "Ena"
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr "Dva"
+
 #: ../caribou/settings/caribou_settings.py:33
-msgid "Reverse scanning"
-msgstr "Obratno preiskovanje"
+msgid "Three"
+msgstr "Tri"
 
 #: ../caribou/settings/caribou_settings.py:34
-msgid "Scan in reverse order"
-msgstr "Preiskuj v obratnem vrstnem redu"
+msgid "Four"
+msgstr "Štiri"
 
-#: ../caribou/settings/caribou_settings.py:36
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr "Pet"
+
+#: ../caribou/settings/caribou_settings.py:38
 msgid "Input"
 msgstr "Vnos"
 
-#: ../caribou/settings/caribou_settings.py:37
+#: ../caribou/settings/caribou_settings.py:39
 msgid "Switch device"
 msgstr "Preklopi napravo"
 
-#: ../caribou/settings/caribou_settings.py:39
+#: ../caribou/settings/caribou_settings.py:41
 msgid "Switch device, keyboard or mouse"
 msgstr "Preklopi napravo, tipkovnico ali miško"
 
-#: ../caribou/settings/caribou_settings.py:42
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "Tipkovnica"
+
+#: ../caribou/settings/caribou_settings.py:44
 msgid "Mouse"
 msgstr "Miška"
 
-#: ../caribou/settings/caribou_settings.py:44
+#: ../caribou/settings/caribou_settings.py:46
 msgid "Switch key"
 msgstr "Preklopi tipko"
 
-#: ../caribou/settings/caribou_settings.py:47
+#: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
 msgstr "Tipka za uporabo v načinu preiskovanja"
 
-#: ../caribou/settings/caribou_settings.py:49
+#: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
 msgstr "Desna dvigalka"
 
-#: ../caribou/settings/caribou_settings.py:50
+#: ../caribou/settings/caribou_settings.py:51
 msgid "Left shift"
 msgstr "Leva dvigalka"
 
-#: ../caribou/settings/caribou_settings.py:51
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr "Presledek"
+
+#: ../caribou/settings/caribou_settings.py:53
 msgid "Alt Gr"
 msgstr "Alt Gr"
 
-#: ../caribou/settings/caribou_settings.py:52
+#: ../caribou/settings/caribou_settings.py:54
 msgid "Num lock"
 msgstr "Num lock"
 
-#: ../caribou/settings/caribou_settings.py:53
+#: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
 msgstr "Preklopi gumb"
 
-#: ../caribou/settings/caribou_settings.py:56
+#: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
 msgstr "Miškin gumb za uporabo v načinu preiskovanja"
 
-#: ../caribou/settings/caribou_settings.py:58
+#: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
 msgstr "Gumb 1"
 
-#: ../caribou/settings/caribou_settings.py:59
+#: ../caribou/settings/caribou_settings.py:61
 msgid "Button 2"
 msgstr "Gumb 2"
 
-#: ../caribou/settings/caribou_settings.py:60
+#: ../caribou/settings/caribou_settings.py:62
 msgid "Button 3"
 msgstr "Gumb 3"
 
@@ -190,34 +212,63 @@ msgstr "Rog"
 msgid "Appearance"
 msgstr "Videz"
 
-#: ../caribou/antler/antler_settings.py:8
 #: ../caribou/antler/antler_settings.py:9
+msgid "Keyboard Type"
+msgstr "Vrsta tipkovnice"
+
+#: ../caribou/antler/antler_settings.py:10
+msgid "The keyboard geometery Caribou should use"
+msgstr "Geometrija tipkovnice, ki naj jo uporablja Caribou"
+
+#: ../caribou/antler/antler_settings.py:11
+msgid "The keyboard geometery determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
+msgstr "Geometrija tipkovnice določi obliko in zapletenost tipkovnice. Lahko je 'naravnega' videza za enostavno besedilo ali pa tipkovnica polne velikosti."
+
+#: ../caribou/antler/antler_settings.py:15
+msgid "Touch"
+msgstr "Dotik"
+
+#: ../caribou/antler/antler_settings.py:16
+msgid "Scan"
+msgstr "Preišči"
+
+#: ../caribou/antler/antler_settings.py:17
+#: ../caribou/antler/antler_settings.py:18
 msgid "Use System Theme"
 msgstr "Uporabi sistemsko temo"
 
-#: ../caribou/antler/antler_settings.py:10
+#: ../caribou/antler/antler_settings.py:19
 msgid "Minimum Alpha"
 msgstr "Najmanjša alfa"
 
-#: ../caribou/antler/antler_settings.py:11
+#: ../caribou/antler/antler_settings.py:20
 msgid "Minimal opacity of keyboard"
 msgstr "Najmanjša prekrivnost tipkovnice"
 
-#: ../caribou/antler/antler_settings.py:13
+#: ../caribou/antler/antler_settings.py:22
 msgid "Maximum Alpha"
 msgstr "Največja alfa"
 
-#: ../caribou/antler/antler_settings.py:14
+#: ../caribou/antler/antler_settings.py:23
 msgid "Maximal opacity of keyboard"
 msgstr "Največja prekrivnost tipkovnice"
 
-#: ../caribou/antler/antler_settings.py:16
+#: ../caribou/antler/antler_settings.py:25
 msgid "Maximum Distance"
 msgstr "Največja razdalja"
 
-#: ../caribou/antler/antler_settings.py:17
+#: ../caribou/antler/antler_settings.py:26
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Največja razdalja, ko je tipkovnica skrita"
+
+#~ msgid "Block"
+#~ msgstr "Blok"
+
+#~ msgid "Row"
+#~ msgstr "Vrstica"
+
+#~ msgid "Scan in reverse order"
+#~ msgstr "Preiskuj v obratnem vrstnem redu"
 
 #~ msgid "Keyboard layout"
 #~ msgstr "Razpored tipkovnice"
