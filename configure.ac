@@ -128,4 +128,5 @@ libcaribou/Makefile
 im/Makefile
 im/gtk3/Makefile
 im/gtk2/Makefile
+tools/Makefile
 ])
