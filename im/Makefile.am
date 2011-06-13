@@ -1,1 +1,9 @@
-SUBDIRS = gtk3 gtk2
+SUBDIRS =
+
+if ENABLE_GTK3_IM_MODULE
+SUBDIRS += gtk3
+endif
+
+if ENABLE_GTK2_IM_MODULE
+SUBDIRS += gtk2
+endif
