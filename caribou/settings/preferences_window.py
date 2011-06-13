@@ -36,7 +36,7 @@ class AbstractPreferencesUI:
     def _populate_settings(self, parent, setting, level=0):
         if level == 0:
             for s in setting:
-                vbox = Gtk.VBox()
+                vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
                 parent.append_page(vbox, Gtk.Label(label=s.label))
                 self._populate_settings(vbox, s, 1)
         else:
@@ -59,7 +59,7 @@ class AbstractPreferencesUI:
                     label = Gtk.Label()
                     label.set_markup('<b>%s</b>' % s.label)
                     frame.set_label_widget(label)
-                    vbox = Gtk.VBox()
+                    vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
                     frame.add(vbox)
                     parent.pack_start(frame, False, False, 0)
                     self._sensitivity_changed_cb(s, s.sensitive, frame, None)

@@ -204,7 +204,7 @@ class AntlerWindow(ProximityWindowBase):
         ctx = self.get_style_context()
         ctx.add_class("antler-keyboard-window")
 
-        self._vbox = Gtk.VBox()
+        self._vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.add(self._vbox)
         self.keyboard = text_entry_mech
         self._vbox.pack_start(text_entry_mech, True, True, 0)

@@ -134,11 +134,11 @@ class AntlerSubLevel(Gtk.Window):
             parent.set_sensitive(True)
             self.hide()
 
-class AntlerLayout(Gtk.HBox):
+class AntlerLayout(Gtk.Box):
     KEY_SPAN = 4
 
     def __init__(self, level=None):
-        gobject.GObject.__init__(self)
+        gobject.GObject.__init__(self, orientation=Gtk.Orientation.HORIZONTAL)
         self.set_spacing(12)
         self._columns = []
         self._keys_map = {}
@@ -160,7 +160,7 @@ class AntlerLayout(Gtk.HBox):
         col.set_row_homogeneous(True)
         col.set_row_spacing(6)
         col.set_column_spacing(6)
-        self.add (col)
+        self.pack_start (col, True, True, 0)
         self._columns.append(col)
         return col
 
