@@ -1,3 +1,27 @@
+=============
+Version 0.3.2
+=============
+
+What's New
+==========
+- Rewritten almost entirely from scratch, featuring a GObject library
+for a DBus activated OSK.
+
+New And Updated Translations
+============================
+- Marek Černocký (cs)
+- Kris Thomsen (da)
+- Christian Kirbach (de)
+- Daniel Mustieles (es)
+- Mahyar Moghimi (fa)
+- Jiro Matsuzawa (ja)
+- Kjartan Maraas (nb)
+- Djavan Fagundes (pt_BR)
+- Yuri Myasoedov (ru)
+- Andrej Žnidaršič (sl)
+- Sergiy Gavrylov (uk)
+- lainme (zh_CN)
+
 ==============
 Version 0.2.00
 ==============
