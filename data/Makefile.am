@@ -24,7 +24,7 @@ org.gnome.Caribou.Antler.service: org.gnome.Caribou.Antler.service.in
 
 @INTLTOOL_DESKTOP_RULE@
 
-EXTRA_DIST = $(desktop_in_files) $(autostart_in_files)
+EXTRA_DIST = $(desktop_in_files) $(autostart_in_files) $(servicefile_in_files)
 
 org.gnome.caribou.gschema.xml.in: $(top_srcdir)/caribou/settings/caribou_settings.py
 	$(top_srcdir)/tools/make_schema.py caribou.settings.CaribouSettings
@@ -35,4 +35,5 @@ org.gnome.antler.gschema.xml.in: $(top_srcdir)/caribou/antler/antler_settings.py
 CLEANFILES = $(desktop_DATA) \
 	$(autostart_DATA) \
 	$(gsettings_schemas_in_files) \
-	$(gsettings_SCHEMAS)
+	$(gsettings_SCHEMAS) \
+	$(servicefile_DATA)
