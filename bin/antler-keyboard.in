@@ -25,10 +25,11 @@ exec_prefix=@exec_prefix@
 
 if [ $script_dir == "@libexecdir@" ]
 then
+  datadir="$(@PYTHON@ -c "import glib; print ':'.join(glib.get_system_data_dirs())")"
   export PYTHONPATH="${prefix}/lib/python@PYTHON_VERSION@/site-packages${PYTHONPATH:+:$PYTHONPATH}"
   export GI_TYPELIB_PATH="@libdir@/girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}"
   export LD_LIBRARY_PATH="@libdir@${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
-  export XDG_DATA_DIRS="@datadir@${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}"
+  export XDG_DATA_DIRS="@datadir@${datadir:+:$datadir}"
 else
   export PYTHONPATH="$(dirname $script_dir)${PYTHONPATH:+:$PYTHONPATH}"
   export GI_TYPELIB_PATH="$(dirname $script_dir)/libcaribou${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}"
