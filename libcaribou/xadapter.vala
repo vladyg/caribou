@@ -13,7 +13,7 @@ namespace Caribou {
 
         /* Private properties */
         static XAdapter instance;
-        X.Display xdisplay;
+        unowned X.Display xdisplay;
         X.ID xid;
         Xkb.Desc xkbdesc;
         Xkl.Engine xkl_engine;
