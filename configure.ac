@@ -92,6 +92,8 @@ if test x"$enable_gtk2_module" = x"yes"; then
     AC_SUBST(GTK2_MODULES_DIR)
 fi
 
+AM_CONDITIONAL([ENABLE_GTK_MODULES], [test x"enable_gtk2_module" = x"yes" -o x"$enable_gtk3_module" = x"yes"])
+
 dnl == GSettings ==
 GLIB_GSETTINGS
 
