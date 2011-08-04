@@ -108,8 +108,8 @@ class ValueSetting(Setting):
         return bool(self.value)
 
     @property
-    def gvariant(self):
-        return GLib.Variant(self.variant_type, self.value)
+    def default_value(self):
+        return "%r" % self.value
 
 class BooleanSetting(ValueSetting):
     variant_type = 'b'
@@ -117,6 +117,13 @@ class BooleanSetting(ValueSetting):
     def convert_value(self, val):
         # Almost anything could be a boolean.
         return bool(val)
+
+    @property
+    def default_value(self):
+        if self.value:
+            return "true"
+        else:
+            return "false"
 
 class IntegerSetting(ValueSetting):
     variant_type = 'i'
