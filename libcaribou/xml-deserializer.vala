@@ -49,6 +49,10 @@ namespace Caribou {
                 if (fn != null)
                     return fn;
             }
+
+            // Should not be reached, but needed to make valac happy
+            throw new IOError.NOT_FOUND (
+                "Could not find layout file for %s %s", group, variant);
         }
 
         public static GroupModel? load_group (string keyboard_type,
