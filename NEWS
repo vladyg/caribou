@@ -1,4 +1,25 @@
 =============
+Version 0.3.5
+=============
+
+What's New
+==========
+- Added modifiers support.
+- Replaced IM module with GTK+ module so it does not override the
+user's preferred IM.
+- Added "full scale" keyboards to caribou.
+- Remove emoticon buttons, for now.
+
+New And Updated Translations
+============================
+- Marek Černocký (cs)
+- Daniel Mustieles (es)
+- Gabriel Speckhahn (pt_BR)
+- Yuri Myasoedov (ru)
+- Matej Urbančič (sl)
+- Yinghua Wang (zh_CN)
+
+=============
 Version 0.3.3
 =============
 
