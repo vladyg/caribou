@@ -1,17 +1,16 @@
-from gi.repository import Caribou
+from gi.repository import Caribou, GObject
 from window import AntlerWindowEntry
 from keyboard_view import AntlerKeyboardView
-import gobject
 import sys
 
 class AntlerKeyboardService(Caribou.KeyboardService):
     def __init__(self):
-        gobject.GObject.__init__(self)
+        GObject.GObject.__init__(self)
         self.register_keyboard("Antler")
         self.window = AntlerWindowEntry(AntlerKeyboardView)
 
     def run(self):
-        loop = gobject.MainLoop()
+        loop = GObject.MainLoop()
         loop.run()
 
     def do_show(self, timestamp):

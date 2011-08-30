@@ -20,7 +20,7 @@
 
 from caribou.settings.setting_types import *
 
-import gobject
+from gi.repository import GObject
 from gi.repository import Gdk
 from gi.repository import Gtk
 
@@ -230,7 +230,7 @@ class PreferencesDialog(Gtk.Dialog, AbstractPreferencesUI):
     __gtype_name__ = "PreferencesDialog"
 
     def __init__(self, settings_manager):
-        gobject.GObject.__init__(self)
+        GObject.GObject.__init__(self)
         self.add_button(Gtk.STOCK_CLOSE, Gtk.ResponseType.CLOSE)
         self.set_border_width(6)
         self.set_title(settings_manager.groups.label)
@@ -243,7 +243,7 @@ class PreferencesWindow(Gtk.Window, AbstractPreferencesUI):
     __gtype_name__ = "PreferencesWindow"
 
     def __init__(self, settings_manager):
-        gobject.GObject.__init__(self)
+        GObject.GObject.__init__(self)
         self.set_border_width(6)
         self.set_title(settings_manager.groups.label)
 

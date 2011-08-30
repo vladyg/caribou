@@ -22,24 +22,24 @@
 
 from gi.repository import Gtk
 from gi.repository import Gdk
+from gi.repository import GObject
 from gi.repository import Clutter
 from antler_settings import AntlerSettings
 from math import sqrt
 import os
 import sys
-import gobject
 
 Clutter.init("antler")
 
 
 class AnimatedWindowBase(Gtk.Window, Clutter.Animatable):
     __gproperties__ = {
-        'antler-window-position' : (gobject.TYPE_PYOBJECT, 'Window position',
+        'antler-window-position' : (GObject.TYPE_PYOBJECT, 'Window position',
                                       'Window position in X, Y coordinates',
-                                      gobject.PARAM_READWRITE)
+                                      GObject.PARAM_READWRITE)
         }
     def __init__(self):
-        gobject.GObject.__init__(self, type=Gtk.WindowType.POPUP)
+        GObject.GObject.__init__(self, type=Gtk.WindowType.POPUP)
         # animation
         self._stage = Clutter.Stage.get_default()
         self._move_animation = None
@@ -71,7 +71,7 @@ class AnimatedWindowBase(Gtk.Window, Clutter.Animatable):
             return True
         if prop_name == "opacity":
             opacity = initial_value + ((final_value - initial_value) * progress)
-            gobject.idle_add(lambda: self.set_opacity(opacity))
+            GObject.idle_add(lambda: self.set_opacity(opacity))
 
             return True
         else:
@@ -132,9 +132,9 @@ class ProximityWindowBase(AnimatedWindowBase):
         self.min_alpha = min_alpha
         if self.max_alpha != self.min_alpha:
             if self._poll_tid == 0:
-                self._poll_tid = gobject.timeout_add(100, self._proximity_check)
+                self._poll_tid = GObject.timeout_add(100, self._proximity_check)
         elif self._poll_tid != 0:
-            gobject.source_remove(self._poll_tid)
+            GObject.source_remove(self._poll_tid)
 
     def _onmapped(self, obj, event, settings):
         if self.is_composited():

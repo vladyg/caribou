@@ -3,9 +3,9 @@ from caribou.settings import CaribouSettings
 from antler_settings import AntlerSettings
 from gi.repository import Gtk
 from gi.repository import Gdk
+from gi.repository import GObject
+from gi.repository import GLib
 from gi.repository import Caribou
-import gobject
-import glib
 import os
 from math import ceil
 
@@ -30,7 +30,7 @@ PRETTY_LABELS = {
 
 class AntlerKey(Gtk.Button):
     def __init__(self, key, spacing=0):
-        gobject.GObject.__init__(self)
+        GObject.GObject.__init__(self)
         self.caribou_key = key.weak_ref()
         self.set_label(self._get_key_label())
         self._spacing = spacing
@@ -71,7 +71,7 @@ class AntlerKey(Gtk.Button):
             if not unichar.isspace() and unichar != u'\x00':
                 label = unichar
 
-        return "<b>%s</b>" % glib.markup_escape_text(label.encode('utf-8'))
+        return "<b>%s</b>" % GLib.markup_escape_text(label.encode('utf-8'))
 
     def _caribou_key_pressed (self, key, _key):
         self.set_state_flags(Gtk.StateFlags.ACTIVE, False)
@@ -106,7 +106,7 @@ class AntlerKey(Gtk.Button):
 
 class AntlerSubLevel(Gtk.Window):
     def __init__(self, key):
-        gobject.GObject.__init__(self, type=Gtk.WindowType.POPUP)
+        GObject.GObject.__init__(self, type=Gtk.WindowType.POPUP)
 
         self.set_decorated(False)
         self.set_resizable(False)
@@ -138,7 +138,7 @@ class AntlerLayout(Gtk.Box):
     KEY_SPAN = 4
 
     def __init__(self, level=None, spacing=6):
-        gobject.GObject.__init__(self, orientation=Gtk.Orientation.HORIZONTAL)
+        GObject.GObject.__init__(self, orientation=Gtk.Orientation.HORIZONTAL)
         self.set_spacing(12)
         self._columns = []
         self._keys_map = {}
@@ -243,7 +243,7 @@ class AntlerLayout(Gtk.Box):
 
 class AntlerKeyboardView(Gtk.Notebook):
     def __init__(self, keyboard_type):
-        gobject.GObject.__init__(self)
+        GObject.GObject.__init__(self)
         settings = AntlerSettings()
         self.set_show_tabs(False)
 
@@ -253,7 +253,7 @@ class AntlerKeyboardView(Gtk.Notebook):
         self._app_css_provider = Gtk.CssProvider()
         self._load_style(
             self._app_css_provider, "style.css",
-            [glib.get_user_data_dir()] + list(glib.get_system_data_dirs()))
+            [GLib.get_user_data_dir()] + list(GLib.get_system_data_dirs()))
 
         if not use_system.value:
             Gtk.StyleContext.add_provider_for_screen(
@@ -262,7 +262,7 @@ class AntlerKeyboardView(Gtk.Notebook):
 
         self._user_css_provider = Gtk.CssProvider()
         self._load_style(self._user_css_provider, "user-style.css",
-                         [glib.get_user_data_dir()])
+                         [GLib.get_user_data_dir()])
         Gtk.StyleContext.add_provider_for_screen(
                 Gdk.Screen.get_default(), self._user_css_provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1)

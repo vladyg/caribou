@@ -1,5 +1,4 @@
-import gobject
-from gi.repository import GLib
+from gi.repository import GLib, GObject
 
 ENTRY_DEFAULT=0
 ENTRY_COMBO=1
@@ -10,17 +9,17 @@ ENTRY_SLIDER=5
 ENTRY_CHECKBOX=6
 ENTRY_RADIO=7
 
-class Setting(gobject.GObject):
+class Setting(GObject.GObject):
     __gsignals__ = {'value-changed' :
-                    (gobject.SIGNAL_RUN_FIRST,
-                     gobject.TYPE_NONE, 
-                     (gobject.TYPE_PYOBJECT,)),
+                    (GObject.SIGNAL_RUN_FIRST,
+                     GObject.TYPE_NONE, 
+                     (GObject.TYPE_PYOBJECT,)),
                     'sensitivity-changed' :
-                    (gobject.SIGNAL_RUN_FIRST,
-                     gobject.TYPE_NONE, 
-                     (gobject.TYPE_BOOLEAN,))}
+                    (GObject.SIGNAL_RUN_FIRST,
+                     GObject.TYPE_NONE, 
+                     (GObject.TYPE_BOOLEAN,))}
     def __init__(self, name, label, children=[]):
-        gobject.GObject.__init__(self)
+        GObject.GObject.__init__(self)
         self.name = name
         self.label = label
         self.children = children
@@ -129,8 +128,8 @@ class IntegerSetting(ValueSetting):
     variant_type = 'i'
     entry_type = ENTRY_SPIN
     def __init__(self, *args, **kwargs):
-        self.min = kwargs.pop('min', gobject.G_MININT)
-        self.max = kwargs.pop('max', gobject.G_MAXINT)
+        self.min = kwargs.pop('min', GObject.G_MININT)
+        self.max = kwargs.pop('max', GObject.G_MAXINT)
         ValueSetting.__init__(self, *args, **kwargs)
 
     def convert_value(self, val):
@@ -140,8 +139,8 @@ class FloatSetting(ValueSetting):
     variant_type = 'd'
     entry_type = ENTRY_SPIN
     def __init__(self, *args, **kwargs):
-        self.min = kwargs.pop('min', gobject.G_MINFLOAT)
-        self.max = kwargs.pop('max', gobject.G_MAXFLOAT)
+        self.min = kwargs.pop('min', GObject.G_MINFLOAT)
+        self.max = kwargs.pop('max', GObject.G_MAXFLOAT)
         ValueSetting.__init__(self, *args, **kwargs)
 
     def convert_value(self, val):
