@@ -133,7 +133,9 @@ namespace Xkb {
 
         public ushort           size_syms;
         public ushort           num_syms;
+        [CCode (array_length = false, array_null_terminated = true)]
         public uint[]           syms;
+        [CCode (array_length = false, array_null_terminated = true)]
         public SymMap[]         key_sym_map;
 
         public uchar[]          modmap;

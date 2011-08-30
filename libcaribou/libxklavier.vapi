@@ -15,9 +15,12 @@ namespace Xkl {
 	}
 	[CCode (cheader_filename = "libxklavier/xklavier.h")]
 	public class ConfigRec : GLib.Object {
+        [CCode (array_length = false, array_null_terminated = true)]
 		public string[] layouts;
 		public weak string model;
+        [CCode (array_length = false, array_null_terminated = true)]
 		public string[] options;
+        [CCode (array_length = false, array_null_terminated = true)]
 		public string[] variants;
 		[CCode (has_construct_function = false)]
 		public ConfigRec ();
