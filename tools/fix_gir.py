@@ -22,7 +22,9 @@ def find_ancestor(node, name):
     return find_ancestor(parent, name)
 
 def fix_vfuncs(dom):
-    for f in dom.getElementsByTagName("callback"):
+    for f in dom.getElementsByTagName("field"):
+        callbacks = f.getElementsByTagName("callback")
+
         record = find_ancestor(f, "record")
         if not record:
             continue
@@ -33,20 +35,8 @@ def fix_vfuncs(dom):
         assert(name.endswith("Class") or name.endswith("Iface"))
         assert(cname.endswith("Class") or name.endswith("Iface"))
 
-        params = (f.getElementsByTagName("parameters") or [None])[0]
-
-        if not params:
-            params = dom.createElement("parameters")
-            f.insertBefore(params, f.firstChild)
-
-        param = dom.createElement("parameter")
-        param.setAttribute("name", "self")
-        param.setAttribute("transfer-ownership", "none")
-        ptype = dom.createElement("type")
-        ptype.setAttribute("name", name[:-5])
-        ptype.setAttribute("c:type", cname[:-5])
-        param.appendChild(ptype)
-        params.insertBefore(param, params.firstChild)
+        if len(callbacks) == 2:
+            callbacks[-1].parentNode.removeChild(callbacks[-1])
 
 if __name__ == "__main__":
     import sys
