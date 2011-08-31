@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-07 16:34+0200\n"
-"PO-Revision-Date: 2011-06-07 16:36+0200\n"
+"POT-Creation-Date: 2011-08-31 21:18+0200\n"
+"PO-Revision-Date: 2011-08-31 21:22+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -26,7 +26,7 @@ msgstr "Søker"
 
 #: ../caribou/settings/caribou_settings.py:8
 msgid "Enable scanning"
-msgstr ""
+msgstr "Slå på søking"
 
 #: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
@@ -46,7 +46,7 @@ msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
-msgstr ""
+msgstr "Undergrupper"
 
 #: ../caribou/settings/caribou_settings.py:17
 msgid "Rows"
@@ -110,11 +110,11 @@ msgstr "Inndata"
 
 #: ../caribou/settings/caribou_settings.py:39
 msgid "Switch device"
-msgstr ""
+msgstr "Bytt enhet"
 
 #: ../caribou/settings/caribou_settings.py:41
 msgid "Switch device, keyboard or mouse"
-msgstr ""
+msgstr "Bytt enhet, tastatur eller mus"
 
 #: ../caribou/settings/caribou_settings.py:43
 msgid "Keyboard"
@@ -174,7 +174,7 @@ msgstr "Knapp 3"
 
 #: ../caribou/__init__.py:2
 msgid "Caribou"
-msgstr ""
+msgstr "Caribou"
 
 #: ../caribou/daemon/main.py:31
 #, python-format
@@ -214,9 +214,8 @@ msgid "Keyboard Type"
 msgstr "Type tastatur"
 
 #: ../caribou/antler/antler_settings.py:10
-#, fuzzy
 msgid "The keyboard geometery Caribou should use"
-msgstr "Utforming som Caribou skal bruke."
+msgstr "Tastaturgeometri som Caribou skal bruke"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
@@ -230,34 +229,38 @@ msgid "Touch"
 msgstr "Berøring"
 
 #: ../caribou/antler/antler_settings.py:16
+msgid "Full scale"
+msgstr "Full skala"
+
+#: ../caribou/antler/antler_settings.py:17
 msgid "Scan"
 msgstr "Søk"
 
-#: ../caribou/antler/antler_settings.py:17
 #: ../caribou/antler/antler_settings.py:18
+#: ../caribou/antler/antler_settings.py:19
 msgid "Use System Theme"
 msgstr "Bruk systemets tema"
 
-#: ../caribou/antler/antler_settings.py:19
+#: ../caribou/antler/antler_settings.py:20
 msgid "Minimum Alpha"
 msgstr ""
 
-#: ../caribou/antler/antler_settings.py:20
+#: ../caribou/antler/antler_settings.py:21
 msgid "Minimal opacity of keyboard"
 msgstr ""
 
-#: ../caribou/antler/antler_settings.py:22
+#: ../caribou/antler/antler_settings.py:23
 msgid "Maximum Alpha"
 msgstr ""
 
-#: ../caribou/antler/antler_settings.py:23
+#: ../caribou/antler/antler_settings.py:24
 msgid "Maximal opacity of keyboard"
 msgstr ""
 
-#: ../caribou/antler/antler_settings.py:25
-msgid "Maximum Distance"
-msgstr ""
-
 #: ../caribou/antler/antler_settings.py:26
+msgid "Maximum Distance"
+msgstr "Maksimal distanse"
+
+#: ../caribou/antler/antler_settings.py:27
 msgid "Maximum distance when keyboard is hidden"
-msgstr ""
+msgstr "Maksimal distanse når tastaturet er skjult"
