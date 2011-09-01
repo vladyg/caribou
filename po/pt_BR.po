@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-07-18 17:10+0000\n"
-"PO-Revision-Date: 2011-06-27 20:25-0200\n"
-"Last-Translator: Gabriel Speckhahn <gabspeck@gmail.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-31 22:34-0400\n"
+"PO-Revision-Date: 2011-08-31 23:01-0300\n"
+"Last-Translator: Antonio Fernandes C. Neto <fernandesn@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -224,7 +223,7 @@ msgstr "Tipo de teclado"
 
 #: ../caribou/antler/antler_settings.py:10
 msgid "The keyboard geometery Caribou should use"
-msgstr "A geometria eo teclado que o Caribou deve usar"
+msgstr "A geometria e o teclado que o Caribou deve usar"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
@@ -242,7 +241,7 @@ msgstr "Tocar"
 
 #: ../caribou/antler/antler_settings.py:16
 msgid "Full scale"
-msgstr ""
+msgstr "Escala completa"
 
 #: ../caribou/antler/antler_settings.py:17
 msgid "Scan"
@@ -276,4 +275,3 @@ msgstr "Distância máxima"
 #: ../caribou/antler/antler_settings.py:27
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Distância máxima quando o teclado permanece oculto"
-
