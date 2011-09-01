@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-24 16:56+0100\n"
-"PO-Revision-Date: 2011-03-24 16:53+0100\n"
+"POT-Creation-Date: 2011-09-01 15:49+0200\n"
+"PO-Revision-Date: 2011-09-01 15:50+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -16,230 +16,311 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../caribou/ui/main.py:238
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "VARNING - Caribou: ohanterad redigerbar widget:"
-
-#: ../caribou/common/settings.py:31 ../caribou/common/settings.py:88
-msgid "Keyboard"
-msgstr "Tangentbord"
-
-#: ../caribou/common/settings.py:32 ../caribou/common/settings.py:70
-msgid "General"
-msgstr "Allmänt"
-
-#: ../caribou/common/settings.py:34
-msgid "Keyboard layout"
-msgstr "Tangentbordslayout"
-
-#: ../caribou/common/settings.py:35
-msgid "The layout Caribou should use."
-msgstr "Layouten som Caribou ska använda."
-
-#: ../caribou/common/settings.py:36
-msgid ""
-"The layout should be in the data directory of Caribou (usually /usr/share/"
-"caribou/keyboards) and should be a .xml or .json file."
-msgstr ""
-"Layouten ska finnas i Caribous datakatalog (oftast /usr/share/caribou/"
-"keyboards) och ska vara av typen .xml eller .json."
-
-#: ../caribou/common/settings.py:40 ../caribou/common/settings.py:110
-msgid "Color"
-msgstr "Färg"
-
-#: ../caribou/common/settings.py:42
-msgid "Use system theme"
-msgstr "Använd systemtema"
-
-#: ../caribou/common/settings.py:43
-msgid "Use the default theme colors"
-msgstr "Använd standardfärger från tema"
-
-#: ../caribou/common/settings.py:47
-msgid "Normal state"
-msgstr "Normalt tillstånd"
-
-#: ../caribou/common/settings.py:48
-msgid "Color of the keys when there is no event on them"
-msgstr "Färg för tangenterna när det inte finns någon händelse på dem"
-
-#: ../caribou/common/settings.py:51
-msgid "Mouse over"
-msgstr "Muspekare över"
-
-#: ../caribou/common/settings.py:52
-msgid "Color of the keys when the mouse goes over the key"
-msgstr "Färg för tangenterna när muspekaren dras över tangenten"
-
-#: ../caribou/common/settings.py:54
-msgid "Font and size"
-msgstr "Typsnitt och storlek"
-
-#: ../caribou/common/settings.py:56
-msgid "Use system fonts"
-msgstr "Använd systemtypsnitt"
-
-#: ../caribou/common/settings.py:57
-msgid "Use the default system font for keyboard"
-msgstr "Använd systemets standardtypsnitt för tangentbordet"
-
-#: ../caribou/common/settings.py:59
-msgid "Key font"
-msgstr "Tangenttypsnitt"
-
-#: ../caribou/common/settings.py:60
-msgid "Custom font for keyboard"
-msgstr "Anpassat typsnitt för tangentbordet"
-
-#: ../caribou/common/settings.py:63
-msgid "Scanning"
-msgstr "Avsökning"
-
-#: ../caribou/common/settings.py:65
-msgid "Enable scanning"
-msgstr "Aktivera avsökning"
-
-#: ../caribou/common/settings.py:66
-msgid "Enable switch scanning"
-msgstr "Aktivera brytaravsökning"
-
-#: ../caribou/common/settings.py:71
-msgid "Scanning mode"
-msgstr "Avsökningsläge"
-
-#: ../caribou/common/settings.py:73
-msgid "Scanning type, block or row"
-msgstr "Avsökningsläge, block eller rad"
-
-#: ../caribou/common/settings.py:74
-msgid "Block"
-msgstr "Block"
-
-#: ../caribou/common/settings.py:75
-msgid "Row"
-msgstr "Rad"
-
-#: ../caribou/common/settings.py:76
-msgid "Step time"
-msgstr "Stegtid"
-
-#: ../caribou/common/settings.py:77
-msgid "Time between key transitions"
-msgstr "Tid mellan tangentövergångar"
-
-#: ../caribou/common/settings.py:80
-msgid "Reverse scanning"
-msgstr "Omvänd avsökning"
-
-#: ../caribou/common/settings.py:81
-msgid "Scan in reverse order"
-msgstr "Sök av i omvänd ordning"
-
-#: ../caribou/common/settings.py:83
-msgid "Input"
-msgstr "Inmatning"
-
-#: ../caribou/common/settings.py:84
-msgid "Switch device"
-msgstr "Brytarenhet"
-
-#: ../caribou/common/settings.py:86
-msgid "Switch device, keyboard or mouse"
-msgstr "Brytarenhet, tangentbord eller mus"
-
-#: ../caribou/common/settings.py:89
-msgid "Mouse"
-msgstr "Mus"
-
-#: ../caribou/common/settings.py:91
-msgid "Switch key"
-msgstr "Växlingstangent"
-
-#: ../caribou/common/settings.py:94
-msgid "Key to use with scanning mode"
-msgstr "Tangent att använda med avsökningsläget"
-
-#: ../caribou/common/settings.py:96
-msgid "Right shift"
-msgstr "Höger skift"
-
-#: ../caribou/common/settings.py:97
-msgid "Left shift"
-msgstr "Vänster skift"
-
-#: ../caribou/common/settings.py:98
-msgid "Alt Gr"
-msgstr "Alt Gr"
-
-#: ../caribou/common/settings.py:99
-msgid "Num lock"
-msgstr "Num lock"
-
-#: ../caribou/common/settings.py:100
-msgid "Switch button"
-msgstr "Växlingsknapp"
-
-#: ../caribou/common/settings.py:103
-msgid "Mouse button to use in the scanning mode"
-msgstr "Musknapp att använda i avsökningsläget"
-
-#: ../caribou/common/settings.py:105
-msgid "Button 1"
-msgstr "Knapp 1"
-
-#: ../caribou/common/settings.py:106
-msgid "Button 2"
-msgstr "Knapp 2"
-
-#: ../caribou/common/settings.py:107
-msgid "Button 3"
-msgstr "Knapp 3"
-
-#: ../caribou/common/settings.py:111
-msgid "Block color"
-msgstr "Blockfärg"
-
-#: ../caribou/common/settings.py:112
-msgid "Color of block scans"
-msgstr "Färg för blockavsökningar"
-
-#: ../caribou/common/settings.py:113
-msgid "Row color"
-msgstr "Radfärg"
-
-#: ../caribou/common/settings.py:114
-msgid "Color of row scans"
-msgstr "Färg för radavsökningar"
-
-#: ../caribou/common/settings.py:115
-msgid "Key color"
-msgstr "Tangentfärg"
-
-#: ../caribou/common/settings.py:116
-msgid "Color of key scans"
-msgstr "Färg för tangentavsökningar"
-
-#: ../caribou/common/settings.py:118
-msgid "Cancel color"
-msgstr "Avbrytsfärg"
-
-#: ../caribou/common/settings.py:119
-msgid "Color of cancel scan"
-msgstr "Färg för avbryt avsökning"
-
-#: ../caribou/ui/preferences_window.py:51
+#: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
 msgstr "Inställningar för Caribou"
 
+#: ../caribou/settings/caribou_settings.py:6
+msgid "Scanning"
+msgstr "Avsökning"
+
+#: ../caribou/settings/caribou_settings.py:8
+msgid "Enable scanning"
+msgstr "Aktivera avsökning"
+
+#: ../caribou/settings/caribou_settings.py:9
+msgid "Enable switch scanning"
+msgstr "Aktivera brytaravsökning"
+
+#: ../caribou/settings/caribou_settings.py:12
+msgid "General"
+msgstr "Allmänt"
+
+#: ../caribou/settings/caribou_settings.py:13
+msgid "Scanning mode"
+msgstr "Avsökningsläge"
+
+#: ../caribou/settings/caribou_settings.py:15
+#, fuzzy
+msgid "Scanning type, subgroups, rows or linear"
+msgstr "Avsökningsläge, block eller rad"
+
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr "Undergrupper"
+
+#: ../caribou/settings/caribou_settings.py:17
+msgid "Rows"
+msgstr "Rader"
+
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr "Linjär"
+
+#: ../caribou/settings/caribou_settings.py:20
+msgid "Step time"
+msgstr "Stegtid"
+
+#: ../caribou/settings/caribou_settings.py:21
+msgid "Time between key transitions"
+msgstr "Tid mellan tangentövergångar"
+
+#: ../caribou/settings/caribou_settings.py:24
+msgid "Inverse scanning"
+msgstr "Omvänd avsökning"
+
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr "Ett"
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr "Två"
+
+#: ../caribou/settings/caribou_settings.py:33
+msgid "Three"
+msgstr "Tre"
+
+#: ../caribou/settings/caribou_settings.py:34
+msgid "Four"
+msgstr "Fyra"
+
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr "Fem"
+
+#: ../caribou/settings/caribou_settings.py:38
+msgid "Input"
+msgstr "Inmatning"
+
+#: ../caribou/settings/caribou_settings.py:39
+msgid "Switch device"
+msgstr "Brytarenhet"
+
+#: ../caribou/settings/caribou_settings.py:41
+msgid "Switch device, keyboard or mouse"
+msgstr "Brytarenhet, tangentbord eller mus"
+
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "Tangentbord"
+
+#: ../caribou/settings/caribou_settings.py:44
+msgid "Mouse"
+msgstr "Mus"
+
+#: ../caribou/settings/caribou_settings.py:46
+msgid "Switch key"
+msgstr "Växlingstangent"
+
+#: ../caribou/settings/caribou_settings.py:48
+msgid "Key to use with scanning mode"
+msgstr "Tangent att använda med avsökningsläget"
+
+#: ../caribou/settings/caribou_settings.py:50
+msgid "Right shift"
+msgstr "Höger skift"
+
+#: ../caribou/settings/caribou_settings.py:51
+msgid "Left shift"
+msgstr "Vänster skift"
+
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr "Blanksteg"
+
+#: ../caribou/settings/caribou_settings.py:53
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+#: ../caribou/settings/caribou_settings.py:54
+msgid "Num lock"
+msgstr "Num lock"
+
+#: ../caribou/settings/caribou_settings.py:55
+msgid "Switch button"
+msgstr "Växlingsknapp"
+
+#: ../caribou/settings/caribou_settings.py:58
+msgid "Mouse button to use in the scanning mode"
+msgstr "Musknapp att använda i avsökningsläget"
+
+#: ../caribou/settings/caribou_settings.py:60
+msgid "Button 1"
+msgstr "Knapp 1"
+
+#: ../caribou/settings/caribou_settings.py:61
+msgid "Button 2"
+msgstr "Knapp 2"
+
+#: ../caribou/settings/caribou_settings.py:62
+msgid "Button 3"
+msgstr "Knapp 3"
+
+#: ../caribou/__init__.py:2
+msgid "Caribou"
+msgstr "Caribou"
+
+#: ../caribou/daemon/main.py:31
+#, python-format
+msgid "Error starting %s"
+msgstr "Fel vid start av %s"
+
+#: ../caribou/daemon/main.py:42
+#, python-format
+msgid "In order to use %s, accessibility needs to be enabled. Do you want to enable it now?"
+msgstr ""
+
+#: ../caribou/daemon/main.py:56
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
+msgstr ""
+
+#: ../caribou/daemon/main.py:153
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "VARNING - Caribou: ohanterad redigerbar widget:"
+
+#: ../caribou/antler/antler_settings.py:5
+msgid "Antler Preferences"
+msgstr "Inställningar för Antler"
+
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler"
+msgstr "Antler"
+
+#: ../caribou/antler/antler_settings.py:7
+msgid "Appearance"
+msgstr "Utseende"
+
+#: ../caribou/antler/antler_settings.py:9
+msgid "Keyboard Type"
+msgstr "Tangentbordstyp"
+
+#: ../caribou/antler/antler_settings.py:10
+#, fuzzy
+msgid "The keyboard geometery Caribou should use"
+msgstr "Layouten som Caribou ska använda."
+
+#: ../caribou/antler/antler_settings.py:11
+msgid "The keyboard geometery determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:15
+msgid "Touch"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:16
+msgid "Full scale"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:17
+#, fuzzy
+msgid "Scan"
+msgstr "Avsökning"
+
+#: ../caribou/antler/antler_settings.py:18
+#: ../caribou/antler/antler_settings.py:19
+msgid "Use System Theme"
+msgstr "Använd systemtema"
+
+#: ../caribou/antler/antler_settings.py:20
+msgid "Minimum Alpha"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:21
+msgid "Minimal opacity of keyboard"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:23
+msgid "Maximum Alpha"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:24
+msgid "Maximal opacity of keyboard"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:26
+msgid "Maximum Distance"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:27
+msgid "Maximum distance when keyboard is hidden"
+msgstr ""
+
+#~ msgid "Keyboard layout"
+#~ msgstr "Tangentbordslayout"
+#~ msgid ""
+#~ "The layout should be in the data directory of Caribou (usually /usr/share/"
+#~ "caribou/keyboards) and should be a .xml or .json file."
+#~ msgstr ""
+#~ "Layouten ska finnas i Caribous datakatalog (oftast /usr/share/caribou/"
+#~ "keyboards) och ska vara av typen .xml eller .json."
+#~ msgid "Color"
+#~ msgstr "Färg"
+#~ msgid "Use the default theme colors"
+#~ msgstr "Använd standardfärger från tema"
+#~ msgid "Normal state"
+#~ msgstr "Normalt tillstånd"
+#~ msgid "Color of the keys when there is no event on them"
+#~ msgstr "Färg för tangenterna när det inte finns någon händelse på dem"
+#~ msgid "Mouse over"
+#~ msgstr "Muspekare över"
+#~ msgid "Color of the keys when the mouse goes over the key"
+#~ msgstr "Färg för tangenterna när muspekaren dras över tangenten"
+#~ msgid "Font and size"
+#~ msgstr "Typsnitt och storlek"
+#~ msgid "Use system fonts"
+#~ msgstr "Använd systemtypsnitt"
+#~ msgid "Use the default system font for keyboard"
+#~ msgstr "Använd systemets standardtypsnitt för tangentbordet"
+#~ msgid "Key font"
+#~ msgstr "Tangenttypsnitt"
+#~ msgid "Custom font for keyboard"
+#~ msgstr "Anpassat typsnitt för tangentbordet"
+#~ msgid "Block"
+#~ msgstr "Block"
+#~ msgid "Row"
+#~ msgstr "Rad"
+#~ msgid "Scan in reverse order"
+#~ msgstr "Sök av i omvänd ordning"
+#~ msgid "Block color"
+#~ msgstr "Blockfärg"
+#~ msgid "Color of block scans"
+#~ msgstr "Färg för blockavsökningar"
+#~ msgid "Row color"
+#~ msgstr "Radfärg"
+#~ msgid "Color of row scans"
+#~ msgstr "Färg för radavsökningar"
+#~ msgid "Key color"
+#~ msgstr "Tangentfärg"
+#~ msgid "Color of key scans"
+#~ msgstr "Färg för tangentavsökningar"
+#~ msgid "Cancel color"
+#~ msgstr "Avbrytsfärg"
+#~ msgid "Color of cancel scan"
+#~ msgstr "Färg för avbryt avsökning"
 #~ msgid "Keys"
 #~ msgstr "Tangenter"
-
 #~ msgid "_Test settings here:"
 #~ msgstr "_Testa inställningarna här:"
-
 #~ msgid "Key _size:"
 #~ msgstr "Tangent_storlek:"
-
 #~ msgid "Key s_pacing:"
 #~ msgstr "Tangent_mellanrum:"
+
