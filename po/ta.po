@@ -1,62 +1,289 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Dr.T.Vasudevan <agnihot3@gmail.com>, 2010.
+# Dr.T.Vasudevan <agnihot3@gmail.com>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-05 21:51+0530\n"
-"PO-Revision-Date: 2010-08-05 21:53+0530\n"
+"POT-Creation-Date: 2011-09-01 21:25+0530\n"
+"PO-Revision-Date: 2011-09-02 16:38+0530\n"
 "Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
-"Language-Team: Tamil <<Ubuntu-l10n-tam@lists.ubuntu.com>>\n"
+"Language-Team: Tamil <ubuntu-tam@lists.ubuntu.com>\n"
+"Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../caribou/ui/main.py:134
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "எச்சரிக்கை: கரிபோ: கையாளாத திருத்தக்கூடிய விட்செட்:"
-
-#: ../data/caribou-prefs.ui.h:1
+#: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
 msgstr "கரிபோ விருப்பத்தேர்வுகள்"
 
-#: ../data/caribou-prefs.ui.h:2
-msgid "Colors"
-msgstr "வண்ணங்கள்"
+#: ../caribou/settings/caribou_settings.py:6
+msgid "Scanning"
+msgstr " வருடுகிறது"
 
-#: ../data/caribou-prefs.ui.h:3
+#: ../caribou/settings/caribou_settings.py:8
+msgid "Enable scanning"
+msgstr "வருடலை செயலாக்கு"
+
+#: ../caribou/settings/caribou_settings.py:9
+msgid "Enable switch scanning"
+msgstr "மாற் வருடலை செயலாக்கு"
+
+#: ../caribou/settings/caribou_settings.py:12
 msgid "General"
 msgstr "பொது"
 
-#: ../data/caribou-prefs.ui.h:4
-msgid "Key _size:"
-msgstr "_s விசை அளவு:"
+#: ../caribou/settings/caribou_settings.py:13
+msgid "Scanning mode"
+msgstr "வருடல் பாங்கு"
 
-#: ../data/caribou-prefs.ui.h:5
-msgid "Key s_pacing:"
-msgstr "_p விசை இடைவெளி"
+#: ../caribou/settings/caribou_settings.py:15
+msgid "Scanning type, subgroups, rows or linear"
+msgstr "வருடல் பாங்கு, துணைகுழுக்கள், வரிகள் அல்லது நேர்கோடு"
 
-#: ../data/caribou-prefs.ui.h:6
-msgid "Keyboard _layout:"
-msgstr "_l விசைப்பலகை அமைப்பு:"
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr "துணைகுழுக்கள்"
 
-#: ../data/caribou-prefs.ui.h:7
-msgid "Keys"
-msgstr "விசைகள்"
+#: ../caribou/settings/caribou_settings.py:17
+msgid "Rows"
+msgstr "வரிகள் "
 
-#: ../data/caribou-prefs.ui.h:8
-msgid "Mouse over:"
-msgstr "சொடுக்கி மேலோட்டம்:"
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr "நேர்கோடு"
 
-#: ../data/caribou-prefs.ui.h:9
-msgid "Normal state:"
-msgstr "இயல்பான நிலை:"
+#: ../caribou/settings/caribou_settings.py:20
+msgid "Step time"
+msgstr "படி நேரம்"
 
-#: ../data/caribou-prefs.ui.h:10
-msgid "_Test settings here:"
-msgstr "_T அமைப்பை இங்கே சோதிக்கவும்:"
+#: ../caribou/settings/caribou_settings.py:21
+msgid "Time between key transitions"
+msgstr "விசை மாற்றங்களுக்கு இடையே நேரம் "
 
+#: ../caribou/settings/caribou_settings.py:24
+msgid "Inverse scanning"
+msgstr "தலைகீழ் வருடல்"
+
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
+msgstr "மாற்றியால் படி நகர், நிலையா இருப்பதால் செயலாக்கு"
+
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr "தானியங்கி மீள்துவக்க வருடல்"
+
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr "உருப்படி செயலானதும் தானியங்கியாக வருடலை மறுதுவக்கம் செய் "
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr "வருடல் சுழல்கள்"
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr "ஒன்று"
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr "இரண்டு"
+
+#: ../caribou/settings/caribou_settings.py:33
+msgid "Three"
+msgstr "மூன்று"
+
+#: ../caribou/settings/caribou_settings.py:34
+msgid "Four"
+msgstr "நான்கு"
+
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr "ஐந்து "
+
+#: ../caribou/settings/caribou_settings.py:38
+msgid "Input"
+msgstr "உள்ளீடு"
+
+#: ../caribou/settings/caribou_settings.py:39
+msgid "Switch device"
+msgstr "சாதனத்தை மாற்று"
+
+#: ../caribou/settings/caribou_settings.py:41
+msgid "Switch device, keyboard or mouse"
+msgstr "சாதனத்தை, விசைப்பலகையை, சொடுக்கியை மாற்று"
+
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "விசைப்பலகை"
+
+#: ../caribou/settings/caribou_settings.py:44
+msgid "Mouse"
+msgstr "சொடுக்கி"
+
+#: ../caribou/settings/caribou_settings.py:46
+msgid "Switch key"
+msgstr "மாற்றி விசை"
+
+#: ../caribou/settings/caribou_settings.py:48
+msgid "Key to use with scanning mode"
+msgstr "வருடல் பாங்குக்கு பயன்படுத்த வேண்டிய விசை"
+
+#: ../caribou/settings/caribou_settings.py:50
+msgid "Right shift"
+msgstr "வலது நகர்வு"
+
+#: ../caribou/settings/caribou_settings.py:51
+msgid "Left shift"
+msgstr "இடது நகர்வு"
+
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr "இடம்"
+
+#: ../caribou/settings/caribou_settings.py:53
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+#: ../caribou/settings/caribou_settings.py:54
+msgid "Num lock"
+msgstr "எண் பூட்டு"
+
+#: ../caribou/settings/caribou_settings.py:55
+msgid "Switch button"
+msgstr "மாற்றி பொத்தான்"
+
+#: ../caribou/settings/caribou_settings.py:58
+msgid "Mouse button to use in the scanning mode"
+msgstr "வருடல் பாங்குக்கு பயன்படுத்த சொடுக்கி பொத்தான்"
+
+#: ../caribou/settings/caribou_settings.py:60
+msgid "Button 1"
+msgstr "பொத்தான் 1"
+
+#: ../caribou/settings/caribou_settings.py:61
+msgid "Button 2"
+msgstr "பொத்தான் 2"
+
+#: ../caribou/settings/caribou_settings.py:62
+msgid "Button 3"
+msgstr "பொத்தான் 3"
+
+#: ../caribou/__init__.py:2
+msgid "Caribou"
+msgstr "காரிபௌ"
+
+#: ../caribou/daemon/main.py:31
+#, python-format
+msgid "Error starting %s"
+msgstr "%s ஐ துவக்குவதில் பிழை"
+
+#: ../caribou/daemon/main.py:42
+#, python-format
+msgid ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
+msgstr "%s ஐ பயன்படுத்த அணுகலை செயலாக்க வேண்டும். இப்போது செயலாக்கலாமா?"
+
+#: ../caribou/daemon/main.py:56
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
+msgstr ""
+"அணுகல் செயலாக்கப்பட்டது. வெளியேறி மீண்டும் உள்நுழைந்து %s ஐ பயன்படுத்தலாம்."
+
+#: ../caribou/daemon/main.py:153
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "எச்சரிக்கை: கரிபோ: கையாளாத திருத்தக்கூடிய விட்செட்:"
+
+#: ../caribou/antler/antler_settings.py:5
+msgid "Antler Preferences"
+msgstr "ஆன்ட்லர் விருப்பத்தேர்வுகள்"
+
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler"
+msgstr "ஆன்ட்லர்"
+
+#: ../caribou/antler/antler_settings.py:7
+msgid "Appearance"
+msgstr "தோற்றம்"
+
+#: ../caribou/antler/antler_settings.py:9
+msgid "Keyboard Type"
+msgstr "விசைப்பலகை வகை:"
+
+#: ../caribou/antler/antler_settings.py:10
+msgid "The keyboard geometery Caribou should use"
+msgstr "கரிபோ பயன்படுத்த வேன்டிய விசைப்பலகை இட அமைவு"
+
+#: ../caribou/antler/antler_settings.py:11
+msgid ""
+"The keyboard geometery determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+"விசைப்பலகை இட அமைவு அதன் வடிவையும் சிக்கலையும் தீர்மானிக்கிறது. இது எளிய உரை "
+"தயாரிப்புக்கு ஒரு இயற்கையான திருப்தி அளிக்கும் காட்சியிலிருந்து முழு அளவு "
+"விசைப்பலகை வரை இருக்கலாம்."
+
+#: ../caribou/antler/antler_settings.py:15
+msgid "Touch"
+msgstr "தொடுதல்"
+
+#: ../caribou/antler/antler_settings.py:16
+msgid "Full scale"
+msgstr "முழு அளவு"
+
+#: ../caribou/antler/antler_settings.py:17
+msgid "Scan"
+msgstr "வருடு"
+
+#: ../caribou/antler/antler_settings.py:18
+#: ../caribou/antler/antler_settings.py:19
+msgid "Use System Theme"
+msgstr "கணினி கருத்துக்களை பயன்படுத்து"
+
+#: ../caribou/antler/antler_settings.py:20
+msgid "Minimum Alpha"
+msgstr "குறைந்த பட்ச ஆல்பா"
+
+#: ../caribou/antler/antler_settings.py:21
+msgid "Minimal opacity of keyboard"
+msgstr "குறைந்த பட்ச  விசைப்பலகை ஒளி ஊடுருவல்"
+
+#: ../caribou/antler/antler_settings.py:23
+msgid "Maximum Alpha"
+msgstr "அதிகபட்ச ஆல்பா"
+
+#: ../caribou/antler/antler_settings.py:24
+msgid "Maximal opacity of keyboard"
+msgstr "அதிகபட்ச  விசைப்பலகை ஒளி ஊடுருவல்"
+
+#: ../caribou/antler/antler_settings.py:26
+msgid "Maximum Distance"
+msgstr "அதிகபட்ச தூரம்"
+
+#: ../caribou/antler/antler_settings.py:27
+msgid "Maximum distance when keyboard is hidden"
+msgstr "விசைப்பலகை மறைக்கப்பட்ட போது அதிகபட்ச தூரம்"
+
+#~ msgid "Colors"
+#~ msgstr "வண்ணங்கள்"
+
+#~ msgid "Key _size:"
+#~ msgstr "_s விசை அளவு:"
+
+#~ msgid "Key s_pacing:"
+#~ msgstr "_p விசை இடைவெளி"
+
+#~ msgid "Keys"
+#~ msgstr "விசைகள்"
+
+#~ msgid "Normal state:"
+#~ msgstr "இயல்பான நிலை:"
+
+#~ msgid "_Test settings here:"
+#~ msgstr "_T அமைப்பை இங்கே சோதிக்கவும்:"
