@@ -21,8 +21,6 @@ namespace Caribou {
 
             Bus.get_proxy.begin<Keyboard> (BusType.SESSION, "org.gnome.Caribou.Keyboard",
                                            "/org/gnome/Caribou/Keyboard", 0, null, callback);
-
-            Gdk.window_add_filter (null, event_filter);
         }
 
         private void callback (GLib.Object? obj, GLib.AsyncResult res) {
@@ -31,7 +29,19 @@ namespace Caribou {
             }
             catch (Error e) {
                 stderr.printf ("%s\n", e.message);
-             }
+                return;
+            }
+
+            Gdk.window_add_filter (null, event_filter);
+
+            // Something might already be focused
+            GLib.List<weak Gtk.Window> toplevels = Gtk.Window.list_toplevels();
+            foreach (weak Gtk.Window w in toplevels) {
+                if (w.has_toplevel_focus) {
+                    do_focus_change (w.get_focus ());
+                    break;
+                }
+            }
         }
 
         private Gdk.FilterReturn event_filter (Gdk.XEvent xevent, Gdk.Event evt) {
