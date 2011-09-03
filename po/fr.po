@@ -1,15 +1,16 @@
 # French translation for caribou.
-# Copyright (C) 2010 Listed translators
+# Copyright (C) 2010-2011 Listed translators
 # This file is distributed under the same license as the caribou package.
-# Claude Paroz <claude@2xlibre.net>, 2010.
+# Claude Paroz <claude@2xlibre.net>, 2010-2011
+# Alain Lojewski <allomervan@gmail.com>, 2011
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=caribou&component=default\n"
-"POT-Creation-Date: 2011-01-03 19:14+0000\n"
-"PO-Revision-Date: 2010-12-19 20:05+0100\n"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2011-09-03 21:06+0000\n"
+"PO-Revision-Date: 2011-09-03 23:11+0200\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,219 +18,261 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../caribou/ui/main.py:135
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "ATTENTION - Caribou : composant graphique éditable non géré :"
+#: ../caribou/settings/caribou_settings.py:5
+msgid "Caribou Preferences"
+msgstr "Préférences de Caribou"
 
-#: ../caribou/common/settings.py:33 ../caribou/common/settings.py:90
-msgid "Keyboard"
-msgstr "Clavier"
-
-#: ../caribou/common/settings.py:34 ../caribou/common/settings.py:72
-msgid "General"
-msgstr "Général"
-
-#: ../caribou/common/settings.py:36
-msgid "Keyboard layout"
-msgstr "Agencement de clavier"
-
-#: ../caribou/common/settings.py:37
-msgid "The layout Caribou should use."
-msgstr "L'agencement que Caribou doit utiliser."
-
-#: ../caribou/common/settings.py:38
-msgid ""
-"The layout should be in the data directory of Caribou (usually /usr/share/"
-"caribou/keyboards) and should be a .xml or .json file."
-msgstr ""
-"L'agencement doit se trouver dans le répertoire de données de Caribou "
-"(généralement /usr/share/caribou/keyboards) et doit être au format .xml ou ."
-"json."
-
-#: ../caribou/common/settings.py:42 ../caribou/common/settings.py:112
-msgid "Color"
-msgstr "Couleur"
-
-#: ../caribou/common/settings.py:44
-msgid "Use system theme"
-msgstr "Utiliser le thème système"
-
-#: ../caribou/common/settings.py:45
-msgid "Use the default theme colors"
-msgstr "Utiliser les couleurs du thème par défaut"
-
-#: ../caribou/common/settings.py:49
-msgid "Normal state"
-msgstr "État normal"
-
-#: ../caribou/common/settings.py:50
-msgid "Color of the keys when there is no event on them"
-msgstr "Couleur des touches quand elles ne sont la cible d'aucun événement"
-
-#: ../caribou/common/settings.py:53
-msgid "Mouse over"
-msgstr "Survol de la souris"
-
-#: ../caribou/common/settings.py:54
-msgid "Color of the keys when the mouse goes over the key"
-msgstr "Couleur des touches quand la souris passe sur elles"
-
-#: ../caribou/common/settings.py:56
-msgid "Font and size"
-msgstr "Police et taille"
-
-#: ../caribou/common/settings.py:58
-msgid "Use system fonts"
-msgstr "Utiliser les polices du système"
-
-#: ../caribou/common/settings.py:59
-msgid "Use the default system font for keyboard"
-msgstr "Utiliser la police par défaut du système pour le clavier"
-
-#: ../caribou/common/settings.py:61
-msgid "Key font"
-msgstr "Police des touches"
-
-#: ../caribou/common/settings.py:62
-msgid "Custom font for keyboard"
-msgstr "Police personalisée pour le clavier"
-
-#: ../caribou/common/settings.py:65
+#: ../caribou/settings/caribou_settings.py:6
 msgid "Scanning"
 msgstr "Balayage"
 
-#: ../caribou/common/settings.py:67
+#: ../caribou/settings/caribou_settings.py:8
 msgid "Enable scanning"
 msgstr "Activer le balayage"
 
-#: ../caribou/common/settings.py:68
+#: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
 msgstr "Activer la sélection par balayage"
 
-#: ../caribou/common/settings.py:73
+#: ../caribou/settings/caribou_settings.py:12
+msgid "General"
+msgstr "Général"
+
+#: ../caribou/settings/caribou_settings.py:13
 msgid "Scanning mode"
 msgstr "Mode de balayage"
 
-#: ../caribou/common/settings.py:75
-msgid "Scanning type, block or row"
-msgstr "Type de balayage, par bloc ou par ligne"
+#: ../caribou/settings/caribou_settings.py:15
+msgid "Scanning type, subgroups, rows or linear"
+msgstr "Type de balayage, par sous-groupes, par lignes ou linéaire"
 
-#: ../caribou/common/settings.py:76
-msgid "Block"
-msgstr "Bloc"
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr "Sous-groupes"
 
-#: ../caribou/common/settings.py:77
-msgid "Row"
-msgstr "Ligne"
+#: ../caribou/settings/caribou_settings.py:17
+msgid "Rows"
+msgstr "Lignes"
 
-#: ../caribou/common/settings.py:78
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr "Linéaire"
+
+#: ../caribou/settings/caribou_settings.py:20
 msgid "Step time"
 msgstr "Durée des séquences"
 
-#: ../caribou/common/settings.py:79
+#: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
 msgstr "Délai entre le changement de touche"
 
-#: ../caribou/common/settings.py:82
-msgid "Reverse scanning"
+#: ../caribou/settings/caribou_settings.py:24
+msgid "Inverse scanning"
 msgstr "Balayage inverse"
 
-#: ../caribou/common/settings.py:83
-msgid "Scan in reverse order"
-msgstr "Effectuer le balayage dans l'ordre inverse"
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
+msgstr "Avance par bouton, activation par maintien"
 
-#: ../caribou/common/settings.py:85
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr "Redémarrer le balayage automatiquement"
+
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr "Redémarrer le balayage automatiquement après l'activation d'un élément"
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr "Cycles de balayage"
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr "Un"
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr "Deux"
+
+#: ../caribou/settings/caribou_settings.py:33
+msgid "Three"
+msgstr "Trois"
+
+#: ../caribou/settings/caribou_settings.py:34
+msgid "Four"
+msgstr "Quatre"
+
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr "Cinq"
+
+#: ../caribou/settings/caribou_settings.py:38
 msgid "Input"
 msgstr "Entrée"
 
-#: ../caribou/common/settings.py:86
+#: ../caribou/settings/caribou_settings.py:39
 msgid "Switch device"
 msgstr "Périphérique de sélection"
 
-#: ../caribou/common/settings.py:88
+#: ../caribou/settings/caribou_settings.py:41
 msgid "Switch device, keyboard or mouse"
 msgstr "Périphérique de sélection, clavier ou souris"
 
-#: ../caribou/common/settings.py:91
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "Clavier"
+
+#: ../caribou/settings/caribou_settings.py:44
 msgid "Mouse"
 msgstr "Souris"
 
-#: ../caribou/common/settings.py:93
+#: ../caribou/settings/caribou_settings.py:46
 msgid "Switch key"
 msgstr "Touche de sélection"
 
-#: ../caribou/common/settings.py:96
+#: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
 msgstr "Touche à utiliser en mode balayage"
 
-#: ../caribou/common/settings.py:98
+#: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
 msgstr "Maj. de droite"
 
-#: ../caribou/common/settings.py:99
+#: ../caribou/settings/caribou_settings.py:51
 msgid "Left shift"
 msgstr "Maj. de gauche"
 
-#: ../caribou/common/settings.py:100
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr "Espace"
+
+#: ../caribou/settings/caribou_settings.py:53
 msgid "Alt Gr"
 msgstr "Alt Gr"
 
-#: ../caribou/common/settings.py:101
+#: ../caribou/settings/caribou_settings.py:54
 msgid "Num lock"
 msgstr "Verr. Num."
 
-#: ../caribou/common/settings.py:102
+#: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
 msgstr "Bouton de sélection"
 
-#: ../caribou/common/settings.py:105
+#: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
 msgstr "Bouton de souris à utiliser en mode balayage"
 
-#: ../caribou/common/settings.py:107
+#: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
 msgstr "Bouton 1"
 
-#: ../caribou/common/settings.py:108
+#: ../caribou/settings/caribou_settings.py:61
 msgid "Button 2"
 msgstr "Bouton 2"
 
-#: ../caribou/common/settings.py:109
+#: ../caribou/settings/caribou_settings.py:62
 msgid "Button 3"
 msgstr "Bouton 3"
 
-#: ../caribou/common/settings.py:113
-msgid "Block color"
-msgstr "Couleur de bloc"
+#: ../caribou/__init__.py:2
+msgid "Caribou"
+msgstr "Caribou"
 
-#: ../caribou/common/settings.py:114
-msgid "Color of block scans"
-msgstr "Couleur des balayages par bloc"
+#: ../caribou/daemon/main.py:31
+#, python-format
+msgid "Error starting %s"
+msgstr "Erreur de démarrage %s"
 
-#: ../caribou/common/settings.py:115
-msgid "Row color"
-msgstr "Couleur de ligne"
+#: ../caribou/daemon/main.py:42
+#, python-format
+msgid ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
+msgstr ""
+"Pour pouvoir utiliser %s, l'outil d'accessibilité doit être activé. Voulez-"
+"vous l'activer maintenant ?"
 
-#: ../caribou/common/settings.py:116
-msgid "Color of row scans"
-msgstr "Couleur des balayages par ligne"
+#: ../caribou/daemon/main.py:56
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
+msgstr ""
+"L'outil d'accessibilité est activé. Veuillez vous déconnecter et vous "
+"reconnecter pour utiliser %s."
 
-#: ../caribou/common/settings.py:117
-msgid "Key color"
-msgstr "Couleur de touche"
+#: ../caribou/daemon/main.py:153
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "ATTENTION - Caribou : composant graphique éditable non géré :"
 
-#: ../caribou/common/settings.py:118
-msgid "Color of key scans"
-msgstr "Couleur des balayages par touche"
+#: ../caribou/antler/antler_settings.py:5
+msgid "Antler Preferences"
+msgstr "Préférences d'Antler"
 
-#: ../caribou/common/settings.py:120
-msgid "Cancel color"
-msgstr "Couleur d'annulation"
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler"
+msgstr "Antler"
 
-#: ../caribou/common/settings.py:121
-msgid "Color of cancel scan"
-msgstr "Couleur des balayages d'annulation"
+#: ../caribou/antler/antler_settings.py:7
+msgid "Appearance"
+msgstr "Apparence"
 
-#: ../caribou/ui/preferences_window.py:50
-msgid "Caribou Preferences"
-msgstr "Préférences de Caribou"
+#: ../caribou/antler/antler_settings.py:9
+msgid "Keyboard Type"
+msgstr "Type de clavier"
+
+#: ../caribou/antler/antler_settings.py:10
+msgid "The keyboard geometry Caribou should use"
+msgstr "L'agencement de clavier que Caribou doit utiliser"
+
+#: ../caribou/antler/antler_settings.py:11
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+"L'agencement du clavier définit sa forme et sa complexité. Ça peut aller "
+"d'un design « simple » pour ne saisir que du texte, à une disposition "
+"beaucoup plus complète."
+
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
+msgid "Touch"
+msgstr "Tactile"
+
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
+msgid "Full scale"
+msgstr "Complet"
+
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
+msgid "Scan"
+msgstr "À balayage"
+
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
+msgid "Use System Theme"
+msgstr "Utiliser le thème système"
+
+#: ../caribou/antler/antler_settings.py:23
+msgid "Minimum Alpha"
+msgstr "Alpha minimum"
+
+#: ../caribou/antler/antler_settings.py:24
+msgid "Minimal opacity of keyboard"
+msgstr "Opacité minimum du clavier"
+
+#: ../caribou/antler/antler_settings.py:26
+msgid "Maximum Alpha"
+msgstr "Alpha maximum"
+
+#: ../caribou/antler/antler_settings.py:27
+msgid "Maximal opacity of keyboard"
+msgstr "Opacité maximum du clavier"
+
+#: ../caribou/antler/antler_settings.py:29
+msgid "Maximum Distance"
+msgstr "Distance maximum"
+
+#: ../caribou/antler/antler_settings.py:30
+msgid "Maximum distance when keyboard is hidden"
+msgstr "Distance maximum pour le clavier caché"
