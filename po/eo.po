@@ -1,0 +1,271 @@
+# Esperanto translation for caribou.
+# Copyright (C) 2011 Free Software Foundation, Inc.
+# This file is distributed under the same license as the caribou package.
+# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2011-09-03 21:11+0000\n"
+"PO-Revision-Date: 2011-09-04 00:24+0200\n"
+"Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
+"Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: ../caribou/settings/caribou_settings.py:5
+msgid "Caribou Preferences"
+msgstr "Agordoj de Caribou"
+
+#: ../caribou/settings/caribou_settings.py:6
+msgid "Scanning"
+msgstr "Skanante"
+
+#: ../caribou/settings/caribou_settings.py:8
+msgid "Enable scanning"
+msgstr "Enŝalti skanadon"
+
+#: ../caribou/settings/caribou_settings.py:9
+msgid "Enable switch scanning"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:12
+msgid "General"
+msgstr "Ĝenerale"
+
+#: ../caribou/settings/caribou_settings.py:13
+msgid "Scanning mode"
+msgstr "Skan-reĝimo"
+
+#: ../caribou/settings/caribou_settings.py:15
+msgid "Scanning type, subgroups, rows or linear"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr "Subgrupoj"
+
+#: ../caribou/settings/caribou_settings.py:17
+msgid "Rows"
+msgstr "Vicoj"
+
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr "Lineare"
+
+#: ../caribou/settings/caribou_settings.py:20
+msgid "Step time"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:21
+msgid "Time between key transitions"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:24
+msgid "Inverse scanning"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr "Unu"
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr "Du"
+
+#: ../caribou/settings/caribou_settings.py:33
+msgid "Three"
+msgstr "Tri"
+
+#: ../caribou/settings/caribou_settings.py:34
+msgid "Four"
+msgstr "Kvar"
+
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr "Kvin"
+
+#: ../caribou/settings/caribou_settings.py:38
+msgid "Input"
+msgstr "Enigo"
+
+#: ../caribou/settings/caribou_settings.py:39
+msgid "Switch device"
+msgstr "Ŝanĝi aparaton"
+
+#: ../caribou/settings/caribou_settings.py:41
+msgid "Switch device, keyboard or mouse"
+msgstr "Ŝanĝi aparaton, klavaro aŭ muson"
+
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "Klavaro"
+
+#: ../caribou/settings/caribou_settings.py:44
+msgid "Mouse"
+msgstr "Muso"
+
+#: ../caribou/settings/caribou_settings.py:46
+msgid "Switch key"
+msgstr "Ŝanĝi klavon"
+
+#: ../caribou/settings/caribou_settings.py:48
+msgid "Key to use with scanning mode"
+msgstr "Klavo por uzi en la skan-reĝimo"
+
+#: ../caribou/settings/caribou_settings.py:50
+msgid "Right shift"
+msgstr "Dekstra majuskliga klavo"
+
+#: ../caribou/settings/caribou_settings.py:51
+msgid "Left shift"
+msgstr "Maldekstra majuskliga klavo"
+
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr "Spaco-klavo"
+
+#: ../caribou/settings/caribou_settings.py:53
+msgid "Alt Gr"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:54
+msgid "Num lock"
+msgstr "Nombra baskulo"
+
+#: ../caribou/settings/caribou_settings.py:55
+msgid "Switch button"
+msgstr "Ŝanĝi butonon"
+
+#: ../caribou/settings/caribou_settings.py:58
+msgid "Mouse button to use in the scanning mode"
+msgstr "Musbutono por uzi en la skan-reĝimo"
+
+#: ../caribou/settings/caribou_settings.py:60
+msgid "Button 1"
+msgstr "Butono 1"
+
+#: ../caribou/settings/caribou_settings.py:61
+msgid "Button 2"
+msgstr "Butono 2"
+
+#: ../caribou/settings/caribou_settings.py:62
+msgid "Button 3"
+msgstr "Butono 3"
+
+#: ../caribou/__init__.py:2
+msgid "Caribou"
+msgstr ""
+
+#: ../caribou/daemon/main.py:31
+#, python-format
+msgid "Error starting %s"
+msgstr ""
+
+#: ../caribou/daemon/main.py:42
+#, python-format
+msgid ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
+msgstr ""
+
+#: ../caribou/daemon/main.py:56
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
+msgstr ""
+
+#: ../caribou/daemon/main.py:153
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:5
+msgid "Antler Preferences"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:7
+msgid "Appearance"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:9
+msgid "Keyboard Type"
+msgstr "Klavar-tipo"
+
+#: ../caribou/antler/antler_settings.py:10
+msgid "The keyboard geometry Caribou should use"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:11
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
+msgid "Touch"
+msgstr "Tuŝi"
+
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
+msgid "Full scale"
+msgstr ""
+
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
+msgid "Scan"
+msgstr "Skani"
+
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
+msgid "Use System Theme"
+msgstr "Uzi sistem-etoson"
+
+#: ../caribou/antler/antler_settings.py:23
+msgid "Minimum Alpha"
+msgstr "Minimuma alfo"
+
+#: ../caribou/antler/antler_settings.py:24
+msgid "Minimal opacity of keyboard"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:26
+msgid "Maximum Alpha"
+msgstr "Maksimuma alfo"
+
+#: ../caribou/antler/antler_settings.py:27
+#, fuzzy
+msgid "Maximal opacity of keyboard"
+msgstr "Maksimuma opakeco de la klavaro"
+
+#: ../caribou/antler/antler_settings.py:29
+msgid "Maximum Distance"
+msgstr "Maksimuma distanco"
+
+#: ../caribou/antler/antler_settings.py:30
+msgid "Maximum distance when keyboard is hidden"
+msgstr "Maksimuma distanco se la klavaro estas kaŝate"
