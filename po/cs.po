@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-07-18 17:10+0000\n"
-"PO-Revision-Date: 2011-07-21 08:21+0200\n"
+"POT-Creation-Date: 2011-09-03 21:06+0000\n"
+"PO-Revision-Date: 2011-09-04 11:40+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -220,12 +220,12 @@ msgid "Keyboard Type"
 msgstr "Typ klávesnice"
 
 #: ../caribou/antler/antler_settings.py:10
-msgid "The keyboard geometery Caribou should use"
+msgid "The keyboard geometry Caribou should use"
 msgstr "Konfigurace klávesnice, kterou by měla aplikace Caribou použít"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
-"The keyboard geometery determines the shape and complexity of the keyboard, "
+"The keyboard geometry determines the shape and complexity of the keyboard, "
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
@@ -233,49 +233,46 @@ msgstr ""
 "„přirozeného“ vzhledu s dobrým dojmem při psaní jednoduchého textu po "
 "nejrozsáhlejší klávesnici."
 
-#: ../caribou/antler/antler_settings.py:15
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
 msgid "Touch"
 msgstr "Dotyk"
 
-#: ../caribou/antler/antler_settings.py:16
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
 msgid "Full scale"
 msgstr "Plné měřítko"
 
-#: ../caribou/antler/antler_settings.py:17
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
 msgid "Scan"
 msgstr "Skenovat"
 
-#: ../caribou/antler/antler_settings.py:18
-#: ../caribou/antler/antler_settings.py:19
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
 msgstr "Použít systémový motiv"
 
-#: ../caribou/antler/antler_settings.py:20
+#: ../caribou/antler/antler_settings.py:23
 msgid "Minimum Alpha"
 msgstr "Minimální alfa"
 
-#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
 msgstr "Minimální průsvitnost klávesnice"
 
-#: ../caribou/antler/antler_settings.py:23
+#: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
 msgstr "Maximální alfa"
 
-#: ../caribou/antler/antler_settings.py:24
+#: ../caribou/antler/antler_settings.py:27
 msgid "Maximal opacity of keyboard"
 msgstr "Maximální průsvitnost klávesnice"
 
-#: ../caribou/antler/antler_settings.py:26
+#: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
 msgstr "Maximální vzdálenost"
 
-#: ../caribou/antler/antler_settings.py:27
+#: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maximální vzdálenost, když je klávesnice skryta"
-
-#~ msgid "Block"
-#~ msgstr "Blok"
-
-#~ msgid "Scan in reverse order"
-#~ msgstr "Skenovat v obráceném pořadí"
