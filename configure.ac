@@ -23,13 +23,13 @@ dnl == check for python ==
 AM_PATH_PYTHON(2.4)
 
 dnl == Library dependencies ==
-PYGOBJECT_REQUIRED=2.27.92
+PYGOBJECT_REQUIRED=2.90.3
 GTK_REQUIRED=3.0.0
 CLUTTER_REQUIRED=1.5.11
 GDK_REQUIRED=3.0.0
 
 PKG_CHECK_MODULES(CARIBOU, [
-  pygobject-2.0 >= $PYGOBJECT_REQUIRED,
+  pygobject-3.0 >= $PYGOBJECT_REQUIRED,
   gtk+-3.0      >= $GTK_REQUIRED,
   clutter-1.0   >= $CLUTTER_REQUIRED
   ])
