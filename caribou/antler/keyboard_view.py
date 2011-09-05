@@ -87,8 +87,9 @@ class AntlerKey(Gtk.Button):
         if self.caribou_key():
             self.caribou_key().release()
 
-    def do_get_preferred_width_for_height(self, h):
+    def do_get_preferred_width(self):
         w = self.caribou_key().props.width
+        h, _ = self.get_preferred_height()
         width = int(h * w + ceil(w - 1) * self._spacing)
         return (width, width)
 
