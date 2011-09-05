@@ -57,7 +57,8 @@ class SchemasMaker:
             key.setAttribute('type', setting.variant_type)
             schemalist.appendChild(key)
             self._append_children_element_value_pairs(
-                doc, key, [('default', setting.default_value),
+                doc, key, [('default',
+                            getattr(setting.gvariant, "print")(False)),
                            ('_summary', setting.short_desc),
                            ('_description', setting.long_desc)])
 
