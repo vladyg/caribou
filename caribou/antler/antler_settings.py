@@ -19,7 +19,7 @@ AntlerSettings = SettingsTopGroup(
                                      # Translators: Keyboard type (scanned grid by rows/columns)
                                      (('scan'), _('Scan'))]),
                         BooleanSetting("use_system", _("Use System Theme"),
-                                       True, _("Use System Theme")),
+                                       False, _("Use System Theme")),
                         FloatSetting("min_alpha", _("Minimum Alpha"),
                                      0.2, _("Minimal opacity of keyboard"),
                                      min=0.0, max=1.0),
