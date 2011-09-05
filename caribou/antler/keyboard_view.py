@@ -248,6 +248,9 @@ class AntlerKeyboardView(Gtk.Notebook):
         settings = AntlerSettings()
         self.set_show_tabs(False)
 
+        ctx = self.get_style_context()
+        ctx.add_class("antler-keyboard-window")
+
         use_system = settings.use_system
         use_system.connect("value-changed", self._on_use_system_theme_changed)
 
