@@ -34,9 +34,14 @@ Clutter.init("antler")
 
 class AnimatedWindowBase(Gtk.Window, Clutter.Animatable):
     __gproperties__ = {
-        'antler-window-position' : (GObject.TYPE_PYOBJECT, 'Window position',
-                                      'Window position in X, Y coordinates',
-                                      GObject.PARAM_READWRITE)
+        'antler-window-x' : (GObject.TYPE_INT, 'Window position',
+                             'Window X coordinate',
+                             GObject.G_MININT, GObject.G_MAXINT, 0,
+                             GObject.PARAM_READWRITE),
+        'antler-window-y' : (GObject.TYPE_INT, 'Window position',
+                             'Window Y coordinate',
+                             GObject.G_MININT, GObject.G_MAXINT, 0,
+                             GObject.PARAM_READWRITE)
         }
     def __init__(self):
         GObject.GObject.__init__(self, type=Gtk.WindowType.POPUP)
@@ -46,33 +51,36 @@ class AnimatedWindowBase(Gtk.Window, Clutter.Animatable):
         self._opacity_animation = None
 
     def do_get_property(self, property):
-        if property.name == "antler-window-position":
-            return self.get_position()
+        if property.name == "antler-window-x":
+            return self.get_position()[0]
+        elif property.name == "antler-window-y":
+            return self.get_position()[1]
         else:
             raise AttributeError, 'unknown property %s' % property.name
 
     def do_set_property(self, property, value):
-        if property.name == "antler-window-position":
+        if property.name == "antler-window-x":
             if value is not None:
-                x, y = value
-                self.move(x, y)
+                self.move(value, self.get_position()[1])
+        elif property.name == "antler-window-y":
+            if value is not None:
+                self.move(self.get_position()[0], value)
         else:
             raise AttributeError, 'unknown property %s' % property.name
 
     def do_animate_property(self, animation, prop_name, initial_value,
                             final_value, progress, gvalue):
-        if prop_name == "antler-window-position":
-            ix, iy = initial_value
-            fx, fy = final_value
-            dx = int((fx - ix) * progress)
-            dy = int((fy - iy) * progress)
-            new_value = (ix + dx, iy + dy)
-            self.move(*new_value)
+        if prop_name == "antler-window-x":
+            dx = int(initial_value * progress)
+            self.move(initial_value + dx, self.get_position()[1])
+            return True
+        elif prop_name == "antler-window-y":
+            dy = int(initial_value * progress)
+            self.move(self.get_position()[0], initial_value + dy)
             return True
         if prop_name == "opacity":
             opacity = initial_value + ((final_value - initial_value) * progress)
             GObject.idle_add(lambda: self.set_opacity(opacity))
-
             return True
         else:
             return False
@@ -81,7 +89,8 @@ class AnimatedWindowBase(Gtk.Window, Clutter.Animatable):
         self._move_animation = Clutter.Animation(object=self,
                                             mode=mode,
                                             duration=250)
-        self._move_animation.bind("antler-window-position", (x, y))
+        self._move_animation.bind("antler-window-x", x)
+        self._move_animation.bind("antler-window-y", y)
 
         timeline = self._move_animation.get_timeline()
         timeline.start()
