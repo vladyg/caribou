@@ -1,3 +1,28 @@
+==============
+Version 0.3.91
+==============
+
+What's New
+==========
+- Update Antler to latest GTK+ 3.2 shenanigans.
+- Require pygobject 3.0.
+- Fixes to bugs that were.
+
+New And Updated Translations
+============================
+- Marek Černocký (cs)
+- Kristjan SCHMIDT (eo)
+- Jorge González (es)
+- Arash Mousavi (fa)
+- Claude Paroz (fr)
+- Fran Dieguez (gl)
+- Kjartan Maraas (nb)
+- Antonio Fernandes C. Neto (pt_BR)
+- Daniel Nylander (sv)
+- Dr.T.Vasudevan (ta)
+- Chao-Hsiung Liao (zh_HK)
+- Chao-Hsiung Liao (zh_TW)
+
 =============
 Version 0.3.5
 =============
