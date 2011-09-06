@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-07-18 17:10+0000\n"
-"PO-Revision-Date: 2011-08-31 13:47+0330\n"
+"POT-Creation-Date: 2011-09-03 21:06+0000\n"
+"PO-Revision-Date: 2011-09-06 11:39+0330\n"
 "Last-Translator: Arash Mousavi <mousavi.arash@gmail.com>\n"
 "Language-Team: Persian\n"
 "MIME-Version: 1.0\n"
@@ -120,12 +120,10 @@ msgid "Switch device, keyboard or mouse"
 msgstr "دستگاه تعویض، صفحه‌کلید یا موشی"
 
 #: ../caribou/settings/caribou_settings.py:43
-#| msgid "Keyboard _layout:"
 msgid "Keyboard"
 msgstr "صفحه‌کلید"
 
 #: ../caribou/settings/caribou_settings.py:44
-#| msgid "Mouse over:"
 msgid "Mouse"
 msgstr "موشی"
 
@@ -201,7 +199,6 @@ msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "اخطار - کاریبو: ویجت غیرقابل ویرایش:"
 
 #: ../caribou/antler/antler_settings.py:5
-#| msgid "Caribou Preferences"
 msgid "Antler Preferences"
 msgstr "ترجیحات آنتلر"
 
@@ -214,56 +211,63 @@ msgid "Appearance"
 msgstr "ظاهر"
 
 #: ../caribou/antler/antler_settings.py:9
-#| msgid "Keyboard _layout:"
 msgid "Keyboard Type"
 msgstr "نوع صفحه‌کلید"
 
 #: ../caribou/antler/antler_settings.py:10
-msgid "The keyboard geometery Caribou should use"
-msgstr "مختصات صفحه‌کلید کاریبو با استفاده کند از"
+#| msgid "The keyboard geometery Caribou should use"
+msgid "The keyboard geometry Caribou should use"
+msgstr "مختصات صفحه‌کلیدی که کاریبو باید استفاده کند"
 
 #: ../caribou/antler/antler_settings.py:11
-msgid "The keyboard geometery determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
-msgstr "مختصات صفحه‌کلید، شکل و پیچیدگی صفحه‌کلید را تعیین می‌کند، این می‌تواند باز‌ه‌ای از یک نمای «طبیعی» برای ساخت یک متن ساده تا یک صفحه‌کلید با مقیاس کامل را در بر بگیرد."
+#| msgid ""
+#| "The keyboard geometery determines the shape and complexity of the "
+#| "keyboard, it could range from a 'natural' look and feel good for "
+#| "composing simple text, to a fullscale keyboard."
+msgid "The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
+msgstr "مختصات صفحه‌کلید، شکل و پیچیدگی صفحه‌کلید را تعیین می‌کند، این می‌تواند باز‌ه‌ای از یک نمای «natural» برای ساخت یک متن ساده تا یک صفحه‌کلید با مقیاس کامل را در بر بگیرد."
 
-#: ../caribou/antler/antler_settings.py:15
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
 msgid "Touch"
 msgstr "لمسی"
 
-#: ../caribou/antler/antler_settings.py:16
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
 msgid "Full scale"
 msgstr "مقیاس کامل"
 
-#: ../caribou/antler/antler_settings.py:17
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
 msgid "Scan"
 msgstr "پایش"
 
-#: ../caribou/antler/antler_settings.py:18
-#: ../caribou/antler/antler_settings.py:19
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
 msgstr "استفاده از تم سیستم"
 
-#: ../caribou/antler/antler_settings.py:20
+#: ../caribou/antler/antler_settings.py:23
 msgid "Minimum Alpha"
 msgstr "حداقل آلفا"
 
-#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
 msgstr "کمترین شفافیت صفحه‌کلید"
 
-#: ../caribou/antler/antler_settings.py:23
+#: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
 msgstr "حداکثر آلفا"
 
-#: ../caribou/antler/antler_settings.py:24
+#: ../caribou/antler/antler_settings.py:27
 msgid "Maximal opacity of keyboard"
 msgstr "حداکثر شفافیت صفحه‌کلید"
 
-#: ../caribou/antler/antler_settings.py:26
+#: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
 msgstr "حداکثر فاصله"
 
-#: ../caribou/antler/antler_settings.py:27
+#: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "حداکثر فاصله در هنگامی که صفحه‌کلید مخفی است"
 
