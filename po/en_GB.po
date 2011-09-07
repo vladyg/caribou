@@ -2,61 +2,293 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the Caribou package.
 # Philip Withnall <philip@tecnocode.co.uk>, 2010.
-#
+# Bruce Cowan <bruce@bcowan.me.uk>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-27 09:47+0100\n"
-"PO-Revision-Date: 2010-08-27 09:47+0100\n"
-"Last-Translator: Philip Withnall <philip@tecnocode.co.uk>\n"
+"POT-Creation-Date: 2011-09-07 15:04+0100\n"
+"PO-Revision-Date: 2011-09-07 15:05+0100\n"
+"Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
 "Language-Team: British English <en@li.org>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1-beta1\n"
 
-#: ../caribou/ui/main.py:134
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "WARNING — Caribou: unhandled editable widget:"
-
-#: ../data/caribou-prefs.ui.h:1
+#: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
 msgstr "Caribou Preferences"
 
-#: ../data/caribou-prefs.ui.h:2
-msgid "Colors"
-msgstr "Colours"
+#: ../caribou/settings/caribou_settings.py:6
+msgid "Scanning"
+msgstr "Scanning"
 
-#: ../data/caribou-prefs.ui.h:3
+#: ../caribou/settings/caribou_settings.py:8
+msgid "Enable scanning"
+msgstr "Enable scanning"
+
+#: ../caribou/settings/caribou_settings.py:9
+msgid "Enable switch scanning"
+msgstr "Enable switch scanning"
+
+#: ../caribou/settings/caribou_settings.py:12
 msgid "General"
 msgstr "General"
 
-#: ../data/caribou-prefs.ui.h:4
-msgid "Key _size:"
-msgstr "Key _size:"
+#: ../caribou/settings/caribou_settings.py:13
+msgid "Scanning mode"
+msgstr "Scanning mode"
 
-#: ../data/caribou-prefs.ui.h:5
-msgid "Key s_pacing:"
-msgstr "Key s_pacing:"
+#: ../caribou/settings/caribou_settings.py:15
+msgid "Scanning type, subgroups, rows or linear"
+msgstr "Scanning type, subgroups, rows or linear"
 
-#: ../data/caribou-prefs.ui.h:6
-msgid "Keyboard _layout:"
-msgstr "Keyboard _layout:"
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr "Subgroups"
 
-#: ../data/caribou-prefs.ui.h:7
-msgid "Keys"
-msgstr "Keys"
+#: ../caribou/settings/caribou_settings.py:17
+msgid "Rows"
+msgstr "Rows"
 
-#: ../data/caribou-prefs.ui.h:8
-msgid "Mouse over:"
-msgstr "Mouse over:"
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr "Linear"
 
-#: ../data/caribou-prefs.ui.h:9
-msgid "Normal state:"
-msgstr "Normal state:"
+#: ../caribou/settings/caribou_settings.py:20
+msgid "Step time"
+msgstr "Step time"
 
-#: ../data/caribou-prefs.ui.h:10
-msgid "_Test settings here:"
-msgstr "_Test settings here:"
+#: ../caribou/settings/caribou_settings.py:21
+msgid "Time between key transitions"
+msgstr "Time between key transitions"
+
+#: ../caribou/settings/caribou_settings.py:24
+msgid "Inverse scanning"
+msgstr "Inverse scanning"
+
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
+msgstr "Step with the switch, activate by dwelling"
+
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr "Auto-restart scanning"
+
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr "Automatically restart scanning after item activation"
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr "Scan cycles"
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr "One"
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr "Two"
+
+#: ../caribou/settings/caribou_settings.py:33
+msgid "Three"
+msgstr "Three"
+
+#: ../caribou/settings/caribou_settings.py:34
+msgid "Four"
+msgstr "Four"
+
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr "Five"
+
+#: ../caribou/settings/caribou_settings.py:38
+msgid "Input"
+msgstr "Input"
+
+#: ../caribou/settings/caribou_settings.py:39
+msgid "Switch device"
+msgstr "Switch device"
+
+#: ../caribou/settings/caribou_settings.py:41
+msgid "Switch device, keyboard or mouse"
+msgstr "Switch device, keyboard or mouse"
+
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "Keyboard"
+
+#: ../caribou/settings/caribou_settings.py:44
+msgid "Mouse"
+msgstr "Mouse"
+
+#: ../caribou/settings/caribou_settings.py:46
+msgid "Switch key"
+msgstr "Switch key"
+
+#: ../caribou/settings/caribou_settings.py:48
+msgid "Key to use with scanning mode"
+msgstr "Key to use with scanning mode"
+
+#: ../caribou/settings/caribou_settings.py:50
+msgid "Right shift"
+msgstr "Right shift"
+
+#: ../caribou/settings/caribou_settings.py:51
+msgid "Left shift"
+msgstr "Left shift"
+
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr "Space"
+
+#: ../caribou/settings/caribou_settings.py:53
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+#: ../caribou/settings/caribou_settings.py:54
+msgid "Num lock"
+msgstr "Num lock"
+
+#: ../caribou/settings/caribou_settings.py:55
+msgid "Switch button"
+msgstr "Switch button"
+
+#: ../caribou/settings/caribou_settings.py:58
+msgid "Mouse button to use in the scanning mode"
+msgstr "Mouse button to use in the scanning mode"
+
+#: ../caribou/settings/caribou_settings.py:60
+msgid "Button 1"
+msgstr "Button 1"
+
+#: ../caribou/settings/caribou_settings.py:61
+msgid "Button 2"
+msgstr "Button 2"
+
+#: ../caribou/settings/caribou_settings.py:62
+msgid "Button 3"
+msgstr "Button 3"
+
+#: ../caribou/__init__.py:2
+msgid "Caribou"
+msgstr "Caribou"
+
+#: ../caribou/daemon/main.py:31
+#, python-format
+msgid "Error starting %s"
+msgstr "Error starting %s"
+
+#: ../caribou/daemon/main.py:42
+#, python-format
+msgid ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
+msgstr ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
+
+#: ../caribou/daemon/main.py:56
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
+msgstr "Accessibility has been enabled. Log out and back in again to use %s."
+
+#: ../caribou/daemon/main.py:153
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "WARNING - Caribou: unhandled editable widget:"
+
+#: ../caribou/antler/antler_settings.py:5
+msgid "Antler Preferences"
+msgstr "Antler Preferences"
+
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler"
+msgstr "Antler"
+
+#: ../caribou/antler/antler_settings.py:7
+msgid "Appearance"
+msgstr "Appearance"
+
+#: ../caribou/antler/antler_settings.py:9
+msgid "Keyboard Type"
+msgstr "Keyboard Type"
+
+#: ../caribou/antler/antler_settings.py:10
+msgid "The keyboard geometry Caribou should use"
+msgstr "The keyboard geometry Caribou should use"
+
+#: ../caribou/antler/antler_settings.py:11
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a full scale keyboard."
+
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
+msgid "Touch"
+msgstr "Touch"
+
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
+msgid "Full scale"
+msgstr "Full scale"
+
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
+msgid "Scan"
+msgstr "Scan"
+
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
+msgid "Use System Theme"
+msgstr "Use System Theme"
+
+#: ../caribou/antler/antler_settings.py:23
+msgid "Minimum Alpha"
+msgstr "Minimum Alpha"
+
+#: ../caribou/antler/antler_settings.py:24
+msgid "Minimal opacity of keyboard"
+msgstr "Minimal opacity of keyboard"
+
+#: ../caribou/antler/antler_settings.py:26
+msgid "Maximum Alpha"
+msgstr "Maximum Alpha"
+
+#: ../caribou/antler/antler_settings.py:27
+msgid "Maximal opacity of keyboard"
+msgstr "Maximal opacity of keyboard"
+
+#: ../caribou/antler/antler_settings.py:29
+msgid "Maximum Distance"
+msgstr "Maximum Distance"
+
+#: ../caribou/antler/antler_settings.py:30
+msgid "Maximum distance when keyboard is hidden"
+msgstr "Maximum distance when keyboard is hidden"
+
+#~ msgid "Colors"
+#~ msgstr "Colours"
+
+#~ msgid "Key _size:"
+#~ msgstr "Key _size:"
+
+#~ msgid "Key s_pacing:"
+#~ msgstr "Key s_pacing:"
+
+#~ msgid "Keys"
+#~ msgstr "Keys"
+
+#~ msgid "Normal state:"
+#~ msgstr "Normal state:"
+
+#~ msgid "_Test settings here:"
+#~ msgstr "_Test settings here:"
