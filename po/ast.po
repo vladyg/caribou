@@ -2,16 +2,16 @@
 # Copyright (C) 2010 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
 # varela <ivarela@softastur.org>, 2010.
-# Xandru Armesto <xandru@softastur.org>, 2010.
+# Xandru Armesto <xandru@softastur.org>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&component=default\n"
-"POT-Creation-Date: 2010-09-19 11:25+0000\n"
-"PO-Revision-Date: 2010-09-23 19:06+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribo"
+"u&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2011-09-07 14:06+0000\n"
+"PO-Revision-Date: 2011-09-07 17:31+0200\n"
 "Last-Translator: Xandru Armesto <xandru@softastur.org>\n"
-"Language-Team: Softastur alministradores@softastur.org\n"
+"Language-Team: Softastur <alministradores@softastur.org>\n"
 "Language: ast\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,52 +19,354 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Virtaal 0.5.2\n"
 
-#: ../caribou/ui/main.py:134
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "AVISU - Caribou: widget editable nun remanáu:"
-
-#: ../data/caribou-prefs.ui.h:1
+#: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
 msgstr "Preferencies de Caribou"
 
-#: ../data/caribou-prefs.ui.h:2
-msgid "Colors"
-msgstr "Colores"
+#: ../caribou/settings/caribou_settings.py:6
+msgid "Scanning"
+msgstr "Escaneando"
 
-#: ../data/caribou-prefs.ui.h:3
+#: ../caribou/settings/caribou_settings.py:8
+msgid "Enable scanning"
+msgstr "Activar análisis"
+
+#: ../caribou/settings/caribou_settings.py:9
+msgid "Enable switch scanning"
+msgstr "Activar cambéu d'análisis"
+
+#: ../caribou/settings/caribou_settings.py:12
 msgid "General"
 msgstr "Xeneral"
 
-#: ../data/caribou-prefs.ui.h:4
-msgid "Key font:"
-msgstr "Fonte de la tecla:"
+#: ../caribou/settings/caribou_settings.py:13
+msgid "Scanning mode"
+msgstr "Mou d'análisis"
 
-#: ../data/caribou-prefs.ui.h:5
-msgid "Keyboard _layout:"
-msgstr "Distribución del tec_láu:"
+#: ../caribou/settings/caribou_settings.py:15
+msgid "Scanning type, subgroups, rows or linear"
+msgstr "Tipu d'análisis, subgrupos, fileres o llinial"
 
-#: ../data/caribou-prefs.ui.h:6
-msgid "Keys"
-msgstr "Tecles"
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr "Subgrupos"
 
-#: ../data/caribou-prefs.ui.h:7
-msgid "Mouse over:"
-msgstr "Mur enriba:"
+#: ../caribou/settings/caribou_settings.py:17
+msgid "Rows"
+msgstr "Fileres"
 
-#: ../data/caribou-prefs.ui.h:8
-msgid "Normal state:"
-msgstr "Estáu normal:"
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr "Llinial"
 
-#: ../data/caribou-prefs.ui.h:9
-msgid "Use Defaults"
-msgstr "Usar Predeterminaos"
+#: ../caribou/settings/caribou_settings.py:20
+msgid "Step time"
+msgstr "Tiempu del pasu"
 
-#: ../data/caribou-prefs.ui.h:10
-msgid "_Test settings here:"
-msgstr "_Probar los axustes equí:"
+#: ../caribou/settings/caribou_settings.py:21
+msgid "Time between key transitions"
+msgstr "Tiempu ente transiciones de tecles"
+
+#: ../caribou/settings/caribou_settings.py:24
+msgid "Inverse scanning"
+msgstr "Análisis inversu"
+
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
+msgstr "Pasu col interruptor, activáu con una pulsación al posase"
+
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr "Autoreaniciar análisis"
+
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr "Autoreaniciar l'análisis dempués de l'activación d'elementos"
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr "Ciclos d'análisis"
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr "Un"
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr "Dos"
+
+#: ../caribou/settings/caribou_settings.py:33
+msgid "Three"
+msgstr "Trés"
+
+#: ../caribou/settings/caribou_settings.py:34
+msgid "Four"
+msgstr "Cuatro"
+
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr "Cinco"
+
+#: ../caribou/settings/caribou_settings.py:38
+msgid "Input"
+msgstr "Entrada"
+
+#: ../caribou/settings/caribou_settings.py:39
+msgid "Switch device"
+msgstr "Cambiar preséu"
+
+#: ../caribou/settings/caribou_settings.py:41
+msgid "Switch device, keyboard or mouse"
+msgstr "Cambiar preséu, tecláu o mur"
+
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "Tecláu"
+
+#: ../caribou/settings/caribou_settings.py:44
+msgid "Mouse"
+msgstr "Mur"
+
+#: ../caribou/settings/caribou_settings.py:46
+msgid "Switch key"
+msgstr "Tecla de cambéu"
+
+#: ../caribou/settings/caribou_settings.py:48
+msgid "Key to use with scanning mode"
+msgstr "Tecla qu'usar col mou d'análisis"
+
+#: ../caribou/settings/caribou_settings.py:50
+msgid "Right shift"
+msgstr "Mayús derechu"
+
+#: ../caribou/settings/caribou_settings.py:51
+msgid "Left shift"
+msgstr "Mayús izquierdu"
+
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr "Espaciu"
+
+#: ../caribou/settings/caribou_settings.py:53
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+#: ../caribou/settings/caribou_settings.py:54
+msgid "Num lock"
+msgstr "Bloq Númb"
+
+#: ../caribou/settings/caribou_settings.py:55
+msgid "Switch button"
+msgstr "Botón de cambéu"
+
+#: ../caribou/settings/caribou_settings.py:58
+msgid "Mouse button to use in the scanning mode"
+msgstr "Botón del mur qu'usar nel mou d'análisis"
+
+#: ../caribou/settings/caribou_settings.py:60
+msgid "Button 1"
+msgstr "Botón 1"
+
+#: ../caribou/settings/caribou_settings.py:61
+msgid "Button 2"
+msgstr "Botón 2"
+
+#: ../caribou/settings/caribou_settings.py:62
+msgid "Button 3"
+msgstr "Botón 3"
+
+#: ../caribou/__init__.py:2
+msgid "Caribou"
+msgstr "Caribou"
+
+#: ../caribou/daemon/main.py:31
+#, python-format
+msgid "Error starting %s"
+msgstr "Fallu al aniciar %s"
+
+#: ../caribou/daemon/main.py:42
+#, python-format
+msgid ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
+msgstr ""
+"Pa poder usar %s, l'accesibilidá tien de tar activada. ¿Quies activala "
+"agora?"
+
+#: ../caribou/daemon/main.py:56
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
+msgstr "Acitvóse l'accesibilidá. Zarra la sesión y vuelvi a entrar pa usar %s."
+
+#: ../caribou/daemon/main.py:153
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "AVISU de Caribou: widget editable non remanáu:"
+
+#: ../caribou/antler/antler_settings.py:5
+msgid "Antler Preferences"
+msgstr "Preferencies d'Antler"
+
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler"
+msgstr "Antler"
+
+#: ../caribou/antler/antler_settings.py:7
+msgid "Appearance"
+msgstr "Aspeutu"
+
+#: ../caribou/antler/antler_settings.py:9
+msgid "Keyboard Type"
+msgstr "Tipu de tecláu"
+
+#: ../caribou/antler/antler_settings.py:10
+msgid "The keyboard geometry Caribou should use"
+msgstr "La xeometría del tecláu que Caribou tien d'usar"
+
+#: ../caribou/antler/antler_settings.py:11
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+"La xeometría del tecláu determina la forma y la complexidá del tecláu; pue "
+"dir dende un aspeutu «natural», bonu pa escribir testu cenciellu, hasta un "
+"tecláu a escala completa."
+
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
+msgid "Touch"
+msgstr "Tocar"
+
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
+msgid "Full scale"
+msgstr "Escala completa"
+
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
+msgid "Scan"
+msgstr "Escanear"
+
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
+msgid "Use System Theme"
+msgstr "Usar el tema del sistema"
+
+#: ../caribou/antler/antler_settings.py:23
+msgid "Minimum Alpha"
+msgstr "Alfa mínima"
+
+#: ../caribou/antler/antler_settings.py:24
+msgid "Minimal opacity of keyboard"
+msgstr "Opacidá del tecláu mínima"
+
+#: ../caribou/antler/antler_settings.py:26
+msgid "Maximum Alpha"
+msgstr "Alfa máxima"
+
+#: ../caribou/antler/antler_settings.py:27
+msgid "Maximal opacity of keyboard"
+msgstr "Opacidá del tecláu máxima"
+
+#: ../caribou/antler/antler_settings.py:29
+msgid "Maximum Distance"
+msgstr "Distancia máxima"
+
+#: ../caribou/antler/antler_settings.py:30
+msgid "Maximum distance when keyboard is hidden"
+msgstr "Distancia máxima cuando'l tecláu ta anubríu"
+
+#~ msgid "Block"
+#~ msgstr "Bloque"
+
+#~ msgid "Scan in reverse order"
+#~ msgstr "Analizar en modo inverso"
+
+#~ msgid "Keyboard layout"
+#~ msgstr "Distribución de teclado"
+
+#~ msgid ""
+#~ "The layout should be in the data directory of Caribou (usually /usr/share/"
+#~ "caribou/keyboards) and should be a .xml or .json file."
+#~ msgstr ""
+#~ "La distribución debe estar en el directorio de datos de Caribou "
+#~ "(generalmente /usr/share/caribou/keyboards) y debe ser un archivo .xml o ."
+#~ "json."
+
+#~ msgid "Color"
+#~ msgstr "Color"
+
+#~ msgid "Use the default theme colors"
+#~ msgstr "Usar los colores predeterminados del tema"
+
+#~ msgid "Normal state"
+#~ msgstr "Estado normal"
+
+#~ msgid "Color of the keys when there is no event on them"
+#~ msgstr "Color de las teclas cuando no existe un evento sobre ellas"
+
+#~ msgid "Mouse over"
+#~ msgstr "Ratón encima"
+
+#~ msgid "Color of the keys when the mouse goes over the key"
+#~ msgstr "Color de las teclas cuando el ratón está encima de la tecla"
+
+#~ msgid "Font and size"
+#~ msgstr "Tipografía y tamaño"
+
+#~ msgid "Use system fonts"
+#~ msgstr "Usar tipografía del sistema"
+
+#~ msgid "Use the default system font for keyboard"
+#~ msgstr "Usar la tipografía predeterminada del sistema para el teclado"
+
+#~ msgid "Key font"
+#~ msgstr "Tipografía de tecla"
+
+#~ msgid "Custom font for keyboard"
+#~ msgstr "Tipografía personalizada para el teclado"
+
+#~ msgid "Block color"
+#~ msgstr "Color de bloque"
+
+#~ msgid "Color of block scans"
+#~ msgstr "Color de los bloques de análisis"
+
+#~ msgid "Row color"
+#~ msgstr "Color de fila"
+
+#~ msgid "Color of row scans"
+#~ msgstr "Color de los análisis de filas"
+
+#~ msgid "Key color"
+#~ msgstr "Color de tecla"
+
+#~ msgid "Color of key scans"
+#~ msgstr "Color de los análisis de teclas"
+
+#~ msgid "Cancel color"
+#~ msgstr "Color de cancelar"
+
+#~ msgid "Color of cancel scan"
+#~ msgstr "Color de la cancelación del análisis"
+
+#~ msgid "Keys"
+#~ msgstr "Teclas"
+
+#~ msgid "Use Defaults"
+#~ msgstr "Usar predeterminados"
+
+#~ msgid "_Mouse switch"
+#~ msgstr "Conmutador de _ratón"
+
+#~ msgid "_Scan enabled"
+#~ msgstr "_Análisis activado"
+
+#~ msgid "_Test settings here:"
+#~ msgstr "_Probar los ajustes aquí:"
 
 #~ msgid "Key _size:"
-#~ msgstr "_Tamañu de les tecles:"
+#~ msgstr "_Tamaño de las teclas:"
 
 #~ msgid "Key s_pacing:"
-#~ msgstr "_Espaciáu de les tecles:"
+#~ msgstr "_Espaciado de las teclas:"
