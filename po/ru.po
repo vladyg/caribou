@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-07-18 17:10+0000\n"
-"PO-Revision-Date: 2011-07-29 21:31+0300\n"
+"POT-Creation-Date: 2011-09-03 21:06+0000\n"
+"PO-Revision-Date: 2011-09-08 09:57+0300\n"
 "Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,6 @@ msgid "Scanning mode"
 msgstr "Режим сканирования"
 
 #: ../caribou/settings/caribou_settings.py:15
-#| msgid "Scanning type, block or row"
 msgid "Scanning type, subgroups, rows or linear"
 msgstr "Тип сканирования: подгруппы, строки или линейный"
 
@@ -51,7 +50,6 @@ msgid "Subgroups"
 msgstr "Подгруппы"
 
 #: ../caribou/settings/caribou_settings.py:17
-#| msgid "Row"
 msgid "Rows"
 msgstr "Строки"
 
@@ -68,7 +66,6 @@ msgid "Time between key transitions"
 msgstr "Время переключения между клавишами"
 
 #: ../caribou/settings/caribou_settings.py:24
-#| msgid "Reverse scanning"
 msgid "Inverse scanning"
 msgstr "Обратное сканирование"
 
@@ -216,52 +213,59 @@ msgid "Keyboard Type"
 msgstr "Тип клавиатуры"
 
 #: ../caribou/antler/antler_settings.py:10
-msgid "The keyboard geometery Caribou should use"
-msgstr "Геометрия клавиатуры для Caribou"
+#| msgid "The keyboard geometery Caribou should use"
+msgid "The keyboard geometry Caribou should use"
+msgstr "Используемая геометрия клавиатуры"
 
 #: ../caribou/antler/antler_settings.py:11
-msgid "The keyboard geometery determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
+#| msgid ""
+#| "The keyboard geometery determines the shape and complexity of the "
+#| "keyboard, it could range from a 'natural' look and feel good for "
+#| "composing simple text, to a fullscale keyboard."
+msgid "The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
 msgstr "Геометрия клавиатуры определяет вид и полноту клавиатуры, она может изменяться с обычного вида, который хорошо подходит для ввода простого текста, до полноразмерной клавиатуры."
 
-#: ../caribou/antler/antler_settings.py:15
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
 msgid "Touch"
 msgstr "Касание"
 
-#: ../caribou/antler/antler_settings.py:16
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
 msgid "Full scale"
 msgstr "Полный масштаб"
 
-#: ../caribou/antler/antler_settings.py:17
-#| msgid "Scanning"
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
 msgid "Scan"
 msgstr "Сканировать"
 
-#: ../caribou/antler/antler_settings.py:18
-#: ../caribou/antler/antler_settings.py:19
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
 msgstr "Использовать системную тему"
 
-#: ../caribou/antler/antler_settings.py:20
+#: ../caribou/antler/antler_settings.py:23
 msgid "Minimum Alpha"
 msgstr "Минимальная прозрачность"
 
-#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
 msgstr "Минимальная прозрачность клавиатуры"
 
-#: ../caribou/antler/antler_settings.py:23
+#: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
 msgstr "Максимальная прозрачность"
 
-#: ../caribou/antler/antler_settings.py:24
+#: ../caribou/antler/antler_settings.py:27
 msgid "Maximal opacity of keyboard"
 msgstr "Максимальная прозрачность клавиатуры"
 
-#: ../caribou/antler/antler_settings.py:26
+#: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
 msgstr "Максимальное расстояние"
 
-#: ../caribou/antler/antler_settings.py:27
+#: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Максимальное расстояние при скрытой клавиатуре"
 
