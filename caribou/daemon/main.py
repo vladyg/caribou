@@ -1,6 +1,8 @@
 import pyatspi
 import dbus
 from gi.repository import Gio
+from gi.repository import GdkX11
+
 from string import Template
 
 from caribou.i18n import _
@@ -20,6 +22,7 @@ class CaribouDaemon:
             self._show_error_dialog(e.message)
         self.keyboard_proxy = dbus.Interface(dbus_obj, "org.gnome.Caribou.Keyboard")
         self._current_acc = None
+        self._x11_display = GdkX11.X11Display.get_default()
         self._register_event_listeners()
 
     def _show_error_dialog(self, message):
@@ -113,7 +116,7 @@ class CaribouDaemon:
     def _set_entry_location(self, acc):
         text = acc.queryText()
         bx, by, bw, bh = text.getCharacterExtents(text.caretOffset,
-                                                        pyatspi.DESKTOP_COORDS)
+                                                  pyatspi.DESKTOP_COORDS)
 
         component = acc.queryComponent()
         entry_bb = component.getExtents(pyatspi.DESKTOP_COORDS)
@@ -126,7 +129,7 @@ class CaribouDaemon:
         self.keyboard_proxy.SetEntryLocation(entry_bb.x, entry_bb.y,
                                              entry_bb.width, entry_bb.height)
 
-        self.keyboard_proxy.Show()
+        self.keyboard_proxy.Show(self._x11_display.get_user_time())
 
     def on_focus(self, event):
         acc = event.source
@@ -144,7 +147,7 @@ class CaribouDaemon:
                     if debug == True:
                         print "enter text widget in", event.host_application.name
                 elif event.detail1 == 0 and acc == self._current_acc:
-                    self.keyboard_proxy.Hide()
+                    self.keyboard_proxy.Hide(self._x11_display.get_user_time())
                     self._current_acc = None
                     if debug == True:
                         print "leave text widget in", event.host_application.name
@@ -154,7 +157,7 @@ class CaribouDaemon:
                         event.source
 
     def clean_exit(self):
-        self.keyboard_proxy.Hide()
+        self.keyboard_proxy.Hide(self._x11_display.get_user_time())
         self._deregister_event_listeners()
 
     def run(self):
