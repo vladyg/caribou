@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: caribou.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-03 21:06+0000\n"
+"POT-Creation-Date: 2011-09-04 09:41+0000\n"
 "PO-Revision-Date: 2011-09-04 10:21+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
@@ -221,15 +221,10 @@ msgid "Keyboard Type"
 msgstr "Tipo de teclado"
 
 #: ../caribou/antler/antler_settings.py:10
-#| msgid "The keyboard geometery Caribou should use"
 msgid "The keyboard geometry Caribou should use"
 msgstr "La geometría del teclado que Caribou debe usar"
 
 #: ../caribou/antler/antler_settings.py:11
-#| msgid ""
-#| "The keyboard geometery determines the shape and complexity of the "
-#| "keyboard, it could range from a 'natural' look and feel good for "
-#| "composing simple text, to a fullscale keyboard."
 msgid ""
 "The keyboard geometry determines the shape and complexity of the keyboard, "
 "it could range from a 'natural' look and feel good for composing simple "
@@ -322,7 +317,7 @@ msgstr "Distancia máxima cuando el teclado está oculto"
 #~ msgstr "Tipografía y tamaño"
 
 #~ msgid "Use system fonts"
-#~ msgstr "Usar tipografía del sistema"
+#~ msgstr "Usar tipografía del sistema"
 
 #~ msgid "Use the default system font for keyboard"
 #~ msgstr "Usar la tipografía predeterminada del sistema para el teclado"
