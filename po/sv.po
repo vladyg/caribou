@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-01 15:49+0200\n"
-"PO-Revision-Date: 2011-09-01 15:50+0100\n"
+"POT-Creation-Date: 2011-09-12 20:35+0200\n"
+"PO-Revision-Date: 2011-09-12 20:39+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -41,9 +41,8 @@ msgid "Scanning mode"
 msgstr "Avsökningsläge"
 
 #: ../caribou/settings/caribou_settings.py:15
-#, fuzzy
 msgid "Scanning type, subgroups, rows or linear"
-msgstr "Avsökningsläge, block eller rad"
+msgstr "Avsökningstyp, undergrupper, rader eller linjär"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -71,19 +70,19 @@ msgstr "Omvänd avsökning"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "Stega med brytaren, aktivera med uppehållsklick"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
-msgstr ""
+msgstr "Starta automatiskt om avsökning"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr ""
+msgstr "Automatisk omstart av avsökning efter objektaktivering"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
-msgstr ""
+msgstr "Avsökningscykler"
 
 #: ../caribou/settings/caribou_settings.py:31
 msgid "One"
@@ -177,22 +176,22 @@ msgstr "Knapp 3"
 msgid "Caribou"
 msgstr "Caribou"
 
-#: ../caribou/daemon/main.py:31
+#: ../caribou/daemon/main.py:34
 #, python-format
 msgid "Error starting %s"
 msgstr "Fel vid start av %s"
 
-#: ../caribou/daemon/main.py:42
+#: ../caribou/daemon/main.py:45
 #, python-format
 msgid "In order to use %s, accessibility needs to be enabled. Do you want to enable it now?"
-msgstr ""
+msgstr "För att kunna använda %s så måste hjälpmedelsfunktioner aktiveras. Vill du aktivera dem nu?"
 
-#: ../caribou/daemon/main.py:56
+#: ../caribou/daemon/main.py:59
 #, python-format
 msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
+msgstr "Hjälpmedelsfunktion har aktiverats. Logga ut och sedan in igen för att använda %s."
 
-#: ../caribou/daemon/main.py:153
+#: ../caribou/daemon/main.py:156
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "VARNING - Caribou: ohanterad redigerbar widget:"
 
@@ -213,55 +212,56 @@ msgid "Keyboard Type"
 msgstr "Tangentbordstyp"
 
 #: ../caribou/antler/antler_settings.py:10
-#, fuzzy
-msgid "The keyboard geometery Caribou should use"
-msgstr "Layouten som Caribou ska använda."
+msgid "The keyboard geometry Caribou should use"
+msgstr "Tangentbordets geometri som Caribou ska använda"
 
 #: ../caribou/antler/antler_settings.py:11
-msgid "The keyboard geometery determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
-msgstr ""
+msgid "The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
+msgstr "Tangentbordets geometri bestämmer form och komplexitet för tangentbordet. Det kan sträcka sig från ett \"naturligt\" utseende och känns bra för att skriva enkel text, ända till ett fullskaligt tangentbord."
 
-#: ../caribou/antler/antler_settings.py:15
-msgid "Touch"
-msgstr ""
-
+#. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
-msgid "Full scale"
-msgstr ""
+msgid "Touch"
+msgstr "Tryck"
 
-#: ../caribou/antler/antler_settings.py:17
-#, fuzzy
-msgid "Scan"
-msgstr "Avsökning"
-
+#. Translators: Keyboard type (conventional keyboard)
 #: ../caribou/antler/antler_settings.py:18
-#: ../caribou/antler/antler_settings.py:19
+msgid "Full scale"
+msgstr "Fullskala"
+
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
+msgid "Scan"
+msgstr "Sök av"
+
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
 msgstr "Använd systemtema"
 
-#: ../caribou/antler/antler_settings.py:20
-msgid "Minimum Alpha"
-msgstr ""
-
-#: ../caribou/antler/antler_settings.py:21
-msgid "Minimal opacity of keyboard"
-msgstr ""
-
 #: ../caribou/antler/antler_settings.py:23
-msgid "Maximum Alpha"
-msgstr ""
+msgid "Minimum Alpha"
+msgstr "Minimal alfa"
 
 #: ../caribou/antler/antler_settings.py:24
-msgid "Maximal opacity of keyboard"
-msgstr ""
+msgid "Minimal opacity of keyboard"
+msgstr "Minimal opacitet för tangentbord"
 
 #: ../caribou/antler/antler_settings.py:26
-msgid "Maximum Distance"
-msgstr ""
+msgid "Maximum Alpha"
+msgstr "Maximal alfa"
 
 #: ../caribou/antler/antler_settings.py:27
+msgid "Maximal opacity of keyboard"
+msgstr "Maximal opacitet för tangentbord"
+
+#: ../caribou/antler/antler_settings.py:29
+msgid "Maximum Distance"
+msgstr "Maximalt avstånd"
+
+#: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
-msgstr ""
+msgstr "Maximalt avstånd när tangentbordet är dolt"
 
 #~ msgid "Keyboard layout"
 #~ msgstr "Tangentbordslayout"
