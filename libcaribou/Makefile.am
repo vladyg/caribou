@@ -63,7 +63,7 @@ Caribou-1.0.gir: _Caribou-1.0.gir
 	$(top_srcdir)/tools/fix_gir.py $< > $@
 
 Caribou-1.0.typelib: Caribou-1.0.gir
-	@INTROSPECTION_COMPILER@ --shared-library=libcaribou -o $@ $^
+	@INTROSPECTION_COMPILER@ --shared-library=libcaribou.so.0 -o $@ $^
 
 Caribou-1.0.gir caribou-internals-1.0.vapi caribou-1.0.vapi: libcaribou.la
 
