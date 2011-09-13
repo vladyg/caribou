@@ -1,22 +1,23 @@
 # Chinese (China) translation for caribou.
 # Copyright (C) 2010 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
-# YunQiang Su <wzssyqa@gmail.com>, 2010.
 # Dark Raven <drdarkraven@gmail.com>, 2010.
 # lainme <lainme993@gmail.com>, 2011
+# YunQiang Su <wzssyqa@gmail.com>, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-07-18 17:10+0000\n"
-"PO-Revision-Date: 2011-05-16 20:42+0800\n"
-"Last-Translator: Yinghua Wang <wantinghard@gmail.com>\n"
-"Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
+"POT-Creation-Date: 2011-09-10 21:03+0000\n"
+"PO-Revision-Date: 2011-09-13 12:11+0800\n"
+"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
+"Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -43,24 +44,20 @@ msgid "Scanning mode"
 msgstr "扫描模式"
 
 #: ../caribou/settings/caribou_settings.py:15
-#, fuzzy
-#| msgid "Scanning type, block or row"
 msgid "Scanning type, subgroups, rows or linear"
-msgstr "扫描类型，区块或行"
+msgstr "扫描类型，按子组、按行或线性"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
-msgstr ""
+msgstr "子组"
 
 #: ../caribou/settings/caribou_settings.py:17
-#, fuzzy
-#| msgid "Row"
 msgid "Rows"
 msgstr "行"
 
 #: ../caribou/settings/caribou_settings.py:18
 msgid "Linear"
-msgstr ""
+msgstr "线性"
 
 #: ../caribou/settings/caribou_settings.py:20
 msgid "Step time"
@@ -68,49 +65,48 @@ msgstr "步进时间"
 
 #: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
-msgstr "键转换之间的时间"
+msgstr "键切换的间隔时间"
 
 #: ../caribou/settings/caribou_settings.py:24
-#, fuzzy
-#| msgid "Reverse scanning"
 msgid "Inverse scanning"
 msgstr "逆序扫描"
 
 #: ../caribou/settings/caribou_settings.py:25
+#, fuzzy
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "用切换键步进，按住激活"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
-msgstr ""
+msgstr "自动重启扫描"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr ""
+msgstr "在某项激活后自动重启扫描"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
-msgstr ""
+msgstr "扫描遍数"
 
 #: ../caribou/settings/caribou_settings.py:31
 msgid "One"
-msgstr ""
+msgstr "一"
 
 #: ../caribou/settings/caribou_settings.py:32
 msgid "Two"
-msgstr ""
+msgstr "二"
 
 #: ../caribou/settings/caribou_settings.py:33
 msgid "Three"
-msgstr ""
+msgstr "三"
 
 #: ../caribou/settings/caribou_settings.py:34
 msgid "Four"
-msgstr ""
+msgstr "四"
 
 #: ../caribou/settings/caribou_settings.py:35
 msgid "Five"
-msgstr ""
+msgstr "五"
 
 #: ../caribou/settings/caribou_settings.py:38
 msgid "Input"
@@ -150,7 +146,7 @@ msgstr "左 shift"
 
 #: ../caribou/settings/caribou_settings.py:52
 msgid "Space"
-msgstr ""
+msgstr "空格"
 
 #: ../caribou/settings/caribou_settings.py:53
 msgid "Alt Gr"
@@ -162,7 +158,7 @@ msgstr "Num Lock"
 
 #: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
-msgstr "切换按键"
+msgstr "切换按钮"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
@@ -184,24 +180,24 @@ msgstr "按钮 3"
 msgid "Caribou"
 msgstr "Caribou"
 
-#: ../caribou/daemon/main.py:31
+#: ../caribou/daemon/main.py:34
 #, python-format
 msgid "Error starting %s"
 msgstr "启动 %s 出错"
 
-#: ../caribou/daemon/main.py:42
+#: ../caribou/daemon/main.py:45
 #, python-format
 msgid ""
 "In order to use %s, accessibility needs to be enabled. Do you want to enable "
 "it now?"
 msgstr "要使用 %s，必须先启动辅助功能。您想现在启用辅助功能吗？"
 
-#: ../caribou/daemon/main.py:56
+#: ../caribou/daemon/main.py:59
 #, python-format
 msgid "Accessibility has been enabled. Log out and back in again to use %s."
 msgstr "辅助功能已禁用。注销并重新登录以使用 %s。"
 
-#: ../caribou/daemon/main.py:153
+#: ../caribou/daemon/main.py:156
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "警告 - Caribou：未处理的可编辑控件："
 
@@ -222,58 +218,66 @@ msgid "Keyboard Type"
 msgstr "键盘类型"
 
 #: ../caribou/antler/antler_settings.py:10
-msgid "The keyboard geometery Caribou should use"
+#, fuzzy
+#| msgid "The keyboard geometery Caribou should use"
+msgid "The keyboard geometry Caribou should use"
 msgstr "Caribou 应使用的键盘几何属性"
 
 #: ../caribou/antler/antler_settings.py:11
+#, fuzzy
+#| msgid ""
+#| "The keyboard geometery determines the shape and complexity of the "
+#| "keyboard, it could range from a 'natural' look and feel good for "
+#| "composing simple text, to a fullscale keyboard."
 msgid ""
-"The keyboard geometery determines the shape and complexity of the keyboard, "
+"The keyboard geometry determines the shape and complexity of the keyboard, "
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
 "键盘的几何属性决定了键盘的形状和复杂程度，从适合编辑简单文本的“自然”形状到全"
 "尺寸键盘。"
 
-#: ../caribou/antler/antler_settings.py:15
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
 msgid "Touch"
 msgstr "触摸"
 
-#: ../caribou/antler/antler_settings.py:16
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
 msgid "Full scale"
-msgstr ""
+msgstr "全尺寸"
 
-#: ../caribou/antler/antler_settings.py:17
-#, fuzzy
-#| msgid "Scanning"
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
 msgid "Scan"
 msgstr "扫描"
 
-#: ../caribou/antler/antler_settings.py:18
-#: ../caribou/antler/antler_settings.py:19
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
 msgstr "使用系统主题"
 
-#: ../caribou/antler/antler_settings.py:20
+#: ../caribou/antler/antler_settings.py:23
 msgid "Minimum Alpha"
 msgstr "最小透明度"
 
-#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
 msgstr "键盘的最小透明度"
 
-#: ../caribou/antler/antler_settings.py:23
+#: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
 msgstr "最大透明度"
 
-#: ../caribou/antler/antler_settings.py:24
+#: ../caribou/antler/antler_settings.py:27
 msgid "Maximal opacity of keyboard"
 msgstr "键盘的最大透明度"
 
-#: ../caribou/antler/antler_settings.py:26
+#: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
 msgstr "最大距离"
 
-#: ../caribou/antler/antler_settings.py:27
+#: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "隐藏键盘的最大距离"
 
