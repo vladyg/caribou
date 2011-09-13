@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-01 21:25+0530\n"
-"PO-Revision-Date: 2011-09-02 16:38+0530\n"
+"POT-Creation-Date: 2011-09-13 19:30+0530\n"
+"PO-Revision-Date: 2011-09-13 19:32+0530\n"
 "Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
 "Language-Team: Tamil <ubuntu-tam@lists.ubuntu.com>\n"
 "Language: ta\n"
@@ -177,25 +177,24 @@ msgstr "பொத்தான் 3"
 msgid "Caribou"
 msgstr "காரிபௌ"
 
-#: ../caribou/daemon/main.py:31
+#: ../caribou/daemon/main.py:34
 #, python-format
 msgid "Error starting %s"
 msgstr "%s ஐ துவக்குவதில் பிழை"
 
-#: ../caribou/daemon/main.py:42
+#: ../caribou/daemon/main.py:45
 #, python-format
 msgid ""
 "In order to use %s, accessibility needs to be enabled. Do you want to enable "
 "it now?"
 msgstr "%s ஐ பயன்படுத்த அணுகலை செயலாக்க வேண்டும். இப்போது செயலாக்கலாமா?"
 
-#: ../caribou/daemon/main.py:56
+#: ../caribou/daemon/main.py:59
 #, python-format
 msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"அணுகல் செயலாக்கப்பட்டது. வெளியேறி மீண்டும் உள்நுழைந்து %s ஐ பயன்படுத்தலாம்."
+msgstr "அணுகல் செயலாக்கப்பட்டது. வெளியேறி மீண்டும் உள்நுழைந்து %s ஐ பயன்படுத்தலாம்."
 
-#: ../caribou/daemon/main.py:153
+#: ../caribou/daemon/main.py:156
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "எச்சரிக்கை: கரிபோ: கையாளாத திருத்தக்கூடிய விட்செட்:"
 
@@ -216,57 +215,60 @@ msgid "Keyboard Type"
 msgstr "விசைப்பலகை வகை:"
 
 #: ../caribou/antler/antler_settings.py:10
-msgid "The keyboard geometery Caribou should use"
-msgstr "கரிபோ பயன்படுத்த வேன்டிய விசைப்பலகை இட அமைவு"
+msgid "The keyboard geometry Caribou should use"
+msgstr "கரிபோ பயன்படுத்த வேண்டிய விசைப்பலகை இட அமைவு"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
-"The keyboard geometery determines the shape and complexity of the keyboard, "
+"The keyboard geometry determines the shape and complexity of the keyboard, "
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
 "விசைப்பலகை இட அமைவு அதன் வடிவையும் சிக்கலையும் தீர்மானிக்கிறது. இது எளிய உரை "
-"தயாரிப்புக்கு ஒரு இயற்கையான திருப்தி அளிக்கும் காட்சியிலிருந்து முழு அளவு "
-"விசைப்பலகை வரை இருக்கலாம்."
+"தயாரிப்புக்கு ஒரு இயற்கையான திருப்தி அளிக்கும் காட்சியிலிருந்து முழு அளவு விசைப்பலகை "
+"வரை இருக்கலாம்."
 
-#: ../caribou/antler/antler_settings.py:15
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
 msgid "Touch"
 msgstr "தொடுதல்"
 
-#: ../caribou/antler/antler_settings.py:16
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
 msgid "Full scale"
 msgstr "முழு அளவு"
 
-#: ../caribou/antler/antler_settings.py:17
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
 msgid "Scan"
 msgstr "வருடு"
 
-#: ../caribou/antler/antler_settings.py:18
-#: ../caribou/antler/antler_settings.py:19
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
 msgstr "கணினி கருத்துக்களை பயன்படுத்து"
 
-#: ../caribou/antler/antler_settings.py:20
+#: ../caribou/antler/antler_settings.py:23
 msgid "Minimum Alpha"
 msgstr "குறைந்த பட்ச ஆல்பா"
 
-#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
 msgstr "குறைந்த பட்ச  விசைப்பலகை ஒளி ஊடுருவல்"
 
-#: ../caribou/antler/antler_settings.py:23
+#: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
 msgstr "அதிகபட்ச ஆல்பா"
 
-#: ../caribou/antler/antler_settings.py:24
+#: ../caribou/antler/antler_settings.py:27
 msgid "Maximal opacity of keyboard"
 msgstr "அதிகபட்ச  விசைப்பலகை ஒளி ஊடுருவல்"
 
-#: ../caribou/antler/antler_settings.py:26
+#: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
 msgstr "அதிகபட்ச தூரம்"
 
-#: ../caribou/antler/antler_settings.py:27
+#: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "விசைப்பலகை மறைக்கப்பட்ட போது அதிகபட்ச தூரம்"
 
