@@ -1,14 +1,14 @@
 # Bulgarian translation of caribou po-file.
-# Copyright (C) 2010 Free Software Foundation, Inc.
+# Copyright (C) 2010, 2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the caribou package.
-# Ivaylo Valkov <ivaylo@e-valkov.org>, 2010.
+# Ivaylo Valkov <ivaylo@e-valkov.org>, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-26 16:20+0300\n"
-"PO-Revision-Date: 2010-09-07 10:01+0300\n"
+"POT-Creation-Date: 2011-09-14 06:33+0300\n"
+"PO-Revision-Date: 2011-09-12 17:44+0300\n"
 "Last-Translator: Ivaylo Valkov <ivaylo@e-valkov.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -16,46 +16,261 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../caribou/ui/main.py:134
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "ПРЕДУПРЕЖДЕНИЕ на Caribou: Необработен редактируем елемент:"
-
-#: ../data/caribou-prefs.ui.h:1
+#: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
 msgstr "Настройки на Caribou"
 
-#: ../data/caribou-prefs.ui.h:2
-msgid "Colors"
-msgstr "Цветове"
+#: ../caribou/settings/caribou_settings.py:6
+msgid "Scanning"
+msgstr "Сканиране"
 
-#: ../data/caribou-prefs.ui.h:3
+#: ../caribou/settings/caribou_settings.py:8
+msgid "Enable scanning"
+msgstr "Включване на сканирането"
+
+#: ../caribou/settings/caribou_settings.py:9
+msgid "Enable switch scanning"
+msgstr "Включване на сканирането за устройства тип превключвател"
+
+#: ../caribou/settings/caribou_settings.py:12
 msgid "General"
 msgstr "Общи"
 
-#: ../data/caribou-prefs.ui.h:4
-msgid "Key font:"
-msgstr "Шрифт за клавишите:"
+#: ../caribou/settings/caribou_settings.py:13
+msgid "Scanning mode"
+msgstr "Режим на сканиране"
 
-#: ../data/caribou-prefs.ui.h:5
-msgid "Keyboard _layout:"
-msgstr "_Подредба на клавиатурата:"
+#: ../caribou/settings/caribou_settings.py:15
+msgid "Scanning type, subgroups, rows or linear"
+msgstr "Вид на сканиране, подгрупи, редове или линейно "
 
-#: ../data/caribou-prefs.ui.h:6
-msgid "Keys"
-msgstr "Клавиши"
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr "Подгрупи"
 
-#: ../data/caribou-prefs.ui.h:7
-msgid "Mouse over:"
-msgstr "При позициониране на показалеца на мишката върху клавиша:"
+#: ../caribou/settings/caribou_settings.py:17
+msgid "Rows"
+msgstr "Редове"
 
-#: ../data/caribou-prefs.ui.h:8
-msgid "Normal state:"
-msgstr "Нормално състояние:"
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr "Линейно"
 
-#: ../data/caribou-prefs.ui.h:9
-msgid "Use Defaults"
-msgstr "Използване на стандартните настройки"
+#: ../caribou/settings/caribou_settings.py:20
+msgid "Step time"
+msgstr "Време на стъпката"
 
-#: ../data/caribou-prefs.ui.h:10
-msgid "_Test settings here:"
-msgstr "_Изпробване настройките:"
+#: ../caribou/settings/caribou_settings.py:21
+msgid "Time between key transitions"
+msgstr "Време за изчакване преди смяна на клавишите"
+
+#: ../caribou/settings/caribou_settings.py:24
+msgid "Inverse scanning"
+msgstr "Обратно сканиране"
+
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
+msgstr "Стъпка с устройство тип превключвател. Задействайте чрез задържане"
+
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr "Автоматично рестартиране на сканирането"
+
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr "Автоматично рестартиране на сканирането след задействане на обект"
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr "Брой цикли за сканиране"
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr "Един"
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr "Два"
+
+#: ../caribou/settings/caribou_settings.py:33
+msgid "Three"
+msgstr "Три"
+
+#: ../caribou/settings/caribou_settings.py:34
+msgid "Four"
+msgstr "Четири"
+
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr "Пет"
+
+#: ../caribou/settings/caribou_settings.py:38
+msgid "Input"
+msgstr "Вход"
+
+#: ../caribou/settings/caribou_settings.py:39
+msgid "Switch device"
+msgstr "Устройство тип превключвател"
+
+#: ../caribou/settings/caribou_settings.py:41
+msgid "Switch device, keyboard or mouse"
+msgstr "Устройство тип превключвател, клавиатура или мишка"
+
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "Клавиатура"
+
+#: ../caribou/settings/caribou_settings.py:44
+msgid "Mouse"
+msgstr "Мишка"
+
+#: ../caribou/settings/caribou_settings.py:46
+msgid "Switch key"
+msgstr "Клавиш за превключване"
+
+#: ../caribou/settings/caribou_settings.py:48
+msgid "Key to use with scanning mode"
+msgstr "Клавиш, който да се използва с режима на сканиране"
+
+#: ../caribou/settings/caribou_settings.py:50
+msgid "Right shift"
+msgstr "Десен Shift"
+
+#: ../caribou/settings/caribou_settings.py:51
+msgid "Left shift"
+msgstr "Ляв Shift"
+
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr "Интервал"
+
+#: ../caribou/settings/caribou_settings.py:53
+msgid "Alt Gr"
+msgstr "Група Alt"
+
+#: ../caribou/settings/caribou_settings.py:54
+msgid "Num lock"
+msgstr "Num lock"
+
+#: ../caribou/settings/caribou_settings.py:55
+msgid "Switch button"
+msgstr "Бутон за превключване"
+
+#: ../caribou/settings/caribou_settings.py:58
+msgid "Mouse button to use in the scanning mode"
+msgstr "Бутон на мишката, който да се използва в режима на сканиране"
+
+#: ../caribou/settings/caribou_settings.py:60
+msgid "Button 1"
+msgstr "Бутон 1"
+
+#: ../caribou/settings/caribou_settings.py:61
+msgid "Button 2"
+msgstr "Бутон 2"
+
+#: ../caribou/settings/caribou_settings.py:62
+msgid "Button 3"
+msgstr "Бутон 3"
+
+#: ../caribou/__init__.py:2
+msgid "Caribou"
+msgstr "Екранна клавиатура (Caribou)"
+
+#: ../caribou/daemon/main.py:34
+#, python-format
+msgid "Error starting %s"
+msgstr "Неуспех при стартиране на „%s“"
+
+#: ../caribou/daemon/main.py:45
+#, python-format
+msgid ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
+msgstr ""
+"Достъпността трябва да е включена, за да използвате „%s. Желаете ли да бъде "
+"включена в момента?“"
+
+#: ../caribou/daemon/main.py:59
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
+msgstr ""
+"Достъпността е включена. Излезте от системата и влезте отново, за да "
+"използвате „%s“."
+
+#: ../caribou/daemon/main.py:156
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "ПРЕДУПРЕЖДЕНИЕ на Caribou: Необработен редактируем елемент:"
+
+#: ../caribou/antler/antler_settings.py:5
+msgid "Antler Preferences"
+msgstr "Настройки на Antler"
+
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler"
+msgstr "Antler"
+
+#: ../caribou/antler/antler_settings.py:7
+msgid "Appearance"
+msgstr "Външен вид"
+
+#: ../caribou/antler/antler_settings.py:9
+msgid "Keyboard Type"
+msgstr "Вид на клавиатурата"
+
+#: ../caribou/antler/antler_settings.py:10
+msgid "The keyboard geometry Caribou should use"
+msgstr "Геометрията на клавиатурата, която да се използва от Caribou"
+
+#: ../caribou/antler/antler_settings.py:11
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+"Геометрията на клавиатурата определя формата и сложността на клавиатурата. "
+"Двете крайности са опростена клавиатура, за въвеждане на кратък текст и "
+"клавиатура с пълен набор клавиши."
+
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
+msgid "Touch"
+msgstr "Сензорна"
+
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
+msgid "Full scale"
+msgstr "Пълен набор клавиши"
+
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
+msgid "Scan"
+msgstr "Сканираща"
+
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
+msgid "Use System Theme"
+msgstr "Използване на стандартната тема"
+
+#: ../caribou/antler/antler_settings.py:23
+msgid "Minimum Alpha"
+msgstr "Най-ниска непрозрачност"
+
+#: ../caribou/antler/antler_settings.py:24
+msgid "Minimal opacity of keyboard"
+msgstr "Клавиатура с най-ниска непрозрачност"
+
+#: ../caribou/antler/antler_settings.py:26
+msgid "Maximum Alpha"
+msgstr "Най-висока непрозрачност"
+
+#: ../caribou/antler/antler_settings.py:27
+msgid "Maximal opacity of keyboard"
+msgstr "Клавиатура с най-висока непрозрачност"
+
+#: ../caribou/antler/antler_settings.py:29
+msgid "Maximum Distance"
+msgstr "Най-голямо разстояние"
+
+#: ../caribou/antler/antler_settings.py:30
+msgid "Maximum distance when keyboard is hidden"
+msgstr "Най-голямото разстояние, когато клавиатурата е скрита"
