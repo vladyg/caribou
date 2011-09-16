@@ -178,7 +178,7 @@ msgstr "କାରିବୋଉ"
 #: ../caribou/daemon/main.py:31
 #, python-format
 msgid "Error starting %s"
-msgstr "ଅସୁବିଧା ଆରମ୍ଭ %ସମୂହ"
+msgstr "ଅସୁବିଧା ଆରମ୍ଭ %s ସମୂହ"
 
 #: ../caribou/daemon/main.py:42
 #, python-format
