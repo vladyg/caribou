@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-03 21:06+0000\n"
-"PO-Revision-Date: 2011-09-09 20:11+0530\n"
+"POT-Creation-Date: 2011-09-09 14:43+0000\n"
+"PO-Revision-Date: 2011-09-18 22:35+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgstr "ਸਕੈਨਿੰਗ ਮੋਡ"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr ""
+msgstr "ਸਕੈਨਿੰਗ ਕਿਸਮ, ਸਬ-ਗਰੁੱਪ, ਕਤਾਰਾਂ ਜਾਂ ਲੀਨੀਅਰ"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -61,27 +61,27 @@ msgstr "ਰੇਖਿਕ"
 
 #: ../caribou/settings/caribou_settings.py:20
 msgid "Step time"
-msgstr ""
+msgstr "ਸਟੈਪ ਸਮਾਂ"
 
 #: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
-msgstr ""
+msgstr "ਕੁੰਜੀ ਟਰਾਂਸੈਕਸ਼ਨ ਵਿਚਕਾਰ ਸਮਾਂ"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
-msgstr ""
+msgstr "ਉਲਟ ਸਕੈਨਿੰਗ"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "ਬਦਲਣ ਲਈ ਸਟੈਪ, ਡੀਵਿਲਿੰਗ ਰਾਹੀਂ ਐਕਟੀਵੇਟ"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
-msgstr ""
+msgstr "ਸਕੈਨਿੰਗ ਆਪੇ ਮੁੜ-ਚਾਲੂ"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr ""
+msgstr "ਆਈਟਮ ਐਕਟੀਵੇਸ਼ਨ ਦੇ ਬਾਅਦ ਸਕੈਨਿੰਗ ਆਟੋਮੈਟਿਕ ਹੀ ਮੁੜ-ਚਾਲੂ ਕਰੋ"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
@@ -117,10 +117,9 @@ msgstr "ਸਵਿੱਚ ਜੰਤਰ"
 
 #: ../caribou/settings/caribou_settings.py:41
 msgid "Switch device, keyboard or mouse"
-msgstr ""
+msgstr "ਜੰਤਰ, ਕੀਬੋਰਡ ਜਾਂ ਮਾਊਸ ਸਵਿੱਚ ਕਰੋ"
 
 #: ../caribou/settings/caribou_settings.py:43
-#| msgid "Keyboard _layout:"
 msgid "Keyboard"
 msgstr "ਕੀ-ਬੋਰਡ"
 
@@ -134,7 +133,7 @@ msgstr "ਸਵਿੱਚ ਕੀ"
 
 #: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
-msgstr ""
+msgstr "ਸਕੈਨਿੰਗ ਮੋਡ ਵਰਤਣ ਲਈ ਸਵਿੱਚ"
 
 #: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
@@ -162,7 +161,7 @@ msgstr "ਸਵਿੱਚ ਬਟਨ"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
-msgstr ""
+msgstr "ਸਕੈਨਿੰਗ ਮੋਡ ਵਿੱਚ ਵਰਤਣ ਲਈ ਮਾਊਸ ਬਟਨ"
 
 #: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
@@ -191,32 +190,34 @@ msgid ""
 "In order to use %s, accessibility needs to be enabled. Do you want to enable "
 "it now?"
 msgstr ""
+"%s ਵਰਤਣ ਲਈ, ਅਸੈਸਬਿਲਟੀ ਚਾਲੂ ਕਰਨ ਦੀ ਲੋੜ ਹੈ। ਕੀ ਤੁਸੀਂ ਇਸ ਨੂੰ ਹੁਣੇ ਚਾਲੂ ਕਰਨਾ "
+"ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: ../caribou/daemon/main.py:56
 #, python-format
 msgid "Accessibility has been enabled. Log out and back in again to use %s."
 msgstr ""
+"ਅਸੈਸਬਿਲਟੀ ਚਾਲੂ ਹੋ ਚੁੱਕੀ ਹੈ। ਤੁਹਾਨੂੰ %s ਵਰਤਣ ਲਈ ਲਾਗ ਆਉਟ ਕਰਕੇ ਮੁੜ ਲਾਗਇਨ ਕਰਨਾ "
+"ਪਵੇਗਾ।"
 
 #: ../caribou/daemon/main.py:153
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "ਚੇਤਾਵਨੀ - ਕਾਰੀਬੁਉ: ਅਣ-ਹੈਂਡਲ ਕੀਤਾ ਸੋਧਯੋਗ ਵਿਦਜੈੱਟ:"
 
 #: ../caribou/antler/antler_settings.py:5
-#, fuzzy
 #| msgid "Caribou Preferences"
 msgid "Antler Preferences"
-msgstr "ਮੇਰੀ ਪਸੰਦ"
+msgstr "ਅਨਟਲੇਰ ਮੇਰੀ ਪਸੰਦ"
 
 #: ../caribou/antler/antler_settings.py:6
 msgid "Antler"
-msgstr ""
+msgstr "ਅਨਟਲੇਰ"
 
 #: ../caribou/antler/antler_settings.py:7
 msgid "Appearance"
 msgstr "ਦਿੱਖ"
 
 #: ../caribou/antler/antler_settings.py:9
-#| msgid "Keyboard _layout:"
 msgid "Keyboard Type"
 msgstr "ਕੀ-ਬੋਰਡ ਟਾਈਪ"
 
@@ -230,6 +231,9 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
+"ਕੀਬੋਰਡ ਜੁਮੈਟਰੀ ਪਹਿਚਾਣ ਕਰਦੀ ਹੈ ਕਿ ਕੀਬੋਰਡ ਦੀ ਸ਼ਕਲ ਅਤੇ ਗੁੰਝਲਤਾ ਕਿੰਨੀ ਹੋਵੇ, ਇਹ "
+"'ਆਮ' ਦਿੱਖ "
+"ਵਾਲੇ ਸਧਾਰਨ ਟੈਕਸਟ ਲਿਖਣ ਵਾਲੇ ਤੋਂ ਲੈ ਕੇ ਪੂਰੇ ਸਕੇਲ ਦੇ ਕੀਬੋਰਡ ਤੱਕ ਹੋ ਸਕਦਾ ਹੈ।"
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -257,7 +261,7 @@ msgstr "ਘੱਟੋ-ਘੱਟ ਐਲਫ਼ਾ"
 
 #: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
-msgstr ""
+msgstr "ਕੀਬੋਰਡ ਦਾ ਘੱਟੋ-ਘੱਟ ਬਲੌਰੀਪਨ"
 
 #: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
@@ -265,7 +269,7 @@ msgstr "ਵੱਧ ਤੋਂ ਵੱਧ ਐਲਫ਼ਾ"
 
 #: ../caribou/antler/antler_settings.py:27
 msgid "Maximal opacity of keyboard"
-msgstr ""
+msgstr "ਕੀਬੋਰਡ ਦਾ ਵੱਧੋ-ਵੱਧ ਬਲੌਰੀਪਨ"
 
 #: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
@@ -273,7 +277,7 @@ msgstr "ਵੱਧ ਤੋਂ ਵੱਧ ਦੂਰੀ"
 
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
-msgstr ""
+msgstr "ਜਦੋਂ ਕੀਬੋਰਡ ਲੁਕਵਾਂ ਹੋਵੇ ਤਾਂ ਵੱਧ ਤੋਂ ਵੱਧ ਦੂਰੀ"
 
 #~ msgid "Key _size:"
 #~ msgstr "ਕੁੰਜੀ ਆਕਾਰ(_s):"
