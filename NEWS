@@ -1,4 +1,47 @@
 ==============
+Version 0.3.92
+==============
+
+What's New
+==========
+- Add gio-2.0 to configure.ac (bug #658969).
+- fix GTK+ module loading/unloading and autoload (bug #655979).
+- don't add the event filter until the dbus call finishes (bug
+#658063).
+- Set correct share-library in gir typelib (bug #658345).
+- Fixed antler script for Fedora 64 bitfriendly packages (bug
+#658533).
+- Fix caribou daemon to use new keyboard DBus API (bug #658533).
+
+New And Updated Translations
+============================
+- Xandru Armesto (ast)
+- Ivaylo Valkov (bg)
+- Joe Hansen (da)
+- Bruce Cowan (en_GB)
+- Jorge González (es)
+- Arash Mousavi (fa)
+- Sweta Kothari (gu)
+- Rajesh (hi)
+- Andika Triwidada (id)
+- Milo Casagrande (it)
+- Aurimas Černius (lt)
+- Rūdofls Mazurs (lv)
+- Subhashish (or)
+- A S Alam (pa)
+- Piotr Drąg (pl)
+- Duarte Loreto (pt)
+- Antonio Fernandes C. Neto (pt_BR)
+- Yuri Myasoedov (ru)
+- Matej Urbančič (sl)
+- Мирослав Николић (sr)
+- Miroslav Nikolić (sr@latin)
+- Daniel Nylander (sv)
+- Dr.T.Vasudevan (ta)
+- Muhammet Kara (tr)
+- YunQiang Su (zh_CN)
+
+==============
 Version 0.3.91
 ==============
 
