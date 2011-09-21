@@ -1,0 +1,279 @@
+# Kannada translation for caribou.
+# Copyright (C) 2011 caribou's COPYRIGHT HOLDER
+# This file is distributed under the same license as the caribou package.
+#
+# Shankar Prasad <prasad.mvs@gmail.com>, 2011.
+# Shankar Prasad <svenkate@redhat.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2011-09-19 23:45+0000\n"
+"PO-Revision-Date: 2011-09-21 12:40+0530\n"
+"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
+"Language-Team: Kannada <kn@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: kn\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ../caribou/settings/caribou_settings.py:5
+msgid "Caribou Preferences"
+msgstr "Caribou ಆದ್ಯತೆಗಳು"
+
+#: ../caribou/settings/caribou_settings.py:6
+msgid "Scanning"
+msgstr "ಸ್ಕ್ಯಾನಿಂಗ್"
+
+#: ../caribou/settings/caribou_settings.py:8
+msgid "Enable scanning"
+msgstr "ಸ್ಕ್ಯಾನಿಂಗ್ ಅನ್ನು ಶಕ್ತಗೊಳಿಸು"
+
+#: ../caribou/settings/caribou_settings.py:9
+msgid "Enable switch scanning"
+msgstr "ಸ್ವಿಚ್ ಸ್ಕ್ಯಾನಿಂಗ್ ಅನ್ನು ಶಕ್ತಗೊಳಿಸು"
+
+#: ../caribou/settings/caribou_settings.py:12
+msgid "General"
+msgstr "ಸಾಮಾನ್ಯ"
+
+#: ../caribou/settings/caribou_settings.py:13
+msgid "Scanning mode"
+msgstr "ಸ್ಕ್ಯಾನಿಂಗ್ ಕ್ರಮ"
+
+#: ../caribou/settings/caribou_settings.py:15
+msgid "Scanning type, subgroups, rows or linear"
+msgstr "ಸ್ಕ್ಯಾನಿಂಗ್ ಬಗೆ, ಉಪಸಮೂಹಗಳು, ಸಾಲುಗಳು ಅಥವ ರೇಖೀಯ"
+
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr "ಉಪಸಮೂಹಗಳು"
+
+#: ../caribou/settings/caribou_settings.py:17
+msgid "Rows"
+msgstr "ಅಡ್ಡಸಾಲುಗಳು"
+
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr "ರೇಖೀಯ"
+
+#: ../caribou/settings/caribou_settings.py:20
+msgid "Step time"
+msgstr "ಹಂತದ ಸಮಯ"
+
+#: ../caribou/settings/caribou_settings.py:21
+msgid "Time between key transitions"
+msgstr "ಪ್ರಮುಣ ಮಾರ್ಪಡಣೆಗಳ ನಡುವಿನ ಸಮಯ"
+
+#: ../caribou/settings/caribou_settings.py:24
+msgid "Inverse scanning"
+msgstr "ವಿಲೋಮ ಸ್ಕ್ಯಾನಿಂಗ್"
+
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr "ಸ್ಕ್ಯಾನಿಂಗ್ ಅನ್ನು ಸ್ವಯ-ಮರುಆರಂಭಗೊಳಿಸು"
+
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr ""
+"ಅಂಶವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿದ ನಂತರ ಸ್ಕ್ಯಾನಿಂಗ್ ಅನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಮರಳಿ ಆರಂಭಿಸಿ"
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr "ಸ್ಕ್ಯಾನ್ ಆವರ್ತನೆಗಳು"
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr "ಒಂದು"
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr "ಎರಡು"
+
+#: ../caribou/settings/caribou_settings.py:33
+msgid "Three"
+msgstr "ಮೂರು"
+
+#: ../caribou/settings/caribou_settings.py:34
+msgid "Four"
+msgstr "ನಾಲ್ಕು"
+
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr "ಐದು"
+
+#: ../caribou/settings/caribou_settings.py:38
+msgid "Input"
+msgstr "ಇನ್‌ಪುಟ್"
+
+#: ../caribou/settings/caribou_settings.py:39
+msgid "Switch device"
+msgstr "ಸ್ವಿಚ್ ಸಾಧನ"
+
+#: ../caribou/settings/caribou_settings.py:41
+msgid "Switch device, keyboard or mouse"
+msgstr "ಸ್ವಿಚ್ ಸಾಧನ, ಕೀಲಿಮಣೆ ಅಥವ ಮೌಸ್"
+
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "ಕೀಲಿಮಣೆ"
+
+#: ../caribou/settings/caribou_settings.py:44
+msgid "Mouse"
+msgstr "ಮೌಸ್"
+
+#: ../caribou/settings/caribou_settings.py:46
+msgid "Switch key"
+msgstr "ಸ್ವಿಚ್ ಕೀಲಿ"
+
+#: ../caribou/settings/caribou_settings.py:48
+msgid "Key to use with scanning mode"
+msgstr "ಸ್ಕ್ಯಾನಿಂಗ್ ಕ್ರಮದಲ್ಲಿ ಬಳಸಬೇಕಿರುವ ಕೀಲಿ"
+
+#: ../caribou/settings/caribou_settings.py:50
+msgid "Right shift"
+msgstr "ಬಲ shift"
+
+#: ../caribou/settings/caribou_settings.py:51
+msgid "Left shift"
+msgstr "ಎಡ shift"
+
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr "ಸ್ಪೇಸ್"
+
+#: ../caribou/settings/caribou_settings.py:53
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+#: ../caribou/settings/caribou_settings.py:54
+msgid "Num lock"
+msgstr "Num lock"
+
+#: ../caribou/settings/caribou_settings.py:55
+msgid "Switch button"
+msgstr "ಬದಲಾವಣೆ ಗುಂಡಿ"
+
+#: ../caribou/settings/caribou_settings.py:58
+msgid "Mouse button to use in the scanning mode"
+msgstr "ಸ್ಕ್ಯಾನಿಂಗ್ ಕ್ರಮದಲ್ಲಿ ಬಳಸಬೇಕಿರುವ ಮೌಸ್‌ನ ಗುಂಡಿ"
+
+#: ../caribou/settings/caribou_settings.py:60
+msgid "Button 1"
+msgstr "ಗುಂಡಿ 1"
+
+#: ../caribou/settings/caribou_settings.py:61
+msgid "Button 2"
+msgstr "ಗುಂಡಿ 2"
+
+#: ../caribou/settings/caribou_settings.py:62
+msgid "Button 3"
+msgstr "ಗುಂಡಿ 3"
+
+#: ../caribou/__init__.py:2
+msgid "Caribou"
+msgstr "Caribou"
+
+#: ../caribou/daemon/main.py:34
+#, python-format
+msgid "Error starting %s"
+msgstr "%s ಅನ್ನು ಆರಂಭಿಸುವಲ್ಲಿ ದೋಷ"
+
+#: ../caribou/daemon/main.py:45
+#, python-format
+msgid ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
+msgstr ""
+"%s ಅನ್ನು ಬಳಸಲು, ನಿಲುಕಣೆಯನ್ನು ಶಕ್ತಗೊಳಸಿಬೇಕಾಗುತ್ತದೆ. ನೀವದನ್ನು ಈಗಲೆ ಶಕ್ತಗೊಳಿಸಲು "
+"ಬಯಸುವಿರಾ?"
+
+#: ../caribou/daemon/main.py:59
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
+msgstr ""
+"ನಿಲುಕಣೆಯನ್ನು ಶಕ್ತಗೊಳಿಸಲಾಗಿದೆ. %s ಅನ್ನು ಬಳಸಲು ನಿರ್ಗಮಿಸಿ ಹಾಗು ನಂತರ ಮರಳಿ "
+"ಪ್ರವೇಶಿಸಿ."
+
+#: ../caribou/daemon/main.py:156
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "ಎಚ್ಚರಿಕೆ - Caribou: ನಿಭಾಯಿಸಲಾಗದ ಸಂಪಾದಿಸಬಲ್ಲ ವಿಜೆಟ್:"
+
+#: ../caribou/antler/antler_settings.py:5
+msgid "Antler Preferences"
+msgstr "Antler ಆದ್ಯತೆಗಳು"
+
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler"
+msgstr "Antler"
+
+#: ../caribou/antler/antler_settings.py:7
+msgid "Appearance"
+msgstr "ಗೋಚರಿಕೆ"
+
+#: ../caribou/antler/antler_settings.py:9
+msgid "Keyboard Type"
+msgstr "ಕೀಲಿ ಮಣೆ ಬಗೆ"
+
+#: ../caribou/antler/antler_settings.py:10
+msgid "The keyboard geometry Caribou should use"
+msgstr "Caribou ಬಳಸಬೇಕಿರುವ ಕೀಲಿಮಣೆ ಜ್ಯಾಮಿತಿ"
+
+#: ../caribou/antler/antler_settings.py:11
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
+msgid "Touch"
+msgstr "ಟಚ್"
+
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
+msgid "Full scale"
+msgstr "ಫುಲ್ ಸ್ಕೇಲ್"
+
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
+msgid "Scan"
+msgstr "ಸ್ಕ್ಯಾನ್"
+
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
+msgid "Use System Theme"
+msgstr "ವ್ಯವಸ್ಥೆಯ ಪರಿಸರವಿನ್ಯಾಸವನ್ನು ಬಳಸು"
+
+#: ../caribou/antler/antler_settings.py:23
+msgid "Minimum Alpha"
+msgstr "ಕನಿಷ್ಟ ಅಲ್ಫಾ"
+
+#: ../caribou/antler/antler_settings.py:24
+msgid "Minimal opacity of keyboard"
+msgstr "ಕೀಲಿಮಣೆಯ ಕನಿಷ್ಟ ಪಾರದರ್ಶಕತೆ"
+
+#: ../caribou/antler/antler_settings.py:26
+msgid "Maximum Alpha"
+msgstr "ಗರಿಷ್ಟ ಅಲ್ಫಾ"
+
+#: ../caribou/antler/antler_settings.py:27
+msgid "Maximal opacity of keyboard"
+msgstr "ಕೀಲಿಮಣೆಯ ಗರಿಷ್ಟ ಪಾರದರ್ಶಕತೆ"
+
+#: ../caribou/antler/antler_settings.py:29
+msgid "Maximum Distance"
+msgstr "ಗರಿಷ್ಟ ದೂರ"
+
+#: ../caribou/antler/antler_settings.py:30
+msgid "Maximum distance when keyboard is hidden"
+msgstr "ಕೀಲಿಮಣೆಯನ್ನು ಅಡಗಿಸಿದಾಗ ಗರಿಷ್ಟ ದೂರ"
+
