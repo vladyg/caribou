@@ -31,7 +31,7 @@ namespace Caribou {
         private void on_impl_name_acquired (DBusConnection conn, string name) {
             Bus.own_name (
                 BusType.SESSION, "org.gnome.Caribou.Keyboard",
-                BusNameOwnerFlags.ALLOW_REPLACEMENT | BusNameOwnerFlags.REPLACE,
+                BusNameOwnerFlags.ALLOW_REPLACEMENT,
                 on_bus_acquired, on_generic_name_acquired, on_name_lost);
         }
 
