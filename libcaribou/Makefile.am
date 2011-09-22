@@ -20,7 +20,7 @@ libcaribou_la_CPPFLAGS = \
 
 libcaribouincludedir = $(includedir)/libcaribou
 
-caribouinclude_headers = \
+caribou_headers = \
 	caribou.h
 
 libcaribouinclude_HEADERS = \
