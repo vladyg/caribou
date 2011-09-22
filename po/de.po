@@ -10,10 +10,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=caribou&keywords=I18N+L10N&component=default\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
 "POT-Creation-Date: 2011-09-03 21:06+0000\n"
-"PO-Revision-Date: 2011-07-02 19:10+0100\n"
+"PO-Revision-Date: 2011-09-20 20:44+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@freenet.de>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -75,9 +74,7 @@ msgstr "Umgekehrtes Einlesen"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
-"Mit dem Umschalten einen Schritt vorgehen, aktivierbar durch verzögerten "
-"Klick"
+msgstr "Mit dem Umschalten einen Schritt vorgehen, aktivierbar durch verzögerten Klick"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
@@ -190,19 +187,13 @@ msgstr "Fehler beim Starten von %s"
 
 #: ../caribou/daemon/main.py:42
 #, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"Um %s verwenden zu können, müssen Hilfstechnologien aktiviert sein. Wollen "
-"Sie diese jetzt aktivieren?"
+msgid "In order to use %s, accessibility needs to be enabled. Do you want to enable it now?"
+msgstr "Um %s verwenden zu können, müssen Hilfstechnologien aktiviert sein. Wollen Sie diese jetzt aktivieren?"
 
 #: ../caribou/daemon/main.py:56
 #, python-format
 msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Hilfstechnologien wurden aktiviert. Bitte melden Sie sich ab und wieder an, "
-"um %s zu verwenden."
+msgstr "Hilfstechnologien wurden aktiviert. Bitte melden Sie sich ab und wieder an, um %s zu verwenden."
 
 #: ../caribou/daemon/main.py:153
 msgid "WARNING - Caribou: unhandled editable widget:"
@@ -225,25 +216,17 @@ msgid "Keyboard Type"
 msgstr "Tastaturtyp"
 
 #: ../caribou/antler/antler_settings.py:10
-#, fuzzy
 #| msgid "The keyboard geometery Caribou should use"
 msgid "The keyboard geometry Caribou should use"
 msgstr "Die von Caribou zu verwendende Tastaturgeometrie"
 
 #: ../caribou/antler/antler_settings.py:11
-#, fuzzy
 #| msgid ""
 #| "The keyboard geometery determines the shape and complexity of the "
 #| "keyboard, it could range from a 'natural' look and feel good for "
 #| "composing simple text, to a fullscale keyboard."
-msgid ""
-"The keyboard geometry determines the shape and complexity of the keyboard, "
-"it could range from a 'natural' look and feel good for composing simple "
-"text, to a fullscale keyboard."
-msgstr ""
-"Die Tastaturgeometrie bestimmt die Form und den Umfang der Tastatur, welcher "
-"von einem »natürlichen« Erscheinungsbild zum Schreiben einfacher Texte bis "
-"hin zu einer vollwertigen Tastatur reicht."
+msgid "The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
+msgstr "Die Tastaturgeometrie bestimmt die Form und den Umfang der Tastatur, welcher von einem »natürlichen« Erscheinungsbild zum Schreiben einfacher Texte bis hin zu einer vollwertigen Tastatur reicht."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -253,7 +236,7 @@ msgstr "Art"
 #. Translators: Keyboard type (conventional keyboard)
 #: ../caribou/antler/antler_settings.py:18
 msgid "Full scale"
-msgstr ""
+msgstr "Vollwertig"
 
 #. Translators: Keyboard type (scanned grid by rows/columns)
 #: ../caribou/antler/antler_settings.py:20
