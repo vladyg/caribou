@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-10 21:03+0000\n"
-"PO-Revision-Date: 2011-09-13 12:11+0800\n"
+"POT-Creation-Date: 2011-09-13 04:12+0000\n"
+"PO-Revision-Date: 2011-09-28 01:13+0800\n"
 "Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -72,9 +72,8 @@ msgid "Inverse scanning"
 msgstr "逆序扫描"
 
 #: ../caribou/settings/caribou_settings.py:25
-#, fuzzy
 msgid "Step with the switch, activate by dwelling"
-msgstr "用切换键步进，按住激活"
+msgstr "用切换键步进，悬停激活"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
@@ -218,13 +217,11 @@ msgid "Keyboard Type"
 msgstr "键盘类型"
 
 #: ../caribou/antler/antler_settings.py:10
-#, fuzzy
 #| msgid "The keyboard geometery Caribou should use"
 msgid "The keyboard geometry Caribou should use"
 msgstr "Caribou 应使用的键盘几何属性"
 
 #: ../caribou/antler/antler_settings.py:11
-#, fuzzy
 #| msgid ""
 #| "The keyboard geometery determines the shape and complexity of the "
 #| "keyboard, it could range from a 'natural' look and feel good for "
