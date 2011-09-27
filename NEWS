@@ -1,3 +1,24 @@
+=============
+Version 0.4.0
+=============
+
+What's New
+==========
+- Don't try to replace an existing keyboard service (bug #659867).
+- Fix header installation (bug #659793).
+
+New And Updated Translations
+============================
+- Nilamdyuti Goswami (as)
+- Carme Cabal (ca)
+- Carme Cabal (ca@valencia)
+- Mario Blättermann (de)
+- Inaki Larranaga Murgoitio (eu)
+- Gabor Kelemen (hu)
+- Jiro Matsuzawa (ja)
+- Shankar Prasad (kn)
+- Seong-ho, Cho (ko)
+
 ==============
 Version 0.3.92
 ==============
