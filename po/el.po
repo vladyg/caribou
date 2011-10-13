@@ -3,240 +3,301 @@
 # This file is distributed under the same license as the Caribou package.
 # Pierros Papadeas <ppapadeas@gmail.com>, 2010
 # Kostas Papadimas <pkst@gnome.org>, 2010.
+# Ioannis Zampoukas <ioza1964@yahoo.gr>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-13 21:11+0200\n"
-"PO-Revision-Date: 2010-12-02 22:24+0200\n"
-"Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
-"Language-Team: el Greek <team@gnome.gr>\n"
-"Language: \n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2011-09-03 21:06+0000\n"
+"PO-Revision-Date: 2011-10-13 22:27+0300\n"
+"Last-Translator: Ioannis Zampoukas <ioza1964@yahoo.gr>\n"
+"Language-Team: Greek <team@gnome.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: ../caribou/ui/main.py:149
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "ΠΡΟΣΟΧΗ - Caribou: μη διαχειρίσιμο, επεξεργάσιμο στοιχείο ελέγχου:"
+#: ../caribou/settings/caribou_settings.py:5
+msgid "Caribou Preferences"
+msgstr "Επιλογές Caribou"
 
-#: ../caribou/common/settings.py:33 ../caribou/common/settings.py:90
-#, fuzzy
-msgid "Keyboard"
-msgstr "_Διάταξη πληκτρολόγιου:"
+#: ../caribou/settings/caribou_settings.py:6
+msgid "Scanning"
+msgstr "Σάρωση"
 
-#: ../caribou/common/settings.py:34 ../caribou/common/settings.py:72
+#: ../caribou/settings/caribou_settings.py:8
+msgid "Enable scanning"
+msgstr "Ενεργοποίηση σάρωσης "
+
+#: ../caribou/settings/caribou_settings.py:9
+msgid "Enable switch scanning"
+msgstr "Ενεργοποίηση διακοπτόμενης σάρωσης"
+
+#: ../caribou/settings/caribou_settings.py:12
 msgid "General"
 msgstr "Γενικά"
 
-#: ../caribou/common/settings.py:36
-#, fuzzy
-msgid "Keyboard layout"
-msgstr "_Διάταξη πληκτρολόγιου:"
-
-#: ../caribou/common/settings.py:37
-msgid "The layout Caribou should use."
-msgstr ""
-
-#: ../caribou/common/settings.py:38
-msgid ""
-"The layout should be in the data directory of Caribou (usually /usr/share/"
-"caribou/keyboards) and should be a .xml or .json file."
-msgstr ""
-
-#: ../caribou/common/settings.py:42 ../caribou/common/settings.py:112
-#, fuzzy
-msgid "Color"
-msgstr "Χρώματα"
-
-#: ../caribou/common/settings.py:44
-msgid "Use system theme"
-msgstr ""
-
-#: ../caribou/common/settings.py:45
-msgid "Use the default theme colors"
-msgstr ""
-
-#: ../caribou/common/settings.py:49
-#, fuzzy
-msgid "Normal state"
-msgstr "Φυσιολογική κατάσταση"
-
-#: ../caribou/common/settings.py:50
-msgid "Color of the keys when there is no event on them"
-msgstr ""
-
-#: ../caribou/common/settings.py:53
-#, fuzzy
-msgid "Mouse over"
-msgstr "Αιώρηση ποντικιού:"
-
-#: ../caribou/common/settings.py:54
-msgid "Color of the keys when the mouse goes over the key"
-msgstr ""
-
-#: ../caribou/common/settings.py:56
-msgid "Font and size"
-msgstr ""
-
-#: ../caribou/common/settings.py:58
-msgid "Use system fonts"
-msgstr ""
-
-#: ../caribou/common/settings.py:59
-msgid "Use the default system font for keyboard"
-msgstr ""
-
-#: ../caribou/common/settings.py:61
-#, fuzzy
-msgid "Key font"
-msgstr "Γραμματοσειρά πλήκτρων:"
-
-#: ../caribou/common/settings.py:62
-msgid "Custom font for keyboard"
-msgstr ""
-
-#: ../caribou/common/settings.py:65
-msgid "Scanning"
-msgstr ""
-
-#: ../caribou/common/settings.py:67
-msgid "Enable scanning"
-msgstr ""
-
-#: ../caribou/common/settings.py:68
-msgid "Enable switch scanning"
-msgstr ""
-
-#: ../caribou/common/settings.py:73
+#: ../caribou/settings/caribou_settings.py:13
 msgid "Scanning mode"
-msgstr ""
+msgstr "Λειτουργία σάρωσης"
 
-#: ../caribou/common/settings.py:75
-msgid "Scanning type, block or row"
-msgstr ""
+#: ../caribou/settings/caribou_settings.py:15
+msgid "Scanning type, subgroups, rows or linear"
+msgstr "Τύπος σάρωσης, υποομάδες, γραμμές ή γραμμική"
 
-#: ../caribou/common/settings.py:76
-msgid "Block"
-msgstr ""
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr "Υποομάδες"
 
-#: ../caribou/common/settings.py:77
-msgid "Row"
-msgstr ""
+#: ../caribou/settings/caribou_settings.py:17
+msgid "Rows"
+msgstr "Γραμμές"
 
-#: ../caribou/common/settings.py:78
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr "Γραμμικό"
+
+#: ../caribou/settings/caribou_settings.py:20
 msgid "Step time"
-msgstr ""
+msgstr "Βήμα χρόνου"
 
-#: ../caribou/common/settings.py:79
+#: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
+msgstr "Χρόνος μεταξύ βασικών αλλαγών"
+
+#: ../caribou/settings/caribou_settings.py:24
+msgid "Inverse scanning"
+msgstr "Αντιστροφή σάρωση"
+
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
 msgstr ""
 
-#: ../caribou/common/settings.py:82
-msgid "Reverse scanning"
-msgstr ""
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr "Σάρωση αυτόματης επανεκκίνησης"
 
-#: ../caribou/common/settings.py:83
-msgid "Scan in reverse order"
-msgstr ""
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr "Αυτόματη επανεκκίνηση σάρωσης μετά την ενεργοποίηση του στοιχείου"
 
-#: ../caribou/common/settings.py:85
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr "Κύκλοι σάρωσης"
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr "Ένα"
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr "Δύο"
+
+#: ../caribou/settings/caribou_settings.py:33
+msgid "Three"
+msgstr "Τρία"
+
+#: ../caribou/settings/caribou_settings.py:34
+msgid "Four"
+msgstr "Τέσσερα"
+
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr "Πέντε"
+
+#: ../caribou/settings/caribou_settings.py:38
 msgid "Input"
-msgstr ""
+msgstr "Είσοδος"
 
-#: ../caribou/common/settings.py:86
+#: ../caribou/settings/caribou_settings.py:39
 msgid "Switch device"
-msgstr ""
+msgstr "Αλλαγή συσκευής"
 
-#: ../caribou/common/settings.py:88
+#: ../caribou/settings/caribou_settings.py:41
 msgid "Switch device, keyboard or mouse"
-msgstr ""
+msgstr "Αλλαγή συσκευής, πληκτρολόγιο η ποντίκι"
 
-#: ../caribou/common/settings.py:91
-#, fuzzy
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "Πληκτρολόγιο"
+
+#: ../caribou/settings/caribou_settings.py:44
 msgid "Mouse"
-msgstr "Αιώρηση ποντικιού:"
+msgstr "Ποντίκι"
 
-#: ../caribou/common/settings.py:93
+#: ../caribou/settings/caribou_settings.py:46
 msgid "Switch key"
-msgstr ""
+msgstr "Αλλαγή κλειδιού"
 
-#: ../caribou/common/settings.py:96
+#: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
-msgstr ""
+msgstr "Κλειδί για χρήση με λειτουργία σάρωσης"
 
-#: ../caribou/common/settings.py:98
+#: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
-msgstr ""
+msgstr "Δεξιά μετατόπιση"
 
-#: ../caribou/common/settings.py:99
+#: ../caribou/settings/caribou_settings.py:51
 msgid "Left shift"
-msgstr ""
+msgstr "Αριστερή μετατόπιση"
 
-#: ../caribou/common/settings.py:100
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr "Διάστημα"
+
+#: ../caribou/settings/caribou_settings.py:53
 msgid "Alt Gr"
-msgstr ""
+msgstr "Alt Gr"
 
-#: ../caribou/common/settings.py:101
+#: ../caribou/settings/caribou_settings.py:54
 msgid "Num lock"
-msgstr ""
+msgstr "Num lock"
 
-#: ../caribou/common/settings.py:102
+#: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
-msgstr ""
+msgstr "Αλλαγή κουμπιού"
 
-#: ../caribou/common/settings.py:105
+#: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
-msgstr ""
+msgstr "Πλήκτρο του ποντικιού για χρήση στην λειτουργία σάρωσης"
 
-#: ../caribou/common/settings.py:107
+#: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
-msgstr ""
+msgstr "Κουμπί 1"
 
-#: ../caribou/common/settings.py:108
+#: ../caribou/settings/caribou_settings.py:61
 msgid "Button 2"
-msgstr ""
+msgstr "Κουμπί 2"
 
-#: ../caribou/common/settings.py:109
+#: ../caribou/settings/caribou_settings.py:62
 msgid "Button 3"
-msgstr ""
+msgstr "Κουμπί 3"
 
-#: ../caribou/common/settings.py:113
-msgid "Block color"
-msgstr ""
+#: ../caribou/__init__.py:2
+msgid "Caribou"
+msgstr "Caribou"
 
-#: ../caribou/common/settings.py:114
-msgid "Color of block scans"
-msgstr ""
+#: ../caribou/daemon/main.py:31
+#, python-format
+msgid "Error starting %s"
+msgstr "Σφάλμα κατά την εκκίνηση %s"
 
-#: ../caribou/common/settings.py:115
-msgid "Row color"
+#: ../caribou/daemon/main.py:42
+#, python-format
+msgid ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
 msgstr ""
+"Για να χρησιμοποιήσετε %s, η δυνατότητα πρόσβασης πρέπει να είναι "
+"ενεργοποιημένη. Θέλετε να το ενεργοποιήσετε τώρα;"
 
-#: ../caribou/common/settings.py:116
-msgid "Color of row scans"
+#: ../caribou/daemon/main.py:56
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
 msgstr ""
+"Προσβασιμότητα έχει ενεργοποιηθεί. Αποσύνδεση και πίσω ξανά στη χρήση %s."
 
-#: ../caribou/common/settings.py:117
-msgid "Key color"
+#: ../caribou/daemon/main.py:153
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "ΠΡΟΣΟΧΗ - Caribou: μη διαχειρίσιμο, επεξεργάσιμο στοιχείο ελέγχου:"
+
+#: ../caribou/antler/antler_settings.py:5
+#| msgid "Caribou Preferences"
+msgid "Antler Preferences"
+msgstr "Προτιμήσεις του Antler"
+
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler"
+msgstr "Antler"
+
+#: ../caribou/antler/antler_settings.py:7
+msgid "Appearance"
+msgstr "Εμφάνιση"
+
+#: ../caribou/antler/antler_settings.py:9
+msgid "Keyboard Type"
+msgstr "Διάταξη πληκτρολογίου:"
+
+#: ../caribou/antler/antler_settings.py:10
+msgid "The keyboard geometry Caribou should use"
+msgstr "Θα πρέπει να χρησιμοποιούν την γεωμετρία πληκτρολογίου Caribou"
+
+#: ../caribou/antler/antler_settings.py:11
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
 msgstr ""
+"Η γεωμετρία του πληκτρολογίου καθορίζει τη μορφή και την πολυπλοκότητα του "
+"πληκτρολογίου, μπορεί να κυμαίνεται από μια «φυσική» όψη και αίσθηση ικανή "
+"για τη σύνθεση απλού κειμένου, έως ένα ευρείας κλίμακας πληκτρολόγιο."
 
-#: ../caribou/common/settings.py:118
-msgid "Color of key scans"
-msgstr ""
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
+msgid "Touch"
+msgstr "Αφή"
 
-#: ../caribou/common/settings.py:120
-msgid "Cancel color"
-msgstr ""
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
+msgid "Full scale"
+msgstr "Ευρεία κλιμακα"
 
-#: ../caribou/common/settings.py:121
-msgid "Color of cancel scan"
-msgstr ""
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
+msgid "Scan"
+msgstr "Σάρωση"
 
-#: ../caribou/ui/preferences_window.py:51
-msgid "Caribou Preferences"
-msgstr "Επιλογές Caribou"
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
+msgid "Use System Theme"
+msgstr "Χρησιμοποίηση θέματος συστήματος"
+
+#: ../caribou/antler/antler_settings.py:23
+msgid "Minimum Alpha"
+msgstr "Ελάχιστο Alpha"
+
+#: ../caribou/antler/antler_settings.py:24
+msgid "Minimal opacity of keyboard"
+msgstr "Ελάχιστη αδιαφάνεια του πληκτρολογίου"
+
+#: ../caribou/antler/antler_settings.py:26
+msgid "Maximum Alpha"
+msgstr "Μέγιστο Alpha"
+
+#: ../caribou/antler/antler_settings.py:27
+msgid "Maximal opacity of keyboard"
+msgstr "Μέγιστη αδιαφάνεια του πληκτρολογίου"
+
+#: ../caribou/antler/antler_settings.py:29
+msgid "Maximum Distance"
+msgstr "Μέγιστη απόσταση"
+
+#: ../caribou/antler/antler_settings.py:30
+msgid "Maximum distance when keyboard is hidden"
+msgstr "Μέγιστη απόσταση όταν το πληκτρολόγιο είναι κρυμμένο"
+
+#, fuzzy
+#~ msgid "Keyboard layout"
+#~ msgstr "_Διάταξη πληκτρολόγιου:"
+
+#, fuzzy
+#~ msgid "Color"
+#~ msgstr "Χρώματα"
+
+#, fuzzy
+#~ msgid "Normal state"
+#~ msgstr "Φυσιολογική κατάσταση"
+
+#, fuzzy
+#~ msgid "Mouse over"
+#~ msgstr "Αιώρηση ποντικιού:"
+
+#, fuzzy
+#~ msgid "Key font"
+#~ msgstr "Γραμματοσειρά πλήκτρων:"
 
 #~ msgid "Keys"
 #~ msgstr "Πλήκτρα"
