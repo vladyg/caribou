@@ -1,4 +1,20 @@
 =============
+Version 0.4.1
+=============
+
+What's New
+==========
+- Autostart only in GNOME and Unity (bug #660901).
+
+New And Updated Translations
+============================
+- Yaron Shahrabani (he)
+- Simos Xenitellis & Ioannis Zampoukas (el)
+- Nguyễn Thái Ngọc Duy (vi)
+- Daniel Korostil (uk)
+- YunQiang Su (zh_CN)
+
+=============
 Version 0.4.0
 =============
 
