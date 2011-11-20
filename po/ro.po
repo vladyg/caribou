@@ -1,63 +1,379 @@
 # Romanian translation for caribou.
 # This file is distributed under the same license as the caribou package.
 # Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2010.
+# Dobre Alin <dobre.inter@yahoo.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&component=default\n"
-"POT-Creation-Date: 2010-07-12 18:02+0000\n"
-"PO-Revision-Date: 2010-08-04 17:54+0300\n"
-"Last-Translator: Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
-"Language-Team: Romanian Gnome Team <gnomero-list@lists.sourceforge.net>\n"
-"Language: ro\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2011-09-10 21:03+0000\n"
+"PO-Revision-Date: 2010-12-30 18:34+0300\n"
+"Last-Translator: Dobre Alin <dobre.inter@yahoo.com>\n"
+"Language-Team: Romanian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ro\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);;\n"
 "X-Generator: Virtaal 0.6.1\n"
 
-#: ../caribou/ui/main.py:107
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "AVERTISMENT - Caribou: widget editabil netratat:"
-
-#: ../data/caribou-prefs.ui.h:1
+#: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
 msgstr "Preferințe Caribou"
 
-#: ../data/caribou-prefs.ui.h:2
-msgid "Colors"
-msgstr "Culori"
+#: ../caribou/settings/caribou_settings.py:6
+#, fuzzy
+#| msgid "Scanning mode"
+msgid "Scanning"
+msgstr "Modul de scanare"
 
-#: ../data/caribou-prefs.ui.h:3
+#: ../caribou/settings/caribou_settings.py:8
+msgid "Enable scanning"
+msgstr "Permite scanarea"
+
+#: ../caribou/settings/caribou_settings.py:9
+msgid "Enable switch scanning"
+msgstr "Activează comutator de scanare"
+
+#: ../caribou/settings/caribou_settings.py:12
 msgid "General"
 msgstr "General"
 
-#: ../data/caribou-prefs.ui.h:4
-msgid "Key _size:"
-msgstr "Dimen_siune taste:"
+#: ../caribou/settings/caribou_settings.py:13
+msgid "Scanning mode"
+msgstr "Modul de scanare"
 
-#: ../data/caribou-prefs.ui.h:5
-msgid "Key s_pacing:"
-msgstr "S_pațiere taste:"
+#: ../caribou/settings/caribou_settings.py:15
+#, fuzzy
+#| msgid "Scanning type, block or row"
+msgid "Scanning type, subgroups, rows or linear"
+msgstr "Tip scanare, bloc sau rând"
 
-#: ../data/caribou-prefs.ui.h:6
-msgid "Keyboard _layout:"
-msgstr "_Aranjament tastatură:"
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr ""
 
-#: ../data/caribou-prefs.ui.h:7
-msgid "Keys"
-msgstr "Taste"
+#: ../caribou/settings/caribou_settings.py:17
+#, fuzzy
+#| msgid "Row"
+msgid "Rows"
+msgstr "Rând"
 
-#: ../data/caribou-prefs.ui.h:8
-msgid "Mouse over:"
-msgstr "Maus deasupra:"
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr ""
 
-#: ../data/caribou-prefs.ui.h:9
-msgid "Normal state:"
-msgstr "Stare normală:"
+#: ../caribou/settings/caribou_settings.py:20
+msgid "Step time"
+msgstr "Durata pasului"
 
-#: ../data/caribou-prefs.ui.h:10
-msgid "_Test settings here:"
-msgstr "_Testați preferințele aici:"
+#: ../caribou/settings/caribou_settings.py:21
+msgid "Time between key transitions"
+msgstr "Timp între tranziţiile tastelor"
+
+#: ../caribou/settings/caribou_settings.py:24
+#, fuzzy
+#| msgid "Reverse scanning"
+msgid "Inverse scanning"
+msgstr "Scanare inversă"
+
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:33
+msgid "Three"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:34
+msgid "Four"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:38
+msgid "Input"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:39
+msgid "Switch device"
+msgstr "Dispozitiv de comutare"
+
+#: ../caribou/settings/caribou_settings.py:41
+msgid "Switch device, keyboard or mouse"
+msgstr "Dispozitiv de comutare, tastatură sau maus"
+
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "Tastatură"
+
+#: ../caribou/settings/caribou_settings.py:44
+msgid "Mouse"
+msgstr "Maus"
+
+#: ../caribou/settings/caribou_settings.py:46
+#, fuzzy
+#| msgid "Switch device"
+msgid "Switch key"
+msgstr "Dispozitiv de comutare"
+
+#: ../caribou/settings/caribou_settings.py:48
+msgid "Key to use with scanning mode"
+msgstr "Cheia utilizată cu modul de scanare"
+
+#: ../caribou/settings/caribou_settings.py:50
+msgid "Right shift"
+msgstr "Shift dreapta"
+
+#: ../caribou/settings/caribou_settings.py:51
+msgid "Left shift"
+msgstr "Shift stânga"
+
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:53
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+#: ../caribou/settings/caribou_settings.py:54
+msgid "Num lock"
+msgstr "Num Lock"
+
+#: ../caribou/settings/caribou_settings.py:55
+msgid "Switch button"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:58
+msgid "Mouse button to use in the scanning mode"
+msgstr "Butonul mausului ce va fi utilizat în modul de scanare"
+
+#: ../caribou/settings/caribou_settings.py:60
+msgid "Button 1"
+msgstr "Butonul 1"
+
+#: ../caribou/settings/caribou_settings.py:61
+msgid "Button 2"
+msgstr "Butonul 2"
+
+#: ../caribou/settings/caribou_settings.py:62
+msgid "Button 3"
+msgstr "Butonul 3"
+
+#: ../caribou/__init__.py:2
+msgid "Caribou"
+msgstr ""
+
+#: ../caribou/daemon/main.py:34
+#, python-format
+msgid "Error starting %s"
+msgstr ""
+
+#: ../caribou/daemon/main.py:45
+#, python-format
+msgid ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
+msgstr ""
+
+#: ../caribou/daemon/main.py:59
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
+msgstr ""
+
+#: ../caribou/daemon/main.py:156
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "AVERTISMENT - Caribou: widget editabil netratat:"
+
+#: ../caribou/antler/antler_settings.py:5
+#, fuzzy
+#| msgid "Caribou Preferences"
+msgid "Antler Preferences"
+msgstr "Preferințe Caribou"
+
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:7
+msgid "Appearance"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:9
+#, fuzzy
+#| msgid "Keyboard"
+msgid "Keyboard Type"
+msgstr "Tastatură"
+
+#: ../caribou/antler/antler_settings.py:10
+#, fuzzy
+#| msgid "The layout Caribou should use."
+msgid "The keyboard geometry Caribou should use"
+msgstr "Aspectul pe care Caribou ar trebui să îl folosească."
+
+#: ../caribou/antler/antler_settings.py:11
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
+msgid "Touch"
+msgstr ""
+
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
+msgid "Full scale"
+msgstr ""
+
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
+msgid "Scan"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
+#, fuzzy
+#| msgid "Use system theme"
+msgid "Use System Theme"
+msgstr "Folosește tema sistemului"
+
+#: ../caribou/antler/antler_settings.py:23
+msgid "Minimum Alpha"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:24
+msgid "Minimal opacity of keyboard"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:26
+msgid "Maximum Alpha"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:27
+msgid "Maximal opacity of keyboard"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:29
+msgid "Maximum Distance"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:30
+msgid "Maximum distance when keyboard is hidden"
+msgstr ""
+
+#~| msgid "Keyboard _layout:"
+#~ msgid "Keyboard layout"
+#~ msgstr "Aranjament tastatură"
+
+#~ msgid ""
+#~ "The layout should be in the data directory of Caribou (usually /usr/share/"
+#~ "caribou/keyboards) and should be a .xml or .json file."
+#~ msgstr ""
+#~ "Aspectul ar trebui să fie în directorul date a lui Caribou (de obicei /"
+#~ "usr/share/caribou/keyboards) și ar trebui să fie un fișier .xml sau .json."
+
+#~| msgid "Colors"
+#~ msgid "Color"
+#~ msgstr "Culoare"
+
+#~ msgid "Use the default theme colors"
+#~ msgstr "Utilizaţi culorile implicite ale temei"
+
+#~| msgid "Normal state:"
+#~ msgid "Normal state"
+#~ msgstr "Stare normală"
+
+#~ msgid "Color of the keys when there is no event on them"
+#~ msgstr "Culoarea tastelor atunci când nu există nici un eveniment pe ele"
+
+#~| msgid "Mouse over:"
+#~ msgid "Mouse over"
+#~ msgstr "Mausul peste"
+
+#~ msgid "Color of the keys when the mouse goes over the key"
+#~ msgstr "Culoarea tastelor atunci când mausul trece peste ele"
+
+#~ msgid "Font and size"
+#~ msgstr "Fontul și dimensiunea"
+
+#~ msgid "Use system fonts"
+#~ msgstr "Folosește fonturile sistemului"
+
+#~ msgid "Use the default system font for keyboard"
+#~ msgstr "Folosiți fontul de sistem implicit pentru tastatură"
+
+#~ msgid "Key font"
+#~ msgstr "Fontul tastelor"
+
+#~ msgid "Custom font for keyboard"
+#~ msgstr "Font personalizat pentru tastatură"
+
+#~ msgid "Block"
+#~ msgstr "Bloc"
+
+#~ msgid "Scan in reverse order"
+#~ msgstr "Scanează în ordine inversă"
+
+#~ msgid "Block color"
+#~ msgstr "Culoarea blocului"
+
+#~ msgid "Color of block scans"
+#~ msgstr "Culoarea scanărilor blocurilor"
+
+#~ msgid "Row color"
+#~ msgstr "Culoarea rândului"
+
+#~ msgid "Color of row scans"
+#~ msgstr "Culoarea scanărilor rândurilor"
+
+#~ msgid "Key color"
+#~ msgstr "Culoarea tastei"
+
+#~ msgid "Color of key scans"
+#~ msgstr "Culoarea scanărilor tastei"
+
+#~ msgid "Cancel color"
+#~ msgstr "Revocă culoarea"
+
+#~ msgid "Color of cancel scan"
+#~ msgstr "Culoarea scanării revocate"
+
+#~ msgid "Key _size:"
+#~ msgstr "Dimen_siune taste:"
+
+#~ msgid "Key s_pacing:"
+#~ msgstr "S_pațiere taste:"
+
+#~ msgid "Keys"
+#~ msgstr "Taste"
+
+#~ msgid "_Test settings here:"
+#~ msgstr "_Testați preferințele aici:"
