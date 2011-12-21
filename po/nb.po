@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou 3.3.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-19 12:16+0100\n"
-"PO-Revision-Date: 2011-11-19 12:19+0100\n"
+"POT-Creation-Date: 2011-12-21 22:42+0100\n"
+"PO-Revision-Date: 2011-12-21 22:43+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -42,7 +42,7 @@ msgstr "Søkemodus"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr ""
+msgstr "Type søking. Undergrupper, rader eller lineær"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -66,7 +66,7 @@ msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
-msgstr ""
+msgstr "Omvendt søk"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
@@ -186,7 +186,8 @@ msgstr "Feil ved start av %s"
 msgid ""
 "In order to use %s, accessibility needs to be enabled. Do you want to enable "
 "it now?"
-msgstr "Tilgjengelighet må være slått på for å bruke %s. Vil du slå dette på nå?"
+msgstr ""
+"Tilgjengelighet må være slått på for å bruke %s. Vil du slå dette på nå?"
 
 #: ../caribou/daemon/main.py:59
 #, python-format
