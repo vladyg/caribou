@@ -1,0 +1,276 @@
+# Finnish translation for caribou.
+# Copyright (C) 2012 caribou's COPYRIGHT HOLDER
+# This file is distributed under the same license as the caribou package.
+#
+# artnay <jiri.gronroos@iki.fi>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-11 16:58+0100\n"
+"PO-Revision-Date: 2012-01-11 16:40+0200\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish <>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.4\n"
+
+#: ../caribou/settings/caribou_settings.py:5
+msgid "Caribou Preferences"
+msgstr "Cariboun asetukset"
+
+#: ../caribou/settings/caribou_settings.py:6
+msgid "Scanning"
+msgstr "Käy läpi näppäimistöä"
+
+#: ../caribou/settings/caribou_settings.py:8
+msgid "Enable scanning"
+msgstr "Käytä käy läpi näppäimistöä -tilaa"
+
+#: ../caribou/settings/caribou_settings.py:9
+msgid "Enable switch scanning"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:12
+msgid "General"
+msgstr "Yleiset"
+
+#: ../caribou/settings/caribou_settings.py:13
+msgid "Scanning mode"
+msgstr "Käy läpi näppäimistöä -tila"
+
+#: ../caribou/settings/caribou_settings.py:15
+msgid "Scanning type, subgroups, rows or linear"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:17
+msgid "Rows"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:20
+msgid "Step time"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:21
+msgid "Time between key transitions"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:24
+msgid "Inverse scanning"
+msgstr "Käänteinen läpikäynti"
+
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr "Läpikäynnin automaattinen uudelleenkäynnistys"
+
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr ""
+"Käynnistä läpikäynti automaattisesti uudelleen kohteen valinnan jälkeen"
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr "Läpikäyntijaksot"
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr "Yksi"
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr "Kaksi"
+
+#: ../caribou/settings/caribou_settings.py:33
+msgid "Three"
+msgstr "Kolme"
+
+#: ../caribou/settings/caribou_settings.py:34
+msgid "Four"
+msgstr "Neljä"
+
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr "Viisi"
+
+#: ../caribou/settings/caribou_settings.py:38
+msgid "Input"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:39
+msgid "Switch device"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:41
+msgid "Switch device, keyboard or mouse"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "Näppäimistö"
+
+#: ../caribou/settings/caribou_settings.py:44
+msgid "Mouse"
+msgstr "Hiiri"
+
+#: ../caribou/settings/caribou_settings.py:46
+msgid "Switch key"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:48
+msgid "Key to use with scanning mode"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:50
+msgid "Right shift"
+msgstr "Oikea vaihtonäppäin"
+
+#: ../caribou/settings/caribou_settings.py:51
+msgid "Left shift"
+msgstr "Vasen vaihtonäppäin"
+
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr "Välilyönti"
+
+#: ../caribou/settings/caribou_settings.py:53
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+#: ../caribou/settings/caribou_settings.py:54
+msgid "Num lock"
+msgstr "Num lock"
+
+#: ../caribou/settings/caribou_settings.py:55
+msgid "Switch button"
+msgstr ""
+
+#: ../caribou/settings/caribou_settings.py:58
+msgid "Mouse button to use in the scanning mode"
+msgstr "Käytettävä hiiripainike käy läpi näppäimistöä -tilassa"
+
+#: ../caribou/settings/caribou_settings.py:60
+msgid "Button 1"
+msgstr "Painike 1"
+
+#: ../caribou/settings/caribou_settings.py:61
+msgid "Button 2"
+msgstr "Painike 2"
+
+#: ../caribou/settings/caribou_settings.py:62
+msgid "Button 3"
+msgstr "Painike 3"
+
+#: ../caribou/__init__.py:2
+msgid "Caribou"
+msgstr "Caribou"
+
+#: ../caribou/daemon/main.py:34
+#, python-format
+msgid "Error starting %s"
+msgstr "Virhe käynnistäessä %sta."
+
+#: ../caribou/daemon/main.py:45
+#, python-format
+msgid ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
+msgstr ""
+"Jotta %sta on mahdollista käyttää, esteettömyysasetukset tulee ottaa "
+"käyttöön. Haluatko ottaa esteettömyysasetukset käyttöön nyt?"
+
+#: ../caribou/daemon/main.py:59
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
+msgstr ""
+"Esteettömyysasetukset ovat käytössä. Kirjaudu ulos ja takaisin sisään, jotta "
+"voit käyttää %sta."
+
+#: ../caribou/daemon/main.py:156
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:5
+msgid "Antler Preferences"
+msgstr "Antlerin asetukset"
+
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler"
+msgstr "Antler"
+
+#: ../caribou/antler/antler_settings.py:7
+msgid "Appearance"
+msgstr "Ulkoasu"
+
+#: ../caribou/antler/antler_settings.py:9
+msgid "Keyboard Type"
+msgstr "Näppäimistön tyyppi"
+
+#: ../caribou/antler/antler_settings.py:10
+msgid "The keyboard geometry Caribou should use"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:11
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
+msgid "Touch"
+msgstr ""
+
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
+msgid "Full scale"
+msgstr ""
+
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
+msgid "Scan"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
+msgid "Use System Theme"
+msgstr "Käytä järjestelmän teemaa"
+
+#: ../caribou/antler/antler_settings.py:23
+msgid "Minimum Alpha"
+msgstr "Vähimmäisalpha"
+
+#: ../caribou/antler/antler_settings.py:24
+msgid "Minimal opacity of keyboard"
+msgstr "Näppäimistön vähimmäispeittävyys"
+
+#: ../caribou/antler/antler_settings.py:26
+msgid "Maximum Alpha"
+msgstr "Enimmäisalpha"
+
+#: ../caribou/antler/antler_settings.py:27
+msgid "Maximal opacity of keyboard"
+msgstr "Näppäimistön enimmäispeittävyys"
+
+#: ../caribou/antler/antler_settings.py:29
+msgid "Maximum Distance"
+msgstr ""
+
+#: ../caribou/antler/antler_settings.py:30
+msgid "Maximum distance when keyboard is hidden"
+msgstr ""
