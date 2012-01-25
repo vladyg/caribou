@@ -1,16 +1,16 @@
 # Norwegian bokmål translation of Caribou.
 # Copyright (C) 2003-2004 Free Software Foundation, Inc.
 # Sigurd Gartmann <sigurd-translate@brogar.org>, 2003-2004.
-# Kjartan Maraas <kmaraas@gnome.org>, 2003-2011.
+# Kjartan Maraas <kmaraas@gnome.org>, 2003-2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou 3.3.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-21 22:42+0100\n"
-"PO-Revision-Date: 2011-12-21 22:43+0100\n"
+"POT-Creation-Date: 2012-01-25 11:14+0100\n"
+"PO-Revision-Date: 2012-01-25 11:15+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
-"Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
+"Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,8 +29,9 @@ msgid "Enable scanning"
 msgstr "Slå på søking"
 
 #: ../caribou/settings/caribou_settings.py:9
+#, fuzzy
 msgid "Enable switch scanning"
-msgstr ""
+msgstr "Slå på søk etter bryter"
 
 #: ../caribou/settings/caribou_settings.py:12
 msgid "General"
@@ -58,11 +59,11 @@ msgstr "Lineær"
 
 #: ../caribou/settings/caribou_settings.py:20
 msgid "Step time"
-msgstr ""
+msgstr "Tid for steg"
 
 #: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
-msgstr ""
+msgstr "Tid mellom overganger mellom taster"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
@@ -74,7 +75,7 @@ msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
-msgstr ""
+msgstr "Start søk på nytt automatisk"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
