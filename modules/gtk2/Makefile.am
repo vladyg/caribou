@@ -6,6 +6,8 @@ libcaribou_gtk_module_la_SOURCES = \
 	caribou-module.c \
 	$(NULL)
 
+BUILT_SOURCES = caribou-gtk-module.h
+
 libcaribou_gtk_module_la_VALAFLAGS = \
 	-h caribou-gtk-module.h \
 	--vapidir=. \
