@@ -4,6 +4,9 @@ AC_INIT([caribou],
         [https://bugzilla.gnome.org/enter_bug.cgi?product=caribou],
         [caribou])
 
+# tools/make_schema.py looks for i18n.py in the srcdir
+echo \#buildapi-variable-no-builddir >/dev/null
+
 AC_CONFIG_MACRO_DIR([m4])
 
 AM_PROG_LIBTOOL
