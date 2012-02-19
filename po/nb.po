@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou 3.3.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-25 11:14+0100\n"
-"PO-Revision-Date: 2012-01-25 11:15+0100\n"
+"POT-Creation-Date: 2012-02-19 15:35+0100\n"
+"PO-Revision-Date: 2012-02-19 15:36+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -29,7 +29,6 @@ msgid "Enable scanning"
 msgstr "Slå på søking"
 
 #: ../caribou/settings/caribou_settings.py:9
-#, fuzzy
 msgid "Enable switch scanning"
 msgstr "Slå på søk etter bryter"
 
@@ -127,7 +126,7 @@ msgstr "Mus"
 
 #: ../caribou/settings/caribou_settings.py:46
 msgid "Switch key"
-msgstr ""
+msgstr "Brytertast"
 
 #: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
@@ -155,7 +154,7 @@ msgstr "Num lock"
 
 #: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
-msgstr ""
+msgstr "Bryterknapp"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
