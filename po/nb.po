@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou 3.3.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-19 15:35+0100\n"
-"PO-Revision-Date: 2012-02-19 15:36+0100\n"
+"POT-Creation-Date: 2012-03-14 10:03+0100\n"
+"PO-Revision-Date: 2012-03-14 10:05+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -70,7 +70,7 @@ msgstr "Omvendt søk"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "Stegvis bevegelse med bryter, aktiver ved å dvele"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
@@ -78,11 +78,11 @@ msgstr "Start søk på nytt automatisk"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr ""
+msgstr "Start søking på nytt automatisk etter aktivering av en oppføring"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
-msgstr ""
+msgstr "Søkesykluser"
 
 #: ../caribou/settings/caribou_settings.py:31
 msgid "One"
@@ -130,7 +130,7 @@ msgstr "Brytertast"
 
 #: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
-msgstr ""
+msgstr "Tast som skal brukes med søkemodus"
 
 #: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
