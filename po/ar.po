@@ -1,16 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Khaled Hosny <khaledhosny@eglug.org>, 2010, 2011.
+# Khaled Hosny <khaledhosny@eglug.org>, 2010, 2011, 2012.
 # Anass Ahmed <anass[dot]1430[at]Gmail[dot]com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-21 23:39+0200\n"
-"PO-Revision-Date: 2011-09-05 12:39+0200\n"
-"Last-Translator: Anass Ahmed <anass[dot]1430[at]Gmail[dot]com>\n"
-"Language-Team: Arabeyes\n"
+"PO-Revision-Date: 2012-03-21 23:45+0200\n"
+"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,11 +30,11 @@ msgstr "المسح"
 
 #: ../caribou/settings/caribou_settings.py:8
 msgid "Enable scanning"
-msgstr "مكن المسح"
+msgstr "فعّل المسح"
 
 #: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
-msgstr "مكن المسح التبادلي"
+msgstr "فعّل المسح التبادلي"
 
 #: ../caribou/settings/caribou_settings.py:12
 msgid "General"
@@ -45,9 +45,8 @@ msgid "Scanning mode"
 msgstr "طور المسح"
 
 #: ../caribou/settings/caribou_settings.py:15
-#, fuzzy
 msgid "Scanning type, subgroups, rows or linear"
-msgstr "نوع المسح، المجموعات الفرعية، الصفوف أو الطولي"
+msgstr "نوع المسح، المجموعات الفرعية، صفوف أو طولي"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -71,7 +70,7 @@ msgstr "الزمن بين تنقلات المفاتيح"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
-msgstr "المسح المعكوس"
+msgstr "مسح معكوس"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
@@ -79,7 +78,7 @@ msgstr "تقدم مع التبديل، وفعل الانتظار"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
-msgstr "إعادة التشغيل التلقائية للمسح"
+msgstr "إعادة تشغيل تلقائية للمسح"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
@@ -111,7 +110,7 @@ msgstr "خمسة"
 
 #: ../caribou/settings/caribou_settings.py:38
 msgid "Input"
-msgstr "إدخال"
+msgstr "الإدخال"
 
 #: ../caribou/settings/caribou_settings.py:39
 msgid "Switch device"
@@ -147,15 +146,15 @@ msgstr "زر التغيير اليساري"
 
 #: ../caribou/settings/caribou_settings.py:52
 msgid "Space"
-msgstr "مسافة"
+msgstr "المسافة"
 
 #: ../caribou/settings/caribou_settings.py:53
 msgid "Alt Gr"
-msgstr "مفتاح المحارف الخاصة"
+msgstr "مفتاح Alt"
 
 #: ../caribou/settings/caribou_settings.py:54
 msgid "Num lock"
-msgstr "مفتاح قفل الأرقام"
+msgstr "قفل الأرقام"
 
 #: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
@@ -203,14 +202,12 @@ msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "تحذير - كاريبو: ودجة قابلة للتحرير غير معروفة:"
 
 #: ../caribou/antler/antler_settings.py:5
-#, fuzzy
 msgid "Antler Preferences"
-msgstr "تفضيلات القرن"
+msgstr "تفضيلات أنتلر"
 
 #: ../caribou/antler/antler_settings.py:6
-#, fuzzy
 msgid "Antler"
-msgstr "القرن"
+msgstr "أنتلر"
 
 #: ../caribou/antler/antler_settings.py:7
 msgid "Appearance"
