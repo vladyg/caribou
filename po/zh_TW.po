@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou 0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-29 23:08+0800\n"
-"PO-Revision-Date: 2011-09-03 09:23+0800\n"
+"POT-Creation-Date: 2012-03-27 11:54+0800\n"
+"PO-Revision-Date: 2012-03-27 08:55+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (Taiwan) <chinese-l10n@googlegroups.com>\n"
 "Language: \n"
@@ -71,7 +71,7 @@ msgstr "反向掃描"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "以切換進行每一步，替代點擊則生效"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
