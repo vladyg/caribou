@@ -26,7 +26,7 @@ class AntlerKeyboardService(Caribou.KeyboardService):
         self.window.set_entry_location(x, y, w, h)
 
     def do_name_lost (self, name):
-        sys.stderr.write("Another service acquired %s, quitting..\n")
+        sys.stderr.write("Another service acquired %s, quitting..\n" % name)
         sys.exit(0)
 
 if __name__ == "__main__":

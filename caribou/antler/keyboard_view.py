@@ -315,7 +315,7 @@ if __name__ == "__main__":
     w = Gtk.Window()
     w.set_accept_focus(False)
 
-    kb = AntlerKeyboardView()
+    kb = AntlerKeyboardView('touch')
     w.add(kb)
 
     w.show_all()
