@@ -184,11 +184,14 @@ namespace Caribou {
             if (!kmap.get_entries_for_keyval (keyval, out kmk))
                 return false;
 
-            Gdk.KeymapKey best_match = kmk[0];
+            Gdk.KeymapKey? best_match = null;
 
             foreach (KeymapKey km in kmk)
-               if (km.group == this.group)
+               if (km.group == this.group && km.level <= 1)
                    best_match = km;
+
+            if (best_match == null)
+                return false;
 
                keycode = (uchar) best_match.keycode;
                modmask = (best_match.level == 1) ? Gdk.ModifierType.SHIFT_MASK : 0;
