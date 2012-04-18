@@ -10,10 +10,10 @@
 @define-color group_scan_color2 darker(@group_scan_color1);
 
 .antler-keyboard-button {
-  border-width: 0;
-  border-radius: 2;
-  border-image: url("dark-key-border.svg") 2 2 2 2 repeat stretch;
-  font: Sans 14;
+  border-width: 0px;
+  border-radius: 2px;
+  border-image: url("dark-key-border.svg") 2px 2px 2px 2px repeat stretch;
+  font: Sans 14px;
   background-image: -gtk-gradient (linear,
 				     left top,
 				     left bottom,
