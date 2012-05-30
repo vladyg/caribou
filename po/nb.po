@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: caribou 3.3.x\n"
+"Project-Id-Version: caribou 3.5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-18 19:54+0200\n"
-"PO-Revision-Date: 2012-03-14 10:05+0100\n"
+"POT-Creation-Date: 2012-05-30 13:02+0200\n"
+"PO-Revision-Date: 2012-05-30 13:05+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -223,7 +223,7 @@ msgid ""
 "The keyboard geometry determines the shape and complexity of the keyboard, "
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
-msgstr ""
+msgstr "Tastaturgeometri bestemmer form og kompleksitet for tastaturet. Det kan variere fra et «naturlig» utseende og utforming for å lage enkel tekst til et fullskala tastatur."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -246,20 +246,24 @@ msgid "Use System Theme"
 msgstr "Bruk systemets tema"
 
 #: ../caribou/antler/antler_settings.py:23
+#, fuzzy
 msgid "Minimum Alpha"
-msgstr ""
+msgstr "Minimal gjennomsiktighet"
 
 #: ../caribou/antler/antler_settings.py:24
+#, fuzzy
 msgid "Minimal opacity of keyboard"
-msgstr ""
+msgstr "Minimal ugjennomsiktighet for tastatur"
 
 #: ../caribou/antler/antler_settings.py:26
+#, fuzzy
 msgid "Maximum Alpha"
-msgstr ""
+msgstr "Maksimal gjennomsiktighet"
 
 #: ../caribou/antler/antler_settings.py:27
+#, fuzzy
 msgid "Maximal opacity of keyboard"
-msgstr ""
+msgstr "Maksimal ugjennomsiktighet for tastatur"
 
 #: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
