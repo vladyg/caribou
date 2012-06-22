@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the Caribou package.
 # Pierros Papadeas <ppapadeas@gmail.com>, 2010
 # Kostas Papadimas <pkst@gnome.org>, 2010.
-# Ioannis Zampoukas <ioza1964@yahoo.gr>, 2011.
+# Ioannis Zampoukas <ioza1964@yahoo.gr>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-03 21:06+0000\n"
-"PO-Revision-Date: 2011-10-13 22:27+0300\n"
+"POT-Creation-Date: 2012-05-30 11:03+0000\n"
+"PO-Revision-Date: 2012-06-22 21:38+0300\n"
 "Last-Translator: Ioannis Zampoukas <ioza1964@yahoo.gr>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
 "MIME-Version: 1.0\n"
@@ -74,7 +74,7 @@ msgstr "Αντιστροφή σάρωση"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "Βήμα με το διακόπτη, ενεργοποίηση από την κατοικία"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
@@ -180,12 +180,12 @@ msgstr "Κουμπί 3"
 msgid "Caribou"
 msgstr "Caribou"
 
-#: ../caribou/daemon/main.py:31
+#: ../caribou/daemon/main.py:34
 #, python-format
 msgid "Error starting %s"
 msgstr "Σφάλμα κατά την εκκίνηση %s"
 
-#: ../caribou/daemon/main.py:42
+#: ../caribou/daemon/main.py:45
 #, python-format
 msgid ""
 "In order to use %s, accessibility needs to be enabled. Do you want to enable "
@@ -194,18 +194,18 @@ msgstr ""
 "Για να χρησιμοποιήσετε %s, η υπηρεσία προσιτότητας πρέπει να είναι "
 "ενεργοποιημένη. Θέλετε να το ενεργοποιήσετε τώρα;"
 
-#: ../caribou/daemon/main.py:56
+#: ../caribou/daemon/main.py:59
 #, python-format
 msgid "Accessibility has been enabled. Log out and back in again to use %s."
 msgstr ""
-"Η προσιτότητα έχει ενεργοποιηθεί. Αποσυνδεθείτε και συνδεθείτε ξανά για να χρησιμοποιήσετε το %s."
+"Η προσιτότητα έχει ενεργοποιηθεί. Αποσυνδεθείτε και συνδεθείτε ξανά για να "
+"χρησιμοποιήσετε το %s."
 
-#: ../caribou/daemon/main.py:153
+#: ../caribou/daemon/main.py:156
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "ΠΡΟΣΟΧΗ - Caribou: μη διαχειρίσιμο, επεξεργάσιμο στοιχείο ελέγχου:"
 
 #: ../caribou/antler/antler_settings.py:5
-#| msgid "Caribou Preferences"
 msgid "Antler Preferences"
 msgstr "Προτιμήσεις του Antler"
 
