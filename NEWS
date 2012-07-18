@@ -1,4 +1,11 @@
 =============
+Version 0.4.3
+=============
+- Bug 674344: Not using units is deprecated in gtk CSS is deprecated
+- Update after pygobject bug 676746
+- Translation updates (Norwegian, Greek, Traditional Chinese)
+
+=============
 Version 0.4.2
 =============
 - Build fixes
