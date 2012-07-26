@@ -2,14 +2,14 @@
 # Copyright (C) 2011 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
 #
-# , 2011.
+# , 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
 "cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-06 07:11+0000\n"
-"PO-Revision-Date: 2011-09-07 11:53+0000\n"
+"POT-Creation-Date: 2011-09-07 06:28+0000\n"
+"PO-Revision-Date: 2012-07-26 12:08+0530\n"
 "Last-Translator: \n"
 "Language-Team: gu_IN <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "સ્કેનિંગ સક્રિય કરો"
 
 #: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
-msgstr ""
+msgstr "સ્વીચ સ્કેનીંગને સક્રિય કરો"
 
 #: ../caribou/settings/caribou_settings.py:12
 msgid "General"
@@ -44,11 +44,11 @@ msgstr "સ્કેનિંગ સ્થિતિ"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr ""
+msgstr "સ્કેનીંગ પ્રકાર, ઉપજૂથ, હારમાળા અથવા રેખીય"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
-msgstr ""
+msgstr "ઉપજૂથ"
 
 #: ../caribou/settings/caribou_settings.py:17
 msgid "Rows"
@@ -56,15 +56,15 @@ msgstr "હારમાળાઓ"
 
 #: ../caribou/settings/caribou_settings.py:18
 msgid "Linear"
-msgstr ""
+msgstr "રેખીય"
 
 #: ../caribou/settings/caribou_settings.py:20
 msgid "Step time"
-msgstr ""
+msgstr "પગલું સમય"
 
 #: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
-msgstr ""
+msgstr "કી રૂપાંતરણ વચ્ચે સમય"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
@@ -72,19 +72,19 @@ msgstr "વિપરીત સ્કેનિંગ"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "સ્વીચ સાથે પગલું, નિવાસ દ્દારા સક્રિય કરો"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
-msgstr ""
+msgstr "આપમેળે સ્કેનીંગ પુન:શરૂ કરો"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr ""
+msgstr "વસ્તુ સક્રિયકરણ પછી આપમેળે સ્કેનીંગ પુન:શરૂ કરો"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
-msgstr ""
+msgstr "સ્કેન ચક્ર"
 
 #: ../caribou/settings/caribou_settings.py:31
 msgid "One"
@@ -112,11 +112,11 @@ msgstr "ઇનપુટ"
 
 #: ../caribou/settings/caribou_settings.py:39
 msgid "Switch device"
-msgstr ""
+msgstr "સ્વીચ ઉપકરણ"
 
 #: ../caribou/settings/caribou_settings.py:41
 msgid "Switch device, keyboard or mouse"
-msgstr ""
+msgstr "સ્વીચ ઉપકરણ, કિબોર્ડ અથવા માઉસ"
 
 #: ../caribou/settings/caribou_settings.py:43
 msgid "Keyboard"
@@ -128,23 +128,23 @@ msgstr "માઉસ"
 
 #: ../caribou/settings/caribou_settings.py:46
 msgid "Switch key"
-msgstr ""
+msgstr "સ્વીચ કી"
 
 #: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
-msgstr ""
+msgstr "સ્કેનીંગ સ્થિતિ સાથે વાપરવા માટે કી"
 
 #: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
-msgstr ""
+msgstr "જમણી shift"
 
 #: ../caribou/settings/caribou_settings.py:51
 msgid "Left shift"
-msgstr ""
+msgstr "ડાબી shift"
 
 #: ../caribou/settings/caribou_settings.py:52
 msgid "Space"
-msgstr ""
+msgstr "જગ્યા"
 
 #: ../caribou/settings/caribou_settings.py:53
 msgid "Alt Gr"
@@ -156,11 +156,11 @@ msgstr "Num lock"
 
 #: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
-msgstr ""
+msgstr "સ્વીચ બટન"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
-msgstr ""
+msgstr "સ્કેનીંગ સ્થિતિમાં વાપરવા માટે માઉસ બટન"
 
 #: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
@@ -189,15 +189,19 @@ msgid ""
 "In order to use %s, accessibility needs to be enabled. Do you want to enable "
 "it now?"
 msgstr ""
+"%s ને વાપરવા ક્રમમાં, સક્રિય કરવા માટે સુલભતા જરૂરી છે. શું હવે તેને તમે "
+"સક્રિય કરવા માંગો છો?"
 
 #: ../caribou/daemon/main.py:56
 #, python-format
 msgid "Accessibility has been enabled. Log out and back in again to use %s."
 msgstr ""
+"સુલભતાને સક્રિય કરી દેવામાં આવ્યુ છે. %s ને વાપરવા ફરીથી પાછા જાઓ અને બહાર "
+"નીકળો."
 
 #: ../caribou/daemon/main.py:153
 msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr ""
+msgstr "ચેતવણી - Caribou: સંભાળી ન શકાય તેવી ફેરફાર કરી શકાય તેની વિજેટ:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -217,7 +221,7 @@ msgstr "કિબોર્ડ પ્રકાર"
 
 #: ../caribou/antler/antler_settings.py:10
 msgid "The keyboard geometry Caribou should use"
-msgstr ""
+msgstr "કિબોર્ડ ભૂમિતિ Caribou ને આનો ઉપયોગ કરવો જોઇએ"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
@@ -225,16 +229,19 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
+"કિબોર્ડ ભૂમિતિ કિબોર્ડનો આકાર અને કઠીનતાને નક્કી કરે છે, તે 'કુદરતી' દેખાવથી "
+"નક્કી કરી શકાય છે અને સાદા લખાણને બનાવીને સારુ લાગે છે, સંપૂર્ણ સ્કેલ "
+"કિબોર્ડ માટે."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
 msgid "Touch"
-msgstr ""
+msgstr "સ્પર્શ"
 
 #. Translators: Keyboard type (conventional keyboard)
 #: ../caribou/antler/antler_settings.py:18
 msgid "Full scale"
-msgstr ""
+msgstr "સંપૂર્ણ સ્કેલ"
 
 #. Translators: Keyboard type (scanned grid by rows/columns)
 #: ../caribou/antler/antler_settings.py:20
@@ -248,11 +255,11 @@ msgstr "સિસ્ટમ થીમ વાપરો"
 
 #: ../caribou/antler/antler_settings.py:23
 msgid "Minimum Alpha"
-msgstr ""
+msgstr "ન્યૂનત્તમ આલ્ફા"
 
 #: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
-msgstr ""
+msgstr "કિબોર્ડની ન્યૂનત્તમ અપારદર્શકતા"
 
 #: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
@@ -260,7 +267,7 @@ msgstr "મહત્તમ આલ્ફા"
 
 #: ../caribou/antler/antler_settings.py:27
 msgid "Maximal opacity of keyboard"
-msgstr ""
+msgstr "કિબોર્ડની મહત્તમ અપારદર્શકતા"
 
 #: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
