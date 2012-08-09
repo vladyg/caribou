@@ -104,9 +104,6 @@ GLIB_GSETTINGS
 dnl == intltool check ==
 IT_PROG_INTLTOOL([0.35.0])
 
-dnl == Documentation ==
-GNOME_DOC_INIT
-
 dnl == GObject introspection ==
 GOBJECT_INTROSPECTION_REQUIRE([0.10.7])
 
