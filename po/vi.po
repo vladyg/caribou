@@ -1,7 +1,7 @@
 # Vietnamese translation for caribou.
 # Copyright (C) 2011 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
-# Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2011.
+# Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2011-2012.
 #
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
 "POT-Creation-Date: 2011-10-13 22:12+0000\n"
-"PO-Revision-Date: 2012-08-26 22:09+0700\n"
+"PO-Revision-Date: 2012-08-26 22:12+0700\n"
 "Last-Translator: Nguyễn Thái Ngọc Duy <pclouds@gmail.com>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -75,11 +75,11 @@ msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
-msgstr ""
+msgstr "Tự động khởi động lại quét"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr ""
+msgstr "Tự động khởi động lại quét sau khi kích hoạt mục"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
@@ -131,7 +131,7 @@ msgstr "Phím chuyển"
 
 #: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
-msgstr ""
+msgstr "Phím dùng với chế độ quét"
 
 #: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
@@ -159,7 +159,7 @@ msgstr "Nút chuyển"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
-msgstr ""
+msgstr "Nút chuột dùng trong chế độ quét"
 
 #: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
@@ -187,12 +187,12 @@ msgstr "Lỗi khởi động %s"
 msgid ""
 "In order to use %s, accessibility needs to be enabled. Do you want to enable "
 "it now?"
-msgstr ""
+msgstr "Để dùng %s, cần bật hỗ trợ truy cập. Bạn có muốn bật bây giờ không?"
 
 #: ../caribou/daemon/main.py:59
 #, python-format
 msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
+msgstr "Đã bật hỗ trợ truy cập. Đăng xuất và đăng nhập lại để dùng %s."
 
 #: ../caribou/daemon/main.py:156
 msgid "WARNING - Caribou: unhandled editable widget:"
@@ -228,7 +228,7 @@ msgstr ""
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
 msgid "Touch"
-msgstr ""
+msgstr "Chạm"
 
 #. Translators: Keyboard type (conventional keyboard)
 #: ../caribou/antler/antler_settings.py:18
