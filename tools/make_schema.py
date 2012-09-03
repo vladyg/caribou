@@ -56,9 +56,11 @@ class SchemasMaker:
             key.setAttribute('name', setting.gsettings_key)
             key.setAttribute('type', setting.variant_type)
             schemalist.appendChild(key)
+            printfunc = getattr(setting.gvariant, 'print_', None)
+            if printfunc is None:
+                printfunc = getattr(setting.gvariant, 'print')
             self._append_children_element_value_pairs(
-                doc, key, [('default',
-                            getattr(setting.gvariant, "print_")(False)),
+                doc, key, [('default', printfunc(False)),
                            ('_summary', setting.short_desc),
                            ('_description', setting.long_desc)])
 
