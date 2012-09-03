@@ -56,6 +56,14 @@ class SchemasMaker:
             key.setAttribute('name', setting.gsettings_key)
             key.setAttribute('type', setting.variant_type)
             schemalist.appendChild(key)
+            # pygobject >= 3.3.3 and up expose g_variant_print as
+            # "print_". Older pygobjects expose it as "print", which
+            # we need to use through getattr as "print" is a keyword.
+            #
+            # Try the new name first, fall back to the old one if unavailable.
+            #
+            # Once we depend on pygobject >= 3.4 we can just call
+            # setting.gvariant.print_(False) directly.
             printfunc = getattr(setting.gvariant, 'print_', None)
             if printfunc is None:
                 printfunc = getattr(setting.gvariant, 'print')
