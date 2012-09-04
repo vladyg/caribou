@@ -1,4 +1,5 @@
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Galician translation of Caribou.
+# Copyright (C) 2012 Leandro Regueiro
 # This file is distributed under the same license as the caribou package.
 #
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
@@ -11,17 +12,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-16 23:44+0200\n"
-"PO-Revision-Date: 2012-08-16 13:35+0200\n"
+"POT-Creation-Date: 2012-09-04 23:16+0200\n"
+"PO-Revision-Date: 2012-09-02 13:20+0200\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
-"Language-Team: Galego <kde-i18n-doc@kde.org>\n"
+"Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bits\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Poedit-Language: Galician\n"
-"X-Generator: Lokalize 1.0\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -81,11 +80,11 @@ msgstr "Paso co interruptor, activado cunha pulsación ao pousarse"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
-msgstr "Reiniciar automáticamente o análise"
+msgstr "Reiniciar automaticamente o análise"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr "Reiniciar automáticamente o análise despois da activación do elemento"
+msgstr "Reiniciar automaticamente o análise despois da activación do elemento"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
@@ -194,13 +193,12 @@ msgid ""
 "In order to use %s, accessibility needs to be enabled. Do you want to enable "
 "it now?"
 msgstr ""
-"Para poder usar %s, precisa habilitar a Accesibilidade. Quéres habilitala "
-"agora"
+"Para poder usar %s, precisa activar a Accesibilidade. Desexa activala agora?"
 
 #: ../caribou/daemon/main.py:59
 #, python-format
 msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr "Accesibilidade foi habilitada. Sae e inicia de novo para usar %s."
+msgstr "Activouse a accesibilidade. Saia e inicie de novo para usar %s."
 
 #: ../caribou/daemon/main.py:156
 msgid "WARNING - Caribou: unhandled editable widget:"
