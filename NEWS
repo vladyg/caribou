@@ -1,4 +1,13 @@
 =============
+Version 0.4.4
+=============
+- Removed unneeded gnome-doc-utils dependency
+- Bug 683256 - caribou unnecessarily requires pygobject 3.3.3 or up to
+  build
+- Translation updates (Galician, Polish, Vietnamese, Marathi,
+  Gujarati, Bengali)
+
+=============
 Version 0.4.3
 =============
 - Bug 674344: Not using units is deprecated in gtk CSS is deprecated
