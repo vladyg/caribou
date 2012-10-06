@@ -25,7 +25,7 @@ namespace Caribou {
         public delegate void KeyButtonCallback (uint keybuttoncode, bool pressed);
 
         private class KeyButtonHandler {
-            public KeyButtonCallback cb { get; private set; }
+            public unowned KeyButtonCallback cb { get; private set; }
             public KeyButtonHandler (KeyButtonCallback cb) {
                 this.cb = cb;
             }
@@ -128,7 +128,7 @@ namespace Caribou {
 
             for (i = xkbdesc.max_key_code; i >= xkbdesc.min_key_code; --i) {
                 if (xkbdesc.map.key_sym_map[i].kt_index[0] == Xkb.OneLevelIndex) {
-                    if (X.keycode_to_keysym (this.xdisplay, i, 0) != 0) {
+                    if (this.xdisplay.keycode_to_keysym (i, 0) != 0) {
                         Gdk.error_trap_push ();
                         this.xdisplay.grab_key (i, 0,
                                     Gdk.x11_get_default_root_xwindow (), true,
@@ -148,8 +148,8 @@ namespace Caribou {
         private void replace_keycode (uint keysym) {
             if (this.reserved_keycode == 0) {
                 this.reserved_keycode = get_reserved_keycode ();
-                this.reserved_keysym = X.keycode_to_keysym (this.xdisplay,
-                                                            this.reserved_keycode, 0);
+                this.reserved_keysym = (uint) this.xdisplay.keycode_to_keysym (
+                    this.reserved_keycode, 0);
             }
 
             this.xdisplay.flush ();
@@ -180,6 +180,9 @@ namespace Caribou {
                                                 out uint modmask) {
             Gdk.Keymap kmap= Gdk.Keymap.get_default ();
             Gdk.KeymapKey[] kmk;
+
+            keycode = 0;
+            modmask = 0;
 
             if (!kmap.get_entries_for_keyval (keyval, out kmk))
                 return false;

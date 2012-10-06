@@ -1,20 +1,5 @@
 using X;
 
-[CCode (cprefix = "", lower_case_cprefix = "",
-        cheader_filename = "X11/extensions/XTest.h")]
-namespace XTest {
-    [CCode (cname = "XTestFakeKeyEvent")]
-    public int fake_key_event (Display dpy, uchar keycode, bool key_press,
-                               ulong delay);
-}
-
-[CCode (cprefix = "", lower_case_cprefix = "", cheader_filename = "X11/Xlib.h")]
-namespace X {
-    [CCode (cname = "XKeycodeToKeysym")]
-    public int keycode_to_keysym (Display dpy, uchar keycode, int index);
-
-}
-
 [CCode (cprefix = "", lower_case_cprefix = "", cheader_filename = "X11/XKBlib.h")]
 namespace Xkb {
 

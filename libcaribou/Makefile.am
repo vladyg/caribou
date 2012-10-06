@@ -9,7 +9,7 @@ libcaribou_la_VALAFLAGS = \
 	-H caribou.h --vapi caribou-1.0.vapi \
 	-h caribou-internals.h \
 	--vapidir=. \
-	--pkg x11 --pkg gdk-3.0 --pkg gio-2.0 --pkg gee-1.0 \
+	--pkg x11 --pkg xtst --pkg gdk-3.0 --pkg gio-2.0 --pkg gee-1.0 \
 	--pkg libxklavier --pkg external-libs --pkg gdk-x11-3.0 --pkg libxml-2.0 \
 	--internal-vapi caribou-internals-1.0.vapi \
 	--library caribou-1.0 --gir _Caribou-1.0.gir \
