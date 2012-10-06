@@ -3,14 +3,16 @@
 # This file is distributed under the same license as the caribou package.
 #
 # Sense Hofstede <sense@ubuntu.com>, 2010.
+# Steven Grauwmans <s.grauwmans@gmail.com>, 2012
+# Wouter Bolsterlee <wbolster@gnome.org>, 2012
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Caribou\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-06 15:09+0200\n"
-"PO-Revision-Date: 2012-03-31 05:03+0100\n"
-"Last-Translator: Steven Grauwmans <s.grauwmans@gmail.com>\n"
+"PO-Revision-Date: 2012-10-06 15:12+0200\n"
+"Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
 "Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -48,15 +50,15 @@ msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
-msgstr ""
+msgstr "Subgroepen"
 
 #: ../caribou/settings/caribou_settings.py:17
 msgid "Rows"
-msgstr ""
+msgstr "Rijen"
 
 #: ../caribou/settings/caribou_settings.py:18
 msgid "Linear"
-msgstr ""
+msgstr "Lineair"
 
 #: ../caribou/settings/caribou_settings.py:20
 msgid "Step time"
@@ -64,7 +66,7 @@ msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
-msgstr ""
+msgstr "Tijd tussen toetsovergangen"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
@@ -119,18 +121,16 @@ msgid "Switch device, keyboard or mouse"
 msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:43
-#, fuzzy
 msgid "Keyboard"
-msgstr "Toetsenbord_indeling:"
+msgstr "Toetsenbord:"
 
 #: ../caribou/settings/caribou_settings.py:44
-#, fuzzy
 msgid "Mouse"
-msgstr "Muis erboven:"
+msgstr "Muis"
 
 #: ../caribou/settings/caribou_settings.py:46
 msgid "Switch key"
-msgstr ""
+msgstr "Wisseltoets"
 
 #: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
@@ -155,11 +155,11 @@ msgstr "Alt Gr"
 # num lock ?
 #: ../caribou/settings/caribou_settings.py:54
 msgid "Num lock"
-msgstr ""
+msgstr "Num lock"
 
 #: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
-msgstr ""
+msgstr "Wisselknop"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
@@ -184,7 +184,7 @@ msgstr "Caribou"
 #: ../caribou/daemon/main.py:34
 #, python-format
 msgid "Error starting %s"
-msgstr ""
+msgstr "Fout bij starten van %s"
 
 #: ../caribou/daemon/main.py:45
 #, python-format
@@ -209,7 +209,7 @@ msgstr "Caribou-voorkeuren"
 
 #: ../caribou/antler/antler_settings.py:6
 msgid "Antler"
-msgstr ""
+msgstr "Antler"
 
 #: ../caribou/antler/antler_settings.py:7
 msgid "Appearance"
@@ -249,31 +249,31 @@ msgstr ""
 #: ../caribou/antler/antler_settings.py:21
 #: ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
-msgstr "Gebruik Systeem Thema"
+msgstr "Systeemthema gebruiken"
 
 #: ../caribou/antler/antler_settings.py:23
 msgid "Minimum Alpha"
-msgstr ""
+msgstr "Minimale alfa"
 
 #: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
-msgstr ""
+msgstr "Minimale doorzichtigheid van het toetsenbord"
 
 #: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
-msgstr ""
+msgstr "Maximale alfa"
 
 #: ../caribou/antler/antler_settings.py:27
 msgid "Maximal opacity of keyboard"
-msgstr ""
+msgstr "Maximale doorzichtigheid van het toetsenbord"
 
 #: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
-msgstr "Maximum Afstand"
+msgstr "Maximale afstand"
 
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
-msgstr "Maximum afstand als het toetsenbord verborgen is"
+msgstr "Maximale afstand als het toetsenbord verborgen is"
 
 #~ msgid "Colors"
 #~ msgstr "Kleuren"
