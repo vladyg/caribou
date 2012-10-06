@@ -23,7 +23,7 @@ script_dir="$(dirname "$(readlink -f ${0})")"
 prefix=@prefix@
 exec_prefix=@exec_prefix@
 
-if [ $script_dir == "@bindir@" ]
+if [ $script_dir = "@bindir@" ]
 then
   datadir="$(@PYTHON@ -c "from gi.repository import GLib; print ':'.join(GLib.get_system_data_dirs())")"
   export PYTHONPATH="@prefix@/lib/python@PYTHON_VERSION@/site-packages${PYTHONPATH:+:$PYTHONPATH}"

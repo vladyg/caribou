@@ -29,7 +29,7 @@ script_dir="$(dirname "$(readlink -f ${0})")"
 prefix=@prefix@
 exec_prefix=@exec_prefix@
 
-if [ $script_dir == "@bindir@" ]
+if [ $script_dir = "@bindir@" ]
 then
   export PYTHONPATH="@prefix@/lib/python@PYTHON_VERSION@/site-packages${PYTHONPATH:+:$PYTHONPATH}"
   export GI_TYPELIB_PATH="@libdir@/girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}"
