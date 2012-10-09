@@ -1,5 +1,5 @@
 import pyatspi
-import dbus
+from gi.repository import GLib
 from gi.repository import Gio
 from gi.repository import GdkX11
 
@@ -14,13 +14,17 @@ class CaribouDaemon:
     def __init__(self):
         if not self._get_a11y_enabled():
             self._show_no_a11y_dialogs()
-        bus = dbus.SessionBus()
         try:
-            dbus_obj = bus.get_object("org.gnome.Caribou.Keyboard",
-                                      "/org/gnome/Caribou/Keyboard")
-        except dbus.DBusException, e:
+            self.keyboard_proxy = Gio.DBusProxy.new_for_bus_sync(
+                Gio.BusType.SESSION,
+                Gio.DBusProxyFlags.NONE,
+                None,
+                "org.gnome.Caribou.Keyboard",
+                "/org/gnome/Caribou/Keyboard",
+                "org.gnome.Caribou.Keyboard",
+                None)
+        except GLib.GError, e:
             self._show_error_dialog(e.message)
-        self.keyboard_proxy = dbus.Interface(dbus_obj, "org.gnome.Caribou.Keyboard")
         self._current_acc = None
         self._x11_display = GdkX11.X11Display.get_default()
         self._register_event_listeners()
@@ -108,7 +112,7 @@ class CaribouDaemon:
                 bb = component.getExtents(pyatspi.DESKTOP_COORDS)
                 x, y, w, h = bb.x, bb.y, bb.width, bb.height
 
-            self.keyboard_proxy.SetCursorLocation(x, y, w, h)
+            self.keyboard_proxy.SetCursorLocation('(iiii)', x, y, w, h)
             if debug == True:
                 print "object:text-caret-moved in", event.host_application.name,
                 print event.detail1, event.source.description
@@ -124,12 +128,12 @@ class CaribouDaemon:
         if (bx, by, bw, bh) == (0, 0, 0, 0):
             bx, by, bw, bh = entry_bb.x, entry_bb.y, entry_bb.width, entry_bb.height
 
-        self.keyboard_proxy.SetCursorLocation(bx, by, bw, bh)
+        self.keyboard_proxy.SetCursorLocation('(iiii)', bx, by, bw, bh)
 
-        self.keyboard_proxy.SetEntryLocation(entry_bb.x, entry_bb.y,
+        self.keyboard_proxy.SetEntryLocation('(iiii)', entry_bb.x, entry_bb.y,
                                              entry_bb.width, entry_bb.height)
 
-        self.keyboard_proxy.Show(self._x11_display.get_user_time())
+        self.keyboard_proxy.Show('(u)', self._x11_display.get_user_time())
 
     def on_focus(self, event):
         acc = event.source
@@ -147,7 +151,8 @@ class CaribouDaemon:
                     if debug == True:
                         print "enter text widget in", event.host_application.name
                 elif event.detail1 == 0 and acc == self._current_acc:
-                    self.keyboard_proxy.Hide(self._x11_display.get_user_time())
+                    self.keyboard_proxy.Hide('(u)',
+                                             self._x11_display.get_user_time())
                     self._current_acc = None
                     if debug == True:
                         print "leave text widget in", event.host_application.name
@@ -157,7 +162,7 @@ class CaribouDaemon:
                         event.source
 
     def clean_exit(self):
-        self.keyboard_proxy.Hide(self._x11_display.get_user_time())
+        self.keyboard_proxy.Hide('(u)', self._x11_display.get_user_time())
         self._deregister_event_listeners()
 
     def run(self):
