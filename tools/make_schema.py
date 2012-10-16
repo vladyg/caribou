@@ -9,18 +9,20 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from caribou.settings import caribou_settings
 
 class SchemasMaker:
-    def __init__(self, settings):
+    def __init__(self, settings, domain):
         self.settings = settings
+        self.domain = domain
 
-    def create_schemas(self):
+    def create_schemas(self, output):
         doc = xml.dom.minidom.Document()
         schemafile =  doc.createElement('schemalist')
         schema = doc.createElement('schema')
         schema.setAttribute("id", self.settings.schema_id)
+        schema.setAttribute("gettext-domain", self.domain)
         schemafile.appendChild(schema)
         self._create_schema(self.settings, doc, schema)
 
-        fp = open("%s.gschema.xml.in" % self.settings.schema_id, 'w')
+        fp = open(output, 'w')
         self._pretty_xml(fp, schemafile)
         fp.close()
 
@@ -77,15 +79,27 @@ class SchemasMaker:
 
 if __name__ == "__main__":
     from caribou.settings import AllSettings
+    from locale import setlocale, LC_ALL
+    import argparse
 
-    if (len(sys.argv) != 2):
-        print "usage: %s <schema id>" % sys.argv[0]
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description='make_schema')
 
-    modulename, settings_obj = sys.argv[-1].rsplit('.', 1)
+    parser.add_argument('settings_object', type=str,
+                        help='Settings object')
+    parser.add_argument('-o', '--output', type=str, required=True,
+                        help='Output file name')
+    parser.add_argument('-d', '--domain', type=str, default='caribou',
+                        help='Translation domain')
+
+    args = parser.parse_args()
+
+    # prevent _summary and _description from being translated
+    setlocale(LC_ALL, "C")
+
+    modulename, settings_obj = args.settings_object.rsplit('.', 1)
 
     module = __import__(modulename, locals(), globals(), [settings_obj])
     settings = getattr(module, settings_obj)
 
-    maker = SchemasMaker(settings)
-    maker.create_schemas()
+    maker = SchemasMaker(settings, args.domain)
+    maker.create_schemas(args.output)
