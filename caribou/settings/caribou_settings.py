@@ -1,5 +1,5 @@
 from caribou.settings.setting_types import *
-from caribou.i18n import _
+from caribou import _
 
 CaribouSettings = SettingsTopGroup(
     _("Caribou Preferences"), "/org/gnome/caribou/", "org.gnome.caribou",
