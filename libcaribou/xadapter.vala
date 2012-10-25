@@ -156,6 +156,7 @@ namespace Caribou {
             uint offset = this.xkbdesc.map.key_sym_map[this.reserved_keycode].offset;
 
             this.xkbdesc.map.syms[offset] = keysym;
+            this.xkbdesc.device_spec = (ushort) Xkb.UseCoreKbd;
 
             Xkb.set_map (this.xdisplay, Xkb.AllMapComponentsMask, this.xkbdesc);
             /**
