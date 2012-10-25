@@ -154,16 +154,21 @@ namespace Caribou {
 
             this.xdisplay.flush ();
             uint offset = this.xkbdesc.map.key_sym_map[this.reserved_keycode].offset;
-
             this.xkbdesc.map.syms[offset] = keysym;
             this.xkbdesc.device_spec = (ushort) Xkb.UseCoreKbd;
 
-            Xkb.set_map (this.xdisplay, Xkb.AllMapComponentsMask, this.xkbdesc);
-            /**
-             *  FIXME: the use of XkbChangeMap, and the reuse of the priv->xkb_desc
-             *  structure, would be far preferable. HOWEVER it does not seem to work
-             *  using XFree 4.3.
-             **/
+            Xkb.MapChanges changes = Xkb.MapChanges ();
+
+            // We don't touch key types here but include the
+            // information in XkbSetMap request to the server, because
+            // some X servers need the information to check the sanity
+            // of the keysyms change.
+            changes.changed = (ushort) (Xkb.KeySymsMask | Xkb.KeyTypesMask);
+            changes.first_key_sym = (char) this.reserved_keycode;
+            changes.num_key_syms = this.xkbdesc.map.key_sym_map[this.reserved_keycode].width;
+            changes.first_type = 0;
+            changes.num_types = this.xkbdesc.map.num_types;
+            Xkb.change_map (this.xdisplay, this.xkbdesc, changes);
 
             this.xdisplay.flush ();
 

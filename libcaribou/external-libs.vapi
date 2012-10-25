@@ -9,6 +9,9 @@ namespace Xkb {
     [CCode (cname = "XkbSetMap")]
     public void set_map (X.Display dpy, uint which, Desc xkb);
 
+    [CCode (cname = "XkbChangeMap")]
+    public bool change_map (X.Display dpy, Desc xkb, MapChanges changes);
+
     [CCode (cname = "XkbFreeKeyboard")]
     public void free_keyboard (Desc xkb, uint which, bool free_all);
 
@@ -108,6 +111,29 @@ namespace Xkb {
         uchar    width;
         ushort   offset;
     }
+
+    [CCode (cname = "XkbMapChangesRec", free_function = "")]
+	public struct MapChanges {
+        ushort changed;
+        char min_key_code;
+        char max_key_code;
+        uchar first_type;
+        uchar num_types;
+        char first_key_sym;
+        uchar num_key_syms;
+        char first_key_act;
+        uchar num_key_acts;
+        char first_key_behavior;
+        uchar num_key_behaviors;
+        char first_key_explicit;
+        uchar num_key_explicit;
+        char first_modmap_key;
+        uchar num_modmap_keys;
+        char first_vmodmap_key;
+        uchar num_vmodmap_keys;
+        uchar pad;
+        ushort vmods;
+	}
 
     [Compact]
     [CCode (cname = "XkbClientMapRec", free_function = "")]
@@ -212,15 +238,21 @@ namespace Xkb {
     [CCode (cname = "XkbAllEventsMask")]
     public int AllEventsMask;
 
-   [CCode (cname = "XkbStateNotify")]
+    [CCode (cname = "XkbStateNotify")]
     public int StateNotify;
 
-   [CCode (cname = "XkbGroupStateMask")]
+    [CCode (cname = "XkbGroupStateMask")]
     public int GroupStateMask;
 
-   [CCode (cname = "XkbModifierStateMask")]
+    [CCode (cname = "XkbModifierStateMask")]
     public int ModifierStateMask;
 
-  [CCode (cname = "XkbAllMapComponentsMask")]
+    [CCode (cname = "XkbAllMapComponentsMask")]
     public int AllMapComponentsMask;
+
+    [CCode (cname = "XkbKeySymsMask")]
+    public int KeySymsMask;
+
+    [CCode (cname = "XkbKeyTypesMask")]
+    public int KeyTypesMask;
 }
