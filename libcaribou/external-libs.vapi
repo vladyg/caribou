@@ -78,8 +78,8 @@ namespace Xkb {
         public X.Display dpy;
         public ushort flags;
         public ushort device_spec;
-        public char min_key_code;
-        public char max_key_code;
+        public uchar min_key_code;
+        public uchar max_key_code;
         public Controls          ctrls;
         public ServerMap         server;
         public ClientMap         map;
@@ -149,6 +149,7 @@ namespace Xkb {
         [CCode (array_length = false, array_null_terminated = true)]
         public SymMap[]         key_sym_map;
 
+        [CCode (array_length = false, array_null_terminated = true)]
         public uchar[]          modmap;
     }
 

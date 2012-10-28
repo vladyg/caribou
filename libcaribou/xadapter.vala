@@ -21,6 +21,7 @@ namespace Caribou {
         uchar reserved_keycode;
         uchar modifiers;
         uchar group;
+        uint[] level_switch_modifiers;
 
         public delegate void KeyButtonCallback (uint keybuttoncode, bool pressed);
 
@@ -56,6 +57,16 @@ namespace Caribou {
             this.modifiers = xkb_state.mods;
 
             this.reserved_keycode = 0;
+
+            this.level_switch_modifiers = {
+                0,
+                Gdk.ModifierType.SHIFT_MASK
+            };
+            var lv3_mod = keysym_to_modifier (Gdk.Key.ISO_Level3_Shift);
+            if (lv3_mod != 0) {
+                level_switch_modifiers += lv3_mod;
+                level_switch_modifiers += Gdk.ModifierType.SHIFT_MASK | lv3_mod;
+            }
 
             button_funcs = new HashTable<uint, KeyButtonHandler> (direct_hash,
                                                                   direct_equal);
@@ -121,6 +132,18 @@ namespace Caribou {
 			self.get_current_group (out group_name, out variant_name);
 			self.group_changed (self.group, group_name, variant_name);
 		}
+
+        private uchar keysym_to_modifier (uint keyval) {
+            for (var i = xkbdesc.min_key_code; i <= xkbdesc.max_key_code; i++) {
+                unowned Xkb.SymMap symmap = xkbdesc.map.key_sym_map[i];
+                for (var j = 0;
+                     j < symmap.width * (symmap.group_info & 0x0f);
+                     j++)
+                    if (xkbdesc.map.syms[symmap.offset + j] == keyval)
+                        return xkbdesc.map.modmap[i];
+            }
+            return 0;
+        }
 
         private uchar get_reserved_keycode () {
             uchar i;
@@ -196,16 +219,17 @@ namespace Caribou {
             Gdk.KeymapKey? best_match = null;
 
             foreach (KeymapKey km in kmk)
-               if (km.group == this.group && km.level <= 1)
+               if (km.group == this.group &&
+                   km.level < this.level_switch_modifiers.length)
                    best_match = km;
 
             if (best_match == null)
                 return false;
 
-               keycode = (uchar) best_match.keycode;
-               modmask = (best_match.level == 1) ? Gdk.ModifierType.SHIFT_MASK : 0;
+            keycode = (uchar) best_match.keycode;
+            modmask = this.level_switch_modifiers[best_match.level];
 
-               return true;
+            return true;
         }
 
         private uchar keycode_for_keyval (uint keyval, out uint modmask) {
