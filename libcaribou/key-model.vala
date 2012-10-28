@@ -20,6 +20,8 @@ namespace Caribou {
         public bool show_subkeys { get; private set; default = false; }
         public string name { get; private set; }
         public uint keyval { get; private set; }
+        public string? text { get; private construct set; default = null; }
+        private uint[] _keyvals = {};
 
         public bool scan_stepping { get; internal set; }
         private bool _scan_selected;
@@ -48,8 +50,9 @@ namespace Caribou {
             { null, 0 }
         };
 
-        public KeyModel (string name) {
+        public KeyModel (string name, string? text = null) {
             this.name = name;
+            this.text = text;
             mod_mask = (Gdk.ModifierType) 0;
 
             int i = 0;
@@ -60,8 +63,22 @@ namespace Caribou {
                     mod_mask = entry.mask;
             }
 
-            if (mod_mask == 0)
-                keyval = Gdk.keyval_from_name (name);
+            if (mod_mask == 0) {
+                if (text != null) {
+                    int index = 0;
+                    unichar uc;
+                    while (text.get_next_char (ref index, out uc)) {
+                        uint keyval = Gdk.unicode_to_keyval (uc);
+                        if (keyval != uc | 0x01000000)
+                            _keyvals += keyval;
+                    }
+                } else {
+                    uint keyval = Gdk.keyval_from_name (name);
+                    if (keyval != Gdk.Key.VoidSymbol && keyval != 0)
+                        _keyvals += keyval;
+                    this.keyval = keyval;
+                }
+            }
 
             xadapter = XAdapter.get_default();
             extended_keys = new Gee.ArrayList<KeyModel> ();
@@ -102,7 +119,7 @@ namespace Caribou {
                 }
             }
 
-            if (keyval != 0) {
+            foreach (var keyval in _keyvals) {
                 xadapter.keyval_press(keyval);
                 xadapter.keyval_release(keyval);
             }

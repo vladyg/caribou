@@ -139,7 +139,9 @@ namespace Caribou {
             string name = node->get_prop ("name");
             assert (name != null);
 
-            KeyModel key = new KeyModel (name);
+            string? text = node->get_prop ("text");
+
+            KeyModel key = new KeyModel (name, text);
 
             if (align != null)
                 key.align = align;
