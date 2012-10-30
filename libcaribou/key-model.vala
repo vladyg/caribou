@@ -22,6 +22,7 @@ namespace Caribou {
         public uint keyval { get; private set; }
         public string? text { get; private construct set; default = null; }
         private uint[] _keyvals = {};
+        public string label { get; private set; default = ""; }
 
         public bool scan_stepping { get; internal set; }
         private bool _scan_selected;
@@ -48,6 +49,25 @@ namespace Caribou {
             { "Control_L", Gdk.ModifierType.CONTROL_MASK },
             { "Alt_L", Gdk.ModifierType.MOD1_MASK },
             { null, 0 }
+        };
+
+        private const LabelMapEntry label_map[] = {
+            { "BackSpace", "\xe2\x8c\xab" },
+            { "space", " " },
+            { "Return", "\xe2\x8f\x8e" },
+            { "Return", "\xe2\x8f\x8e" },
+            { "Control_L", "Ctrl" },
+            { "Control_R", "Ctrl" },
+            { "Alt_L", "Alt" },
+            { "Alt_R", "Alt" },
+            { "Caribou_Prefs", "\xe2\x8c\xa8" },
+            { "Caribou_ShiftUp", "\xe2\xac\x86" },
+            { "Caribou_ShiftDown", "\xe2\xac\x87" },
+            { "Caribou_Emoticons", "\xe2\x98\xba" },
+            { "Caribou_Symbols", "123" },
+            { "Caribou_Symbols_More", "{#*" },
+            { "Caribou_Alpha", "Abc" },
+            { "Caribou_Repeat", "\xe2\x99\xbb" }
         };
 
         public KeyModel (string name, string? text = null) {
@@ -77,6 +97,24 @@ namespace Caribou {
                     if (keyval != Gdk.Key.VoidSymbol && keyval != 0)
                         _keyvals += keyval;
                     this.keyval = keyval;
+                }
+            }
+
+            for (i = 0; i < label_map.length; i++) {
+                if (label_map[i].name == name) {
+                    label = label_map[i].label;
+                    break;
+                }
+            }
+            if (i == label_map.length) {
+                if (text != null)
+                    label = text;
+                else if (name.has_prefix ("Caribou_"))
+                    label = name["Caribou_".length:name.length];
+                else if (_keyvals.length > 0) {
+                    unichar uc = Gdk.keyval_to_unicode (_keyvals[0]);
+                    if (!uc.isspace () && uc != 0)
+                        label = uc.to_string ();
                 }
             }
 
@@ -174,5 +212,10 @@ namespace Caribou {
     private struct ModifierMapEntry {
         string name;
         Gdk.ModifierType mask;
+    }
+
+    private struct LabelMapEntry {
+        string name;
+        string label;
     }
 }

@@ -9,25 +9,6 @@ from gi.repository import Caribou
 import os
 from math import ceil
 
-PRETTY_LABELS = {
-    "BackSpace" : u'\u232b',
-    "space" : u' ',
-    "Return" : u'\u23ce',
-    "Return" : u'\u23ce',
-    "Control_L" : u'Ctrl',
-    "Control_R" : u'Ctrl',
-    "Alt_L" : u'Alt',
-    "Alt_R" : u'Alt',
-    'Caribou_Prefs' : u'\u2328',
-    'Caribou_ShiftUp' : u'\u2b06',
-    'Caribou_ShiftDown' : u'\u2b07',
-    'Caribou_Emoticons' : u'\u263a',
-    'Caribou_Symbols' : u'123',
-    'Caribou_Symbols_More' : u'{#*',
-    'Caribou_Alpha' : u'Abc',
-    'Caribou_Repeat' : u'\u267b'
-}
-
 class AntlerKey(Gtk.Button):
     def __init__(self, key, spacing=0):
         GObject.GObject.__init__(self)
@@ -61,17 +42,8 @@ class AntlerKey(Gtk.Button):
             self.unset_state_flags(Gtk.StateFlags.INCONSISTENT)
 
     def _get_key_label(self):
-        label = self.caribou_key().props.name
-        if PRETTY_LABELS.has_key(self.caribou_key().props.name):
-            label = PRETTY_LABELS[self.caribou_key().props.name]
-        elif self.caribou_key().props.name.startswith('Caribou_'):
-            label = self.caribou_key().name.replace('Caribou_', '')
-        else:
-            unichar = unichr(Gdk.keyval_to_unicode(self.caribou_key().props.keyval))
-            if not unichar.isspace() and unichar != u'\x00':
-                label = unichar
-
-        return "<b>%s</b>" % GLib.markup_escape_text(label.encode('utf-8'))
+        label = self.caribou_key().props.label
+        return "<b>%s</b>" % GLib.markup_escape_text(label)
 
     def _caribou_key_pressed (self, key, _key):
         self.set_state_flags(Gtk.StateFlags.ACTIVE, False)
