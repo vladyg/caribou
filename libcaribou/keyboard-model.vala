@@ -23,7 +23,7 @@ namespace Caribou {
 
             xadapter.get_groups (out grps, out variants);
 
-            groups = new Gee.HashMap<string, GroupModel> (str_hash, str_equal);
+            groups = new Gee.HashMap<string, GroupModel> ();
 
             for (i=0;i<grps.length;i++)
                 populate_group (grps[i], variants[i]);

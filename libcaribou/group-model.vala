@@ -12,7 +12,7 @@ namespace Caribou {
         public GroupModel (string group, string variant) {
             this.group = group;
             this.variant = variant;
-            levels = new Gee.HashMap<string, LevelModel> (str_hash, str_equal);
+            levels = new Gee.HashMap<string, LevelModel> ();
             active_level = default_level;
         }
 
