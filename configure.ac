@@ -27,6 +27,7 @@ PYGOBJECT_REQUIRED=2.90.3
 GTK_REQUIRED=3.0.0
 CLUTTER_REQUIRED=1.5.11
 GDK_REQUIRED=3.0.0
+VALADOC_REQUIRED=0.3.1
 
 PKG_CHECK_MODULES(CARIBOU, [
   pygobject-3.0 >= $PYGOBJECT_REQUIRED,
@@ -104,6 +105,25 @@ IT_PROG_INTLTOOL([0.35.0])
 dnl == GObject introspection ==
 GOBJECT_INTROSPECTION_REQUIRE([0.10.7])
 
+dnl == Documentation ==
+AC_ARG_ENABLE([docs],
+              AS_HELP_STRING([--enable-docs],[Enable documentation generation]),
+              [enable_docs=$enableval], [enable_docs=no])
+AM_CONDITIONAL([ENABLE_DOCS], [test x$enable_docs = xyes])
+
+have_valadoc=no
+AS_IF([test x$enable_docs = xyes], [
+  # make sure the library is new enough and the program exists
+  PKG_CHECK_MODULES([VALADOC], [valadoc-1.0 >= $VALADOC_REQUIRED])
+  AC_PATH_PROG([VALADOC], [valadoc], [:])
+  AS_IF([test "$VALADOC" != :], have_valadoc=yes)
+])
+AM_CONDITIONAL([HAVE_VALADOC], [test x$have_valadoc = xyes])
+
+AS_IF([test "x$enable_docs" = "xyes" -a "x$have_valadoc" != "xyes"], [
+    AC_MSG_ERROR([Doc building requested but valadoc not installed.])
+])
+
 dnl == generate makefiles ==
 AC_OUTPUT([
 Makefile
@@ -128,4 +148,5 @@ modules/Makefile
 modules/gtk3/Makefile
 modules/gtk2/Makefile
 tools/Makefile
+docs/Makefile
 ])
