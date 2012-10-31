@@ -10,3 +10,5 @@ SUBDIRS = \
 	daemon/
 
 DISTCLEANFILES = i18n.py
+
+-include $(top_srcdir)/git.mk

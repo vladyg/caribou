@@ -16,3 +16,5 @@ common_files = \
 EXTRA_DIST = $(fullscalelayouts_in_files) $(common_files)
 
 CLEANFILES = $(fullscalelayouts_DATA) $(fullscalelayouts_in_files:.xml.in=.xsl)
+
+-include $(top_srcdir)/git.mk

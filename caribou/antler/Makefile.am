@@ -6,3 +6,5 @@ caribou_antler_PYTHON = \
 	keyboard_view.py  \
 	main.py \
 	window.py
+
+-include $(top_srcdir)/git.mk

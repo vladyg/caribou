@@ -18,3 +18,5 @@ common_files = \
 EXTRA_DIST = $(touchlayouts_in_files) $(common_files)
 
 CLEANFILES = $(touchlayouts_DATA) $(touchlayouts_in_files:.xml.in=.xsl)
+
+-include $(top_srcdir)/git.mk

@@ -14,3 +14,5 @@ gtk_modules_DATA = caribou-gtk-module.desktop
 endif
 
 EXTRA_DIST = caribou-gtk-module.desktop
+
+-include $(top_srcdir)/git.mk

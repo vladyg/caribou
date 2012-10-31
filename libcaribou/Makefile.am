@@ -86,7 +86,12 @@ CLEANFILES = \
 	Caribou-1.0.typelib \
 	Caribou-1.0.gir \
 	_Caribou-1.0.gir \
-	caribou.pc \
-	*.[ch]
+	caribou.pc
 
 MAINTAINERCLEANFILES = libcaribou.symbols
+
+GITIGNOREFILES = \
+        $(libcaribou_la_SOURCES:.vala=.c) \
+        libcaribou_la_vala.stamp
+
+-include $(top_srcdir)/git.mk

@@ -33,3 +33,9 @@ libcaribou_gtk_module_la_LDFLAGS = \
 EXTRA_DIST = \
 	vapi-fixes.vapi \
 	$(NULL)
+
+GITIGNOREFILES = \
+        $(libcaribou_gtk_module_la_SOURCES:.vala=.c) \
+        libcaribou_gtk_module_la_vala.stamp
+
+-include $(top_srcdir)/git.mk

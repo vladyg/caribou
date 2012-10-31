@@ -97,3 +97,5 @@ caribou-gtk-doc: $(caribou_doc_files)
 distclean-local: distclean-docs
 distclean-docs:
 	rm -rf $(distclean_dirs)
+
+-include $(top_srcdir)/git.mk

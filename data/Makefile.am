@@ -41,3 +41,5 @@ CLEANFILES = $(desktop_DATA) \
 	$(gsettings_schemas_in_files) \
 	$(gsettings_SCHEMAS) \
 	$(servicefile_DATA)
+
+-include $(top_srcdir)/git.mk
