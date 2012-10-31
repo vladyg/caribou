@@ -6,6 +6,3 @@ caribou_antler_PYTHON = \
 	keyboard_view.py  \
 	main.py \
 	window.py
-
-clean-local:
-	rm -rf *.pyc *.pyo

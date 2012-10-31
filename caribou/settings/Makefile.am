@@ -6,6 +6,3 @@ caribou_settings_PYTHON = \
 	settings_manager.py \
 	caribou_settings.py  \
 	setting_types.py
-
-clean-local:
-	rm -rf *.pyc *.pyo

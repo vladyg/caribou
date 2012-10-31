@@ -10,6 +10,3 @@ SUBDIRS = \
 	daemon/
 
 DISTCLEANFILES = i18n.py
-
-clean-local:
-	rm -rf *.pyc *.pyo

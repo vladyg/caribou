@@ -27,11 +27,13 @@ org.gnome.Caribou.Antler.service: org.gnome.Caribou.Antler.service.in
 EXTRA_DIST = $(desktop_in_files) $(autostart_in_files) $(servicefile_in_files)
 
 org.gnome.caribou.gschema.xml.in: $(top_srcdir)/caribou/settings/caribou_settings.py
-	$(AM_V_GEN)$(top_srcdir)/tools/make_schema.py -d "$(GETTEXT_PACKAGE)" \
+	$(AM_V_GEN)$(PYTHON) -B $(top_srcdir)/tools/make_schema.py \
+		-d "$(GETTEXT_PACKAGE)" \
 		-o $@ caribou.settings.CaribouSettings
 
 org.gnome.antler.gschema.xml.in: $(top_srcdir)/caribou/antler/antler_settings.py
-	$(AM_V_GEN)$(top_srcdir)/tools/make_schema.py -d "$(GETTEXT_PACKAGE)" \
+	$(AM_V_GEN)$(PYTHON) -B $(top_srcdir)/tools/make_schema.py \
+		-d "$(GETTEXT_PACKAGE)" \
 		-o $@ caribou.antler.AntlerSettings
 
 CLEANFILES = $(desktop_DATA) \
