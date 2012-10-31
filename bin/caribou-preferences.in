@@ -22,6 +22,7 @@ script_dir="$(dirname "$(readlink -f ${0})")"
 
 prefix=@prefix@
 exec_prefix=@exec_prefix@
+datarootdir=@datarootdir@
 
 if [ $script_dir = "@bindir@" ]
 then
