@@ -9,8 +9,8 @@ libcaribou_la_VALAFLAGS = \
 	-H caribou.h --vapi caribou-1.0.vapi \
 	-h caribou-internals.h \
 	--vapidir=. \
-	--pkg x11 --pkg xtst --pkg gdk-3.0 --pkg gio-2.0 --pkg gee-0.8 \
-	--pkg libxklavier --pkg external-libs --pkg gdk-x11-3.0 --pkg libxml-2.0 \
+	--pkg xtst --pkg gee-0.8 --pkg gdk-x11-3.0 --pkg libxml-2.0 \
+	--pkg libxklavier --pkg external-libs \
 	--internal-vapi caribou-internals-1.0.vapi \
 	--library caribou-1.0 --gir _Caribou-1.0.gir \
 	--symbols libcaribou.symbols \
@@ -51,6 +51,7 @@ libcaribou_la_SOURCES = \
 	xml-deserializer.vala
 
 EXTRA_DIST = \
+	caribou-1.0.deps \
 	external-libs.vapi \
 	libxklavier.vapi \
 	libcaribou.symbols
@@ -72,6 +73,9 @@ Caribou-1.0.typelib: Caribou-1.0.gir
 	@INTROSPECTION_COMPILER@ --shared-library=libcaribou.so.0 -o $@ $^
 
 Caribou-1.0.gir caribou-internals-1.0.vapi caribou-1.0.vapi: libcaribou.la
+
+vapidir = $(datadir)/vala/vapi
+vapi_DATA = caribou-1.0.vapi caribou-1.0.deps
 
 CLEANFILES = \
 	caribou-1.0.vapi \
