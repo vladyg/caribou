@@ -13,10 +13,15 @@ libcaribou_la_VALAFLAGS = \
 	--pkg libxklavier --pkg external-libs --pkg gdk-x11-3.0 --pkg libxml-2.0 \
 	--internal-vapi caribou-internals-1.0.vapi \
 	--library caribou-1.0 --gir _Caribou-1.0.gir \
+	--symbols libcaribou.symbols \
 	$(VALAFLAGS)
 
 libcaribou_la_CPPFLAGS = \
 	$(INCLUDES)
+
+libcaribou_la_LDFLAGS = \
+        -export-dynamic \
+        -export-symbols $(srcdir)/libcaribou.symbols
 
 libcaribouincludedir = $(includedir)/libcaribou
 
@@ -47,7 +52,8 @@ libcaribou_la_SOURCES = \
 
 EXTRA_DIST = \
 	external-libs.vapi \
-	libxklavier.vapi
+	libxklavier.vapi \
+	libcaribou.symbols
 
 #
 # Introspection support
@@ -74,3 +80,5 @@ CLEANFILES = \
 	Caribou-1.0.gir \
 	_Caribou-1.0.gir \
 	*.[ch]
+
+MAINTAINERCLEANFILES = libcaribou.symbols
