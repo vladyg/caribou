@@ -12,7 +12,7 @@
 .antler-keyboard-button {
   border-width: 0px;
   border-radius: 2px;
-  border-image: url("dark-key-border.svg") 2px 2px 2px 2px repeat stretch;
+  border-image: url("dark-key-border.svg") 2 2 2 2 repeat stretch;
   font: Sans 14px;
   background-image: -gtk-gradient (linear,
 				     left top,
