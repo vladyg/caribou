@@ -3,21 +3,22 @@
 # This file is distributed under the same license as the caribou package.
 #
 # Sayak Sarkar <sayak.bugsmith@gmail.com>, 2012.
+# Runa Bhattacharjee <runab@redhat.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2012-09-18 19:11+0000\n"
-"PO-Revision-Date: 2012-09-22 00:42+0530\n"
-"Last-Translator: Sayak Sarkar <sayak.bugsmith@gmail.com>\n"
+"POT-Creation-Date: 2012-09-22 07:42+0000\n"
+"PO-Revision-Date: 2012-11-09 14:43+0530\n"
+"Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bengali (India) <anubad@lists.ankur.org.in>\n"
 "Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.2\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -73,7 +74,7 @@ msgstr "বিপরীত স্ক্যানিং"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "সুইচ সহযোগে এগিয়ে যাবে, dwell করে সক্রিয় করা হবে"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
@@ -190,13 +191,15 @@ msgid ""
 "In order to use %s, accessibility needs to be enabled. Do you want to enable "
 "it now?"
 msgstr ""
-"%s ব্যবহার করতে হলে, স্বাচ্ছন্দ্যকরণ সক্ষম করা প্রয়োজন। আপনি কি এটি এখন সক্ষম করতে "
+"%s ব্যবহার করতে হলে, স্বাচ্ছন্দ্যকরণ সক্ষম করা প্রয়োজন। আপনি কি এটি এখন "
+"সক্ষম করতে "
 "চান?"
 
 #: ../caribou/daemon/main.py:59
 #, python-format
 msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr "স্বাচ্ছন্দ্যকরণ সক্ষম হয়েছে। লগ আউট করে আবার লগ ইন করুন %s ব্যবহার করার জন্য।"
+msgstr ""
+"স্বাচ্ছন্দ্যকরণ সক্ষম হয়েছে। লগ আউট করে আবার লগ ইন করুন %s ব্যবহার করার জন্য।"
 
 #: ../caribou/daemon/main.py:156
 msgid "WARNING - Caribou: unhandled editable widget:"
@@ -229,7 +232,8 @@ msgid ""
 "text, to a fullscale keyboard."
 msgstr ""
 "কীবোর্ডের জ্যামিতি কীবোর্ডের আকৃতি এবং জটিলতা নির্ধারণ করে, এটি সাধারণ টেক্সট "
-"কম্পোজ করার জন্য একটি 'স্বাভাবিক' চেহারা ও গঠন থেকে একটি সম্পুর্ন মাপের কীবোর্ড "
+"কম্পোজ করার জন্য একটি 'স্বাভাবিক' চেহারা ও গঠন থেকে একটি সম্পুর্ন মাপের "
+"কীবোর্ড "
 "অবধি বিস্তারিত হতে পারে।"
 
 #. Translators: Keyboard type (similar to touch/tactile device)
@@ -275,3 +279,4 @@ msgstr "সর্বাধিক দূরত্ব"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "সর্বাধিক দূরত্ব যখন কিবোর্ড লুকানো থাকে"
+
