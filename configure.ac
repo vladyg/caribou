@@ -32,7 +32,10 @@ VALADOC_REQUIRED=0.3.1
 PKG_CHECK_MODULES(CARIBOU, [
   pygobject-3.0 >= $PYGOBJECT_REQUIRED,
   gtk+-3.0      >= $GTK_REQUIRED,
-  clutter-1.0   >= $CLUTTER_REQUIRED
+  clutter-1.0   >= $CLUTTER_REQUIRED,
+  gdk-3.0       >= $GDK_REQUIRED,
+  x11,
+  atspi-2
   ])
 AC_SUBST(CARIBOU_CFLAGS)
 AC_SUBST(CARIBOU_LIBS)
@@ -132,9 +135,7 @@ caribou/Makefile
 caribou/i18n.py
 caribou/antler/Makefile
 caribou/settings/Makefile
-caribou/daemon/Makefile
 bin/Makefile
-bin/caribou
 bin/caribou-preferences
 bin/antler-keyboard
 data/Makefile
@@ -151,4 +152,5 @@ modules/gtk2/Makefile
 tools/Makefile
 docs/Makefile
 vapi/Makefile
+daemon/Makefile
 ])

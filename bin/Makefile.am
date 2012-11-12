@@ -1,4 +1,4 @@
-bin_SCRIPTS = caribou caribou-preferences
+bin_SCRIPTS = caribou-preferences
 libexec_SCRIPTS = antler-keyboard
 
 DISTCLEANFILES = $(bin_SCRIPTS) $(libexec_SCRIPTS)

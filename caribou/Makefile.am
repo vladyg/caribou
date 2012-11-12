@@ -6,8 +6,7 @@ caribou_PYTHON = \
 
 SUBDIRS = \
         antler/ \
-        settings/ \
-	daemon/
+        settings/
 
 DISTCLEANFILES = i18n.py
 
