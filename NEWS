@@ -1,3 +1,10 @@
+===============
+Version 0.4.4.2
+===============
+- Bug 685792: use GDBus directly instead of dbus-python
+- Bug 685629: use "=" operator instead of "==" in shell scripts
+- 687409: Fix border-image slice values in antler's gtk CSS
+
 =============
 Version 0.4.4
 =============
