@@ -1,5 +1,3 @@
-using GLib;
-
 namespace Caribou {
     public class LevelModel : ScannableGroup, IKeyboardObject {
         public signal void level_toggled (string new_level);

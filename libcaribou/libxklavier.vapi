@@ -114,8 +114,11 @@ namespace Xkl {
 		public uint max_num_groups { get; }
 		public uint num_groups { get; }
 		public uint secondary_groups_mask { get; }
+		[CCode (cname = "X_config_changed")]
 		public virtual signal void X_config_changed ();
+		[CCode (cname = "X_new_device")]
 		public virtual signal void X_new_device ();
+		[CCode (cname = "X_state_changed")]
 		public virtual signal void X_state_changed (int p0, int p1, bool p2);
 		public virtual signal int new_toplevel_window (long p0, long p1);
 	}

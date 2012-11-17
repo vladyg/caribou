@@ -1,5 +1,3 @@
-using GLib;
-
 namespace Caribou {
     public class GroupModel : Object, IKeyboardObject {
         public string active_level { get; private set; }

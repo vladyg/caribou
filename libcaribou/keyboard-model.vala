@@ -1,5 +1,3 @@
-using Bus;
-
 namespace Caribou {
     public class KeyboardModel : Object, IKeyboardObject {
         public string active_group { get; private set; default = ""; }

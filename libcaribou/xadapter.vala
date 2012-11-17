@@ -1,9 +1,3 @@
-using Xkl;
-using Gdk;
-using Xkb;
-using XTest;
-using X;
-
 namespace Caribou {
     public class XAdapter : Object {
 
@@ -32,8 +26,8 @@ namespace Caribou {
             }
         }
 
-        HashTable<uint, KeyButtonHandler> button_funcs;
-        HashTable<uint, KeyButtonHandler> key_funcs;
+        Gee.HashMap<uint, KeyButtonHandler> button_funcs;
+        Gee.HashMap<uint, KeyButtonHandler> key_funcs;
 
         construct {
             Xkb.State xkb_state;
@@ -49,9 +43,7 @@ namespace Caribou {
             xkl_engine.start_listen (Xkl.EngineListenModes.TRACK_KEYBOARD_STATE);
             xkl_state = this.xkl_engine.get_current_state ();
             this.group = (uchar) xkl_state.group;
-            Signal.connect_object (xkl_engine, "X-state-changed",
-                                   (Callback) xkl_state_changed,
-                                   this, ConnectFlags.AFTER);
+            xkl_engine.X_state_changed.connect_after (xkl_state_changed);
 
             Xkb.get_state (this.xdisplay, Xkb.UseCoreKbd, out xkb_state);
             this.modifiers = xkb_state.mods;
@@ -68,11 +60,9 @@ namespace Caribou {
                 level_switch_modifiers += Gdk.ModifierType.SHIFT_MASK | lv3_mod;
             }
 
-            button_funcs = new HashTable<uint, KeyButtonHandler> (direct_hash,
-                                                                  direct_equal);
+            button_funcs = new Gee.HashMap<uint, KeyButtonHandler> ();
 
-            key_funcs = new HashTable<uint, KeyButtonHandler> (direct_hash,
-                                                               direct_equal);
+            key_funcs = new Gee.HashMap<uint, KeyButtonHandler> ();
 
             Xkb.select_events (
                 this.xdisplay, Xkb.UseCoreKbd,
@@ -102,7 +92,7 @@ namespace Caribou {
             if (xev.type == X.EventType.ButtonPress ||
                 xev.type == X.EventType.ButtonRelease) {
                 KeyButtonHandler handler =
-                    (KeyButtonHandler) button_funcs.lookup (xev.xbutton.button);
+                    (KeyButtonHandler) button_funcs.get (xev.xbutton.button);
                 if (handler != null)
                     handler.cb (xev.xbutton.button,
                                 xev.type == X.EventType.ButtonPress);
@@ -110,7 +100,7 @@ namespace Caribou {
                        xev.type == X.EventType.KeyRelease) {
 
                 KeyButtonHandler handler =
-                    (KeyButtonHandler) key_funcs.lookup (xev.xkey.keycode);
+                    (KeyButtonHandler) key_funcs.get (xev.xkey.keycode);
                 if (handler != null)
                     handler.cb (xev.xkey.keycode,
                                 xev.type == X.EventType.KeyPress);
@@ -124,14 +114,14 @@ namespace Caribou {
             return Gdk.FilterReturn.CONTINUE;
         }
 
-		private static void xkl_state_changed (Xkl.Engine xklengine, int type, int group, bool restore, XAdapter self) {
-			string group_name;
-			string variant_name;
+        private void xkl_state_changed (int type, int group, bool restore) {
+            string group_name;
+            string variant_name;
 
-			self.group = (uchar) group;
-			self.get_current_group (out group_name, out variant_name);
-			self.group_changed (self.group, group_name, variant_name);
-		}
+            this.group = (uchar) group;
+            get_current_group (out group_name, out variant_name);
+            group_changed (this.group, group_name, variant_name);
+        }
 
         private uchar keysym_to_modifier (uint keyval) {
             for (var i = xkbdesc.min_key_code; i <= xkbdesc.max_key_code; i++) {
@@ -218,7 +208,7 @@ namespace Caribou {
 
             Gdk.KeymapKey? best_match = null;
 
-            foreach (KeymapKey km in kmk)
+            foreach (Gdk.KeymapKey km in kmk)
                if (km.group == this.group &&
                    km.level < this.level_switch_modifiers.length)
                    best_match = km;
@@ -329,12 +319,12 @@ namespace Caribou {
 
             if (func != null) {
                 var handler = new KeyButtonHandler (func);
-                key_funcs.insert (keycode, handler);
+                key_funcs.set (keycode, handler);
                 xdisplay.grab_key ((int)keycode, 0, xid,
-                                   true, GrabMode.Async, GrabMode.Async);
+                                   true, X.GrabMode.Async, X.GrabMode.Async);
 
             } else {
-                key_funcs.remove (keycode);
+                key_funcs.unset (keycode);
                 xdisplay.ungrab_key ((int)keycode, 0, xid);
             }
         }
@@ -342,14 +332,14 @@ namespace Caribou {
         public void register_button_func (uint button, KeyButtonCallback? func) {
             if (func != null) {
                 var handler = new KeyButtonHandler (func);
-                button_funcs.insert (button, handler);
+                button_funcs.set (button, handler);
                 xdisplay.grab_button (button, 0, xid, true,
                                       X.EventMask.ButtonPressMask |
                                       X.EventMask.ButtonReleaseMask,
-                                      GrabMode.Async, GrabMode.Async, 0, 0);
+                                      X.GrabMode.Async, X.GrabMode.Async, 0, 0);
 
             } else {
-                button_funcs.remove (button);
+                button_funcs.unset (button);
                 xdisplay.ungrab_button (button, 0, xid);
             }
         }

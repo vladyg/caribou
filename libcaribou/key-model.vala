@@ -1,5 +1,3 @@
-using GLib;
-
 namespace Caribou {
     public class KeyModel : GLib.Object, IScannableItem, IKeyboardObject {
         public string align { get; set; default = "center"; }
