@@ -3,7 +3,7 @@ lib_LTLIBRARIES = libcaribou.la
 libcaribou_la_VALAFLAGS = \
 	-H caribou.h --vapi caribou-1.0.vapi \
 	-h caribou-internals.h \
-	--vapidir=. \
+	--vapidir=$(top_srcdir)/vapi \
 	--pkg xtst --pkg gee-0.8 --pkg gdk-x11-3.0 --pkg libxml-2.0 \
 	--pkg libxklavier --pkg external-libs \
 	--internal-vapi caribou-internals-1.0.vapi \
@@ -49,8 +49,6 @@ libcaribou_la_SOURCES = \
 
 EXTRA_DIST = \
 	caribou-1.0.deps \
-	external-libs.vapi \
-	libxklavier.vapi \
 	libcaribou.symbols
 
 #

@@ -1,0 +1,5 @@
+EXTRA_DIST = \
+	external-libs.vapi \
+	libxklavier.vapi
+
+-include $(top_srcdir)/git.mk

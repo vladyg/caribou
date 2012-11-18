@@ -1,6 +1,6 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-SUBDIRS = caribou bin data po libcaribou modules tools
+SUBDIRS = caribou bin data po libcaribou modules tools vapi
 
 if HAVE_VALADOC
 SUBDIRS += docs

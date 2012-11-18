@@ -150,4 +150,5 @@ modules/gtk3/Makefile
 modules/gtk2/Makefile
 tools/Makefile
 docs/Makefile
+vapi/Makefile
 ])
