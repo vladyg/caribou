@@ -1,4 +1,27 @@
 =============
+Version 0.4.5
+=============
+- Bug 687018: xadapter: use level3 shift if possible
+- Bug 673547: xadapter: use XkbChangeMap instead of XkbSetMap
+- Bug 673547: xadapter: specify core device when callin XkbSetMap
+- Bug 685629: portability: use "=" operator instead of "==" in shell
+  scripts
+- portability: allow the use of /bin/sh instead of /bin/bash
+- Bug 685607: libcaribou: simplify using xtst.vapi provided by vala
+- Bug 673579: libcaribou: Ignore level 3 keysyms when looking up
+  keycode
+- Bug 687026: xml: add "text" attribute to key
+- Bug 685792: daemon: use GDBUS directly instead of dbus-python
+- Bug 686200: make_schema: don't translate string in schema files
+- Bug 687409: Fix border-image slice values in antler's gtk CSS
+- Bug 687166: Port from libgee 0.6 to 0.8
+- Bug 656175: Port label string construction code to libcaribou
+- Bug 667455: Support out-of-tree build
+- Bug 673543: Fix typo in antler code
+- Translation updates (Latvian, Hindi, Malayalam, Bengali, Dutch,
+  Bengali India)
+
+=============
 Version 0.4.4
 =============
 - Removed unneeded gnome-doc-utils dependency
