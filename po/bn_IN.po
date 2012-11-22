@@ -3,21 +3,22 @@
 # This file is distributed under the same license as the caribou package.
 #
 # Sayak Sarkar <sayak.bugsmith@gmail.com>, 2012.
+# Runa Bhattacharjee <runab@redhat.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2012-07-18 12:41+0000\n"
-"PO-Revision-Date: 2012-07-19 15:39+0530\n"
-"Last-Translator: Sayak Sarkar <sayak.bugsmith@gmail.com>\n"
+"POT-Creation-Date: 2012-11-13 10:04+0000\n"
+"PO-Revision-Date: 2012-11-09 14:43+0530\n"
+"Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bengali (India) <anubad@lists.ankur.org.in>\n"
 "Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.2\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -25,200 +26,202 @@ msgstr "Caribou সমবন্ধীয় পছন্দ"
 
 #: ../caribou/settings/caribou_settings.py:6
 msgid "Scanning"
-msgstr ""
+msgstr "স্ক্যানিং"
 
 #: ../caribou/settings/caribou_settings.py:8
 msgid "Enable scanning"
-msgstr ""
+msgstr "স্ক্যানিং সক্ষম করুন"
 
 #: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
-msgstr ""
+msgstr "সুইচ স্ক্যান সক্ষম করুন"
 
 #: ../caribou/settings/caribou_settings.py:12
 msgid "General"
-msgstr ""
+msgstr "সাধারণ"
 
 #: ../caribou/settings/caribou_settings.py:13
 msgid "Scanning mode"
-msgstr ""
+msgstr "স্ক্যানিং মোড"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr ""
+msgstr "স্ক্যানিং টাইপ, উপগোষ্ঠী, সারি বা রেখাকার"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
-msgstr ""
+msgstr "উপগোষ্ঠী"
 
 #: ../caribou/settings/caribou_settings.py:17
 msgid "Rows"
-msgstr ""
+msgstr "সারিগুলি"
 
 #: ../caribou/settings/caribou_settings.py:18
 msgid "Linear"
-msgstr ""
+msgstr "রেখাকার"
 
 #: ../caribou/settings/caribou_settings.py:20
 msgid "Step time"
-msgstr ""
+msgstr "ধাপের সময়"
 
 #: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
-msgstr ""
+msgstr "মূল রূপান্তরের মধ্যবর্তী সময়"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
-msgstr ""
+msgstr "বিপরীত স্ক্যানিং"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "সুইচ সহযোগে এগিয়ে যাবে, dwell করে সক্রিয় করা হবে"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
-msgstr ""
+msgstr "স্ক্যান স্বয়ং পুনরারম্ভ করুন"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr ""
+msgstr "স্বয়ংক্রিয়ভাবে আইটেম সক্রিয়করণের পর স্ক্যানিং পুনরারম্ভ করুন"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
-msgstr ""
+msgstr "স্ক্যান চক্রসমূহ"
 
 #: ../caribou/settings/caribou_settings.py:31
 msgid "One"
-msgstr ""
+msgstr "এক"
 
 #: ../caribou/settings/caribou_settings.py:32
 msgid "Two"
-msgstr ""
+msgstr "দুই"
 
 #: ../caribou/settings/caribou_settings.py:33
 msgid "Three"
-msgstr ""
+msgstr "তিন"
 
 #: ../caribou/settings/caribou_settings.py:34
 msgid "Four"
-msgstr ""
+msgstr "চার"
 
 #: ../caribou/settings/caribou_settings.py:35
 msgid "Five"
-msgstr ""
+msgstr "পাঁচ"
 
 #: ../caribou/settings/caribou_settings.py:38
 msgid "Input"
-msgstr ""
+msgstr "নিবেশ"
 
 #: ../caribou/settings/caribou_settings.py:39
 msgid "Switch device"
-msgstr ""
+msgstr "ডিভাইস পরিবর্তন করুন"
 
 #: ../caribou/settings/caribou_settings.py:41
 msgid "Switch device, keyboard or mouse"
-msgstr ""
+msgstr "ডিভাইস, কীবোর্ড বা মাউস পরিবর্তন করুন"
 
 #: ../caribou/settings/caribou_settings.py:43
 msgid "Keyboard"
-msgstr ""
+msgstr "কীবোর্ড"
 
 #: ../caribou/settings/caribou_settings.py:44
 msgid "Mouse"
-msgstr ""
+msgstr "মাউস"
 
 #: ../caribou/settings/caribou_settings.py:46
 msgid "Switch key"
-msgstr ""
+msgstr "চাবি পরিবর্তন করুন"
 
 #: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
-msgstr ""
+msgstr "স্ক্যানিং মোড এর সাথে ব্যবহার করার চাবি"
 
 #: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
-msgstr ""
+msgstr "ডান স্থানান্তর"
 
 #: ../caribou/settings/caribou_settings.py:51
 msgid "Left shift"
-msgstr ""
+msgstr "বাম স্থানান্তর"
 
 #: ../caribou/settings/caribou_settings.py:52
 msgid "Space"
-msgstr ""
+msgstr "ব্যবধান"
 
 #: ../caribou/settings/caribou_settings.py:53
 msgid "Alt Gr"
-msgstr ""
+msgstr "Alt Gr"
 
 #: ../caribou/settings/caribou_settings.py:54
 msgid "Num lock"
-msgstr ""
+msgstr "Num lock"
 
 #: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
-msgstr ""
+msgstr "বোতাম পরিবর্তন করুন"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
-msgstr ""
+msgstr "স্ক্যানিং মোডে ব্যবহারযোগ্য মাউস বোতাম"
 
 #: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
-msgstr ""
+msgstr "বোতাম ১"
 
 #: ../caribou/settings/caribou_settings.py:61
 msgid "Button 2"
-msgstr ""
+msgstr "বোতাম ২"
 
 #: ../caribou/settings/caribou_settings.py:62
 msgid "Button 3"
-msgstr ""
+msgstr "বোতাম ৩"
 
 #: ../caribou/__init__.py:2
 msgid "Caribou"
-msgstr ""
+msgstr "Caribou"
 
-#: ../caribou/daemon/main.py:34
+#: ../caribou/daemon/main.py:38
 #, python-format
 msgid "Error starting %s"
-msgstr ""
+msgstr "%s থেকে ত্রুটি শুরু"
 
-#: ../caribou/daemon/main.py:45
+#: ../caribou/daemon/main.py:49
 #, python-format
 msgid ""
 "In order to use %s, accessibility needs to be enabled. Do you want to enable "
 "it now?"
 msgstr ""
+"%s ব্যবহার করতে হলে, স্বাচ্ছন্দ্যকরণ সক্ষম করা প্রয়োজন। আপনি কি এটি এখন সক্ষম করতে "
+"চান?"
 
-#: ../caribou/daemon/main.py:59
+#: ../caribou/daemon/main.py:63
 #, python-format
 msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
+msgstr "স্বাচ্ছন্দ্যকরণ সক্ষম হয়েছে। লগ আউট করে আবার লগ ইন করুন %s ব্যবহার করার জন্য।"
 
-#: ../caribou/daemon/main.py:156
+#: ../caribou/daemon/main.py:161
 msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr ""
+msgstr "সতর্কবার্তা - Caribou: সম্পাদনযোগ্য উইজেট আনহ্যান্ডেল করেছে:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
-msgstr ""
+msgstr "Antler পছন্দসমূহ"
 
 #: ../caribou/antler/antler_settings.py:6
 msgid "Antler"
-msgstr ""
+msgstr "Antler"
 
 #: ../caribou/antler/antler_settings.py:7
 msgid "Appearance"
-msgstr ""
+msgstr "আবির্ভাব"
 
 #: ../caribou/antler/antler_settings.py:9
 msgid "Keyboard Type"
-msgstr ""
+msgstr "কীবোর্ডের ধরণ"
 
 #: ../caribou/antler/antler_settings.py:10
 msgid "The keyboard geometry Caribou should use"
-msgstr ""
+msgstr "যে কীবোর্ড জ্যামিতি Caribou-র ব্যবহার করা উচিত"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
@@ -226,47 +229,50 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
+"কীবোর্ডের জ্যামিতি কীবোর্ডের আকৃতি এবং জটিলতা নির্ধারণ করে, এটি সাধারণ টেক্সট "
+"কম্পোজ করার জন্য একটি 'স্বাভাবিক' চেহারা ও গঠন থেকে একটি সম্পুর্ন মাপের কীবোর্ড "
+"অবধি বিস্তারিত হতে পারে।"
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
 msgid "Touch"
-msgstr ""
+msgstr "স্পর্শ"
 
 #. Translators: Keyboard type (conventional keyboard)
 #: ../caribou/antler/antler_settings.py:18
 msgid "Full scale"
-msgstr ""
+msgstr "সম্পুর্ন মাপ"
 
 #. Translators: Keyboard type (scanned grid by rows/columns)
 #: ../caribou/antler/antler_settings.py:20
 msgid "Scan"
-msgstr ""
+msgstr "স্ক্যান"
 
 #: ../caribou/antler/antler_settings.py:21
 #: ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
-msgstr ""
+msgstr "সিস্টেম থিম ব্যবহার করুন"
 
 #: ../caribou/antler/antler_settings.py:23
 msgid "Minimum Alpha"
-msgstr ""
+msgstr "নূন্যতম আলফা"
 
 #: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
-msgstr ""
+msgstr "কীবোর্ডের এর সর্বনিম্ন অস্বচ্ছতা"
 
 #: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
-msgstr ""
+msgstr "সর্বাধিক আলফা"
 
 #: ../caribou/antler/antler_settings.py:27
 msgid "Maximal opacity of keyboard"
-msgstr ""
+msgstr "কীবোর্ডের সর্বাধিক অস্বচ্ছতা"
 
 #: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
-msgstr ""
+msgstr "সর্বাধিক দূরত্ব"
 
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
-msgstr ""
+msgstr "সর্বাধিক দূরত্ব যখন কিবোর্ড লুকানো থাকে"
