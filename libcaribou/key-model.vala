@@ -121,12 +121,12 @@ namespace Caribou {
         }
 
         internal void add_subkey (KeyModel key) {
-            key.key_clicked.connect(on_subkey_clicked);
+            key.key_released.connect(on_subkey_released);
             extended_keys.add (key);
         }
 
-        private void on_subkey_clicked (KeyModel key) {
-            key_clicked (key);
+        private void on_subkey_released (KeyModel key) {
+            key_released (key);
             show_subkeys = false;
         }
 
