@@ -4,22 +4,23 @@
 # This file is distributed under the same license as the caribou package.
 #
 # Rajesh <rranjan>, 2011.
+# Rajesh Ranjan <rajesh>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou.po.master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
-"cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-07 06:28+0000\n"
-"PO-Revision-Date: 2011-09-09 15:32+0530\n"
-"Last-Translator: Rajesh <rranjan>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2012-11-22 06:49+0000\n"
+"PO-Revision-Date: 2012-11-23 13:31+0530\n"
+"Last-Translator: Rajesh Ranjan <rajesh>\n"
 "Language-Team: Hindi <hindi>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "\n"
-"Language: hi\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -47,7 +48,7 @@ msgstr "स्कैन विधि"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr ""
+msgstr "स्कैनिंग प्रकार, उपसमूह, पंक्ति या रैखिक"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -67,7 +68,7 @@ msgstr "स्टेप समय"
 
 #: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
-msgstr ""
+msgstr "कुँजी संक्रमण के बीच समय"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
@@ -75,7 +76,7 @@ msgstr "उल्टा स्कैनिंग"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "स्विच के साथ चरण, निवास से सक्रिय"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
@@ -83,7 +84,7 @@ msgstr "स्कैनिंग स्वतः आरंभ"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr ""
+msgstr "मद सक्रियकरण के बाद स्वतः स्कैनिंग फिर आरंभ करें"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
@@ -163,7 +164,7 @@ msgstr "स्विच बटन"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
-msgstr ""
+msgstr "स्कैनिंग विधि में उपयोग के लिए माउस बटन"
 
 #: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
@@ -181,26 +182,29 @@ msgstr "बटन 3"
 msgid "Caribou"
 msgstr "कैरिबू"
 
-#: ../caribou/daemon/main.py:31
+#: ../caribou/daemon/main.py:38
 #, python-format
 msgid "Error starting %s"
-msgstr ""
+msgstr "%s को आरंभ करने में त्रुटि"
 
-#: ../caribou/daemon/main.py:42
+#: ../caribou/daemon/main.py:49
 #, python-format
 msgid ""
 "In order to use %s, accessibility needs to be enabled. Do you want to enable "
 "it now?"
 msgstr ""
+"%s का उपयोग करने के क्रम में, पहुँच सक्रिय किए जाने की जरूरत है. क्या आप इसे "
+"सक्रिय करना चाहते हैं?"
 
-#: ../caribou/daemon/main.py:56
+#: ../caribou/daemon/main.py:63
 #, python-format
 msgid "Accessibility has been enabled. Log out and back in again to use %s."
 msgstr ""
+"पहुँच सक्रिय किया गया है. %s को उपयोग करने के लिए लॉगआउट और फिर लॉगिन करें."
 
-#: ../caribou/daemon/main.py:153
+#: ../caribou/daemon/main.py:161
 msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr ""
+msgstr "चेतावनी - कैरिबो: अनियंत्रित संपादनयोग्य विजेट:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -220,7 +224,7 @@ msgstr "कुंजीपटल प्रकार "
 
 #: ../caribou/antler/antler_settings.py:10
 msgid "The keyboard geometry Caribou should use"
-msgstr ""
+msgstr "कुँजीपट ज्यामिति जिसे कैरिबो को उपयोग करना चाहिए"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
@@ -228,6 +232,9 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
+"कुँजीपट ज्यामिति कुँजीपट के आकार और जटिलता दोनों को निर्धारित करता है, "
+"यह 'स्वाभाविक' रूप से आरंभ होकर फुलस्केल कुँजीपट तक सरल पाठ लिखने के लिए "
+"बढ़िया है."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -255,7 +262,7 @@ msgstr "अल्फा न्यूनतम"
 
 #: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
-msgstr ""
+msgstr "कुँजीपट की न्यूनतम पारदर्शिता"
 
 #: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
@@ -263,7 +270,7 @@ msgstr "अधिकतम अल्फा"
 
 #: ../caribou/antler/antler_settings.py:27
 msgid "Maximal opacity of keyboard"
-msgstr ""
+msgstr "कुँजीपट की अधिकतम पारदर्शिता"
 
 #: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
@@ -271,6 +278,5 @@ msgstr "अधिकतम दूरी"
 
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
-msgstr ""
-
+msgstr "अधिकतम दूरी जब कुँजीपट छिपा है"
 
