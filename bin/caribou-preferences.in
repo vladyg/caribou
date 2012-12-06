@@ -28,7 +28,7 @@ then
   datadir="$(@PYTHON@ -c "from gi.repository import GLib; print ':'.join(GLib.get_system_data_dirs())")"
   export PYTHONPATH="@prefix@/lib/python@PYTHON_VERSION@/site-packages${PYTHONPATH:+:$PYTHONPATH}"
   export GI_TYPELIB_PATH="@libdir@/girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}"
-  export LD_LIBRARY_PATH="@libdir@${LD_LIBRARY_PATH:+:LD_LIBRARY_PATH}"
+  export LD_LIBRARY_PATH="@libdir@${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
   export XDG_DATA_DIRS="@datadir@${datadir:+:$datadir}"
 else
   export PYTHONPATH="$(dirname $script_dir)${PYTHONPATH:+:$PYTHONPATH}"
