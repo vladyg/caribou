@@ -1,4 +1,12 @@
 =============
+Version 0.4.6
+=============
+- Bug 688517: libcaribou: refactor some code
+- Bug 688656: key-model: Use key-released instead of key-clicked to hide subkeys
+- Bug 689823: caribou-preferences: Fix expansion of LD_LIBRARY_PATH
+- Translation updates (Aragonese)
+
+=============
 Version 0.4.5
 =============
 - Bug 687018: xadapter: use level3 shift if possible
