@@ -1,4 +1,9 @@
 namespace Caribou {
+    /**
+     * Object representing a key in a column.
+     *
+     * This is used for implementing custom keyboard service.
+     */
     public class KeyModel : GLib.Object, IScannableItem, IKeyboardObject {
         public string align { get; set; default = "center"; }
         public double width { get; set; default = 1.0; }

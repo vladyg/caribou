@@ -1,4 +1,7 @@
 namespace Caribou {
+    /**
+     * Object representing a column in a row.
+     */
     public class ColumnModel : ScannableGroup, IScannableItem, IKeyboardObject {
         public bool scan_stepping { get; set; }
         public bool scan_selected { get; set; }

@@ -1,4 +1,7 @@
 namespace Caribou {
+    /**
+     * Interface implemented by containers of selectable items in scanning mode.
+     */
     public interface IScannableGroup : Object {
         public abstract IScannableItem? child_select ();
         public abstract void scan_reset ();

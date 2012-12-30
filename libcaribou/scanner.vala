@@ -1,4 +1,7 @@
 namespace Caribou {
+    /**
+     * Object providing access to keyboard in scanning mode.
+     */
     public class Scanner : Object {
         public bool bind_settings { get; construct; default=true; }
 

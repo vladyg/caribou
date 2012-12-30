@@ -1,4 +1,7 @@
 namespace Caribou {
+    /**
+     * Base abstract class that implements scanning mode containers.
+     */
     public abstract class ScannableGroup : Object, IScannableGroup {
         private Gee.LinkedList<IScannableItem> _step_path;
         private Gee.LinkedList<IScannableItem> _selected_path;

@@ -1,4 +1,11 @@
 namespace Caribou {
+    /**
+     * Object representing a group in a keyboard.
+     *
+     * This is used for implementing custom keyboard service.
+     *
+     * A group object consists of {@link LevelModel} objects.
+     */
     public class GroupModel : Object, IKeyboardObject {
         public string active_level { get; private set; }
 

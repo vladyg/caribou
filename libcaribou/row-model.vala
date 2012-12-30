@@ -1,4 +1,11 @@
 namespace Caribou {
+    /**
+     * Object representing a row in a level.
+     *
+     * This is used for implementing custom keyboard service.
+     *
+     * A keyboard object consists of {@link ColumnModel} objects.
+     */
     public class RowModel : ScannableGroup, IScannableItem, IKeyboardObject {
         public bool scan_stepping { get; set; }
         public bool scan_selected { get; set; }

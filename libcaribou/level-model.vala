@@ -1,4 +1,11 @@
 namespace Caribou {
+    /**
+     * Object representing a level in a group.
+     *
+     * This is used for implementing custom keyboard service.
+     *
+     * A keyboard object consists of {@link RowModel} objects.
+     */
     public class LevelModel : ScannableGroup, IKeyboardObject {
         public signal void level_toggled (string new_level);
         public string mode { get; private set; default = ""; }

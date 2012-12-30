@@ -1,4 +1,7 @@
 namespace Caribou {
+    /**
+     * Base abstract class of the Caribou D-Bus service.
+     */
     [DBus(name = "org.gnome.Caribou.Keyboard")]
     public abstract class KeyboardService : Object {
         public abstract void set_cursor_location(int x, int y, int w, int h);

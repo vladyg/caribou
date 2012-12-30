@@ -1,4 +1,11 @@
 namespace Caribou {
+    /**
+     * Object representing a whole keyboard.
+     *
+     * This is used for implementing custom keyboard service.
+     *
+     * A keyboard object consists of {@link GroupModel} objects.
+     */
     public class KeyboardModel : Object, IKeyboardObject {
         public string active_group { get; private set; default = ""; }
         public string keyboard_type { get; construct; }

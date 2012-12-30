@@ -1,4 +1,9 @@
 namespace Caribou {
+	/**
+	 * Common interface providing access to keys.
+	 *
+	 * This is implemented by all the keyboard components.
+	 */
     public interface IKeyboardObject : Object {
         public abstract IKeyboardObject[] get_children ();
 

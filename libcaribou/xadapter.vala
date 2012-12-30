@@ -1,4 +1,7 @@
 namespace Caribou {
+    /**
+     * Singleton object providing access to the X Window facility.
+     */
     public class XAdapter : Object {
 
         /* Signals */
