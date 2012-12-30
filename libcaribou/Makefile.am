@@ -1,10 +1,5 @@
 lib_LTLIBRARIES = libcaribou.la
 
-INCLUDES = \
-	-DG_LOG_DOMAIN=\"caribou\" \
-	-I$(top_srcdir) \
-	$(LIBCARIBOU_CFLAGS)
-
 libcaribou_la_VALAFLAGS = \
 	-H caribou.h --vapi caribou-1.0.vapi \
 	-h caribou-internals.h \
@@ -16,8 +11,10 @@ libcaribou_la_VALAFLAGS = \
 	--symbols libcaribou.symbols \
 	$(VALAFLAGS)
 
-libcaribou_la_CPPFLAGS = \
-	$(INCLUDES)
+libcaribou_la_CFLAGS = \
+	-DG_LOG_DOMAIN=\"caribou\" \
+	-I$(top_srcdir) \
+	$(LIBCARIBOU_CFLAGS)
 
 libcaribou_la_LDFLAGS = \
         -export-dynamic \
