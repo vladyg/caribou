@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-03 21:06+0000\n"
+"POT-Creation-Date: 2012-11-13 10:04+0000\n"
 "PO-Revision-Date: 2010-08-10 21:57+0000\n"
 "Last-Translator: Gheyret Kenji <gheyret@yahoo.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -57,11 +58,11 @@ msgstr "سىزىقلىق"
 
 #: ../caribou/settings/caribou_settings.py:20
 msgid "Step time"
-msgstr ""
+msgstr "قوزغالغاندا ئەڭ ئاخىرقى دىئالوگنى يۈكلىمە"
 
 #: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
-msgstr ""
+msgstr "كۇنۇپكا ئالمىشىشقىچە بولغان ۋاقىت"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
@@ -77,7 +78,7 @@ msgstr "تەكشۈرۈشنى ئاپتوماتىك قايتا باشلاش"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr "تۈر ئاكتىپلاغاندىن كېيىن تەكشۈرۈشنى ئاپتوماتىك باشلايدۇ"
+msgstr "تۈر ئاكتىپلانغاندىن كېيىن تەكشۈرۈشنى ئاپتوماتىك باشلايدۇ"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
@@ -116,12 +117,10 @@ msgid "Switch device, keyboard or mouse"
 msgstr "ئۈسكۈنە، ھەرپتاختا ياكى چاشقىنەك ئالماشتۇرىدۇ"
 
 #: ../caribou/settings/caribou_settings.py:43
-#| msgid "Keyboard _layout:"
 msgid "Keyboard"
 msgstr "ھەرپتاختا"
 
 #: ../caribou/settings/caribou_settings.py:44
-#| msgid "Mouse over:"
 msgid "Mouse"
 msgstr "چاشقىنەك"
 
@@ -175,31 +174,30 @@ msgstr "توپچا 3"
 
 #: ../caribou/__init__.py:2
 msgid "Caribou"
-msgstr "كارىبۇ"
+msgstr "Caribou"
 
-#: ../caribou/daemon/main.py:31
+#: ../caribou/daemon/main.py:38
 #, python-format
 msgid "Error starting %s"
 msgstr "%s نى باشلاۋاتقاندا خاتالىق كۆرۈلدى"
 
-#: ../caribou/daemon/main.py:42
+#: ../caribou/daemon/main.py:49
 #, python-format
 msgid ""
 "In order to use %s, accessibility needs to be enabled. Do you want to enable "
 "it now?"
 msgstr "%s ئۈچۈن قوشۇمچە ئىقتىدار(accessibility)نى ئىناۋەتلىك قىلىش زۆرۈر. ھازىرلا ئىناۋەتلىك قىلامسىز؟"
 
-#: ../caribou/daemon/main.py:56
+#: ../caribou/daemon/main.py:63
 #, python-format
 msgid "Accessibility has been enabled. Log out and back in again to use %s."
 msgstr "قوشۇمچە ئىقتىدار(accessibility) ئىناۋەتلىك قىلىندى. %s نى ئىشلىتىش ئۈچۈن چىقىپ قايتا كىرىڭ."
 
-#: ../caribou/daemon/main.py:153
+#: ../caribou/daemon/main.py:161
 msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "ئاگاھلاندۇرۇش - Caribou : باشقۇرۇلمىغان تەھرىرلىگىلى بولىدىغان widget:"
+msgstr "ئاگاھلاندۇرۇش - Caribou : باشقۇرۇلمىغان تەھرىرلىگىلى بولىدىغان كىچىك ئەپ:"
 
 #: ../caribou/antler/antler_settings.py:5
-#| msgid "Caribou Preferences"
 msgid "Antler Preferences"
 msgstr "Antler مايىللىقى"
 
@@ -209,33 +207,32 @@ msgstr "Antler"
 
 #: ../caribou/antler/antler_settings.py:7
 msgid "Appearance"
-msgstr "قىياپەت"
+msgstr "كۆرۈنۈشى"
 
 #: ../caribou/antler/antler_settings.py:9
-#| msgid "Keyboard _layout:"
 msgid "Keyboard Type"
 msgstr "ھەرپتاختا تىپى"
 
 #: ../caribou/antler/antler_settings.py:10
 msgid "The keyboard geometry Caribou should use"
-msgstr ""
+msgstr "كارىبو(Caribou) ئىشلىتىدىغان ھەرپتاختىنىڭ شەكلى"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
 "The keyboard geometry determines the shape and complexity of the keyboard, "
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
-msgstr ""
+msgstr "ھەرپتاختىنىڭ شەكلى بولسا ھەرپتاختىنىڭ شەكلى ۋە مۇرەككەپلىكىنى بەلگىلەيدۇ. كۆرۈنۈشى ‹تەبىئىي› ۋە ئاددىي تېكىستلەرنى كىرگۈزۈشكە ئەپلىك بولۇشتىن سىرت يەنە، ئىقتىدارى تولۇق بولغان ھەرپتاختىسى دېگەندەك ھەر خىل بولىدۇ."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
 msgid "Touch"
-msgstr ""
+msgstr "چەك"
 
 #. Translators: Keyboard type (conventional keyboard)
 #: ../caribou/antler/antler_settings.py:18
 msgid "Full scale"
-msgstr "توولۇق ئۆلچەك"
+msgstr "تولۇق ئۆلچەك"
 
 #. Translators: Keyboard type (scanned grid by rows/columns)
 #: ../caribou/antler/antler_settings.py:20
@@ -269,7 +266,7 @@ msgstr "ئەڭ چوڭ ئارىلىق"
 
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
-msgstr ""
+msgstr "ھەرپتاختىسى يوشۇرۇن بولغۇچە بولغان ئاڭ چوڭ ئارىلىق"
 
 #~ msgid "Colors"
 #~ msgstr "رەڭلەر"
