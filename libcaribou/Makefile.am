@@ -75,15 +75,17 @@ vapidir = $(datadir)/vala/vapi
 vapi_DATA = caribou-1.0.vapi caribou-1.0.deps
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = caribou.pc
+pkgconfig_DATA = caribou-1.0.pc
 
 CLEANFILES = \
 	caribou-1.0.vapi \
 	caribou-internals-1.0.vapi \
 	Caribou-1.0.typelib \
 	Caribou-1.0.gir \
-	_Caribou-1.0.gir \
-	caribou.pc
+	_Caribou-1.0.gir
+
+DISTCLEANFILES = \
+	caribou-1.0.pc
 
 MAINTAINERCLEANFILES = libcaribou.symbols
 

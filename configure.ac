@@ -144,7 +144,7 @@ data/layouts/touch/Makefile
 data/layouts/scan/Makefile
 data/layouts/fullscale/Makefile
 libcaribou/Makefile
-libcaribou/caribou.pc
+libcaribou/caribou-1.0.pc
 modules/Makefile
 modules/gtk3/Makefile
 modules/gtk2/Makefile
