@@ -45,6 +45,7 @@ PKG_CHECK_MODULES(LIBCARIBOU, [
   gdk-3.0 >= $GDK_REQUIRED,
   xtst,
   x11,
+  xkbfile,
   libxklavier,
   libxml-2.0,
   gee-0.8,
@@ -52,6 +53,9 @@ PKG_CHECK_MODULES(LIBCARIBOU, [
   ])
 AC_SUBST(LIBCARIBOU_CFLAGS)
 AC_SUBST(LIBCARIBOU_LIBS)
+
+XKB_BASE=$($PKG_CONFIG --variable xkb_base xkeyboard-config)
+AC_SUBST(XKB_BASE)
 
 dnl == i18n ==
 GETTEXT_PACKAGE=caribou

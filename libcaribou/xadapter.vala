@@ -42,6 +42,7 @@ namespace Caribou {
             this.xkbdesc = Xkb.get_keyboard (this.xdisplay,
                                              Xkb.GBN_AllComponentsMask,
                                              Xkb.UseCoreKbd);
+            this.base_desc = get_xkb_desc_for_group ("us", "");
             this.xkl_engine = Xkl.Engine.get_instance (this.xdisplay);
             xkl_engine.start_listen (Xkl.EngineListenModes.TRACK_KEYBOARD_STATE);
             xkl_state = this.xkl_engine.get_current_state ();
@@ -347,5 +348,124 @@ namespace Caribou {
             }
         }
 
+        /* Fallback code to support multilingual keyboard layouts.
+         * When XmlDeserializer couldn't find XML file, try to read
+         * symbols from XKB files (which normally located in
+         * /usr/share/X11/xkb/rules) and replace symbols in the base
+         * (i.e. "us") layout. */
+        Xkb.Desc base_desc;
+
+        static const string XKB_MODEL = "pc105+inet";
+        static const string XKB_LAYOUT = "us";
+        static const string XKB_RULES_FILE = "evdev";
+
+        public GroupModel? load_group (GroupModel base_group,
+                                       string group_name,
+                                       string variant_name) {
+
+            var desc = get_xkb_desc_for_group (group_name, variant_name);
+            var group = new GroupModel (group_name, variant_name);
+            populate_keys_in_group (base_group, desc, group);
+            return group;
+        }
+
+        void populate_keys_in_group (GroupModel base_group,
+                                     Xkb.Desc desc,
+                                     GroupModel group)
+        {
+            var base_lnames = base_group.get_levels ();
+            foreach (var base_lname in base_lnames) {
+                var base_level = base_group.get_level (base_lname);
+                var level = new LevelModel (base_level.mode);
+                group.add_level (base_lname, level);
+
+                var base_rows = base_level.get_rows ();
+                foreach (var base_row in base_rows) {
+                    var row = new RowModel ();
+                    level.add_row (row);
+
+                    var base_columns = base_row.get_columns ();
+                    foreach (var base_column in base_columns) {
+                        var column = new ColumnModel ();
+                        row.add_column (column);
+
+                        var base_keys = (KeyModel[])base_column.get_children ();
+                        foreach (var base_key in base_keys) {
+                            uint keyval = translate_keyval_in_desc (
+                                desc, base_key.keyval);
+                            var key = new KeyModel (base_key.name,
+                                                    null,
+                                                    keyval);
+                            key.align = base_key.align;
+                            key.toggle = base_key.toggle;
+                            key.width = base_key.width;
+                            column.add_key (key);
+                        }
+                    }
+                }
+            }
+        }
+
+        uint translate_keyval_in_desc (Xkb.Desc desc, uint base_keyval) {
+            if (base_keyval == Gdk.Key.VoidSymbol)
+                return Gdk.Key.VoidSymbol;
+            for (int i = base_desc.min_key_code; i <= base_desc.max_key_code; i++) {
+                unowned Xkb.SymMap base_symmap = base_desc.map.key_sym_map[i];
+                for (int j = 0; j < base_symmap.width; j++) {
+                    if (base_desc.map.syms[base_symmap.offset + j] == base_keyval) {
+                        unowned Xkb.SymMap symmap = desc.map.key_sym_map[i];
+                        return (uint) desc.map.syms[symmap.offset + j];
+                    }
+                }
+            }
+            return Gdk.Key.VoidSymbol;
+        }
+
+        Xkb.Desc get_xkb_desc_for_group (string group_name,
+                                         string variant_name)
+        {
+            XkbRF.VarDefs var_defs = XkbRF.VarDefs ();
+            string rules_file_path = get_xkb_rules_file (ref var_defs);
+
+            XkbRF.Rules? rules = XkbRF.load (rules_file_path, null, true, true);
+            if (rules == null) {
+                warning ("can't load XKB rules from %s",
+                         rules_file_path);
+                return null;
+            }
+
+            var_defs.model = XKB_MODEL;
+            var_defs.layout = group_name;
+            var_defs.variant = variant_name;
+            var_defs.options = null;
+
+            Xkb.ComponentNames names = Xkb.ComponentNames ();
+            if (!XkbRF.get_components (rules, var_defs, ref names)) {
+                warning ("can't resolve XKB component names for %s %s",
+                         group_name, variant_name);
+                return null;
+            }
+
+            return Xkb.get_keyboard_by_name (this.xdisplay,
+                                             Xkb.UseCoreKbd,
+                                             names,
+                                             0,
+                                             Xkb.GBN_AllComponentsMask,
+                                             false);
+        }
+
+        string get_xkb_rules_file (ref XkbRF.VarDefs var_defs) {
+            string rules;
+            if (!XkbRF.get_names_prop (this.xdisplay,
+                                       out rules,
+                                       ref var_defs)) {
+                rules = XKB_RULES_FILE;
+                var_defs.model = XKB_MODEL;
+                var_defs.layout = XKB_LAYOUT;
+                var_defs.variant = null;
+                var_defs.options = null;
+            }
+            return Path.build_filename (Config.XKB_BASE, "rules", rules, null);
+        }
     }
 }

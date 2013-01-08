@@ -5,7 +5,7 @@ libcaribou_la_VALAFLAGS = \
 	-h caribou-internals.h \
 	--vapidir=. \
 	--pkg xtst --pkg gee-0.8 --pkg gdk-x11-3.0 --pkg libxml-2.0 \
-	--pkg libxklavier --pkg external-libs \
+	--pkg libxklavier --pkg external-libs --pkg config \
 	--internal-vapi caribou-internals-1.0.vapi \
 	--library caribou-1.0 --gir _Caribou-1.0.gir \
 	--symbols libcaribou.symbols \
@@ -14,7 +14,8 @@ libcaribou_la_VALAFLAGS = \
 libcaribou_la_CFLAGS = \
 	-DG_LOG_DOMAIN=\"caribou\" \
 	-I$(top_srcdir) \
-	$(LIBCARIBOU_CFLAGS)
+	$(LIBCARIBOU_CFLAGS) \
+	-DXKB_BASE=\"$(XKB_BASE)\"
 
 libcaribou_la_LDFLAGS = \
         -export-dynamic \

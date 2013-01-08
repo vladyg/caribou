@@ -14,6 +14,7 @@ namespace Caribou {
         private Gee.HashMap<string, GroupModel> groups;
         private KeyModel last_activated_key;
         private Gee.HashSet<KeyModel> active_mod_keys;
+        private GroupModel base_group;
 
         construct {
             uint grpid;
@@ -25,6 +26,7 @@ namespace Caribou {
 
             xadapter = XAdapter.get_default ();
             xadapter.group_changed.connect (on_group_changed);
+            base_group = XmlDeserializer.load_group (keyboard_type, "us", "");
 
             xadapter.get_groups (out grps, out variants);
 
@@ -42,6 +44,9 @@ namespace Caribou {
         private void populate_group (string group, string variant) {
             GroupModel grp = XmlDeserializer.load_group (keyboard_type,
                                                           group, variant);
+            if (grp == null)
+                grp = xadapter.load_group (base_group, group, variant);
+
             if (grp != null) {
                 groups.set (GroupModel.create_group_name (group, variant), grp);
                 grp.key_clicked.connect (on_key_clicked);

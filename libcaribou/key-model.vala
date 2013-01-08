@@ -22,7 +22,7 @@ namespace Caribou {
 
         public bool show_subkeys { get; private set; default = false; }
         public string name { get; private set; }
-        public uint keyval { get; private set; }
+        public uint keyval { get; private set; default = Gdk.Key.VoidSymbol; }
         public string? text { get; private construct set; default = null; }
         private uint[] _keyvals = {};
         public string label { get; private set; default = ""; }
@@ -73,7 +73,9 @@ namespace Caribou {
             { "Caribou_Repeat", "\xe2\x99\xbb" }
         };
 
-        public KeyModel (string name, string? text = null) {
+        public KeyModel (string name,
+                         string? text = null,
+                         uint keyval = Gdk.Key.VoidSymbol) {
             this.name = name;
             this.text = text;
             mod_mask = (Gdk.ModifierType) 0;
@@ -91,15 +93,23 @@ namespace Caribou {
                     int index = 0;
                     unichar uc;
                     while (text.get_next_char (ref index, out uc)) {
-                        uint keyval = Gdk.unicode_to_keyval (uc);
-                        if (keyval != uc | 0x01000000)
-                            _keyvals += keyval;
+                        uint _keyval = Gdk.unicode_to_keyval (uc);
+                        if (_keyval != uc | 0x01000000)
+                            _keyvals += _keyval;
                     }
-                } else {
-                    uint keyval = Gdk.keyval_from_name (name);
-                    if (keyval != Gdk.Key.VoidSymbol && keyval != 0)
-                        _keyvals += keyval;
+                } else if (keyval != Gdk.Key.VoidSymbol) {
+                    _keyvals += keyval;
                     this.keyval = keyval;
+                } else {
+                    uint _keyval = Gdk.keyval_from_name (name);
+                    // Due to GDK bug, Gdk.keyval_from_name may return
+                    // 0 instead of Gdk.Key.VoidSymbol:
+                    // https://bugzilla.gnome.org/show_bug.cgi?id=687024
+                    if (_keyval == 0)
+                        _keyval = Gdk.Key.VoidSymbol;
+                    if (_keyval != Gdk.Key.VoidSymbol)
+                        _keyvals += _keyval;
+                    this.keyval = _keyval;
                 }
             }
 

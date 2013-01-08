@@ -6,6 +6,9 @@ namespace Xkb {
     [CCode (cname = "XkbGetKeyboard")]
     public Desc get_keyboard (X.Display dpy, uint which, uint device_spec);
 
+    [CCode (cname = "XkbGetKeyboardByName")]
+    public Desc get_keyboard_by_name (X.Display dpy, uint device_spec, Xkb.ComponentNames names, uint want, uint need, bool load);
+
     [CCode (cname = "XkbSetMap")]
     public void set_map (X.Display dpy, uint which, Desc xkb);
 
@@ -173,6 +176,16 @@ namespace Xkb {
     public class Geometry {
     }
 
+    [CCode (cname = "XkbComponentNamesRec", destroy_function = "")]
+    public struct ComponentNames {
+        string keymap;
+        string keycodes;
+        string types;
+        string compat;
+        string symbols;
+        string geometry;
+    }
+
     [CCode (cname = "XkbUseCoreKbd")]
     public int UseCoreKbd;
     [CCode (cname = "XkbUseCorePtr")]
@@ -256,4 +269,37 @@ namespace Xkb {
 
     [CCode (cname = "XkbKeyTypesMask")]
     public int KeyTypesMask;
+}
+
+[CCode (cprefix = "", lower_case_cprefix = "", cheader_filename = "stdio.h,X11/XKBlib.h,X11/extensions/XKBrules.h")]
+namespace XkbRF {
+    [Compact]
+    [CCode (cname = "XkbRF_VarDefsRec", destroy_function = "")]
+    public struct VarDefs {
+        string model;
+        string layout;
+        string variant;
+        string options;
+    }
+
+    [Compact]
+    [CCode (cname = "XkbRF_RulesRec", free_function = "")]
+    public class Rules {
+    }
+
+    [CCode (cname = "XkbRF_GetNamesProp")]
+    bool get_names_prop (X.Display dpy,
+                         out string rules_file,
+                         ref VarDefs var_defs);
+
+    [CCode (cname = "XkbRF_Load")]
+    Rules? load (string rules_file,
+                 string? locale,
+                 bool want_desc,
+                 bool want_rules);
+
+    [CCode (cname = "XkbRF_GetComponents")]
+    bool get_components (Rules rule,
+                         VarDefs var_defs,
+                         ref Xkb.ComponentNames names);
 }
