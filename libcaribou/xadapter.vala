@@ -127,9 +127,9 @@ namespace Caribou {
         }
 
         private uchar keysym_to_modifier (uint keyval) {
-            for (var i = xkbdesc.min_key_code; i <= xkbdesc.max_key_code; i++) {
+            for (int i = xkbdesc.min_key_code; i <= xkbdesc.max_key_code; i++) {
                 unowned Xkb.SymMap symmap = xkbdesc.map.key_sym_map[i];
-                for (var j = 0;
+                for (int j = 0;
                      j < symmap.width * (symmap.group_info & 0x0f);
                      j++)
                     if (xkbdesc.map.syms[symmap.offset + j] == keyval)
@@ -139,12 +139,12 @@ namespace Caribou {
         }
 
         private uchar get_reserved_keycode () {
-            uchar i;
+            int i;
             unowned Xkb.Desc xkbdesc = this.xkbdesc;
 
             for (i = xkbdesc.max_key_code; i >= xkbdesc.min_key_code; --i) {
                 if (xkbdesc.map.key_sym_map[i].kt_index[0] == Xkb.OneLevelIndex) {
-                    if (this.xdisplay.keycode_to_keysym (i, 0) != 0) {
+                    if (this.xdisplay.keycode_to_keysym ((uchar) i, 0) != 0) {
                         Gdk.error_trap_push ();
                         this.xdisplay.grab_key (i, 0,
                                     Gdk.x11_get_default_root_xwindow (), true,
@@ -153,7 +153,7 @@ namespace Caribou {
                         this.xdisplay.ungrab_key (
                             i, 0, Gdk.x11_get_default_root_xwindow ());
                         if (Gdk.error_trap_pop () == 0)
-                            return i;
+                            return (uchar) i;
                     }
                 }
             }
