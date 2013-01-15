@@ -34,7 +34,6 @@ cariboudoc_DATA = \
 caribougtkdoc_DATA = gtk-doc/caribou/html/*
 
 caribouimg_DATA = \
-	caribou/caribou/img/*.png \
 	$(NULL)
 
 $(cariboudoc_DATA) $(caribouimg_DATA): caribou-doc
