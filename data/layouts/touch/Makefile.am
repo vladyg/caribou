@@ -1,11 +1,13 @@
 touchlayoutsdir = $(datadir)/caribou/layouts/touch
 touchlayouts_in_files =\
     ara.xml.in \
+    fr.xml.in \
     il.xml.in \
     us.xml.in
 touchlayouts_DATA = $(touchlayouts_in_files:.xml.in=.xml)
 
 common_files = \
+	common/azerty.xml \
 	common/qwerty.xml \
 	common/symbols.xml
 
