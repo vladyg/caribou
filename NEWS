@@ -1,4 +1,21 @@
 =============
+Version 0.4.7
+=============
+- Bug 687244: Add documentation support
+- Bug 687315: various packaging fixes:
+  - build: only export public symbols from the library
+  - build: make sure to define $datarootdir in generated scripts
+  - build: suppress Python bytecode generation when building
+  - build: install vapi file
+  - build: install pkg-config file
+  - build: use git.mk
+  - build: don't use deprecated Automake variable INCLUDE
+  - build: rename caribou.pc to caribou-1.0.pc
+- Bug 691463: libcaribou: avoid integer overflow
+- Fix 'make install' when --enable-docs is used
+- Translation updates (Friulian)
+
+=============
 Version 0.4.6
 =============
 - Bug 688517: libcaribou: refactor some code
