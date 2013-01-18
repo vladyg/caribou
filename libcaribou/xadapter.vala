@@ -86,7 +86,18 @@ namespace Caribou {
         }
 
         private Gdk.FilterReturn x_event_filter (Gdk.XEvent xevent, Gdk.Event event) {
+            // After the following commit, Vala changed the definition
+            // of Gdk.XEvent from struct to class:
+            // http://git.gnome.org/browse/vala/commit/?id=9c52e7b7
+            //
+            // This affects the meaning of address-of (&) operator:
+            // '&xevent' now refers to the address of XEvent*, not
+            // XEvent.
+#if VALA_0_16
+            void* pointer = xevent;
+#else
             void* pointer = &xevent;
+#endif
             Xkb.Event* xkbev = (Xkb.Event *) pointer;
             X.Event* xev = (X.Event *) pointer;
 
