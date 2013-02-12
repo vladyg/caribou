@@ -12,8 +12,6 @@ debug = False
 
 class CaribouDaemon:
     def __init__(self):
-        if not self._get_a11y_enabled():
-            self._show_no_a11y_dialogs()
         try:
             self.keyboard_proxy = Gio.DBusProxy.new_for_bus_sync(
                 Gio.BusType.SESSION,
@@ -40,35 +38,6 @@ class CaribouDaemon:
         msgdialog.run()
         quit()
 
-    def _show_no_a11y_dialogs(self):
-        from gi.repository import Gtk
-        msgdialog = Gtk.MessageDialog(None,
-                                      Gtk.DialogFlags.MODAL,
-                                      Gtk.MessageType.QUESTION,
-                                      Gtk.ButtonsType.YES_NO,
-                                      _("In order to use %s, accessibility needs "
-                                        "to be enabled. Do you want to enable "
-                                        "it now?") % APP_NAME)
-        resp = msgdialog.run()
-        if resp == Gtk.ResponseType.NO:
-            msgdialog.destroy()
-            quit()
-        if resp == Gtk.ResponseType.YES:
-            settings = Gio.Settings('org.gnome.desktop.interface')
-            atspi = settings.set_boolean("toolkit-accessibility", True)
-            msgdialog2 = Gtk.MessageDialog(msgdialog,
-                                           Gtk.DialogFlags.MODAL,
-                                           Gtk.MessageType.INFO,
-                                           Gtk.ButtonsType.OK,
-                                           _("Accessibility has been enabled. "
-                                             "Log out and back in again to use "
-                                             "%s." % APP_NAME))
-            msgdialog2.run()
-            msgdialog2.destroy()
-            msgdialog.destroy()
-            quit()
-
-
     def _register_event_listeners(self):
         pyatspi.Registry.registerEventListener(
             self.on_focus, "object:state-changed:focused")
@@ -82,25 +51,6 @@ class CaribouDaemon:
         pyatspi.Registry.deregisterEventListener(self.on_focus, "focus")
         pyatspi.Registry.deregisterEventListener(
             self.on_text_caret_moved, "object:text-caret-moved")
-
-    def _get_a11y_enabled(self):
-        try:
-            try:
-                settings = Gio.Settings('org.gnome.desktop.interface')
-                atspi = settings.get_boolean("toolkit-accessibility")
-                return atspi
-            except:
-                raise
-                from gi.repository import GConf
-                gconfc = GConf.Client.get_default()
-                atspi1 = gconfc.get_bool(
-                    "/desktop/gnome/interface/accessibility")
-                atspi2 = gconfc.get_bool(
-                    "/desktop/gnome/interface/accessibility2")
-                return atspi1 or atspi2
-        except:
-            raise
-            return False
 
     def on_text_caret_moved(self, event):
         if self._current_acc == event.source:
