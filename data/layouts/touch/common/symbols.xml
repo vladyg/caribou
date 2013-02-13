@@ -28,21 +28,18 @@
     </row>
     <row>
       <key name="Caribou_Symbols_More" toggle="symbols2" width="2.0"/>
-      <key name="period"/>
-      <key name="comma"/>
-      <key name="question">
+      <key name="period" width="1.2"/>
+      <key name="comma" width="1.2"/>
+      <key name="question" width="1.2">
         <key name="question"/>
         <key name="questiondown"/>
       </key>
-      <key name="slash"/>
-      <key name="exclam">
+      <key name="exclam" width="1.2">
         <key name="exclam"/>
         <key name="exclamdown"/>
       </key>
-      <key name="apostrophe"/>
-      <key name="quotedbl"/>
-      <key name="bar"/>
-      <key name="numbersign"/>
+      <key name="apostrophe" width="1.2"/>
+      <key name="quotedbl" width="1.2"/>
     </row>
     <row>
       <key align="left" name="Caribou_Alpha" toggle="default" width="2.0"/>
@@ -52,41 +49,44 @@
   </level>
   <level mode="locked" name="symbols2">
     <row>
-      <key name="percent"/>
       <key name="bracketleft"/>
       <key name="bracketright"/>
       <key name="braceleft"/>
       <key name="braceright"/>
-      <key name="backslash"/>
+      <key name="numbersign"/>
+      <key name="percent"/>
+      <key name="asciicircum"/>
+      <key name="asterisk"/>
       <key name="plus"/>
       <key name="equal"/>
-      <key name="grave"/>
-      <key name="underscore"/>
       <key name="BackSpace"/>
     </row>
     <row align="right">
-      <key align="right" name="less"/>
+      <key align="right" name="underscore"/>
+      <key name="backslash"/>
+      <key name="bar"/>
+      <key name="asciitilde"/>
+      <key name="less"/>
       <key name="greater"/>
-      <key name="asterisk"/>
-      <key name="semicolon"/>
-      <key name="parenleft"/>
-      <key name="parenright"/>
-      <key name="dollar"/>
-      <key name="ampersand"/>
-      <key name="at"/>
+      <key name="EuroSign"/>
+      <key name="sterling"/>
+      <key name="periodcentered"/>
       <key name="Return" width="1.5"/>
     </row>
     <row>
       <key name="Caribou_Symbols" toggle="symbols1" width="2.0"/>
-      <key name="period"/>
-      <key name="comma"/>
-      <key name="question"/>
-      <key name="slash"/>
-      <key name="exclam"/>
-      <key name="apostrophe"/>
-      <key name="quotedbl"/>
-      <key name="bar"/>
-      <key name="numbersign"/>
+      <key name="period" width="1.2"/>
+      <key name="comma" width="1.2"/>
+      <key name="question" width="1.2">
+        <key name="question"/>
+        <key name="questiondown"/>
+      </key>
+      <key name="exclam" width="1.2">
+        <key name="exclam"/>
+        <key name="exclamdown"/>
+      </key>
+      <key name="apostrophe" width="1.2"/>
+      <key name="quotedbl" width="1.2"/>
     </row>
     <row>
       <key align="left" name="Caribou_Alpha" toggle="default" width="2.0"/>
