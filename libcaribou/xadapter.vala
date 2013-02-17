@@ -7,6 +7,7 @@ namespace Caribou {
         /* Signals */
         public signal void modifiers_changed (uint modifiers);
         public signal void group_changed (uint gid, string group, string variant);
+        public signal void config_changed ();
 
         /* Private properties */
         static XAdapter instance;
@@ -47,6 +48,7 @@ namespace Caribou {
             xkl_state = this.xkl_engine.get_current_state ();
             this.group = (uchar) xkl_state.group;
             xkl_engine.X_state_changed.connect_after (xkl_state_changed);
+            xkl_engine.X_config_changed.connect_after (xkl_config_changed);
 
             Xkb.get_state (this.xdisplay, Xkb.UseCoreKbd, out xkb_state);
             this.modifiers = xkb_state.mods;
@@ -135,6 +137,10 @@ namespace Caribou {
             this.group = (uchar) group;
             get_current_group (out group_name, out variant_name);
             group_changed (this.group, group_name, variant_name);
+        }
+
+        private void xkl_config_changed () {
+            config_changed ();
         }
 
         private uchar keysym_to_modifier (uint keyval) {

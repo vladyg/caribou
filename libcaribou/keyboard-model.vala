@@ -15,39 +15,63 @@ namespace Caribou {
         private KeyModel last_activated_key;
         private Gee.HashSet<KeyModel> active_mod_keys;
 
-        construct {
-            uint grpid;
-            string group, variant;
-            string[] grps, variants;
-            int i;
+        public signal void group_added (string name);
+        public signal void group_removed (string name);
 
+        construct {
             assert (keyboard_type != null);
 
             xadapter = XAdapter.get_default ();
             xadapter.group_changed.connect (on_group_changed);
-
-            xadapter.get_groups (out grps, out variants);
+            xadapter.config_changed.connect (on_config_changed);
 
             groups = new Gee.HashMap<string, GroupModel> ();
-
-            for (i=0;i<grps.length;i++)
-                populate_group (grps[i], variants[i]);
-
-            grpid = xadapter.get_current_group (out group, out variant);
-            on_group_changed (grpid, group, variant);
+            on_config_changed ();
 
             active_mod_keys = new Gee.HashSet<KeyModel> ();
         }
 
-        private void populate_group (string group, string variant) {
+        private void on_config_changed () {
+            string[] grps, variants;
+            xadapter.get_groups (out grps, out variants);
+
+            var group_names = new Gee.HashSet<string> ();
+            for (var i = 0; i < grps.length; i++) {
+                var group_name = GroupModel.create_group_name (grps[i],
+                                                               variants[i]);
+                group_names.add (group_name);
+                if (!groups.has_key (group_name)) {
+                    var grp = populate_group (grps[i], variants[i]);
+                    if (grp != null) {
+                        groups.set (group_name, grp);
+                        group_added (group_name);
+                    }
+                }
+            }
+
+            var iter = groups.map_iterator ();
+            while (iter.next ()) {
+                var group_name = iter.get_key ();
+                if (!group_names.contains (group_name)) {
+                    iter.unset ();
+                    group_removed (group_name);
+                }
+            }
+
+            string group, variant;
+            var grpid = xadapter.get_current_group (out group, out variant);
+            on_group_changed (grpid, group, variant);
+        }
+
+        private GroupModel? populate_group (string group, string variant) {
             GroupModel grp = XmlDeserializer.load_group (keyboard_type,
-                                                          group, variant);
+                                                         group, variant);
             if (grp != null) {
-                groups.set (GroupModel.create_group_name (group, variant), grp);
                 grp.key_clicked.connect (on_key_clicked);
                 grp.key_pressed.connect (on_key_pressed);
                 grp.key_released.connect (on_key_released);
             }
+            return grp;
         }
 
         private void on_key_clicked (KeyModel key) {
