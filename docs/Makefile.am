@@ -3,7 +3,7 @@ distclean_dirs = \
 	gtk-doc \
 	$(NULL)
 
-phony_deps = \
+docs = \
 	caribou-doc \
 	caribou-gtk-doc \
 	$(NULL)
@@ -36,8 +36,8 @@ caribougtkdoc_DATA = gtk-doc/caribou/html/*
 caribouimg_DATA = \
 	$(NULL)
 
-$(cariboudoc_DATA) $(caribouimg_DATA): caribou-doc
-$(caribougtkdoc_DATA): caribou-gtk-doc
+$(cariboudoc_DATA) $(caribouimg_DATA): caribou-doc.stamp
+$(caribougtkdoc_DATA): caribou-gtk-doc.stamp
 
 valadoc_flags = \
 	--force \
@@ -76,22 +76,28 @@ valadoc_flags_caribou = \
 	$(caribou_doc_files) \
 	$(NULL)
 
-caribou-doc: $(caribou_doc_files)
+caribou-doc.stamp: $(caribou_doc_files)
 	$(AM_V_GEN)$(VALADOC) \
 		-o caribou/ \
 		--doclet=devhelp \
 		$(valadoc_flags_caribou) \
 		$(NULL)
+	@touch $@
 
-caribou-gtk-doc: $(caribou_doc_files)
+caribou-gtk-doc.stamp: $(caribou_doc_files)
 	$(AM_V_GEN)$(VALADOC) \
 		-X -l -X $(top_builddir)/libcaribou/.libs/libcaribou.so \
 		-o gtk-doc/caribou \
 		--doclet=gtkdoc \
 		$(valadoc_flags_caribou) \
 		$(NULL)
+	@touch $@
 
-.PHONY: $(phony_deps)
+stamps = $(addsuffix .stamp, $(docs))
+
+all: $(stamps)
+
+CLEANFILES = $(stamps)
 
 distclean-local: distclean-docs
 distclean-docs:
