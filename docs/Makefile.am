@@ -73,6 +73,7 @@ valadoc_flags_caribou = \
 	-X $(top_srcdir)/libcaribou/caribou.h \
 	$(addprefix --pkg=,$(caribou_doc_deps)) \
 	--vapidir=$(top_srcdir)/libcaribou \
+	--vapidir=$(top_srcdir)/vapi \
 	$(caribou_doc_files) \
 	$(NULL)
 
