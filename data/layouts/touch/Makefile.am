@@ -9,8 +9,6 @@ common_files = \
 	common/qwerty.xml \
 	common/symbols.xml
 
-$(touchlayouts_DATA): $(touchlayouts_in_files) $(common_files)
-
 %.xsl: %.xml.in
 	xsltproc --xinclude $(top_srcdir)/tools/basic.xsl $< > $@
 
