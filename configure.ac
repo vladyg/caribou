@@ -14,6 +14,12 @@ AM_MAINTAINER_MODE([enable])
 # to configure or passing V=1 to make
 AM_SILENT_RULES([yes])
 
+dnl http://people.gnome.org/~walters/docs/build-api.txt
+dnl We don't support separate builddir when building from git;
+dnl The automake vala rules run cd srcdir which screws up the
+dnl top_srcdir variable references.
+echo \#buildapi-variable-no-builddir >/dev/null
+
 AM_PATH_GLIB_2_0(2.27.5,,,gobject)
 if test "$GLIB_LIBS" = ""; then
    AC_MSG_ERROR(GLIB 2.27.5 or later is required to build libcaribou)
