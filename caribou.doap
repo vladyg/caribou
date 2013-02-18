@@ -19,4 +19,12 @@
     </foaf:Person>
   </maintainer>
 
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Daiki Ueno</foaf:name>
+      <foaf:mbox rdf:resource="mailto:ueno@gnu.org" />
+      <gnome:userid>dueno</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+
 </Project>
