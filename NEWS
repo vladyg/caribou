@@ -1,4 +1,17 @@
 =============
+Version 0.4.8
+=============
+- Bug 694011: Track XKB group configuration change
+- Bug 688218: port daemon from Python to Vala
+- Bug 680556: On-screen keyboard is missing the ~ (tilda) character
+- Bug 693616: Tells me that a11y is off and need to log out
+- Bug 684887: remove desktop file
+- Bug 691992: libcaribou: fix dereferencing Gdk.XEvent pointer with Vala 0.16
+- Don't rebuild docs on every "make" run
+- Add missing symbols to fullscale layouts as well
+- Translation updates (Uyghur)
+
+=============
 Version 0.4.7
 =============
 - Bug 687244: Add documentation support
