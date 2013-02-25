@@ -35,6 +35,15 @@ namespace Caribou {
                               dir, "caribou", "layouts", keyboard_type));
             }
 
+            // If no such keyboard type is found, default to "touch"
+            dirs.add (Path.build_filename (Environment.get_user_data_dir (),
+                                           "caribou", "layouts", "touch"));
+
+            foreach (string dir in Environment.get_system_data_dirs ()) {
+                dirs.add (Path.build_filename (
+                              dir, "caribou", "layouts", "touch"));
+            }
+
             foreach (string data_dir in dirs) {
                 string fn = get_layout_file_inner (data_dir, group, variant);
                 if (fn != null)
