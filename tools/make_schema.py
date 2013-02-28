@@ -3,7 +3,7 @@
 from gi.repository import GLib
 import xml.dom.minidom
 
-import os,sys
+import os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from caribou.settings import caribou_settings
@@ -27,10 +27,10 @@ class SchemasMaker:
         fp.close()
 
     def _attribs(self, e):
-        if not e.attributes.items():
+        if not list(e.attributes.items()):
             return ""
-        return ' ' + ' '.join(['%s="%s"' % (k,v) \
-                                   for k,v in e.attributes.items()])
+        return ' ' + ' '.join(['%s="%s"' % (k, v) \
+                                   for k, v in list(e.attributes.items())])
 
     def _pretty_xml(self, fp, e, indent=0):
         if not e.childNodes or \

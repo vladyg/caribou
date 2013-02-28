@@ -42,7 +42,7 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) != 2:
-        print "supply a gir file"
+        print("supply a gir file")
         sys.exit(1)
 
     dom = minidom.parse(sys.argv[-1])
@@ -50,4 +50,4 @@ if __name__ == "__main__":
     purge_white_space_and_fix_namespace(dom)
     fix_vfuncs(dom)
 
-    print dom.toprettyxml(indent=" ", newl="\n")
+    print(dom.toprettyxml(indent=" ", newl="\n"))
