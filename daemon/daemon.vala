@@ -183,7 +183,11 @@ static int main (string[] args) {
     Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
     Intl.textdomain (Config.GETTEXT_PACKAGE);
 
-    Atspi.init ();
+    var retval = Atspi.init ();
+    if (retval != 0) {
+        printerr ("can't initialize atspi\n");
+        return 1;
+    }
 
     var daemon = new Caribou.Daemon ();
     Unix.signal_add (Posix.SIGINT, () => {
