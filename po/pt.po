@@ -1,14 +1,14 @@
 # caribou's Portuguese translation.
-# Copyright © 2011 caribou
+# Copyright © 2011, 2013 caribou
 # This file is distributed under the same license as the caribou package.
-# Duarte Loreto <happyguy_pt@hotmail.com>, 2011.
-#
+# Duarte Loreto <happyguy_pt@hotmail.com>, 2011, 2013.
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: 3.2\n"
+"Project-Id-Version: 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-13 00:01+0100\n"
-"PO-Revision-Date: 2011-09-12 23:55+0000\n"
+"POT-Creation-Date: 2013-03-17 00:12+0000\n"
+"PO-Revision-Date: 2013-03-17 00:15+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "Language: pt\n"
@@ -26,11 +26,11 @@ msgstr "A analisar"
 
 #: ../caribou/settings/caribou_settings.py:8
 msgid "Enable scanning"
-msgstr "Activar a análise"
+msgstr "Ativar a análise"
 
 #: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
-msgstr "Activar análise por interruptor"
+msgstr "Ativar análise por interruptor"
 
 #: ../caribou/settings/caribou_settings.py:12
 msgid "General"
@@ -70,7 +70,7 @@ msgstr "Análise inversa"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr "Intervalo com o interruptor, activar ao colocar o rato sobre"
+msgstr "Intervalo com o interruptor, ativar ao colocar o rato sobre"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
@@ -78,7 +78,7 @@ msgstr "Reiniciar automaticamente a análise"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr "Reiniciar automaticamente a análise após activação do item"
+msgstr "Reiniciar automaticamente a análise após ativação do item"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
@@ -172,34 +172,9 @@ msgstr "Botão 2"
 msgid "Button 3"
 msgstr "Botão 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Erro ao iniciar %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"Para utilizar %s, a acessibilidade tem de estar activa. Deseja activá-la "
-"agora?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"A acessibilidade foi activada. Termine a sessão e inicie uma nova para "
-"utilizar %s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "AVISO - Caribou: widget editável não gerido:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -274,3 +249,21 @@ msgstr "Distância Máxima"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Distância máxima quando o teclado está escondido"
+
+#~ msgid "Error starting %s"
+#~ msgstr "Erro ao iniciar %s"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "Para utilizar %s, a acessibilidade tem de estar ativa. Deseja ativá-la "
+#~ "agora?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "A acessibilidade foi ativada. Termine a sessão e inicie uma nova para "
+#~ "utilizar %s."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "AVISO - Caribou: widget editável não gerido:"
