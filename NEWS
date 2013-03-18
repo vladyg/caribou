@@ -1,4 +1,10 @@
 =============
+Version 0.4.10
+=============
+- Add --help option to caribou command
+- Translation updates (Portuguese)
+
+=============
 Version 0.4.9
 =============
 - Bug 694921: daemon: check if atspi bus is ready to use
