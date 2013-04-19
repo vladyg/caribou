@@ -55,7 +55,7 @@
         <key name="omacron"/>
       </key>
       <key name="p"/>
-      <key name="BackSpace"/>
+      <key name="BackSpace" repeatable="yes"/>
     </row>
     <row align="right">
       <key name="Tab" width="1.5"/>
@@ -100,7 +100,7 @@
       <key align="left" name="Caribou_Symbols" toggle="symbols1" width="2.0"/>
       <key align="left" name="Control_L" width="1.5"/>
       <key align="left" name="Alt_L" width="1.5"/>
-      <key align="left" name="space" width="5.0"/>
+      <key align="left" name="space" width="5.0" repeatable="yes"/>
       <key align="right" name="Caribou_Prefs"/>
     </row>
   </level>
@@ -159,7 +159,7 @@
         <key name="Omacron"/>
       </key>
       <key name="P"/>
-      <key name="BackSpace"/>
+      <key name="BackSpace" repeatable="yes"/>
     </row>
     <row align="right">
       <key name="Tab" width="1.5"/>
@@ -204,7 +204,7 @@
       <key align="left" name="Caribou_Symbols" toggle="symbols1" width="2.0"/>
       <key align="left" name="Control_L" width="1.5"/>
       <key align="left" name="Alt_L" width="1.5"/>
-      <key align="left" name="space" width="5.0"/>
+      <key align="left" name="space" width="5.0" repeatable="yes"/>
       <key align="right" name="Caribou_Prefs"/>
     </row>
   </level>

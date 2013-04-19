@@ -27,7 +27,7 @@
       <key name="8"/>
       <key name="9"/>
       <key name="0"/>
-      <key name="BackSpace"/>
+      <key name="BackSpace" repeatable="yes"/>
     </row>
     <row align="right">
       <key name="Tab" width="1.5"/>
@@ -61,7 +61,7 @@
       <key align="left" name="Caribou_Alpha" toggle="default" width="2.0"/>
       <key align="left" name="Control_L" width="1.5"/>
       <key align="left" name="Alt_L" width="1.5"/>
-      <key align="left" name="space" width="5.0"/>
+      <key align="left" name="space" width="5.0" repeatable="yes"/>
       <key align="right" name="Caribou_Prefs"/>
     </row>
   </level>
@@ -92,7 +92,7 @@
       <key name="asterisk"/>
       <key name="plus"/>
       <key name="equal"/>
-      <key name="BackSpace"/>
+      <key name="BackSpace" repeatable="yes"/>
     </row>
     <row align="right">
       <key name="Tab" width="1.5"/>
@@ -126,7 +126,7 @@
       <key align="left" name="Caribou_Alpha" toggle="default" width="2.0"/>
       <key align="left" name="Control_L" width="1.5"/>
       <key align="left" name="Alt_L" width="1.5"/>
-      <key align="left" name="space" width="5.0"/>
+      <key align="left" name="space" width="5.0" repeatable="yes"/>
       <key align="right" name="Caribou_Prefs"/>
     </row>
   </level>

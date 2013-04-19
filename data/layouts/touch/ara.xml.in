@@ -12,7 +12,7 @@
       <key name="Arabic_khah"/>
       <key name="Arabic_hah"/>
       <key name="Arabic_jeem"/>
-      <key name="BackSpace"/>
+      <key name="BackSpace" repeatable="yes"/>
     </row>
     <row align="center">
       <key name="Arabic_sheen"/>
@@ -41,7 +41,7 @@
     <row>
       <key align="left" name="Caribou_Symbols" toggle="symbols1" width="2.0"/>
       <key align="left" name="Arabic_fathatan"/>
-      <key align="left" name="space" width="6.0"/>
+      <key align="left" name="space" width="6.0" repeatable="yes"/>
       <key align="right" name="Caribou_Prefs"/>
     </row>
   </level>

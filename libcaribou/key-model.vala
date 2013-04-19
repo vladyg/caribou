@@ -8,6 +8,7 @@ namespace Caribou {
         public string align { get; set; default = "center"; }
         public double width { get; set; default = 1.0; }
         public string toggle { get; set; default = ""; }
+        public bool repeatable { get; set; default = false; }
 
         private Gdk.ModifierType mod_mask;
         public bool is_modifier {
@@ -144,7 +145,12 @@ namespace Caribou {
                     modifier_state = ModifierState.NONE;
                 }
             }
-            hold_tid = GLib.Timeout.add(1000, on_key_held);
+
+            if (repeatable)
+                xadapter.keyval_press (keyval);
+            else
+                hold_tid = GLib.Timeout.add (1000, on_key_held);
+
             key_pressed(this);
         }
 
@@ -160,9 +166,13 @@ namespace Caribou {
                 }
             }
 
-            foreach (var keyval in _keyvals) {
-                xadapter.keyval_press(keyval);
-                xadapter.keyval_release(keyval);
+            if (repeatable)
+                xadapter.keyval_release (keyval);
+            else {
+                foreach (var keyval in _keyvals) {
+                    xadapter.keyval_press (keyval);
+                    xadapter.keyval_release (keyval);
+                }
             }
 
             key_released(this);

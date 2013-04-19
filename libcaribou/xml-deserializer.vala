@@ -160,6 +160,8 @@ namespace Caribou {
                     key.align = prop->children->content;
                 else if (prop->name == "width")
                     key.width = double.parse (prop->children->content);
+                else if (prop->name == "repeatable" && text == null)
+                    key.repeatable = prop->children->content == "yes";
             }
 
             for (Xml.Node* i = node->children; i != null; i = i->next) {
