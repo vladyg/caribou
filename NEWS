@@ -1,4 +1,12 @@
 =============
+Version 0.4.11
+=============
+- Bug 690435: Press and hold should allow repeating keys like
+  backspace and spacebar
+- Improve layout file generation when building
+- Translation updates (Korean, Tadjik)
+
+=============
 Version 0.4.10
 =============
 - Add --help option to caribou command
