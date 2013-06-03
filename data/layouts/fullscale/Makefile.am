@@ -14,8 +14,10 @@ SUFFIXES = .xml.in .xml
 .xml.in.xml:
 	$(AM_V_GEN) \
 	  rm -f $@ $@.xsl; \
-	  xsltproc --xinclude $(top_srcdir)/tools/basic.xsl $@.in > $@.xsl && \
-	  xsltproc --xinclude $@.xsl $@.in > $@
+          srcdir=''; \
+            test -f ./$@.in || srcdir=$(srcdir)/; \
+	    xsltproc --xinclude $(top_srcdir)/tools/basic.xsl $${srcdir}$@.in > $@.xsl && \
+	    xsltproc --xinclude $@.xsl $${srcdir}$@.in > $@
 
 EXTRA_DIST = $(fullscalelayouts_in_files) $(common_files)
 
