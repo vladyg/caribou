@@ -1,4 +1,4 @@
-bin_PROGRAMS = caribou
+libexec_PROGRAMS = caribou
 
 caribou_VALAFLAGS = \
 	--vapidir=$(top_srcdir)/vapi \

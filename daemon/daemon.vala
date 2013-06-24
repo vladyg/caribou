@@ -11,13 +11,32 @@ namespace Caribou {
         public abstract void hide (uint32 timestamp) throws IOError;
     }
 
+    [DBus (name = "org.gnome.Caribou.Daemon")]
     class Daemon : Object {
         _Keyboard keyboard;
         Atspi.Accessible current_acc;
         unowned Gdk.Display display;
+        uint name_id;
 
         public Daemon () {
             display = Gdk.Display.get_default ();
+            name_id = Bus.own_name (BusType.SESSION,
+                                    "org.gnome.Caribou.Daemon",
+                                    BusNameOwnerFlags.ALLOW_REPLACEMENT
+                                    | BusNameOwnerFlags.REPLACE,
+                                    on_bus_acquired, null, quit);
+        }
+
+        ~Daemon () {
+            Bus.unown_name (name_id);
+        }
+
+        void on_bus_acquired (DBusConnection conn) {
+            try {
+                conn.register_object ("/org/gnome/Caribou/Daemon", this);
+            } catch (IOError e) {
+                error ("Could not register D-Bus service: %s", e.message);
+            }
         }
 
         void on_get_proxy_ready (GLib.Object? obj, GLib.AsyncResult res) {
@@ -144,6 +163,13 @@ namespace Caribou {
         }
 
         public void run () {
+            if (keyboard != null)
+            {
+                // This method is available over D-Bus, so ignore the request
+                // to run if the daemon is already running.
+                return;
+            }
+
             Bus.get_proxy.begin<_Keyboard> (BusType.SESSION,
                                             "org.gnome.Caribou.Keyboard",
                                             "/org/gnome/Caribou/Keyboard",
