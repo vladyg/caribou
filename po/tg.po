@@ -8,31 +8,31 @@ msgstr ""
 "Project-Id-Version: Tajik Gnome\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2013-02-17 02:08+0000\n"
-"PO-Revision-Date: 2013-01-19 18:00+0500\n"
+"POT-Creation-Date: 2013-03-19 20:56+0000\n"
+"PO-Revision-Date: 2013-07-26 17:17-0000\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: \n"
 "Language: Tajik\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
-msgstr ""
+msgstr "Хусусиятҳои Caribou"
 
 #: ../caribou/settings/caribou_settings.py:6
 msgid "Scanning"
-msgstr ""
+msgstr "Сканкунӣ"
 
 #: ../caribou/settings/caribou_settings.py:8
 msgid "Enable scanning"
-msgstr ""
+msgstr "Фаъол кардани сканкунӣ"
 
 #: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
-msgstr ""
+msgstr "Фаъол кардани сканкунии гузариш"
 
 #: ../caribou/settings/caribou_settings.py:12
 msgid "General"
@@ -40,7 +40,7 @@ msgstr "Умумӣ"
 
 #: ../caribou/settings/caribou_settings.py:13
 msgid "Scanning mode"
-msgstr ""
+msgstr "Ҳолати сканкунӣ"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
@@ -48,7 +48,7 @@ msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
-msgstr ""
+msgstr "Зергурӯҳҳо"
 
 #: ../caribou/settings/caribou_settings.py:17
 msgid "Rows"
@@ -136,11 +136,11 @@ msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
-msgstr ""
+msgstr "Shift-и рост"
 
 #: ../caribou/settings/caribou_settings.py:51
 msgid "Left shift"
-msgstr ""
+msgstr "Shift-и чап"
 
 #: ../caribou/settings/caribou_settings.py:52
 msgid "Space"
@@ -148,15 +148,15 @@ msgstr "Фазо"
 
 #: ../caribou/settings/caribou_settings.py:53
 msgid "Alt Gr"
-msgstr ""
+msgstr "Alt Gr"
 
 #: ../caribou/settings/caribou_settings.py:54
 msgid "Num lock"
-msgstr ""
+msgstr "Num lock"
 
 #: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
-msgstr ""
+msgstr "Тугмаи гузариш"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
@@ -176,15 +176,15 @@ msgstr "Тугмаи 3"
 
 #: ../caribou/__init__.py:8
 msgid "Caribou"
-msgstr ""
+msgstr "Caribou"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
-msgstr ""
+msgstr "Хусусиятҳои Antler"
 
 #: ../caribou/antler/antler_settings.py:6
 msgid "Antler"
-msgstr ""
+msgstr "Antler"
 
 #: ../caribou/antler/antler_settings.py:7
 msgid "Appearance"
@@ -192,7 +192,7 @@ msgstr "Намуди зоҳирӣ"
 
 #: ../caribou/antler/antler_settings.py:9
 msgid "Keyboard Type"
-msgstr ""
+msgstr "Навъи клавиатура"
 
 #: ../caribou/antler/antler_settings.py:10
 msgid "The keyboard geometry Caribou should use"
@@ -213,17 +213,17 @@ msgstr "Ламс"
 #. Translators: Keyboard type (conventional keyboard)
 #: ../caribou/antler/antler_settings.py:18
 msgid "Full scale"
-msgstr ""
+msgstr "Миқёси пурра"
 
 #. Translators: Keyboard type (scanned grid by rows/columns)
 #: ../caribou/antler/antler_settings.py:20
 msgid "Scan"
-msgstr ""
+msgstr "Скан кардан"
 
 #: ../caribou/antler/antler_settings.py:21
 #: ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
-msgstr ""
+msgstr "Истифодаи мавзӯи система"
 
 #: ../caribou/antler/antler_settings.py:23
 msgid "Minimum Alpha"
