@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
 "POT-Creation-Date: 2013-03-19 20:56+0000\n"
-"PO-Revision-Date: 2013-07-26 17:17-0000\n"
+"PO-Revision-Date: 2013-07-29 15:14+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: \n"
 "Language: Tajik\n"
@@ -44,7 +44,7 @@ msgstr "Ҳолати сканкунӣ"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr ""
+msgstr "Навъи скан, зергурӯҳҳо, сатрҳо ё хаттӣ "
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -60,31 +60,31 @@ msgstr "Хаттӣ"
 
 #: ../caribou/settings/caribou_settings.py:20
 msgid "Step time"
-msgstr ""
+msgstr "Замони марҳила"
 
 #: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
-msgstr ""
+msgstr "Замон байни гузаришҳои асосӣ"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
-msgstr ""
+msgstr "Скани баръакс"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "Марҳилаи қатъу васл, фаъолшавӣ бо иқомат"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
-msgstr ""
+msgstr "Сканкунии бозоғозии худкор"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr ""
+msgstr "Ба таври худкор бозоғозӣ кардани сканкунӣ пас аз фаъолшавии объект"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
-msgstr ""
+msgstr "Сканкунии чархаҳо"
 
 #: ../caribou/settings/caribou_settings.py:31
 msgid "One"
@@ -112,11 +112,11 @@ msgstr "Вуруд"
 
 #: ../caribou/settings/caribou_settings.py:39
 msgid "Switch device"
-msgstr ""
+msgstr "Дастгоҳи қатъу васл"
 
 #: ../caribou/settings/caribou_settings.py:41
 msgid "Switch device, keyboard or mouse"
-msgstr ""
+msgstr "Дастгоҳи қатъу васл, клавиатура ё муш"
 
 #: ../caribou/settings/caribou_settings.py:43
 msgid "Keyboard"
@@ -128,11 +128,11 @@ msgstr "Муш"
 
 #: ../caribou/settings/caribou_settings.py:46
 msgid "Switch key"
-msgstr ""
+msgstr "Калиди қатъу васл"
 
 #: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
-msgstr ""
+msgstr "Калид барои истифода бо ҳолати сканкунӣ"
 
 #: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
@@ -160,7 +160,7 @@ msgstr "Тугмаи гузариш"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
-msgstr ""
+msgstr "Тугмаи муш барои истифода дар ҳолати сканкунӣ"
 
 #: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
@@ -196,7 +196,7 @@ msgstr "Навъи клавиатура"
 
 #: ../caribou/antler/antler_settings.py:10
 msgid "The keyboard geometry Caribou should use"
-msgstr ""
+msgstr "Геометрияи клавиатураи Caribou бояд истифода шавад"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
@@ -204,6 +204,9 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
+"Геметрияи клавиатура шакл ва печидагии клавиатураро ёдовар мешавад, он "
+"метавонад аз нигоҳи 'оддӣ' ва ҳисси хушҳолӣ барои тартибдиҳии матни оддӣ, то "
+"клавиатураи маъмулӣ фарқ кунад"
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -227,24 +230,24 @@ msgstr "Истифодаи мавзӯи система"
 
 #: ../caribou/antler/antler_settings.py:23
 msgid "Minimum Alpha"
-msgstr ""
+msgstr "Алфаи ҳадди ақал"
 
 #: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
-msgstr ""
+msgstr "Тирагии ҳадди ақали клавиатура"
 
 #: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
-msgstr ""
+msgstr "Алфаи ҳадди аксар"
 
 #: ../caribou/antler/antler_settings.py:27
 msgid "Maximal opacity of keyboard"
-msgstr ""
+msgstr "Тирагии ҳадди аксари клавиатура"
 
 #: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
-msgstr ""
+msgstr "Фосилаи ҳадди аксар"
 
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
-msgstr ""
+msgstr "Фосилаи ҳадди аксар ҳангоми пинҳон будани клавиатура"
