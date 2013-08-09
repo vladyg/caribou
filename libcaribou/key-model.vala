@@ -43,7 +43,7 @@ namespace Caribou {
         }
 
         private uint hold_tid;
-        private XAdapter xadapter;
+        private DisplayAdapter xadapter;
         private Gee.ArrayList<KeyModel> extended_keys;
 
         public signal void key_hold_end ();
@@ -122,7 +122,7 @@ namespace Caribou {
                 }
             }
 
-            xadapter = XAdapter.get_default();
+            xadapter = DisplayAdapter.get_default();
             extended_keys = new Gee.ArrayList<KeyModel> ();
         }
 

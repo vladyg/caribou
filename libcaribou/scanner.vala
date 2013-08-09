@@ -225,7 +225,7 @@ namespace Caribou {
             
             unconfigure_switch ();
 
-            XAdapter xadapter = XAdapter.get_default();
+            DisplayAdapter xadapter = DisplayAdapter.get_default();
             if (switch_device == "keyboard" && keyboard_key != null) {
                 uint keyval = Gdk.keyval_from_name (keyboard_key);
                 xadapter.register_key_func (keyval, switch_pressed);

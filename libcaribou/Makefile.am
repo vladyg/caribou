@@ -32,6 +32,7 @@ libcaribou_la_LIBADD = \
 	$(LIBCARIBOU_LIBS)
 
 libcaribou_la_SOURCES = \
+	display-adapter.vala \
 	xadapter.vala \
 	keyboard-model.vala \
 	keyboard-service.vala \

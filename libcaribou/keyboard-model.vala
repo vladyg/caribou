@@ -10,7 +10,7 @@ namespace Caribou {
         public string active_group { get; private set; default = ""; }
         public string keyboard_type { get; construct; }
 
-        private XAdapter xadapter;
+        private DisplayAdapter xadapter;
         private Gee.HashMap<string, GroupModel> groups;
         private KeyModel last_activated_key;
         private Gee.HashSet<KeyModel> active_mod_keys;
@@ -21,7 +21,7 @@ namespace Caribou {
         construct {
             assert (keyboard_type != null);
 
-            xadapter = XAdapter.get_default ();
+            xadapter = DisplayAdapter.get_default ();
             xadapter.group_changed.connect (on_group_changed);
             xadapter.config_changed.connect (on_config_changed);
 
