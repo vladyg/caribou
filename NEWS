@@ -1,4 +1,10 @@
 =============
+Version 0.4.12
+=============
+- Bug 705720: libcaribou: factor out X dependency
+- Translation updates (Tadjik)
+
+=============
 Version 0.4.11
 =============
 - Bug 690435: Press and hold should allow repeating keys like
