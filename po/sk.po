@@ -8,10 +8,11 @@ msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-10-09 20:42+0000\n"
-"PO-Revision-Date: 2011-12-14 12:15+0100\n"
+"POT-Creation-Date: 2013-08-21 14:12+0000\n"
+"PO-Revision-Date: 2013-09-17 20:31+0200\n"
 "Last-Translator: Tomáš Virgl <tomas@virgl.net>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -177,34 +178,9 @@ msgstr "Tlačidlo 2"
 msgid "Button 3"
 msgstr "Tlačidlo 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Chyba spúšťania %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"Aby ste mohli používať %s, podpora sprístupnenia musí byť povolená. Chcete ju "
-"teraz povoliť?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Podpora sprístupnenia bola povolená. Na používanie %s sa odhláste a opäť sa "
-"prihláste."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "VAROVANIE - Caribou: neobsluhovateľný upraviteľný widget:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -232,6 +208,9 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
+"Geometria klávesnice určuje jej tvar a zložitosť. Môže sa pohybovať v "
+"rozsahu od „prirodzenej“, ktorá je dobrá na písanie jednoduchého textu až po "
+"plnohodnotnú klávesnicu."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -243,10 +222,12 @@ msgstr "Dotyková"
 msgid "Full scale"
 msgstr "Plná veľkosť"
 
+# MČ: pdľa kódu sa zdá, že je to typ klávesnice, prečo sa nazýva scan neviem, ale jej popis je tu: https://git.gnome.org/browse/caribou/tree/data/layouts/scan/us.xml
+# MČ: zdá sa, že ide o mriežku s abecedným usporiadaním kláves.
 #. Translators: Keyboard type (scanned grid by rows/columns)
 #: ../caribou/antler/antler_settings.py:20
 msgid "Scan"
-msgstr ""
+msgstr "Sken"
 
 #: ../caribou/antler/antler_settings.py:21
 #: ../caribou/antler/antler_settings.py:22
@@ -278,3 +259,21 @@ msgstr "Maximálna vzdialenosť"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maximálna vzdialenosť, ked je klávesnica skrytá"
+
+#~ msgid "Error starting %s"
+#~ msgstr "Chyba spúšťania %s"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "Aby ste mohli používať %s, podpora sprístupnenia musí byť povolená. "
+#~ "Chcete ju teraz povoliť?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "Podpora sprístupnenia bola povolená. Na používanie %s sa odhláste a opäť "
+#~ "sa prihláste."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "VAROVANIE - Caribou: neobsluhovateľný upraviteľný widget:"
