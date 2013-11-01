@@ -6,6 +6,15 @@ namespace Xkb {
     [CCode (cname = "XkbGetKeyboard")]
     public Desc get_keyboard (X.Display dpy, uint which, uint device_spec);
 
+    [CCode (cname = "XkbGetControls")]
+    public X.Status get_controls (X.Display dpy, uint which, Desc xkb);
+
+    [CCode (cname = "XkbSetControls")]
+    public void set_controls (X.Display dpy, uint which, Desc xkb);
+
+    [CCode (cname = "XkbGetMap")]
+    public Desc get_map (X.Display dpy, uint which, uint device_spec);
+
     [CCode (cname = "XkbSetMap")]
     public void set_map (X.Display dpy, uint which, Desc xkb);
 
@@ -92,6 +101,7 @@ namespace Xkb {
     [Compact]
     [CCode (cname = "XkbControlsRec", free_function = "")]
     public class Controls {
+        public uint		enabled_ctrls;
     }
 
     [Compact]
@@ -238,6 +248,8 @@ namespace Xkb {
     public int ExtensionDeviceNotifyMask;
     [CCode (cname = "XkbAllEventsMask")]
     public int AllEventsMask;
+    [CCode (cname = "XkbAllControlsMask")]
+    public int AllControlsMask;
 
     [CCode (cname = "XkbStateNotify")]
     public int StateNotify;
@@ -256,4 +268,10 @@ namespace Xkb {
 
     [CCode (cname = "XkbKeyTypesMask")]
     public int KeyTypesMask;
+
+    [CCode (cname = "XkbSlowKeysMask")]
+    public int SlowKeysMask;
+
+    [CCode (cname = "XkbControlsEnabledMask")]
+    public int ControlsEnabledMask;
 }

@@ -72,6 +72,24 @@ namespace Caribou {
             Xkb.free_keyboard(this.xkbdesc, Xkb.GBN_AllComponentsMask, true);
         }
 
+        private bool set_slowkeys_enabled (bool enable) {
+            Xkb.get_controls (this.xdisplay, Xkb.AllControlsMask, this.xkbdesc);
+
+            var previous =
+                (this.xkbdesc.ctrls.enabled_ctrls & Xkb.SlowKeysMask) != 0;
+
+            if (enable)
+                this.xkbdesc.ctrls.enabled_ctrls |= Xkb.SlowKeysMask;
+            else
+                this.xkbdesc.ctrls.enabled_ctrls &= ~Xkb.SlowKeysMask;
+
+            Xkb.set_controls (this.xdisplay,
+                              Xkb.SlowKeysMask | Xkb.ControlsEnabledMask,
+                              this.xkbdesc);
+
+            return previous;
+        }
+
         private Gdk.FilterReturn x_event_filter (Gdk.XEvent xevent, Gdk.Event event) {
             // After the following commit, Vala changed the definition
             // of Gdk.XEvent from struct to class:
@@ -246,8 +264,10 @@ namespace Caribou {
             if (mask != 0)
                 mod_latch (mask);
 
+            var enabled = set_slowkeys_enabled (false);
             XTest.fake_key_event (this.xdisplay, keycode, true, X.CURRENT_TIME);
             this.xdisplay.flush ();
+            set_slowkeys_enabled (enabled);
         }
 
         public override void keyval_release (uint keyval) {
