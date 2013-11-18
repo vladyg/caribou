@@ -1,4 +1,10 @@
 =============
+Version 0.4.13
+=============
+- Bug 698746: Accessibility : "slow keys" breaks "screen keyboard" feature
+- Translation updates (Slovak)
+
+=============
 Version 0.4.12
 =============
 - Bug 705720: libcaribou: factor out X dependency
