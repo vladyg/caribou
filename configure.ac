@@ -1,6 +1,6 @@
 AC_PREREQ([2.63])
 AC_INIT([caribou],
-        [0.4.13],
+        [0.4.14],
         [https://bugzilla.gnome.org/enter_bug.cgi?product=caribou],
         [caribou])
 
