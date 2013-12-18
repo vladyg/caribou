@@ -187,8 +187,8 @@ static int main (string[] args) {
     Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
     Intl.textdomain (Config.GETTEXT_PACKAGE);
 
-    var option_context = new OptionContext (
-        "- daemon listening accessibility events to launch on screen keyboard");
+    var option_context = new OptionContext (_(
+        "- daemon listening accessibility events to launch on screen keyboard"));
     option_context.add_main_entries (options, "caribou");
     try {
         option_context.parse (ref args);
