@@ -7,19 +7,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-03 21:06+0000\n"
-"PO-Revision-Date: 2011-09-07 20:50+0700\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2013-12-20 09:19+0000\n"
+"PO-Revision-Date: 2013-12-20 23:01+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-Language: Indonesian\n"
-"X-Poedit-Country: Indonesia\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -122,12 +122,10 @@ msgid "Switch device, keyboard or mouse"
 msgstr "Tukar perangkat, papan tik, atau tetikus"
 
 #: ../caribou/settings/caribou_settings.py:43
-#| msgid "Keyboard _layout:"
 msgid "Keyboard"
 msgstr "Papan Tik"
 
 #: ../caribou/settings/caribou_settings.py:44
-#| msgid "Mouse over:"
 msgid "Mouse"
 msgstr "Tetikus"
 
@@ -179,31 +177,11 @@ msgstr "Tombol 2"
 msgid "Button 3"
 msgstr "Tombol 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
 
-#: ../caribou/daemon/main.py:31
-#, python-format
-msgid "Error starting %s"
-msgstr "Galat saat memulai %s"
-
-#: ../caribou/daemon/main.py:42
-#, python-format
-msgid "In order to use %s, accessibility needs to be enabled. Do you want to enable it now?"
-msgstr "Untuk memakai %s, aksesibilitas perlu diaktifkan. Apakah Anda ingin mengaktifkannya sekarang?"
-
-#: ../caribou/daemon/main.py:56
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr "Aksesibilitas telah diaktifkan. Log keluar dan masuk lagi untuk memakai %s."
-
-#: ../caribou/daemon/main.py:153
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "PERINGATAN - Caribou: widget-dapat-disunting yang tidak tertangani:"
-
 #: ../caribou/antler/antler_settings.py:5
-#| msgid "Caribou Preferences"
 msgid "Antler Preferences"
 msgstr "Preferensi Antler"
 
@@ -216,7 +194,6 @@ msgid "Appearance"
 msgstr "Penampilan"
 
 #: ../caribou/antler/antler_settings.py:9
-#| msgid "Keyboard _layout:"
 msgid "Keyboard Type"
 msgstr "Jenis Papan Tik"
 
@@ -225,8 +202,14 @@ msgid "The keyboard geometry Caribou should use"
 msgstr "Geometri papan tik yang mesti dipakai oleh Caribou"
 
 #: ../caribou/antler/antler_settings.py:11
-msgid "The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
-msgstr "Geometri papan tik menentukan bentuk dan kompleksitas papan tik, ini bisa mulai dari tampilan dan rasa (look and feel) 'alami' untuk menyusun teks sederhana, sampai ke papan tik skala penuh."
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+"Geometri papan tik menentukan bentuk dan kompleksitas papan tik, ini bisa "
+"mulai dari tampilan dan rasa (look and feel) 'alami' untuk menyusun teks "
+"sederhana, sampai ke papan tik skala penuh."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -272,3 +255,8 @@ msgstr "Jarak Maksimum"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Jarak maksimum ketika papan tik tersembunyi"
 
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"- daemon yang mendengarkan peristiwa aksesibilitas untuk meluncurkan papan "
+"tik pada layar"
