@@ -1,20 +1,24 @@
 # Lithuanian translation for caribou.
 # Copyright (C) 2011 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
-# Aurimas Černius <aurisc4@gmail.com>, 2011.
+# Aurimas Černius <aurisc4@gmail.com>, 2011, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-15 16:36+0000\n"
-"PO-Revision-Date: 2011-09-15 22:44+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2013-12-20 09:19+0000\n"
+"PO-Revision-Date: 2013-12-21 16:48+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
-"Language-Team: Lithuanian <gnome-lt@lists.akl.lt>\n"
+"Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -172,28 +176,9 @@ msgstr "Mygtukas 2"
 msgid "Button 3"
 msgstr "Mygtukas 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Klaida paleidžiant %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid "In order to use %s, accessibility needs to be enabled. Do you want to enable it now?"
-msgstr "Norint naudoti %s, pritaikymas neįgaliesiems turi būti įjungtas. Ar norite jį įjungti?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr "Pritaikymas neįgaliesiems įjungtas. Atsijunkite ir vėl prisijunkite, jei norite naudoti %s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "ĮSPĖJIMAS - Caribou: neapdorotas redaguojamas elementas:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -216,8 +201,14 @@ msgid "The keyboard geometry Caribou should use"
 msgstr "Klaviatūros išdėstymas, kurį turi naudoti Caribou"
 
 #: ../caribou/antler/antler_settings.py:11
-msgid "The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
-msgstr "Klaviatūros išdėstymas nusako klaviatūros formą ir sudėtingumą, jis gali būti nuo „įprastinės“ išvaizdos, tinkamos paprasto teksto rašymui, iki pilnos klaviatūros."
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+"Klaviatūros išdėstymas nusako klaviatūros formą ir sudėtingumą, jis gali "
+"būti nuo „įprastinės“ išvaizdos, tinkamos paprasto teksto rašymui, iki "
+"pilnos klaviatūros."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -263,3 +254,24 @@ msgstr "Didžiausias atstumas"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Didžiausias atstumas, kai klaviatūra yra paslėpta"
 
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr "- demonas klausosi prieigos įvykių, kad paleistų klaviatūrą ekrane"
+
+#~ msgid "Error starting %s"
+#~ msgstr "Klaida paleidžiant %s"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "Norint naudoti %s, pritaikymas neįgaliesiems turi būti įjungtas. Ar "
+#~ "norite jį įjungti?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "Pritaikymas neįgaliesiems įjungtas. Atsijunkite ir vėl prisijunkite, jei "
+#~ "norite naudoti %s."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "ĮSPĖJIMAS - Caribou: neapdorotas redaguojamas elementas:"
