@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: caribou gnome-3-6\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2012-11-23 08:03+0000\n"
-"PO-Revision-Date: 2012-12-11 23:40+0100\n"
+"POT-Creation-Date: 2013-12-21 21:37+0000\n"
+"PO-Revision-Date: 2013-12-22 10:42+0100\n"
 "Last-Translator: Jorge Pérez Pérez <jorgtum@gmail.com>\n"
 "Language-Team: Aragonese <softaragones@googlegroups.com>\n"
 "Language: an\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.3\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -174,34 +174,9 @@ msgstr "Botón 2"
 msgid "Button 3"
 msgstr "Botón 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:38
-#, python-format
-msgid "Error starting %s"
-msgstr "S'ha produciu una error en encetar %s"
-
-#: ../caribou/daemon/main.py:49
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"Ta poder emplegar %s, l'accesibilidat debe estar activada. Quiers activar-la "
-"agora?"
-
-#: ../caribou/daemon/main.py:63
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"l'accesibilidat s'ha activau. Zarra la sesión y torna a dentrar ta emplegar "
-"%s."
-
-#: ../caribou/daemon/main.py:161
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "ALVERTENCIA de Caribou: widget editable no maniau:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -276,3 +251,27 @@ msgstr "Distancia maxima"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Distancia maxima quan o teclado ye amagau"
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"- Diaple escuitando eventos d'accesibilidat pa meter en marcha o teclau en "
+"pantalla"
+
+#~ msgid "Error starting %s"
+#~ msgstr "S'ha produciu una error en encetar %s"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "Ta poder emplegar %s, l'accesibilidat debe estar activada. Quiers activar-"
+#~ "la agora?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "l'accesibilidat s'ha activau. Zarra la sesión y torna a dentrar ta "
+#~ "emplegar %s."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "ALVERTENCIA de Caribou: widget editable no maniau:"
