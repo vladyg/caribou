@@ -4,24 +4,25 @@
 # Albino Biasutti Neto <biasuttin@gmail.com>, 2010.
 # Hugo Vaz Sampaio <hvazsampaio@gmail.com>, 2010.
 # Gabriel Speckhahn <gabspeck@gmail.com>, 2011.
+# Antonio Fernandes C. Neto <fernandesn@gnome.org>, 2011.
+# Rafael Ferreira <rafael.f.f1@gmail.com>, 2013.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-14 03:37+0000\n"
-"PO-Revision-Date: 2011-09-14 17:38-0300\n"
-"Last-Translator: Antonio Fernandes C. Neto <fernandesn@gnome.org>\n"
+"POT-Creation-Date: 2013-12-20 09:23+0000\n"
+"PO-Revision-Date: 2013-12-20 10:16-0300\n"
+"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Virtaal 0.7.0\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Project-Style: gnome\n"
-"X-Poedit-Language: Portuguese\n"
-"X-Poedit-Country: Brazil\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -179,34 +180,9 @@ msgstr "Botão 2"
 msgid "Button 3"
 msgstr "Botão 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Erro ao iniciar %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"Para usar %s, a acessibilidade precisa estar habilitada. Você deseja "
-"habilitá-la agora?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"A acessibilidade foi habilitada. Encerre a sua sessão e entre novamente para "
-"usar %s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "AVISO - Caribou: widget editável não-manipulado:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -281,3 +257,27 @@ msgstr "Distância máxima"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Distância máxima quando o teclado permanece oculto"
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"- serviço que identifica eventos de acessibilidade para ativar o teclado "
+"virtual"
+
+#~ msgid "Error starting %s"
+#~ msgstr "Erro ao iniciar %s"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "Para usar %s, a acessibilidade precisa estar habilitada. Você deseja "
+#~ "habilitá-la agora?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "A acessibilidade foi habilitada. Encerre a sua sessão e entre novamente "
+#~ "para usar %s."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "AVISO - Caribou: widget editável não-manipulado:"
