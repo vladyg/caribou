@@ -1,22 +1,23 @@
 # Czech translation for caribou.
 # Copyright (C) 2010 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
-# Marek Černocký <marek@manet.cz>, 2010, 2011.
+# Marek Černocký <marek@manet.cz>, 2010, 2011, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-03 21:06+0000\n"
-"PO-Revision-Date: 2011-09-04 11:40+0200\n"
+"POT-Creation-Date: 2013-12-20 09:19+0000\n"
+"PO-Revision-Date: 2013-12-27 07:54+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -174,34 +175,9 @@ msgstr "Tlačítko 2"
 msgid "Button 3"
 msgstr "Tlačítko 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:31
-#, python-format
-msgid "Error starting %s"
-msgstr "Chyba spouštění %s"
-
-#: ../caribou/daemon/main.py:42
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"Abyste mohli používat %s, musíte mít zapnutou podporu přístupnosti. Chcete "
-"ji nyní zapnout?"
-
-#: ../caribou/daemon/main.py:56
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Podpora přístupnosti byla zapnuta. Odhlaste se a znovu přihlaste, aby se "
-"použila aplikace %s."
-
-#: ../caribou/daemon/main.py:153
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "VAROVÁNÍ - Caribou: neobsluhovaný upravitelný widget:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -276,3 +252,9 @@ msgstr "Maximální vzdálenost"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maximální vzdálenost, když je klávesnice skryta"
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"– démon naslouchající událostem týkajících se přistupnosti, aby spustil "
+"klávesnici na obrazovce"
