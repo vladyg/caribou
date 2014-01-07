@@ -2,20 +2,20 @@
 # Copyright 2010. Free Software Foundation, Inc.
 # This file is distributed under the same license as the caribou package.
 #
-# Gabor Kelemen <kelemeng at gnome dot hu>, 2010, 2011.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2010, 2011, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 01:44+0200\n"
-"PO-Revision-Date: 2011-09-20 01:44+0200\n"
+"POT-Creation-Date: 2014-01-07 18:45+0100\n"
+"PO-Revision-Date: 2014-01-07 18:46+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
-"Language-Team: Magyar <gnome-hu-list at gnome dot org>\n"
+"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../caribou/settings/caribou_settings.py:5
@@ -174,34 +174,9 @@ msgstr "2. gomb"
 msgid "Button 3"
 msgstr "3. gomb"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Hiba a(z) %s indításakor"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"A(z) %s használatához az akadálymentesítést engedélyezni kell. Szeretné most "
-"engedélyezni?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Az akadálymentesítés engedélyezve. Jelentkezzen ki, majd újra be a(z) %s "
-"használatához."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "FIGYELMEZTETÉS – Caribou: nem kezelt szerkeszthető felületi elem:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -277,75 +252,7 @@ msgstr "Maximális távolság"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maximális távolság, ha a billentyűzet rejtett"
 
-#~ msgid "Keyboard layout"
-#~ msgstr "Billentyűzetkiosztás"
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr "- a képernyő-billentyűzet elindításához akadálymentesítési eseményeket figyelő démon"
 
-#~ msgid ""
-#~ "The layout should be in the data directory of Caribou (usually /usr/share/"
-#~ "caribou/keyboards) and should be a .xml or .json file."
-#~ msgstr ""
-#~ "A kiosztásnak a Caribou adatkönyvtárában (általában /usr/share/caribou/"
-#~ "keyboards), és .xml vagy .json fájlnak kell lennie."
-
-#~ msgid "Color"
-#~ msgstr "Szín"
-
-#~ msgid "Use the default theme colors"
-#~ msgstr "Az alapértelmezett téma színeinek használata"
-
-#~ msgid "Normal state"
-#~ msgstr "Normál állapot"
-
-#~ msgid "Color of the keys when there is no event on them"
-#~ msgstr "Gombok színe, ha nincs rajtuk esemény"
-
-#~ msgid "Mouse over"
-#~ msgstr "Rámutatás"
-
-#~ msgid "Color of the keys when the mouse goes over the key"
-#~ msgstr "Gombok színe, ha az egér rájuk mutat"
-
-#~ msgid "Font and size"
-#~ msgstr "Betűkészlet és -méret"
-
-#~ msgid "Use system fonts"
-#~ msgstr "Rendszer-betűkészletek használata"
-
-#~ msgid "Use the default system font for keyboard"
-#~ msgstr "Az alapértelmezett rendszerbetűkészlet használata a billentyűzethez"
-
-#~ msgid "Key font"
-#~ msgstr "Gombbetűkészlet"
-
-#~ msgid "Custom font for keyboard"
-#~ msgstr "Egyéni betűkészlet a billentyűzethez"
-
-#~ msgid "Block"
-#~ msgstr "Blokk"
-
-#~ msgid "Scan in reverse order"
-#~ msgstr "Vizsgálat fordított sorrendben"
-
-#~ msgid "Block color"
-#~ msgstr "Blokkszín"
-
-#~ msgid "Color of block scans"
-#~ msgstr "Blokkvizsgálatok színe"
-
-#~ msgid "Row color"
-#~ msgstr "Sorszín"
-
-#~ msgid "Color of row scans"
-#~ msgstr "Sorvizsgálatok színe"
-
-#~ msgid "Key color"
-#~ msgstr "Gombszín"
-
-#~ msgid "Color of key scans"
-#~ msgstr "Gombvizsgálatok színe"
-
-#~ msgid "Cancel color"
-#~ msgstr "Megszakítás színe"
-
-#~ msgid "Color of cancel scan"
-#~ msgstr "Vizsgálatmegszakítás színe"
