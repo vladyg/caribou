@@ -1,22 +1,24 @@
 # caribou Italian translation
-# Copyright (C) 2010 the caribou's copyright holder
+# Copyright (C) 2010, the caribou's copyright holder
+# Copyright (C) 2011, 2012, 2013, 2014 the Free Software Foundation Inc. 
 # This file is distributed under the same license as the caribou package.
 # Silvia Bindelli <silvia.bindelli@gmail.com>, 2010.
-# Milo Casagrande <milo@ubuntu.com>, 2011.
+# Milo Casagrande <milo@ubuntu.com>, 2011, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-18 12:39+0200\n"
-"PO-Revision-Date: 2011-09-18 12:45+0200\n"
+"POT-Creation-Date: 2014-01-10 09:10+0100\n"
+"PO-Revision-Date: 2014-01-10 09:10+0100\n"
 "Last-Translator: Milo Casagrande <milo@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -174,34 +176,9 @@ msgstr "Pulsante 2"
 msgid "Button 3"
 msgstr "Pulsante 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Errore nell'avviare %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"Per poter usare %s, è necessario abilitare il supporto all'accessibilità. "
-"Abilitarlo ora?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Supporto all'accessibilità abilitato. Terminare la sessione e rieseguire "
-"l'accesso per utilizzare %s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "ATTENZIONE - Caribou: widget modificabile non gestito:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -276,3 +253,9 @@ msgstr "Distanza massima"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Distanza massima quando la tastiera è nascosta"
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"- demone in ascolto per eventi di accessibilità da lanciare sulla tastiera a "
+"schermo"
