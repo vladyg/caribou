@@ -4,21 +4,23 @@
 # Pierros Papadeas <ppapadeas@gmail.com>, 2010
 # Kostas Papadimas <pkst@gnome.org>, 2010.
 # Ioannis Zampoukas <ioza1964@yahoo.gr>, 2011, 2012.
-#
+# Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2012-05-30 11:03+0000\n"
-"PO-Revision-Date: 2012-06-22 21:38+0300\n"
-"Last-Translator: Ioannis Zampoukas <ioza1964@yahoo.gr>\n"
-"Language-Team: Greek <team@gnome.gr>\n"
+"POT-Creation-Date: 2014-01-10 08:11+0000\n"
+"PO-Revision-Date: 2014-01-11 09:27+0300\n"
+"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
+"Language-Team: www.gnome.gr\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -176,34 +178,9 @@ msgstr "Κουμπί 2"
 msgid "Button 3"
 msgstr "Κουμπί 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Σφάλμα κατά την εκκίνηση %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"Για να χρησιμοποιήσετε %s, η υπηρεσία προσιτότητας πρέπει να είναι "
-"ενεργοποιημένη. Θέλετε να το ενεργοποιήσετε τώρα;"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Η προσιτότητα έχει ενεργοποιηθεί. Αποσυνδεθείτε και συνδεθείτε ξανά για να "
-"χρησιμοποιήσετε το %s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "ΠΡΟΣΟΧΗ - Caribou: μη διαχειρίσιμο, επεξεργάσιμο στοιχείο ελέγχου:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -278,6 +255,30 @@ msgstr "Μέγιστη απόσταση"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Μέγιστη απόσταση όταν το πληκτρολόγιο είναι κρυμμένο"
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"- συμβάντα προσβασιμότητας ακρόασης δαίμονα για εκκίνηση πληκτρολογίου στην "
+"οθόνη"
+
+#~ msgid "Error starting %s"
+#~ msgstr "Σφάλμα κατά την εκκίνηση %s"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "Για να χρησιμοποιήσετε %s, η υπηρεσία προσιτότητας πρέπει να είναι "
+#~ "ενεργοποιημένη. Θέλετε να το ενεργοποιήσετε τώρα;"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "Η προσιτότητα έχει ενεργοποιηθεί. Αποσυνδεθείτε και συνδεθείτε ξανά για "
+#~ "να χρησιμοποιήσετε το %s."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "ΠΡΟΣΟΧΗ - Caribou: μη διαχειρίσιμο, επεξεργάσιμο στοιχείο ελέγχου:"
 
 #, fuzzy
 #~ msgid "Keyboard layout"
