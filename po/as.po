@@ -3,20 +3,21 @@
 # This file is distributed under the same license as the caribou package.
 #
 # ngoswami <ngoswami@redhat.com>, 2011.
-# Nilamdyuti Goswami <ngoswami@redhat.com>, 2011.
+# Nilamdyuti Goswami <ngoswami@redhat.com>, 2011, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-10 21:03+0000\n"
-"PO-Revision-Date: 2011-09-06 12:04+0530\n"
+"POT-Creation-Date: 2013-12-29 19:21+0000\n"
+"PO-Revision-Date: 2014-01-21 20:18+0630\n"
 "Last-Translator: Nilamdyuti Goswami <ngoswami@redhat.com>\n"
-"Language-Team: as_IN <kde-i18n-doc@kde.org>\n"
+"Language-Team: Assamese <kde-i18n-doc@kde.org>\n"
+"Language: as\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../caribou/settings/caribou_settings.py:5
@@ -175,32 +176,9 @@ msgstr "বুটাম ২"
 msgid "Button 3"
 msgstr "বুটাম ৩"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "%s আৰম্ভ কৰোতে ত্ৰুটি"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"%s ব্যৱহাৰ কৰিবলে, অভিগম সামৰ্থবান কৰিব লাগিব। আপুনি ইয়াক এতিয়া সামৰ্থবান কৰিব "
-"বিচাৰে নে?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr "অভিগম সামৰ্থবান কৰা হৈছে। %s ব্যৱহাৰ কৰিবলে লগ আউট কৰি পুনৰ লগিন কৰক।"
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "সতৰ্কবাৰ্তা - Caribou: অব্যৱস্থাপিত সম্পাদন কৰিব পৰা উইজেট:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -228,8 +206,10 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
-"কিবৰ্ড জ্যামিতি কিবৰ্ডৰ আকৃতি আৰু জটিলতা নিৰ্ধাৰণ কৰে, ই এটা 'স্বাভাৱিক' ৰূপৰ পৰা "
-"বিস্তাৰ হব পাৰে আৰু সাধাৰণ লিখনীৰ পৰা, এটা সম্পূৰ্ণ কিবৰ্ড ৰচনা কৰোতে ভাল লাগে।"
+"কিবৰ্ড জ্যামিতি কিবৰ্ডৰ আকৃতি আৰু জটিলতা নিৰ্ধাৰণ কৰে, ই এটা 'স্বাভাৱিক' ৰূপৰ "
+"পৰা "
+"বিস্তাৰ হব পাৰে আৰু সাধাৰণ লিখনীৰ পৰা, এটা সম্পূৰ্ণ কিবৰ্ড ৰচনা কৰোতে ভাল "
+"লাগে।"
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -275,3 +255,23 @@ msgstr "সৰ্বাধিক দুৰত্ব"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "সৰ্বাধিক দুৰত্ব যেতিয়া কিবৰ্ড লুকাই থোৱা আছে"
 
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"- স্ক্ৰিন কি'বৰ্ডত লঞ্চ হব লগিয়া অভিগম্যতা ঘটনাসমূহ পৰ্যবেক্ষন কৰা ডিমন"
+
+#~ msgid "Error starting %s"
+#~ msgstr "%s আৰম্ভ কৰোতে ত্ৰুটি"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "%s ব্যৱহাৰ কৰিবলে, অভিগম সামৰ্থবান কৰিব লাগিব। আপুনি ইয়াক এতিয়া সামৰ্থবান "
+#~ "কৰিব বিচাৰে নে?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr "অভিগম সামৰ্থবান কৰা হৈছে। %s ব্যৱহাৰ কৰিবলে লগ আউট কৰি পুনৰ লগিন কৰক।"
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "সতৰ্কবাৰ্তা - Caribou: অব্যৱস্থাপিত সম্পাদন কৰিব পৰা উইজেট:"
