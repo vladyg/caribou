@@ -1,19 +1,23 @@
 # Oriya translation for caribou.
 # Copyright (C) 2011 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
-# Manoj Kumar Giri <mgiri@redhat.com>, 2011.
 #
+# Manoj Kumar Giri <mgiri@redhat.com>, 2011, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-08 06:04+0000\n"
-"PO-Revision-Date: 2011-09-15 20:08+0530\n"
-"Last-Translator: Subhashish <psubhashish@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2013-12-29 19:21+0000\n"
+"PO-Revision-Date: 2014-01-21 18:32+0630\n"
+"Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
 "Language-Team: Oriya <or@li.org>\n"
+"Language: or\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -171,28 +175,9 @@ msgstr "ବୋତାମ 2"
 msgid "Button 3"
 msgstr "ବୋତାମ 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "କାରିବୋଉ"
-
-#: ../caribou/daemon/main.py:31
-#, python-format
-msgid "Error starting %s"
-msgstr "ଅସୁବିଧା ଆରମ୍ଭ %s ସମୂହ"
-
-#: ../caribou/daemon/main.py:42
-#, python-format
-msgid "In order to use %s, accessibility needs to be enabled. Do you want to enable it now?"
-msgstr "%s ବ୍ୟବହାର କରିବା ନିମନ୍ତେ ପହଞ୍ଚିବା ସୁବିଧା ସବୁକୁ ସଚଳ କରିବାକୁ ପଡ଼ିବ । ଆପଣ ଏହାକୁ ସଚଳ କରିବାକୁ ଚାହାନ୍ତି କି?"
-
-#: ../caribou/daemon/main.py:56
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr "ପହଞ୍ଚିବା ସୁବିଧା ସଚଳ କରାଗଲା । ଲଗ ଆଉଟ କରି %s ର ବ୍ୟବହାର ନିମନ୍ତେ ପଛକୁ ଲେଉଟନ୍ତୁ "
-
-#: ../caribou/daemon/main.py:153
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "ଚେତାବନୀ - କାରିବୋଉ: ବିଶେଷ ଭାବେ ସମ୍ଭଳାହେବା ଗ୍ୟାଜେଟ"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -215,8 +200,14 @@ msgid "The keyboard geometry Caribou should use"
 msgstr "କାରିବୋଉ ନିହାତି ଭାବରେ ବ୍ୟବହାର କରିବା ଭଳି କିବୋର୍ଡ଼ ସଜାଣି"
 
 #: ../caribou/antler/antler_settings.py:11
-msgid "The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
-msgstr "କିବୋର୍ଡ଼ ସଜାଣି କିବୋର୍ଡ଼ର ଆକାର ଓ ଜଟିଳତାର ନିର୍ଣ୍ଣୟ କରିଥାଏ, ଏହା ପ୍ରାକୃତିକ ଓ ଭଲ ଦେଖାଯାଉଥିବା ଉଚିତ ଯାହା ସରଳ ଲେଖା ଲେଖିବାରେ ସହାୟକ ହେବ ଓ ଏକ ପୁରା ଉପଯୋଗୀ କିବୋର୍ଡ଼ ଭଳି କାମ କରିବ ।"
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+"କିବୋର୍ଡ଼ ସଜାଣି କିବୋର୍ଡ଼ର ଆକାର ଓ ଜଟିଳତାର ନିର୍ଣ୍ଣୟ କରିଥାଏ, ଏହା ପ୍ରାକୃତିକ ଓ ଭଲ "
+"ଦେଖାଯାଉଥିବା ଉଚିତ "
+"ଯାହା ସରଳ ଲେଖା ଲେଖିବାରେ ସହାୟକ ହେବ ଓ ଏକ ପୁରା ଉପଯୋଗୀ କିବୋର୍ଡ଼ ଭଳି କାମ କରିବ ।"
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -262,3 +253,23 @@ msgstr "ସବୁଠାରୁ ଅଧିକ ଦୂରତା"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "କିବୋର୍ଡ଼ଟି ଲୁଚାଯାଇଥିବା ବେଳେ ସବୁଠାରୁ ଅଧିକ ଦୂରତା"
 
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"- ଅନ ସ୍କ୍ରିନ କି ବୋର୍ଡକୁ ଆରମ୍ଭ କରିବା ପାଇଁ ଡେମନ ଅଭିଗମ୍ୟତା ଘଟଣାଗୁଡ଼ିକୁ ଶୁଣୁଅଛି"
+
+#~ msgid "Error starting %s"
+#~ msgstr "ଅସୁବିଧା ଆରମ୍ଭ %s ସମୂହ"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "%s ବ୍ୟବହାର କରିବା ନିମନ୍ତେ ପହଞ୍ଚିବା ସୁବିଧା ସବୁକୁ ସଚଳ କରିବାକୁ ପଡ଼ିବ । ଆପଣ ଏହାକୁ ସଚଳ କରିବାକୁ "
+#~ "ଚାହାନ୍ତି କି?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr "ପହଞ୍ଚିବା ସୁବିଧା ସଚଳ କରାଗଲା । ଲଗ ଆଉଟ କରି %s ର ବ୍ୟବହାର ନିମନ୍ତେ ପଛକୁ ଲେଉଟନ୍ତୁ "
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "ଚେତାବନୀ - କାରିବୋଉ: ବିଶେଷ ଭାବେ ସମ୍ଭଳାହେବା ଗ୍ୟାଜେଟ"
