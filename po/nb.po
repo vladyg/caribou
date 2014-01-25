@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of Caribou.
 # Copyright (C) 2003-2004 Free Software Foundation, Inc.
 # Sigurd Gartmann <sigurd-translate@brogar.org>, 2003-2004.
-# Kjartan Maraas <kmaraas@gnome.org>, 2003-2012.
+# Kjartan Maraas <kmaraas@gnome.org>, 2003-2014.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: caribou 3.5.x\n"
+"Project-Id-Version: caribou 3.11.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-06 19:13+0200\n"
-"PO-Revision-Date: 2012-07-06 19:13+0200\n"
+"POT-Creation-Date: 2014-01-25 12:13+0100\n"
+"PO-Revision-Date: 2014-01-25 12:14+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -172,31 +172,9 @@ msgstr "Knapp 2"
 msgid "Button 3"
 msgstr "Knapp 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Feil ved start av %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"Tilgjengelighet må være slått på for å bruke %s. Vil du slå dette på nå?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr "Tilgjengelighet er slått på. Logg ut og inn igjen for å bruke %s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "ADVARSEL - Caribou: redigerbar komponent som ikke er håndtert:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -271,3 +249,7 @@ msgstr "Maksimal distanse"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maksimal distanse når tastaturet er skjult"
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr "- tjeneste som lytter etter tilgjengelighetshendelser for å starte tastatur på skjermen"
