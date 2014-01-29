@@ -2,19 +2,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Dr.T.Vasudevan <agnihot3@gmail.com>, 2010, 2011.
+# Shantha kumar <shkumar@redhat.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-13 19:30+0530\n"
-"PO-Revision-Date: 2011-09-13 19:32+0530\n"
-"Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2013-12-29 19:21+0000\n"
+"PO-Revision-Date: 2014-01-29 16:22+0530\n"
+"Last-Translator: Shantha kumar <shkumar@redhat.com>\n"
 "Language-Team: Tamil <ubuntu-tam@lists.ubuntu.com>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../caribou/settings/caribou_settings.py:5
@@ -173,30 +175,9 @@ msgstr "பொத்தான் 2"
 msgid "Button 3"
 msgstr "பொத்தான் 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "காரிபௌ"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "%s ஐ துவக்குவதில் பிழை"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr "%s ஐ பயன்படுத்த அணுகலை செயலாக்க வேண்டும். இப்போது செயலாக்கலாமா?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr "அணுகல் செயலாக்கப்பட்டது. வெளியேறி மீண்டும் உள்நுழைந்து %s ஐ பயன்படுத்தலாம்."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "எச்சரிக்கை: கரிபோ: கையாளாத திருத்தக்கூடிய விட்செட்:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -225,7 +206,8 @@ msgid ""
 "text, to a fullscale keyboard."
 msgstr ""
 "விசைப்பலகை இட அமைவு அதன் வடிவையும் சிக்கலையும் தீர்மானிக்கிறது. இது எளிய உரை "
-"தயாரிப்புக்கு ஒரு இயற்கையான திருப்தி அளிக்கும் காட்சியிலிருந்து முழு அளவு விசைப்பலகை "
+"தயாரிப்புக்கு ஒரு இயற்கையான திருப்தி அளிக்கும் காட்சியிலிருந்து முழு அளவு "
+"விசைப்பலகை "
 "வரை இருக்கலாம்."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
@@ -271,6 +253,26 @@ msgstr "அதிகபட்ச தூரம்"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "விசைப்பலகை மறைக்கப்பட்ட போது அதிகபட்ச தூரம்"
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"- திரை விசைப்பலகையில் துவக்கப்பட வேண்டிய டீமான் கவனிப்பு அணுகல் தன்மை "
+"நிகழ்வுகள்"
+
+#~ msgid "Error starting %s"
+#~ msgstr "%s ஐ துவக்குவதில் பிழை"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr "%s ஐ பயன்படுத்த அணுகலை செயலாக்க வேண்டும். இப்போது செயலாக்கலாமா?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr "அணுகல் செயலாக்கப்பட்டது. வெளியேறி மீண்டும் உள்நுழைந்து %s ஐ பயன்படுத்தலாம்."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "எச்சரிக்கை: கரிபோ: கையாளாத திருத்தக்கூடிய விட்செட்:"
 
 #~ msgid "Colors"
 #~ msgstr "வண்ணங்கள்"
