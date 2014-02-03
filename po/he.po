@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-30 14:10+0300\n"
-"PO-Revision-Date: 2011-10-01 13:57+0200\n"
+"POT-Creation-Date: 2014-02-03 16:12+0200\n"
+"PO-Revision-Date: 2014-02-03 16:12+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Gezer <sh.yaron@gmail.com>\n"
 "Language: \n"
@@ -176,31 +176,9 @@ msgstr "לחצן 2"
 msgid "Button 3"
 msgstr "לחצן 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "שגיאה בהפעלת %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"כדי להשתמש ב־%s, יש להפעיל את תכונות הנגישות. האם ברצונך להפעיל אותן כעת?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr "תכונות הנגישות הופעלו. יש לצאת ולהיכנס שוב כדי להשתמש ב־%s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "WARNING - Caribou: unhandled editable widget:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -223,13 +201,8 @@ msgid "The keyboard geometry Caribou should use"
 msgstr "צורת המקלדת בה Caribou תעשה שימוש"
 
 #: ../caribou/antler/antler_settings.py:11
-msgid ""
-"The keyboard geometry determines the shape and complexity of the keyboard, "
-"it could range from a 'natural' look and feel good for composing simple "
-"text, to a fullscale keyboard."
-msgstr ""
-"צורת המקלדת מציינת את הצורה ומורכבות המקלדת, הצורה יכולה לנוע בין מראה "
-"ותחושה 'טבעיים' לחיבור קטעי טקסט פשוטים עד למקלדת מלאה."
+msgid "The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
+msgstr "צורת המקלדת מציינת את הצורה ומורכבות המקלדת, הצורה יכולה לנוע בין מראה ותחושה 'טבעיים' לחיבור קטעי טקסט פשוטים עד למקלדת מלאה."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -274,6 +247,25 @@ msgstr "המרחק המרבי"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "המרחק המרבי כאשר המקלדת מוסתרת"
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr "- סוכן המאזין לאירועי נגישות לטעינת מקלדת המסך"
+
+#~ msgid "Error starting %s"
+#~ msgstr "שגיאה בהפעלת %s"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "כדי להשתמש ב־%s, יש להפעיל את תכונות הנגישות. האם ברצונך להפעיל אותן כעת?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr "תכונות הנגישות הופעלו. יש לצאת ולהיכנס שוב כדי להשתמש ב־%s."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "WARNING - Caribou: unhandled editable widget:"
 
 #~ msgid "Keyboard layout"
 #~ msgstr "פריסת המקלדת"
