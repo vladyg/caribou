@@ -4,15 +4,17 @@
 # David Planella <david.planella@softcatala.org>, 2010.
 # Jordi Estrada <jordi.estrada@gmail.com>, 2010.
 # Carme Cabal <carmecabal@hotmail.com>, 2011.
+# Gil Forcada <gilforcada@guifi.net>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-25 23:23+0200\n"
-"PO-Revision-Date: 2011-09-25 09:31+0200\n"
-"Last-Translator: Carme Cabal <carmecabal@hotmail.com>\n"
-"Language-Team: Catalan <tradgnome@llistes.softcatala.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2013-12-29 19:21+0000\n"
+"PO-Revision-Date: 2014-02-21 22:58+0100\n"
+"Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
+"Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -175,34 +177,9 @@ msgstr "Botó 2"
 msgid "Button 3"
 msgstr "Botó 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "S'ha produït un error en iniciar el %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"S'ha d'habilitar l'accessibilitat per utilitzar el %s. Voleu habilitar-la "
-"ara?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"S'ha habilitat l'accessibilitat. Sortiu i torneu a entrar per utilitzar el "
-"%s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "Avís - Caribou: hi ha un giny editable no gestionat:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -278,32 +255,8 @@ msgstr "Distància màxima"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Distància màxima quan el teclat està amagat"
 
-#~ msgid "Block"
-#~ msgstr "Bloquejar"
-
-#~ msgid "Scan in reverse order"
-#~ msgstr "escaneja en ordre invers"
-
-#~ msgid "Colors"
-#~ msgstr "Colors"
-
-#~ msgid "Key font:"
-#~ msgstr "Tipus de lletra de la tecla:"
-
-#~ msgid "Keys"
-#~ msgstr "Tecles"
-
-#~ msgid "Normal state:"
-#~ msgstr "Estat normal:"
-
-#~ msgid "Use Defaults"
-#~ msgstr "Utilitza els valors predeterminats"
-
-#~ msgid "_Test settings here:"
-#~ msgstr "Comp_roveu els paràmetres aquí:"
-
-#~ msgid "Key _size:"
-#~ msgstr "Mida de la _tecla:"
-
-#~ msgid "Key s_pacing:"
-#~ msgstr "Es_paiat de les tecles:"
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"- dimoni que escolta esdeveniments d'accessibilitat per llançar el teclat en "
+"pantalla"
