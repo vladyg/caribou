@@ -1,20 +1,21 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012.
+# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-17 11:44+0300\n"
-"PO-Revision-Date: 2012-09-17 11:47+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2014-03-07 04:03+0000\n"
+"PO-Revision-Date: 2014-03-07 16:59+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -174,31 +175,9 @@ msgstr "Poga 2"
 msgid "Button 3"
 msgstr "Poga 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Kļūda, startējot %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr "Lai lietotu %s, jāaktivē pieejamība. Vai vēlaties to aktivēt tagad?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Pieejamība ir aktivēta. Izrakstieties un atkal ierakstieties, lai lietotu %s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "BRĪDINĀJUMS — Caribou: neapstrādāta rediģējama logdaļa:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -274,3 +253,22 @@ msgstr "Maksimālais attālums"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maksimālais attālums, kad tastatūra ir paslēpta"
 
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr "- dēmons klausās pieejamības notikumus, lai palaistu ekrāna tastatūru"
+
+#~ msgid "Error starting %s"
+#~ msgstr "Kļūda, startējot %s"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr "Lai lietotu %s, jāaktivē pieejamība. Vai vēlaties to aktivēt tagad?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "Pieejamība ir aktivēta. Izrakstieties un atkal ierakstieties, lai lietotu "
+#~ "%s."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "BRĪDINĀJUMS — Caribou: neapstrādāta rediģējama logdaļa:"
