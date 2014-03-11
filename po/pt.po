@@ -2,19 +2,21 @@
 # Copyright © 2011, 2013 caribou
 # This file is distributed under the same license as the caribou package.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2011, 2013.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.8\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-17 00:12+0000\n"
-"PO-Revision-Date: 2013-03-17 00:15+0000\n"
-"Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2014-02-23 04:03+0000\n"
+"PO-Revision-Date: 2014-02-23 16:01+0100\n"
+"Last-Translator: Tiago S. <almosthumane@portugalmail.pt>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -249,6 +251,12 @@ msgstr "Distância Máxima"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Distância máxima quando o teclado está escondido"
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"- daemon a escutar eventos de acessibilidade de forma a lançar o teclado de "
+"ecrã"
 
 #~ msgid "Error starting %s"
 #~ msgstr "Erro ao iniciar %s"
