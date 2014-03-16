@@ -1,15 +1,15 @@
 # Korean translation for caribou.
 # Copyright (C) 2011 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2011, 2012, 2013.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2011, 2012, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2013-03-19 20:56+0000\n"
-"PO-Revision-Date: 2012-03-10 16:43+0900\n"
+"POT-Creation-Date: 2014-03-16 04:03+0000\n"
+"PO-Revision-Date: 2014-03-15 03:17+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.5\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -207,9 +208,9 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
-"키보드 형태는 키보드의 모양과 복잡도를 말합니다. 단순한 텍스트를 작성하기 위"
-"해 보기 좋게 자연스레 보이는 것부터 시작해서, 전체 규모의 키보드까지 될 수 있"
-"습니다."
+"키보드 형태는 키보드의 모양과 복잡도를 말합니다. 단순한 텍스트 작성 목적으로"
+"보기 좋게 자연스레 보이는 것부터 시작해서, 전체 규모의 키보드까지 될 수 있습"
+"니다."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -254,3 +255,7 @@ msgstr "최대 거리"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "키보드를 숨겼을 때 최대 거리"
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr "- 화면 키보드 실행 목적으로 접근성 이벤트를 기다리는 데몬"
