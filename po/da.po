@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-18 17:14+0200\n"
-"PO-Revision-Date: 2011-09-18 09:35+0100\n"
+"POT-Creation-Date: 2014-03-20 21:05+0100\n"
+"PO-Revision-Date: 2014-03-16 01:27+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -177,33 +177,9 @@ msgstr "Knap 2"
 msgid "Button 3"
 msgstr "Knap 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Fejl ved start af %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"For at bruge %s, skal tilgængelighed være aktiveret. Ønsker du at aktivere "
-"den nu?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Tilgængelighed er blevet aktiveret. Log ud og ind igen for at bruge %s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "ADVARSEL - Caribou: ikke-håndteret redigérbar kontrol:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -278,3 +254,27 @@ msgstr "Maksimal distance"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maksimal distance når tastaturet er skjult"
+
+# lidt kringlet på engelsk, men jeg tror dette er korrekt
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"- dæmon som lytter til tilgængelighedsbegivenheder for at starte "
+"skærmtastatur"
+
+#~ msgid "Error starting %s"
+#~ msgstr "Fejl ved start af %s"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "For at bruge %s, skal tilgængelighed være aktiveret. Ønsker du at "
+#~ "aktivere den nu?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "Tilgængelighed er blevet aktiveret. Log ud og ind igen for at bruge %s."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "ADVARSEL - Caribou: ikke-håndteret redigérbar kontrol:"
