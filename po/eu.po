@@ -2,20 +2,21 @@
 # Copyright (C) 2011 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
 # Julen Ruiz Aizpuru <julenx@gmail.com>, 2011.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 17:24+0200\n"
-"PO-Revision-Date: 2011-09-23 17:23+0200\n"
-"Last-Translator: \n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2014-03-22 14:21+0100\n"
+"PO-Revision-Date: 2014-03-22 14:24+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"Language-Team: Basque <kde-i18n-doc@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.4\n"
 "X-Project-Style: gnome\n"
 
 #: ../caribou/settings/caribou_settings.py:5
@@ -174,33 +175,9 @@ msgstr "2. botoia"
 msgid "Button 3"
 msgstr "3. botoia"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Errorea %s abiaraztean"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"Erabilgarritasuna gaitu behar da %s erabili ahal izateko. Orain gaitu nahi "
-"duzu?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Erabilgarritasuna gaitu da. Itxi eta hasi berriro saioa %s erabiltzeko."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "ABISUA - Caribou: maneiatu gabeko trepeta editagarria:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -275,3 +252,26 @@ msgstr "Gehienezko distantzia"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Gehienezko distantzia teklatua ezkutatuta dagoenean"
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"- erabilgarritasunaren gertaerak entzuten dituen daemon-a (pantailako "
+"teklatuan abiarazteko)"
+
+#~ msgid "Error starting %s"
+#~ msgstr "Errorea %s abiaraztean"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "Erabilgarritasuna gaitu behar da %s erabili ahal izateko. Orain gaitu "
+#~ "nahi duzu?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "Erabilgarritasuna gaitu da. Itxi eta hasi berriro saioa %s erabiltzeko."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "ABISUA - Caribou: maneiatu gabeko trepeta editagarria:"
