@@ -1,11 +1,13 @@
 # Kasia Bondarava <kasia.bondarava@gmail.com>, 2012.
+# Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-18 23:50+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2013-12-29 19:21+0000\n"
 "PO-Revision-Date: 2012-02-18 23:49+0300\n"
-"Last-Translator: Kasia Bondarava <kasia.bondarava@gmail.com>\n"
+"Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
@@ -172,32 +174,9 @@ msgstr "Кнопка 2"
 msgid "Button 3"
 msgstr "Кнопка 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Памылка запуску %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr "Для выкарыстання %s трэба ўключыць функцыю даступнасці. Уключыць яе?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Функцыя даступнасці ўключана. Скончыце сеанс і пачніце новы, каб "
-"выкарыстоўваць %s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "УВАГА - Caribou: невядомы папраўны віджэт:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -271,3 +250,8 @@ msgstr "Максімальная адлегласць"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Максімальная адлегласць, калі клавіятура схавана"
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr "- дэман, які чакае падзей ад модуля даступнасці для запуску экраннай клавіятуры"
+
