@@ -2,25 +2,24 @@
 # Hindi translation for caribou.
 # Copyright (C) 2011 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
-#
 # Rajesh <rranjan>, 2011.
-# rajesh <rajeshkajha@yahoo.com>, 2012.
+# rajesh <rajeshkajha@yahoo.com>, 2012, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou.po.master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-09 09:57+0000\n"
-"PO-Revision-Date: 2012-09-17 16:07+0530\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribo"
+"u&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2014-08-20 03:00+0000\n"
+"PO-Revision-Date: 2014-08-20 14:20+0530\n"
 "Last-Translator: rajesh <rajeshkajha@yahoo.com>\n"
-"Language-Team: Hindi <hindi>\n"
+"Language-Team: hindi\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"\n"
-"Language: hi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -178,34 +177,9 @@ msgstr "बटन 2"
 msgid "Button 3"
 msgstr "बटन 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "कैरिबू"
-
-#: ../caribou/daemon/main.py:31
-#, python-format
-msgid "Error starting %s"
-msgstr "%s को आरंभ करने में त्रुटि"
-
-#: ../caribou/daemon/main.py:42
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"%s के उपयोग के लिए, पहुँच को सक्रिय किए जाने की जरूरत है. क्या आप इसे सक्रिय "
-"करना चाहते हैं?"
-
-#: ../caribou/daemon/main.py:56
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"पहुँच को सक्रिय किया गया है. %s. का उपयोग करने के लिए फिर से लॉग आउट करें और "
-"लॉग करें"
-
-#: ../caribou/daemon/main.py:153
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "चेतावनी - कैरिबू: अनियंत्रित संपादनयोग्य विजेट:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -233,9 +207,8 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
-"कुँजीपटल ज्यामिति निर्धारित करती है कुँजीपटल के आकार और जटिलता को, "
-"यह 'प्राकृतिक' रूप से आगे बढ़कर सरल पाठ लिखने के लिए बढ़िया है और फिर "
-"फुलस्केल कुँजीपटल की ओर जाती है."
+"कुँजीपटल ज्यामिति निर्धारित करती है कुँजीपटल के आकार और जटिलता को, यह 'प्राकृतिक' रूप से "
+"आगे बढ़कर सरल पाठ लिखने के लिए बढ़िया है और फिर फुलस्केल कुँजीपटल की ओर जाती है."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -281,3 +254,23 @@ msgstr "अधिकतम दूरी"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "कुँजीपटल के छिपे रहने पर अधिकतम दूरी"
 
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr "- डेमॉन लिस्निंग पहुँच कार्यक्रम स्क्रीन कुंजीपट पर लॉन्च होना है"
+
+#~ msgid "Error starting %s"
+#~ msgstr "%s को आरंभ करने में त्रुटि"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "%s के उपयोग के लिए, पहुँच को सक्रिय किए जाने की जरूरत है. क्या आप इसे सक्रिय करना "
+#~ "चाहते हैं?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "पहुँच को सक्रिय किया गया है. %s. का उपयोग करने के लिए फिर से लॉग आउट करें और लॉग करें"
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "चेतावनी - कैरिबू: अनियंत्रित संपादनयोग्य विजेट:"
