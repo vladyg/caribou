@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribo"
 "u&keywords=I18N+L10N&component=default\n"
 "POT-Creation-Date: 2014-08-20 03:00+0000\n"
-"PO-Revision-Date: 2014-08-20 14:20+0530\n"
+"PO-Revision-Date: 2014-08-20 14:59+0530\n"
 "Last-Translator: rajesh <rajeshkajha@yahoo.com>\n"
 "Language-Team: hindi\n"
 "Language: hi\n"
@@ -143,7 +143,7 @@ msgstr "दाहिना शिफ्ट"
 
 #: ../caribou/settings/caribou_settings.py:51
 msgid "Left shift"
-msgstr "बायां शिफ्ट"
+msgstr "बायां शिफ़्ट"
 
 #: ../caribou/settings/caribou_settings.py:52
 msgid "Space"
