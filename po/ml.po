@@ -9,12 +9,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ml\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
-"cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-03 21:06+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2014-08-20 03:00+0000\n"
 "PO-Revision-Date: 2012-09-19 00:40+0000\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam <discuss@lists.smc.org.in>\n"
+"Language: ml\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -122,12 +123,10 @@ msgid "Switch device, keyboard or mouse"
 msgstr "ഡിവൈസ്, കീബോര്‍ഡ് അല്ലെങ്കില്‍ മൌസ് മാറ്റുക"
 
 #: ../caribou/settings/caribou_settings.py:43
-#| msgid "Keyboard _layout:"
 msgid "Keyboard"
 msgstr "കീബോര്‍ഡ്"
 
 #: ../caribou/settings/caribou_settings.py:44
-#| msgid "Mouse over:"
 msgid "Mouse"
 msgstr "മൌസ്"
 
@@ -179,38 +178,11 @@ msgstr "ബട്ടണ്‍ 2"
 msgid "Button 3"
 msgstr "ബട്ടണ്‍ 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "കാരിബൌ"
 
-#: ../caribou/daemon/main.py:31
-#, python-format
-msgid "Error starting %s"
-msgstr "%s ആരംഭിയ്ക്കുന്നതില്‍ പിശക്"
-
-#: ../caribou/daemon/main.py:42
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"%s ഉപയോഗിയ്ക്കുന്നതിനായി, പ്രവേശനം പ്രവര്‍ത്തന സജ്ജമാക്കേണ്ടതുണ്ടു്. നിങ്ങള്‍ക്കുടന്‍ "
-"പ്രവര്‍ത്തന സജ്ജമാക്കണോ?"
-
-#: ../caribou/daemon/main.py:56
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"പ്രവേശനം പ്രവര്‍ത്തന സജ്ജമാക്കിയിരിയ്ക്കുന്നു. %s ഉപയോഗിയ്ക്കുന്നതിനായി പുറത്തു് കടന്നു് "
-"വീണ്ടും തിരികെ വരിക."
-
-#: ../caribou/daemon/main.py:153
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr ""
-"മുന്നറിയിപ്പ് - കരിബൌ : കൈകാര്യം ചെയ്തിട്ടില്ലാത്ത മാറ്റം വരുത്തുവാന്‍ സാധിക്കുന്ന വിഡ്ജറ്റ് :"
-
 #: ../caribou/antler/antler_settings.py:5
-#| msgid "Caribou Preferences"
 msgid "Antler Preferences"
 msgstr "ആന്റ്‌ലര്‍ മുന്‍ഗണനകള്‍"
 
@@ -223,7 +195,6 @@ msgid "Appearance"
 msgstr "കാഴ്ച"
 
 #: ../caribou/antler/antler_settings.py:9
-#| msgid "Keyboard _layout:"
 msgid "Keyboard Type"
 msgstr "കീബോര്‍ഡ് രീതി"
 
@@ -237,8 +208,8 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
-"കീബോര്‍ഡിന്റെ ആകൃതിയും ഉപയോഗവും കീബോര്‍ഡ് ജോമെട്രി നിശ്ചയിയ്ക്കുന്നു. 'സാധാരണ' "
-"കാഴ്ച മുതല്‍ ഒരു പൂര്‍ണ്ണ കീബോര്‍ഡ് വരെ ഇതാകാം."
+"കീബോര്‍ഡിന്റെ ആകൃതിയും ഉപയോഗവും കീബോര്‍ഡ് ജോമെട്രി നിശ്ചയിയ്ക്കുന്നു. 'സാധാരണ' കാഴ്ച മുതല്‍ ഒരു "
+"പൂര്‍ണ്ണ കീബോര്‍ഡ് വരെ ഇതാകാം."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -282,7 +253,30 @@ msgstr "കൂടിയ ദൂരം"
 
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
-msgstr "   "
+msgstr "കീബോര്‍ഡ് അദൃശ്യമാകുമ്പോഴുള്ള കൂടിയ ദൂരം "
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr "- സ്ക്രീന്‍ കീബോര്‍ഡില്‍ ലഭ്യമാക്കേണ്ട ആക്സസിബിളിറ്റി ഇവന്റുകള്‍ ശ്രദ്ധിയ്ക്കുന്ന ഡെമണ്‍"
+
+#~ msgid "Error starting %s"
+#~ msgstr "%s ആരംഭിയ്ക്കുന്നതില്‍ പിശക്"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "%s ഉപയോഗിയ്ക്കുന്നതിനായി, പ്രവേശനം പ്രവര്‍ത്തന സജ്ജമാക്കേണ്ടതുണ്ടു്. നിങ്ങള്‍ക്കുടന്‍ പ്രവര്‍ത്തന "
+#~ "സജ്ജമാക്കണോ?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "പ്രവേശനം പ്രവര്‍ത്തന സജ്ജമാക്കിയിരിയ്ക്കുന്നു. %s ഉപയോഗിയ്ക്കുന്നതിനായി പുറത്തു് കടന്നു് വീണ്ടും "
+#~ "തിരികെ വരിക."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr ""
+#~ "മുന്നറിയിപ്പ് - കരിബൌ : കൈകാര്യം ചെയ്തിട്ടില്ലാത്ത മാറ്റം വരുത്തുവാന്‍ സാധിക്കുന്ന വിഡ്ജറ്റ് :"
 
 #~ msgid "Colors"
 #~ msgstr "നിറങ്ങള്‍ "
