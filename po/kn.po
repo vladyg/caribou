@@ -1,24 +1,24 @@
 # Kannada translation for caribou.
 # Copyright (C) 2011 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
-# 
+#
 # Shankar Prasad <prasad.mvs@gmail.com>, 2011.
-# Shankar Prasad <svenkate@redhat.com>, 2011, 2012.
+# Shankar Prasad <svenkate@redhat.com>, 2011, 2012, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product="
-"caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-21 07:19+0000\n"
-"PO-Revision-Date: 2012-03-18 06:15-0400\n"
-"Last-Translator: s\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2014-02-03 07:16+0000\n"
+"PO-Revision-Date: 2014-08-20 14:16+0530\n"
+"Last-Translator: \n"
 "Language-Team: Kannada <kn@li.org>\n"
+"Language: kn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: kn\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Zanata 3.2.3\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -177,9 +177,34 @@ msgstr "ಗುಂಡಿ 2"
 msgid "Button 3"
 msgstr "ಗುಂಡಿ 3"
 
-#: ../caribou/__init__.py:8
+#: ../caribou/__init__.py:2
 msgid "Caribou"
 msgstr "Caribou"
+
+#: ../caribou/daemon/main.py:38
+#, python-format
+msgid "Error starting %s"
+msgstr "%s ಅನ್ನು ಆರಂಭಿಸುವಲ್ಲಿ ದೋಷ"
+
+#: ../caribou/daemon/main.py:49
+#, python-format
+msgid ""
+"In order to use %s, accessibility needs to be enabled. Do you want to enable "
+"it now?"
+msgstr ""
+"%s ಅನ್ನು ಬಳಸಲು, ಎಕ್ಸೆಸೆಬಿಲಿಟಿಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಬೇಕು. ನೀವು ಅದನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು "
+"ಬಯಸುವಿರಾ?"
+
+#: ../caribou/daemon/main.py:63
+#, python-format
+msgid "Accessibility has been enabled. Log out and back in again to use %s."
+msgstr ""
+"ಎಕ್ಸೆಸೆಬಿಲಿಟಿಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ. %s ಅನ್ನು ಬಳಸಲು ನಿರ್ಗಮಿಸಿ ಮತ್ತು ಪುನಃ "
+"ಪ್ರವೇಶಿಸಿ."
+
+#: ../caribou/daemon/main.py:161
+msgid "WARNING - Caribou: unhandled editable widget:"
+msgstr "ಎಚ್ಚರಿಕೆ - Caribou: ನಿಭಾಯಿಸಲಾಗದ ಸಂಪಾದನಾ ವಿಜೆಟ್:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -207,9 +232,10 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
-"ಕೀಲಿಮಣೆ ಜ್ಯಾಮಿತಿಯು ಕೀಲಿಮಣೆಯ ಆಕಾರ ಮತ್ತು ಸಂಕೀರ್ಣತೆಯನ್ನು ನಿರ್ಧರಿಸುತ್ತದೆ, ಅದು "
-"ಸರಳ ಪಠ್ಯವನ್ನು ರಚಿಸಲು ಉತ್ತಮವಾದಂತಹ 'ನೈಸರ್ಗಿಕ' ನೋಟ ಮತ್ತು ಶೈಲಿಯಿಂದ ಹಿಡಿದು "
-"ಪೂರ್ಣಪ್ರಮಾಣದ ಕೀಲಿಮಣೆಯ ರೂಪದಲ್ಲಿ ಇರಬಹುದು."
+"ಕೀಲಿಮಣೆ ಜ್ಯಾಮಿತಿಯು ಕೀಲಿಮಣೆಯ ಆಕಾರ ಮತ್ತು ಸಂಕೀರ್ಣತೆಯನ್ನು ನಿರ್ಧರಿಸುತ್ತದೆ, ಅದು ಸರಳ "
+"ಪಠ್ಯವನ್ನು ರಚಿಸಲು ಉತ್ತಮವಾದಂತಹ 'ನೈಸರ್ಗಿಕ' ನೋಟ ಮತ್ತು ಶೈಲಿಯಿಂದ ಹಿಡಿದು "
+"ಪೂರ್ಣಪ್ರಮಾಣದ "
+"ಕೀಲಿಮಣೆಯ ರೂಪದಲ್ಲಿ ಇರಬಹುದು."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -254,3 +280,4 @@ msgstr "ಗರಿಷ್ಟ ದೂರ"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "ಕೀಲಿಮಣೆಯನ್ನು ಅಡಗಿಸಿದಾಗ ಗರಿಷ್ಟ ದೂರ"
+
