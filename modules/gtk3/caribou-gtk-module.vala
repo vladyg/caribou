@@ -61,7 +61,7 @@ namespace Caribou {
                 return Gdk.FilterReturn.CONTINUE;
 
             Gdk.window_get_user_data (gdkwindow, out data);
-            if (data == null || !(data is Gtk.Window))
+            if (data == null || !(((Object *) data) is Gtk.Window))
                 return Gdk.FilterReturn.CONTINUE;
 
             window = (Gtk.Window *) data;
