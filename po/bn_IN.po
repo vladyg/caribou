@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2012-09-22 07:42+0000\n"
+"POT-Creation-Date: 2014-08-27 03:00+0000\n"
 "PO-Revision-Date: 2012-11-09 14:43+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bengali (India) <anubad@lists.ankur.org.in>\n"
@@ -176,34 +176,9 @@ msgstr "বোতাম ২"
 msgid "Button 3"
 msgstr "বোতাম ৩"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "%s থেকে ত্রুটি শুরু"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"%s ব্যবহার করতে হলে, স্বাচ্ছন্দ্যকরণ সক্ষম করা প্রয়োজন। আপনি কি এটি এখন "
-"সক্ষম করতে "
-"চান?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"স্বাচ্ছন্দ্যকরণ সক্ষম হয়েছে। লগ আউট করে আবার লগ ইন করুন %s ব্যবহার করার জন্য।"
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "সতর্কবার্তা - Caribou: সম্পাদনযোগ্য উইজেট আনহ্যান্ডেল করেছে:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -232,8 +207,7 @@ msgid ""
 "text, to a fullscale keyboard."
 msgstr ""
 "কীবোর্ডের জ্যামিতি কীবোর্ডের আকৃতি এবং জটিলতা নির্ধারণ করে, এটি সাধারণ টেক্সট "
-"কম্পোজ করার জন্য একটি 'স্বাভাবিক' চেহারা ও গঠন থেকে একটি সম্পুর্ন মাপের "
-"কীবোর্ড "
+"কম্পোজ করার জন্য একটি 'স্বাভাবিক' চেহারা ও গঠন থেকে একটি সম্পুর্ন মাপের কীবোর্ড "
 "অবধি বিস্তারিত হতে পারে।"
 
 #. Translators: Keyboard type (similar to touch/tactile device)
@@ -280,3 +254,23 @@ msgstr "সর্বাধিক দূরত্ব"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "সর্বাধিক দূরত্ব যখন কিবোর্ড লুকানো থাকে"
 
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr "- স্ক্রীন কীবোর্ডে লঞ্চ করতে ডিমন লিশনিং অ্যাক্সেসযোগ্যতা ইভেন্ট"
+
+#~ msgid "Error starting %s"
+#~ msgstr "%s থেকে ত্রুটি শুরু"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "%s ব্যবহার করতে হলে, স্বাচ্ছন্দ্যকরণ সক্ষম করা প্রয়োজন। আপনি কি এটি এখন সক্ষম "
+#~ "করতে চান?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "স্বাচ্ছন্দ্যকরণ সক্ষম হয়েছে। লগ আউট করে আবার লগ ইন করুন %s ব্যবহার করার জন্য।"
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "সতর্কবার্তা - Caribou: সম্পাদনযোগ্য উইজেট আনহ্যান্ডেল করেছে:"
