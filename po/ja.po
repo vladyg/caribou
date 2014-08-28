@@ -1,22 +1,23 @@
 # Japanese translation of message catalog of Caribou
 # Copyright (C) 2009-2011 the Caribou's copyright holder
 # This file is distributed under the same license as the Caribou package.
+#
 # Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2010.
 # Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2010, 2011.
-#
+# Noriko Mizumoto <noriko@fedoraproject.org>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-16 11:53+0000\n"
-"PO-Revision-Date: 2011-09-17 18:28+0900\n"
-"Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2014-08-28 03:00+0000\n"
+"PO-Revision-Date: 2014-08-28 23:14+0000\n"
+"Last-Translator: Noriko Mizumoto <noriko@fedoraproject.org>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -174,34 +175,9 @@ msgstr "第 2 ボタン"
 msgid "Button 3"
 msgstr "第 3 ボタン"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "%s を起動できません"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"%s を使用するにはアクセシビリティ機能を有効にする必要があります。有効にします"
-"か?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"アクセシビリティ機能が有効になりました。%s を使用するにはログインしなおしてく"
-"ださい。"
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "警告 - Caribou: 処理できない入力ウィジェット:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -224,14 +200,8 @@ msgid "The keyboard geometry Caribou should use"
 msgstr "Caribou が使用するキーボードの形状"
 
 #: ../caribou/antler/antler_settings.py:11
-msgid ""
-"The keyboard geometry determines the shape and complexity of the keyboard, "
-"it could range from a 'natural' look and feel good for composing simple "
-"text, to a fullscale keyboard."
-msgstr ""
-"キーボードの形状とは、キーボードの形や複雑さを意味します。ちょっとしたテキス"
-"トを書くのに適した'素朴な'外観のものから、フルスケールのキーボードまで、多岐"
-"に渡ります。"
+msgid "The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
+msgstr "キーボードの形状とは、キーボードの形や複雑さを意味します。ちょっとしたテキストを書くのに適した'素朴な'外観のものから、フルスケールのキーボードまで、多岐に渡ります。"
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -276,3 +246,19 @@ msgstr "最大間隔"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "キーボードが非表示になるときの最大間隔"
+
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr "- アクセシビリティイベントを待ち受けてオンスクリーンキーボードを起動するデーモン"
+
+#~ msgid "Error starting %s"
+#~ msgstr "%s を起動できません"
+
+#~ msgid "In order to use %s, accessibility needs to be enabled. Do you want to enable it now?"
+#~ msgstr "%s を使用するにはアクセシビリティ機能を有効にする必要があります。有効にしますか?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr "アクセシビリティ機能が有効になりました。%s を使用するにはログインしなおしてください。"
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "警告 - Caribou: 処理できない入力ウィジェット:"
