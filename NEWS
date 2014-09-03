@@ -1,4 +1,19 @@
 =============
+Version 0.4.14
+=============
+- Bug 720653: some string in daemon.vala is not available for translation
+- Bug 722355: #!/usr/bin/python in tools/fix_gir.py
+- Bug 735504: Fails to build with latest vala
+- Bug 683712: Invocation of on screen keyboard
+- Translation updates (Tajik, Indonesian, Lithuanian, Polish,
+  Slovenian, Aragonese, Brazilian Portuguese, Czech, German,
+  Simplified Chinese, Galician, Spanish, Hungarian, Italian, Serbian,
+  Odia, Assamese, Norwegian bokmål, Tamil, Traditional Chinese,
+  Gujarati, Hebrew, Ukrainian, Latvian, Portuguese, French, Korean,
+  Russian, Danish, Basque, Belarusian, Catalan, Greek, Malayalam,
+  Hindi, Marathi, Telugu, Bengali, Kannada, Japanese)
+
+=============
 Version 0.4.13
 =============
 - Bug 698746: Accessibility : "slow keys" breaks "screen keyboard" feature
