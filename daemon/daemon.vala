@@ -162,14 +162,13 @@ namespace Caribou {
                 on_text_caret_moved_ignore_error, "object:text-caret-moved");
         }
 
-        public void run () {
-            if (keyboard != null)
-            {
-                // This method is available over D-Bus, so ignore the request
-                // to run if the daemon is already running.
-                return;
-            }
+        [DBus (name = "Run")]
+        public void ping () {
+            // This method is called over D-Bus, upon activation.
+        }
 
+        [DBus (visible = false)]
+        public void run () {
             Bus.get_proxy.begin<_Keyboard> (BusType.SESSION,
                                             "org.gnome.Caribou.Keyboard",
                                             "/org/gnome/Caribou/Keyboard",
