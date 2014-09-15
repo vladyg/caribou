@@ -1,4 +1,10 @@
 =============
+Version 0.4.15
+=============
+- Fix race condition when invoking OSK through D-Bus (see comment in
+  bug 683712)
+
+=============
 Version 0.4.14
 =============
 - Bug 720653: some string in daemon.vala is not available for translation
