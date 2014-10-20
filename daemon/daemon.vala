@@ -88,19 +88,20 @@ namespace Caribou {
                 case Atspi.Role.PASSWORD_TEXT:
                 case Atspi.Role.TERMINAL:
                 case Atspi.Role.ENTRY:
-                    if (event.type.has_prefix ("focus") || event.detail1 == 1) {
-                        set_entry_location (acc);
-                        current_acc = event.source;
-                        debug ("enter text widget in %s",
-                               event.source.get_application ().name);
-                    } else if (event.detail1 == 0 && acc == current_acc) {
-                        keyboard.hide (get_timestamp ());
-                        current_acc = null;
-                        debug ("leave text widget in %s",
-                               event.source.get_application ().name);
+                    if (event.type == "object:state-changed:focused") {
+                        if (event.detail1 == 1) {
+                            set_entry_location (acc);
+                            current_acc = event.source;
+                            debug ("enter text widget in %s",
+                                   event.source.get_application ().name);
+                        } else if (acc == current_acc) {
+                            keyboard.hide (get_timestamp ());
+                            current_acc = null;
+                            debug ("leave text widget in %s",
+                                   event.source.get_application ().name);
+                        }
                     } else {
-                        warning ("unhandled editable widget: %s",
-                                 event.source.name);
+                        warning ("unknown focus event: %s", event.type);
                     }
                     break;
                 default:
@@ -148,16 +149,12 @@ namespace Caribou {
             Atspi.EventListener.register_from_callback (
                 on_focus_ignore_error, "object:state-changed:focused");
             Atspi.EventListener.register_from_callback (
-                on_focus_ignore_error, "focus:");
-            Atspi.EventListener.register_from_callback (
                 on_text_caret_moved_ignore_error, "object:text-caret-moved");
         }
 
         void deregister_event_listeners () throws Error {
             Atspi.EventListener.deregister_from_callback (
                 on_focus_ignore_error, "object:state-changed:focused");
-            Atspi.EventListener.deregister_from_callback (
-                on_focus_ignore_error, "focus:");
             Atspi.EventListener.deregister_from_callback (
                 on_text_caret_moved_ignore_error, "object:text-caret-moved");
         }
