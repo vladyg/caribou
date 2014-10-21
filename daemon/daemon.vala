@@ -17,6 +17,7 @@ namespace Caribou {
         Atspi.Accessible current_acc;
         unowned Gdk.Display display;
         uint name_id;
+		GLib.MainLoop main_loop;
 
         public Daemon () {
             display = Gdk.Display.get_default ();
@@ -25,6 +26,7 @@ namespace Caribou {
                                     BusNameOwnerFlags.ALLOW_REPLACEMENT
                                     | BusNameOwnerFlags.REPLACE,
                                     on_bus_acquired, null, quit);
+			main_loop = new GLib.MainLoop ();
         }
 
         ~Daemon () {
@@ -172,7 +174,7 @@ namespace Caribou {
                                             0,
                                             null,
                                             on_get_proxy_ready);
-            Gtk.main ();
+            main_loop.run ();
         }
 
         public void quit () {
@@ -191,8 +193,7 @@ namespace Caribou {
                 keyboard = null;
             }
 
-            if (Gtk.main_level () > 0)
-                Gtk.main_quit ();
+            main_loop.quit ();
         }
     }
 }
@@ -202,7 +203,7 @@ static const OptionEntry[] options = {
 };
 
 static int main (string[] args) {
-    Gtk.init (ref args);
+    Gdk.init (ref args);
 
     Intl.setlocale (LocaleCategory.ALL, "");
     Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
