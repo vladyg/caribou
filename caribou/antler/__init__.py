@@ -1,1 +1,1 @@
-from antler_settings import AntlerSettings
+from .antler_settings import AntlerSettings

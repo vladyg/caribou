@@ -93,7 +93,7 @@ class ValueSetting(Setting):
     def value(self, val):
         _val = self.convert_value(val)
         if self.allowed and _val not in [a for a, b in self.allowed]:
-            raise ValueError, "'%s' not a valid value" % _val
+            raise ValueError("'%s' not a valid value" % _val)
         self._value = _val
         if not self.hush:
             self.emit('value-changed', _val)
