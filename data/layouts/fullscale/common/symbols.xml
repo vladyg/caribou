@@ -16,7 +16,7 @@
       <key name="F12"/>
     </row>
     <row>
-      <key name="Esc"/>
+      <key name="Escape"/>
       <key name="1"/>
       <key name="2"/>
       <key name="3"/>
@@ -81,7 +81,7 @@
       <key name="F12"/>
     </row>
     <row>
-      <key name="Esc"/>
+      <key name="Escape"/>
       <key name="bracketleft"/>
       <key name="bracketright"/>
       <key name="braceleft"/>

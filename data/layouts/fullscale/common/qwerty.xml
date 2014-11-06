@@ -16,7 +16,7 @@
       <key name="F12"/>
     </row>
     <row>
-      <key name="Esc"/>
+      <key name="Escape"/>
       <key name="q"/>
       <key name="w"/>
       <key name="e">
@@ -120,7 +120,7 @@
       <key name="F12"/>
     </row>
     <row>
-      <key name="Esc"/>
+      <key name="Escape"/>
       <key name="Q"/>
       <key name="W"/>
       <key name="E">
