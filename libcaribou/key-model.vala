@@ -118,15 +118,34 @@ namespace Caribou {
                     break;
                 }
             }
+
             if (i == label_map.length) {
                 if (text != null)
                     label = text;
                 else if (name.has_prefix ("Caribou_"))
                     label = name["Caribou_".length:name.length];
-                else if (_keyvals.length > 0) {
-                    unichar uc = Gdk.keyval_to_unicode (_keyvals[0]);
-                    if (!uc.isspace () && uc != 0)
-                        label = uc.to_string ();
+                else {
+                    // Try to use Unicode symbol as label.
+                    if (_keyvals.length > 0) {
+                        unichar uc = Gdk.keyval_to_unicode (_keyvals[0]);
+                        if (!uc.isspace () && uc != 0)
+                            label = uc.to_string ();
+                    }
+                    // If no usable Unicode symbol is assigned to the
+                    // key, guess the best possible label.
+                    //
+                    // First, it is known that dead keys are not
+                    // assigned Unicode symbols.  Use the ones
+                    // assigned to non-dead keys instead.
+                    if (label == "" && name.has_prefix ("dead_")) {
+                        uint keyval = Gdk.keyval_from_name (name["dead_".length:name.length]);
+                        unichar uc = Gdk.keyval_to_unicode (keyval);
+                        if (!uc.isspace () && uc != 0)
+                            label = uc.to_string ();
+                    }
+                    // Second, use the key name as label.
+                    if (label == "" && _keyvals.length > 0)
+                        label = name;
                 }
             }
 
