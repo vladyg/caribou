@@ -147,8 +147,11 @@ namespace Caribou {
             assert (name != null);
 
             string? text = node->get_prop ("text");
+            string? label_override = node->get_prop ("label");
 
             KeyModel key = new KeyModel (name, text);
+            if (label_override != null)
+                key.label = label_override;
 
             if (align != null)
                 key.align = align;

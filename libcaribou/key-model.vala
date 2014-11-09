@@ -26,7 +26,7 @@ namespace Caribou {
         public uint keyval { get; private set; }
         public string? text { get; private construct set; default = null; }
         private uint[] _keyvals = {};
-        public string label { get; private set; default = ""; }
+        public string label { get; set; default = ""; }
 
         public bool scan_stepping { get; internal set; }
         private bool _scan_selected;
