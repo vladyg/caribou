@@ -1,4 +1,15 @@
 =============
+Version 0.4.16
+=============
+- Stop using deprecated accessibility events ("focus:*")
+- Bug 739837 - Allow label overwrite in keyboard layout
+- Bug 739716 - Add more keys to label_map
+- Bug 739711 - Escape key does not work in us layout.
+- Bug 739526 - Some buttons do not have a label.
+- Bug 722634 - [regression] build failure: ImportError: No module named 'caribou_settings'
+- Translation updates (Punjabi, Nepali, Slovak)
+
+=============
 Version 0.4.15
 =============
 - Fix race condition when invoking OSK through D-Bus (see comment in
