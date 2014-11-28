@@ -17,6 +17,7 @@ libcaribou_la_CFLAGS = \
 	$(LIBCARIBOU_CFLAGS)
 
 libcaribou_la_LDFLAGS = \
+        -version-info "$(LT_CURRENT)":"$(LT_REVISION)":"$(LT_AGE)" \
         -export-dynamic \
         -export-symbols $(srcdir)/libcaribou.symbols
 
