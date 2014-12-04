@@ -1,23 +1,23 @@
 # Turkish translation for caribou.
 # Copyright (C) 2011 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
+# Muhammet Kara <muhammetk@gmail.com>, 2011, 2014.
 #
-# Muhammet Kara <muhammet.k@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-11 19:45+0000\n"
-"PO-Revision-Date: 2011-09-18 16:35+0300\n"
-"Last-Translator: Muhammet Kara <muhammet.k@gmail.com>\n"
-"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"POT-Creation-Date: 2013-12-29 19:21+0000\n"
+"PO-Revision-Date: 2014-12-04 22:05+0200\n"
+"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
+"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language: tr\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -175,34 +175,9 @@ msgstr "Düğme 2"
 msgid "Button 3"
 msgstr "Düğme 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "%s başlatılırken hata oluştu"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"%s'i kullanabilmek için erişilebilirliğin etkinleştirilmesi gerekir. Şimdi "
-"etkinleştirmek ister misiniz?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Erişilebilirlik etkinleştirildi. %s'i kullanmak için oturumu kapatıp yeniden "
-"giriş yapın."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "UYARI - Caribou: işlenmemiş düzenlenebilir parçacık:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -230,9 +205,9 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
-"Klavye geometrisi, klavyenin şeklini ve karmaşıklığını belirler, "
-"basit metinlerin yazımı için iyi olan 'doğal' bir görünüm de olabilir, "
-"tam kapsamlı bir klavyeye de."
+"Klavye geometrisi, klavyenin şeklini ve karmaşıklığını belirler, basit "
+"metinlerin yazımı için iyi olan 'doğal' bir görünüm de olabilir, tam "
+"kapsamlı bir klavyeye de."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -278,3 +253,26 @@ msgstr "En Büyük Mesafe"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Klavye gizlendiği en büyük mesafe"
 
+#: ../daemon/daemon.vala:191
+msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgstr ""
+"- artalan süreci ekran klavyesini başlatmak için erişilebilirlik olaylarını "
+"dinliyor"
+
+#~ msgid "Error starting %s"
+#~ msgstr "%s başlatılırken hata oluştu"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "%s'i kullanabilmek için erişilebilirliğin etkinleştirilmesi gerekir. "
+#~ "Şimdi etkinleştirmek ister misiniz?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "Erişilebilirlik etkinleştirildi. %s'i kullanmak için oturumu kapatıp "
+#~ "yeniden giriş yapın."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "UYARI - Caribou: işlenmemiş düzenlenebilir parçacık:"
