@@ -1,10 +1,14 @@
-from gi.repository import Caribou, GObject
-from window import AntlerWindowEntry
-from keyboard_view import AntlerKeyboardView
+from gi.repository import Caribou, GLib, GObject
+from .window import AntlerWindowEntry
+from .keyboard_view import AntlerKeyboardView
 import sys
 
-class AntlerKeyboardService(Caribou.KeyboardService):
-    def __init__(self):
+class AntlerKeyboardCommand(object):
+    def run(self):
+        pass
+
+class AntlerKeyboardService(Caribou.KeyboardService, AntlerKeyboardCommand):
+    def __init__(self, args=None):
         GObject.GObject.__init__(self)
         self.register_keyboard("Antler")
         self.window = AntlerWindowEntry(AntlerKeyboardView)
@@ -30,5 +34,20 @@ class AntlerKeyboardService(Caribou.KeyboardService):
         sys.exit(0)
 
 if __name__ == "__main__":
-    antler_keyboard_service = AntlerKeyboardService()
-    antler_keyboard_service.run()
+    import argparse
+    import signal
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
+
+    GLib.set_prgname('antler-keyboard')
+
+    parser = argparse.ArgumentParser(description='antler-keyboard')
+    parser.add_argument('-c', '--command', type=str, default='service',
+                        help='command (service or preview, default: service)')
+    args = parser.parse_args()
+
+    command = globals().get('AntlerKeyboard%s' % args.command.capitalize())
+    if command:
+        command(args).run()
+    else:
+        sys.stderr.write("Unknown command: %s\n" % args.command)
+        sys.exit(1)

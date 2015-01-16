@@ -38,6 +38,4 @@ else
   export ANTLER_THEME_PATH="$(dirname $script_dir)/data"
 fi
 
-@PYTHON@ -c "
-from caribou.antler.main import AntlerKeyboardService
-AntlerKeyboardService().run()"
+@PYTHON@ -m caribou.antler.main "$@"
