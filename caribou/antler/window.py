@@ -29,8 +29,6 @@ from math import sqrt
 import os
 import sys
 
-Clutter.init("antler")
-
 
 class AnimatedWindowBase(Gtk.Window, Clutter.Animatable):
     __gproperties__ = {
