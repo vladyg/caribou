@@ -1,4 +1,4 @@
-from gi.repository import Caribou, GLib, GObject
+from gi.repository import Caribou, GLib, GObject, Gtk
 from .window import AntlerWindowEntry
 from .keyboard_view import AntlerKeyboardView
 import sys
@@ -33,6 +33,19 @@ class AntlerKeyboardService(Caribou.KeyboardService, AntlerKeyboardCommand):
         sys.stderr.write("Another service acquired %s, quitting..\n" % name)
         sys.exit(0)
 
+class AntlerKeyboardPreview(Gtk.Window, AntlerKeyboardCommand):
+    def __init__(self, args=None):
+        GObject.GObject.__init__(self)
+        if not args or not args.file:
+            sys.stderr.write("Specify keyboard file with -f option.\n")
+            sys.exit(1)
+        self.window = Gtk.Window()
+        self.window.add(AntlerKeyboardView(keyboard_file=args.file))
+
+    def run(self):
+        self.window.show_all()
+        Gtk.main()
+
 if __name__ == "__main__":
     import argparse
     import signal
@@ -43,6 +56,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='antler-keyboard')
     parser.add_argument('-c', '--command', type=str, default='service',
                         help='command (service or preview, default: service)')
+    parser.add_argument('-f', '--file', type=str,
+                        help='keyboard file')
     args = parser.parse_args()
 
     command = globals().get('AntlerKeyboard%s' % args.command.capitalize())

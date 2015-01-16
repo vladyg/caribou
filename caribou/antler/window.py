@@ -218,7 +218,7 @@ class AntlerWindow(ProximityWindowBase):
         self.add(self._vbox)
 
         self.keyboard_view_factory = keyboard_view_factory
-        self.keyboard_view = keyboard_view_factory (settings.keyboard_type.value)
+        self.keyboard_view = keyboard_view_factory (keyboard_type=settings.keyboard_type.value)
 
         self._vbox.pack_start(self.keyboard_view, True, True, 0)
 

@@ -215,7 +215,7 @@ class AntlerLayout(Gtk.Box):
             self.add_row([c.get_children() for c in row.get_columns()], row_num)
 
 class AntlerKeyboardView(Gtk.Notebook):
-    def __init__(self, keyboard_type):
+    def __init__(self, keyboard_type='touch', keyboard_file=None):
         GObject.GObject.__init__(self)
         settings = AntlerSettings()
         self.set_show_tabs(False)
@@ -244,10 +244,11 @@ class AntlerKeyboardView(Gtk.Notebook):
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1)
 
         self.scanner = Caribou.Scanner()
-        self.set_keyboard_model(keyboard_type)
+        self.set_keyboard_model(keyboard_type, keyboard_file)
 
-    def set_keyboard_model(self, keyboard_type):
-        self.keyboard_model = Caribou.KeyboardModel(keyboard_type=keyboard_type)
+    def set_keyboard_model(self, keyboard_type, keyboard_file):
+        self.keyboard_model = Caribou.KeyboardModel(keyboard_type=keyboard_type,
+                                                    keyboard_file=keyboard_file)
 
         self.scanner.set_keyboard(self.keyboard_model)
         self.keyboard_model.connect("notify::active-group", self._on_group_changed)
