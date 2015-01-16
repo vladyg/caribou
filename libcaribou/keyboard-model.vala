@@ -9,6 +9,7 @@ namespace Caribou {
     public class KeyboardModel : Object, IKeyboardObject {
         public string active_group { get; private set; default = ""; }
         public string keyboard_type { get; construct; }
+        public string keyboard_file { get; construct; }
 
         private DisplayAdapter xadapter;
         private Gee.HashMap<string, GroupModel> groups;
@@ -19,16 +20,31 @@ namespace Caribou {
         public signal void group_removed (string name);
 
         construct {
-            assert (keyboard_type != null);
-
             xadapter = DisplayAdapter.get_default ();
-            xadapter.group_changed.connect (on_group_changed);
-            xadapter.config_changed.connect (on_config_changed);
-
             groups = new Gee.HashMap<string, GroupModel> ();
-            on_config_changed ();
-
             active_mod_keys = new Gee.HashSet<KeyModel> ();
+
+            if (keyboard_file != null) {
+                GroupModel grp =
+                    XmlDeserializer.load_group_from_file (keyboard_file);
+                if (grp != null) {
+                    grp.key_clicked.connect (on_key_clicked);
+                    grp.key_pressed.connect (on_key_pressed);
+                    grp.key_released.connect (on_key_released);
+                }
+
+                // Use dummy group/variant names.
+                groups.set ("us", grp);
+                group_added ("us");
+                active_group = GroupModel.create_group_name ("us", "");
+            } else {
+                assert (keyboard_type != null);
+
+                xadapter.group_changed.connect (on_group_changed);
+                xadapter.config_changed.connect (on_config_changed);
+
+                on_config_changed ();
+            }
         }
 
         private void on_config_changed () {

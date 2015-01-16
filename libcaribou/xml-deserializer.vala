@@ -62,22 +62,21 @@ namespace Caribou {
                 "Could not find layout file for %s %s", group, variant);
         }
 
-        public static GroupModel? load_group (string keyboard_type,
-                                              string group, string variant) {
+        public static GroupModel? load_group_from_file (string filename) {
             Xml.Doc* doc;
 
             try {
-                string fn = get_layout_file (keyboard_type, group, variant);
-                doc = Xml.Parser.parse_file (fn);
+                doc = Xml.Parser.parse_file (filename);
                 if (doc == null)
                     throw new IOError.FAILED (
-                        "Cannot load XML text reader for %s", fn);
+                        "Cannot load XML text reader for %s", filename);
             } catch (GLib.Error e) {
-                stdout.printf ("Failed to load XML: %s\n", e.message);
+                stdout.printf ("Failed to load %s: %s\n", filename, e.message);
                 return null;
             }
 
-            GroupModel grp = new GroupModel (group, variant);
+            // Use dummy group/variant names.
+            GroupModel grp = new GroupModel ("us", "");
             Xml.Node* node = doc->children;
 
             create_levels_from_xml (grp, node);
@@ -85,6 +84,26 @@ namespace Caribou {
             delete doc;
             Xml.Parser.cleanup ();
 
+            return grp;
+        }
+
+        public static GroupModel? load_group (string keyboard_type,
+                                              string group, string variant) {
+            string filename;
+            try {
+                filename = get_layout_file (keyboard_type, group, variant);
+            } catch (GLib.Error e) {
+                stdout.printf ("Failed to load keyboard file %s/%s: %s\n",
+                               keyboard_type,
+                               GroupModel.create_group_name (group, variant),
+                               e.message);
+                return null;
+            }
+            var grp = load_group_from_file (filename);
+            if (grp != null) {
+                grp.group = group;
+                grp.variant = variant;
+            }
             return grp;
         }
 
