@@ -40,7 +40,8 @@ class AntlerKeyboardPreview(Gtk.Window, AntlerKeyboardCommand):
             sys.stderr.write("Specify keyboard file with -f option.\n")
             sys.exit(1)
         self.window = Gtk.Window()
-        self.window.add(AntlerKeyboardView(keyboard_file=args.file))
+        self.window.add(AntlerKeyboardView(keyboard_file=args.file,
+                                           keyboard_level=args.level))
 
     def run(self):
         self.window.show_all()
@@ -58,6 +59,8 @@ if __name__ == "__main__":
                         help='command (service or preview, default: service)')
     parser.add_argument('-f', '--file', type=str,
                         help='keyboard file')
+    parser.add_argument('-l', '--level', type=str,
+                        help='shift level')
     args = parser.parse_args()
 
     command = globals().get('AntlerKeyboard%s' % args.command.capitalize())

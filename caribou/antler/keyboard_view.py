@@ -215,7 +215,8 @@ class AntlerLayout(Gtk.Box):
             self.add_row([c.get_children() for c in row.get_columns()], row_num)
 
 class AntlerKeyboardView(Gtk.Notebook):
-    def __init__(self, keyboard_type='touch', keyboard_file=None):
+    def __init__(self, keyboard_type='touch', keyboard_file=None,
+                 keyboard_level=None):
         GObject.GObject.__init__(self)
         settings = AntlerSettings()
         self.set_show_tabs(False)
@@ -244,9 +245,9 @@ class AntlerKeyboardView(Gtk.Notebook):
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1)
 
         self.scanner = Caribou.Scanner()
-        self.set_keyboard_model(keyboard_type, keyboard_file)
+        self.set_keyboard_model(keyboard_type, keyboard_file, keyboard_level)
 
-    def set_keyboard_model(self, keyboard_type, keyboard_file):
+    def set_keyboard_model(self, keyboard_type, keyboard_file, keyboard_level):
         self.keyboard_model = Caribou.KeyboardModel(keyboard_type=keyboard_type,
                                                     keyboard_file=keyboard_file)
 
@@ -266,7 +267,7 @@ class AntlerKeyboardView(Gtk.Notebook):
                 layout.show()
                 self.layers[gname][lname] = self.append_page(layout, None)
 
-        self._set_to_active_layer()
+        self._set_to_active_layer(keyboard_level=keyboard_level)
 
     def _on_key_clicked(self, model, key):
         if key.props.name == "Caribou_Prefs":
@@ -302,10 +303,13 @@ class AntlerKeyboardView(Gtk.Notebook):
     def _on_group_changed(self, kb, prop):
         self._set_to_active_layer()
 
-    def _set_to_active_layer(self):
+    def _set_to_active_layer(self, keyboard_level=None):
         active_group_name = self.keyboard_model.props.active_group
         active_group = self.keyboard_model.get_group(active_group_name)
-        active_level_name = active_group.props.active_level
+        if keyboard_level:
+            active_level_name = keyboard_level
+        else:
+            active_level_name = active_group.props.active_level
 
         self.set_current_page(self.layers[active_group_name][active_level_name])
 
