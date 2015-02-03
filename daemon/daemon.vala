@@ -17,7 +17,6 @@ namespace Caribou {
         Atspi.Accessible current_acc;
         unowned Gdk.Display display;
         uint name_id;
-        GLib.MainLoop main_loop;
 
         public Daemon () {
             display = Gdk.Display.get_default ();
@@ -26,7 +25,6 @@ namespace Caribou {
                                     BusNameOwnerFlags.ALLOW_REPLACEMENT
                                     | BusNameOwnerFlags.REPLACE,
                                     on_bus_acquired, null, quit);
-            main_loop = new GLib.MainLoop ();
         }
 
         ~Daemon () {
@@ -174,7 +172,9 @@ namespace Caribou {
                                             0,
                                             null,
                                             on_get_proxy_ready);
-            main_loop.run ();
+            // Use Atspi.Event.{main,quit}, instead of GLib.MainLoop
+            // to enable property caching in libatspi.
+            Atspi.Event.main ();
         }
 
         public void quit () {
@@ -193,7 +193,7 @@ namespace Caribou {
                 keyboard = null;
             }
 
-            main_loop.quit ();
+            Atspi.Event.quit ();
         }
     }
 }
