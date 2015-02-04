@@ -4,14 +4,14 @@
 # pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
 # gnomepl@aviary.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Piotr Drąg <piotrdrag@gmail.com>, 2010-2013.
-# Aviary.pl <gnomepl@aviary.pl>, 2010-2013.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010-2015.
+# Aviary.pl <gnomepl@aviary.pl>, 2010-2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-21 19:45+0100\n"
-"PO-Revision-Date: 2013-12-21 19:47+0100\n"
+"POT-Creation-Date: 2015-02-04 14:49+0100\n"
+"PO-Revision-Date: 2015-02-04 14:50+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -210,12 +210,12 @@ msgid ""
 "text, to a fullscale keyboard."
 msgstr ""
 "Geometria klawiatury określa kształt i złożoność klawiatury. Może być "
-"\"naturalna\", dobra do składania prostego tekstu lub pełnowymiarowa."
+"\"naturalna\", dobra do pisania prostego tekstu, albo pełnowymiarowa."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
 msgid "Touch"
-msgstr "Dotyk"
+msgstr "Dotykowa"
 
 #. Translators: Keyboard type (conventional keyboard)
 #: ../caribou/antler/antler_settings.py:18
@@ -250,14 +250,12 @@ msgstr "Maksymalna nieprzezroczystość klawiatury"
 
 #: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
-msgstr "Maksymalny dystans"
+msgstr "Maksymalna odległość"
 
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
-msgstr "Maksymalny dystans, kiedy klawiatura jest ukryta"
+msgstr "Maksymalna odległość, kiedy klawiatura jest ukryta"
 
-#: ../daemon/daemon.vala:191
-msgid "- daemon listening accessibility events to launch on screen keyboard"
-msgstr ""
-"- usługa nasłuchująca zdarzeń dostępności w celu uruchomienia klawiatury "
-"ekranowej"
+#: ../daemon/daemon.vala:214
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "- usługa monitorująca zdarzenia dostępności dla klawiatury ekranowej"
