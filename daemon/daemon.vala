@@ -211,7 +211,7 @@ static int main (string[] args) {
     Intl.textdomain (Config.GETTEXT_PACKAGE);
 
     var option_context = new OptionContext (_(
-        "- daemon listening accessibility events to launch on screen keyboard"));
+        "- accessibility event monitoring daemon for screen keyboard"));
     option_context.add_main_entries (options, "caribou");
     try {
         option_context.parse (ref args);
