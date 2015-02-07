@@ -1,15 +1,15 @@
 # Lithuanian translation for caribou.
 # Copyright (C) 2011 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
-# Aurimas Černius <aurisc4@gmail.com>, 2011, 2013.
+# Aurimas Černius <aurisc4@gmail.com>, 2011, 2013, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2013-12-20 09:19+0000\n"
-"PO-Revision-Date: 2013-12-21 16:48+0200\n"
+"POT-Creation-Date: 2015-02-07 04:03+0000\n"
+"PO-Revision-Date: 2015-02-07 14:26+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -254,9 +254,10 @@ msgstr "Didžiausias atstumas"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Didžiausias atstumas, kai klaviatūra yra paslėpta"
 
-#: ../daemon/daemon.vala:191
-msgid "- daemon listening accessibility events to launch on screen keyboard"
-msgstr "- demonas klausosi prieigos įvykių, kad paleistų klaviatūrą ekrane"
+#: ../daemon/daemon.vala:214
+#| msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "- prieigos įvykių stebėjimo demonas klaviatūrai ekrane"
 
 #~ msgid "Error starting %s"
 #~ msgstr "Klaida paleidžiant %s"
