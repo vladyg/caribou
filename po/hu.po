@@ -3,218 +3,238 @@
 # This file is distributed under the same license as the caribou package.
 #
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2010.
+# Balázs Úr <urbalazs at gmail dot com>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-25 22:14+0100\n"
-"PO-Revision-Date: 2010-12-25 23:36+0100\n"
-"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2015-02-08 16:04+0000\n"
+"PO-Revision-Date: 2015-02-08 21:07+0100\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <gnome at fsf dot hu>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../caribou/ui/main.py:135
+#: ../caribou/ui/main.py:238
 msgid "WARNING - Caribou: unhandled editable widget:"
 msgstr "FIGYELMEZTETÉS – Caribou: nem kezelt szerkeszthető felületi elem:"
 
-#: ../caribou/common/settings.py:32 ../caribou/common/settings.py:89
+#: ../caribou/common/settings.py:31 ../caribou/common/settings.py:88
 msgid "Keyboard"
 msgstr "Billentyűzet"
 
-#: ../caribou/common/settings.py:33
+#: ../caribou/common/settings.py:32 ../caribou/common/settings.py:70
 msgid "General"
 msgstr "Általános"
 
-#: ../caribou/common/settings.py:35
+#: ../caribou/common/settings.py:34
 msgid "Keyboard layout"
 msgstr "Billentyűzetkiosztás"
 
-#: ../caribou/common/settings.py:36
+#: ../caribou/common/settings.py:35
 msgid "The layout Caribou should use."
 msgstr "A Caribou által használandó kiosztás."
 
-#: ../caribou/common/settings.py:37
+#: ../caribou/common/settings.py:36
 msgid ""
 "The layout should be in the data directory of Caribou (usually /usr/share/"
 "caribou/keyboards) and should be a .xml or .json file."
 msgstr ""
-"A kiosztásnak a Caribou adatkönyvtárában (általában /usr/share/"
-"caribou/keyboards), és .xml vagy .json fájlnak kell lennie."
+"A kiosztásnak a Caribou adatkönyvtárában (általában /usr/share/caribou/"
+"keyboards), és .xml vagy .json fájlnak kell lennie."
 
-#: ../caribou/common/settings.py:41
+#: ../caribou/common/settings.py:40 ../caribou/common/settings.py:110
 msgid "Color"
 msgstr "Szín"
 
-#: ../caribou/common/settings.py:43
+#: ../caribou/common/settings.py:42
 msgid "Use system theme"
 msgstr "Rendszertéma használata"
 
-#: ../caribou/common/settings.py:44
+#: ../caribou/common/settings.py:43
 msgid "Use the default theme colors"
 msgstr "Az alapértelmezett téma színeinek használata"
 
-#: ../caribou/common/settings.py:48
+#: ../caribou/common/settings.py:47
 msgid "Normal state"
 msgstr "Normál állapot"
 
-#: ../caribou/common/settings.py:49
+#: ../caribou/common/settings.py:48
 msgid "Color of the keys when there is no event on them"
 msgstr "Gombok színe, ha nincs rajtuk esemény"
 
-#: ../caribou/common/settings.py:52
+#: ../caribou/common/settings.py:51
 msgid "Mouse over"
 msgstr "Rámutatás"
 
-#: ../caribou/common/settings.py:53
+#: ../caribou/common/settings.py:52
 msgid "Color of the keys when the mouse goes over the key"
 msgstr "Gombok színe, ha az egér rájuk mutat"
 
-#: ../caribou/common/settings.py:55
+#: ../caribou/common/settings.py:54
 msgid "Font and size"
 msgstr "Betűkészlet és -méret"
 
-#: ../caribou/common/settings.py:57
+#: ../caribou/common/settings.py:56
 msgid "Use system fonts"
 msgstr "Rendszer-betűkészletek használata"
 
-#: ../caribou/common/settings.py:58
+#: ../caribou/common/settings.py:57
 msgid "Use the default system font for keyboard"
 msgstr "Az alapértelmezett rendszerbetűkészlet használata a billentyűzethez"
 
-#: ../caribou/common/settings.py:60
+#: ../caribou/common/settings.py:59
 msgid "Key font"
 msgstr "Gombbetűkészlet"
 
-#: ../caribou/common/settings.py:61
+#: ../caribou/common/settings.py:60
 msgid "Custom font for keyboard"
 msgstr "Egyéni betűkészlet a billentyűzethez"
 
-#: ../caribou/common/settings.py:66
+#: ../caribou/common/settings.py:63
+#| msgid "Scanning mode"
+msgid "Scanning"
+msgstr "Vizsgálat"
+
+#: ../caribou/common/settings.py:65
 msgid "Enable scanning"
 msgstr "Vizsgálat bekapcsolása"
 
-#: ../caribou/common/settings.py:67
+#: ../caribou/common/settings.py:66
 msgid "Enable switch scanning"
 msgstr "Kapcsolóvizsgálat bekapcsolása"
 
-#: ../caribou/common/settings.py:72
+#: ../caribou/common/settings.py:71
 msgid "Scanning mode"
 msgstr "Vizsgálati mód"
 
-#: ../caribou/common/settings.py:74
+#: ../caribou/common/settings.py:73
 msgid "Scanning type, block or row"
 msgstr "Vizsgálat típusa, blokk vagy sor"
 
-#: ../caribou/common/settings.py:75
+#: ../caribou/common/settings.py:74
 msgid "Block"
 msgstr "Blokk"
 
-#: ../caribou/common/settings.py:76
+#: ../caribou/common/settings.py:75
 msgid "Row"
 msgstr "Sor"
 
-#: ../caribou/common/settings.py:77
+#: ../caribou/common/settings.py:76
 msgid "Step time"
 msgstr "Lépésidő"
 
-#: ../caribou/common/settings.py:78
+#: ../caribou/common/settings.py:77
 msgid "Time between key transitions"
 msgstr "Gombátmenetek közti idő"
 
-#: ../caribou/common/settings.py:81
+#: ../caribou/common/settings.py:80
 msgid "Reverse scanning"
 msgstr "Fordított vizsgálat"
 
-#: ../caribou/common/settings.py:82
+#: ../caribou/common/settings.py:81
 msgid "Scan in reverse order"
 msgstr "Vizsgálat fordított sorrendben"
 
-#: ../caribou/common/settings.py:85
+#: ../caribou/common/settings.py:83
+msgid "Input"
+msgstr "Bemenet"
+
+#: ../caribou/common/settings.py:84
 msgid "Switch device"
 msgstr "Kapcsolóeszköz"
 
-#: ../caribou/common/settings.py:87
+#: ../caribou/common/settings.py:86
 msgid "Switch device, keyboard or mouse"
 msgstr "Kapcsolóeszköz, billentyűzet vagy egér"
 
-#: ../caribou/common/settings.py:90
+#: ../caribou/common/settings.py:89
 msgid "Mouse"
 msgstr "Egér"
 
-#: ../caribou/common/settings.py:95
+#: ../caribou/common/settings.py:91
+#| msgid "Switch device"
+msgid "Switch key"
+msgstr "Kapcsolóbillentyű"
+
+#: ../caribou/common/settings.py:94
 msgid "Key to use with scanning mode"
 msgstr "Vizsgálati móddal használandó gomb"
 
-#: ../caribou/common/settings.py:97
+#: ../caribou/common/settings.py:96
 msgid "Right shift"
 msgstr "Jobb Shift"
 
-#: ../caribou/common/settings.py:98
+#: ../caribou/common/settings.py:97
 msgid "Left shift"
 msgstr "Bal Shift"
 
-#: ../caribou/common/settings.py:99
+#: ../caribou/common/settings.py:98
 msgid "Alt Gr"
 msgstr "Alt Gr"
 
-#: ../caribou/common/settings.py:100
+#: ../caribou/common/settings.py:99
 msgid "Num lock"
 msgstr "Num Lock"
 
-#: ../caribou/common/settings.py:104
+#: ../caribou/common/settings.py:100
+msgid "Switch button"
+msgstr "Kapcsológomb"
+
+#: ../caribou/common/settings.py:103
 msgid "Mouse button to use in the scanning mode"
 msgstr "Vizsgálati módban használandó egérgomb"
 
-#: ../caribou/common/settings.py:106
+#: ../caribou/common/settings.py:105
 msgid "Button 1"
 msgstr "1. gomb"
 
-#: ../caribou/common/settings.py:107
+#: ../caribou/common/settings.py:106
 msgid "Button 2"
 msgstr "2. gomb"
 
-#: ../caribou/common/settings.py:108
+#: ../caribou/common/settings.py:107
 msgid "Button 3"
 msgstr "3. gomb"
 
-#: ../caribou/common/settings.py:112
+#: ../caribou/common/settings.py:111
 msgid "Block color"
 msgstr "Blokkszín"
 
-#: ../caribou/common/settings.py:113
+#: ../caribou/common/settings.py:112
 msgid "Color of block scans"
 msgstr "Blokkvizsgálatok színe"
 
-#: ../caribou/common/settings.py:114
+#: ../caribou/common/settings.py:113
 msgid "Row color"
 msgstr "Sorszín"
 
-#: ../caribou/common/settings.py:115
+#: ../caribou/common/settings.py:114
 msgid "Color of row scans"
 msgstr "Sorvizsgálatok színe"
 
-#: ../caribou/common/settings.py:116
+#: ../caribou/common/settings.py:115
 msgid "Key color"
 msgstr "Gombszín"
 
-#: ../caribou/common/settings.py:117
+#: ../caribou/common/settings.py:116
 msgid "Color of key scans"
 msgstr "Gombvizsgálatok színe"
 
-#: ../caribou/common/settings.py:119
+#: ../caribou/common/settings.py:118
 msgid "Cancel color"
 msgstr "Megszakítás színe"
 
-#: ../caribou/common/settings.py:120
+#: ../caribou/common/settings.py:119
 msgid "Color of cancel scan"
 msgstr "Vizsgálatmegszakítás színe"
 
-#: ../caribou/ui/preferences_window.py:50
+#: ../caribou/ui/preferences_window.py:51
 msgid "Caribou Preferences"
 msgstr "Caribou beállításai"
 
