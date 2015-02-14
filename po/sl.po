@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the caribou package.
 #
 # Andrej Žnidaršič <andrej.znidarsic@gmail.com>, 2010.
-# Matej Urbančič <mateju@svn.gnome.org>, 2013.
+# Matej Urbančič <mateju@svn.gnome.org>, 2013-2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2013-12-21 18:47+0000\n"
+"POT-Creation-Date: 2015-02-14 16:03+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME translation team <gnome-si@googlegroups.com>\n"
@@ -256,11 +256,9 @@ msgstr "Največja razdalja"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Največja razdalja, ko je tipkovnica skrita"
 
-#: ../daemon/daemon.vala:191
-msgid "- daemon listening accessibility events to launch on screen keyboard"
-msgstr ""
-"- ozadnji program, ki spremlja dogodke dostopnosti ob zagonu na zaslonski "
-"tipkovnici"
+#: ../daemon/daemon.vala:214
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "- ozadnji program za spremljanje dostopnosti zaslonske tipkovnice"
 
 #~ msgid "Error starting %s"
 #~ msgstr "Napaka med zaganjanjem %s"
