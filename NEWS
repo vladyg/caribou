@@ -1,4 +1,15 @@
 =============
+Version 0.4.17
+=============
+- Bundle tools to generate and manipulate keyboard layout files.
+  See https://wiki.gnome.org/Projects/Caribou/NewLayout for details
+- Bug 691811 - Add support for azerty layout as seen in french
+- Bug 743267 - Caribou does 100-130 syscalls for each keypress
+- Bug 743880 - String that is hard to understand
+- Translation updates (Turkish, Czech, Polish, German, Lithuanian,
+  Hungarian, Spanish, Norwegian bokmål, French, Indonesian, Slovenian)
+
+=============
 Version 0.4.16
 =============
 - Stop using deprecated accessibility events ("focus:*")
