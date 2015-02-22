@@ -6,13 +6,13 @@
 # Xosé M. Lamas <correo.xmgz@gmail.com>, 2011.
 # Fran Diéguez <frandieguez@gnome.org>, 2011.
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.
-# Fran Dieguez <frandieguez@gnome.org>, 2013.
+# Fran Dieguez <frandieguez@gnome.org>, 2013, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: Caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-29 23:57+0100\n"
-"PO-Revision-Date: 2013-12-29 23:58+0200\n"
+"POT-Creation-Date: 2015-02-22 02:14+0100\n"
+"PO-Revision-Date: 2015-02-22 02:14+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -256,10 +256,10 @@ msgstr "Distancia máxima"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Distancia máxima cando o teclado está agochado"
 
-#: ../daemon/daemon.vala:191
-msgid "- daemon listening accessibility events to launch on screen keyboard"
+#: ../daemon/daemon.vala:214
+msgid "- accessibility event monitoring daemon for screen keyboard"
 msgstr ""
-"- daemon que escoita eventos de accesibilidade para iniciar o teclado en "
+"- daemon de monitorización de eventos de accesibilidade para o teclado en "
 "pantalla"
 
 #~ msgid "Error starting %s"
