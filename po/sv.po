@@ -1,20 +1,23 @@
 # Swedish translation for caribou.
-# Copyright (C) 2010, 2011 Free Software Foundation, Inc.
+# Copyright © 2010, 2011, 2015 Free Software Foundation, Inc.
 # This file is distributed under the same license as the caribou package.
 # Daniel Nylander <po@danielnylander.se>, 2010, 2011.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-12 20:35+0200\n"
-"PO-Revision-Date: 2011-09-12 20:39+0100\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N"
+"+L10N&component=default\n"
+"POT-Creation-Date: 2015-02-04 07:06+0000\n"
+"PO-Revision-Date: 2015-02-04 10:45+0100\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.3\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -172,28 +175,9 @@ msgstr "Knapp 2"
 msgid "Button 3"
 msgstr "Knapp 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Fel vid start av %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid "In order to use %s, accessibility needs to be enabled. Do you want to enable it now?"
-msgstr "För att kunna använda %s så måste hjälpmedelsfunktioner aktiveras. Vill du aktivera dem nu?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr "Hjälpmedelsfunktion har aktiverats. Logga ut och sedan in igen för att använda %s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "VARNING - Caribou: ohanterad redigerbar widget:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -216,8 +200,12 @@ msgid "The keyboard geometry Caribou should use"
 msgstr "Tangentbordets geometri som Caribou ska använda"
 
 #: ../caribou/antler/antler_settings.py:11
-msgid "The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
-msgstr "Tangentbordets geometri bestämmer form och komplexitet för tangentbordet. Det kan sträcka sig från ett \"naturligt\" utseende och känns bra för att skriva enkel text, ända till ett fullskaligt tangentbord."
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' "
+"look and feel good for composing simple text, to a fullscale keyboard."
+msgstr ""
+"Tangentbordets geometri bestämmer form och komplexitet för tangentbordet. Det kan sträcka sig från ett "
+"”naturligt” utseende och känns bra för att skriva enkel text, ända till ett fullskaligt tangentbord."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -234,8 +222,7 @@ msgstr "Fullskala"
 msgid "Scan"
 msgstr "Sök av"
 
-#: ../caribou/antler/antler_settings.py:21
-#: ../caribou/antler/antler_settings.py:22
+#: ../caribou/antler/antler_settings.py:21 ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
 msgstr "Använd systemtema"
 
@@ -263,64 +250,6 @@ msgstr "Maximalt avstånd"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maximalt avstånd när tangentbordet är dolt"
 
-#~ msgid "Keyboard layout"
-#~ msgstr "Tangentbordslayout"
-#~ msgid ""
-#~ "The layout should be in the data directory of Caribou (usually /usr/share/"
-#~ "caribou/keyboards) and should be a .xml or .json file."
-#~ msgstr ""
-#~ "Layouten ska finnas i Caribous datakatalog (oftast /usr/share/caribou/"
-#~ "keyboards) och ska vara av typen .xml eller .json."
-#~ msgid "Color"
-#~ msgstr "Färg"
-#~ msgid "Use the default theme colors"
-#~ msgstr "Använd standardfärger från tema"
-#~ msgid "Normal state"
-#~ msgstr "Normalt tillstånd"
-#~ msgid "Color of the keys when there is no event on them"
-#~ msgstr "Färg för tangenterna när det inte finns någon händelse på dem"
-#~ msgid "Mouse over"
-#~ msgstr "Muspekare över"
-#~ msgid "Color of the keys when the mouse goes over the key"
-#~ msgstr "Färg för tangenterna när muspekaren dras över tangenten"
-#~ msgid "Font and size"
-#~ msgstr "Typsnitt och storlek"
-#~ msgid "Use system fonts"
-#~ msgstr "Använd systemtypsnitt"
-#~ msgid "Use the default system font for keyboard"
-#~ msgstr "Använd systemets standardtypsnitt för tangentbordet"
-#~ msgid "Key font"
-#~ msgstr "Tangenttypsnitt"
-#~ msgid "Custom font for keyboard"
-#~ msgstr "Anpassat typsnitt för tangentbordet"
-#~ msgid "Block"
-#~ msgstr "Block"
-#~ msgid "Row"
-#~ msgstr "Rad"
-#~ msgid "Scan in reverse order"
-#~ msgstr "Sök av i omvänd ordning"
-#~ msgid "Block color"
-#~ msgstr "Blockfärg"
-#~ msgid "Color of block scans"
-#~ msgstr "Färg för blockavsökningar"
-#~ msgid "Row color"
-#~ msgstr "Radfärg"
-#~ msgid "Color of row scans"
-#~ msgstr "Färg för radavsökningar"
-#~ msgid "Key color"
-#~ msgstr "Tangentfärg"
-#~ msgid "Color of key scans"
-#~ msgstr "Färg för tangentavsökningar"
-#~ msgid "Cancel color"
-#~ msgstr "Avbrytsfärg"
-#~ msgid "Color of cancel scan"
-#~ msgstr "Färg för avbryt avsökning"
-#~ msgid "Keys"
-#~ msgstr "Tangenter"
-#~ msgid "_Test settings here:"
-#~ msgstr "_Testa inställningarna här:"
-#~ msgid "Key _size:"
-#~ msgstr "Tangent_storlek:"
-#~ msgid "Key s_pacing:"
-#~ msgstr "Tangent_mellanrum:"
-
+#: ../daemon/daemon.vala:214
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "- demon som övervakar hjälpmedelshändelser för skärmtangentbord"
