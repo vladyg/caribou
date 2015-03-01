@@ -1,17 +1,20 @@
 # Vietnamese translation for caribou.
-# Copyright (C) 2011 caribou's COPYRIGHT HOLDER
+# Bản dịch tiếng Việt dành cho caribou.
+# Copyright (C) 2015 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
 # Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2011-2012.
+# Trần Ngọc Quân <vnwildman@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-10-13 22:12+0000\n"
-"PO-Revision-Date: 2012-08-26 22:12+0700\n"
-"Last-Translator: Nguyễn Thái Ngọc Duy <pclouds@gmail.com>\n"
-"Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2015-02-28 16:04+0000\n"
+"PO-Revision-Date: 2015-03-01 08:00+0700\n"
+"Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
+"Language-Team: Vietnamese <gnome-vi-list@gnome.org>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +22,7 @@ msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
-msgstr "Tuỳ thích Caribou"
+msgstr "Tùy thích Caribou"
 
 #: ../caribou/settings/caribou_settings.py:6
 msgid "Scanning"
@@ -43,7 +46,7 @@ msgstr "Chế độ quét"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr "Loại quyết, nhóm con, hàng hoặc tuyến tính"
+msgstr "Loại quét, nhóm con, hàng hoặc tuyến tính"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -67,11 +70,11 @@ msgstr "Thời gian giữa những lần chuyển phím"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
-msgstr "Quét đảo"
+msgstr "Quét ngược"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "Bước với bộ chuyển, kích hoạt bởi nhà ở"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
@@ -173,38 +176,17 @@ msgstr "Nút 2"
 msgid "Button 3"
 msgstr "Nút 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
 
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Lỗi khởi động %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr "Để dùng %s, cần bật hỗ trợ truy cập. Bạn có muốn bật bây giờ không?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr "Đã bật hỗ trợ truy cập. Đăng xuất và đăng nhập lại để dùng %s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr ""
-
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
-msgstr "Tuỳ thích Antler"
+msgstr "Tùy thích Antler"
 
 #: ../caribou/antler/antler_settings.py:6
 msgid "Antler"
-msgstr ""
+msgstr "Antler"
 
 #: ../caribou/antler/antler_settings.py:7
 msgid "Appearance"
@@ -212,11 +194,11 @@ msgstr "Diện mạo"
 
 #: ../caribou/antler/antler_settings.py:9
 msgid "Keyboard Type"
-msgstr "Loại bàn phím"
+msgstr "Kiểu bàn phím"
 
 #: ../caribou/antler/antler_settings.py:10
 msgid "The keyboard geometry Caribou should use"
-msgstr ""
+msgstr "Bố cục bàn phím được Caribou dùng"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
@@ -224,6 +206,9 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
+"Bố cục bàn phím xác định rõ hình dạng và độ phức tạp của bàn phím, nó có thể "
+"xếp dãy từ một cái nhìn “tự nhiên” và cảm thấy dễ chịu cho việc gõ chữ đơn "
+"giản, cho bàn phím giãn đầy đủ."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -247,19 +232,19 @@ msgstr "Dùng sắc thái hệ thống"
 
 #: ../caribou/antler/antler_settings.py:23
 msgid "Minimum Alpha"
-msgstr "Alpha tối thiểu"
+msgstr "Trong suốt tối thiểu"
 
 #: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
-msgstr ""
+msgstr "Độ trong suốt tối thiểu của bàn phím"
 
 #: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
-msgstr "Alpha tối đa"
+msgstr "Trong suốt tối đa"
 
 #: ../caribou/antler/antler_settings.py:27
 msgid "Maximal opacity of keyboard"
-msgstr ""
+msgstr "Độ trong suốt tối đa của bàn phím"
 
 #: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
@@ -267,4 +252,19 @@ msgstr "Khoảng cách tối đa"
 
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
-msgstr ""
+msgstr "Khoảng cách tối đa khi bàn phím ẩn"
+
+#: ../daemon/daemon.vala:214
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "- dịch vụ theo dõi sự kiện truy cập cho bàn phím màn hình"
+
+#~ msgid "Error starting %s"
+#~ msgstr "Lỗi khởi động %s"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr "Để dùng %s, cần bật hỗ trợ truy cập. Bạn có muốn bật bây giờ không?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr "Đã bật hỗ trợ truy cập. Đăng xuất và đăng nhập lại để dùng %s."
