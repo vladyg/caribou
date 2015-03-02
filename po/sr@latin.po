@@ -2,14 +2,14 @@
 # Copyright (C) 2010 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
 # Miloš Popović <gpopac@gmail.com>, 2010.
-# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2011, 2014.
+# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2011—2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribo"
-"u&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2013-12-29 19:21+0000\n"
-"PO-Revision-Date: 2014-01-13 10:36+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou"
+"&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2015-03-02 16:04+0000\n"
+"PO-Revision-Date: 2015-03-02 20:09+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -154,7 +154,7 @@ msgstr "Alt Gr"
 
 #: ../caribou/settings/caribou_settings.py:54
 msgid "Num lock"
-msgstr "Num lock"
+msgstr "Br. zaklj."
 
 #: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
@@ -254,8 +254,9 @@ msgstr "Najveće odstojanje"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Najveće odstojanje kada je tastatura skrivena"
 
-#: ../daemon/daemon.vala:191
-msgid "- daemon listening accessibility events to launch on screen keyboard"
+#: ../daemon/daemon.vala:214
+#| msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgid "- accessibility event monitoring daemon for screen keyboard"
 msgstr ""
 "— pozadinac osluškuje događaje pristupačnosti da bi pokrenuo tastaturu na "
 "ekranu"
