@@ -1,16 +1,16 @@
 # Korean translation for caribou.
 # Copyright (C) 2011 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2011, 2012, 2013, 2014.
+# Seong-ho Cho <shcho@gnome.org>, 2011-2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2014-03-16 04:03+0000\n"
-"PO-Revision-Date: 2014-03-15 03:17+0900\n"
-"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"POT-Creation-Date: 2015-03-06 04:04+0000\n"
+"PO-Revision-Date: 2015-03-06 13:47+0900\n"
+"Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
@@ -29,11 +29,11 @@ msgstr "스캔"
 
 #: ../caribou/settings/caribou_settings.py:8
 msgid "Enable scanning"
-msgstr "스캔 사용"
+msgstr "스캐닝 사용"
 
 #: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
-msgstr "스캔 전환 활성화"
+msgstr "스캐닝 전환 활성화"
 
 #: ../caribou/settings/caribou_settings.py:12
 msgid "General"
@@ -65,7 +65,7 @@ msgstr "스텝 시간"
 
 #: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
-msgstr "키 전달 간 시간"
+msgstr "키 전달 시간차"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
@@ -81,7 +81,7 @@ msgstr "스캔 자동으로 다시 시작"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr "항목 활성화 뒤에 자동으로 스캔 다시 시작"
+msgstr "항목 활성화 후 자동으로 스캔 다시 시작"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
@@ -160,7 +160,7 @@ msgstr "Num lock"
 
 #: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
-msgstr "단추 전환"
+msgstr "전환 단추"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
@@ -256,6 +256,6 @@ msgstr "최대 거리"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "키보드를 숨겼을 때 최대 거리"
 
-#: ../daemon/daemon.vala:191
-msgid "- daemon listening accessibility events to launch on screen keyboard"
-msgstr "- 화면 키보드 실행 목적으로 접근성 이벤트를 기다리는 데몬"
+#: ../daemon/daemon.vala:214
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "- 화면 키보드용 접근성 이벤트 감시 데몬"
