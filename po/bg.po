@@ -1,15 +1,15 @@
 # Bulgarian translation of caribou po-file.
-# Copyright (C) 2010, 2011 Free Software Foundation, Inc.
+# Copyright (C) 2010, 2011, 2015 Free Software Foundation, Inc.
 # This file is distributed under the same license as the caribou package.
 # Ivaylo Valkov <ivaylo@e-valkov.org>, 2010, 2011.
-#
+# Alexander Shopov <ash@kambanaria.org>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-14 06:33+0300\n"
-"PO-Revision-Date: 2011-09-12 17:44+0300\n"
-"Last-Translator: Ivaylo Valkov <ivaylo@e-valkov.org>\n"
+"POT-Creation-Date: 2015-03-09 19:31+0200\n"
+"PO-Revision-Date: 2015-03-09 19:30+0200\n"
+"Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
@@ -146,7 +146,7 @@ msgstr "Интервал"
 
 #: ../caribou/settings/caribou_settings.py:53
 msgid "Alt Gr"
-msgstr "Група Alt"
+msgstr "Десен Alt"
 
 #: ../caribou/settings/caribou_settings.py:54
 msgid "Num lock"
@@ -172,34 +172,9 @@ msgstr "Бутон 2"
 msgid "Button 3"
 msgstr "Бутон 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Екранна клавиатура (Caribou)"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Неуспех при стартиране на „%s“"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"Достъпността трябва да е включена, за да използвате „%s. Желаете ли да бъде "
-"включена в момента?“"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Достъпността е включена. Излезте от системата и влезте отново, за да "
-"използвате „%s“."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "ПРЕДУПРЕЖДЕНИЕ на Caribou: Необработен редактируем елемент:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -228,7 +203,7 @@ msgid ""
 "text, to a fullscale keyboard."
 msgstr ""
 "Геометрията на клавиатурата определя формата и сложността на клавиатурата. "
-"Двете крайности са опростена клавиатура, за въвеждане на кратък текст и "
+"Двете крайности са опростена клавиатура — за въвеждане на кратък текст и "
 "клавиатура с пълен набор клавиши."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
@@ -274,3 +249,7 @@ msgstr "Най-голямо разстояние"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Най-голямото разстояние, когато клавиатурата е скрита"
+
+#: ../daemon/daemon.vala:214
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "— демон, следящ за събитията за достъпност на екранната клавиатура"
