@@ -2,21 +2,23 @@
 # Copyright (C) 2012 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
 # jorgtum <jorgtum@gmail.com>, 2012.
+# Daniel Martinez <entaltoaragon@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou gnome-3-6\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2013-12-21 21:37+0000\n"
-"PO-Revision-Date: 2013-12-22 10:42+0100\n"
-"Last-Translator: Jorge Pérez Pérez <jorgtum@gmail.com>\n"
-"Language-Team: Aragonese <softaragones@googlegroups.com>\n"
+"POT-Creation-Date: 2015-03-19 16:04+0000\n"
+"PO-Revision-Date: 2015-03-19 20:41+0100\n"
+"Last-Translator: Daniel Martinez <entaltoaragon@gmail.com>\n"
+"Language-Team: Aragonés <softaragones@googlegroups.com>\n"
 "Language: an\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Gtranslator 2.91.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -205,7 +207,7 @@ msgid ""
 "text, to a fullscale keyboard."
 msgstr ""
 "a cheometría d'o teclau determina la forma y la complexidat d'íste; puet ir "
-"dende un aspeuto «natural», bueno ta escribir texto simple, dica un teclau a "
+"dende un aspeuto 'natural', bueno ta escribir texto simple, dica un teclau a "
 "escala completa."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
@@ -252,11 +254,11 @@ msgstr "Distancia maxima"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Distancia maxima quan o teclado ye amagau"
 
-#: ../daemon/daemon.vala:191
-msgid "- daemon listening accessibility events to launch on screen keyboard"
+#: ../daemon/daemon.vala:214
+#| msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgid "- accessibility event monitoring daemon for screen keyboard"
 msgstr ""
-"- Diaple escuitando eventos d'accesibilidat pa meter en marcha o teclau en "
-"pantalla"
+"- demonio que escuita os eventos d'accesibilidat d'o teclau en pantalla"
 
 #~ msgid "Error starting %s"
 #~ msgstr "S'ha produciu una error en encetar %s"
