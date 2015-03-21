@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-20 21:05+0100\n"
-"PO-Revision-Date: 2014-03-16 01:27+0100\n"
+"POT-Creation-Date: 2015-03-21 16:26+0100\n"
+"PO-Revision-Date: 2015-03-14 17:39+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -255,12 +255,9 @@ msgstr "Maksimal distance"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maksimal distance når tastaturet er skjult"
 
-# lidt kringlet på engelsk, men jeg tror dette er korrekt
-#: ../daemon/daemon.vala:191
-msgid "- daemon listening accessibility events to launch on screen keyboard"
-msgstr ""
-"- dæmon som lytter til tilgængelighedsbegivenheder for at starte "
-"skærmtastatur"
+#: ../daemon/daemon.vala:214
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "- dæmon som lytter til tilgængelighedsbegivenheder for skærmtastatur"
 
 #~ msgid "Error starting %s"
 #~ msgstr "Fejl ved start af %s"
