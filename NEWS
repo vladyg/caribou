@@ -1,4 +1,13 @@
 =============
+Version 0.4.18
+=============
+
+- Translation updates (Turkish, Danish, Italian, Aragonese, Bosnian,
+  Latvian, Bulgarian, Korean, Vietnamese, Ukrainian, Brazilian
+  Portuguese, Greek, Swedish, Catalan, Slovak, Galician, Chinse
+  (Taiwan))
+
+=============
 Version 0.4.17
 =============
 - Bundle tools to generate and manipulate keyboard layout files.
