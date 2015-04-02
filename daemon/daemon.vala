@@ -54,7 +54,10 @@ namespace Caribou {
         }
 
         uint32 get_timestamp () {
-            return Gdk.X11Display.get_user_time (display);
+            if (display is Gdk.X11Display)
+                return Gdk.X11Display.get_user_time (display);
+            else
+                return 0;
         }
 
         void set_entry_location (Atspi.Accessible acc) throws Error {
