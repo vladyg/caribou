@@ -110,6 +110,13 @@ namespace Caribou {
                                                    KeyButtonCallback? func);
 
         static DisplayAdapter instance;
+        public static bool set_default (DisplayAdapter adapter) {
+            if (instance != null)
+                return false;
+
+            instance = adapter;
+            return true;
+        }
         public static DisplayAdapter get_default () {
             if (instance == null) {
                 var display = Gdk.DisplayManager.get ().get_default_display ();
