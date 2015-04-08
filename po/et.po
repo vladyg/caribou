@@ -1,22 +1,23 @@
 # Estonian translation for caribou.
 # Copyright (C) 2012 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
-# Mattias Põldaru <mahfiaz@gmail.com>, 2012.
+# Mattias Põldaru <mahfiaz@gmail.com>, 2012, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2012-01-29 15:08+0000\n"
-"PO-Revision-Date: 2012-02-08 08:55+0200\n"
+"POT-Creation-Date: 2015-03-15 04:03+0000\n"
+"PO-Revision-Date: 2015-03-15 09:34+0300\n"
 "Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
 "Language-Team: Estonian <>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bits\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Poedit 1.5.4\n"
 
 msgid "Caribou Preferences"
 msgstr "Caribou eelistused"
@@ -139,26 +140,6 @@ msgstr "Nupp 3"
 msgid "Caribou"
 msgstr "Caribou"
 
-#, python-format
-msgid "Error starting %s"
-msgstr "Viga %s käivitamisel"
-
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"%s kasutamiseks tuleb hõlbustused (accessibility) lubada. Kas tahad need "
-"kohe lubada?"
-
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Hõlbustused on nüüd lubatud. %s kasutamiseks logi nüüd välja ja uuesti sisse."
-
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "HOIATUS - Caribou: mittekäsitletav muudetav vidin:"
-
 msgid "Antler Preferences"
 msgstr "Antler'i eelistused"
 
@@ -215,3 +196,25 @@ msgstr "Suurim kaugus"
 
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Suurim kaugus, mille juures klaviatuur varjatakse"
+
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr ""
+"- ligipääsetavuse sündmuseid jälgiv taustaprotsess ekraaniklaviatuuri jaoks"
+
+#~ msgid "Error starting %s"
+#~ msgstr "Viga %s käivitamisel"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "%s kasutamiseks tuleb hõlbustused (accessibility) lubada. Kas tahad need "
+#~ "kohe lubada?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "Hõlbustused on nüüd lubatud. %s kasutamiseks logi nüüd välja ja uuesti "
+#~ "sisse."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "HOIATUS - Caribou: mittekäsitletav muudetav vidin:"
