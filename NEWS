@@ -1,4 +1,12 @@
 =============
+Version 0.4.18.1
+=============
+
+- Bug 747273 - display-adapter: Allow setting an external default
+  adapter instance
+- Translation updates (Basque, Russian)
+
+=============
 Version 0.4.18
 =============
 
