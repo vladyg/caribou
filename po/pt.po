@@ -2,13 +2,14 @@
 # Copyright © 2011, 2013 caribou
 # This file is distributed under the same license as the caribou package.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2011, 2013.
+# Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.8\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2014-02-23 04:03+0000\n"
+"POT-Creation-Date: 2015-07-26 03:08+0000\n"
 "PO-Revision-Date: 2014-02-23 16:01+0100\n"
 "Last-Translator: Tiago S. <almosthumane@portugalmail.pt>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
@@ -16,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -72,7 +73,7 @@ msgstr "Análise inversa"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr "Intervalo com o interruptor, ativar ao colocar o rato sobre"
+msgstr "Intervalo com o interruptor, ativar ao pairar com o rato"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
@@ -192,7 +193,7 @@ msgstr "Aparência"
 
 #: ../caribou/antler/antler_settings.py:9
 msgid "Keyboard Type"
-msgstr "Tipo de Teclado"
+msgstr "Tipo de teclado"
 
 #: ../caribou/antler/antler_settings.py:10
 msgid "The keyboard geometry Caribou should use"
@@ -205,13 +206,13 @@ msgid ""
 "text, to a fullscale keyboard."
 msgstr ""
 "A geometria do teclado determina a forma e complexidade do teclado, poderá "
-"ir desde uma aparência 'natural' para compor texto simples até a um teclado "
+"ir desde uma aparência \"natural\" para compor texto simples até um teclado "
 "completo."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
 msgid "Touch"
-msgstr "Tipo telemóvel"
+msgstr "Toque"
 
 #. Translators: Keyboard type (conventional keyboard)
 #: ../caribou/antler/antler_settings.py:18
@@ -221,16 +222,16 @@ msgstr "Completo"
 #. Translators: Keyboard type (scanned grid by rows/columns)
 #: ../caribou/antler/antler_settings.py:20
 msgid "Scan"
-msgstr "Em grelha"
+msgstr "Analisar"
 
 #: ../caribou/antler/antler_settings.py:21
 #: ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
-msgstr "Utilizar o Tema do Sistema"
+msgstr "Utilizar o tema do sistema"
 
 #: ../caribou/antler/antler_settings.py:23
 msgid "Minimum Alpha"
-msgstr "Alfa Mínimo"
+msgstr "Alfa mínimo"
 
 #: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
@@ -238,7 +239,7 @@ msgstr "Opacidade mínima do teclado"
 
 #: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
-msgstr "Alfa Máximo"
+msgstr "Alfa máximo"
 
 #: ../caribou/antler/antler_settings.py:27
 msgid "Maximal opacity of keyboard"
@@ -246,17 +247,16 @@ msgstr "Opacidade máxima do teclado"
 
 #: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
-msgstr "Distância Máxima"
+msgstr "Distância máxima"
 
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Distância máxima quando o teclado está escondido"
 
-#: ../daemon/daemon.vala:191
-msgid "- daemon listening accessibility events to launch on screen keyboard"
-msgstr ""
-"- daemon a escutar eventos de acessibilidade de forma a lançar o teclado de "
-"ecrã"
+#: ../daemon/daemon.vala:217
+#| msgid "- daemon listening accessibility events to launch on screen keyboard"
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "- daemon a ouvir eventos de acessibilidade para teclado de ecrã"
 
 #~ msgid "Error starting %s"
 #~ msgstr "Erro ao iniciar %s"
