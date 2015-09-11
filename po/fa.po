@@ -2,22 +2,23 @@
 # Copyright (C) 2010 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
 # Mahyar Moghimi <mahyar.moqimi@gmail.com>, 2010.
-# Arash Mousavi <mousavi.arash@gmail.com>, 2011.
+# Arash Mousavi <mousavi.arash@gmail.com>, 2011, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-03 21:06+0000\n"
-"PO-Revision-Date: 2011-09-06 11:39+0330\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2015-09-11 15:09+0000\n"
+"PO-Revision-Date: 2015-09-12 00:29+0430\n"
 "Last-Translator: Arash Mousavi <mousavi.arash@gmail.com>\n"
 "Language-Team: Persian\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Persian\n"
-"X-Poedit-Country: IRAN, ISLAMIC REPUBLIC OF\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.8.4\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -175,28 +176,9 @@ msgstr "دکمه ۲"
 msgid "Button 3"
 msgstr "دکمه ۳"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "کاریبو"
-
-#: ../caribou/daemon/main.py:31
-#, python-format
-msgid "Error starting %s"
-msgstr "خطا در هنگام شروع %s"
-
-#: ../caribou/daemon/main.py:42
-#, python-format
-msgid "In order to use %s, accessibility needs to be enabled. Do you want to enable it now?"
-msgstr "جهت استفاده از %s، لازم است دسترسی‌پذیری فعال شود. آیا می‌خواهید آن را هم‌اکنون غیرفعال کنید؟"
-
-#: ../caribou/daemon/main.py:56
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr "دسترسی‌پذیری فعال شده است. برای استفاده از %s از سیستم خارج و مجددا وارد شوید."
-
-#: ../caribou/daemon/main.py:153
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "اخطار - کاریبو: ویجت غیرقابل ویرایش:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -215,17 +197,17 @@ msgid "Keyboard Type"
 msgstr "نوع صفحه‌کلید"
 
 #: ../caribou/antler/antler_settings.py:10
-#| msgid "The keyboard geometery Caribou should use"
 msgid "The keyboard geometry Caribou should use"
 msgstr "مختصات صفحه‌کلیدی که کاریبو باید استفاده کند"
 
 #: ../caribou/antler/antler_settings.py:11
-#| msgid ""
-#| "The keyboard geometery determines the shape and complexity of the "
-#| "keyboard, it could range from a 'natural' look and feel good for "
-#| "composing simple text, to a fullscale keyboard."
-msgid "The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
-msgstr "مختصات صفحه‌کلید، شکل و پیچیدگی صفحه‌کلید را تعیین می‌کند، این می‌تواند باز‌ه‌ای از یک نمای «natural» برای ساخت یک متن ساده تا یک صفحه‌کلید با مقیاس کامل را در بر بگیرد."
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, it "
+"could range from a 'natural' look and feel good for composing simple text, to a "
+"fullscale keyboard."
+msgstr ""
+"مختصات صفحه‌کلید، شکل و پیچیدگی صفحه‌کلید را تعیین می‌کند، این می‌تواند باز‌ه‌ای از یک "
+"نمای «natural» برای ساخت یک متن ساده تا یک صفحه‌کلید با مقیاس کامل را در بر بگیرد."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -242,8 +224,7 @@ msgstr "مقیاس کامل"
 msgid "Scan"
 msgstr "پایش"
 
-#: ../caribou/antler/antler_settings.py:21
-#: ../caribou/antler/antler_settings.py:22
+#: ../caribou/antler/antler_settings.py:21 ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
 msgstr "استفاده از تم سیستم"
 
@@ -271,3 +252,23 @@ msgstr "حداکثر فاصله"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "حداکثر فاصله در هنگامی که صفحه‌کلید مخفی است"
 
+#: ../daemon/daemon.vala:217
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "- شبح پایشگر رویدادهای دسترسی‌پذیری برای صفحه‌کلید مجازی"
+
+#~ msgid "Error starting %s"
+#~ msgstr "خطا در هنگام شروع %s"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to enable "
+#~ "it now?"
+#~ msgstr ""
+#~ "جهت استفاده از %s، لازم است دسترسی‌پذیری فعال شود. آیا می‌خواهید آن را هم‌اکنون "
+#~ "غیرفعال کنید؟"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "دسترسی‌پذیری فعال شده است. برای استفاده از %s از سیستم خارج و مجددا وارد شوید."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "اخطار - کاریبو: ویجت غیرقابل ویرایش:"
