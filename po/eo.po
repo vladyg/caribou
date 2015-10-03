@@ -1,21 +1,24 @@
 # Esperanto translation for caribou.
 # Copyright (C) 2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the caribou package.
-# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2011.
-#
+# Daniel PUENTES <blatberk@openmailbox.org>, 2015.
+# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2011, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-09-03 21:11+0000\n"
-"PO-Revision-Date: 2011-09-04 00:24+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribo"
+"u&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2015-09-25 15:12+0000\n"
+"PO-Revision-Date: 2015-10-04 00:21+0200\n"
 "Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
-"Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
+"Language-Team: Esperanto <gnome-l10n-eo@lists.launchpad.net>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -31,7 +34,7 @@ msgstr "Enŝalti skanadon"
 
 #: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
-msgstr ""
+msgstr "Enŝalti selektantan skanadon"
 
 #: ../caribou/settings/caribou_settings.py:12
 msgid "General"
@@ -43,7 +46,7 @@ msgstr "Skan-reĝimo"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr ""
+msgstr "Tipo de skanado, subgrupoj, vicoj aŭ lineara"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -58,16 +61,18 @@ msgid "Linear"
 msgstr "Lineare"
 
 #: ../caribou/settings/caribou_settings.py:20
+#, fuzzy
 msgid "Step time"
-msgstr ""
+msgstr "Paŝtempo"
 
 #: ../caribou/settings/caribou_settings.py:21
+#, fuzzy
 msgid "Time between key transitions"
-msgstr ""
+msgstr "Tempo inter klav-transiro"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
-msgstr ""
+msgstr "Inversa skanado"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
@@ -75,15 +80,15 @@ msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
-msgstr ""
+msgstr "Aŭtomate restartigi skanadon"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr ""
+msgstr "Aŭtomate restartigi skanadon post aktivigo de ero"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
-msgstr ""
+msgstr "Skancikloj"
 
 #: ../caribou/settings/caribou_settings.py:31
 msgid "One"
@@ -131,7 +136,7 @@ msgstr "Ŝanĝi klavon"
 
 #: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
-msgstr "Klavo por uzi en la skan-reĝimo"
+msgstr "Klavo por uzi en la skan-reĝimo"
 
 #: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
@@ -147,7 +152,7 @@ msgstr "Spaco-klavo"
 
 #: ../caribou/settings/caribou_settings.py:53
 msgid "Alt Gr"
-msgstr ""
+msgstr "Grafika Alt-klavo (Alt Gr)"
 
 #: ../caribou/settings/caribou_settings.py:54
 msgid "Num lock"
@@ -173,42 +178,21 @@ msgstr "Butono 2"
 msgid "Button 3"
 msgstr "Butono 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
-msgstr ""
-
-#: ../caribou/daemon/main.py:31
-#, python-format
-msgid "Error starting %s"
-msgstr ""
-
-#: ../caribou/daemon/main.py:42
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-
-#: ../caribou/daemon/main.py:56
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-
-#: ../caribou/daemon/main.py:153
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr ""
+msgstr "Caribou"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
-msgstr ""
+msgstr "Agordoj de Antler"
 
 #: ../caribou/antler/antler_settings.py:6
 msgid "Antler"
-msgstr ""
+msgstr "Antler"
 
 #: ../caribou/antler/antler_settings.py:7
 msgid "Appearance"
-msgstr ""
+msgstr "Aspekto"
 
 #: ../caribou/antler/antler_settings.py:9
 msgid "Keyboard Type"
@@ -216,7 +200,7 @@ msgstr "Klavar-tipo"
 
 #: ../caribou/antler/antler_settings.py:10
 msgid "The keyboard geometry Caribou should use"
-msgstr ""
+msgstr "La klavargeometrio kiun Caribou uzu"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
@@ -224,6 +208,9 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
+"La klavargeometrio determinas la formon kaj komplikecon de la klavaro, ĝi "
+"povas varii inter 'natura' aspekto kaj bonsenta por verki simplan tekston, "
+"ĝis tutskala klavaro."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -233,7 +220,7 @@ msgstr "Tuŝi"
 #. Translators: Keyboard type (conventional keyboard)
 #: ../caribou/antler/antler_settings.py:18
 msgid "Full scale"
-msgstr ""
+msgstr "Tuta skalo"
 
 #. Translators: Keyboard type (scanned grid by rows/columns)
 #: ../caribou/antler/antler_settings.py:20
@@ -251,16 +238,15 @@ msgstr "Minimuma alfo"
 
 #: ../caribou/antler/antler_settings.py:24
 msgid "Minimal opacity of keyboard"
-msgstr ""
+msgstr "Minimuma opakeco de klavaro"
 
 #: ../caribou/antler/antler_settings.py:26
 msgid "Maximum Alpha"
 msgstr "Maksimuma alfo"
 
 #: ../caribou/antler/antler_settings.py:27
-#, fuzzy
 msgid "Maximal opacity of keyboard"
-msgstr "Maksimuma opakeco de la klavaro"
+msgstr "Maksimuma opakeco de klavaro"
 
 #: ../caribou/antler/antler_settings.py:29
 msgid "Maximum Distance"
@@ -269,3 +255,7 @@ msgstr "Maksimuma distanco"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maksimuma distanco se la klavaro estas kaŝate"
+
+#: ../daemon/daemon.vala:217
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr ""
