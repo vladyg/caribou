@@ -301,8 +301,17 @@ namespace Caribou {
                                        out string variant_name) {
             Xkl.ConfigRec config_rec = new Xkl.ConfigRec ();
             config_rec.get_from_server (this.xkl_engine);
-            group_name = config_rec.layouts[this.group];
-            variant_name = config_rec.variants[this.group];
+
+            if (this.group < config_rec.layouts.length)
+                group_name = config_rec.layouts[this.group];
+            else
+                group_name = "";
+
+            if (this.group < config_rec.variants.length)
+                variant_name = config_rec.variants[this.group];
+            else
+                variant_name = "";
+
             if (variant_name == null)
                 variant_name = "";
 
