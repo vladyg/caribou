@@ -1,4 +1,15 @@
 =============
+Version 0.4.19
+=============
+
+- Bug 756194 - xadapter: Avoid a crash when Xkl doesn't know the real
+  xkb groups
+- Bug 747273 - display-adapter: Allow setting an external default
+  adapter instance
+- Translation updates (Persian, Kazakh, Chinese (Taiwan), Basque,
+  Esperanto, Estonian, Portuguese, Polish, Russian)
+
+=============
 Version 0.4.18
 =============
 
