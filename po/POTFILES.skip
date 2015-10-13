@@ -1,3 +1,7 @@
 data/org.gnome.caribou.gschema.xml.in
 data/org.gnome.antler.gschema.xml.in
 daemon/daemon.c
+
+# https://bugs.launchpad.net/intltool/+bug/1117944
+sub/data/org.gnome.caribou.gschema.xml.in
+sub/data/org.gnome.antler.gschema.xml.in
