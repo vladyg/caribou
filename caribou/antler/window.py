@@ -54,7 +54,7 @@ class AnimatedWindowBase(Gtk.Window, Clutter.Animatable):
         elif property.name == "antler-window-y":
             return self.get_position()[1]
         else:
-            raise AttributeError, 'unknown property %s' % property.name
+            raise AttributeError('unknown property %s' % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "antler-window-x":
@@ -64,7 +64,7 @@ class AnimatedWindowBase(Gtk.Window, Clutter.Animatable):
             if value is not None:
                 self.move(self.get_position()[0], value)
         else:
-            raise AttributeError, 'unknown property %s' % property.name
+            raise AttributeError('unknown property %s' % property.name)
 
     def do_animate_property(self, animation, prop_name, initial_value,
                             final_value, progress, gvalue):

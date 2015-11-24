@@ -16,12 +16,11 @@ class SettingsManager(object):
         try:
             return self._settings_map[name]
         except KeyError:
-            raise AttributeError, "no setting named '%s'" % name
+            raise AttributeError("no setting named '%s'" % name)
 
     def _map_settings(self, setting):
         if self._settings_map.has_key(setting.name):
-            raise ValueError, \
-                "more than one setting has the name '%s'" % setting.name
+            raise ValueError("more than one setting has the name '%s'" % setting.name)
         self._settings_map[setting.name] = setting
         
         for s in setting:
