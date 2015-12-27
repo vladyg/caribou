@@ -10,6 +10,7 @@ common_files = \
 	common/symbols.xml
 
 us.xml: $(common_files)
+de.xml: $(common_files)
 
 SUFFIXES = .xml.in .xml
 

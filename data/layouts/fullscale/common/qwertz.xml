@@ -71,7 +71,9 @@
         <key name="ae"/>
         <key name="amacron"/>
       </key>
-      <key name="s"/>
+      <key name="s">
+        <key name="ssharp"/>
+      </key>
       <key name="d"/>
       <key name="f"/>
       <key name="g"/>
