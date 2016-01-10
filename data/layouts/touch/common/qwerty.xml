@@ -11,6 +11,7 @@
         <key name="ecircumflex"/>
         <key name="ediaeresis"/>
         <key name="emacron"/>
+        <key name="eogonek"/>
       </key>
       <key name="r"/>
       <key name="t"/>
@@ -53,28 +54,46 @@
         <key name="atilde"/>
         <key name="ae"/>
         <key name="amacron"/>
+        <key name="aogonek"/>
       </key>
-      <key name="s"/>
+      <key name="s">
+        <key name="s"/>
+        <key name="sacute"/>
+      </key>
       <key name="d"/>
       <key name="f"/>
       <key name="g"/>
       <key name="h"/>
       <key name="j"/>
       <key name="k"/>
-      <key name="l"/>
+      <key name="l">
+        <key name="l"/>
+        <key name="lstroke"/>
+      </key>
       <key name="Return" width="1.5"/>
     </row>
     <row>
       <key name="Caribou_ShiftUp" toggle="level2"/>
-      <key name="z"/>
-      <key name="x"/>
+      <key name="z">
+        <key name="z"/>
+        <key name="zabovedot"/>
+        <key name="zacute"/>
+      </key>
+      <key name="x">
+        <key name="x"/>
+        <key name="zacute"/>
+      </key>
       <key name="c">
         <key name="c"/>
         <key name="ccedilla"/>
+        <key name="cacute"/>
       </key>
       <key name="v"/>
       <key name="b"/>
-      <key name="n"/>
+      <key name="n">
+        <key name="n"/>
+        <key name="nacute"/>
+      </key>
       <key name="m"/>
       <key name="comma"/>
       <key name="period"/>
@@ -97,6 +116,7 @@
         <key name="Ecircumflex"/>
         <key name="Ediaeresis"/>
         <key name="Emacron"/>
+        <key name="Eogonek"/>
       </key>
       <key name="R"/>
       <key name="T"/>
@@ -139,28 +159,46 @@
         <key name="Atilde"/>
         <key name="Ae"/>
         <key name="Amacron"/>
+        <key name="Aogonek"/>
       </key>
-      <key name="S"/>
+      <key name="S">
+        <key name="S"/>
+        <key name="Sacute"/>
+      </key>
       <key name="D"/>
       <key name="F"/>
       <key name="G"/>
       <key name="H"/>
       <key name="J"/>
       <key name="K"/>
-      <key name="L"/>
+      <key name="L">
+        <key name="L"/>
+        <key name="Lstroke"/>
+      </key>
       <key name="Return" width="1.5"/>
     </row>
     <row>
       <key name="Caribou_ShiftDown" toggle="level1"/>
-      <key name="Z"/>
-      <key name="X"/>
+      <key name="Z">
+        <key name="Z"/>
+        <key name="Zabovedot"/>
+        <key name="Zacute"/>
+      </key>
+      <key name="X">
+        <key name="X"/>
+        <key name="Zacute"/>
+      </key>
       <key name="C">
         <key name="C"/>
         <key name="Ccedilla"/>
+        <key name="Cacute"/>
       </key>
       <key name="V"/>
       <key name="B"/>
-      <key name="N"/>
+      <key name="N">
+        <key name="N"/>
+        <key name="Nacute"/>
+      </key>
       <key name="M"/>
       <key name="comma"/>
       <key name="period"/>
