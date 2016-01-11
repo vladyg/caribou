@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+<external>
+  <level mode="locked" name="symbols1">
+    <row>
+      <key align="left" name="Escape"/>
+      <key name="1"/>
+      <key name="2"/>
+      <key name="3"/>
+      <key name="4"/>
+      <key name="5"/>
+      <key name="6"/>
+      <key name="7"/>
+      <key name="8"/>
+      <key name="9"/>
+      <key name="0"/>
+      <key name="ssharp"/>
+      <key align="right" name="BackSpace" repeatable="yes" width="1"/>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+    <row >
+      <key align="left" name="Tab" width="1.5"/>
+      <key name="plus"/>
+      <key name="minus"/>
+      <key name="asterisk"/>
+      <key name="slash"/>
+      <key name="asciicircum"/>
+      <key name="equal"/>
+      <key name="less"/>
+      <key name="greater"/>
+      <key align="right" name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="parenleft"/>
+      <key name="parenright"/>
+      <key name="bracketleft"/>
+      <key name="bracketright"/>
+      <key name="braceleft"/>
+      <key name="braceright"/>
+      <key name="comma"/>
+      <key name="period"/>
+    </row>
+    <row>
+      <key name="Control_L" width="1.5"/>
+      <key name="Alt_L" width="1.5"/>
+      <key name="Caribou_Alpha" toggle="default" width="1.5"/>
+      <key name="space" width="7.0" repeatable="yes"/>
+      <key name="Caribou_Symbols_More" toggle="symbols2" width="1.5"/>
+      <key name="Left" repeatable="yes"/>
+      <key name="Up" repeatable="yes"/>
+      <key name="Down" repeatable="yes"/>
+      <key name="Right" repeatable="yes"/>
+    </row>
+  </level>
+  <level mode="latched" name="symbols2">
+    <row>
+      <key align="left" name="Escape"/>
+      <key name="F1"/>
+      <key name="F2"/>
+      <key name="F3"/>
+      <key name="F4"/>
+      <key name="F5"/>
+      <key name="F6"/>
+      <key name="F7"/>
+      <key name="F8"/>
+      <key name="F9"/>
+      <key name="F10"/>
+      <key name="F11"/>
+      <key name="F12"/>
+      <key align="right" name="BackSpace" repeatable="yes"/>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+    <row>
+      <key align="left" name="Tab" width="1.5"/>
+      <key name="backslash"/>
+      <key name="bar"/>
+      <key name="slash"/>
+      <key name="ampersand"/>
+      <key name="at"/>
+      <key name="grave"/>
+      <key name="asciitilde"/>
+      <key name="dollar"/>
+      <key name="EuroSign"/>
+      <key name="sterling"/>
+      <key align="right" name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="numbersign"/>
+      <key name="percent"/>
+      <key name="apostrophe"/>
+      <key name="quotedbl"/>
+      <key name="semicolon"/>
+      <key name="colon"/>
+      <key name="plus"/>
+      <key name="minus"/>
+      <key name="underscore"/>
+    </row>
+    <row>
+      <key name="Control_L" width="1.5"/>
+      <key name="Alt_L" width="1.5"/>
+      <key name="Caribou_Symbols" toggle="symbols1" width="1.5"/>
+      <key name="space" width="7.0" repeatable="yes"/>
+      <key name="Caribou_Alpha" toggle="default" width="1.5"/>
+      <key name="Left" repeatable="yes"/>
+      <key name="Up" repeatable="yes"/>
+      <key name="Down" repeatable="yes"/>
+      <key name="Right" repeatable="yes"/>
+    </row>
+  </level>
+</external>

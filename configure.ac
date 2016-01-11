@@ -165,6 +165,7 @@ data/layouts/Makefile
 data/layouts/touch/Makefile
 data/layouts/scan/Makefile
 data/layouts/fullscale/Makefile
+data/layouts/tablet/Makefile
 libcaribou/Makefile
 libcaribou/caribou-1.0.pc
 modules/Makefile
