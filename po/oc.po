@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the caribou package.
 # Cédric Valmary <cvalmary@yahoo.fr>, 2015.
 # Cédric Valmary (Tot en òc) <cvalmary@yahoo.fr>, 2015.
+# Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=caribou&keywords=I18N+L10N&component=default\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou"
+"&keywords=I18N+L10N&component=default\n"
 "POT-Creation-Date: 2015-11-10 16:11+0000\n"
-"PO-Revision-Date: 2015-10-31 09:04+0200\n"
-"Last-Translator: Cédric Valmary (Tot en òc) <cvalmary@yahoo.fr>\n"
-"Language-Team: Tot en òc (totenoc.eu)\n"
+"PO-Revision-Date: 2016-02-23 19:15+0200\n"
+"Last-Translator: Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>\n"
+"Language-Team: Tot En Òc\n"
 "Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,15 +27,15 @@ msgstr "Preferéncias de Caribou"
 
 #: ../caribou/settings/caribou_settings.py:6
 msgid "Scanning"
-msgstr "Balajatge"
+msgstr "Balejatge"
 
 #: ../caribou/settings/caribou_settings.py:8
 msgid "Enable scanning"
-msgstr "Activar lo balajatge"
+msgstr "Activar lo balejatge"
 
 #: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
-msgstr "Activar la seleccion per balajatge"
+msgstr "Activar la seleccion per balejatge"
 
 #: ../caribou/settings/caribou_settings.py:12
 msgid "General"
@@ -42,11 +43,11 @@ msgstr "General"
 
 #: ../caribou/settings/caribou_settings.py:13
 msgid "Scanning mode"
-msgstr "Mòde de balajatge"
+msgstr "Mòde de balejatge"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr "Tipe de balajatge, per sosgropes, per linhas o linear"
+msgstr "Tipe de balejatge, per sosgropes, per linhas o linear"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -70,7 +71,7 @@ msgstr "Relambi entre lo cambiament de tòca"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
-msgstr "Balajatge invèrse"
+msgstr "Balejatge invèrse"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
@@ -78,15 +79,15 @@ msgstr "Avança per boton, activacion per manteniment"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
-msgstr "Reaviar lo balajatge automaticament"
+msgstr "Reaviar lo balejatge automaticament"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr "Reaviar lo balajatge automaticament aprèp l'activacion d'un element"
+msgstr "Reaviar lo balejatge automaticament aprèp l'activacion d'un element"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
-msgstr "Cicles de balajatge"
+msgstr "Cicles de balejatge"
 
 #: ../caribou/settings/caribou_settings.py:31
 msgid "One"
@@ -134,7 +135,7 @@ msgstr "Tòca de seleccion"
 
 #: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
-msgstr "Tòca d'utilizar en mòde balajatge"
+msgstr "Tòca d'utilizar en mòde balejatge"
 
 #: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
@@ -162,7 +163,7 @@ msgstr "Boton de seleccion"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
-msgstr "Boton de mirga d'utilizar en mòde balajatge"
+msgstr "Boton de mirga d'utilizar en mòde balejatge"
 
 #: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
@@ -223,7 +224,7 @@ msgstr "Complet"
 #. Translators: Keyboard type (scanned grid by rows/columns)
 #: ../caribou/antler/antler_settings.py:20
 msgid "Scan"
-msgstr "Amb balajatge"
+msgstr "Amb balejatge"
 
 #: ../caribou/antler/antler_settings.py:21
 #: ../caribou/antler/antler_settings.py:22
