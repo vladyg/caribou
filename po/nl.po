@@ -9,16 +9,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Caribou\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-06 15:09+0200\n"
-"PO-Revision-Date: 2012-10-06 15:12+0200\n"
-"Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2015-12-18 04:11+0000\n"
+"PO-Revision-Date: 2015-12-18 09:08+0100\n"
+"Last-Translator: Justin van Steijn <justin.vansteijn@ziggo.nl>\n"
 "Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\\n\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\\n;\n"
+"X-Generator: Poedit 1.6.10\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -34,7 +36,7 @@ msgstr "Zoeken inschakelen"
 
 #: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
-msgstr ""
+msgstr "Wissel-zoeken inschakelen"
 
 #: ../caribou/settings/caribou_settings.py:12
 msgid "General"
@@ -46,7 +48,7 @@ msgstr "Zoekmodus"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr ""
+msgstr "Zoektype, subgroepen, rijen of lineair"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -62,7 +64,7 @@ msgstr "Lineair"
 
 #: ../caribou/settings/caribou_settings.py:20
 msgid "Step time"
-msgstr ""
+msgstr "Tijdsstap"
 
 #: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
@@ -70,23 +72,23 @@ msgstr "Tijd tussen toetsovergangen"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
-msgstr ""
+msgstr "Omgekeerd zoeken"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "Stap met de schakelaar, activeer door te zweven"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
-msgstr ""
+msgstr "Zoeken automatisch herstarten"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr ""
+msgstr "Zoeken automatisch herstarten na het selecteren van een item"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
-msgstr ""
+msgstr "Zoekcyclus"
 
 #: ../caribou/settings/caribou_settings.py:31
 msgid "One"
@@ -114,11 +116,11 @@ msgstr "Invoer"
 
 #: ../caribou/settings/caribou_settings.py:39
 msgid "Switch device"
-msgstr ""
+msgstr "Apparaat wisselen"
 
 #: ../caribou/settings/caribou_settings.py:41
 msgid "Switch device, keyboard or mouse"
-msgstr ""
+msgstr "Apparaat, toetsenbord of muis wisselen"
 
 #: ../caribou/settings/caribou_settings.py:43
 msgid "Keyboard"
@@ -134,7 +136,7 @@ msgstr "Wisseltoets"
 
 #: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
-msgstr ""
+msgstr "Toets om te gebruiken met zoekmodus"
 
 #: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
@@ -163,7 +165,7 @@ msgstr "Wisselknop"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
-msgstr ""
+msgstr "Muisknop te gebruiken in de zoekmodus"
 
 #: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
@@ -177,35 +179,13 @@ msgstr "Knop 2"
 msgid "Button 3"
 msgstr "Knop 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
 
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Fout bij starten van %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "WAARSCHUWING - Caribou: niet afgehandelde bewerkbare widget"
-
 #: ../caribou/antler/antler_settings.py:5
-#, fuzzy
 msgid "Antler Preferences"
-msgstr "Caribou-voorkeuren"
+msgstr "Antler-voorkeuren"
 
 #: ../caribou/antler/antler_settings.py:6
 msgid "Antler"
@@ -216,13 +196,12 @@ msgid "Appearance"
 msgstr "Uiterlijk"
 
 #: ../caribou/antler/antler_settings.py:9
-#, fuzzy
 msgid "Keyboard Type"
-msgstr "Toetsenbord_indeling:"
+msgstr "Toetsenbord_indeling"
 
 #: ../caribou/antler/antler_settings.py:10
 msgid "The keyboard geometry Caribou should use"
-msgstr ""
+msgstr "De toetsenbordafmetingen die Caribou moet gebruiken"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
@@ -230,21 +209,24 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
+"De toesenbordafmetingen bepalen de vorm en de complexiteit van het "
+"toetsenbord: het kan verschillen van een 'natuurlijke' ervaring die goed is "
+"voor het opstellen van simpele tekst, tot een toetsenbord op volle grootte."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
 msgid "Touch"
-msgstr ""
+msgstr "Aanraken"
 
 #. Translators: Keyboard type (conventional keyboard)
 #: ../caribou/antler/antler_settings.py:18
 msgid "Full scale"
-msgstr ""
+msgstr "Volle grootte"
 
 #. Translators: Keyboard type (scanned grid by rows/columns)
 #: ../caribou/antler/antler_settings.py:20
 msgid "Scan"
-msgstr ""
+msgstr "Zoeken"
 
 #: ../caribou/antler/antler_settings.py:21
 #: ../caribou/antler/antler_settings.py:22
@@ -274,6 +256,17 @@ msgstr "Maximale afstand"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maximale afstand als het toetsenbord verborgen is"
+
+#: ../daemon/daemon.vala:217
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr ""
+"- toegankelijkheid gebeurtenis monitoring daemon voor schermtoetsenbord"
+
+#~ msgid "Error starting %s"
+#~ msgstr "Fout bij starten van %s"
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "WAARSCHUWING - Caribou: niet afgehandelde bewerkbare widget"
 
 #~ msgid "Colors"
 #~ msgstr "Kleuren"
