@@ -2,14 +2,15 @@
 # This file is distributed under the same license as the caribou package.
 # Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2010, 2011.
 # Dobre Alin <dobre.inter@yahoo.com>, 2010.
+# Jobava <jobaval10n@gmail.com>,2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribo"
-"u&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2011-11-19 11:19+0000\n"
-"PO-Revision-Date: 2011-11-27 04:57+0300\n"
-"Last-Translator: Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2016-03-18 16:11+0000\n"
+"PO-Revision-Date: 2016-03-18 21:55+0200\n"
+"Last-Translator: Jobava <jobaval10n@gmail.com>\n"
 "Language-Team: Romanian Gnome Team <gnomero-list@lists.sourceforge.net>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +35,7 @@ msgstr "Activează scanarea"
 
 #: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
-msgstr "Activează comutatorul de scanare"
+msgstr "Activează scanarea prin comutare"
 
 #: ../caribou/settings/caribou_settings.py:12
 msgid "General"
@@ -46,7 +47,7 @@ msgstr "Modul de scanare"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr "Tip scanare, subgrup, rând sau liniar"
+msgstr "Tip scanare, subgrupuri, pe rânduri sau liniar"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -66,7 +67,7 @@ msgstr "Durata pasului"
 
 #: ../caribou/settings/caribou_settings.py:21
 msgid "Time between key transitions"
-msgstr "Timp între tranzițiile tastelor"
+msgstr "Timpul între tranzițiile tastelor"
 
 #: ../caribou/settings/caribou_settings.py:24
 msgid "Inverse scanning"
@@ -74,7 +75,7 @@ msgstr "Scanare inversă"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "Avansează cu comutatorul, activează prin zăbovire"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
@@ -82,7 +83,7 @@ msgstr "Repornește automat scanarea"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr "Repornește automat scanarea după activarea unui element"
+msgstr "Repornește automat scanarea după activarea elementului"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
@@ -176,34 +177,9 @@ msgstr "Butonul 2"
 msgid "Button 3"
 msgstr "Butonul 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:34
-#, python-format
-msgid "Error starting %s"
-msgstr "Eroare la pornirea %s"
-
-#: ../caribou/daemon/main.py:45
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"Pentru a utiliza %s trebuie să fie activată accesibilitatea. Doriți să o "
-"activați acum?"
-
-#: ../caribou/daemon/main.py:59
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr ""
-"Accesibilitatea a fost activată. Ieșiți din cont și intrați înapoi pentru a "
-"utiliza %s."
-
-#: ../caribou/daemon/main.py:156
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "AVERTISMENT - Caribou: widget editabil netratat:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -278,6 +254,28 @@ msgstr "Distanța maximă"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Distanța maximă atunci când tastatura este ascunsă"
+
+#: ../daemon/daemon.vala:217
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "- daemon de monitorizare a evenimentelor de accesibilitate pentru tastatura de pe ecran"
+
+#~ msgid "Error starting %s"
+#~ msgstr "Eroare la pornirea %s"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "Pentru a utiliza %s trebuie să fie activată accesibilitatea. Doriți să o "
+#~ "activați acum?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "Accesibilitatea a fost activată. Ieșiți din cont și intrați înapoi pentru "
+#~ "a utiliza %s."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "AVERTISMENT - Caribou: widget editabil netratat:"
 
 #~| msgid "Keyboard _layout:"
 #~ msgid "Keyboard layout"
