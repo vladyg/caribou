@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: caribou gnome-3-6\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2016-03-20 16:13+0000\n"
-"PO-Revision-Date: 2016-03-20 22:12+0100\n"
+"POT-Creation-Date: 2016-04-09 03:13+0000\n"
+"PO-Revision-Date: 2016-04-09 12:09+0200\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -28,11 +28,11 @@ msgstr "Scansion"
 
 #: ../caribou/settings/caribou_settings.py:8
 msgid "Enable scanning"
-msgstr "Abilite le scansion"
+msgstr "Abilite la scansion"
 
 #: ../caribou/settings/caribou_settings.py:9
 msgid "Enable switch scanning"
-msgstr "Abilite le scansion cun interutôr"
+msgstr "Abilite la scansion cun interutôr"
 
 #: ../caribou/settings/caribou_settings.py:12
 msgid "General"
@@ -80,7 +80,7 @@ msgstr "Reinviament automatic de scansion"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr "Reinvie automaticamentri le scansion dopo l'ativazion dal'element"
+msgstr "Torne invie in automatic la scansion dopo la ativazion dal element"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
@@ -156,23 +156,23 @@ msgstr "Bloc Num"
 
 #: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
-msgstr "Cric par l'interutôr"
+msgstr "Boton par l'interutôr"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
-msgstr "Cric dal mouse di doprâ in modalitât scansion"
+msgstr "Boton dal mouse di doprâ in modalitât scansion"
 
 #: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
-msgstr "Cric 1"
+msgstr "Boton 1"
 
 #: ../caribou/settings/caribou_settings.py:61
 msgid "Button 2"
-msgstr "Cric 2"
+msgstr "Boton 2"
 
 #: ../caribou/settings/caribou_settings.py:62
 msgid "Button 3"
-msgstr "Cric 3"
+msgstr "Boton 3"
 
 #: ../caribou/__init__.py:8
 msgid "Caribou"
@@ -205,7 +205,7 @@ msgid ""
 "text, to a fullscale keyboard."
 msgstr ""
 "La disposizion de tastiere a stabilis la forme e la complessitât de "
-"tastiere. A puès vê une forme \"naturâl\" ideâl par scrivi sempliçs test o "
+"tastiere. A pues vê une forme \"naturâl\" ideâl par scrivi sempliçs test o "
 "la forme di une tastiere complete."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
@@ -250,7 +250,7 @@ msgstr "Distance massime"
 
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
-msgstr "Distance massime cuant che la tastiere a jè platade"
+msgstr "Distance massime cuant che la tastiere e je platade"
 
 #: ../daemon/daemon.vala:217
 msgid "- accessibility event monitoring daemon for screen keyboard"
