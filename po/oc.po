@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou"
 "&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2015-11-10 16:11+0000\n"
-"PO-Revision-Date: 2016-02-23 19:15+0200\n"
+"POT-Creation-Date: 2016-04-29 15:14+0000\n"
+"PO-Revision-Date: 2016-05-05 21:49+0200\n"
 "Last-Translator: Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>\n"
 "Language-Team: Tot En Òc\n"
 "Language: oc\n"
@@ -139,7 +139,7 @@ msgstr "Tòca d'utilizar en mòde balejatge"
 
 #: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
-msgstr "Maj. de drecha"
+msgstr "Maj. de dreita"
 
 #: ../caribou/settings/caribou_settings.py:51
 msgid "Left shift"
@@ -155,7 +155,7 @@ msgstr "Alt Gr"
 
 #: ../caribou/settings/caribou_settings.py:54
 msgid "Num lock"
-msgstr "Varr. Num."
+msgstr "Verr. Num."
 
 #: ../caribou/settings/caribou_settings.py:55
 msgid "Switch button"
@@ -253,7 +253,7 @@ msgstr "Distància maximum"
 
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
-msgstr "Distància maximum per lo clavièr amagat"
+msgstr "Distància maximum pel clavièr amagat"
 
 #: ../daemon/daemon.vala:217
 msgid "- accessibility event monitoring daemon for screen keyboard"
