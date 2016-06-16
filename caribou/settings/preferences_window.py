@@ -20,6 +20,7 @@
 
 from caribou.settings.setting_types import *
 
+import gi
 from gi.repository import GObject
 gi.require_version('Gtk', '3.0')
 gi.require_version('Gdk', '3.0')

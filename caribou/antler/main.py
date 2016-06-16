@@ -1,3 +1,6 @@
+import gi
+gi.require_version('Caribou', '1.0')
+gi.require_version('Gtk', '3.0')
 from gi.repository import Caribou, GLib, GObject, Gtk
 from .window import AntlerWindowEntry
 from .keyboard_view import AntlerKeyboardView

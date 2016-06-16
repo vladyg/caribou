@@ -193,7 +193,7 @@ class AntlerLayout(Gtk.Box):
 
             for i, key in enumerate(col):
                 align = key.props.align
-                if not alignboxes.has_key(align):
+                if align not in alignboxes:
                     alignbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
                     alignbox.set_spacing(self._spacing)
                     alignboxes[align] = alignbox
@@ -288,7 +288,7 @@ class AntlerKeyboardView(Gtk.Notebook):
 
     def _load_style(self, provider, filename, search_path):
         spath = search_path[:]
-        if os.environ.has_key("ANTLER_THEME_PATH"):
+        if "ANTLER_THEME_PATH" in os.environ:
             spath.insert(0, os.environ["ANTLER_THEME_PATH"])
 
         for directory in spath:

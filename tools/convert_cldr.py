@@ -13,7 +13,7 @@ def parse_single_key(value):
     uc = 0
     if hasattr(__builtins__, 'unichr'):
         def unescape(m):
-            return unichr(int(m.group(1), 16))
+            return chr(int(m.group(1), 16))
     else:
         def unescape(m):
             return chr(int(m.group(1), 16))
@@ -66,7 +66,7 @@ def convert(source, tree):
                 for value in longPress.split(' '):
                     subkey = parse_single_key(value)
                     key.append(subkey)
-        for k, v in sorted(rows.items(), key=lambda x: x[0], reverse=True):
+        for k, v in sorted(list(rows.items()), key=lambda x: x[0], reverse=True):
             row = Element('row')
             for key in sorted(v, key=lambda x: x):
                 row.append(key[1])
