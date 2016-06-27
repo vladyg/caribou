@@ -1,6 +1,6 @@
 from caribou.settings.preferences_window import PreferencesDialog
 from caribou.settings import CaribouSettings
-from antler_settings import AntlerSettings
+from .antler_settings import AntlerSettings
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
