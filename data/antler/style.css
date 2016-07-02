@@ -38,7 +38,7 @@
 				     to (shade(@button_color1, 1.4)));
 }
 
-.antler-keyboard-button:insensitive { 
+.antler-keyboard-button:disabled {
   background-image: -gtk-gradient (linear,
 				     left top,
 				     left bottom,
@@ -48,7 +48,7 @@
 }
 
 .antler-keyboard-button:selected,
-.antler-keyboard-button:selected:inconsistent { /* scanning */
+.antler-keyboard-button:selected:indeterminate { /* scanning */
   background-image: -gtk-gradient (linear,
                                      left top,
                                      left bottom,
@@ -64,7 +64,7 @@
 				     to (shade(@key_scan_color1, 1.4)));
 }
 
-.antler-keyboard-button:inconsistent { /* scanning */
+.antler-keyboard-button:indeterminate { /* scanning */
   background-image: -gtk-gradient (linear,
                                      left top,
                                      left bottom,
