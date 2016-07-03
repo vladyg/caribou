@@ -45,6 +45,8 @@ class AnimatedWindowBase(Gtk.Window, Clutter.Animatable):
         }
     def __init__(self):
         GObject.GObject.__init__(self, type=Gtk.WindowType.POPUP)
+        Clutter.init(None)
+
         # animation
         self._stage = Clutter.Stage.get_default()
         self._move_animation = None
