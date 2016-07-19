@@ -29,4 +29,12 @@
     </foaf:Person>
   </maintainer>
 
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Parag Nemade</foaf:name>
+      <foaf:mbox rdf:resource="mailto:pnemade@fedoraproject.org" />
+      <gnome:userid>panemade</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+
 </Project>
