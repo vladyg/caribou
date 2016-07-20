@@ -1,4 +1,12 @@
 =============
+Version 0.4.21
+=============
+- Translation updates (Gujarati, Arabic, Friulian, Tajik, Romanian, Dutch, Occitan)
+- Bug 768104 - Initialize Clutter explicitly in antler code
+- Bug 768105 - Fix theme parsing error for antler keyboard style.css
+- Bug 767664 - Add missing python3 compatibility
+
+=============
 Version 0.4.20
 =============
 
