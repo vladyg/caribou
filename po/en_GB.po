@@ -6,10 +6,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-07 15:04+0100\n"
-"PO-Revision-Date: 2011-09-07 15:05+0100\n"
-"Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2016-05-19 15:11+0000\n"
+"PO-Revision-Date: 2016-09-14 15:19+0200\n"
+"Last-Translator: David King <amigadave@amigadave.com>\n"
 "Language-Team: British English <en@li.org>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
@@ -174,32 +175,9 @@ msgstr "Button 2"
 msgid "Button 3"
 msgstr "Button 3"
 
-#: ../caribou/__init__.py:2
+#: ../caribou/__init__.py:8
 msgid "Caribou"
 msgstr "Caribou"
-
-#: ../caribou/daemon/main.py:31
-#, python-format
-msgid "Error starting %s"
-msgstr "Error starting %s"
-
-#: ../caribou/daemon/main.py:42
-#, python-format
-msgid ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-msgstr ""
-"In order to use %s, accessibility needs to be enabled. Do you want to enable "
-"it now?"
-
-#: ../caribou/daemon/main.py:56
-#, python-format
-msgid "Accessibility has been enabled. Log out and back in again to use %s."
-msgstr "Accessibility has been enabled. Log out and back in again to use %s."
-
-#: ../caribou/daemon/main.py:153
-msgid "WARNING - Caribou: unhandled editable widget:"
-msgstr "WARNING - Caribou: unhandled editable widget:"
 
 #: ../caribou/antler/antler_settings.py:5
 msgid "Antler Preferences"
@@ -274,6 +252,27 @@ msgstr "Maximum Distance"
 #: ../caribou/antler/antler_settings.py:30
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maximum distance when keyboard is hidden"
+
+#: ../daemon/daemon.vala:217
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "- accessibility event monitoring daemon for screen keyboard"
+
+#~ msgid "Error starting %s"
+#~ msgstr "Error starting %s"
+
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+
+#~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
+#~ msgstr ""
+#~ "Accessibility has been enabled. Log out and back in again to use %s."
+
+#~ msgid "WARNING - Caribou: unhandled editable widget:"
+#~ msgstr "WARNING - Caribou: unhandled editable widget:"
 
 #~ msgid "Colors"
 #~ msgstr "Colours"
