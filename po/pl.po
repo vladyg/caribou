@@ -1,27 +1,23 @@
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Aviary.pl
-# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
-# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
-# gnomepl@aviary.pl
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Piotr Drąg <piotrdrag@gmail.com>, 2010-2015.
-# Aviary.pl <gnomepl@aviary.pl>, 2010-2015.
+# Polish translation for caribou.
+# Copyright © 2010-2016 the caribou authors.
+# This file is distributed under the same license as the caribou package.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010-2016.
+# Aviary.pl <community-poland@mozilla.org>, 2010-2016.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-25 13:23+0200\n"
-"PO-Revision-Date: 2015-08-25 13:24+0200\n"
+"POT-Creation-Date: 2016-08-22 13:44+0200\n"
+"PO-Revision-Date: 2016-08-22 13:45+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Poedit-Language: Polish\n"
-"X-Poedit-Country: Poland\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -49,7 +45,7 @@ msgstr "Tryb skanowania"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr "Typ skanowania, podgrupy, rzędy lub liniowe"
+msgstr "Typ skanowania, podgrupy, rzędy lub liniowy"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -61,7 +57,7 @@ msgstr "Rzędy"
 
 #: ../caribou/settings/caribou_settings.py:18
 msgid "Linear"
-msgstr "Liniowe"
+msgstr "Liniowy"
 
 #: ../caribou/settings/caribou_settings.py:20
 msgid "Step time"
@@ -133,11 +129,11 @@ msgstr "Mysz"
 
 #: ../caribou/settings/caribou_settings.py:46
 msgid "Switch key"
-msgstr "Klawisz przełącznika"
+msgstr "Klawisz przełączenia"
 
 #: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
-msgstr "Klawisz do użycia za pomocą trybu skanowania"
+msgstr "Klawisz używany w trybie skanowania"
 
 #: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
@@ -165,19 +161,19 @@ msgstr "Przycisk przełączenia"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
-msgstr "Przycisk myszy do użycia w trybie skanowania"
+msgstr "Przycisk myszy używany w trybie skanowania"
 
 #: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
-msgstr "Przycisk 1"
+msgstr "1. przycisk"
 
 #: ../caribou/settings/caribou_settings.py:61
 msgid "Button 2"
-msgstr "Przycisk 2"
+msgstr "2. przycisk"
 
 #: ../caribou/settings/caribou_settings.py:62
 msgid "Button 3"
-msgstr "Przycisk 3"
+msgstr "3. przycisk"
 
 #: ../caribou/__init__.py:8
 msgid "Caribou"
@@ -209,7 +205,7 @@ msgid ""
 "it could range from a 'natural' look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
-"Geometria klawiatury określa kształt i złożoność klawiatury. Może być "
+"Geometria klawiatury określa kształt i złożoność klawiatury. Może być "
 "„naturalna”, dobra do pisania prostego tekstu, albo pełnowymiarowa."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
@@ -230,7 +226,7 @@ msgstr "Skanowanie"
 #: ../caribou/antler/antler_settings.py:21
 #: ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
-msgstr "Użycie motywu systemu"
+msgstr "Motyw systemu"
 
 #: ../caribou/antler/antler_settings.py:23
 msgid "Minimum Alpha"
