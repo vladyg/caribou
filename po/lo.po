@@ -1,0 +1,257 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2016-06-22 13:25+0700\n"
+"PO-Revision-Date: 2016-06-22 14:02+0700\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: lo_LA\n"
+
+#: ../caribou/settings/caribou_settings.py:5
+msgid "Caribou Preferences"
+msgstr "ການຕັ້ງຄ່າ Caribou"
+
+#: ../caribou/settings/caribou_settings.py:6
+msgid "Scanning"
+msgstr "ກຳລັງສະແກນ"
+
+#: ../caribou/settings/caribou_settings.py:8
+msgid "Enable scanning"
+msgstr "ເປີດນຳໃຊ້ການສະແກນ"
+
+#: ../caribou/settings/caribou_settings.py:9
+msgid "Enable switch scanning"
+msgstr "ເປີດນຳໃຊ້ໂຫມດການປ່ຽນການສະແກນ"
+
+#: ../caribou/settings/caribou_settings.py:12
+msgid "General"
+msgstr "ທົ່ວໄປ"
+
+#: ../caribou/settings/caribou_settings.py:13
+msgid "Scanning mode"
+msgstr "ໂຫມດການສະແກນ"
+
+#: ../caribou/settings/caribou_settings.py:15
+msgid "Scanning type, subgroups, rows or linear"
+msgstr "ປະເພດການສະແກນ, ກູ່ມຍອຍ, ແຖວ ຫລື ເສັ້ນ"
+
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr "ກູ່ມຍອຍ"
+
+#: ../caribou/settings/caribou_settings.py:17
+msgid "Rows"
+msgstr "ແຖວ"
+
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr "ເສັ້ນ"
+
+#: ../caribou/settings/caribou_settings.py:20
+msgid "Step time"
+msgstr "ຊ່ວງເວລາ"
+
+#: ../caribou/settings/caribou_settings.py:21
+msgid "Time between key transitions"
+msgstr "ເວລາລະຫວາງການສົ່ງຜ່ານຄີ"
+
+#: ../caribou/settings/caribou_settings.py:24
+msgid "Inverse scanning"
+msgstr "ການສະແກນປີ້ນກັບຄືນ"
+
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
+msgstr "ຂັ້ນຕອນການສັບປ່ຽນແມ່ນສາມາດເປີດໃຊ້ໂດຍ dwelling"
+
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr "ລີສະຕາດການສະແກນແບບອັດຕະໂນມັດ"
+
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr "ລີສະຕາດການສະແກນແບບອັດຕະໂນມັດຫລັງຈາກມີການເປີດໄອເທັມ"
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr "ວົງວຽນການສະແກນ"
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr "ຫນື່ງ"
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr "ສອງ"
+
+#: ../caribou/settings/caribou_settings.py:33
+msgid "Three"
+msgstr "ສາມ"
+
+#: ../caribou/settings/caribou_settings.py:34
+msgid "Four"
+msgstr "ສີ"
+
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr "ຫ້າ"
+
+#: ../caribou/settings/caribou_settings.py:38
+msgid "Input"
+msgstr "ນຳເຂົ້າ"
+
+#: ../caribou/settings/caribou_settings.py:39
+msgid "Switch device"
+msgstr "ອຸປະກອນສັບປ່ຽນ"
+
+#: ../caribou/settings/caribou_settings.py:41
+msgid "Switch device, keyboard or mouse"
+msgstr "ອຸປະກອນສັບປຽນ, ຄີບອດ ຫລື ເມົ້າ"
+
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "ຄີບອດ"
+
+#: ../caribou/settings/caribou_settings.py:44
+msgid "Mouse"
+msgstr "ເມົ້າ"
+
+#: ../caribou/settings/caribou_settings.py:46
+msgid "Switch key"
+msgstr "ຄີສັບປ່ຽນ"
+
+#: ../caribou/settings/caribou_settings.py:48
+msgid "Key to use with scanning mode"
+msgstr "ຄີທີ່ໃຊ້ໃນໂຫມດການສະແກນ"
+
+#: ../caribou/settings/caribou_settings.py:50
+msgid "Right shift"
+msgstr "ກົດ shift ເບື້ອງຂວາ"
+
+#: ../caribou/settings/caribou_settings.py:51
+msgid "Left shift"
+msgstr "ກົດ shift ເບື້ອງຊ້າຍ"
+
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr "Space"
+
+#: ../caribou/settings/caribou_settings.py:53
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+#: ../caribou/settings/caribou_settings.py:54
+msgid "Num lock"
+msgstr "Num lock"
+
+#: ../caribou/settings/caribou_settings.py:55
+msgid "Switch button"
+msgstr "ປູ່ມກົດສັບປ່ຽນ"
+
+#: ../caribou/settings/caribou_settings.py:58
+msgid "Mouse button to use in the scanning mode"
+msgstr "ປູ່ມກົດເມົ້າທີ່ໃຊ້ໃນໂຫມດການສະແກນ"
+
+#: ../caribou/settings/caribou_settings.py:60
+msgid "Button 1"
+msgstr "ປຸມກົດທີ່ 1"
+
+#: ../caribou/settings/caribou_settings.py:61
+msgid "Button 2"
+msgstr "ປຸມກົດທີ່ 2"
+
+#: ../caribou/settings/caribou_settings.py:62
+msgid "Button 3"
+msgstr "ປຸມກົດທີ່ 3"
+
+#: ../caribou/__init__.py:8
+msgid "Caribou"
+msgstr "Caribou"
+
+#: ../caribou/antler/antler_settings.py:5
+msgid "Antler Preferences"
+msgstr "ການຕັ້ງຄ່າ Antler"
+
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler"
+msgstr "Antler"
+
+#: ../caribou/antler/antler_settings.py:7
+msgid "Appearance"
+msgstr "ຫນ້າຕາ"
+
+#: ../caribou/antler/antler_settings.py:9
+msgid "Keyboard Type"
+msgstr "ປະເພດຄີບອດ"
+
+#: ../caribou/antler/antler_settings.py:10
+msgid "The keyboard geometry Caribou should use"
+msgstr "ຮູບຮ່າງຂອງຄີບອດທີ່ Caribou ຄວນນຳໃຊ້"
+
+#: ../caribou/antler/antler_settings.py:11
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a 'natural' look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+"ຮູບຮ່າງຂອງຄີບອດທີ່ຈະເປັນໂຕພິຈາລະນາຮູບຊົງ ແລະ ຄວາມສັບສົນຂອງມັນ, ມັນສາມາດເບິງໄດ້ຈາກຂະຫນາດ "
+"'natural' ແລະ ຄວາມງາມຂອງການຂຽນຕົວຫນັງສືກັບຂະຫນາດເຕັມຂອງຄີບອດ."
+
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:16
+msgid "Touch"
+msgstr "ແຕະ"
+
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:18
+msgid "Full scale"
+msgstr "ເຕັມຂະຫນາດ"
+
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:20
+msgid "Scan"
+msgstr "ສະແກນ"
+
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
+msgid "Use System Theme"
+msgstr "ນຳໃຊ້ເທັມຂອງລະບົບ"
+
+#: ../caribou/antler/antler_settings.py:23
+msgid "Minimum Alpha"
+msgstr "ຕົວພິມນ້ອຍ"
+
+#: ../caribou/antler/antler_settings.py:24
+msgid "Minimal opacity of keyboard"
+msgstr "ລະດັບຄວາມທຶບແສງນ້ອຍສຸດຂອງຄີບອດ"
+
+#: ../caribou/antler/antler_settings.py:26
+msgid "Maximum Alpha"
+msgstr "ຕົວພິມໃຫຍ່"
+
+#: ../caribou/antler/antler_settings.py:27
+msgid "Maximal opacity of keyboard"
+msgstr "ລະດັບຄວາມທຶບແສງໃຫຍ່ສຸດຂອງຄີບອດ"
+
+#: ../caribou/antler/antler_settings.py:29
+msgid "Maximum Distance"
+msgstr "ໄລຍະທາງນ້ອຍສຸດ"
+
+#: ../caribou/antler/antler_settings.py:30
+msgid "Maximum distance when keyboard is hidden"
+msgstr "ໄລຍະຫາງໄກສຸດເມື່ອຄີບອດຖືກບັງຢູ່"
+
+#: ../daemon/daemon.vala:217
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "- ການເຂົ້າເຖິງການມໍນິເຕີສຳລັບຄີບອດໃນຫນ້າຈໍ"
