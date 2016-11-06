@@ -10,7 +10,7 @@ AntlerSettings = SettingsTopGroup(
                             _("The keyboard geometry Caribou should use"),
                             _("The keyboard geometry determines the shape "
                               "and complexity of the keyboard, it could range from "
-                              "a 'natural' look and feel good for composing simple "
+                              "a “natural” look and feel good for composing simple "
                               "text, to a fullscale keyboard."),
                             # Translators: Keyboard type (similar to touch/tactile device)
                             allowed=[(('touch'), _('Touch')),
