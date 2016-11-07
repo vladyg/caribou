@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from caribou.settings.setting_types import *
 from caribou import _
 
