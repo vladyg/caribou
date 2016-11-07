@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: caribou gnome-3-6\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2016-04-09 03:13+0000\n"
-"PO-Revision-Date: 2016-04-09 12:09+0200\n"
+"POT-Creation-Date: 2016-11-07 07:06+0000\n"
+"PO-Revision-Date: 2016-11-07 09:11+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 1.8.8\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -201,12 +201,12 @@ msgstr "Disposizion de tastiere di doprâ"
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
 "The keyboard geometry determines the shape and complexity of the keyboard, "
-"it could range from a 'natural' look and feel good for composing simple "
+"it could range from a “natural” look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
 "La disposizion de tastiere a stabilis la forme e la complessitât de "
-"tastiere. A pues vê une forme \"naturâl\" ideâl par scrivi sempliçs test o "
-"la forme di une tastiere complete."
+"tastiere. A pues vê une forme “naturâl” ideâl par scrivi sempliçs test o la "
+"forme di une tastiere complete."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -253,8 +253,9 @@ msgid "Maximum distance when keyboard is hidden"
 msgstr "Distance massime cuant che la tastiere e je platade"
 
 #: ../daemon/daemon.vala:217
-msgid "- accessibility event monitoring daemon for screen keyboard"
-msgstr "- demoni di events di acessibilitât par tastiere a schermi"
+msgid "— accessibility event monitoring daemon for screen keyboard"
+msgstr ""
+"— demoni che al ten di voli i events di acessibilitât pe tastiere a schermi"
 
 #~ msgid "Error starting %s"
 #~ msgstr "Erôr tal inviâ %s"
