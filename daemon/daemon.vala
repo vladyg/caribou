@@ -201,10 +201,6 @@ namespace Caribou {
     }
 }
 
-static const OptionEntry[] options = {
-    { null }
-};
-
 static int main (string[] args) {
     Gdk.init (ref args);
 
@@ -212,16 +208,6 @@ static int main (string[] args) {
     Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
     Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
     Intl.textdomain (Config.GETTEXT_PACKAGE);
-
-    var option_context = new OptionContext (_(
-        "— accessibility event monitoring daemon for screen keyboard"));
-    option_context.add_main_entries (options, "caribou");
-    try {
-        option_context.parse (ref args);
-    } catch (OptionError e) {
-        stderr.printf ("%s\n", e.message);
-        return 1;
-    }
 
     var retval = Atspi.init ();
     if (retval != 0) {
