@@ -1,15 +1,15 @@
 # Czech translation for caribou.
 # Copyright (C) 2010 caribou's COPYRIGHT HOLDER
 # This file is distributed under the same license as the caribou package.
-# Marek Černocký <marek@manet.cz>, 2010, 2011, 2013.
+# Marek Černocký <marek@manet.cz>, 2010, 2011, 2013, 2016.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: caribou master\n"
+"Project-Id-Version: caribou\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2015-02-04 07:06+0000\n"
-"PO-Revision-Date: 2013-12-27 07:54+0100\n"
+"POT-Creation-Date: 2016-11-07 07:06+0000\n"
+"PO-Revision-Date: 2016-11-08 08:16+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -202,7 +202,7 @@ msgstr "Konfigurace klávesnice, kterou by měla aplikace Caribou použít"
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
 "The keyboard geometry determines the shape and complexity of the keyboard, "
-"it could range from a 'natural' look and feel good for composing simple "
+"it could range from a “natural” look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
 "Konfigurace klávesnice určuje její tvar a komplexnost a může se pohybovat od "
@@ -253,8 +253,9 @@ msgstr "Maximální vzdálenost"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maximální vzdálenost, když je klávesnice skryta"
 
-#: ../daemon/daemon.vala:214
-msgid "- accessibility event monitoring daemon for screen keyboard"
+#: ../daemon/daemon.vala:217
+msgid "— accessibility event monitoring daemon for screen keyboard"
 msgstr ""
 "– démon sledující události týkajících se přistupnosti, aby spustil "
 "klávesnici na obrazovce"
+
