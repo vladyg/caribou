@@ -6,22 +6,22 @@
 # Gabriel Speckhahn <gabspeck@gmail.com>, 2011.
 # Antonio Fernandes C. Neto <fernandesn@gnome.org>, 2011.
 # Rafael Ferreira <rafael.f.f1@gmail.com>, 2013.
-#
+# Rafael Fontenelle <rafaelff@gnome.org>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2015-02-26 16:04+0000\n"
-"PO-Revision-Date: 2015-02-26 17:25-0300\n"
-"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou"
+"&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2016-11-07 07:06+0000\n"
+"PO-Revision-Date: 2016-11-09 18:46-0200\n"
+"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
 #: ../caribou/settings/caribou_settings.py:5
@@ -205,9 +205,13 @@ msgid "The keyboard geometry Caribou should use"
 msgstr "A geometria do teclado que o Caribou deve usar"
 
 #: ../caribou/antler/antler_settings.py:11
+#| msgid ""
+#| "The keyboard geometry determines the shape and complexity of the "
+#| "keyboard, it could range from a 'natural' look and feel good for "
+#| "composing simple text, to a fullscale keyboard."
 msgid ""
 "The keyboard geometry determines the shape and complexity of the keyboard, "
-"it could range from a 'natural' look and feel good for composing simple "
+"it could range from a “natural” look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
 "A geometria do teclado determina a forma e a complexidade do teclado, ela "
@@ -258,10 +262,11 @@ msgstr "Distância máxima"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Distância máxima quando o teclado permanece oculto"
 
-#: ../daemon/daemon.vala:214
-msgid "- accessibility event monitoring daemon for screen keyboard"
+#: ../daemon/daemon.vala:217
+#| msgid "- accessibility event monitoring daemon for screen keyboard"
+msgid "— accessibility event monitoring daemon for screen keyboard"
 msgstr ""
-"- serviço de monitoramento de evento de acessibilidade para o teclado virtual"
+"— serviço de monitoramento de evento de acessibilidade para o teclado virtual"
 
 #~ msgid "Error starting %s"
 #~ msgstr "Erro ao iniciar %s"
