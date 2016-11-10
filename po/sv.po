@@ -1,23 +1,23 @@
 # Swedish translation for caribou.
-# Copyright © 2010, 2011, 2015 Free Software Foundation, Inc.
+# Copyright © 2010, 2011, 2015, 2016 Free Software Foundation, Inc.
 # This file is distributed under the same license as the caribou package.
 # Daniel Nylander <po@danielnylander.se>, 2010, 2011.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N"
-"+L10N&component=default\n"
-"POT-Creation-Date: 2015-02-04 07:06+0000\n"
-"PO-Revision-Date: 2015-02-04 10:45+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2016-11-07 07:06+0000\n"
+"PO-Revision-Date: 2016-11-10 22:50+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.3\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -201,11 +201,13 @@ msgstr "Tangentbordets geometri som Caribou ska använda"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
-"The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' "
-"look and feel good for composing simple text, to a fullscale keyboard."
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a “natural” look and feel good for composing simple "
+"text, to a fullscale keyboard."
 msgstr ""
-"Tangentbordets geometri bestämmer form och komplexitet för tangentbordet. Det kan sträcka sig från ett "
-"”naturligt” utseende och känns bra för att skriva enkel text, ända till ett fullskaligt tangentbord."
+"Tangentbordets geometri bestämmer form och komplexitet för tangentbordet. "
+"Det kan sträcka sig från ett ”naturligt” utseende och känns bra för att "
+"skriva enkel text, ända till ett fullskaligt tangentbord."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -222,7 +224,8 @@ msgstr "Fullskala"
 msgid "Scan"
 msgstr "Sök av"
 
-#: ../caribou/antler/antler_settings.py:21 ../caribou/antler/antler_settings.py:22
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
 msgstr "Använd systemtema"
 
@@ -250,6 +253,6 @@ msgstr "Maximalt avstånd"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maximalt avstånd när tangentbordet är dolt"
 
-#: ../daemon/daemon.vala:214
-msgid "- accessibility event monitoring daemon for screen keyboard"
-msgstr "- demon som övervakar hjälpmedelshändelser för skärmtangentbord"
+#: ../daemon/daemon.vala:217
+msgid "— accessibility event monitoring daemon for screen keyboard"
+msgstr "— demon som övervakar hjälpmedelshändelser för skärmtangentbord"
