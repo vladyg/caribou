@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of Caribou.
 # Copyright (C) 2003-2004 Free Software Foundation, Inc.
 # Sigurd Gartmann <sigurd-translate@brogar.org>, 2003-2004.
-# Kjartan Maraas <kmaraas@gnome.org>, 2003-2015.
+# Kjartan Maraas <kmaraas@gnome.org>, 2003-2016.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: caribou 3.15.x\n"
+"Project-Id-Version: caribou 3.23.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-09 22:51+0100\n"
-"PO-Revision-Date: 2015-02-09 22:52+0100\n"
+"POT-Creation-Date: 2016-11-20 17:12+0100\n"
+"PO-Revision-Date: 2016-11-20 17:13+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -176,30 +176,30 @@ msgstr "Knapp 3"
 msgid "Caribou"
 msgstr "Caribou"
 
-#: ../caribou/antler/antler_settings.py:5
+#: ../caribou/antler/antler_settings.py:6
 msgid "Antler Preferences"
 msgstr "Brukervalg for Antler"
 
-#: ../caribou/antler/antler_settings.py:6
+#: ../caribou/antler/antler_settings.py:7
 msgid "Antler"
 msgstr "Antler"
 
-#: ../caribou/antler/antler_settings.py:7
+#: ../caribou/antler/antler_settings.py:8
 msgid "Appearance"
 msgstr "Utseende"
 
-#: ../caribou/antler/antler_settings.py:9
+#: ../caribou/antler/antler_settings.py:10
 msgid "Keyboard Type"
 msgstr "Type tastatur"
 
-#: ../caribou/antler/antler_settings.py:10
+#: ../caribou/antler/antler_settings.py:11
 msgid "The keyboard geometry Caribou should use"
 msgstr "Tastaturgeometri som Caribou skal bruke"
 
-#: ../caribou/antler/antler_settings.py:11
+#: ../caribou/antler/antler_settings.py:12
 msgid ""
 "The keyboard geometry determines the shape and complexity of the keyboard, "
-"it could range from a 'natural' look and feel good for composing simple "
+"it could range from a “natural” look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
 "Tastaturgeometri bestemmer form og kompleksitet for tastaturet. Det kan "
@@ -207,49 +207,45 @@ msgstr ""
 "et fullskala tastatur."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
-#: ../caribou/antler/antler_settings.py:16
+#: ../caribou/antler/antler_settings.py:17
 msgid "Touch"
 msgstr "Berøring"
 
 #. Translators: Keyboard type (conventional keyboard)
-#: ../caribou/antler/antler_settings.py:18
+#: ../caribou/antler/antler_settings.py:19
 msgid "Full scale"
 msgstr "Full skala"
 
 #. Translators: Keyboard type (scanned grid by rows/columns)
-#: ../caribou/antler/antler_settings.py:20
+#: ../caribou/antler/antler_settings.py:21
 msgid "Scan"
 msgstr "Søk"
 
-#: ../caribou/antler/antler_settings.py:21
 #: ../caribou/antler/antler_settings.py:22
+#: ../caribou/antler/antler_settings.py:23
 msgid "Use System Theme"
 msgstr "Bruk systemets tema"
 
-#: ../caribou/antler/antler_settings.py:23
+#: ../caribou/antler/antler_settings.py:24
 msgid "Minimum Alpha"
 msgstr "Minimal gjennomsiktighet"
 
-#: ../caribou/antler/antler_settings.py:24
+#: ../caribou/antler/antler_settings.py:25
 msgid "Minimal opacity of keyboard"
 msgstr "Minimal ugjennomsiktighet for tastatur"
 
-#: ../caribou/antler/antler_settings.py:26
+#: ../caribou/antler/antler_settings.py:27
 msgid "Maximum Alpha"
 msgstr "Maksimal gjennomsiktighet"
 
-#: ../caribou/antler/antler_settings.py:27
+#: ../caribou/antler/antler_settings.py:28
 msgid "Maximal opacity of keyboard"
 msgstr "Maksimal ugjennomsiktighet for tastatur"
 
-#: ../caribou/antler/antler_settings.py:29
+#: ../caribou/antler/antler_settings.py:30
 msgid "Maximum Distance"
 msgstr "Maksimal distanse"
 
-#: ../caribou/antler/antler_settings.py:30
+#: ../caribou/antler/antler_settings.py:31
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maksimal distanse når tastaturet er skjult"
-
-#: ../daemon/daemon.vala:214
-msgid "- accessibility event monitoring daemon for screen keyboard"
-msgstr "- tjeneste som lytter etter tilgjengelighetshendelser for tastatur på skjermen"
