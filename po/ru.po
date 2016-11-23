@@ -3,15 +3,15 @@
 # Copyright (C) Free Software Foundation.
 # Victor Vislobokov <corochoone@gmail.com>, 2010.
 # Yuri Myasoedov <omerta13@yadnex.ru>, 2011.
-# Stas Solovey <whats_up@tut.by>, 2015.
+# Stas Solovey <whats_up@tut.by>, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2015-03-30 03:07+0000\n"
-"PO-Revision-Date: 2015-03-30 12:10+0300\n"
+"POT-Creation-Date: 2016-11-07 07:06+0000\n"
+"PO-Revision-Date: 2016-11-24 00:35+0300\n"
 "Last-Translator: Stas Solovey <whats_up@tut.by>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -203,9 +203,13 @@ msgid "The keyboard geometry Caribou should use"
 msgstr "Используемая геометрия клавиатуры"
 
 #: ../caribou/antler/antler_settings.py:11
+#| msgid ""
+#| "The keyboard geometry determines the shape and complexity of the "
+#| "keyboard, it could range from a 'natural' look and feel good for "
+#| "composing simple text, to a fullscale keyboard."
 msgid ""
 "The keyboard geometry determines the shape and complexity of the keyboard, "
-"it could range from a 'natural' look and feel good for composing simple "
+"it could range from a “natural” look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
 "Геометрия клавиатуры определяет вид и полноту клавиатуры, она может "
@@ -256,8 +260,9 @@ msgstr "Максимальное расстояние"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Максимальное расстояние при скрытой клавиатуре"
 
-#: ../daemon/daemon.vala:214
-msgid "- accessibility event monitoring daemon for screen keyboard"
+#: ../daemon/daemon.vala:217
+#| msgid "- accessibility event monitoring daemon for screen keyboard"
+msgid "— accessibility event monitoring daemon for screen keyboard"
 msgstr ""
-"— служба слежения за событиями вспомогательных технологий для "
-"экранной клавиатуры"
+"— служба наблюдения за событиями вспомогательных технологий для экранной "
+"клавиатуры"
