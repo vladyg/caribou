@@ -5,23 +5,23 @@
 # Kostas Papadimas <pkst@gnome.org>, 2010.
 # Ioannis Zampoukas <ioza1964@yahoo.gr>, 2011, 2012.
 # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2014.
-# Efstathios Iosifidis <iosifidis@opensuse.org>, 2015.
+# Efstathios Iosifidis <iosifidis@opensuse.org>, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2015-02-26 04:04+0000\n"
-"PO-Revision-Date: 2015-02-26 12:30+0200\n"
+"POT-Creation-Date: 2016-11-07 07:06+0000\n"
+"PO-Revision-Date: 2016-12-24 11:10+0200\n"
 "Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
-"Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
+"Language-Team: Ελληνικά <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-Project-Style: gnome\n"
 
 #: ../caribou/settings/caribou_settings.py:5
@@ -205,9 +205,13 @@ msgid "The keyboard geometry Caribou should use"
 msgstr "Η γεωμετρία πληκτρολογίου που το Caribou να χρησιμοποιεί"
 
 #: ../caribou/antler/antler_settings.py:11
+#| msgid ""
+#| "The keyboard geometry determines the shape and complexity of the "
+#| "keyboard, it could range from a 'natural' look and feel good for "
+#| "composing simple text, to a fullscale keyboard."
 msgid ""
 "The keyboard geometry determines the shape and complexity of the keyboard, "
-"it could range from a 'natural' look and feel good for composing simple "
+"it could range from a “natural” look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
 "Η γεωμετρία του πληκτρολογίου καθορίζει τη μορφή και την πολυπλοκότητα του "
@@ -258,9 +262,9 @@ msgstr "Μέγιστη απόσταση"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Μέγιστη απόσταση όταν το πληκτρολόγιο είναι κρυμμένο"
 
-#: ../daemon/daemon.vala:214
-#| msgid "- daemon listening accessibility events to launch on screen keyboard"
-msgid "- accessibility event monitoring daemon for screen keyboard"
+#: ../daemon/daemon.vala:217
+#| msgid "- accessibility event monitoring daemon for screen keyboard"
+msgid "— accessibility event monitoring daemon for screen keyboard"
 msgstr ""
 "- η υπηρεσία παρακολούθησης συμβάντων προσβασιμότητας για εκκίνηση "
 "πληκτρολογίου οθόνης"
