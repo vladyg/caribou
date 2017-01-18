@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2016-06-22 13:25+0700\n"
-"PO-Revision-Date: 2016-06-22 14:02+0700\n"
+"POT-Creation-Date: 2017-01-18 14:07+0700\n"
+"PO-Revision-Date: 2017-01-18 14:18+0700\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
-"Last-Translator: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"Language: lo_LA\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: Saikeo Kavhanxay <kavhanxay@hotmail.com>\n"
+"Language: lao\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -45,7 +44,7 @@ msgstr "ໂຫມດການສະແກນ"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr "ປະເພດການສະແກນ, ກູ່ມຍອຍ, ແຖວ ຫລື ເສັ້ນ"
+msgstr "\"ປະເພດການສະແກນ, ກູ່ມຍອຍ, ແຖວ ຫລື ເສັ້ນ"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -101,7 +100,7 @@ msgstr "ສາມ"
 
 #: ../caribou/settings/caribou_settings.py:34
 msgid "Four"
-msgstr "ສີ"
+msgstr "ສີ່"
 
 #: ../caribou/settings/caribou_settings.py:35
 msgid "Five"
@@ -145,7 +144,7 @@ msgstr "ກົດ shift ເບື້ອງຊ້າຍ"
 
 #: ../caribou/settings/caribou_settings.py:52
 msgid "Space"
-msgstr "Space"
+msgstr "ຍະວ່າງ"
 
 #: ../caribou/settings/caribou_settings.py:53
 msgid "Alt Gr"
@@ -179,79 +178,75 @@ msgstr "ປຸມກົດທີ່ 3"
 msgid "Caribou"
 msgstr "Caribou"
 
-#: ../caribou/antler/antler_settings.py:5
+#: ../caribou/antler/antler_settings.py:6
 msgid "Antler Preferences"
 msgstr "ການຕັ້ງຄ່າ Antler"
 
-#: ../caribou/antler/antler_settings.py:6
+#: ../caribou/antler/antler_settings.py:7
 msgid "Antler"
 msgstr "Antler"
 
-#: ../caribou/antler/antler_settings.py:7
+#: ../caribou/antler/antler_settings.py:8
 msgid "Appearance"
 msgstr "ຫນ້າຕາ"
 
-#: ../caribou/antler/antler_settings.py:9
+#: ../caribou/antler/antler_settings.py:10
 msgid "Keyboard Type"
 msgstr "ປະເພດຄີບອດ"
 
-#: ../caribou/antler/antler_settings.py:10
+#: ../caribou/antler/antler_settings.py:11
 msgid "The keyboard geometry Caribou should use"
 msgstr "ຮູບຮ່າງຂອງຄີບອດທີ່ Caribou ຄວນນຳໃຊ້"
 
-#: ../caribou/antler/antler_settings.py:11
+#: ../caribou/antler/antler_settings.py:12
 msgid ""
 "The keyboard geometry determines the shape and complexity of the keyboard, "
-"it could range from a 'natural' look and feel good for composing simple "
+"it could range from a “natural” look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
 "ຮູບຮ່າງຂອງຄີບອດທີ່ຈະເປັນໂຕພິຈາລະນາຮູບຊົງ ແລະ ຄວາມສັບສົນຂອງມັນ, ມັນສາມາດເບິງໄດ້ຈາກຂະຫນາດ "
-"'natural' ແລະ ຄວາມງາມຂອງການຂຽນຕົວຫນັງສືກັບຂະຫນາດເຕັມຂອງຄີບອດ."
+"\"natural\" ແລະ ຄວາມງາມຂອງການຂຽນຕົວຫນັງສືກັບຂະຫນາດເຕັມຂອງຄີບອດ."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
-#: ../caribou/antler/antler_settings.py:16
+#: ../caribou/antler/antler_settings.py:17
 msgid "Touch"
 msgstr "ແຕະ"
 
 #. Translators: Keyboard type (conventional keyboard)
-#: ../caribou/antler/antler_settings.py:18
+#: ../caribou/antler/antler_settings.py:19
 msgid "Full scale"
 msgstr "ເຕັມຂະຫນາດ"
 
 #. Translators: Keyboard type (scanned grid by rows/columns)
-#: ../caribou/antler/antler_settings.py:20
+#: ../caribou/antler/antler_settings.py:21
 msgid "Scan"
 msgstr "ສະແກນ"
 
-#: ../caribou/antler/antler_settings.py:21
 #: ../caribou/antler/antler_settings.py:22
+#: ../caribou/antler/antler_settings.py:23
 msgid "Use System Theme"
 msgstr "ນຳໃຊ້ເທັມຂອງລະບົບ"
 
-#: ../caribou/antler/antler_settings.py:23
+#: ../caribou/antler/antler_settings.py:24
 msgid "Minimum Alpha"
 msgstr "ຕົວພິມນ້ອຍ"
 
-#: ../caribou/antler/antler_settings.py:24
+#: ../caribou/antler/antler_settings.py:25
 msgid "Minimal opacity of keyboard"
 msgstr "ລະດັບຄວາມທຶບແສງນ້ອຍສຸດຂອງຄີບອດ"
 
-#: ../caribou/antler/antler_settings.py:26
+#: ../caribou/antler/antler_settings.py:27
 msgid "Maximum Alpha"
 msgstr "ຕົວພິມໃຫຍ່"
 
-#: ../caribou/antler/antler_settings.py:27
+#: ../caribou/antler/antler_settings.py:28
 msgid "Maximal opacity of keyboard"
 msgstr "ລະດັບຄວາມທຶບແສງໃຫຍ່ສຸດຂອງຄີບອດ"
 
-#: ../caribou/antler/antler_settings.py:29
+#: ../caribou/antler/antler_settings.py:30
 msgid "Maximum Distance"
 msgstr "ໄລຍະທາງນ້ອຍສຸດ"
 
-#: ../caribou/antler/antler_settings.py:30
+#: ../caribou/antler/antler_settings.py:31
 msgid "Maximum distance when keyboard is hidden"
 msgstr "ໄລຍະຫາງໄກສຸດເມື່ອຄີບອດຖືກບັງຢູ່"
-
-#: ../daemon/daemon.vala:217
-msgid "- accessibility event monitoring daemon for screen keyboard"
-msgstr "- ການເຂົ້າເຖິງການມໍນິເຕີສຳລັບຄີບອດໃນຫນ້າຈໍ"
