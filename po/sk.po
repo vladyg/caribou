@@ -6,9 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2015-02-22 16:04+0000\n"
-"PO-Revision-Date: 2015-02-22 19:42+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2016-11-07 07:06+0000\n"
+"PO-Revision-Date: 2017-01-19 22:09+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.11\n"
 
 # Ponechal som Caribou ale do uvahy prichadza aj Sob alebo  Karibu
 # PK: prekladanie nazvu programu je hriech
@@ -204,11 +205,13 @@ msgstr "Geometria klávesnice, ktorú má Caribou použiť"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
-"The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a "
-"fullscale keyboard."
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a “natural” look and feel good for composing simple "
+"text, to a fullscale keyboard."
 msgstr ""
-"Geometria klávesnice určuje jej tvar a zložitosť. Môže sa pohybovať v rozsahu od „prirodzenej“, ktorá je dobrá na písanie jednoduchého textu až po plnohodnotnú "
-"klávesnicu."
+"Geometria klávesnice určuje jej tvar a zložitosť. Môže sa pohybovať v "
+"rozsahu od „prirodzenej“, ktorá je dobrá na písanie jednoduchého textu až po "
+"plnohodnotnú klávesnicu."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:16
@@ -227,7 +230,8 @@ msgstr "Plná veľkosť"
 msgid "Scan"
 msgstr "Sken"
 
-#: ../caribou/antler/antler_settings.py:21 ../caribou/antler/antler_settings.py:22
+#: ../caribou/antler/antler_settings.py:21
+#: ../caribou/antler/antler_settings.py:22
 msgid "Use System Theme"
 msgstr "Použiť systémovú tému"
 
@@ -257,18 +261,26 @@ msgstr "Maximálna vzdialenosť"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maximálna vzdialenosť, ked je klávesnica skrytá"
 
-#: ../daemon/daemon.vala:214
-msgid "- accessibility event monitoring daemon for screen keyboard"
-msgstr "- démon, ktorý sleduje udalosti zjednodušeného prístupu týkajúce sa klávesnice na obrazovke"
+#: ../daemon/daemon.vala:217
+msgid "— accessibility event monitoring daemon for screen keyboard"
+msgstr ""
+"— démon, ktorý sleduje udalosti zjednodušeného prístupu týkajúce sa "
+"klávesnice na obrazovke"
 
 #~ msgid "Error starting %s"
 #~ msgstr "Chyba spúšťania %s"
 
-#~ msgid "In order to use %s, accessibility needs to be enabled. Do you want to enable it now?"
-#~ msgstr "Aby ste mohli používať %s, podpora sprístupnenia musí byť povolená. Chcete ju teraz povoliť?"
+#~ msgid ""
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
+#~ "enable it now?"
+#~ msgstr ""
+#~ "Aby ste mohli používať %s, podpora sprístupnenia musí byť povolená. "
+#~ "Chcete ju teraz povoliť?"
 
 #~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
-#~ msgstr "Podpora sprístupnenia bola povolená. Na používanie %s sa odhláste a opäť sa prihláste."
+#~ msgstr ""
+#~ "Podpora sprístupnenia bola povolená. Na používanie %s sa odhláste a opäť "
+#~ "sa prihláste."
 
 #~ msgid "WARNING - Caribou: unhandled editable widget:"
 #~ msgstr "VAROVANIE - Caribou: neobsluhovateľný upraviteľný widget:"
