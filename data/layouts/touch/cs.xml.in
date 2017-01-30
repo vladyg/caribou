@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<layout xmlns:xi="http://www.w3.org/2001/XInclude">
+  <level mode="default" name="level1" xml:base="common/qwertz.xml">
+    <row>
+      <key name="q"/>
+      <key name="w"/>
+      <key name="e">
+        <key name="e"/>
+        <key name="eacute"/>
+      </key>
+      <key name="r">
+        <key name="r"/>
+        <key name="rcaron"/>
+      </key>
+      <key name="t">
+        <key name="t"/>
+        <key name="tcaron"/>
+      </key>
+      <key name="z">
+        <key name="z"/>
+        <key name="zcaron"/>
+      </key>
+      <key name="u">
+        <key name="u"/>
+        <key name="uacute"/>
+        <key name="uring"/>
+      </key>
+      <key name="i">
+        <key name="i"/>
+        <key name="iacute"/>
+      </key>
+      <key name="o">
+        <key name="o"/>
+        <key name="oacute"/>
+      </key>
+      <key name="p"/>
+      <key name="BackSpace" repeatable="yes"/>
+    </row>
+    <row align="right">
+      <key name="a">
+        <key name="a"/>
+        <key name="aacute"/>
+      </key>
+      <key name="s">
+        <key name="s"/>
+        <key name="scaron"/>
+      </key>
+      <key name="d">
+        <key name="d"/>
+        <key name="dcaron"/>
+      </key>
+      <key name="f"/>
+      <key name="g"/>
+      <key name="h"/>
+      <key name="j"/>
+      <key name="k"/>
+      <key name="l"/>
+      <key name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="Caribou_ShiftUp" toggle="level2"/>
+      <key name="y">
+        <key name="y"/>
+        <key name="yacute"/>
+      </key>
+      <key name="x"/>
+      <key name="c">
+        <key name="c"/>
+        <key name="ccaron"/>
+      </key>
+      <key name="v"/>
+      <key name="b"/>
+      <key name="n">
+        <key name="n"/>
+        <key name="ncaron"/>
+      </key>
+      <key name="m"/>
+      <key name="comma"/>
+      <key name="period"/>
+      <key name="question"/>
+    </row>
+    <row>
+      <key align="left" name="Caribou_Symbols" toggle="symbols1" width="2.0"/>
+      <key align="center" name="space" width="6.0" repeatable="yes"/>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+  </level>
+  <level mode="latched" name="level2" xml:base="common/qwertz.xml">
+    <row>
+      <key name="Q"/>
+      <key name="W"/>
+      <key name="E">
+        <key name="E"/>
+        <key name="Eacute"/>
+      </key>
+      <key name="R">
+        <key name="R"/>
+        <key name="Rcaron"/>
+      </key>
+      <key name="T">
+        <key name="T"/>
+        <key name="Tcaron"/>
+      </key>
+      <key name="Z">
+        <key name="Z"/>
+        <key name="Zcaron"/>
+      </key>
+      <key name="U">
+        <key name="U"/>
+        <key name="Uacute"/>
+        <key name="Uring"/>
+      </key>
+      <key name="I">
+        <key name="I"/>
+        <key name="Iacute"/>
+      </key>
+      <key name="O">
+        <key name="O"/>
+        <key name="Oacute"/>
+      </key>
+      <key name="P"/>
+      <key name="BackSpace" repeatable="yes"/>
+    </row>
+    <row align="right">
+      <key name="A">
+        <key name="A"/>
+        <key name="Aacute"/>
+      </key>
+      <key name="S">
+        <key name="S"/>
+        <key name="Scaron"/>
+      </key>
+      <key name="D">
+        <key name="D"/>
+        <key name="Dcaron"/>
+      </key>
+      <key name="F"/>
+      <key name="G"/>
+      <key name="H"/>
+      <key name="J"/>
+      <key name="K"/>
+      <key name="L"/>
+      <key name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="Caribou_ShiftDown" toggle="level1"/>
+      <key name="Y">
+        <key name="Y"/>
+        <key name="Yacute"/>
+      </key>
+      <key name="X"/>
+      <key name="C">
+        <key name="C"/>
+        <key name="Ccaron"/>
+      </key>
+      <key name="V"/>
+      <key name="B"/>
+      <key name="N">
+        <key name="N"/>
+        <key name="Ncaron"/>
+      </key>
+      <key name="M"/>
+      <key name="comma"/>
+      <key name="period"/>
+      <key name="question"/>
+    </row>
+    <row>
+      <key align="left" name="Caribou_Symbols" toggle="symbols1" width="2.0"/>
+      <key align="center" name="space" width="6.0" repeatable="yes"/>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+  </level>
+  <level mode="locked" name="symbols1" xml:base="common/symbols.xml">
+    <row>
+      <key name="1"/>
+      <key name="2"/>
+      <key name="3"/>
+      <key name="4"/>
+      <key name="5"/>
+      <key name="6"/>
+      <key name="7"/>
+      <key name="8"/>
+      <key name="9"/>
+      <key name="0"/>
+      <key name="BackSpace" repeatable="yes"/>
+    </row>
+    <row align="right">
+      <key name="minus"/>
+      <key name="slash"/>
+      <key name="colon"/>
+      <key name="semicolon"/>
+      <key name="parenleft"/>
+      <key name="parenright"/>
+      <key name="ampersand"/>
+      <key name="at"/>
+      <key name="grave"/>
+      <key name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="Caribou_Symbols_More" toggle="symbols2" width="2.0"/>
+      <key name="period" width="1.2"/>
+      <key name="comma" width="1.2"/>
+      <key name="question" width="1.2">
+        <key name="question"/>
+        <key name="questiondown"/>
+      </key>
+      <key name="exclam" width="1.2">
+        <key name="exclam"/>
+        <key name="exclamdown"/>
+      </key>
+      <key name="apostrophe" width="1.2"/>
+      <key name="quotedbl" width="1.2"/>
+    </row>
+    <row>
+      <key align="left" name="Caribou_Alpha" toggle="default" width="2.0"/>
+      <key align="center" name="space" width="6.0" repeatable="yes"/>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+  </level>
+  <level mode="locked" name="symbols2" xml:base="common/symbols.xml">
+    <row>
+      <key name="bracketleft"/>
+      <key name="bracketright"/>
+      <key name="braceleft"/>
+      <key name="braceright"/>
+      <key name="numbersign"/>
+      <key name="percent"/>
+      <key name="asciicircum"/>
+      <key name="asterisk"/>
+      <key name="plus"/>
+      <key name="equal"/>
+      <key name="BackSpace" repeatable="yes"/>
+    </row>
+    <row align="right">
+      <key align="right" name="underscore"/>
+      <key name="backslash"/>
+      <key name="bar"/>
+      <key name="asciitilde"/>
+      <key name="less"/>
+      <key name="greater"/>
+      <key name="dollar"/>
+      <key name="EuroSign"/>
+      <key name="sterling"/>
+      <key name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="Caribou_Symbols" toggle="symbols1" width="2.0"/>
+      <key name="period" width="1.2"/>
+      <key name="comma" width="1.2"/>
+      <key name="question" width="1.2">
+        <key name="question"/>
+        <key name="questiondown"/>
+      </key>
+      <key name="exclam" width="1.2">
+        <key name="exclam"/>
+        <key name="exclamdown"/>
+      </key>
+      <key name="apostrophe" width="1.2"/>
+      <key name="quotedbl" width="1.2"/>
+    </row>
+    <row>
+      <key align="left" name="Caribou_Alpha" toggle="default" width="2.0"/>
+      <key align="center" name="space" width="6.0" repeatable="yes"/>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+  </level>
+</layout>

@@ -1,6 +1,7 @@
 touchlayoutsdir = $(datadir)/caribou/layouts/touch
 touchlayouts_in_files =\
     ara.xml.in \
+    cs.xml.in \
     de.xml.in \
     fr.xml.in \
     il.xml.in \
@@ -15,6 +16,7 @@ common_files = \
 	common/symbols.xml
 
 ara.xml: $(common_files)
+cs.xml: $(common_files)
 de.xml: $(common_files)
 il.xml: $(common_files)
 ru.xml: $(common_files)
