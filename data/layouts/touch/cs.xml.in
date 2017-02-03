@@ -7,6 +7,7 @@
       <key name="e">
         <key name="e"/>
         <key name="eacute"/>
+        <key name="ecaron"/>
       </key>
       <key name="r">
         <key name="r"/>
@@ -24,6 +25,7 @@
         <key name="u"/>
         <key name="uacute"/>
         <key name="uring"/>
+        <key name="udiaeresis"/>
       </key>
       <key name="i">
         <key name="i"/>
@@ -32,6 +34,7 @@
       <key name="o">
         <key name="o"/>
         <key name="oacute"/>
+        <key name="odiaeresis"/>
       </key>
       <key name="p"/>
       <key name="BackSpace" repeatable="yes"/>
@@ -40,6 +43,7 @@
       <key name="a">
         <key name="a"/>
         <key name="aacute"/>
+        <key name="adiaeresis"/>
       </key>
       <key name="s">
         <key name="s"/>
@@ -92,6 +96,7 @@
       <key name="E">
         <key name="E"/>
         <key name="Eacute"/>
+        <key name="Ecaron"/>
       </key>
       <key name="R">
         <key name="R"/>
@@ -109,6 +114,7 @@
         <key name="U"/>
         <key name="Uacute"/>
         <key name="Uring"/>
+        <key name="Udiaeresis"/>
       </key>
       <key name="I">
         <key name="I"/>
@@ -117,6 +123,7 @@
       <key name="O">
         <key name="O"/>
         <key name="Oacute"/>
+        <key name="Odiaeresis"/>
       </key>
       <key name="P"/>
       <key name="BackSpace" repeatable="yes"/>
@@ -125,6 +132,7 @@
       <key name="A">
         <key name="A"/>
         <key name="Aacute"/>
+        <key name="Adiaeresis"/>
       </key>
       <key name="S">
         <key name="S"/>
