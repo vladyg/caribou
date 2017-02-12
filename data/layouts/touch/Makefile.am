@@ -4,6 +4,7 @@ touchlayouts_in_files =\
     cs.xml.in \
     de.xml.in \
     fr.xml.in \
+    hu.xml.in \
     il.xml.in \
     ru.xml.in \
     us.xml.in
@@ -18,6 +19,7 @@ common_files = \
 ara.xml: $(common_files)
 cs.xml: $(common_files)
 de.xml: $(common_files)
+hu.xml: $(common_files)
 il.xml: $(common_files)
 ru.xml: $(common_files)
 us.xml: $(common_files)

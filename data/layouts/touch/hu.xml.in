@@ -1,0 +1,424 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<layout xmlns:xi="http://www.w3.org/2001/XInclude">
+  <level mode="default" name="level1">
+    <row>
+      <key name="q">
+        <key name="q" />
+        <key name="backslash" />
+      </key>
+      <key name="w">
+        <key name="w" />
+        <key name="bar" />
+      </key>
+      <key name="e">
+        <key name="e" />
+        <key name="eacute" />
+        <key name="egrave" />
+        <key name="ecircumflex" />
+        <key name="ediaeresis" />
+        <key name="eogonek" />
+        <key name="eabovedot" />
+        <key name="emacron" />
+        <key name="ecaron"/>
+      </key>
+      <key name="r" />
+      <key name="t" />
+      <key name="z" />
+      <key name="u">
+        <key name="u" />
+        <key name="uacute" />
+        <key name="ucircumflex" />
+        <key name="ugrave" />
+        <key name="udiaeresis"/>
+        <key name="umacron" />
+        <key name="uring"/>
+        <key name="EuroSign" />
+      </key>
+      <key name="i">
+        <key name="i" />
+        <key name="iacute" />
+        <key name="icircumflex" />
+        <key name="idiaeresis" />
+        <key name="igrave" />
+        <key name="iogonek" />
+        <key name="imacron" />
+      </key>
+      <key name="o">
+        <key name="o" />
+        <key name="oacute" />
+        <key name="ocircumflex" />
+        <key name="odiaeresis"/>
+        <key name="ograve" />
+        <key name="otilde" />
+        <key name="oe" />
+        <key name="ooblique" />
+        <key name="omacron" />
+      </key>
+      <key name="p" />
+      <key name="odoubleacute">
+        <key name="odoubleacute" />
+        <key name="division" />
+      </key>
+      <key name="uacute">
+        <key name="uacute" />
+        <key name="multiply" />
+      </key>
+      <key name="oacute" />
+      <key name="BackSpace" repeatable="yes"/>
+    </row>
+    <row>
+      <key name="a">
+        <key name="a" />
+        <key name="aacute" />
+        <key name="agrave" />
+        <key name="acircumflex" />
+        <key name="adiaeresis" />
+        <key name="ae" />
+        <key name="atilde" />
+        <key name="aring" />
+        <key name="amacron" />
+      </key>
+      <key name="s" />
+      <key name="d" />
+      <key name="f">
+        <key name="f" />
+        <key name="bracketleft" />
+      </key>
+      <key name="g">
+        <key name="g" />
+        <key name="bracketright" />
+      </key>
+      <key name="h" />
+      <key name="j" />
+      <key name="k" />
+      <key name="l" />
+      <key name="eacute">
+        <key name="eacute" />
+        <key name="dollar" />
+      </key>
+      <key name="aacute" />
+      <key name="udoubleacute" />
+      <key name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="Caribou_ShiftUp" toggle="level2"/>
+      <key name="iacute" />
+      <key name="y" />
+      <key name="x">
+        <key name="x" />
+        <key name="numbersign" />
+      </key>
+      <key name="c">
+        <key name="c" />
+        <key name="ampersand" />
+      </key>
+      <key name="v">
+        <key name="v" />
+        <key name="at" />
+      </key>
+      <key name="b">
+        <key name="b" />
+        <key name="braceleft" />
+      </key>
+      <key name="n">
+        <key name="n" />
+        <key name="braceright" />
+      </key>
+      <key name="m" />
+      <key name="udiaeresis" />
+      <key name="odiaeresis" />
+      <key name="comma">
+        <key name="comma" />
+        <key name="question" />
+        <key name="semicolon" />
+      </key>
+      <key name="period">
+        <key name="period" />
+        <key name="colon" />
+      </key>
+      <key name="minus">
+        <key name="minus" />
+        <key name="underscore" />
+        <key name="asterisk" />
+      </key>
+    </row>
+    <row>
+      <key align="left" name="Caribou_Symbols" toggle="symbols1" width="2.0"/>
+      <key name="comma" />
+      <key align="center" name="space" width="6.0" repeatable="yes"/>
+      <key name="period">
+        <key name="question" />
+        <key name="exclam" />
+      </key>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+  </level>
+  <level mode="latched" name="level2">
+    <row>
+      <key name="Q" />
+      <key name="W" />
+      <key name="E">
+        <key name="E" />
+        <key name="Eacute" />
+        <key name="Egrave" />
+        <key name="Ecircumflex" />
+        <key name="Ediaeresis" />
+        <key name="Eogonek" />
+        <key name="Eabovedot" />
+        <key name="Emacron" />
+        <key name="Ecaron"/>
+      </key>
+      <key name="R" />
+      <key name="T" />
+      <key name="Z" />
+      <key name="U">
+        <key name="U" />
+        <key name="Uacute" />
+        <key name="Ugrave" />
+        <key name="Ucircumflex" />
+        <key name="Udiaeresis"/>
+        <key name="Umacron" />
+        <key name="Uring"/>
+        <key name="EuroSign" />
+      </key>
+      <key name="I">
+        <key name="I" />
+        <key name="Iacute" />
+        <key name="Icircumflex" />
+        <key name="Idiaeresis" />
+        <key name="Igrave" />
+        <key name="Iogonek" />
+        <key name="Imacron" />
+      </key>
+      <key name="O">
+        <key name="O" />
+        <key name="Oacute" />
+        <key name="Ocircumflex" />
+        <key name="Ograve" />
+        <key name="Otilde" />
+        <key name="OE" />
+        <key name="Ooblique" />
+        <key name="Omacron" />
+      </key>
+      <key name="P" />
+      <key name="Odoubleacute" />
+      <key name="Uacute" />
+      <key name="Oacute" />
+      <key name="BackSpace" repeatable="yes"/>
+    </row>
+    <row>
+      <key name="A">
+        <key name="A" />
+        <key name="Aacute" />
+        <key name="Agrave" />
+        <key name="Acircumflex" />
+        <key name="Adiaeresis" />
+        <key name="AE" />
+        <key name="Atilde" />
+        <key name="Aring" />
+        <key name="Amacron" />
+      </key>
+      <key name="S" />
+      <key name="D" />
+      <key name="F" />
+      <key name="G" />
+      <key name="H" />
+      <key name="J" />
+      <key name="K" />
+      <key name="L" />
+      <key name="Eacute" />
+      <key name="Aacute" />
+      <key name="Udoubleacute" />
+      <key name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="Caribou_ShiftDown" toggle="level1"/>
+      <key name="Iacute" />
+      <key name="Y" />
+      <key name="X" />
+      <key name="C" />
+      <key name="V" />
+      <key name="B" />
+      <key name="N" />
+      <key name="M" />
+      <key name="Udiaeresis" />
+      <key name="Odiaeresis" />
+      <key name="question"/>
+      <key name="colon" />
+      <key name="underscore" />
+    </row>
+    <row>
+      <key align="left" name="Caribou_Symbols" toggle="symbols1" width="2.0"/>
+      <key name="comma" />
+      <key align="center" name="space" width="6.0" repeatable="yes"/>
+      <key name="period">
+        <key name="question" />
+        <key name="exclam" />
+      </key>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+  </level>
+  <level mode="locked" name="symbols1" xml:base="common/symbols.xml">
+    <row>
+      <key name="0">
+        <key name="asciitilde" />
+      </key>
+      <key name="1">
+        <key name="onesuperior" />
+        <key name="onehalf" />
+        <key name="onethird" />
+        <key name="onequarter" />
+        <key name="oneeighth" />
+      </key>
+      <key name="2">
+        <key name="twosuperior" />
+        <key name="twothirds" />
+      </key>
+      <key name="3">
+        <key name="threesuperior" />
+        <key name="threequarters" />
+        <key name="threeeighths" />
+      </key>
+      <key name="4">
+        <key name="breve" />
+      </key>
+      <key name="5">
+        <key name="fiveeighths" />
+      </key>
+      <key name="6" />
+      <key name="7">
+        <key name="seveneighths" />
+      </key>
+      <key name="8" />
+      <key name="9" />
+      <key name="BackSpace" repeatable="yes"/>
+    </row>
+    <row>
+      <key name="at" />
+      <key name="numbersign" />
+      <key name="dollar">
+        <key name="EuroSign" />
+        <key name="cent" />
+        <key name="sterling" />
+        <key name="yen" />
+      </key>
+      <key name="underscore" />
+      <key name="ampersand" />
+      <key name="minus">
+        <key name="endash" />
+        <key name="emdash" />
+        <key name="periodcentered" />
+      </key>
+      <key name="plus">
+        <key name="plusminus" />
+      </key>
+      <key name="parenleft">
+        <key name="less" />
+        <key name="braceleft" />
+        <key name="bracketleft" />
+      </key>
+      <key name="parenright">
+        <key name="greater" />
+        <key name="braceright" />
+        <key name="bracketright" />
+      </key>
+      <key name="slash" />
+      <key name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="Caribou_Symbols_More" toggle="symbols2" width="2.0"/>
+      <key name="comma" />
+      <key name="asterisk">
+        <key name="dagger" />
+        <key name="doubledagger" />
+      </key>
+      <key name="quotedbl">
+        <key name="leftdoublequotemark" />
+        <key name="rightdoublequotemark" />
+        <key name="guillemotleft" />
+        <key name="guillemotright" />
+      </key>
+      <key name="apostrophe">
+        <key name="leftsinglequotemark" />
+        <key name="rightsinglequotemark" />
+      </key>
+      <key name="colon" />
+      <key name="semicolon" />
+      <key name="exclam">
+        <key name="exclamdown" />
+      </key>
+      <key name="question">
+        <key name="questiondown" />
+      </key>
+      <key name="period" />
+    </row>
+    <row>
+      <key align="left" name="Caribou_Alpha" toggle="default" width="2.0"/>
+      <key align="center" name="space" width="6.0" repeatable="yes"/>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+  </level>
+  <level mode="locked" name="symbols2" xml:base="common/symbols.xml">
+    <row>
+      <key name="asciitilde" />
+      <key name="grave" />
+      <key name="bar" />
+      <key name="enfilledcircbullet">
+        <key name="heart" />
+        <key name="diamond" />
+        <key name="club" />
+      </key>
+      <key name="radical" />
+      <key name="Greek_PI">
+        <key name="Greek_pi" />
+      </key>
+      <key name="division" />
+      <key name="multiply" />
+      <key name="paragraph">
+        <key name="section" />
+      </key>
+      <key name="BackSpace" repeatable="yes"/>
+    </row>
+    <row>
+      <key name="sterling" />
+      <key name="EuroSign" />
+      <key name="cent" />
+      <key name="yen" />
+      <key name="asciicircum">
+        <key name="uparrow" />
+        <key name="downarrow" />
+        <key name="leftarrow" />
+        <key name="rightarrow" />
+      </key>
+      <key name="degree">
+        <key name="minutes" />
+        <key name="seconds" />
+      </key>
+      <key name="equal">
+        <key name="notequal" />
+        <key name="infinity" />
+      </key>
+      <key name="braceleft" />
+      <key name="braceright" />
+      <key name="backslash" />
+      <key name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="Caribou_Symbols" toggle="symbols1" width="2.0"/>
+      <key name="less" />
+      <key name="percent" />
+      <key name="copyright" />
+      <key name="registered" />
+      <key name="trademark" />
+      <key name="careof" />
+      <key name="bracketleft" />
+      <key name="bracketright" />
+      <key name="greater" />
+    </row>
+    <row>
+      <key align="left" name="Caribou_Alpha" toggle="default" width="2.0"/>
+      <key align="center" name="space" width="6.0" repeatable="yes"/>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+  </level>
+</layout>
