@@ -7,9 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-21 16:26+0100\n"
-"PO-Revision-Date: 2015-03-14 17:39+0100\n"
+"Report-Msgid-Bugs-To: "
+"http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2016-11-07 07:06+0000\n"
+"PO-Revision-Date: 2017-02-16 13:06+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -75,7 +76,7 @@ msgstr "Invers skanning"
 # "Klick"
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr "Gå trinvis frem med kontakten, aktiver ved at holde nede."
+msgstr "Gå trinvis frem med kontakten, aktiver ved at holde nede"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
@@ -204,7 +205,7 @@ msgstr "Tastaturgeometrien som Caribou skal bruge"
 #: ../caribou/antler/antler_settings.py:11
 msgid ""
 "The keyboard geometry determines the shape and complexity of the keyboard, "
-"it could range from a 'natural' look and feel good for composing simple "
+"it could range from a “natural” look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
 "Tastaturgeometrien bestemmer formen og kompleksiteten for tastaturet, den "
@@ -255,19 +256,21 @@ msgstr "Maksimal distance"
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maksimal distance når tastaturet er skjult"
 
-#: ../daemon/daemon.vala:214
-msgid "- accessibility event monitoring daemon for screen keyboard"
+#: ../daemon/daemon.vala:217
+#, fuzzy
+#| msgid "- accessibility event monitoring daemon for screen keyboard"
+msgid "— accessibility event monitoring daemon for screen keyboard"
 msgstr "- dæmon som lytter til tilgængelighedsbegivenheder for skærmtastatur"
 
 #~ msgid "Error starting %s"
 #~ msgstr "Fejl ved start af %s"
 
 #~ msgid ""
-#~ "In order to use %s, accessibility needs to be enabled. Do you want to "
-#~ "enable it now?"
+#~ "In order to use %s, accessibility needs to be enabled. Do you want to enable "
+#~ "it now?"
 #~ msgstr ""
-#~ "For at bruge %s, skal tilgængelighed være aktiveret. Ønsker du at "
-#~ "aktivere den nu?"
+#~ "For at bruge %s, skal tilgængelighed være aktiveret. Ønsker du at aktivere "
+#~ "den nu?"
 
 #~ msgid "Accessibility has been enabled. Log out and back in again to use %s."
 #~ msgstr ""
@@ -275,3 +278,4 @@ msgstr "- dæmon som lytter til tilgængelighedsbegivenheder for skærmtastatur"
 
 #~ msgid "WARNING - Caribou: unhandled editable widget:"
 #~ msgstr "ADVARSEL - Caribou: ikke-håndteret redigérbar kontrol:"
+
