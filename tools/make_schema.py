@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-from gi.repository import GLib
 import xml.dom.minidom
 
 import os, sys
