@@ -2,7 +2,7 @@
 
 import xml.dom.minidom
 
-import os, sys
+import io, os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from caribou.settings import caribou_settings
@@ -21,7 +21,7 @@ class SchemasMaker:
         schemafile.appendChild(schema)
         self._create_schema(self.settings, doc, schema)
 
-        fp = open(output, 'w')
+        fp = io.open(output, 'w', encoding='UTF-8')
         self._pretty_xml(fp, schemafile)
         fp.close()
 
