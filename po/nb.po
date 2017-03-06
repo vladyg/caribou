@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of Caribou.
 # Copyright (C) 2003-2004 Free Software Foundation, Inc.
 # Sigurd Gartmann <sigurd-translate@brogar.org>, 2003-2004.
-# Kjartan Maraas <kmaraas@gnome.org>, 2003-2016.
+# Kjartan Maraas <kmaraas@gnome.org>, 2003-2017.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: caribou 3.23.x\n"
+"Project-Id-Version: caribou 3.24.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-20 17:12+0100\n"
-"PO-Revision-Date: 2016-11-20 17:13+0100\n"
+"POT-Creation-Date: 2017-03-06 20:32+0100\n"
+"PO-Revision-Date: 2017-03-06 20:35+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
