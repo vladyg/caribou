@@ -5,10 +5,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: caribou gnome 3.14\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2014-09-18 15:00+0000\n"
-"PO-Revision-Date: 2014-09-18 21:21+0400\n"
+"Project-Id-Version: Gnome Nepali Translation Project\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2017-02-23 10:45+0000\n"
+"PO-Revision-Date: 2017-08-03 14:16+0545\n"
 "Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
 "Language-Team: Nepali Translation Team <chautari@gmail.com>\n"
 "Language: ne\n"
@@ -16,8 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Nepali\n"
-"X-Poedit-Country: Nepal\n"
+"X-Generator: Poedit 2.0.3\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -29,21 +29,19 @@ msgstr "स्क्यान गर्दै"
 
 #: ../caribou/settings/caribou_settings.py:8
 msgid "Enable scanning"
-msgstr "स्क्यानिङ सक्षम "
+msgstr "स्क्यानिङ सक्षम"
 
 #: ../caribou/settings/caribou_settings.py:9
-#, fuzzy
 msgid "Enable switch scanning"
-msgstr "%s: नयाँ सन्देशहरू स्क्यान गर्दै"
+msgstr "स्विच स्क्यानिङ सक्षम"
 
 #: ../caribou/settings/caribou_settings.py:12
 msgid "General"
 msgstr "साधारण"
 
 #: ../caribou/settings/caribou_settings.py:13
-#, fuzzy
 msgid "Scanning mode"
-msgstr "पार्टी मोड"
+msgstr "स्क्यान शैलि"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
@@ -51,7 +49,7 @@ msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
-msgstr ""
+msgstr "उप-समूहहरू"
 
 #: ../caribou/settings/caribou_settings.py:17
 msgid "Rows"
@@ -62,37 +60,32 @@ msgid "Linear"
 msgstr "रेखात्मक"
 
 #: ../caribou/settings/caribou_settings.py:20
-#, fuzzy
 msgid "Step time"
-msgstr "समय र खर्चहरू"
+msgstr "समय चरण"
 
 #: ../caribou/settings/caribou_settings.py:21
-#, fuzzy
 msgid "Time between key transitions"
-msgstr "चाल बीचको समय मिलिसकेन्डमा ।"
+msgstr "मुख्य बीचको समय"
 
 #: ../caribou/settings/caribou_settings.py:24
-#, fuzzy
 msgid "Inverse scanning"
-msgstr "स्क्यानिङ रोक्नुहोस्"
+msgstr "उल्टा स्क्यान गर्दै"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
 msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:28
-#, fuzzy
 msgid "Auto-restart scanning"
-msgstr "%s: नयाँ सन्देशहरू स्क्यान गर्दै"
+msgstr "स्क्यानिङ स्वत: पुन सञ्चालन"
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
 msgstr ""
 
 #: ../caribou/settings/caribou_settings.py:30
-#, fuzzy
 msgid "Scan cycles"
-msgstr "फोल्डर स्क्यान गर्नुहोस्..."
+msgstr "स्क्यान चक्र"
 
 #: ../caribou/settings/caribou_settings.py:31
 msgid "One"
@@ -119,13 +112,12 @@ msgid "Input"
 msgstr "आगत"
 
 #: ../caribou/settings/caribou_settings.py:39
-#, fuzzy
 msgid "Switch device"
-msgstr "यन्त्र मार्ग"
+msgstr "यन्त्र फेर्नुहोस्"
 
 #: ../caribou/settings/caribou_settings.py:41
 msgid "Switch device, keyboard or mouse"
-msgstr ""
+msgstr "यन्त्र ,कुञ्जिपाटि वा माउस फेर्नुहोस्"
 
 #: ../caribou/settings/caribou_settings.py:43
 msgid "Keyboard"
@@ -136,13 +128,12 @@ msgid "Mouse"
 msgstr "माउस"
 
 #: ../caribou/settings/caribou_settings.py:46
-#, fuzzy
 msgid "Switch key"
-msgstr "कुञ्जी प्रकार:"
+msgstr "कुञ्जि स्विच गर्नुहोस्"
 
 #: ../caribou/settings/caribou_settings.py:48
 msgid "Key to use with scanning mode"
-msgstr ""
+msgstr "स्क्यान शैलि परिनत गर्ने वटन"
 
 #: ../caribou/settings/caribou_settings.py:50
 msgid "Right shift"
@@ -161,14 +152,12 @@ msgid "Alt Gr"
 msgstr "Alt Gr"
 
 #: ../caribou/settings/caribou_settings.py:54
-#, fuzzy
 msgid "Num lock"
 msgstr "नम लक"
 
 #: ../caribou/settings/caribou_settings.py:55
-#, fuzzy
 msgid "Switch button"
-msgstr "स्विच प्रयोगकर्ता वटन देखाउनुहोस्"
+msgstr "स्विच वटन"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
@@ -190,83 +179,73 @@ msgstr "बटन ३"
 msgid "Caribou"
 msgstr "क्यारिबोउ"
 
-#: ../caribou/antler/antler_settings.py:5
-#, fuzzy
-msgid "Antler Preferences"
-msgstr "अडियो स्क्रोब्लर प्राथमिकता"
-
 #: ../caribou/antler/antler_settings.py:6
-msgid "Antler"
-msgstr ""
+msgid "Antler Preferences"
+msgstr "एन्टलर प्राथमिकताहरु"
 
 #: ../caribou/antler/antler_settings.py:7
-#, fuzzy
-msgid "Appearance"
-msgstr "मोहडा"
+msgid "Antler"
+msgstr "एन्टलर"
 
-#: ../caribou/antler/antler_settings.py:9
-msgid "Keyboard Type"
-msgstr "कुञ्जी प्रकार:"
+#: ../caribou/antler/antler_settings.py:8
+msgid "Appearance"
+msgstr "देखिएको"
 
 #: ../caribou/antler/antler_settings.py:10
+msgid "Keyboard Type"
+msgstr "कुञ्जी प्रकार"
+
+#: ../caribou/antler/antler_settings.py:11
 msgid "The keyboard geometry Caribou should use"
 msgstr ""
 
-#: ../caribou/antler/antler_settings.py:11
-msgid "The keyboard geometry determines the shape and complexity of the keyboard, it could range from a 'natural' look and feel good for composing simple text, to a fullscale keyboard."
+#: ../caribou/antler/antler_settings.py:12
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a “natural” look and feel good for composing simple "
+"text, to a fullscale keyboard."
 msgstr ""
 
 #. Translators: Keyboard type (similar to touch/tactile device)
-#: ../caribou/antler/antler_settings.py:16
+#: ../caribou/antler/antler_settings.py:17
 msgid "Touch"
-msgstr ""
+msgstr "स्पर्श"
 
 #. Translators: Keyboard type (conventional keyboard)
-#: ../caribou/antler/antler_settings.py:18
+#: ../caribou/antler/antler_settings.py:19
 msgid "Full scale"
-msgstr "मापन तत्व:"
+msgstr "पुर्ण मापन"
 
 #. Translators: Keyboard type (scanned grid by rows/columns)
-#: ../caribou/antler/antler_settings.py:20
+#: ../caribou/antler/antler_settings.py:21
 msgid "Scan"
 msgstr "स्क्यान"
 
-#: ../caribou/antler/antler_settings.py:21
 #: ../caribou/antler/antler_settings.py:22
-#, fuzzy
-msgid "Use System Theme"
-msgstr "कुनै पनी होइन(प्रणाली विषयवस्तु प्रयोग गर्नुहोस्)"
-
 #: ../caribou/antler/antler_settings.py:23
-#, fuzzy
-msgid "Minimum Alpha"
-msgstr "ग्रीक अल्फा"
+msgid "Use System Theme"
+msgstr "प्रणाली विषयवस्तु प्रयोग गर्नुहोस्"
 
 #: ../caribou/antler/antler_settings.py:24
-#, fuzzy
-msgid "Minimal opacity of keyboard"
-msgstr "कुञ्जीपाटी सक्षम पार्नुहोस्"
+msgid "Minimum Alpha"
+msgstr "न्यूनतम अल्फा"
 
-#: ../caribou/antler/antler_settings.py:26
-#, fuzzy
-msgid "Maximum Alpha"
-msgstr "ग्रीक अल्फा"
+#: ../caribou/antler/antler_settings.py:25
+msgid "Minimal opacity of keyboard"
+msgstr "कुञ्जीपाटीको न्यूनतम अस्पष्टता"
 
 #: ../caribou/antler/antler_settings.py:27
-#, fuzzy
-msgid "Maximal opacity of keyboard"
-msgstr "कुञ्जीपाटी सक्षम पार्नुहोस्"
+msgid "Maximum Alpha"
+msgstr "अधिकतम अल्फा"
 
-#: ../caribou/antler/antler_settings.py:29
-#, fuzzy
-msgid "Maximum Distance"
-msgstr "दूरी एकाइ"
+#: ../caribou/antler/antler_settings.py:28
+msgid "Maximal opacity of keyboard"
+msgstr "कुञ्जीपाटीको अधिकतमअस्पष्टता"
 
 #: ../caribou/antler/antler_settings.py:30
+msgid "Maximum Distance"
+msgstr "अधिकतम दुरी"
+
+#: ../caribou/antler/antler_settings.py:31
 msgid "Maximum distance when keyboard is hidden"
 msgstr ""
-
-#: ../daemon/daemon.vala:216
-msgid "- daemon listening accessibility events to launch on screen keyboard"
-msgstr ""
-
