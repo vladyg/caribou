@@ -1,14 +1,14 @@
 # Bulgarian translation of caribou po-file.
-# Copyright (C) 2010, 2011, 2015 Free Software Foundation, Inc.
+# Copyright (C) 2010, 2011, 2015, 2017 Free Software Foundation, Inc.
 # This file is distributed under the same license as the caribou package.
 # Ivaylo Valkov <ivaylo@e-valkov.org>, 2010, 2011.
-# Alexander Shopov <ash@kambanaria.org>, 2015.
+# Alexander Shopov <ash@kambanaria.org>, 2015, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-09 19:31+0200\n"
-"PO-Revision-Date: 2015-03-09 19:30+0200\n"
+"POT-Creation-Date: 2017-09-02 08:57+0300\n"
+"PO-Revision-Date: 2017-08-18 10:05+0200\n"
 "Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -176,30 +176,30 @@ msgstr "Бутон 3"
 msgid "Caribou"
 msgstr "Екранна клавиатура (Caribou)"
 
-#: ../caribou/antler/antler_settings.py:5
+#: ../caribou/antler/antler_settings.py:6
 msgid "Antler Preferences"
 msgstr "Настройки на Antler"
 
-#: ../caribou/antler/antler_settings.py:6
+#: ../caribou/antler/antler_settings.py:7
 msgid "Antler"
 msgstr "Antler"
 
-#: ../caribou/antler/antler_settings.py:7
+#: ../caribou/antler/antler_settings.py:8
 msgid "Appearance"
 msgstr "Външен вид"
 
-#: ../caribou/antler/antler_settings.py:9
+#: ../caribou/antler/antler_settings.py:10
 msgid "Keyboard Type"
 msgstr "Вид на клавиатурата"
 
-#: ../caribou/antler/antler_settings.py:10
+#: ../caribou/antler/antler_settings.py:11
 msgid "The keyboard geometry Caribou should use"
 msgstr "Геометрията на клавиатурата, която да се използва от Caribou"
 
-#: ../caribou/antler/antler_settings.py:11
+#: ../caribou/antler/antler_settings.py:12
 msgid ""
 "The keyboard geometry determines the shape and complexity of the keyboard, "
-"it could range from a 'natural' look and feel good for composing simple "
+"it could range from a “natural” look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
 "Геометрията на клавиатурата определя формата и сложността на клавиатурата. "
@@ -207,49 +207,45 @@ msgstr ""
 "клавиатура с пълен набор клавиши."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
-#: ../caribou/antler/antler_settings.py:16
+#: ../caribou/antler/antler_settings.py:17
 msgid "Touch"
 msgstr "Сензорна"
 
 #. Translators: Keyboard type (conventional keyboard)
-#: ../caribou/antler/antler_settings.py:18
+#: ../caribou/antler/antler_settings.py:19
 msgid "Full scale"
 msgstr "Пълен набор клавиши"
 
 #. Translators: Keyboard type (scanned grid by rows/columns)
-#: ../caribou/antler/antler_settings.py:20
+#: ../caribou/antler/antler_settings.py:21
 msgid "Scan"
 msgstr "Сканираща"
 
-#: ../caribou/antler/antler_settings.py:21
 #: ../caribou/antler/antler_settings.py:22
+#: ../caribou/antler/antler_settings.py:23
 msgid "Use System Theme"
 msgstr "Използване на стандартната тема"
 
-#: ../caribou/antler/antler_settings.py:23
+#: ../caribou/antler/antler_settings.py:24
 msgid "Minimum Alpha"
 msgstr "Най-ниска непрозрачност"
 
-#: ../caribou/antler/antler_settings.py:24
+#: ../caribou/antler/antler_settings.py:25
 msgid "Minimal opacity of keyboard"
 msgstr "Клавиатура с най-ниска непрозрачност"
 
-#: ../caribou/antler/antler_settings.py:26
+#: ../caribou/antler/antler_settings.py:27
 msgid "Maximum Alpha"
 msgstr "Най-висока непрозрачност"
 
-#: ../caribou/antler/antler_settings.py:27
+#: ../caribou/antler/antler_settings.py:28
 msgid "Maximal opacity of keyboard"
 msgstr "Клавиатура с най-висока непрозрачност"
 
-#: ../caribou/antler/antler_settings.py:29
+#: ../caribou/antler/antler_settings.py:30
 msgid "Maximum Distance"
 msgstr "Най-голямо разстояние"
 
-#: ../caribou/antler/antler_settings.py:30
+#: ../caribou/antler/antler_settings.py:31
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Най-голямото разстояние, когато клавиатурата е скрита"
-
-#: ../daemon/daemon.vala:214
-msgid "- accessibility event monitoring daemon for screen keyboard"
-msgstr "— демон, следящ за събитията за достъпност на екранната клавиатура"
