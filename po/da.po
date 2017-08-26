@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caribou master\n"
 "Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2016-11-07 07:06+0000\n"
+"https://bugzilla.gnome.org/enter_bug.cgi?product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2017-02-23 10:45+0000\n"
 "PO-Revision-Date: 2017-02-16 13:06+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -182,85 +182,82 @@ msgstr "Knap 3"
 msgid "Caribou"
 msgstr "Caribou"
 
-#: ../caribou/antler/antler_settings.py:5
+#: ../caribou/antler/antler_settings.py:6
 msgid "Antler Preferences"
 msgstr "Indstillinger for Antler"
 
-#: ../caribou/antler/antler_settings.py:6
+#: ../caribou/antler/antler_settings.py:7
 msgid "Antler"
 msgstr "Antler"
 
-#: ../caribou/antler/antler_settings.py:7
+#: ../caribou/antler/antler_settings.py:8
 msgid "Appearance"
 msgstr "Udseende"
 
-#: ../caribou/antler/antler_settings.py:9
+#: ../caribou/antler/antler_settings.py:10
 msgid "Keyboard Type"
 msgstr "Tastaturtype"
 
-#: ../caribou/antler/antler_settings.py:10
+#: ../caribou/antler/antler_settings.py:11
 msgid "The keyboard geometry Caribou should use"
 msgstr "Tastaturgeometrien som Caribou skal bruge"
 
-#: ../caribou/antler/antler_settings.py:11
+#: ../caribou/antler/antler_settings.py:12
 msgid ""
 "The keyboard geometry determines the shape and complexity of the keyboard, "
 "it could range from a “natural” look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
 "Tastaturgeometrien bestemmer formen og kompleksiteten for tastaturet, den "
-"kan gå fra et \"naturligt\" se og føl for komponering af simpel tekst, til "
-"et tastatur i fuld skala."
+"kan gå fra et “naturligt” se og føl for komponering af simpel tekst, til et "
+"tastatur i fuld skala."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
-#: ../caribou/antler/antler_settings.py:16
+#: ../caribou/antler/antler_settings.py:17
 msgid "Touch"
 msgstr "Føl (touch)"
 
 #. Translators: Keyboard type (conventional keyboard)
-#: ../caribou/antler/antler_settings.py:18
+#: ../caribou/antler/antler_settings.py:19
 msgid "Full scale"
 msgstr "Fuld skala"
 
 #. Translators: Keyboard type (scanned grid by rows/columns)
-#: ../caribou/antler/antler_settings.py:20
+#: ../caribou/antler/antler_settings.py:21
 msgid "Scan"
 msgstr "Skan"
 
-#: ../caribou/antler/antler_settings.py:21
 #: ../caribou/antler/antler_settings.py:22
+#: ../caribou/antler/antler_settings.py:23
 msgid "Use System Theme"
 msgstr "Brug systemtema"
 
-#: ../caribou/antler/antler_settings.py:23
+#: ../caribou/antler/antler_settings.py:24
 msgid "Minimum Alpha"
 msgstr "Minimum alfa"
 
-#: ../caribou/antler/antler_settings.py:24
+#: ../caribou/antler/antler_settings.py:25
 msgid "Minimal opacity of keyboard"
 msgstr "Minimal uigennemsigtighed for tastatur"
 
-#: ../caribou/antler/antler_settings.py:26
+#: ../caribou/antler/antler_settings.py:27
 msgid "Maximum Alpha"
 msgstr "Maksimal alfa"
 
-#: ../caribou/antler/antler_settings.py:27
+#: ../caribou/antler/antler_settings.py:28
 msgid "Maximal opacity of keyboard"
 msgstr "Maksimal uigennemsigtighed for tastatur"
 
-#: ../caribou/antler/antler_settings.py:29
+#: ../caribou/antler/antler_settings.py:30
 msgid "Maximum Distance"
 msgstr "Maksimal distance"
 
-#: ../caribou/antler/antler_settings.py:30
+#: ../caribou/antler/antler_settings.py:31
 msgid "Maximum distance when keyboard is hidden"
 msgstr "Maksimal distance når tastaturet er skjult"
 
-#: ../daemon/daemon.vala:217
-#, fuzzy
-#| msgid "- accessibility event monitoring daemon for screen keyboard"
-msgid "— accessibility event monitoring daemon for screen keyboard"
-msgstr "- dæmon som lytter til tilgængelighedsbegivenheder for skærmtastatur"
+#~ msgid "— accessibility event monitoring daemon for screen keyboard"
+#~ msgstr "- dæmon som lytter til tilgængelighedsbegivenheder for skærmtastatur"
 
 #~ msgid "Error starting %s"
 #~ msgstr "Fejl ved start af %s"
@@ -278,4 +275,5 @@ msgstr "- dæmon som lytter til tilgængelighedsbegivenheder for skærmtastatur"
 
 #~ msgid "WARNING - Caribou: unhandled editable widget:"
 #~ msgstr "ADVARSEL - Caribou: ikke-håndteret redigérbar kontrol:"
+
 
