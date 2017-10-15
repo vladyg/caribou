@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Gnome Nepali Translation Project\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=caribou&keywords=I18N+L10N&component=default\n"
-"POT-Creation-Date: 2017-02-23 10:45+0000\n"
-"PO-Revision-Date: 2017-08-03 14:16+0545\n"
+"POT-Creation-Date: 2017-08-03 08:32+0000\n"
+"PO-Revision-Date: 2017-10-15 12:26+0545\n"
 "Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
 "Language-Team: Nepali Translation Team <chautari@gmail.com>\n"
 "Language: ne\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.4\n"
 
 #: ../caribou/settings/caribou_settings.py:5
 msgid "Caribou Preferences"
@@ -45,7 +45,7 @@ msgstr "स्क्यान शैलि"
 
 #: ../caribou/settings/caribou_settings.py:15
 msgid "Scanning type, subgroups, rows or linear"
-msgstr ""
+msgstr "स्क्यानिङ्ग प्रकार, उपसमूहहरू, पङ्क्तिहरू वा रैखिक"
 
 #: ../caribou/settings/caribou_settings.py:16
 msgid "Subgroups"
@@ -73,7 +73,7 @@ msgstr "उल्टा स्क्यान गर्दै"
 
 #: ../caribou/settings/caribou_settings.py:25
 msgid "Step with the switch, activate by dwelling"
-msgstr ""
+msgstr "स्विचको साथ कदम, आवास द्वारा सक्रिय"
 
 #: ../caribou/settings/caribou_settings.py:28
 msgid "Auto-restart scanning"
@@ -81,7 +81,7 @@ msgstr "स्क्यानिङ स्वत: पुन सञ्चाल�
 
 #: ../caribou/settings/caribou_settings.py:29
 msgid "Automatically restart scanning after item activation"
-msgstr ""
+msgstr "वस्तु सक्रियता पछि स्क्यानिङ्ग पुनः सुरु गर्नुहोस्"
 
 #: ../caribou/settings/caribou_settings.py:30
 msgid "Scan cycles"
@@ -161,7 +161,7 @@ msgstr "स्विच वटन"
 
 #: ../caribou/settings/caribou_settings.py:58
 msgid "Mouse button to use in the scanning mode"
-msgstr ""
+msgstr "स्क्यान शैलि प्रयोग गर्ने माउस वटन"
 
 #: ../caribou/settings/caribou_settings.py:60
 msgid "Button 1"
@@ -197,7 +197,7 @@ msgstr "कुञ्जी प्रकार"
 
 #: ../caribou/antler/antler_settings.py:11
 msgid "The keyboard geometry Caribou should use"
-msgstr ""
+msgstr "क्यारिबोउ कुञ्जिपाटी ज्यामिति प्रयोग गर्नुपर्छ"
 
 #: ../caribou/antler/antler_settings.py:12
 msgid ""
@@ -205,6 +205,8 @@ msgid ""
 "it could range from a “natural” look and feel good for composing simple "
 "text, to a fullscale keyboard."
 msgstr ""
+"कुञ्जीपाटी ज्यामिति आकार र जटिलता निर्धारण गर्दछ, यो \"प्राकृतिक\" दृश्यबाट दायरा र "
+"पूर्ण पाठ  गर्नको लागि राम्रो महसुस गर्न सक्दछ, पूर्णस्केल कुञ्जीपाटी ।."
 
 #. Translators: Keyboard type (similar to touch/tactile device)
 #: ../caribou/antler/antler_settings.py:17
@@ -248,4 +250,4 @@ msgstr "अधिकतम दुरी"
 
 #: ../caribou/antler/antler_settings.py:31
 msgid "Maximum distance when keyboard is hidden"
-msgstr ""
+msgstr "अधिकतम दूरी जब किबोर्ड लुकेको छ"
