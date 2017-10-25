@@ -1,0 +1,258 @@
+# Haitian creole translation for caribou.
+# Copyright (C) 2017 Listed translators
+# This file is distributed under the same license as the caribou package.
+# Pierre Michel Augustin <augustinpierremichel@hotmail.com>, 2017
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: caribou master\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=caribou&keywords=I18N+L10N&component=default\n"
+"POT-Creation-Date: 2017-03-06 19:15+0000\n"
+"PO-Revision-Date: 2017-10-24 20:13-0400\n"
+"Language-Team: GNOME Haitian Team\n"
+"Last-Translator: Pierre Michel Augustin <augustinpierremichel@hotmail.com>\n"
+"Language: ht\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#: ../caribou/settings/caribou_settings.py:5
+msgid "Caribou Preferences"
+msgstr "Preferans karibou yo"
+
+#: ../caribou/settings/caribou_settings.py:6
+msgid "Scanning"
+msgstr "Analiz la ap fèt"
+
+#: ../caribou/settings/caribou_settings.py:8
+msgid "Enable scanning"
+msgstr "Aktive analiz ki ap fèt la"
+
+#: ../caribou/settings/caribou_settings.py:9
+msgid "Enable switch scanning"
+msgstr "Aktive chanjman analiz"
+
+#: ../caribou/settings/caribou_settings.py:12
+msgid "General"
+msgstr "Jeneral"
+
+#: ../caribou/settings/caribou_settings.py:13
+msgid "Scanning mode"
+msgstr "Mòd analiz"
+
+#: ../caribou/settings/caribou_settings.py:15
+msgid "Scanning type, subgroups, rows or linear"
+msgstr "Tip analiz, sougwoup, ranje oswa lineyè"
+
+#: ../caribou/settings/caribou_settings.py:16
+msgid "Subgroups"
+msgstr "Sougwoup"
+
+#: ../caribou/settings/caribou_settings.py:17
+msgid "Rows"
+msgstr "Ranje"
+
+#: ../caribou/settings/caribou_settings.py:18
+msgid "Linear"
+msgstr "Lineyè"
+
+#: ../caribou/settings/caribou_settings.py:20
+msgid "Step time"
+msgstr "Moman etap"
+
+#: ../caribou/settings/caribou_settings.py:21
+msgid "Time between key transitions"
+msgstr "Tan ant tranzisyon kle yo"
+
+#: ../caribou/settings/caribou_settings.py:24
+msgid "Inverse scanning"
+msgstr "Ranvèse analiz la"
+
+#: ../caribou/settings/caribou_settings.py:25
+msgid "Step with the switch, activate by dwelling"
+msgstr "Etap ak chanjman, aktive nan abitasyon"
+
+#: ../caribou/settings/caribou_settings.py:28
+msgid "Auto-restart scanning"
+msgstr "redemaraj otomatik analiz la"
+
+#: ../caribou/settings/caribou_settings.py:29
+msgid "Automatically restart scanning after item activation"
+msgstr "redemare otomatikman analiz la aprè atik la aktive"
+
+#: ../caribou/settings/caribou_settings.py:30
+msgid "Scan cycles"
+msgstr "Eskane sik yo"
+
+#: ../caribou/settings/caribou_settings.py:31
+msgid "One"
+msgstr "Yonn"
+
+#: ../caribou/settings/caribou_settings.py:32
+msgid "Two"
+msgstr "De"
+
+#: ../caribou/settings/caribou_settings.py:33
+msgid "Three"
+msgstr "Twa"
+
+#: ../caribou/settings/caribou_settings.py:34
+msgid "Four"
+msgstr "Kat"
+
+#: ../caribou/settings/caribou_settings.py:35
+msgid "Five"
+msgstr "Senk"
+
+#: ../caribou/settings/caribou_settings.py:38
+msgid "Input"
+msgstr "Antre"
+
+#: ../caribou/settings/caribou_settings.py:39
+msgid "Switch device"
+msgstr "Chanje aparey"
+
+#: ../caribou/settings/caribou_settings.py:41
+msgid "Switch device, keyboard or mouse"
+msgstr "Chanje aparey, klavye oswa souri"
+
+#: ../caribou/settings/caribou_settings.py:43
+msgid "Keyboard"
+msgstr "Klavye"
+
+#: ../caribou/settings/caribou_settings.py:44
+msgid "Mouse"
+msgstr "Souri"
+
+#: ../caribou/settings/caribou_settings.py:46
+msgid "Switch key"
+msgstr "Chanje kle"
+
+#: ../caribou/settings/caribou_settings.py:48
+msgid "Key to use with scanning mode"
+msgstr "Kle pou tilize avek analiz"
+
+#: ../caribou/settings/caribou_settings.py:50
+msgid "Right shift"
+msgstr "Shift adwat"
+
+#: ../caribou/settings/caribou_settings.py:51
+msgid "Left shift"
+msgstr "Shift agoch"
+
+#: ../caribou/settings/caribou_settings.py:52
+msgid "Space"
+msgstr "Distans"
+
+#: ../caribou/settings/caribou_settings.py:53
+msgid "Alt Gr"
+msgstr "Alt Gr"
+
+# Nim se abrevyasyon nimero
+#: ../caribou/settings/caribou_settings.py:54
+msgid "Num lock"
+msgstr "Bloke Nim"
+
+#: ../caribou/settings/caribou_settings.py:55
+msgid "Switch button"
+msgstr "Chanje bouton"
+
+#: ../caribou/settings/caribou_settings.py:58
+msgid "Mouse button to use in the scanning mode"
+msgstr "Bouton souri pou itilize nan mòd analiz la"
+
+#: ../caribou/settings/caribou_settings.py:60
+msgid "Button 1"
+msgstr "Bouton 1"
+
+#: ../caribou/settings/caribou_settings.py:61
+msgid "Button 2"
+msgstr "Bouton 2"
+
+#: ../caribou/settings/caribou_settings.py:62
+msgid "Button 3"
+msgstr "Bouton 3"
+
+#: ../caribou/__init__.py:8
+msgid "Caribou"
+msgstr "Caribou"
+
+#: ../caribou/antler/antler_settings.py:6
+msgid "Antler Preferences"
+msgstr "Preferans branch yo"
+
+#: ../caribou/antler/antler_settings.py:7
+msgid "Antler"
+msgstr "Branch"
+
+#: ../caribou/antler/antler_settings.py:8
+msgid "Appearance"
+msgstr "Aparans"
+
+#: ../caribou/antler/antler_settings.py:10
+msgid "Keyboard Type"
+msgstr "Tip Klavye"
+
+#: ../caribou/antler/antler_settings.py:11
+msgid "The keyboard geometry Caribou should use"
+msgstr "Klavye jeometrik Caribou a ka itilize"
+
+#: ../caribou/antler/antler_settings.py:12
+msgid ""
+"The keyboard geometry determines the shape and complexity of the keyboard, "
+"it could range from a “natural” look and feel good for composing simple "
+"text, to a fullscale keyboard."
+msgstr ""
+"Klavye jeometrik la detèmine fòm lan ak komplexite klavye a, li ka ranje "
+"fòm nan \"natirèl\" sanble ak santi byen pou kompose teks senp, pou  yon "
+"klavye ki plen echèl."
+
+#. Translators: Keyboard type (similar to touch/tactile device)
+#: ../caribou/antler/antler_settings.py:17
+msgid "Touch"
+msgstr "Touch"
+
+#. Translators: Keyboard type (conventional keyboard)
+#: ../caribou/antler/antler_settings.py:19
+msgid "Full scale"
+msgstr "Plen echèl"
+
+#. Translators: Keyboard type (scanned grid by rows/columns)
+#: ../caribou/antler/antler_settings.py:21
+msgid "Scan"
+msgstr "Analize"
+
+#: ../caribou/antler/antler_settings.py:22
+#: ../caribou/antler/antler_settings.py:23
+msgid "Use System Theme"
+msgstr "Itilize tèm sistèm"
+
+#: ../caribou/antler/antler_settings.py:24
+msgid "Minimum Alpha"
+msgstr "Alfa Minimòm "
+
+#: ../caribou/antler/antler_settings.py:25
+msgid "Minimal opacity of keyboard"
+msgstr "Depo minimal klavye"
+
+#: ../caribou/antler/antler_settings.py:27
+msgid "Maximum Alpha"
+msgstr "Alfa Maximòm "
+
+#: ../caribou/antler/antler_settings.py:28
+msgid "Maximal opacity of keyboard"
+msgstr "Depo maksimòm klavye"
+
+#: ../caribou/antler/antler_settings.py:30
+msgid "Maximum Distance"
+msgstr "Distans maksimòm"
+
+#: ../caribou/antler/antler_settings.py:31
+msgid "Maximum distance when keyboard is hidden"
+msgstr "Distans maksimòm lè klavye a kache"
+
+msgid "- accessibility event monitoring daemon for screen keyboard"
+msgstr "- sèvis siveyans evènman yo pou klavye ekran"
