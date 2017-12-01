@@ -13,7 +13,7 @@
   border-width: 0px;
   border-radius: 2px;
   border-image: url("dark-key-border.svg") 2 2 2 2 repeat stretch;
-  font: Sans 14px;
+  font: 14px Sans;
   background-image: -gtk-gradient (linear,
 				     left top,
 				     left bottom,
