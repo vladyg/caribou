@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<layout xmlns:xi="http://www.w3.org/2001/XInclude">
+  <level mode="default" name="level1">
+    <row>
+      <key name="F1"/>
+      <key name="F2"/>
+      <key name="F3"/>
+      <key name="F4"/>
+      <key name="F5"/>
+      <key name="F6"/>
+      <key name="F7"/>
+      <key name="F8"/>
+      <key name="F9"/>
+      <key name="F10"/>
+      <key name="F11"/>
+      <key name="F12"/>
+    </row>
+    <row>
+      <key name="Escape"/>
+      <key name="Cyrillic_ya">
+      </key>
+      <key name="Cyrillic_ve">
+      </key>
+      <key name="Cyrillic_ie">
+      </key>
+      <key name="Cyrillic_er">
+      </key>
+      <key name="Cyrillic_te">
+      </key>
+      <key name="Cyrillic_hardsign">
+      </key>
+      <key name="Cyrillic_u">
+      </key>
+      <key name="Cyrillic_i">
+      </key>
+      <key name="Cyrillic_o">
+      </key>
+      <key name="Cyrillic_pe">
+      </key>
+      <key name="Cyrillic_sha">
+      </key>
+      <key name="Cyrillic_shcha">
+      </key>
+      <key name="BackSpace" repeatable="yes"/>
+    </row>
+    <row align="right">
+      <key name="Tab" width="1.5"/>
+      <key name="Cyrillic_a">
+      </key>
+      <key name="Cyrillic_es">
+      </key>
+      <key name="Cyrillic_de">
+      </key>
+      <key name="Cyrillic_ef">
+      </key>
+      <key name="Cyrillic_ghe">
+      </key>
+      <key name="Cyrillic_ha">
+      </key>
+      <key name="Cyrillic_shorti">
+      </key>
+      <key name="Cyrillic_ka">
+      </key>
+      <key name="Cyrillic_el">
+      </key>
+      <key name="semicolon">
+      </key>
+      <key name="quotedbl">
+      </key>
+      <key name="Cyrillic_yu">
+      </key>
+      <key name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="Caribou_ShiftUp" toggle="level2" width="2"/>
+      <key name="Cyrillic_ze">
+      </key>
+      <key name="Cyrillic_softsign">
+      </key>
+      <key name="Cyrillic_tse">
+      </key>
+      <key name="Cyrillic_zhe">
+      </key>
+      <key name="Cyrillic_be">
+      </key>
+      <key name="Cyrillic_en">
+      </key>
+      <key name="Cyrillic_em">
+       </key>
+      <key name="comma">
+      </key>
+      <key name="period">
+      </key>
+      <key name="exclam">
+      </key>
+      <key name="question">
+      </key>
+      <key name="Cyrillic_che">
+      </key>
+    </row>
+    <row>
+      <key align="left" name="Caribou_Symbols" toggle="symbols1" width="2.0"/>
+      <key align="left" name="Control_L" width="1.5"/>
+      <key align="left" name="Alt_L" width="1.5"/>
+      <key align="left" name="space" width="10.0" repeatable="yes"/>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+  </level>
+  <level mode="latched" name="level2">
+    <row>
+      <key name="F1"/>
+      <key name="F2"/>
+      <key name="F3"/>
+      <key name="F4"/>
+      <key name="F5"/>
+      <key name="F6"/>
+      <key name="F7"/>
+      <key name="F8"/>
+      <key name="F9"/>
+      <key name="F10"/>
+      <key name="F11"/>
+      <key name="F12"/>
+    </row>
+    <row>
+      <key name="Escape"/>
+      <key name="Cyrillic_YA">
+      </key>
+      <key name="Cyrillic_VE">
+      </key>
+      <key name="Cyrillic_IE">
+      </key>
+      <key name="Cyrillic_ER">
+      </key>
+      <key name="Cyrillic_TE">
+      </key>
+      <key name="Cyrillic_HARDSIGN">
+      </key>
+      <key name="Cyrillic_U">
+      </key>
+      <key name="Cyrillic_I">
+      </key>
+      <key name="Cyrillic_O">
+      </key>
+      <key name="Cyrillic_PE">
+      </key>
+      <key name="Cyrillic_SHA">
+      </key>
+      <key name="Cyrillic_SHCHA">
+      </key>
+      <key name="BackSpace" repeatable="yes"/>
+    </row>
+    <row align="right">
+      <key name="Tab" width="1.5"/>
+      <key name="Cyrillic_A">
+      </key>
+      <key name="Cyrillic_ES">
+      </key>
+      <key name="Cyrillic_DE">
+      </key>
+      <key name="Cyrillic_EF">
+      </key>
+      <key name="Cyrillic_GHE">
+      </key>
+      <key name="Cyrillic_HA">
+      </key>
+      <key name="Cyrillic_SHORTI">
+      </key>
+      <key name="Cyrillic_KA">
+      </key>
+      <key name="Cyrillic_EL">
+      </key>
+      <key name="semicolon">
+      </key>
+      <key name="quotedbl">
+      </key>
+      <key name="Cyrillic_YU">
+      </key>
+      <key name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="Caribou_ShiftDown" toggle="level1" width="2"/>
+      <key name="Cyrillic_ZE">
+      </key>
+      <key name="Cyrillic_SOFTSIGN">
+      </key>
+      <key name="Cyrillic_TSE">
+      </key>
+      <key name="Cyrillic_ZHE">
+      </key>
+      <key name="Cyrillic_BE">
+      </key>
+      <key name="Cyrillic_EN">
+      </key>
+      <key name="Cyrillic_EM">
+       </key>
+      <key name="comma">
+      </key>
+      <key name="period">
+      </key>
+      <key name="exclam">
+      </key>
+      <key name="question">
+      </key>
+      <key name="Cyrillic_CHE">
+      </key>
+    </row>
+    <row>
+      <key align="left" name="Caribou_Symbols" toggle="symbols1" width="2.0"/>
+      <key align="left" name="Control_L" width="1.5"/>
+      <key align="left" name="Alt_L" width="1.5"/>
+      <key align="left" name="space" width="10.0" repeatable="yes"/>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+  </level>
+  <level mode="locked" name="symbols1" xml:base="common/symbols.xml">
+    <row>
+      <key name="F1"/>
+      <key name="F2"/>
+      <key name="F3"/>
+      <key name="F4"/>
+      <key name="F5"/>
+      <key name="F6"/>
+      <key name="F7"/>
+      <key name="F8"/>
+      <key name="F9"/>
+      <key name="F10"/>
+      <key name="F11"/>
+      <key name="F12"/>
+    </row>
+    <row>
+      <key name="Escape"/>
+      <key name="1"/>
+      <key name="2"/>
+      <key name="3"/>
+      <key name="4"/>
+      <key name="5"/>
+      <key name="6"/>
+      <key name="7"/>
+      <key name="8"/>
+      <key name="9"/>
+      <key name="0"/>
+      <key name="BackSpace" repeatable="yes"/>
+    </row>
+    <row align="right">
+      <key name="Tab" width="1.5"/>
+      <key name="minus"/>
+      <key name="slash"/>
+      <key name="colon"/>
+      <key name="semicolon"/>
+      <key name="parenleft"/>
+      <key name="parenright"/>
+      <key name="ampersand"/>
+      <key name="at"/>
+      <key name="grave"/>
+      <key name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="Caribou_Symbols_More" toggle="symbols2" width="2.0"/>
+      <key name="period" width="1.2"/>
+      <key name="comma" width="1.2"/>
+      <key name="question" width="1.2">
+        <key name="question"/>
+        <key name="questiondown"/>
+      </key>
+      <key name="exclam" width="1.2">
+        <key name="exclam"/>
+        <key name="exclamdown"/>
+      </key>
+      <key name="apostrophe" width="1.2"/>
+      <key name="quotedbl" width="1.2"/>
+    </row>
+    <row>
+      <key align="left" name="Caribou_Alpha" toggle="default" width="2.0"/>
+      <key align="left" name="Control_L" width="1.5"/>
+      <key align="left" name="Alt_L" width="1.5"/>
+      <key align="left" name="space" width="5.0" repeatable="yes"/>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+  </level>
+  <level mode="locked" name="symbols2" xml:base="common/symbols.xml">
+    <row>
+      <key name="F1"/>
+      <key name="F2"/>
+      <key name="F3"/>
+      <key name="F4"/>
+      <key name="F5"/>
+      <key name="F6"/>
+      <key name="F7"/>
+      <key name="F8"/>
+      <key name="F9"/>
+      <key name="F10"/>
+      <key name="F11"/>
+      <key name="F12"/>
+    </row>
+    <row>
+      <key name="Escape"/>
+      <key name="bracketleft"/>
+      <key name="bracketright"/>
+      <key name="braceleft"/>
+      <key name="braceright"/>
+      <key name="numbersign"/>
+      <key name="percent"/>
+      <key name="asciicircum"/>
+      <key name="asterisk"/>
+      <key name="plus"/>
+      <key name="equal"/>
+      <key name="BackSpace" repeatable="yes"/>
+    </row>
+    <row align="right">
+      <key name="Tab" width="1.5"/>
+      <key align="right" name="underscore"/>
+      <key name="backslash"/>
+      <key name="bar"/>
+      <key name="asciitilde"/>
+      <key name="less"/>
+      <key name="greater"/>
+      <key name="dollar"/>
+      <key name="EuroSign"/>
+      <key name="sterling"/>
+      <key name="Return" width="1.5"/>
+    </row>
+    <row>
+      <key name="Caribou_Symbols" toggle="symbols1" width="2.0"/>
+      <key name="period" width="1.2"/>
+      <key name="comma" width="1.2"/>
+      <key name="question" width="1.2">
+        <key name="question"/>
+        <key name="questiondown"/>
+      </key>
+      <key name="exclam" width="1.2">
+        <key name="exclam"/>
+        <key name="exclamdown"/>
+      </key>
+      <key name="apostrophe" width="1.2"/>
+      <key name="quotedbl" width="1.2"/>
+    </row>
+    <row>
+      <key align="left" name="Caribou_Alpha" toggle="default" width="2.0"/>
+      <key align="left" name="Control_L" width="1.5"/>
+      <key align="left" name="Alt_L" width="1.5"/>
+      <key align="left" name="space" width="5.0" repeatable="yes"/>
+      <key align="right" name="Caribou_Prefs"/>
+    </row>
+  </level>
+</layout>
