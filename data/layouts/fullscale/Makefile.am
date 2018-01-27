@@ -1,5 +1,7 @@
 fullscalelayoutsdir = $(datadir)/caribou/layouts/fullscale
 fullscalelayouts_in_files =\
+    bg.xml.in \
+    bg+phonetic.xml.in \
     us.xml.in \
     de.xml.in
 fullscalelayouts_DATA = $(fullscalelayouts_in_files:.xml.in=.xml)
@@ -9,6 +11,8 @@ common_files = \
 	common/qwertz.xml \
 	common/symbols.xml
 
+bg.xml: $(common_files)
+bg+phonetic.xml: $(common_files)
 us.xml: $(common_files)
 de.xml: $(common_files)
 

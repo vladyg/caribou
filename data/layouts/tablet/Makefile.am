@@ -1,5 +1,7 @@
 tabletlayoutsdir = $(datadir)/caribou/layouts/tablet
 tabletlayouts_in_files =\
+    bg.xml.in \
+    bg+phonetic.xml.in \
     us.xml.in \
     de.xml.in
 tabletlayouts_DATA = $(tabletlayouts_in_files:.xml.in=.xml)
@@ -10,6 +12,8 @@ common_files = \
 	common/symbols.xml \
 	common/symbols_ssharp.xml
 
+bg.xml: $(common_files)
+bg+phonetic.xml: $(common_files)
 us.xml: $(common_files)
 de.xml: $(common_files)
 
